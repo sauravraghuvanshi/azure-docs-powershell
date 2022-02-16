@@ -4,8 +4,8 @@ Module Name: Az.Storage
 ms.assetid: C324F28A-7215-4F10-A012-92B4F6544BC0
 online version: https://docs.microsoft.com/powershell/module/az.storage/new-azstoragecontainerstoredaccesspolicy
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/New-AzStorageContainerStoredAccessPolicy.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/New-AzStorageContainerStoredAccessPolicy.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/New-AzStorageContainerStoredAccessPolicy.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/New-AzStorageContainerStoredAccessPolicy.md
 ---
 
 # New-AzStorageContainerStoredAccessPolicy

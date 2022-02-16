@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: A698954A-994E-45AD-BA36-1E03196CFCB0
 online version: https://docs.microsoft.com/powershell/module/az.network/remove-azapplicationgatewayfrontendport
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayFrontendPort.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayFrontendPort.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzApplicationGatewayFrontendPort.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzApplicationGatewayFrontendPort.md
 ---
 
 # Remove-AzApplicationGatewayFrontendPort
@@ -29,10 +29,12 @@ The **Remove-AzApplicationGatewayFrontendPort** cmdlet removes a front-end port 
 ```
 PS C:\>$AppGw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
 PS C:\> Remove-AzApplicationGatewayFrontendPort -ApplicationGateway $AppGw -Name "FrontEndPort02"
+PS C:\> Set-AzApplicationGateway -ApplicationGateway $AppGW
 ```
 
 The first command gets an application gateway named ApplicationGateway01 that belongs to the resource group named ResourceGroup01 and stores the gateway in $AppGw variable.
 The second command removes the port named FrontEndPort02 from the application gateway.
+The last command updates the application gateway.
 
 ## PARAMETERS
 

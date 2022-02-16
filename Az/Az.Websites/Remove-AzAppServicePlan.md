@@ -4,8 +4,8 @@ Module Name: Az.Websites
 ms.assetid: 78AAF476-2E9E-4E60-9940-9A9AC6F9506A
 online version: https://docs.microsoft.com/powershell/module/az.websites/remove-azappserviceplan
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Remove-AzAppServicePlan.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Remove-AzAppServicePlan.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Remove-AzAppServicePlan.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Remove-AzAppServicePlan.md
 ---
 
 # Remove-AzAppServicePlan

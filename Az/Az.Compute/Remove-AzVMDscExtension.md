@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: C7FCF2CA-2C8D-4280-BF68-10DEA96642A5
 online version: https://docs.microsoft.com/powershell/module/az.compute/remove-azvmdscextension
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Remove-AzVMDscExtension.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Remove-AzVMDscExtension.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Remove-AzVMDscExtension.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Remove-AzVMDscExtension.md
 ---
 
 # Remove-AzVMDscExtension

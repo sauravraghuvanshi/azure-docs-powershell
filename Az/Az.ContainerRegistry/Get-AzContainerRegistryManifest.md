@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.ContainerRegistry.dll-Hel
 Module Name: Az.ContainerRegistry
 online version: https://docs.microsoft.com/powershell/module/az.containerregistry/get-azcontainerregistrymanifest
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ContainerRegistry/ContainerRegistry/help/Get-AzContainerRegistryManifest.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ContainerRegistry/ContainerRegistry/help/Get-AzContainerRegistryManifest.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ContainerRegistry/ContainerRegistry/help/Get-AzContainerRegistryManifest.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ContainerRegistry/ContainerRegistry/help/Get-AzContainerRegistryManifest.md
 ---
 
 # Get-AzContainerRegistryManifest
@@ -40,7 +40,7 @@ Get-AzContainerRegistryManifest -RegistryName registry -RepositoryName alpine
 
 Registry                    ImageName                   ManifestsAttributes
 --------                    ---------                   -------------------
-registry.azurecr.io         registry.azurecr.io         {Microsoft.Azure.Commands.ContainerRegistry.Models.PSManifestAttributeBase, Microsoft.Azure.Comm…}
+registry.azurecr.io         alpine         {Microsoft.Azure.Commands.ContainerRegistry.Models.PSManifestAttributeBase, Microsoft.Azure.Comm…}
 ```
 
 List manifests for repository alpine under registry.
@@ -51,7 +51,7 @@ Get-AzContainerRegistryManifest -RegistryName registry -RepositoryName alpine -N
 
 Registry                    ImageName Attributes
 --------                    --------- ----------
-registry.azurecr.io alpine    Microsoft.Azure.Commands.ContainerRegistry.Models.PSManifestAttributeBase
+registry.azurecr.io         alpine    Microsoft.Azure.Commands.ContainerRegistry.Models.PSManifestAttributeBase
 ```
 
 Get manifests sha256:a5426f084c755f4d6c1d1562a2d456aa574a24a61706f6806415627360c06ac0 for repository alpine under registry.

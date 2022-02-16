@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
 online version: https://docs.microsoft.com/powershell/module/az.network/new-azapplicationgatewayfirewallpolicyexclusion
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayFirewallPolicyExclusion.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayFirewallPolicyExclusion.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/New-AzApplicationGatewayFirewallPolicyExclusion.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/New-AzApplicationGatewayFirewallPolicyExclusion.md
 ---
 
 # New-AzApplicationGatewayFirewallPolicyExclusion
@@ -16,7 +16,8 @@ Creates an exclusion on the Firewall Policy
 
 ```
 New-AzApplicationGatewayFirewallPolicyExclusion -MatchVariable <String> -SelectorMatchOperator <String>
- -Selector <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ -Selector <String> [-ExclusionManagedRuleSet <PSApplicationGatewayFirewallPolicyExclusionManagedRuleSet[]>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,6 +31,20 @@ PS C:\> $exclusionEntry = New-AzApplicationGatewayFirewallPolicyExclusion -Match
 ```
 
 This command creates a new exclusion-entry for the variable named RequestHeaderNames and operator named StartsWith and Selector named xyz. The exclusion entry is saved in $exclusionEntry.
+
+### Example 2
+```powershell
+PS C:\> $exclusionEntry = New-AzApplicationGatewayFirewallPolicyExclusion -MatchVariable "RequestHeaderKeys" -SelectorMatchOperator "Contains" -Selector "abc"
+```
+
+This command creates a new exclusion-entry for the variable named RequestHeaderKeys and operator named Contains and Selector named abc. The exclusion entry is saved in $exclusionEntry.
+
+### Example 3
+```powershell
+PS C:\> $exclusionEntry = New-AzApplicationGatewayFirewallPolicyExclusion -MatchVariable "RequestHeaderNames" -SelectorMatchOperator "StartsWith" -Selector "xyz" -ExclusionManagedRuleSet $exclusionManagedRuleSet
+```
+
+This command creates a new exclusion-entry for the variable named RequestHeaderNames and operator named StartsWith, Selector named xyz and ExclusionManagedRuleSet named $exclusionManagedRuleSet. The exclusion entry is saved in $exclusionEntry.
 
 ## PARAMETERS
 
@@ -55,7 +70,7 @@ The variable to be excluded.
 Type: System.String
 Parameter Sets: (All)
 Aliases:
-Accepted values: RequestHeaderNames, RequestCookieNames, RequestArgNames
+Accepted values: RequestHeaderNames, RequestCookieNames, RequestArgNames, RequestHeaderKeys, RequestCookieKeys, RequestArgKeys, RequestHeaderValues, RequestCookieValues, RequestArgValues
 
 Required: True
 Position: Named
@@ -89,6 +104,21 @@ Aliases:
 Accepted values: Equals, Contains, StartsWith, EndsWith, EqualsAny
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExclusionManagedRuleSet
+List of Exclusion Managed ruleSets.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFirewallPolicyExclusionManagedRuleSet[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

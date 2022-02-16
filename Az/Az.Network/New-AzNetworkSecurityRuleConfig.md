@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 633FB5C9-BEB3-42A3-AF4F-A54CC3F9E0F7
 online version: https://docs.microsoft.com/powershell/module/az.network/new-aznetworksecurityruleconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkSecurityRuleConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkSecurityRuleConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/New-AzNetworkSecurityRuleConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/New-AzNetworkSecurityRuleConfig.md
 ---
 
 # New-AzNetworkSecurityRuleConfig

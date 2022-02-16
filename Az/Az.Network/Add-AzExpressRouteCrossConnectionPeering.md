@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: C44AD23A-E575-418C-BE90-323B44D6D2E8
 online version: https://docs.microsoft.com/powershell/module/az.network/add-azexpressroutecrossconnectionpeering
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzExpressRouteCrossConnectionPeering.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzExpressRouteCrossConnectionPeering.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzExpressRouteCrossConnectionPeering.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzExpressRouteCrossConnectionPeering.md
 ---
 
 # Add-AzExpressRouteCrossConnectionPeering

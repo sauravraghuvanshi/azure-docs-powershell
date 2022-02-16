@@ -4,8 +4,8 @@ Module Name: Az.Resources
 ms.assetid: E460D108-2BF9-4F57-AF3D-13868DC73EA0
 online version: https://docs.microsoft.com/powershell/module/az.resources/new-azroleassignment
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzRoleAssignment.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzRoleAssignment.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/New-AzRoleAssignment.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/New-AzRoleAssignment.md
 ---
 
 # New-AzRoleAssignment
@@ -13,79 +13,86 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/
 ## SYNOPSIS
 Assigns the specified RBAC role to the specified principal, at the specified scope.
 
+The cmdlet may call below Microsoft Graph API according to input parameters:
+
+- GET /users/{id}
+- GET /servicePrincipals/{id}
+- GET /groups/{id}
+- GET /directoryObjects/{id}
+
 ## SYNTAX
 
 ### EmptyParameterSet (Default)
 ```
 New-AzRoleAssignment -ObjectId <String> [-Scope <String>] -RoleDefinitionName <String> [-Description <String>]
- [-Condition <String>] [-ConditionVersion <String>] [-AllowDelegation]
+ [-Condition <String>] [-ConditionVersion <String>] [-ObjectType <String>] [-AllowDelegation]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### ResourceGroupWithObjectIdParameterSet
 ```
 New-AzRoleAssignment -ObjectId <String> -ResourceGroupName <String> -RoleDefinitionName <String>
- [-Description <String>] [-Condition <String>] [-ConditionVersion <String>] [-AllowDelegation]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [-Description <String>] [-Condition <String>] [-ConditionVersion <String>] [-ObjectType <String>]
+ [-AllowDelegation] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### ResourceWithObjectIdParameterSet
 ```
 New-AzRoleAssignment -ObjectId <String> -ResourceGroupName <String> -ResourceName <String>
  -ResourceType <String> [-ParentResource <String>] -RoleDefinitionName <String> [-Description <String>]
- [-Condition <String>] [-ConditionVersion <String>] [-AllowDelegation]
+ [-Condition <String>] [-ConditionVersion <String>] [-ObjectType <String>] [-AllowDelegation]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### RoleIdWithScopeAndObjectIdParameterSet
 ```
 New-AzRoleAssignment -ObjectId <String> -Scope <String> [-Description <String>] [-Condition <String>]
- [-ConditionVersion <String>] -RoleDefinitionId <Guid> [-AllowDelegation]
+ [-ConditionVersion <String>] [-ObjectType <String>] -RoleDefinitionId <Guid> [-AllowDelegation]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### ResourceGroupWithSignInNameParameterSet
 ```
 New-AzRoleAssignment -SignInName <String> -ResourceGroupName <String> -RoleDefinitionName <String>
- [-Description <String>] [-Condition <String>] [-ConditionVersion <String>] [-AllowDelegation]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [-Description <String>] [-Condition <String>] [-ConditionVersion <String>] [-ObjectType <String>]
+ [-AllowDelegation] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### ResourceWithSignInNameParameterSet
 ```
 New-AzRoleAssignment -SignInName <String> -ResourceGroupName <String> -ResourceName <String>
  -ResourceType <String> [-ParentResource <String>] -RoleDefinitionName <String> [-Description <String>]
- [-Condition <String>] [-ConditionVersion <String>] [-AllowDelegation]
+ [-Condition <String>] [-ConditionVersion <String>] [-ObjectType <String>] [-AllowDelegation]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### ScopeWithSignInNameParameterSet
 ```
 New-AzRoleAssignment -SignInName <String> [-Scope <String>] -RoleDefinitionName <String>
- [-Description <String>] [-Condition <String>] [-ConditionVersion <String>] [-AllowDelegation]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [-Description <String>] [-Condition <String>] [-ConditionVersion <String>] [-ObjectType <String>]
+ [-AllowDelegation] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### ResourceGroupWithSPNParameterSet
 ```
 New-AzRoleAssignment -ApplicationId <String> -ResourceGroupName <String> -RoleDefinitionName <String>
- [-Description <String>] [-Condition <String>] [-ConditionVersion <String>] [-AllowDelegation]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [-Description <String>] [-Condition <String>] [-ConditionVersion <String>] [-ObjectType <String>]
+ [-AllowDelegation] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### ResourceWithSPNParameterSet
 ```
 New-AzRoleAssignment -ApplicationId <String> -ResourceGroupName <String> -ResourceName <String>
  -ResourceType <String> [-ParentResource <String>] -RoleDefinitionName <String> [-Description <String>]
- [-Condition <String>] [-ConditionVersion <String>] [-AllowDelegation]
+ [-Condition <String>] [-ConditionVersion <String>] [-ObjectType <String>] [-AllowDelegation]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### ScopeWithSPNParameterSet
 ```
 New-AzRoleAssignment -ApplicationId <String> [-Scope <String>] -RoleDefinitionName <String>
- [-Description <String>] [-Condition <String>] [-ConditionVersion <String>] [-AllowDelegation]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [-Description <String>] [-Condition <String>] [-ConditionVersion <String>] [-ObjectType <String>]
+ [-AllowDelegation] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### InputFileParameterSet
@@ -274,6 +281,21 @@ Parameter Sets: EmptyParameterSet, ResourceGroupWithObjectIdParameterSet, Resour
 Aliases: Id, PrincipalId
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ObjectType
+To be used with ObjectId. Specifies the type of the asignee object
+
+```yaml
+Type: System.String
+Parameter Sets: EmptyParameterSet, ResourceGroupWithObjectIdParameterSet, ResourceWithObjectIdParameterSet, RoleIdWithScopeAndObjectIdParameterSet, ResourceGroupWithSignInNameParameterSet, ResourceWithSignInNameParameterSet, ScopeWithSignInNameParameterSet, ResourceGroupWithSPNParameterSet, ResourceWithSPNParameterSet, ScopeWithSPNParameterSet
+Aliases: PrincipalType
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)

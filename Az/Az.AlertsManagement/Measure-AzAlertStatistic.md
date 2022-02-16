@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.AlertsManagement.dll-Help
 Module Name: Az.AlertsManagement
 online version: https://docs.microsoft.com/powershell/module/az.alertsmanagement/measure-azalertstatistic
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AlertsManagement/AlertsManagement/help/Measure-AzAlertStatistic.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AlertsManagement/AlertsManagement/help/Measure-AzAlertStatistic.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AlertsManagement/AlertsManagement/help/Measure-AzAlertStatistic.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AlertsManagement/AlertsManagement/help/Measure-AzAlertStatistic.md
 ---
 
 # Measure-AzAlertStatistic
@@ -37,7 +37,7 @@ Measure-AzAlertStatistic -GroupBy <String> [-TargetResourceType <String>] [-Targ
 
 ### Example 1
 ```powershell
-PS C:\> Measure-AzAlertStatistic -GroupBy "severity,alertstate" -State "Active"
+Measure-AzAlertStatistic -GroupBy "severity,alertstate" -State "Active"
 ```
 
 Summarize alerts count grouped by severity and state filtered by Active state.

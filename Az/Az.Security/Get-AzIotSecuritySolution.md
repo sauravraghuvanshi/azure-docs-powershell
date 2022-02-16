@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Security.dll-Help.xml
 Module Name: Az.Security
 online version: https://docs.microsoft.com/powershell/module/az.security/Get-AzIotSecuritySolution
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Security/Security/help/Get-AzIotSecuritySolution.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Security/Security/help/Get-AzIotSecuritySolution.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Security/Security/help/Get-AzIotSecuritySolution.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Security/Security/help/Get-AzIotSecuritySolution.md
 ---
 
 # Get-AzIotSecuritySolution

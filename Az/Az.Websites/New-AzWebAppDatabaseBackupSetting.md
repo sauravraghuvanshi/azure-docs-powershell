@@ -4,8 +4,8 @@ Module Name: Az.Websites
 ms.assetid: 22ACB910-0C41-4649-8D22-537E38CB4570
 online version: https://docs.microsoft.com/powershell/module/az.websites/new-azwebappdatabasebackupsetting
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/New-AzWebAppDatabaseBackupSetting.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/New-AzWebAppDatabaseBackupSetting.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/New-AzWebAppDatabaseBackupSetting.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/New-AzWebAppDatabaseBackupSetting.md
 ---
 
 # New-AzWebAppDatabaseBackupSetting

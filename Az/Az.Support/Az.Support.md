@@ -4,8 +4,8 @@ Module Guid: 22d73af7-38c2-4bf6-b56f-4dc9db05d97a
 Download Help Link: https://docs.microsoft.com/powershell/module/az.support
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Support/Support/help/Az.Support.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Support/Support/help/Az.Support.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Support/Support/help/Az.Support.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Support/Support/help/Az.Support.md
 ---
 
 # Az.Support Module

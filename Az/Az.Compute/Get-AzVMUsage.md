@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: 3702701E-428D-47E2-A227-0F38B055F881
 online version: https://docs.microsoft.com/powershell/module/az.compute/get-azvmusage
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMUsage.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMUsage.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Get-AzVMUsage.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Get-AzVMUsage.md
 ---
 
 # Get-AzVMUsage

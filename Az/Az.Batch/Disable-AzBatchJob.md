@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: C831F934-7513-4882-A155-816E56CD9807
 online version: https://docs.microsoft.com/powershell/module/az.batch/disable-azbatchjob
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Disable-AzBatchJob.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Disable-AzBatchJob.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Disable-AzBatchJob.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Disable-AzBatchJob.md
 ---
 
 # Disable-AzBatchJob
@@ -29,8 +29,8 @@ You can enable a disabled job later.
 ## EXAMPLES
 
 ### Example 1: Disable a Batch job
-```
-PS C:\>Disable-AzBatchJob -Id "Job-000001" -DisableJobOption "Terminate" -BatchContext $Context
+```powershell
+Disable-AzBatchJob -Id "Job-000001" -DisableJobOption "Terminate" -BatchContext $Context
 ```
 
 This command disables the job that has the ID Job-000001.

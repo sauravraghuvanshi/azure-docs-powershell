@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: 01744DBD-1991-45EF-AA92-FD471F7E7551
 online version: https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabasetransparentdataencryption
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Set-AzSqlDatabaseTransparentDataEncryption.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Set-AzSqlDatabaseTransparentDataEncryption.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Set-AzSqlDatabaseTransparentDataEncryption.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Set-AzSqlDatabaseTransparentDataEncryption.md
 ---
 
 # Set-AzSqlDatabaseTransparentDataEncryption

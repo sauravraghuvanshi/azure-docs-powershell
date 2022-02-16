@@ -4,14 +4,14 @@ Module Name: Az.Sql
 ms.assetid: 14814BF3-51AF-4E51-A8A6-661825BD88D1
 online version: https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlinstancedatabasesensitivityclassification
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Remove-AzSqlInstanceDatabaseSensitivityClassification.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Remove-AzSqlInstanceDatabaseSensitivityClassification.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Remove-AzSqlInstanceDatabaseSensitivityClassification.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Remove-AzSqlInstanceDatabaseSensitivityClassification.md
 ---
 
 # Remove-AzSqlInstanceDatabaseSensitivityClassification
 
 ## SYNOPSIS
-Removes the information types and sensitivity labels of columns in the Azure SQL managed instance database.
+Removes the information types and sensitivity labels of columns in the Azure SQL Managed Instance database.
 
 ## SYNTAX
 
@@ -37,21 +37,21 @@ Remove-AzSqlInstanceDatabaseSensitivityClassification -DatabaseObject <AzureSqlM
 ```
 
 ## DESCRIPTION
-The Remove-AzSqlInstanceDatabaseSensitivityClassification cmdlet removes the information types and sensitivity labels of columns in the Azure SQL managed instance database.
+The Remove-AzSqlInstanceDatabaseSensitivityClassification cmdlet removes the information types and sensitivity labels of columns in the Azure SQL Managed Instance database.
 
 ## EXAMPLES
 
-### Example 1: Remove information type and sensitivity label of a column in an Azure SQL managed instance database.
+### Example 1: Remove information type and sensitivity label of a column in an Azure SQL Managed Instance database.
 ```powershell
 PS C:\> Remove-AzSqlInstanceDatabaseSensitivityClassification -ResourceGroupName resourceGroup -InstanceName managedInstance -DatabaseName database -SchemaName schema -TableName table -ColumnName column
 ```
 
-### Example 2: Remove current information types and sensitivity labels of columns in an Azure SQL managed instance database with Piping.
+### Example 2: Remove current information types and sensitivity labels of columns in an Azure SQL Managed Instance database with Piping.
 ```powershell
 PS C:\> Get-AzSqlInstanceDatabaseSensitivityClassification -ResourceGroupName resourceGroup -InstanceName managedInstance -DatabaseName database | Remove-AzSqlInstanceDatabaseSensitivityClassification
 ```
 
-### Example 3: Remove information type and sensitivity label of a column in an Azure SQL managed instance database with Piping.
+### Example 3: Remove information type and sensitivity label of a column in an Azure SQL Managed Instance database with Piping.
 ```powershell
 PS C:\> Get-AzSqlInstanceDatabase -ResourceGroupName resourceGroup -InstanceName managedInstance -Name database | Remove-AzSqlInstanceDatabaseSensitivityClassification -SchemaName schema -TableName table -ColumnName column
 ```
@@ -104,7 +104,7 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseName
-The name of the Azure SQL managed instance database.
+The name of the Azure SQL Managed Instance database.
 
 ```yaml
 Type: System.String
@@ -119,7 +119,7 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseObject
-The Azure SQL managed instance database object.
+The Azure SQL Managed Instance database object.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Sql.ManagedDatabase.Model.AzureSqlManagedDatabaseModel
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceName
-Azure SQL managed instance name.
+Azure SQL Managed Instance name.
 
 ```yaml
 Type: System.String

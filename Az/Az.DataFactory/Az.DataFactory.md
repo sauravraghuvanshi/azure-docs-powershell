@@ -4,8 +4,8 @@ Module Guid: e3c0f6bc-fe96-41a0-88f4-5e490a91f05d
 Download Help Link: https://docs.microsoft.com/powershell/module/az.datafactory
 Help Version: 0.5.3.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Az.DataFactory.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Az.DataFactory.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Az.DataFactory.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Az.DataFactory.md
 ---
 
 # Az.DataFactory Module

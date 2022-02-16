@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.ImportExport
 online version: https://docs.microsoft.com/powershell/module/az.importexport/update-azimportexport
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ImportExport/help/Update-AzImportExport.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ImportExport/help/Update-AzImportExport.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ImportExport/help/Update-AzImportExport.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ImportExport/help/Update-AzImportExport.md
 ---
 
 # Update-AzImportExport

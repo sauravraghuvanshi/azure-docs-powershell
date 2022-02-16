@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.AppConfiguration
 online version: https://docs.microsoft.com/powershell/module/az.appconfiguration/test-azappconfigurationstorenameavailability
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AppConfiguration/help/Test-AzAppConfigurationStoreNameAvailability.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AppConfiguration/help/Test-AzAppConfigurationStoreNameAvailability.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/Test-AzAppConfigurationStoreNameAvailability.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/Test-AzAppConfigurationStoreNameAvailability.md
 ---
 
 # Test-AzAppConfigurationStoreNameAvailability
@@ -27,8 +27,9 @@ Checks whether the configuration store name is available for use.
 ### Example 1: Test availability of the app configuration store name
 
 ```powershell
-PS C:\> Test-AzAppConfigurationStoreNameAvailability -Name appconfig-test01
-
+Test-AzAppConfigurationStoreNameAvailability -Name appconfig-test01
+```
+```output
 Message                               NameAvailable Reason
 -------                               ------------- ------
 The specified name is already in use. False         AlreadyExists

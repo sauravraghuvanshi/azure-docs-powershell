@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: 515933DF-5DB1-452A-808B-0198A3A2EA8B
 online version: https://docs.microsoft.com/powershell/module/az.automation/remove-azautomationaccount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Remove-AzAutomationAccount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Remove-AzAutomationAccount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Remove-AzAutomationAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Remove-AzAutomationAccount.md
 ---
 
 # Remove-AzAutomationAccount

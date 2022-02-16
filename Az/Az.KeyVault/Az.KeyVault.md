@@ -4,8 +4,8 @@ Module Guid: D48CF693-4125-4D2D-8790-1514F44CE325
 Download Help Link: https://docs.microsoft.com/powershell/module/az.keyvault
 Help Version: 4.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Az.KeyVault.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Az.KeyVault.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/KeyVault/KeyVault/help/Az.KeyVault.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/KeyVault/KeyVault/help/Az.KeyVault.md
 ---
 
 # Az.KeyVault Module
@@ -65,7 +65,7 @@ Gets the status of a certificate operation.
 Gets the policy for a certificate in a key vault.
 
 ### [Get-AzKeyVaultKey](Get-AzKeyVaultKey.md)
-Gets Key Vault keys.
+Gets Key Vault keys. Please notes that detailed information about a key, like key type or key size, only available when querying a specific key version.
 
 ### [Get-AzKeyVaultManagedHsm](Get-AzKeyVaultManagedHsm.md)
 Get managed HSMs.
@@ -91,6 +91,9 @@ Imports a certificate to a key vault.
 ### [Import-AzKeyVaultSecurityDomain](Import-AzKeyVaultSecurityDomain.md)
 Imports previously exported security domain data to a managed HSM.
 
+### [Invoke-AzKeyVaultKeyOperation](Invoke-AzKeyVaultKeyOperation.md)
+Performs operation like "Encrypt", "Decrypt", "Wrap" or "Unwrap" using a specified key stored in a key vault or managed hsm.
+
 ### [New-AzKeyVault](New-AzKeyVault.md)
 Creates a key vault.
 
@@ -111,6 +114,9 @@ Create an object representing the network rule settings.
 
 ### [New-AzKeyVaultRoleAssignment](New-AzKeyVaultRoleAssignment.md)
 Assigns the specified RBAC role to the specified principal, at the specified scope.
+
+### [New-AzKeyVaultRoleDefinition](New-AzKeyVaultRoleDefinition.md)
+Creates a custom role definition on an HSM.
 
 ### [Remove-AzKeyVault](Remove-AzKeyVault.md)
 Deletes a key vault.
@@ -147,6 +153,9 @@ Removes a network rule from a key vault.
 
 ### [Remove-AzKeyVaultRoleAssignment](Remove-AzKeyVaultRoleAssignment.md)
 Removes a role assignment to the specified principal who is assigned to a particular role at a particular scope.
+
+### [Remove-AzKeyVaultRoleDefinition](Remove-AzKeyVaultRoleDefinition.md)
+Removes a custom role definition from an HSM.
 
 ### [Remove-AzKeyVaultSecret](Remove-AzKeyVaultSecret.md)
 Deletes a secret in a key vault.

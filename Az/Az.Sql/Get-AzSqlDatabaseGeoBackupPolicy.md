@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: 4F28BA63-23FC-4E35-A7FB-726E6FE94D26
 online version: https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabasegeobackuppolicy
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseGeoBackupPolicy.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseGeoBackupPolicy.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlDatabaseGeoBackupPolicy.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlDatabaseGeoBackupPolicy.md
 ---
 
 # Get-AzSqlDatabaseGeoBackupPolicy

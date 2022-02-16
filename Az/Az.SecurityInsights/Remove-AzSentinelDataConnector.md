@@ -3,14 +3,14 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.dll-Help
 Module Name: Az.SecurityInsights
 online version: https://docs.microsoft.com/powershell/module/az.securityinsights/remove-azsentineldataconnector
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SecurityInsights/SecurityInsights/help/Remove-AzSentinelDataConnector.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SecurityInsights/SecurityInsights/help/Remove-AzSentinelDataConnector.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Remove-AzSentinelDataConnector.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Remove-AzSentinelDataConnector.md
 ---
 
 # Remove-AzSentinelDataConnector
 
 ## SYNOPSIS
-Remove a Data Connector.
+Removes a Data Connector.
 
 ## SYNTAX
 
@@ -39,6 +39,19 @@ PS C:\> Remove-AzSentinelDataConnector -ResourceGroupName "MyResourceGroup" -Wor
 ```
 
 This command removes the DataConnector from the workspace.
+
+### Example 2
+```powershell
+$SentinelConnection = @{
+    ResourceGroupName = "myResourceGroupName"
+    WorkspaceName = "myWorkspaceName"
+}
+$DataConnector = Get-AzSentinelDataConnector @SentinelConnection | Where-Object {$_.Kind -eq "Office365"} 
+Remove-AzSentinelDataConnector @SentinelConnection -DataConnectorId $DataConnector.Name
+```
+
+This example uses a connection object to pass the resourceGroupName and the workspaceName. Then it gets a specific connector, filtered by *Kind* which is being passed to remove the data connector.<br/><br/>
+*Note: the $DataConnector.Name is the DataConnectorId.*
 
 ## PARAMETERS
 

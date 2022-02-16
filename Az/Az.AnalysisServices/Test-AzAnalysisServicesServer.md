@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.AnalysisServices.dll-Help
 Module Name: Az.AnalysisServices
 online version: https://docs.microsoft.com/powershell/module/az.analysisservices/test-azanalysisservicesserver
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AnalysisServices/AnalysisServices/help/Test-AzAnalysisServicesServer.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AnalysisServices/AnalysisServices/help/Test-AzAnalysisServicesServer.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AnalysisServices/AnalysisServices/help/Test-AzAnalysisServicesServer.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AnalysisServices/AnalysisServices/help/Test-AzAnalysisServicesServer.md
 ---
 
 # Test-AzAnalysisServicesServer
@@ -25,8 +25,8 @@ The Test-AzAnalysisServicesServer cmdlet tests the existence of an instance of A
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> Test-AzAnalysisServicesServer -Name "testserver" -ResourceGroupName "testgroup"
+```powershell
+Test-AzAnalysisServicesServer -Name "testserver" -ResourceGroupName "testgroup"
 ```
 
 This command will test if there is a server named testserver in the resourcegroup testgroup

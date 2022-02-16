@@ -4,8 +4,8 @@ Module Name: Az.ApiManagement
 ms.assetid: 12FC21EB-0B4E-4275-88FB-7FF42730A6A0
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/set-azapimanagementcertificate
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Set-AzApiManagementCertificate.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Set-AzApiManagementCertificate.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Set-AzApiManagementCertificate.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Set-AzApiManagementCertificate.md
 ---
 
 # Set-AzApiManagementCertificate
@@ -17,14 +17,16 @@ Modifies an API Management certificate which is configured for mutual authentica
 
 ### LoadFromFile (Default)
 ```
-Set-AzApiManagementCertificate -Context <PsApiManagementContext> -CertificateId <String> -PfxFilePath <String>
- -PfxPassword <String> [-PassThru] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Set-AzApiManagementCertificate -Context <PsApiManagementContext> -CertificateId <String>
+ [-PfxFilePath <String>] [-PfxPassword <String>] [-PassThru] [-KeyVault <PsApiManagementKeyVaultEntity>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### Raw
 ```
-Set-AzApiManagementCertificate -Context <PsApiManagementContext> -CertificateId <String> -PfxBytes <Byte[]>
- -PfxPassword <String> [-PassThru] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Set-AzApiManagementCertificate -Context <PsApiManagementContext> -CertificateId <String> [-PfxBytes <Byte[]>]
+ [-PfxPassword <String>] [-PassThru] [-KeyVault <PsApiManagementKeyVaultEntity>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,8 +36,8 @@ The **Set-AzApiManagementCertificate** cmdlet modifies an Azure API Management c
 
 ### Example 1: Modify a certificate
 ```powershell
-PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Set-AzApiManagementCertificate -Context $ApiMgmtContext -CertificateId "0123456789" -PfxFilePath "C:\contoso\certificates\apimanagementnew.pfx" -PfxPassword "2222"
+$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Set-AzApiManagementCertificate -Context $ApiMgmtContext -CertificateId "0123456789" -PfxFilePath "C:\contoso\certificates\apimanagementnew.pfx" -PfxPassword "2222"
 ```
 
 This command modifies the specified API Management certificate.
@@ -87,6 +89,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -KeyVault
+KeyVault used to fetch certificate data.This parameter is required if -PfxFilePath not specified.
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementKeyVaultEntity
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -PassThru
 passthru
 
@@ -111,7 +128,7 @@ Type: System.Byte[]
 Parameter Sets: Raw
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -127,7 +144,7 @@ Type: System.String
 Parameter Sets: LoadFromFile
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -142,7 +159,7 @@ Type: System.String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)

@@ -4,8 +4,8 @@ Module Name: Az.LogicApp
 ms.assetid: 607FBE75-727D-4388-9504-94AD31BCDBBF
 online version: https://docs.microsoft.com/powershell/module/az.logicapp/remove-azintegrationaccount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/Remove-AzIntegrationAccount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/Remove-AzIntegrationAccount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/LogicApp/LogicApp/help/Remove-AzIntegrationAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/LogicApp/LogicApp/help/Remove-AzIntegrationAccount.md
 ---
 
 # Remove-AzIntegrationAccount

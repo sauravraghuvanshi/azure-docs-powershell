@@ -4,8 +4,8 @@ Module Name: Az.Resources
 ms.assetid: 20CB842B-F7A9-4052-85D9-0DF9586D5FEA
 online version: https://docs.microsoft.com/powershell/module/az.resources/get-azresourcegroupdeployment
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzResourceGroupDeployment.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzResourceGroupDeployment.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Get-AzResourceGroupDeployment.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Get-AzResourceGroupDeployment.md
 ---
 
 # Get-AzResourceGroupDeployment

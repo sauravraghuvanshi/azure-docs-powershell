@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.MySql
 online version: https://docs.microsoft.com/powershell/module/az.mysql/test-azmysqlflexibleserverconnect
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MySql/help/Test-AzMySqlFlexibleServerConnect.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MySql/help/Test-AzMySqlFlexibleServerConnect.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MySql/help/Test-AzMySqlFlexibleServerConnect.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MySql/help/Test-AzMySqlFlexibleServerConnect.md
 ---
 
 # Test-AzMySqlFlexibleServerConnect
@@ -48,6 +48,7 @@ Test out the connection to the database server
 
 ### Example 1: Test connection by name
 ```powershell
+PS C:\> $password = ConvertTo-SecureString <YourPassword> -AsPlainText
 PS C:\> Get-AzMySqlFlexibleServerConnect -ResourceGroupName PowershellMySqlTest -Name mysql-test -AdministratorLoginPassword $password
 
 The connection testing to mysql-test.database.azure.com was successful!
@@ -57,6 +58,7 @@ Test connection by the resource group and the server name
 
 ### Example 2: Test connection by identity
 ```powershell
+PS C:\> $password = ConvertTo-SecureString <YourPassword> -AsPlainText
 PS C:\> Get-AzMySqlFlexibleServer -ResourceGroupName PowershellMySqlTest -ServerName mysql-test | Get-AzMySqlFlexibleServerConnect -AdministratorLoginPassword $password
 
 The connection testing to mysql-test.database.azure.com was successful!
@@ -66,6 +68,7 @@ Test connection by the identity
 
 ### Example 3: Test query by name
 ```powershell
+PS C:\> $password = ConvertTo-SecureString <YourPassword> -AsPlainText
 PS C:\> Get-AzMySqlFlexibleServerConnect -ResourceGroupName PowershellMySqlTest -Name mysql-test -AdministratorLoginPassword $password -Query "SELECT * FROM test"
 
 col
@@ -237,11 +240,11 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IMySqlIdentity>: The server to connect.
+  - `[BackupName <String>]`: The name of the backup.
   - `[ConfigurationName <String>]`: The name of the server configuration.
   - `[DatabaseName <String>]`: The name of the database.
   - `[FirewallRuleName <String>]`: The name of the server firewall rule.
   - `[Id <String>]`: Resource identity path
-  - `[KeyName <String>]`: The name of the server key.
   - `[LocationName <String>]`: The name of the location.
   - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
   - `[SecurityAlertPolicyName <SecurityAlertPolicyName?>]`: The name of the security alert policy.

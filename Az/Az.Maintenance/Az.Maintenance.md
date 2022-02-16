@@ -4,8 +4,8 @@ Module Guid: 9b895a4cb333f6bf9176b1eeb9260782R21
 Download Help Link: https://docs.microsoft.com/powershell/module/az.maintenance
 Help Version: 0.2.5.0
 Locale: en-us
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Maintenance/Maintenance/help/Az.Maintenance.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Maintenance/Maintenance/help/Az.Maintenance.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Maintenance/Maintenance/help/Az.Maintenance.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Maintenance/Maintenance/help/Az.Maintenance.md
 ---
 
 # Az.Maintenance Module

@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.MachineLearning.dll-Help.
 Module Name: Az.MachineLearning
 online version: https://docs.microsoft.com/powershell/module/az.machinelearning/remove-azmlwebservice
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MachineLearning/MachineLearning/help/Remove-AzMlWebService.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MachineLearning/MachineLearning/help/Remove-AzMlWebService.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MachineLearning/MachineLearning/help/Remove-AzMlWebService.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MachineLearning/MachineLearning/help/Remove-AzMlWebService.md
 ---
 
 # Remove-AzMlWebService

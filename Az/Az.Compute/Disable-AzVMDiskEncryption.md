@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: 979E956B-4C74-426E-A617-E50C4EBC8A20
 online version: https://docs.microsoft.com/powershell/module/az.compute/disable-azvmdiskencryption
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Disable-AzVMDiskEncryption.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Disable-AzVMDiskEncryption.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Disable-AzVMDiskEncryption.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Disable-AzVMDiskEncryption.md
 ---
 
 # Disable-AzVMDiskEncryption

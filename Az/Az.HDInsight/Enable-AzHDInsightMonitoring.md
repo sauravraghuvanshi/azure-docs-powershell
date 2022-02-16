@@ -3,14 +3,14 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.HDInsight.dll-Help.xml
 Module Name: Az.HDInsight
 online version: https://docs.microsoft.com/powershell/module/az.hdinsight/enable-azhdinsightmonitoring
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/Enable-AzHDInsightMonitoring.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/Enable-AzHDInsightMonitoring.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HDInsight/HDInsight/help/Enable-AzHDInsightMonitoring.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HDInsight/HDInsight/help/Enable-AzHDInsightMonitoring.md
 ---
 
 # Enable-AzHDInsightMonitoring
 
 ## SYNOPSIS
-Enables monitoring in a HDInsight cluster and relevant logs will be sent to the monitoring workspace specified during enable.
+Enables the Classic Azure Monitor logs integration on an HDInsight cluster and relevant logs will be sent to the monitoring workspace specified during enable.
 
 ## SYNTAX
 
@@ -21,7 +21,7 @@ Enable-AzHDInsightMonitoring [-Name] <String> [-WorkspaceId] <String> [-PrimaryK
 ```
 
 ## DESCRIPTION
-The **Enable-AzHDInsightMonitoring** cmdlet enables monitoring in a Azure HDInsight cluster.
+The **Enable-AzHDInsightMonitoring** cmdlet enables the Classic Azure Monitor logs integration on an HDInsight cluster.
 
 ## EXAMPLES
 

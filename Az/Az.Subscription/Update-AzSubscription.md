@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Subscription.dll-Help.xml
 Module Name: Az.Subscription
 online version: https://docs.microsoft.com/powershell/module/az.subscription/update-azsubscription
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Subscription/Subscription/help/Update-AzSubscription.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Subscription/Subscription/help/Update-AzSubscription.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Subscription/Subscription/help/Update-AzSubscription.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Subscription/Subscription/help/Update-AzSubscription.md
 ---
 
 # Update-AzSubscription
@@ -31,10 +31,34 @@ PS C:\> Update-AzSubscription -SubscriptionId "86869d42-1782-4337-98b0-c905fb937
 Name        : My Subscription
 Id          : 86869d42-1782-4337-98b0-c905fb937d46
 TenantId    : a5dcb057-fd83-4384-9d49-5198004d33a5
+State       : Cancelled 
+```
+
+Cancels the subscription
+
+### Example 2
+```powershell
+PS C:\> Update-AzSubscription -SubscriptionId "86869d42-1782-4337-98b0-c905fb937d46" -Action "Enable"
+
+Name        : My Subscription
+Id          : 86869d42-1782-4337-98b0-c905fb937d46
+TenantId    : a5dcb057-fd83-4384-9d49-5198004d33a5
 State       : Enabled
 ```
 
-Updates the subscription
+Enables the subscription
+
+### Example 3
+```powershell
+PS C:\> Update-AzSubscription -SubscriptionId "86869d42-1782-4337-98b0-c905fb937d46" -Action "Rename" -Name "Updated Subscription Name"
+
+Name        : Updated Subscription Name
+Id          : 86869d42-1782-4337-98b0-c905fb937d46
+TenantId    : a5dcb057-fd83-4384-9d49-5198004d33a5
+State       : Enabled
+```
+
+Renames the subscription
 
 ## PARAMETERS
 

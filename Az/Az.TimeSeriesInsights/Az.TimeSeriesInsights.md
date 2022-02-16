@@ -4,8 +4,8 @@ Module Guid: c3da39a4-7b6f-4973-be69-542c2174633a
 Download Help Link: https://docs.microsoft.com/powershell/module/az.timeseriesinsights
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/TimeSeriesInsights/help/Az.TimeSeriesInsights.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/TimeSeriesInsights/help/Az.TimeSeriesInsights.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/TimeSeriesInsights/help/Az.TimeSeriesInsights.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/TimeSeriesInsights/help/Az.TimeSeriesInsights.md
 ---
 
 # Az.TimeSeriesInsights Module

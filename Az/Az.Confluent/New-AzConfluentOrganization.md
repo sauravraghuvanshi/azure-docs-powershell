@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.Confluent
 online version: https://docs.microsoft.com/powershell/module/az.confluent/new-azconfluentorganization
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Confluent/help/New-AzConfluentOrganization.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Confluent/help/New-AzConfluentOrganization.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Confluent/help/New-AzConfluentOrganization.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Confluent/help/New-AzConfluentOrganization.md
 ---
 
 # New-AzConfluentOrganization
@@ -17,10 +17,9 @@ Create Organization resource
 ```
 New-AzConfluentOrganization -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
  [-Location <String>] [-OfferDetailId <String>] [-OfferDetailPlanId <String>] [-OfferDetailPlanName <String>]
- [-OfferDetailPublisherId <String>] [-OfferDetailStatus <SaaSOfferStatus>] [-OfferDetailTermUnit <String>]
- [-Tag <Hashtable>] [-UserDetailEmailAddress <String>] [-UserDetailFirstName <String>]
- [-UserDetailLastName <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-OfferDetailPublisherId <String>] [-OfferDetailTermUnit <String>] [-Tag <Hashtable>]
+ [-UserDetailEmailAddress <String>] [-UserDetailFirstName <String>] [-UserDetailLastName <String>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -166,21 +165,6 @@ Publisher Id
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OfferDetailStatus
-SaaS Offer Status
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Confluent.Support.SaaSOfferStatus
 Parameter Sets: (All)
 Aliases:
 

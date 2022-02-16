@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: 009899E5-83BF-4A3F-877E-70C16D5CD1AC
 online version: https://docs.microsoft.com/powershell/module/az.sql/new-azsqlelasticpool
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlElasticPool.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlElasticPool.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/New-AzSqlElasticPool.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/New-AzSqlElasticPool.md
 ---
 
 # New-AzSqlElasticPool

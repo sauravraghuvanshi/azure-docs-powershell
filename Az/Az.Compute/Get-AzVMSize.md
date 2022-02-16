@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: B7A675D3-EF79-4EE2-9330-D4C690739006
 online version: https://docs.microsoft.com/powershell/module/az.compute/get-azvmsize
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMSize.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMSize.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Get-AzVMSize.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Get-AzVMSize.md
 ---
 
 # Get-AzVMSize

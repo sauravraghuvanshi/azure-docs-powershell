@@ -4,8 +4,8 @@ Module Guid: 6470f56b-378e-48f4-b60f-954c01bf1822
 Download Help Link: https://docs.microsoft.com/powershell/module/az.hpccache
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HPCCache/HPCCache/help/Az.HPCCache.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HPCCache/HPCCache/help/Az.HPCCache.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HPCCache/HPCCache/help/Az.HPCCache.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HPCCache/HPCCache/help/Az.HPCCache.md
 ---
 
 # Az.HPCCache Module

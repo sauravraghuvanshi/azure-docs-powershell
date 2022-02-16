@@ -3,14 +3,14 @@ external help file:
 Module Name: Az.ConnectedKubernetes
 online version: https://docs.microsoft.com/powershell/module/az.connectedkubernetes/update-azconnectedkubernetes
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ConnectedKubernetes/help/Update-AzConnectedKubernetes.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ConnectedKubernetes/help/Update-AzConnectedKubernetes.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ConnectedKubernetes/help/Update-AzConnectedKubernetes.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ConnectedKubernetes/help/Update-AzConnectedKubernetes.md
 ---
 
 # Update-AzConnectedKubernetes
 
 ## SYNOPSIS
-API to update certain properties of the connected cluster resource.
+API to update certain properties of the connected cluster resource
 
 ## SYNTAX
 
@@ -27,29 +27,28 @@ Update-AzConnectedKubernetes -InputObject <IConnectedKubernetesIdentity> [-Tag <
 ```
 
 ## DESCRIPTION
-API to update certain properties of the connected cluster resource.
+API to update certain properties of the connected cluster resource
 
 ## EXAMPLES
 
 ### Example 1: Update a connected kubernetes
 ```powershell
-PS C:\> Update-AzConnectedKubernetes -ResourceGroupName connected-aks -ClusterName ps-connaks-t01 -Tag @{'key'='1'}
+PS C:\> Update-AzConnectedKubernetes -ClusterName azps_test_cluster -ResourceGroupName azps_test_group -Tag @{'key'='1'}
 
-Location Name           Type
--------- ----           ----
-eastus   ps-connaks-t01 Microsoft.Kubernetes/connectedClusters
+Location Name              ResourceGroupName
+-------- ----              -----------------
+eastus   azps_test_cluster azps_test_group
 ```
 
 This command updates a connected kubernetes.
 
 ### Example 2: Update a connected kubernetes by object
 ```powershell
-PS C:\> $conn = Get-AzConnectedKubernetes -ResourceGroupName connected-aks -ClusterName ps-connaks-t03
-PS C:\> Update-AzConnectedKubernetes -InputObject $conn -Tag @{'key'='2'}
+PS C:\> Get-AzConnectedKubernetes -ClusterName azps_test_cluster -ResourceGroupName azps_test_group | Update-AzConnectedKubernetes -Tag @{'key'='2'}
 
-Location Name           Type
--------- ----           ----
-eastus   ps-connaks-t03 Microsoft.Kubernetes/connectedClusters
+Location Name              ResourceGroupName
+-------- ----              -----------------
+eastus   azps_test_cluster azps_test_group
 ```
 
 This command updates a connected kubernetes by object.
@@ -188,7 +187,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ConnectedKubernetes.Models.Api20210301.IConnectedCluster
+### Microsoft.Azure.PowerShell.Cmdlets.ConnectedKubernetes.Models.Api20211001.IConnectedCluster
 
 ## NOTES
 

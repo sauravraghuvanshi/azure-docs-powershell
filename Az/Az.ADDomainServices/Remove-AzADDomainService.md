@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.ADDomainServices
 online version: https://docs.microsoft.com/powershell/module/az.addomainservices/remove-azaddomainservice
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ADDomainServices/help/Remove-AzADDomainService.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ADDomainServices/help/Remove-AzADDomainService.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ADDomainServices/help/Remove-AzADDomainService.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ADDomainServices/help/Remove-AzADDomainService.md
 ---
 
 # Remove-AzADDomainService

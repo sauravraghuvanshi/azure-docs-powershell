@@ -4,8 +4,8 @@ Module Name: Az.ApiManagement
 ms.assetid: 227EF8A2-E04A-4F6B-B66E-E77F1276A7E4
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/get-azapimanagementsubscriptionkey
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementSubscriptionKey.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementSubscriptionKey.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Get-AzApiManagementSubscriptionKey.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Get-AzApiManagementSubscriptionKey.md
 ---
 
 # Get-AzApiManagementSubscriptionKey
@@ -26,10 +26,12 @@ The **Get-AzApiManagementSubscriptionKey** cmdlet gets a keys of a specified sub
 ## EXAMPLES
 
 ### Example 1: Get a subscription keys with a specified ID
+```powershell
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-East-US" -ServiceName "contoso"
+Get-AzApiManagementSubscriptionKey -Context $apimContext -SubscriptionId "0123456789"
 ```
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-East-US" -ServiceName "contoso"
-PS C:\>Get-AzApiManagementSubscriptionKey -Context $apimContext -SubscriptionId "0123456789"
 
+```output
 PrimaryKey        : 5e48532634114fe999a6979ce0d63a64
 SecondaryKey      : 0a8efaf85a664aa0a412241015c7c8f6
 ```

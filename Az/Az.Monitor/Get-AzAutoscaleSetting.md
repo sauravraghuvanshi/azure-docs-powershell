@@ -4,8 +4,8 @@ Module Name: Az.Monitor
 ms.assetid: 989CE245-FD1D-4E1D-90A2-2D7DA3975D0B
 online version: https://docs.microsoft.com/powershell/module/az.monitor/get-azautoscalesetting
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAutoscaleSetting.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAutoscaleSetting.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/Get-AzAutoscaleSetting.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/Get-AzAutoscaleSetting.md
 ---
 
 # Get-AzAutoscaleSetting

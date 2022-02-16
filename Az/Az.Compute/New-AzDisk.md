@@ -3,13 +3,14 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Compute.dll-Help.xml
 Module Name: Az.Compute
 online version: https://docs.microsoft.com/powershell/module/az.compute/new-azdisk
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/New-AzDisk.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/New-AzDisk.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/New-AzDisk.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/New-AzDisk.md
 ---
 
 # New-AzDisk
 
 ## SYNOPSIS
+
 Creates a managed disk.
 
 ## SYNTAX
@@ -20,11 +21,13 @@ New-AzDisk [-ResourceGroupName] <String> [-DiskName] <String> [-Disk] <PSDisk> [
 ```
 
 ## DESCRIPTION
+
 The **New-AzDisk** cmdlet creates a managed disk.
 
 ## EXAMPLES
 
 ### Example 1
+
 ```
 PS C:\> $diskconfig = New-AzDiskConfig -Location 'Central US' -DiskSizeGB 5 -SkuName Standard_LRS -OsType Windows -CreateOption Empty -EncryptionSettingsEnabled $true;
 PS C:\> $secretUrl = https://myvault.vault-int.azure-int.net/secrets/123/;
@@ -36,11 +39,12 @@ PS C:\> $diskconfig = Set-AzDiskKeyEncryptionKey -Disk $diskconfig -KeyUrl $keyU
 PS C:\> New-AzDisk -ResourceGroupName 'ResourceGroup01' -DiskName 'Disk01' -Disk $diskconfig;
 ```
 
-The first command creates a local empty disk object with size 5GB in Standard_LRS storage account type.  It also sets Windows OS type and enables encryption settings.
+The first command creates a local empty disk object with size 5GB in Standard_LRS storage account type. It also sets Windows OS type and enables encryption settings.
 The second and third commands set the disk encryption key and key encryption key settings for the disk object.
 The last command takes the disk object and creates a disk with name 'Disk01' in resource group 'ResourceGroup01'.
 
 ### Example 2
+
 ```
 PS C:\> $diskconfig = New-AzDiskConfig -Location 'Central US' -DiskSizeGB 5 -SkuName Standard_LRS -OsType Windows -CreateOption Empty -EncryptionSettingsEnabled $true;
 PS C:\> $diskConfig.EncryptionSettingsCollection = New-Object Microsoft.Azure.Management.Compute.Models.EncryptionSettingsCollection
@@ -72,9 +76,33 @@ PS C:\> New-AzDisk -ResourceGroupName 'ResourceGroup01' -DiskName 'Disk01' -Disk
 
 The above command creates a disk with two encryption settings.
 
+### Example 3: Export a gallery image version to disk.
+
+```
+PS C:\> $galleryImageVersionID = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myImageRG/providers/Microsoft.Compute/galleries/myGallery/images/myImage/versions/1.0.0"
+PS C:\> $location = "eastus"
+PS C:\> $rgName = "eastus"
+PS C:\> $region = "eastus"
+PS C:\>
+PS C:\> # Export the OS disk
+PS C:\> $myDiskName = "myOSDisk"
+PS C:\> $imageOSDisk = @{Id = $galleryImageVersionID}
+PS C:\> $OSDiskConfig = New-AzDiskConfig -Location $location -CreateOption "FromImage" -GalleryImageReference $imageOSDisk
+PS C:\> New-AzDisk -ResourceGroupName $rgName -DiskName $myDiskName -Disk $OSDiskConfig
+PS C:\>
+PS C:\> # Export any data disk from the image version
+PS C:\> $myDiskName = "myDataDisk"
+PS C:\> $imageDataDisk = @{Id = $galleryImageVersionID; Lun=1}
+PS C:\> $dataDiskConfig = New-AzDiskConfig -Location $location -CreateOption "FromImage" -GalleryImageReference $imageDataDisk
+PS C:\> New-AzDisk -ResourceGroupName $rgName -DiskName $myDiskName -Disk $dataDiskConfig
+```
+
+This example exports a disk from the image version. To export a data disk from the image version, include the LUN number of the data disk to export from the image version.
+
 ## PARAMETERS
 
 ### -AsJob
+
 Run cmdlet in the background and return a Job to track progress.
 
 ```yaml
@@ -90,6 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
+
 The credentials, account, tenant, and subscription used for communication with azure.
 
 ```yaml
@@ -105,6 +134,7 @@ Accept wildcard characters: False
 ```
 
 ### -Disk
+
 Specifies a local disk object.
 
 ```yaml
@@ -120,6 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -DiskName
+
 Specifies the name of a disk.
 
 ```yaml
@@ -135,6 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
+
 Specifies the name of a resource group.
 
 ```yaml
@@ -150,6 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -165,6 +198,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
@@ -181,6 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

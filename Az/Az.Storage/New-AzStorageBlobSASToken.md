@@ -4,8 +4,8 @@ Module Name: Az.Storage
 ms.assetid: 585371E3-D4CE-452E-B0B0-92B3ABD127E7
 online version: https://docs.microsoft.com/powershell/module/az.storage/new-azstorageblobsastoken
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/New-AzStorageBlobSASToken.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/New-AzStorageBlobSASToken.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/New-AzStorageBlobSASToken.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/New-AzStorageBlobSASToken.md
 ---
 
 # New-AzStorageBlobSASToken

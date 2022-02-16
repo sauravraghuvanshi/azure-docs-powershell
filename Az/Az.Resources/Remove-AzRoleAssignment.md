@@ -4,14 +4,22 @@ Module Name: Az.Resources
 ms.assetid: 8C1D738C-825D-4718-AD2A-9CFEAA7DBD3B
 online version: https://docs.microsoft.com/powershell/module/az.resources/remove-azroleassignment
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzRoleAssignment.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzRoleAssignment.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Remove-AzRoleAssignment.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Remove-AzRoleAssignment.md
 ---
 
 # Remove-AzRoleAssignment
 
 ## SYNOPSIS
 Removes a role assignment to the specified principal who is assigned to a particular role at a particular scope.
+
+The cmdlet may call below Microsoft Graph API according to input parameters:
+
+- GET /users/{id}
+- GET /servicePrincipals/{id}
+- GET /groups/{id}
+- GET /directoryObjects/{id}
+- POST /directoryObjects/getByIds
 
 ## SYNTAX
 

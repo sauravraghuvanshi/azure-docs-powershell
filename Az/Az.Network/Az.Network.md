@@ -4,8 +4,8 @@ Module Guid: eb75c732-e274-4a20-b502-e9958e63484a
 Download Help Link: https://docs.microsoft.com/powershell/module/az.network
 Help Version: 5.4.2.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Az.Network.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Az.Network.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Az.Network.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Az.Network.md
 ---
 
 # Az.Network Module
@@ -934,6 +934,9 @@ Creates a private DNS zone group in the specified private endpoint.
 
 ### [New-AzPrivateEndpoint](New-AzPrivateEndpoint.md)
 Creates a private endpoint.
+
+### [New-AzPrivateEndpointIpConfiguration](New-AzPrivateEndpointIpConfiguration.md)
+Creates an IpConfiguration object for private endpoint.
 
 ### [New-AzPrivateLinkService](New-AzPrivateLinkService.md)
 Creates a private link service

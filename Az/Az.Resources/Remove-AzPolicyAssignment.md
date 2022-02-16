@@ -4,8 +4,8 @@ Module Name: Az.Resources
 ms.assetid: 36399302-3EA5-45A3-A042-536CC7EC2E6D
 online version: https://docs.microsoft.com/powershell/module/az.resources/remove-azpolicyassignment
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzPolicyAssignment.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzPolicyAssignment.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Remove-AzPolicyAssignment.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Remove-AzPolicyAssignment.md
 ---
 
 # Remove-AzPolicyAssignment

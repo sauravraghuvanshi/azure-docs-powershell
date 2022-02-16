@@ -4,8 +4,8 @@ Module Guid: 697e18d3-95de-4211-86a1-ec7c4e163874
 Download Help Link: https://docs.microsoft.com/powershell/module/az.springcloud
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SpringCloud/help/Az.SpringCloud.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SpringCloud/help/Az.SpringCloud.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SpringCloud/help/Az.SpringCloud.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SpringCloud/help/Az.SpringCloud.md
 ---
 
 # Az.SpringCloud Module

@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
 online version: https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerbackendaddressconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzLoadBalancerBackendAddressConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzLoadBalancerBackendAddressConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/New-AzLoadBalancerBackendAddressConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/New-AzLoadBalancerBackendAddressConfig.md
 ---
 
 # New-AzLoadBalancerBackendAddressConfig
@@ -14,7 +14,13 @@ Returns a load balancer backend address config.
 
 ## SYNTAX
 
-### SetByResourcePublicIpAddress (Default)
+### SetByIpAndSubnet (Default)
+```
+New-AzLoadBalancerBackendAddressConfig -IpAddress <String> -Name <String> -SubnetId <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetByIpAndVnet
 ```
 New-AzLoadBalancerBackendAddressConfig -IpAddress <String> -Name <String> -VirtualNetworkId <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -36,8 +42,14 @@ Returns a load balancer backend address config.
 PS C:\> $virtualNetwork = Get-AzVirtualNetwork -Name $vnetName -ResourceGroupName $resourceGroup
 New-AzLoadBalancerBackendAddressConfig -IpAddress "10.0.0.5" -Name "TestVNetRef" -VirtualNetworkId $virtualNetwork.Id
 ```
+### Example 2: New loadbalancer address config with subnet reference
+```powershell
+PS C:\> $virtualNetwork = Get-AzVirtualNetwork -Name $vnetName -ResourceGroupName $resourceGroup
+$subnet = Get-AzVirtualNetworkSubnetConfig -Name $subnetName -VirtualNetwork $virtualNetwork
+New-AzLoadBalancerBackendAddressConfig -IpAddress "10.0.0.5" -Name "TestVNetRef" -SubnetId $subnet.Id
+```
 
-### Example 2: New loadbalancer address config with loadbalancer frontend ip configuration reference
+### Example 3: New loadbalancer address config with loadbalancer frontend ip configuration reference
 ```powershell
 PS C:\> $frontend = New-AzLoadBalancerFrontendIpConfig -Name $frontendName -PublicIpAddress $publicip
 New-AzLoadBalancerBackendAddressConfig -LoadBalancerFrontendIPConfigurationId $frontend.Id -Name "TestLBFERef"
@@ -65,7 +77,7 @@ The IPAddress to add to the backend pool
 
 ```yaml
 Type: System.String
-Parameter Sets: SetByResourcePublicIpAddress
+Parameter Sets: SetByIpAndSubnet, SetByIpAndVnet
 Aliases:
 
 Required: True
@@ -105,12 +117,27 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -SubnetId
+The subnet associated with the Backend Address config
+
+```yaml
+Type: System.String
+Parameter Sets: SetByIpAndSubnet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -VirtualNetworkId
 The virtual network associated with Backend Address config
 
 ```yaml
 Type: System.String
-Parameter Sets: SetByResourcePublicIpAddress
+Parameter Sets: SetByIpAndVnet
 Aliases:
 
 Required: True

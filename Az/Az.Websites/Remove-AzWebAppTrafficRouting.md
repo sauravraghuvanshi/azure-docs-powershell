@@ -2,8 +2,8 @@
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Websites.dll-Help.xml
 Module Name: Az.Websites
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Remove-AzWebAppTrafficRouting.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Remove-AzWebAppTrafficRouting.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Remove-AzWebAppTrafficRouting.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Remove-AzWebAppTrafficRouting.md
 ---
 
 # Remove-AzWebAppTrafficRouting
@@ -23,7 +23,7 @@ The **Remove-AzWebAppTrafficRouting** cmdlet removes a routing rule from an Azur
 
 ## EXAMPLES
 
-### Example 1 Removes the specific routing rule from webapp slot
+### Example 1: Removes the specific routing rule from webapp slot
 ```powershell
 PS C:\> Remove-AzWebAppTrafficRouting -ResourceGroupName "Default-Web-WestUS" -WebAppName "ContosoSite"  -RuleName 'Stg'
 ```

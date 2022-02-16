@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 289B761C-1A1D-46D2-8755-B6B6A4758EFC
 online version: https://docs.microsoft.com/powershell/module/az.network/remove-azapplicationgatewayfrontendipconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayFrontendIPConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayFrontendIPConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzApplicationGatewayFrontendIPConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzApplicationGatewayFrontendIPConfig.md
 ---
 
 # Remove-AzApplicationGatewayFrontendIPConfig
@@ -29,10 +29,12 @@ The **Remove-AzApplicationGatewayFrontendIPConfig** cmdlet removes frontend IP f
 ```
 PS C:\>$AppGw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
 PS C:\> Remove-AzApplicationGatewayFrontendIPConfig -ApplicationGateway $AppGw -Name "FrontEndIP02"
+PS C:\> Set-AzApplicationGateway -ApplicationGateway $AppGW
 ```
 
 The first command gets an application gateway named ApplicationGateway01 and stores it in the $AppGw variable.
 The second command removes the front-end IP configuration named FrontEndIP02 from the application gateway stored in $AppGw.
+The last command updates the application gateway.
 
 ## PARAMETERS
 

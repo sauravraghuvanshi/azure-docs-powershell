@@ -4,8 +4,8 @@ Module Name: Az.CognitiveServices
 ms.assetid: 11D5BFDF-5E5D-46B2-9F9B-A0524EFA1B42
 online version: https://docs.microsoft.com/powershell/module/az.cognitiveservices/get-azcognitiveservicesaccount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CognitiveServices/CognitiveServices/help/Get-AzCognitiveServicesAccount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CognitiveServices/CognitiveServices/help/Get-AzCognitiveServicesAccount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CognitiveServices/CognitiveServices/help/Get-AzCognitiveServicesAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CognitiveServices/CognitiveServices/help/Get-AzCognitiveServicesAccount.md
 ---
 
 # Get-AzCognitiveServicesAccount
@@ -27,6 +27,18 @@ Get-AzCognitiveServicesAccount [-ResourceGroupName] <String> [-Name] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
+### GetDeletedAccountParameterSet
+```
+Get-AzCognitiveServicesAccount [-ResourceGroupName] <String> [-Name] <String> [-Location] <String>
+ [-InRemovedState] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ListDeletedAccountParameterSet
+```
+Get-AzCognitiveServicesAccount [-InRemovedState] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
 ## DESCRIPTION
 The **Get-AzCognitiveServicesAccount** cmdlet gets the provisioned Cognitive Services accounts in the resource group specified by the *ResourceGroupName* parameter.
 If you do not specify the *ResourceGroupName* parameter, this cmdlet gets all Cognitive Services accounts for the current subscription.
@@ -35,9 +47,11 @@ If you do not specify the *ResourceGroupName* parameter, this cmdlet gets all Co
 
 ### Example 1
 ```powershell
-PS C:\> New-AzCognitiveServicesAccount -ResourceGroupName cognitive-services-resource-group -name myluis -Type LUIS -SkuName S0 -Locati
+New-AzCognitiveServicesAccount -ResourceGroupName cognitive-services-resource-group -name myluis -Type LUIS -SkuName S0 -Locati
 on 'WestUS'
+```
 
+```output
 ResourceGroupName : cognitive-services-resource-group
 AccountName       : myluis
 Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/cognitive-services-resource-group/providers/Microsoft.Cog
@@ -69,12 +83,42 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -InRemovedState
+Specifies whether to only show the deleted accounts in the output.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: GetDeletedAccountParameterSet, ListDeletedAccountParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Location
+Cognitive Services Account Location.
+
+```yaml
+Type: System.String
+Parameter Sets: GetDeletedAccountParameterSet
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Name
 Specifies the name of the Cognitive Services account to get.
 
 ```yaml
 Type: System.String
-Parameter Sets: AccountNameParameterSet
+Parameter Sets: AccountNameParameterSet, GetDeletedAccountParameterSet
 Aliases: CognitiveServicesAccountName, AccountName
 
 Required: True
@@ -101,7 +145,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: AccountNameParameterSet
+Parameter Sets: AccountNameParameterSet, GetDeletedAccountParameterSet
 Aliases:
 
 Required: True

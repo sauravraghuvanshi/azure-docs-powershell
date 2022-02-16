@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.KeyVault.dll-Help.xml
 Module Name: Az.KeyVault
 online version: https://docs.microsoft.com/powershell/module/az.keyvault/get-azkeyvaultroleassignment
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultRoleAssignment.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultRoleAssignment.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/KeyVault/KeyVault/help/Get-AzKeyVaultRoleAssignment.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/KeyVault/KeyVault/help/Get-AzKeyVaultRoleAssignment.md
 ---
 
 # Get-AzKeyVaultRoleAssignment
@@ -37,6 +37,13 @@ To specify a security group, use Azure AD ObjectId parameter.
 And to specify an Azure AD application, use ApplicationId or ObjectId parameters.
 The role that is being assigned must be specified using the RoleDefinitionName or RoleDefinitionId parameter.
 The scope at which access is being granted may be specified. It defaults to "/".
+
+The cmdlet may call below Microsoft Graph API according to input parameters:
+
+- GET /directoryObjects/{id}
+- GET /users/{id}
+- GET /servicePrincipals/{id}
+- GET /groups/{id}
 
 ## EXAMPLES
 

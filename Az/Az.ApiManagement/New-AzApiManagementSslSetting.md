@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.dll-Help.xm
 Module Name: Az.ApiManagement
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/new-azapimanagementsslsetting
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementSslSetting.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementSslSetting.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/New-AzApiManagementSslSetting.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/New-AzApiManagementSslSetting.md
 ---
 
 # New-AzApiManagementSslSetting
@@ -28,9 +28,11 @@ This command is to be used with New-AzApiManagement command.
 
 ### Example 1: Create an SSL Setting to enable TLS 1.0 on both Backend and Frontend
 ```powershell
-PS D:\github\azure-powershell\artifacts\Debug\Az.ApiManagement> $enableTls=@{"Tls10" = "True"}
-PS D:\github\azure-powershell\artifacts\Debug\Az.ApiManagement> New-AzApiManagementSslSetting -FrontendProtocol $enableTls -BackendProtocol $enableTls
+$enableTls=@{"Tls10" = "True"}
+New-AzApiManagementSslSetting -FrontendProtocol $enableTls -BackendProtocol $enableTls
+```
 
+```output
 FrontendProtocols BackendProtocols CipherSuites ServerProtocols
 ----------------- ---------------- ------------ ---------------
 {Tls10}           {Tls10}

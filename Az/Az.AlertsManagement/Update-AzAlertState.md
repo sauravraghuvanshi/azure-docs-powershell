@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.AlertsManagement.dll-Help
 Module Name: Az.AlertsManagement
 online version: https://docs.microsoft.com/powershell/module/az.alertsmanagement/update-azalertstate
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AlertsManagement/AlertsManagement/help/Update-AzAlertState.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AlertsManagement/AlertsManagement/help/Update-AzAlertState.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AlertsManagement/AlertsManagement/help/Update-AzAlertState.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AlertsManagement/AlertsManagement/help/Update-AzAlertState.md
 ---
 
 # Update-AzAlertState
@@ -33,7 +33,7 @@ Update-AzAlertState -State <String> -InputObject <PSAlert> [-DefaultProfile <IAz
 
 ### Example 1
 ```powershell
-PS C:\> Update-AzAlertState -AlertId "afbf1b3a-0a6c-4f19-9c9b-644ccd7b1529" -State "Closed"
+Update-AzAlertState -AlertId "afbf1b3a-0a6c-4f19-9c9b-644ccd7b1529" -State "Closed"
 ```
 
 This cmdlet updates the alert state to Closed.

@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: E066BBFA-2E03-431D-85D1-99F230B6AC59
 online version: https://docs.microsoft.com/powershell/module/az.network/get-aznetworkinterface
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkInterface.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkInterface.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzNetworkInterface.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzNetworkInterface.md
 ---
 
 # Get-AzNetworkInterface

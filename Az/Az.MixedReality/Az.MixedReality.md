@@ -4,8 +4,8 @@ Module Guid: 91832aaa-dc11-4583-8239-bce5fd531604
 Download Help Link: https://aka.ms/mixed-reality-azure-powershell-help
 Help Version: 0.1.1.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MixedReality/MixedReality/help/Az.MixedReality.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MixedReality/MixedReality/help/Az.MixedReality.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MixedReality/MixedReality/help/Az.MixedReality.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MixedReality/MixedReality/help/Az.MixedReality.md
 ---
 
 # Az.MixedReality Module

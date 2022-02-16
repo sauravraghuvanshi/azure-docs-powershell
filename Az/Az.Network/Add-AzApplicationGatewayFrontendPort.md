@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 40198C86-A4EB-494A-86D5-DF632518EB95
 online version: https://docs.microsoft.com/powershell/module/az.network/add-azapplicationgatewayfrontendport
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzApplicationGatewayFrontendPort.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzApplicationGatewayFrontendPort.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzApplicationGatewayFrontendPort.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzApplicationGatewayFrontendPort.md
 ---
 
 # Add-AzApplicationGatewayFrontendPort

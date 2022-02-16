@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.DataProtection
 online version: https://docs.microsoft.com/powershell/module/az.dataprotection/edit-azdataprotectionpolicytriggerclientobject
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataProtection/help/Edit-AzDataProtectionPolicyTriggerClientObject.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataProtection/help/Edit-AzDataProtectionPolicyTriggerClientObject.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataProtection/help/Edit-AzDataProtectionPolicyTriggerClientObject.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataProtection/help/Edit-AzDataProtectionPolicyTriggerClientObject.md
 ---
 
 # Edit-AzDataProtectionPolicyTriggerClientObject
@@ -43,7 +43,7 @@ Backup Policy object.
 To construct, see NOTES section for POLICY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20210201Preview.IBackupPolicy
+Type: Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20210701.IBackupPolicy
 Parameter Sets: (All)
 Aliases:
 
@@ -76,7 +76,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20210201Preview.IBackupPolicy
+### Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20210701.IBackupPolicy
 
 ## NOTES
 

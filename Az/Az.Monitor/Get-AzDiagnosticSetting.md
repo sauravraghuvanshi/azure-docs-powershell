@@ -4,8 +4,8 @@ Module Name: Az.Monitor
 ms.assetid: 60B497F6-98A2-4C60-B142-FF5CD123362D
 online version: https://docs.microsoft.com/powershell/module/az.monitor/get-azdiagnosticsetting
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzDiagnosticSetting.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzDiagnosticSetting.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/Get-AzDiagnosticSetting.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/Get-AzDiagnosticSetting.md
 ---
 
 # Get-AzDiagnosticSetting
@@ -15,8 +15,15 @@ Gets the logged categories and time grains.
 
 ## SYNTAX
 
+### ResourceIdParameterSet (Default)
 ```
-Get-AzDiagnosticSetting [-ResourceId] <String> [-Name <String>] [-DefaultProfile <IAzureContextContainer>]
+Get-AzDiagnosticSetting [-Name <String>] [-ResourceId] <String> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### SubscriptionIdParameterSet
+```
+Get-AzDiagnosticSetting [-Name <String>] [-SubscriptionId] <String> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
@@ -77,11 +84,26 @@ Specifies the ID of the resource.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
-Aliases:
+Parameter Sets: ResourceIdParameterSet
+Aliases: TargetResourceId
 
 Required: True
 Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -SubscriptionId
+The subscription id
+
+```yaml
+Type: System.String
+Parameter Sets: SubscriptionIdParameterSet
+Aliases:
+
+Required: True
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False

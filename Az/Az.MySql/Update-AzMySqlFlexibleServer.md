@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.MySql
 online version: https://docs.microsoft.com/powershell/module/az.mysql/update-azmysqlflexibleserver
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MySql/help/Update-AzMySqlFlexibleServer.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MySql/help/Update-AzMySqlFlexibleServer.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MySql/help/Update-AzMySqlFlexibleServer.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MySql/help/Update-AzMySqlFlexibleServer.md
 ---
 
 # Update-AzMySqlFlexibleServer
@@ -19,19 +19,19 @@ Use Update-AzMySqlFlexibleServerConfiguration instead if you want update server 
 ### UpdateExpanded (Default)
 ```
 Update-AzMySqlFlexibleServer -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-AdministratorLoginPassword <SecureString>] [-BackupRetentionDay <Int32>] [-HaEnabled <HaEnabledEnum>]
+ [-AdministratorLoginPassword <SecureString>] [-BackupRetentionDay <Int32>] [-HighAvailability <String>]
  [-MaintenanceWindow <String>] [-ReplicationRole <String>] [-Sku <String>] [-SkuTier <SkuTier>]
- [-SslEnforcement <SslEnforcementEnum>] [-StorageAutogrow <StorageAutogrow>] [-StorageInMb <Int32>]
- [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StorageAutogrow <StorageAutogrow>] [-StorageInMb <Int32>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>]
+ [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-AzMySqlFlexibleServer -InputObject <IMySqlIdentity> [-AdministratorLoginPassword <SecureString>]
- [-BackupRetentionDay <Int32>] [-HaEnabled <HaEnabledEnum>] [-MaintenanceWindow <String>]
- [-ReplicationRole <String>] [-Sku <String>] [-SkuTier <SkuTier>] [-SslEnforcement <SslEnforcementEnum>]
- [-StorageAutogrow <StorageAutogrow>] [-StorageInMb <Int32>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>]
- [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-BackupRetentionDay <Int32>] [-HighAvailability <String>] [-MaintenanceWindow <String>]
+ [-ReplicationRole <String>] [-Sku <String>] [-SkuTier <SkuTier>] [-StorageAutogrow <StorageAutogrow>]
+ [-StorageInMb <Int32>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,9 +45,9 @@ Use Update-AzMySqlFlexibleServerConfiguration instead if you want update server 
 ```powershell
 PS C:\> Update-AzMySqlFlexibleServer -ResourceGroupName PowershellMySqlTest -Name mysql-test -Sku Standard_D4ds_v4
 
-Name          Location AdministratorLogin Version StorageProfileStorageMb SkuName          SkuTier        
-----          -------- ------------------ ------- ----------------------- ---------------- -------------
-mysql-test    westus2   mysql_test         5.7     5120                    Standard_D4ds_v4 GeneralPurpose
+Name                 Location  SkuName          SkuTier        AdministratorLogin Version StorageSizeGb
+----                 --------  -------          -------        ------------------ ------- -------------
+mysql-test   West US 2 Standard_D2ds_v4 GeneralPurpose admin              5.7     32
 ```
 
 This cmdlet updates MySql server by resource group and server name.
@@ -56,9 +56,9 @@ This cmdlet updates MySql server by resource group and server name.
 ```powershell
 PS C:\> Get-AzMySqlFlexibleServer -ResourceGroupName PowershellMySqlTest -ServerName mysql-test | Update-AzMySqlFlexibleServer -BackupRetentionDay 23 -StorageInMb 10240
 
-Name          Location AdministratorLogin Version StorageProfileStorageMb SkuName          SkuTier        
-----          -------- ------------------ ------- ----------------------- ---------------- -------------
-mysql-test    westus2   mysql_test         5.7     5120                    Standard_D2ds_v4 GeneralPurpose
+Name                 Location  SkuName          SkuTier        AdministratorLogin Version StorageSizeGb
+----                 --------  -------          -------        ------------------ ------- -------------
+mysql-test   West US 2 Standard_D2ds_v4 GeneralPurpose admin              5.7     32
 ```
 
 This cmdlet updates MySql server by identity.
@@ -126,13 +126,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -HaEnabled
+### -HighAvailability
 Enable or disable high availability feature.
+Default value is Disabled.
+Default: Disabled.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MySql.Support.HaEnabledEnum
+Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: HaEnabled
 
 Required: False
 Position: Named
@@ -268,23 +270,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SslEnforcement
-Enable ssl enforcement or not when connect to server.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.MySql.Support.SslEnforcementEnum
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -StorageAutogrow
-Enable Storage Auto Grow.
+Enable or disable Storage Auto Grow.
+The default value is Disabled
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.MySql.Support.StorageAutogrow
@@ -383,7 +371,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.MySql.Models.Api20200701Preview.IServerAutoGenerated
+### Microsoft.Azure.PowerShell.Cmdlets.MySql.Models.Api20210501.IServerAutoGenerated
 
 ## NOTES
 
@@ -395,11 +383,11 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IMySqlIdentity>: Identity Parameter.
+  - `[BackupName <String>]`: The name of the backup.
   - `[ConfigurationName <String>]`: The name of the server configuration.
   - `[DatabaseName <String>]`: The name of the database.
   - `[FirewallRuleName <String>]`: The name of the server firewall rule.
   - `[Id <String>]`: Resource identity path
-  - `[KeyName <String>]`: The name of the server key.
   - `[LocationName <String>]`: The name of the location.
   - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
   - `[SecurityAlertPolicyName <SecurityAlertPolicyName?>]`: The name of the security alert policy.

@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Accounts.dll-Help.xml
 Module Name: Az.Accounts
 online version: https://docs.microsoft.com/powershell/module/az.accounts/add-azenvironment
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Add-AzEnvironment.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Add-AzEnvironment.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Add-AzEnvironment.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Add-AzEnvironment.md
 ---
 
 # Add-AzEnvironment
@@ -30,8 +30,8 @@ Add-AzEnvironment [-Name] <String> [[-PublishSettingsFileUrl] <String>] [[-Servi
  [-AzureAnalysisServicesEndpointResourceId <String>] [-AzureAttestationServiceEndpointSuffix <String>]
  [-AzureAttestationServiceEndpointResourceId <String>] [-AzureSynapseAnalyticsEndpointSuffix <String>]
  [-ContainerRegistryEndpointSuffix <String>] [-AzureSynapseAnalyticsEndpointResourceId <String>]
- [-Scope <ContextModificationScope>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-MicrosoftGraphEndpointResourceId <String>] [-MicrosoftGraphUrl <String>] [-Scope <ContextModificationScope>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ARMEndpoint
@@ -60,8 +60,8 @@ The built-in environments AzureCloud and AzureChinaCloud target existing public 
 ## EXAMPLES
 
 ### Example 1: Creating and modifying a new environment
-```
-PS C:\> Add-AzEnvironment -Name TestEnvironment `
+```powershell
+Add-AzEnvironment -Name TestEnvironment `
         -ActiveDirectoryEndpoint TestADEndpoint `
         -ActiveDirectoryServiceEndpointResourceId TestADApplicationId `
         -ResourceManagerEndpoint TestRMEndpoint `
@@ -72,7 +72,7 @@ Name            Resource Manager Url ActiveDirectory Authority
 ----            -------------------- -------------------------
 TestEnvironment TestRMEndpoint       TestADEndpoint/
 
-PS C:\> Set-AzEnvironment -Name TestEnvironment `
+Set-AzEnvironment -Name TestEnvironment `
         -ActiveDirectoryEndpoint NewTestADEndpoint `
         -GraphEndpoint NewTestGraphEndpoint | Format-List
 
@@ -112,7 +112,7 @@ BatchEndpointResourceId                           :
 In this example we are creating a new Azure environment with sample endpoints using Add-AzEnvironment, and then we are changing the value of the ActiveDirectoryEndpoint and GraphEndpoint attributes of the created environment using the cmdlet Set-AzEnvironment.
 
 ### Example 2: Discovering a new environment via Uri
-```
+```powershell
 <#
 Uri https://configuredmetadata.net returns an array of environment metadata. The following example contains a payload for the AzureCloud default environment.
 
@@ -151,8 +151,10 @@ Uri https://configuredmetadata.net returns an array of environment metadata. The
 ]
 #>
 
-PS C:\> Add-AzEnvironment -AutoDiscover -Uri https://configuredmetadata.net
+Add-AzEnvironment -AutoDiscover -Uri https://configuredmetadata.net
+```
 
+```Output
 Name            Resource Manager Url ActiveDirectory Authority
 ----            -------------------- -------------------------
 TestEnvironment TestRMEndpoint       TestADEndpoint/
@@ -547,6 +549,36 @@ Aliases:
 
 Required: False
 Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -MicrosoftGraphEndpointResourceId
+The resource identifier of Microsoft Graph
+
+```yaml
+Type: System.String
+Parameter Sets: Name
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -MicrosoftGraphUrl
+Microsoft Graph Url
+
+```yaml
+Type: System.String
+Parameter Sets: Name
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False

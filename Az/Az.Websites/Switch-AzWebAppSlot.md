@@ -4,14 +4,14 @@ Module Name: Az.Websites
 ms.assetid: 258A4EA9-B82C-4664-8DCE-30D47A623868
 online version: https://docs.microsoft.com/powershell/module/az.websites/switch-azwebappslot
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Switch-AzWebAppSlot.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Switch-AzWebAppSlot.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Switch-AzWebAppSlot.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Switch-AzWebAppSlot.md
 ---
 
 # Switch-AzWebAppSlot
 
 ## SYNOPSIS
-Swap two slots with a Web App
+Swap two slots within a Web App
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ Switch-AzWebAppSlot [-SourceSlotName] <String> [[-DestinationSlotName] <String>]
 ```
 
 ## DESCRIPTION
-The **Switch-AzWebAppSlot** switches two slots associated with an Azure Web App.
+The **Switch-AzWebAppSlot** cmdlet switches two slots associated with an Azure Web App.
 
 ## EXAMPLES
 
@@ -39,7 +39,10 @@ The **Switch-AzWebAppSlot** switches two slots associated with an Azure Web App.
 PS C:\> Switch-AzWebAppSlot -SourceSlotName "sourceslot" -DestinationSlotName "destinationslot" -ResourceGroupName "Default-Web-WestUS" -Name "ContosoWebApp"
 ```
 
-This command will switch slot "sourceslot" slot with "destinationslot" the Web App ContosoWebApp associated with the resource group Default-Web-WestUS
+This command will switch slot "sourceslot" with slot "destinationslot" on the Web App ContosoWebApp in the resource group Default-Web-WestUS.
+
+> [!NOTE]
+> Use "production" as the slot name when the either the source or destination slot is intended to be the production slot.
 
 ## PARAMETERS
 

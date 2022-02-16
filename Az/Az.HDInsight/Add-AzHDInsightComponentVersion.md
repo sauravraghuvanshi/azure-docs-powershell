@@ -4,8 +4,8 @@ Module Name: Az.HDInsight
 ms.assetid: 774848C9-47A1-4C43-B6FA-B3C0C3C76470
 online version: https://docs.microsoft.com/powershell/module/az.hdinsight/add-azhdinsightcomponentversion
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/Add-AzHDInsightComponentVersion.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/Add-AzHDInsightComponentVersion.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HDInsight/HDInsight/help/Add-AzHDInsightComponentVersion.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HDInsight/HDInsight/help/Add-AzHDInsightComponentVersion.md
 ---
 
 # Add-AzHDInsightComponentVersion

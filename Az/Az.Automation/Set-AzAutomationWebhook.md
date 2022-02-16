@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: 9EA7F710-36FB-435C-BF28-1015E5D3155F
 online version: https://docs.microsoft.com/powershell/module/az.automation/set-azautomationwebhook
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Set-AzAutomationWebhook.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Set-AzAutomationWebhook.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Set-AzAutomationWebhook.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Set-AzAutomationWebhook.md
 ---
 
 # Set-AzAutomationWebhook

@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.ApplicationInsights.dll-H
 Module Name: Az.ApplicationInsights
 online version: https://docs.microsoft.com/powershell/module/az.applicationinsights/remove-azapplicationinsights
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApplicationInsights/ApplicationInsights/help/Remove-AzApplicationInsights.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApplicationInsights/ApplicationInsights/help/Remove-AzApplicationInsights.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/ApplicationInsights/help/Remove-AzApplicationInsights.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/ApplicationInsights/help/Remove-AzApplicationInsights.md
 ---
 
 # Remove-AzApplicationInsights
@@ -38,8 +38,10 @@ Remove an application insights resource
 ## EXAMPLES
 
 ### Example 1 Remove an application insights resource
+```powershell
+Remove-AzApplicationInsights -ResourceGroupName "testgroup" -Name "test" -PassThru
 ```
-PS C:\> Remove-AzApplicationInsights -ResourceGroupName "testgroup" -Name "test" -PassThru
+```output
 True
 ```
 

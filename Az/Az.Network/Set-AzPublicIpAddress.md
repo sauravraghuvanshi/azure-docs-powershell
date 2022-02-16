@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: EC798838-1850-4E88-B17F-D2F00F2D4EE9
 online version: https://docs.microsoft.com/powershell/module/az.network/set-azpublicipaddress
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzPublicIpAddress.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzPublicIpAddress.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzPublicIpAddress.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzPublicIpAddress.md
 ---
 
 # Set-AzPublicIpAddress

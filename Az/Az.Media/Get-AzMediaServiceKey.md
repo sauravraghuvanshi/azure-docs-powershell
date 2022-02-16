@@ -4,8 +4,8 @@ Module Name: Az.Media
 ms.assetid: 2099938F-5325-416C-AE10-6813546A1055
 online version: https://docs.microsoft.com/powershell/module/az.media/get-azmediaservicekey
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/Get-AzMediaServiceKey.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/Get-AzMediaServiceKey.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Media/Media/help/Get-AzMediaServiceKey.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Media/Media/help/Get-AzMediaServiceKey.md
 ---
 
 # Get-AzMediaServiceKey

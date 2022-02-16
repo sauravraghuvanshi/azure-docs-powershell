@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.FrontDoor.dll-Help.xml
 Module Name: Az.FrontDoor
 online version: https://docs.microsoft.com/powershell/module/az.frontdoor/new-azfrontdoorwafmanagedruleobject
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafManagedRuleObject.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafManagedRuleObject.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafManagedRuleObject.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafManagedRuleObject.md
 ---
 
 # New-AzFrontDoorWafManagedRuleObject
@@ -15,7 +15,7 @@ Create ManagedRule Object for WAF policy creation
 ## SYNTAX
 
 ```
-New-AzFrontDoorWafManagedRuleObject -Type <String> -Version <String>
+New-AzFrontDoorWafManagedRuleObject -Type <String> -Version <String> [-Action <String>]
  [-RuleGroupOverride <PSAzureRuleGroupOverride[]>] [-Exclusion <PSManagedRuleExclusion[]>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
@@ -44,6 +44,21 @@ RuleGroupOverrides RuleSetType    RuleSetVersion
 Create a ManagedRule Object
 
 ## PARAMETERS
+
+### -Action
+Rule Set Action. Possible values include: 'Allow', 'Block', 'Log', 'Redirect'.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.

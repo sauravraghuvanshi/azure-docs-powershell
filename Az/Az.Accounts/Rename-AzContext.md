@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Accounts.dll-Help.xml
 Module Name: Az.Accounts
 online version: https://docs.microsoft.com/powershell/module/az.accounts/rename-azcontext
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Rename-AzContext.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Rename-AzContext.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Rename-AzContext.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Rename-AzContext.md
 ---
 
 # Rename-AzContext
@@ -34,7 +34,7 @@ Rename an Azure context.  By default contexts are named by user account and subs
 
 ### Example 1: Rename a context using named parameters
 ```powershell
-PS C:\> Rename-AzContext -SourceName "[user1@contoso.org; 12345-6789-2345-3567890]" -TargetName "Work"
+Rename-AzContext -SourceName "[user1@contoso.org; 12345-6789-2345-3567890]" -TargetName "Work"
 ```
 
 Rename the context for 'user1@contoso.org' with subscription '12345-6789-2345-3567890' to 'Work'.  After this command, you will be able to target the context using 
@@ -42,7 +42,7 @@ Rename the context for 'user1@contoso.org' with subscription '12345-6789-2345-35
 
 ### Example 2: Rename a context using positional parameters
 ```powershell
-PS C:\> Rename-AzContext "My context" "Work"
+Rename-AzContext "My context" "Work"
 ```
 
 Rename the context named "My context" to "Work".  After this command, you will be able to target the context using 

@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.Kusto
 online version: https://docs.microsoft.com/powershell/module/az.kusto/new-azkustodataconnection
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/help/New-AzKustoDataConnection.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/help/New-AzKustoDataConnection.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Kusto/help/New-AzKustoDataConnection.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Kusto/help/New-AzKustoDataConnection.md
 ---
 
 # New-AzKustoDataConnection
@@ -473,7 +473,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Kusto.Models.Api20200918.IDataConnection
+### Microsoft.Azure.PowerShell.Cmdlets.Kusto.Models.Api202101.IDataConnection
 
 ## NOTES
 

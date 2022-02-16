@@ -4,8 +4,8 @@ Module Name: Az.RecoveryServices
 ms.assetid: DEB3D7B5-D974-472B-B8B4-9A19CA6AECCC
 online version: https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesBackupItem.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesBackupItem.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesBackupItem.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesBackupItem.md
 ---
 
 # Get-AzRecoveryServicesBackupItem
@@ -21,7 +21,7 @@ Gets the items from a container in Backup.
 Get-AzRecoveryServicesBackupItem [-Container] <ContainerBase> [[-Name] <String>]
  [[-ProtectionStatus] <ItemProtectionStatus>] [[-ProtectionState] <ItemProtectionState>]
  [-WorkloadType] <WorkloadType> [[-DeleteState] <ItemDeleteState>] [-FriendlyName <String>] [-VaultId <String>]
- [-DefaultProfile <IAzureContextContainer>]  [-UseSecondaryRegion] [<CommonParameters>]
+ [-DefaultProfile <IAzureContextContainer>] [-UseSecondaryRegion] [<CommonParameters>]
 ```
 
 ### GetItemsForVault
@@ -29,7 +29,7 @@ Get-AzRecoveryServicesBackupItem [-Container] <ContainerBase> [[-Name] <String>]
 Get-AzRecoveryServicesBackupItem [-BackupManagementType] <BackupManagementType> [[-Name] <String>]
  [[-ProtectionStatus] <ItemProtectionStatus>] [[-ProtectionState] <ItemProtectionState>]
  [-WorkloadType] <WorkloadType> [[-DeleteState] <ItemDeleteState>] [-FriendlyName <String>] [-VaultId <String>]
- [-DefaultProfile <IAzureContextContainer>]  [-UseSecondaryRegion] [<CommonParameters>]
+ [-DefaultProfile <IAzureContextContainer>] [-UseSecondaryRegion] [<CommonParameters>]
 ```
 
 ### GetItemsForPolicy
@@ -37,7 +37,7 @@ Get-AzRecoveryServicesBackupItem [-BackupManagementType] <BackupManagementType> 
 Get-AzRecoveryServicesBackupItem [-Policy] <PolicyBase> [[-Name] <String>]
  [[-ProtectionStatus] <ItemProtectionStatus>] [[-ProtectionState] <ItemProtectionState>]
  [[-DeleteState] <ItemDeleteState>] [-FriendlyName <String>] [-VaultId <String>]
- [-DefaultProfile <IAzureContextContainer>]  [-UseSecondaryRegion] [<CommonParameters>]
+ [-DefaultProfile <IAzureContextContainer>] [-UseSecondaryRegion] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -87,7 +87,7 @@ The class of resources being protected. The acceptable values for this parameter
 Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.BackupManagementType
 Parameter Sets: GetItemsForVault
 Aliases:
-Accepted values: AzureVM, MARS, AzureStorage, AzureWorkload
+Accepted values: AzureVM, MAB, AzureStorage, AzureWorkload
 
 Required: True
 Position: 1
@@ -244,6 +244,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -UseSecondaryRegion
+Filters from Secondary Region for Cross Region Restore
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -VaultId
 
 ARM ID of the Recovery Services Vault.
@@ -267,12 +282,13 @@ Workload type of the resource. The acceptable values for this parameter are:
 - AzureVM
 - AzureFiles
 - MSSQL
+- FileFolder
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.WorkloadType
 Parameter Sets: GetItemsForContainer, GetItemsForVault
 Aliases:
-Accepted values: AzureVM, AzureFiles, MSSQL
+Accepted values: AzureVM, AzureFiles, MSSQL, FileFolder, SAPHanaDatabase
 
 Required: True
 Position: 5

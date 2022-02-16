@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Accounts.dll-Help.xml
 Module Name: Az.Accounts
 online version: https://docs.microsoft.com/powershell/module/az.accounts/set-azdefault
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Set-AzDefault.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Set-AzDefault.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Set-AzDefault.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Set-AzDefault.md
 ---
 
 # Set-AzDefault
@@ -25,9 +25,11 @@ The Set-AzDefault cmdlet adds or changes the defaults in the current context.
 ## EXAMPLES
 
 ### Example 1
+```powershell
+Set-AzDefault -ResourceGroupName myResourceGroup
 ```
-PS C:\> Set-AzDefault -ResourceGroupName myResourceGroup
 
+```Output
 Id         : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup
 Name       : myResourceGroup
 Properties : Microsoft.Azure.Management.Internal.Resources.Models.ResourceGroupProperties

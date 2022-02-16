@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Websites.dll-Help.xml
 Module Name: Az.Websites
 online version: https://docs.microsoft.com/powershell/module/az.websites/import-AzWebAppKeyVaultCertificate
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Import-AzWebAppKeyVaultCertificate.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Import-AzWebAppKeyVaultCertificate.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Import-AzWebAppKeyVaultCertificate.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Import-AzWebAppKeyVaultCertificate.md
 ---
 
 # Import-AzWebAppKeyVaultCertificate
@@ -27,7 +27,7 @@ The **Import-AzWebAppKeyVaultCertificate** cmdlet imports an SSL certificate to 
 
 ### Example 1
 ```powershell
-PS C:\> Import-AzWebAppKeyVaultCertificate -ResourceGroupName "Default-Web-WestUS" -Name "ContosoWebApp" 
+PS C:\> Import-AzWebAppKeyVaultCertificate -ResourceGroupName "Default-Web-WestUS" -WebAppName "ContosoWebApp" 
 -KeyVaultName "ContosoKeyVault" -CertName "ContosoCertname"
 ```
 
@@ -35,7 +35,7 @@ This command imports an SSL certificate to a web app from Key Vault.
 
 ### Example 2
 ```powershell
-PS C:\> Import-AzWebAppKeyVaultCertificate -ResourceGroupName "Default-Web-WestUS" -Name "ContosoWebApp" 
+PS C:\> Import-AzWebAppKeyVaultCertificate -ResourceGroupName "Default-Web-WestUS" -WebAppName "ContosoWebApp" 
 -KeyVaultName  '/subscriptions/[sub id]/resourceGroups/[rg]/providers/Microsoft.KeyVault/vaults/[vault name]' 
 -CertName "ContosoCertname"
 ```
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -KeyVaultName
-The name of the keyvault.
+The name of the keyvault or Id of the KeyVault.
 
 ```yaml
 Type: System.String

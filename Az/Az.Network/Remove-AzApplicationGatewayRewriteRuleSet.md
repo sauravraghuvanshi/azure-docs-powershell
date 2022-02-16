@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
 online version: https://docs.microsoft.com/powershell/module/az.network/remove-azapplicationgatewayrewriteruleset
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayRewriteRuleSet.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayRewriteRuleSet.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzApplicationGatewayRewriteRuleSet.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzApplicationGatewayRewriteRuleSet.md
 ---
 
 # Remove-AzApplicationGatewayRewriteRuleSet
@@ -28,10 +28,12 @@ The **Remove-AzApplicationGatewayRewriteRuleSet** cmdlet removes a rewrite rule 
 ```powershell
 PS C:\> $AppGw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
 PS C:\> Remove-AzApplicationGatewayRewriteRuleSet -ApplicationGateway $AppGw -Name "RuleSet02"
+PS C:\> Set-AzApplicationGateway -ApplicationGateway $AppGw
 ```
 
 The first command gets an application gateway and stores it in the $AppGw variable.
 The second command removes the rewrite rule set named RuleSet02 from the application gateway stored in $AppGw.
+The last command updates the application gateway.
 
 ## PARAMETERS
 

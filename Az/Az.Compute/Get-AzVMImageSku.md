@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: D2BBAC5B-A7B9-44DA-BE37-24D89E03BAB3
 online version: https://docs.microsoft.com/powershell/module/az.compute/get-azvmimagesku
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMImageSku.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMImageSku.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Get-AzVMImageSku.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Get-AzVMImageSku.md
 ---
 
 # Get-AzVMImageSku
@@ -16,7 +16,7 @@ Gets VMImage SKUs.
 ## SYNTAX
 
 ```
-Get-AzVMImageSku -Location <String> -PublisherName <String> -Offer <String>
+Get-AzVMImageSku -Location <String> [-EdgeZone <String>] -PublisherName <String> -Offer <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -46,6 +46,21 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EdgeZone
+Set the extended location name for EdgeZone. If not set, VM Image sku will be queried from Azure main region. Otherwise it will be queried from the specified extended location
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

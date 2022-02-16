@@ -4,8 +4,8 @@ Module Name: Az.Media
 ms.assetid: 9843D191-CBC4-481A-BD36-D7B2D7917BD9
 online version: https://docs.microsoft.com/powershell/module/az.media/get-azmediaservice
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/Get-AzMediaService.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/Get-AzMediaService.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Media/Media/help/Get-AzMediaService.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Media/Media/help/Get-AzMediaService.md
 ---
 
 # Get-AzMediaService

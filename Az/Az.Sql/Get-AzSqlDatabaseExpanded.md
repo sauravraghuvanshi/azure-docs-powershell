@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: 952967EB-AEAD-4597-B837-6669CE73739E
 online version: https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabaseexpanded
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseExpanded.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseExpanded.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlDatabaseExpanded.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlDatabaseExpanded.md
 ---
 
 # Get-AzSqlDatabaseExpanded
@@ -54,7 +54,7 @@ Required: False
 Position: 2
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -DefaultProfile

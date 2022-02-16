@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Monitor.dll-Help.xml
 Module Name: Az.Monitor
 online version: https://docs.microsoft.com/powershell/module/az.monitor/new-azdatacollectionruleassociation
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzDataCollectionRuleAssociation.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzDataCollectionRuleAssociation.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/New-AzDataCollectionRuleAssociation.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/New-AzDataCollectionRuleAssociation.md
 ---
 
 # New-AzDataCollectionRuleAssociation
@@ -34,9 +34,9 @@ New-AzDataCollectionRuleAssociation
    -AssociationName <string>
    -InputObject <PSDataCollectionRuleResource>
    [-Description <string>]
-   [-DefaultProfile <IAzureContextContainer>]  
-   [-WhatIf]   
-   [-Confirm]   
+   [-DefaultProfile <IAzureContextContainer>]
+   [-WhatIf]
+   [-Confirm]
    [<CommonParameters>]
 ```
 
@@ -219,6 +219,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Set-AzDataCollectionRuleAssociation](./Set-AzDataCollectionRuleAssociation.md)
 [Remove-AzDataCollectionRuleAssociation](./Remove-AzDataCollectionRuleAssociation.md)
 [Get-AzDataCollectionRuleAssociation](./Get-AzDataCollectionRuleAssociation.md)

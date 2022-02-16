@@ -4,8 +4,8 @@ Module Name: Az.Storage
 ms.assetid: FCDCEF0B-6E2C-480E-9841-EF4E64D61D54
 online version: https://docs.microsoft.com/powershell/module/az.storage/new-azstorageshare
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/New-AzStorageShare.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/New-AzStorageShare.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/New-AzStorageShare.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/New-AzStorageShare.md
 ---
 
 # New-AzStorageShare

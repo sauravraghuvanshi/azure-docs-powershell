@@ -4,8 +4,8 @@ Module Name: Az.Resources
 ms.assetid: 089954C3-7F3E-46C2-AA93-C0151EACDA2F
 online version: https://docs.microsoft.com/powershell/module/az.resources/stop-azresourcegroupdeployment
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Stop-AzResourceGroupDeployment.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Stop-AzResourceGroupDeployment.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Stop-AzResourceGroupDeployment.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Stop-AzResourceGroupDeployment.md
 ---
 
 # Stop-AzResourceGroupDeployment

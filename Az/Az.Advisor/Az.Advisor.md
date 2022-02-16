@@ -4,8 +4,8 @@ Module Guid: 860B550A-20CE-4FB1-BAE7-EF10E9221BCE
 Download Help Link: https://docs.microsoft.com/powershell/module/az.advisor
 Help Version: 0.0.1.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Advisor/Advisor/help/Az.Advisor.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Advisor/Advisor/help/Az.Advisor.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Advisor/Advisor/help/Az.Advisor.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Advisor/Advisor/help/Az.Advisor.md
 ---
 
 # Az.Advisor Module

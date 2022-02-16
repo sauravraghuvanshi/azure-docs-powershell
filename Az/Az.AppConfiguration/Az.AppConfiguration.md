@@ -4,8 +4,8 @@ Module Guid: 3ff16738-381e-4d5a-9d90-c7ef6816f78e
 Download Help Link: https://docs.microsoft.com/powershell/module/az.appconfiguration
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AppConfiguration/help/Az.AppConfiguration.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AppConfiguration/help/Az.AppConfiguration.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/Az.AppConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/Az.AppConfiguration.md
 ---
 
 # Az.AppConfiguration Module

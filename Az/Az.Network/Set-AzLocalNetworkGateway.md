@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: F8C1DF39-1DAF-4BDB-8B0E-1BC3B5E82185
 online version: https://docs.microsoft.com/powershell/module/az.network/set-azlocalnetworkgateway
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzLocalNetworkGateway.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzLocalNetworkGateway.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzLocalNetworkGateway.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzLocalNetworkGateway.md
 ---
 
 # Set-AzLocalNetworkGateway

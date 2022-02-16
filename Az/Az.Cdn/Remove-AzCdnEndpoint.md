@@ -4,8 +4,8 @@ Module Name: Az.Cdn
 ms.assetid: 7ADF4CDE-638B-4E00-88B1-688702B084A5
 online version: https://docs.microsoft.com/powershell/module/az.cdn/remove-azcdnendpoint
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Remove-AzCdnEndpoint.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Remove-AzCdnEndpoint.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Remove-AzCdnEndpoint.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Remove-AzCdnEndpoint.md
 ---
 
 # Remove-AzCdnEndpoint
@@ -31,6 +31,11 @@ Remove-AzCdnEndpoint -CdnEndpoint <PSEndpoint> [-PassThru] [-Force] [-DefaultPro
 The **Remove-AzCdnEndpoint** cmdlet removes an Azure Content Delivery Network (CDN) endpoint.
 
 ## EXAMPLES
+
+### Example 1
+```powershell
+Remove-AzCdnEndpoint -ResourceGroupName myresourcegroup -ProfileName mycdnprofile -EndpointName myendpoint -Force
+```
 
 ## PARAMETERS
 

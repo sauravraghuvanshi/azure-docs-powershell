@@ -4,8 +4,8 @@ Module Name: Az.Storage
 ms.assetid: 11AAA319-DDBB-4156-9BE7-4DE8B80A904C
 online version: https://docs.microsoft.com/powershell/module/az.storage/get-azstorageusage
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Get-AzStorageUsage.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Get-AzStorageUsage.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Get-AzStorageUsage.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Get-AzStorageUsage.md
 ---
 
 # Get-AzStorageUsage

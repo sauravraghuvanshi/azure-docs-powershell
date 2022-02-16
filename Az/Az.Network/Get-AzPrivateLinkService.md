@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
 online version: https://docs.microsoft.com/powershell/module/az.network/get-azprivatelinkservice
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzPrivateLinkService.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzPrivateLinkService.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzPrivateLinkService.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzPrivateLinkService.md
 ---
 
 # Get-AzPrivateLinkService
@@ -31,8 +31,8 @@ The **Get-AzPrivateLinkService** cmdlet gets one or more private link services.
 
 ## EXAMPLES
 
-### Example
-```
+### Example 1
+```powershell
 Get-AzPrivateLinkService -Name MyPLS -ResourceGroupName TestResourceGroup
 
 Name                                 : MyPLS

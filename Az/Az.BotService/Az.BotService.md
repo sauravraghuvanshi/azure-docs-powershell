@@ -4,8 +4,8 @@ Module Guid: 0fbff4fb-215b-4aca-b867-d1acfecab531
 Download Help Link: https://docs.microsoft.com/powershell/module/az.botservice
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/BotService/help/Az.BotService.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/BotService/help/Az.BotService.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/BotService/help/Az.BotService.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/BotService/help/Az.BotService.md
 ---
 
 # Az.BotService Module

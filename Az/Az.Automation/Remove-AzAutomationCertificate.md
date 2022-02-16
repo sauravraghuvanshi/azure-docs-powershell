@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: C0B24E18-9163-458A-8297-93CB5C2003FA
 online version: https://docs.microsoft.com/powershell/module/az.automation/remove-azautomationcertificate
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Remove-AzAutomationCertificate.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Remove-AzAutomationCertificate.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Remove-AzAutomationCertificate.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Remove-AzAutomationCertificate.md
 ---
 
 # Remove-AzAutomationCertificate

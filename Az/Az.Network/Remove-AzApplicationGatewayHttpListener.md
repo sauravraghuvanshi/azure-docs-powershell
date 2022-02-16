@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 6C90AF6C-3193-4D75-A78F-3EC315C6D7DF
 online version: https://docs.microsoft.com/powershell/module/az.network/remove-azapplicationgatewayhttplistener
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayHttpListener.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayHttpListener.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzApplicationGatewayHttpListener.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzApplicationGatewayHttpListener.md
 ---
 
 # Remove-AzApplicationGatewayHttpListener
@@ -29,10 +29,12 @@ The **Remove-AzApplicationGatewayHttpListener** cmdlet removes an HTTP listener 
 ```
 PS C:\>$AppGw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
 PS C:\> Remove-AzApplicationGatewayHttpListener -ApplicationGateway $AppGw -Name "Listener02"
+PS C:\> Set-AzApplicationGateway -ApplicationGateway $AppGW
 ```
 
 The first command gets an application gateway and stores it in the $AppGw variable.
 The second command removes the HTTP listener named Listener02 from the application gateway stored in $AppGw.
+The last command updates the application gateway.
 
 ## PARAMETERS
 

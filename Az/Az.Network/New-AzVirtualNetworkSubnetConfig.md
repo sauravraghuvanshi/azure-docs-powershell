@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 901FD38B-67FA-40D5-8D23-51E5544C25D8
 online version: https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzVirtualNetworkSubnetConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzVirtualNetworkSubnetConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/New-AzVirtualNetworkSubnetConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/New-AzVirtualNetworkSubnetConfig.md
 ---
 
 # New-AzVirtualNetworkSubnetConfig

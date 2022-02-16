@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.Kusto
 online version: https://docs.microsoft.com/powershell/module/az.kusto/get-azkustoclusterfollowerdatabase
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/help/Get-AzKustoClusterFollowerDatabase.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/help/Get-AzKustoClusterFollowerDatabase.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Kusto/help/Get-AzKustoClusterFollowerDatabase.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Kusto/help/Get-AzKustoClusterFollowerDatabase.md
 ---
 
 # Get-AzKustoClusterFollowerDatabase
@@ -136,7 +136,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Kusto.Models.Api20200918.IFollowerDatabaseDefinition
+### Microsoft.Azure.PowerShell.Cmdlets.Kusto.Models.Api202101.IFollowerDatabaseDefinition
 
 ## NOTES
 

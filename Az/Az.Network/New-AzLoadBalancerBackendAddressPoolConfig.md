@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 67AD15B0-94EB-486F-8C17-606EA5F702D3
 online version: https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerbackendaddresspoolconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzLoadBalancerBackendAddressPoolConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzLoadBalancerBackendAddressPoolConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/New-AzLoadBalancerBackendAddressPoolConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/New-AzLoadBalancerBackendAddressPoolConfig.md
 ---
 
 # New-AzLoadBalancerBackendAddressPoolConfig
@@ -16,7 +16,7 @@ Creates a backend address pool configuration for a load balancer.
 ## SYNTAX
 
 ```
-New-AzLoadBalancerBackendAddressPoolConfig -Name <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+New-AzLoadBalancerBackendAddressPoolConfig -Name <String> [-TunnelInterface <PSTunnelInterface[]>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
@@ -31,6 +31,14 @@ PS C:\>New-AzLoadBalancerBackendAddressPoolConfig -Name "BackendAddressPool02"
 ```
 
 This command creates a backend address pool configuration named BackendAddressPool02 for a load balancer.
+
+### Example 2: Create a backend address pool configuration with tunnel interface for a load balancer
+```powershell
+## create with Gateway LoadBalancer TunnelInterface configuration
+PS C:\> $tunnelInterface1 = New-AzLoadBalancerBackendAddressPoolTunnelInterfaceConfig -Protocol 'Vxlan' -Type 'Internal' -Port 2000 -Identifier 800
+PS C:\> $tunnelInterface2 = New-AzLoadBalancerBackendAddressPoolTunnelInterfaceConfig -Protocol 'Vxlan' -Type 'External' -Port 2001 -Identifier 801
+PS C:\> New-AzLoadBalancerBackendAddressPool -ResourceGroupName $resourceGroup -LoadBalancerName $loadBalancerName -Name $backendPool3 -TunnelInterface $tunnelInterface1, $tunnelInterface2
+```
 
 ## PARAMETERS
 
@@ -61,6 +69,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TunnelInterface
+The configuration of Gateway LoadBalancer Provider.
+
+```yaml
+Type: PSTunnelInterface[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 

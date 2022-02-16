@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.Migrate
 online version: https://docs.microsoft.com/powershell/module/az.migrate/get-azmigratejob
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Migrate/help/Get-AzMigrateJob.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Migrate/help/Get-AzMigrateJob.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Migrate/help/Get-AzMigrateJob.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Migrate/help/Get-AzMigrateJob.md
 ---
 
 # Get-AzMigrateJob
@@ -169,7 +169,7 @@ Specifies the job object of the replicating server.
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20180110.IJob
+Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20210210.IJob
 Parameter Sets: GetByInputObject
 Aliases:
 
@@ -292,7 +292,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20180110.IJob
+### Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20210210.IJob
 
 ## NOTES
 
@@ -329,7 +329,7 @@ INPUTOBJECT <IJob>: Specifies the job object of the replicating server.
   - `[StartTime <DateTime?>]`: The start time.
   - `[State <String>]`: The status of the Job. It is one of these values - NotStarted, InProgress, Succeeded, Failed, Cancelled, Suspended or Other.
   - `[StateDescription <String>]`: The description of the state of the Job. For e.g. - For Succeeded state, description can be Completed, PartiallySucceeded, CompletedWithInformation or Skipped.
-  - `[TargetInstanceType <String>]`: The type of the affected object which is of {Microsoft.Azure.SiteRecovery.V2015_11_10.AffectedObjectType} class.
+  - `[TargetInstanceType <String>]`: The type of the affected object which is of Microsoft.Azure.SiteRecovery.V2015_11_10.AffectedObjectType class.
   - `[TargetObjectId <String>]`: The affected Object Id.
   - `[TargetObjectName <String>]`: The name of the affected object.
   - `[Task <IAsrTask[]>]`: The tasks.

@@ -4,8 +4,8 @@ Module Name: Az.DataLakeStore
 ms.assetid: 6ACE045E-67AD-40FE-86E4-450AF522F174
 online version: https://docs.microsoft.com/powershell/module/az.datalakestore/set-azdatalakestoreitempermission
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataLakeStore/DataLakeStore/help/Set-AzDataLakeStoreItemPermission.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataLakeStore/DataLakeStore/help/Set-AzDataLakeStoreItemPermission.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataLakeStore/DataLakeStore/help/Set-AzDataLakeStoreItemPermission.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataLakeStore/DataLakeStore/help/Set-AzDataLakeStoreItemPermission.md
 ---
 
 # Set-AzDataLakeStoreItemPermission

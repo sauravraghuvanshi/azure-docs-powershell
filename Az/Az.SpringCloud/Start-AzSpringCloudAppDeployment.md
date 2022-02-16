@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.SpringCloud
 online version: https://docs.microsoft.com/powershell/module/az.springcloud/start-azspringcloudappdeployment
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SpringCloud/help/Start-AzSpringCloudAppDeployment.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SpringCloud/help/Start-AzSpringCloudAppDeployment.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SpringCloud/help/Start-AzSpringCloudAppDeployment.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SpringCloud/help/Start-AzSpringCloudAppDeployment.md
 ---
 
 # Start-AzSpringCloudAppDeployment

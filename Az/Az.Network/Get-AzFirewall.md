@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 91D58F60-F22A-454A-B04C-E5AEF33E9D06
 online version: https://docs.microsoft.com/powershell/module/az.network/get-azfirewall
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzFirewall.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzFirewall.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzFirewall.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzFirewall.md
 ---
 
 # Get-AzFirewall
@@ -25,8 +25,8 @@ The **Get-AzFirewall** cmdlet gets one or more Firewalls in a resource group.
 
 ## EXAMPLES
 
-### 1:  Retrieve all Firewalls in a resource group
-```
+### Example 1: Retrieve all Firewalls in a resource group
+```powershell
 Get-AzFirewall -ResourceGroupName rgName
 
 Name                       : azFw
@@ -96,8 +96,8 @@ Zones                      : {}
 
 This example retrieves all Firewalls in resource group "rgName".
 
-### 2:  Retrieve a Firewall by name
-```
+### Example 2: Retrieve a Firewall by name
+```powershell
 Get-AzFirewall -ResourceGroupName rgName -Name azFw
 
 Name                       : azFw
@@ -135,8 +135,8 @@ Zones                      : {}
 
 This example retrieves Firewall named "azFw" in resource group "rgName".
 
-### 3:  Retrieve all Firewalls with filtering
-```
+### Example 3: Retrieve all Firewalls with filtering
+```powershell
 Get-AzFirewall -Name azFw*
 
 Name                       : azFw
@@ -206,8 +206,8 @@ Zones                      : {}
 
 This example retrieves all Firewalls that start with "azFw"
 
-### 4:  Retrieve a firewall and then add a application rule collection to the Firewall
-```
+### Example 4: Retrieve a firewall and then add a application rule collection to the Firewall
+```powershell
 $azFw=Get-AzFirewall -Name "azFw" -ResourceGroupName "rgName"
 $appRule = New-AzFirewallApplicationRule -Name R1 -Protocol "http:80","https:443" -TargetFqdn "*google.com", "*microsoft.com" -SourceAddress "10.0.0.0"
 $appRuleCollection = New-AzFirewallApplicationRuleCollection -Name "MyAppRuleCollection" -Priority 100 -Rule $appRule -ActionType "Allow"
@@ -216,8 +216,8 @@ $azFw.AddApplicationRuleCollection($appRuleCollection)
 
 This example retrieves a firewall, then adds a application rule collection to the firewall by calling method AddApplicationRuleCollection.
 
-### 5:  Retrieve a firewall and then add a network rule collection to the Firewall
-```
+### Example 5: Retrieve a firewall and then add a network rule collection to the Firewall
+```powershell
 $azFw=Get-AzFirewall -Name "azFw" -ResourceGroupName "rgName"
 $netRule = New-AzFirewallNetworkRule -Name "all-udp-traffic" -Description "Rule for all UDP traffic" -Protocol "UDP" -SourceAddress "*" -DestinationAddress "*" -DestinationPort "*"
 $netRuleCollection = New-AzFirewallNetworkRuleCollection -Name "MyNetworkRuleCollection" -Priority 100 -Rule $netRule -ActionType "Allow"
@@ -226,8 +226,8 @@ $azFw.AddNetworkRuleCollection($netRuleCollection)
 
 This example retrieves a firewall, then adds a network rule collection to the firewall by calling method AddNetworkRuleCollection.
 
-### 6:  Retrieve a firewall and then retrieve a application rule collection by name from the Firewall
-```
+### Example 6: Retrieve a firewall and then retrieve a application rule collection by name from the Firewall
+```powershell
 $azFw=Get-AzFirewall -Name "azFw" -ResourceGroupName "rgName"
 $getAppRc=$azFw.GetApplicationRuleCollectionByName("MyAppRuleCollection")
 ```
@@ -235,8 +235,8 @@ $getAppRc=$azFw.GetApplicationRuleCollectionByName("MyAppRuleCollection")
 This example retrieves a firewall and then gets a rule collection by name, calling method GetApplicationRuleCollectionByName on the 
 firewall object. The rule collection name for method GetApplicationRuleCollectionByName is case-insensitive.
 
-### 7:  Retrieve a firewall and then retrieve a network rule collection by name from the Firewall
-```
+### Example 7: Retrieve a firewall and then retrieve a network rule collection by name from the Firewall
+```powershell
 $azFw=Get-AzFirewall -Name "azFw" -ResourceGroupName "rgName"
 $getNetRc=$azFw.GetNetworkRuleCollectionByName("MyNetworkRuleCollection")
 ```
@@ -244,8 +244,8 @@ $getNetRc=$azFw.GetNetworkRuleCollectionByName("MyNetworkRuleCollection")
 This example retrieves a firewall and then gets a rule collection by name, calling method GetNetworkRuleCollectionByName on the 
 firewall object. The rule collection name for method GetNetworkRuleCollectionByName is case-insensitive.
 
-### 8:  Retrieve a firewall and then remove a application rule collection by name from the Firewall
-```
+### Example 8: Retrieve a firewall and then remove a application rule collection by name from the Firewall
+```powershell
 $azFw=Get-AzFirewall -Name "azFw" -ResourceGroupName "rgName"
 $azFw.RemoveApplicationRuleCollectionByName("MyAppRuleCollection")
 ```
@@ -253,8 +253,8 @@ $azFw.RemoveApplicationRuleCollectionByName("MyAppRuleCollection")
 This example retrieves a firewall and then removes a rule collection by name, calling method RemoveApplicationRuleCollectionByName on the 
 firewall object. The rule collection name for method RemoveApplicationRuleCollectionByName is case-insensitive.
 
-### 9:  Retrieve a firewall and then remove a network rule collection by name from the Firewall
-```
+### Example 9: Retrieve a firewall and then remove a network rule collection by name from the Firewall
+```powershell
 $azFw=Get-AzFirewall -Name "azFw" -ResourceGroupName "rgName"
 $azFw.RemoveNetworkRuleCollectionByName("MyNetworkRuleCollection")
 ```
@@ -262,8 +262,8 @@ $azFw.RemoveNetworkRuleCollectionByName("MyNetworkRuleCollection")
 This example retrieves a firewall and then removes a rule collection by name, calling method RemoveNetworkRuleCollectionByName on the 
 firewall object. The rule collection name for method RemoveNetworkRuleCollectionByName is case-insensitive.
 
-### 10:  Retrieve a firewall and then allocate the firewall
-```
+### Example 10: Retrieve a firewall and then allocate the firewall
+```powershell
 $vnet=Get-AzVirtualNetwork -Name "vnet" -ResourceGroupName "rgName"
 $publicIp=Get-AzPublicIpAddress -Name "firewallpip" -ResourceGroupName "rgName"
 $azFw=Get-AzFirewall -Name "azFw" -ResourceGroupName "rgName"

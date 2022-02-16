@@ -4,8 +4,8 @@ Module Name: Az.Websites
 ms.assetid: EF2D377C-C000-4BCA-8EB9-58C805FA5C31
 online version: https://docs.microsoft.com/powershell/module/az.websites/get-azwebappslotconfigname
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Get-AzWebAppSlotConfigName.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Get-AzWebAppSlotConfigName.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Get-AzWebAppSlotConfigName.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Get-AzWebAppSlotConfigName.md
 ---
 
 # Get-AzWebAppSlotConfigName

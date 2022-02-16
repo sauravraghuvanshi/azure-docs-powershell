@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: 6C6C7142-31CD-4245-BC55-CB7916EA12E0
 online version: https://docs.microsoft.com/powershell/module/az.automation/remove-azautomationdscnodeconfiguration
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Remove-AzAutomationDscNodeConfiguration.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Remove-AzAutomationDscNodeConfiguration.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Remove-AzAutomationDscNodeConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Remove-AzAutomationDscNodeConfiguration.md
 ---
 
 # Remove-AzAutomationDscNodeConfiguration

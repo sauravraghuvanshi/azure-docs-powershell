@@ -4,8 +4,8 @@ Module Name: Az.DataFactory
 ms.assetid: DFA41A2B-7C8A-42CB-B0B6-5E6FF853EFEE
 online version: https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactorylinkedservice
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryLinkedService.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryLinkedService.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryLinkedService.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryLinkedService.md
 ---
 
 # Get-AzDataFactoryLinkedService

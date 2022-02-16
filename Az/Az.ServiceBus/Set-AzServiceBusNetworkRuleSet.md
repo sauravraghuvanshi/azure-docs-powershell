@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.dll-Help.xml
 Module Name: Az.ServiceBus
 online version: https://docs.microsoft.com/powershell/module/az.servicebus/set-azservicebusnetworkruleset
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceBus/ServiceBus/help/Set-AzServiceBusNetworkRuleSet.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceBus/ServiceBus/help/Set-AzServiceBusNetworkRuleSet.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ServiceBus/ServiceBus/help/Set-AzServiceBusNetworkRuleSet.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ServiceBus/ServiceBus/help/Set-AzServiceBusNetworkRuleSet.md
 ---
 
 # Set-AzServiceBusNetworkRuleSet
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-EventHub Namespace Name.
+ServiceBus Namespace Name.
 
 ```yaml
 Type: System.String
@@ -158,6 +158,21 @@ Aliases: NamespaceName
 
 Required: True
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PublicNetworkAccess
+Public Network Access for NetwrokeuleSet
+
+```yaml
+Type: System.String
+Parameter Sets: NetworkRuleSetPropertiesSet
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

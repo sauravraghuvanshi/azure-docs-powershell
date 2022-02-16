@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.MachineLearning.dll-Help.
 Module Name: Az.MachineLearning
 online version: https://docs.microsoft.com/powershell/module/az.machinelearning/new-azmlwebservice
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MachineLearning/MachineLearning/help/New-AzMlWebService.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MachineLearning/MachineLearning/help/New-AzMlWebService.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MachineLearning/MachineLearning/help/New-AzMlWebService.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MachineLearning/MachineLearning/help/New-AzMlWebService.md
 ---
 
 # New-AzMlWebService
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 
 ### -DefinitionFile
 Specifies the path to the file containing the JSON format definition of the web service.
-You can find the latest specification for the web service definition in the swagger spec under https://github.com/Azure/azure-rest-api-specs/tree/master/arm-machinelearning.
+You can find the latest specification for the web service definition in the swagger spec under https://github.com/Azure/azure-rest-api-specs/blob/master/specification/machinelearning/resource-manager/Microsoft.MachineLearning/.
 
 ```yaml
 Type: System.String
@@ -134,7 +134,7 @@ Accept wildcard characters: False
 ### -NewWebServiceDefinition
 The definition for the new web service, containing all the properties that make up the service.
 This parameter is required and represents an instance of the Microsoft.Azure.Management.MachineLearning.WebServices.Models.WebService class.
-You can find the latest specification for the web service definition in the swagger spec under https://github.com/Azure/azure-rest-api-specs/blob/master/arm-machinelearning/2017-01-01/swagger/webservices.json.
+You can find the latest specification for the web service definition in the swagger spec under https://github.com/Azure/azure-rest-api-specs/blob/master/specification/machinelearning/resource-manager/Microsoft.MachineLearning/stable/2017-01-01/webservices.json.
 
 ```yaml
 Type: Microsoft.Azure.Management.MachineLearning.WebServices.Models.WebService

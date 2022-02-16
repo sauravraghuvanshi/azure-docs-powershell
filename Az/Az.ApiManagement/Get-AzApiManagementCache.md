@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.ServiceMana
 Module Name: Az.ApiManagement
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/get-azapimanagementcache
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementCache.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementCache.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Get-AzApiManagementCache.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Get-AzApiManagementCache.md
 ---
 
 # Get-AzApiManagementCache
@@ -32,11 +32,11 @@ Get the details of the Cache configured in Api Management service.
 
 ### Example 1: Get all Caches
 ```powershell
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Get-AzApiManagementCache -Context $apimContext
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Get-AzApiManagementCache -Context $apimContext
 ```
 
-```
+```output
 CacheId           : westus
 Description       : apim.redis.cache.windows.net
 ConnectionString  : {{5cc1848125a3f724dcf9a928}}
@@ -50,11 +50,11 @@ Gets a list of all the Caches configured in the Api Management service.
 
 ### Example 2: Get the Cache specified by the Identifier westus
 ```powershell
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Get-AzApiManagementCache -Context $apimContext -cacheId westus
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Get-AzApiManagementCache -Context $apimContext -cacheId westus
 ```
 
-```
+```output
 CacheId           : westus
 Description       : apim.redis.cache.windows.net
 ConnectionString  : {{5cc1848125a3f724dcf9a928}}

@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: E655684D-9601-4A0B-BB09-EFB787EB2B1B
 online version: https://docs.microsoft.com/powershell/module/az.batch/get-azbatchjobstatistic
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchJobStatistic.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchJobStatistic.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Get-AzBatchJobStatistic.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Get-AzBatchJobStatistic.md
 ---
 
 # Get-AzBatchJobStatistic
@@ -27,8 +27,11 @@ Statistics are aggregated across all jobs that have ever existed in the account,
 ## EXAMPLES
 
 ### Example 1: Get summary statistics for all jobs
+```powershell
+Get-AzBatchJobStatistic -BatchContext $Context
 ```
-PS C:\>Get-AzBatchJobStatistic -BatchContext $Context
+
+```output
 FailedTaskCount    : 330
 KernelCpuTime      : 00:24:31.8440000
 LastUpdateTime     : 5/16/2016 6:00:00 PM

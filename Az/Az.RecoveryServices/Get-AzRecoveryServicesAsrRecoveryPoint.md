@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.SiteReco
 Module Name: Az.RecoveryServices
 online version: https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesasrrecoverypoint
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrRecoveryPoint.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrRecoveryPoint.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrRecoveryPoint.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrRecoveryPoint.md
 ---
 
 # Get-AzRecoveryServicesAsrRecoveryPoint
@@ -27,7 +27,7 @@ Get-AzRecoveryServicesAsrRecoveryPoint -Name <String> -ReplicationProtectedItem 
 ```
 
 ## DESCRIPTION
-The **Get-AzRecoveryServicesAsrRecoveryPoint** cmdlet gets the list of available recovery points for a replication protected item.
+The **Get-AzRecoveryServicesAsrRecoveryPoint** cmdlet gets the list of available recovery points for a replication protected item. The list is in order from latest to oldest Recovery Points, the first one being the Latest Processed (lowest RTO).
 
 ## EXAMPLES
 
@@ -36,7 +36,7 @@ The **Get-AzRecoveryServicesAsrRecoveryPoint** cmdlet gets the list of available
 PS C:\> $RecoveryPoints = Get-AzRecoveryServicesAsrRecoveryPoint -ReplicationProtectedItem $ReplicationProtectedItem
 ```
 
-Gets recovery points for the specified ASR replication protected item.
+Gets recovery points for the specified ASR replication protected item. $RecoveryPoints[0] will have the Latest Processed Recovery Point (for Lowest RTO).
 
 ## PARAMETERS
 

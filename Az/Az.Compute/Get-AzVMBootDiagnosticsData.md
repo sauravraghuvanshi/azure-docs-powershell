@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: 15CAC050-F2E9-4872-88E7-516A6D194FAB
 online version: https://docs.microsoft.com/powershell/module/az.compute/get-azvmbootdiagnosticsdata
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMBootDiagnosticsData.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMBootDiagnosticsData.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Get-AzVMBootDiagnosticsData.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Get-AzVMBootDiagnosticsData.md
 ---
 
 # Get-AzVMBootDiagnosticsData

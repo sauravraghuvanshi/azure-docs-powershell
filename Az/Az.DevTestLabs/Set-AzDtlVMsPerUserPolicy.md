@@ -4,8 +4,8 @@ Module Name: Az.DevTestLabs
 ms.assetid: D00E04D9-C91F-4F89-8867-0A026C274F27
 online version: https://docs.microsoft.com/powershell/module/az.devtestlabs/set-azdtlvmsperuserpolicy
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DevTestLabs/DevTestLabs/help/Set-AzDtlVMsPerUserPolicy.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DevTestLabs/DevTestLabs/help/Set-AzDtlVMsPerUserPolicy.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DevTestLabs/DevTestLabs/help/Set-AzDtlVMsPerUserPolicy.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DevTestLabs/DevTestLabs/help/Set-AzDtlVMsPerUserPolicy.md
 ---
 
 # Set-AzDtlVMsPerUserPolicy
@@ -32,6 +32,26 @@ The **Set-AzDtlVMsPerUserPolicy** cmdlet sets the virtual machines per user poli
 The cmdlet uses the specified resource group and name of the lab to set the policy.
 
 ## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> Set-AzDtlVMsPerUserPolicy -LabName debtestlab -ResourceGroupName yuzhi-rg
+
+Name               : MaxVmsAllowedPerUser
+Type               : Microsoft.DevTestLab/labs/policySets/policies
+Tags               : 
+Id                 : /subscriptions/0b1f6471-1bf0-4dda-aec3-cb9272f09590/resourcegroups/yuzhi-rg/providers/microsoft.devtestlab/labs/debte
+                     stlab/policysets/default/policies/maxvmsallowedperuser
+Location           : 
+Fact Name          : UserOwnedLabVmCount
+Threshold          : 1
+Evaluator Type     : MaxValuePolicy
+Description        : 
+Status             : Enabled
+Provisioning State : 
+```
+Sets the virtual machines per user policy of a lab in DevTest Labs.
+
 
 ## PARAMETERS
 

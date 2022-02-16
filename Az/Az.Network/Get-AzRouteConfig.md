@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: DBD40431-DD7A-42CB-83AA-568B1065A468
 online version: https://docs.microsoft.com/powershell/module/az.network/get-azrouteconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzRouteConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzRouteConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzRouteConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzRouteConfig.md
 ---
 
 # Get-AzRouteConfig

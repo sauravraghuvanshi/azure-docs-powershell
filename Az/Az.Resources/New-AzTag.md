@@ -4,8 +4,8 @@ Module Name: Az.Resources
 ms.assetid: 23DB0AD2-7EB7-4373-BB8D-BB6CB651DD54
 online version: https://docs.microsoft.com/powershell/module/az.resources/new-aztag
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzTag.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzTag.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/New-AzTag.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/New-AzTag.md
 ---
 
 # New-AzTag
@@ -16,21 +16,15 @@ Creates a predefined Azure tag or adds values to an existing tag | Creates or up
 ## SYNTAX
 
 ### CreatePredefinedTagParameterSet
-
-```powershell
-New-AzTag [-Name] <String> [[-Value] <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+New-AzTag [-Name] <String> [[-Value] <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### CreateByResourceIdParameterSet
-
-```powershell
-New-AzTag
-   -ResourceId <String>
-   -Tag <Hashtable>
-   [-DefaultProfile <IAzureContextContainer>]
-   [-WhatIf]
-   [-Confirm]
-   [<CommonParameters>]
+```
+New-AzTag [-ResourceId] <String> [-Tag] <Hashtable> [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -225,23 +219,6 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Value
-Specifies a predefined tag value.
-Predefined tags can have multiple values, but you can enter only one value in each command.
-This parameter is optional, because tags can have names without values.
-
-```yaml
-Type: System.String
-Parameter Sets: CreatePredefinedTagParameterSet
-Aliases:
-
-Required: False
-Position: 1
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### -ResourceId
 The resource identifier for the entity being tagged. A resource, a resource group or a subscription may be tagged.
 
@@ -266,6 +243,23 @@ Parameter Sets: CreateByResourceIdParameterSet
 Aliases:
 
 Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Value
+Specifies a predefined tag value.
+Predefined tags can have multiple values, but you can enter only one value in each command.
+This parameter is optional, because tags can have names without values.
+
+```yaml
+Type: System.String
+Parameter Sets: CreatePredefinedTagParameterSet
+Aliases:
+
+Required: False
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)

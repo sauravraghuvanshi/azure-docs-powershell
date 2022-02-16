@@ -4,8 +4,8 @@ Module Guid: fd603f36-03d8-47f4-9f7c-c13a78761936
 Download Help Link: https://docs.microsoft.com/powershell/module/az.databricks
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Databricks/help/Az.Databricks.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Databricks/help/Az.Databricks.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Databricks/help/Az.Databricks.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Databricks/help/Az.Databricks.md
 ---
 
 # Az.Databricks Module

@@ -4,8 +4,8 @@ Module Guid: a2bb88dc-abd2-4275-9aae-bd98346f8c8a
 Download Help Link: https://docs.microsoft.com/powershell/module/az.search
 Help Version: 0.1.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Search/Search/help/Az.Search.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Search/Search/help/Az.Search.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Search/Search/help/Az.Search.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Search/Search/help/Az.Search.md
 ---
 
 # Az.Search Module

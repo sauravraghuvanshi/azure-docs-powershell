@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.PostgreSql
 online version: https://docs.microsoft.com/powershell/module/az.postgresql/start-azpostgresqlflexibleserver
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/PostgreSql/help/Start-AzPostgreSqlFlexibleServer.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/PostgreSql/help/Start-AzPostgreSqlFlexibleServer.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/PostgreSql/help/Start-AzPostgreSqlFlexibleServer.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/PostgreSql/help/Start-AzPostgreSqlFlexibleServer.md
 ---
 
 # Start-AzPostgreSqlFlexibleServer
@@ -40,7 +40,7 @@ Start the server by name
 
 ### Example 2: Start the server by identity
 ```powershell
-PS C:\> $ID = "/subscriptions/<SubscriptionId>/resourceGroups/PowershellPostgreSqlTest/providers/Microsoft.DBForPostgreSql/flexibleServers/postgresql-test/start"
+PS C:\> $ID = "/subscriptions/<SubscriptionId>/resourceGroups/PowershellPostgreSqlTest/providers/Microsoft.DBforPostgreSQL/flexibleServers/postgresql-test/start"
 PS C:\> Start-AzPostgreSqlFlexibleServer -InputObject $ID
 ```
 

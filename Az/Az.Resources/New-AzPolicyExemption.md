@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.ResourceManager.dll-Help.
 Module Name: Az.Resources
 online version: https://docs.microsoft.com/powershell/module/az.resources/new-azpolicyexemption
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzPolicyExemption.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzPolicyExemption.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/New-AzPolicyExemption.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/New-AzPolicyExemption.md
 ---
 
 # New-AzPolicyExemption
@@ -27,8 +27,8 @@ Specify a policy assignment, exemption category and scope.
 
 ## EXAMPLES
 
-### Example 1 Policy exemption at subscription level
-```
+### Example 1: Policy exemption at subscription level
+```powershell
 PS C:\> $Subscription = Get-AzSubscription -SubscriptionName 'Subscription01'
 PS C:\> $Assignment = Get-AzPolicyAssignment -Name 'VirtualMachinePolicyAssignment'
 PS C:\> New-AzPolicyExemption -Name 'VirtualMachinePolicyExemption' -PolicyAssignment $Assignment -Scope "/subscriptions/$($Subscription.Id)" -ExemptionCategory Waiver
@@ -39,10 +39,10 @@ The second command gets the policy assignment named VirtualMachinePolicyAssignme
 The final command exempts the policy assignment in $Assignment at the level of the subscription identified by the subscription scope string.
 
 ### Example 2: Policy exemption at resource group level
-```
+```powershell
 PS C:\> $ResourceGroup = Get-AzResourceGroup -Name 'ResourceGroup11'
 PS C:\> $Assignment = Get-AzPolicyAssignment -Name 'VirtualMachinePolicyAssignment'
-PS C:\> New-AzPolicyAssignment -Name 'VirtualMachinePolicyAssignment' -PolicyAssignment $Assignment -Scope $ResourceGroup.ResourceId -ExemptionCategory Mitigated
+PS C:\> New-AzPolicyExemption -Name 'VirtualMachinePolicyAssignment' -PolicyAssignment $Assignment -Scope $ResourceGroup.ResourceId -ExemptionCategory Mitigated
 ```
 
 The first command gets a resource group named ResourceGroup11 by using the Get-AzResourceGroup cmdlet and stores it in the $ResourceGroup variable.

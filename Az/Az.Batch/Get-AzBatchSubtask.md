@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: 7D0D8B46-4BF0-47D5-9261-3306AEB9E7DD
 online version: https://docs.microsoft.com/powershell/module/az.batch/get-azbatchsubtask
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchSubtask.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchSubtask.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Get-AzBatchSubtask.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Get-AzBatchSubtask.md
 ---
 
 # Get-AzBatchSubtask
@@ -34,9 +34,9 @@ Subtasks provide parallel processing for individual tasks, and enable precise mo
 ## EXAMPLES
 
 ### Example 1: Return all subtasks for a specified task
-```
-PS C:\>$Context = Get-AzBatchAccountKey -AccountName "contosobatchaccount"
-PS C:\> Get-AzBatchSubtask -JobId "Job-01" -TaskID "myTask" -BatchContext $Context
+```powershell
+$Context = Get-AzBatchAccountKey -AccountName "contosobatchaccount"
+Get-AzBatchSubtask -JobId "Job-01" -TaskID "myTask" -BatchContext $Context
 ```
 
 These commands return all the subtasks for the task with the ID myTask.

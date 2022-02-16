@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: D5254218-8B3B-4DE2-9480-D65EE5483018
 online version: https://docs.microsoft.com/powershell/module/az.compute/get-azvmimage
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMImage.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMImage.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Get-AzVMImage.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Get-AzVMImage.md
 ---
 
 # Get-AzVMImage
@@ -17,14 +17,14 @@ Gets all the versions of a VMImage.
 
 ### ListVMImage
 ```
-Get-AzVMImage -Location <String> -PublisherName <String> -Offer <String> -Skus <String> [-Top <Int32>]
- [-OrderBy <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzVMImage -Location <String> [-EdgeZone <String>] -PublisherName <String> -Offer <String> -Skus <String>
+ [-Top <Int32>] [-OrderBy <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### GetVMImageDetail
 ```
-Get-AzVMImage -Location <String> -PublisherName <String> -Offer <String> -Skus <String> -Version <String>
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzVMImage -Location <String> [-EdgeZone <String>] -PublisherName <String> -Offer <String> -Skus <String>
+ -Version <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -104,6 +104,21 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EdgeZone
+Set the extended location name for EdgeZone. If not set, VM Image will be queried from Azure main region. Otherwise it will be queried from the specified extended location
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -212,7 +227,7 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### CommonParameters

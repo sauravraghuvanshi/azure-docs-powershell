@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: 7C79BFF1-41E1-472D-AF67-1C3B39AB7548
 online version: https://docs.microsoft.com/powershell/module/az.batch/enable-azbatchjob
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Enable-AzBatchJob.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Enable-AzBatchJob.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Enable-AzBatchJob.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Enable-AzBatchJob.md
 ---
 
 # Enable-AzBatchJob
@@ -27,8 +27,8 @@ After you enable a job, new tasks can run.
 ## EXAMPLES
 
 ### Example 1: Enable a Batch job
-```
-PS C:\>Enable-AzBatchJob -Id "Job-000001" -BatchContext $Context
+```powershell
+Enable-AzBatchJob -Id "Job-000001" -BatchContext $Context
 ```
 
 This command enables the job that has the ID Job-000001.

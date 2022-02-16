@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Accounts.dll-Help.xml
 Module Name: Az.Accounts
 online version: https://docs.microsoft.com/powershell/module/az.accounts/select-azcontext
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Select-AzContext.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Select-AzContext.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Select-AzContext.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Select-AzContext.md
 ---
 
 # Select-AzContext
@@ -34,8 +34,10 @@ selected context.
 
 ### Example 1: Target a named context
 ```powershell
-PS C:\> Select-AzContext "Work"
+Select-AzContext "Work"
+```
 
+```Output
 Name    Account             SubscriptionName    Environment         TenantId
 ----    -------             ----------------    -----------         --------
 Work    test@outlook.com    Subscription1       AzureCloud          xxxxxxxx-x...

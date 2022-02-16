@@ -4,8 +4,8 @@ Module Name: Az.HDInsight
 ms.assetid: 2C2AF43D-18BF-4036-A355-FC27E406B18A
 online version: https://docs.microsoft.com/powershell/module/az.hdinsight/add-azhdinsightstorage
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/Add-AzHDInsightStorage.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/Add-AzHDInsightStorage.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HDInsight/HDInsight/help/Add-AzHDInsightStorage.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HDInsight/HDInsight/help/Add-AzHDInsightStorage.md
 ---
 
 # Add-AzHDInsightStorage

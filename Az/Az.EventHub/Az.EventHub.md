@@ -4,8 +4,8 @@ Module Guid: 5728d353-7ad5-42d8-b00a-46aaecf07b91
 Download Help Link: https://docs.microsoft.com/powershell/module/az.eventhub
 Help Version: 4.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/EventHub/EventHub/help/Az.EventHub.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/EventHub/EventHub/help/Az.EventHub.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/EventHub/EventHub/help/Az.EventHub.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/EventHub/EventHub/help/Az.EventHub.md
 ---
 
 # Az.EventHub Module

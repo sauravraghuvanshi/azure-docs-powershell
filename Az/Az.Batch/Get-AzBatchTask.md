@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: 4B5FE41A-090B-4859-B021-05CF0A8B7882
 online version: https://docs.microsoft.com/powershell/module/az.batch/get-azbatchtask
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchTask.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchTask.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Get-AzBatchTask.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Get-AzBatchTask.md
 ---
 
 # Get-AzBatchTask
@@ -43,8 +43,11 @@ You can specify the *Filter* parameter to get the tasks that match an Open Data 
 ## EXAMPLES
 
 ### Example 1: Get a task by ID
+```powershell
+Get-AzBatchTask -JobId "Job01" -Id "Task03" -BatchContext $Context
 ```
-PS C:\>Get-AzBatchTask -JobId "Job01" -Id "Task03" -BatchContext $Context
+
+```output
 AffinityInformation         :
 CommandLine                 : cmd /c dir /s
 ComputeNodeInformation      : Microsoft.Azure.Commands.Batch.Models.PSComputeNodeInformation
@@ -70,8 +73,11 @@ This command gets the task with ID Task03 under job Job01.
 Use the Get-AzBatchAccountKey cmdlet to assign a context to the $Context variable.
 
 ### Example 2: Get all completed tasks from a specified job
+```powershell
+Get-AzBatchTask -JobId "Job02" -Filter "state eq 'completed'" -BatchContext $Context
 ```
-PS C:\>Get-AzBatchTask -JobId "Job02" -Filter "state eq 'completed'" -BatchContext $Context
+
+```output
 AffinityInformation         :
 CommandLine                 : cmd /c dir /s
 ComputeNodeInformation      : Microsoft.Azure.Commands.Batch.Models.PSComputeNodeInformation

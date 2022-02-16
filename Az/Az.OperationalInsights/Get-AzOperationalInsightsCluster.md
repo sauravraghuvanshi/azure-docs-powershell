@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.OperationalInsights.dll-H
 Module Name: Az.OperationalInsights
 online version: https://docs.microsoft.com/powershell/module/az.operationalinsights/get-azoperationalinsightscluster
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/OperationalInsights/OperationalInsights/help/Get-AzOperationalInsightsCluster.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/OperationalInsights/OperationalInsights/help/Get-AzOperationalInsightsCluster.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/OperationalInsights/OperationalInsights/help/Get-AzOperationalInsightsCluster.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/OperationalInsights/OperationalInsights/help/Get-AzOperationalInsightsCluster.md
 ---
 
 # Get-AzOperationalInsightsCluster
@@ -14,9 +14,22 @@ Get or list clusters
 
 ## SYNTAX
 
+### ListParameterSet (Default)
 ```
-Get-AzOperationalInsightsCluster [[-ResourceGroupName] <String>] [[-ClusterName] <String>]
+Get-AzOperationalInsightsCluster [-ResourceGroupName <String>] [-ClusterName <String>] [-ResourceId <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### GetByNameParameterSet
+```
+Get-AzOperationalInsightsCluster -ResourceGroupName <String> -ClusterName <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### GetByResourceIdParameterSet
+```
+Get-AzOperationalInsightsCluster -ResourceId <String> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,17 +41,23 @@ Get or list clusters, list clusters under resource group when "-ClusterName" was
 ```powershell
 Get-AzOperationalInsightsCluster -ResourceGroupName {rg-name} -ClusterName {cluster-name}
 
-Identity           : Microsoft.Azure.Commands.OperationalInsights.Models.PSIdentity
-Sku                : Microsoft.Azure.Commands.OperationalInsights.Models.PSClusterSku
-NextLink           :
-ClusterId          : {cluster-id}
-ProvisioningState  : Succeeded
-KeyVaultProperties :
-Location           : South Central US
-Id                 : /subscriptions/{subscription}/resourceGroups/{rg-name}/providers/Microsoft.OperationalInsights/clusters/{cluster-name}
-Name               : {cluster-name}
-Type               : Microsoft.OperationalInsights/clusters
-Tags               : {}
+Identity						: Microsoft.Azure.Commands.OperationalInsights.Models.PSIdentity
+Sku								: Microsoft.Azure.Commands.OperationalInsights.Models.PSClusterSku
+ClusterId						: {cluster-id}
+ProvisioningState				: Succeeded
+IsDoubleEncryptionEnabled		: True
+IsAvailabilityZonesEnabled		: False
+BillingType						: Cluster
+KeyVaultProperties				: Microsoft.Azure.Commands.OperationalInsights.Models.PSKeyVaultProperties
+LastModifiedDate				: Wed, 26 May 2021 15:19:38 GMT
+CreatedDate						: Sun, 27 Dec 2020 11:17:11 GMT
+AssociatedWorkspaces			: {workspaces}
+CapacityReservationProperties	: Microsoft.Azure.Management.OperationalInsights.Models.CapacityReservationProperties
+Location						: South Central US
+Id								: /subscriptions/{subscription}/resourceGroups/{rg-name}/providers/Microsoft.OperationalInsights/clusters/{cluster-name}
+Name							: {cluster-name}
+Type							: Microsoft.OperationalInsights/clusters
+Tags							: {}
 ```
 
 Get cluster
@@ -49,12 +68,24 @@ Get cluster
 The cluster name.
 
 ```yaml
-Type: String
-Parameter Sets: (All)
+Type: System.String
+Parameter Sets: ListParameterSet
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: GetByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -64,7 +95,7 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: IAzureContextContainer
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -79,12 +110,52 @@ Accept wildcard characters: False
 The resource group name.
 
 ```yaml
-Type: String
-Parameter Sets: (All)
+Type: System.String
+Parameter Sets: ListParameterSet
 Aliases:
 
 Required: False
-Position: 0
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: GetByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceId
+The destination resource ID.
+This can be copied from the Properties entry of the destination resource in Azure.
+
+```yaml
+Type: System.String
+Parameter Sets: ListParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: GetByResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

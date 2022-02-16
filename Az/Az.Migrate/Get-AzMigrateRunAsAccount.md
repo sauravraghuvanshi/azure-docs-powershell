@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.Migrate
 online version: https://docs.microsoft.com/powershell/module/az.migrate/get-azmigraterunasaccount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Migrate/help/Get-AzMigrateRunAsAccount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Migrate/help/Get-AzMigrateRunAsAccount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Migrate/help/Get-AzMigrateRunAsAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Migrate/help/Get-AzMigrateRunAsAccount.md
 ---
 
 # Get-AzMigrateRunAsAccount

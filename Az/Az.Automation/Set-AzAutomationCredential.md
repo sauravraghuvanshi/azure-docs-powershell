@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: D6325A22-2D1B-4228-A5BC-3F1071E26FB2
 online version: https://docs.microsoft.com/powershell/module/az.automation/set-azautomationcredential
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Set-AzAutomationCredential.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Set-AzAutomationCredential.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Set-AzAutomationCredential.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Set-AzAutomationCredential.md
 ---
 
 # Set-AzAutomationCredential

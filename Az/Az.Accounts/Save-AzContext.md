@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Accounts.dll-Help.xml
 Module Name: Az.Accounts
 online version: https://docs.microsoft.com/powershell/module/az.accounts/save-azcontext
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Save-AzContext.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Save-AzContext.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Save-AzContext.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Save-AzContext.md
 ---
 
 # Save-AzContext
@@ -25,16 +25,16 @@ The Save-AzContext cmdlet saves the current authentication information for use i
 ## EXAMPLES
 
 ### Example 1: Saving the current session's context
-```
-PS C:\> Connect-AzAccount
-PS C:\> Save-AzContext -Path C:\test.json
+```powershell
+Connect-AzAccount
+Save-AzContext -Path C:\test.json
 ```
 
 This example saves the current session's Azure context to the JSON file provided.
 
 ### Example 2: Saving a given context
-```
-PS C:\> Save-AzContext -Profile (Connect-AzAccount) -Path C:\test.json
+```powershell
+Save-AzContext -Profile (Connect-AzAccount) -Path C:\test.json
 ```
 
 This example saves the Azure context that is passed through to the cmdlet to the JSON file provided.

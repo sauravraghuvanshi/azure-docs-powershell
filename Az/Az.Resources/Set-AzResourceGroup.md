@@ -4,8 +4,8 @@ Module Name: Az.Resources
 ms.assetid: 4E5C059B-36F3-41C8-9FDB-69F5318CF39B
 online version: https://docs.microsoft.com/powershell/module/az.resources/set-azresourcegroup
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Set-AzResourceGroup.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Set-AzResourceGroup.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Set-AzResourceGroup.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Set-AzResourceGroup.md
 ---
 
 # Set-AzResourceGroup

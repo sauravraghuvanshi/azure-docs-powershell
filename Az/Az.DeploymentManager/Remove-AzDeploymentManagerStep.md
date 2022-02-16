@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.DeploymentManager.dll-Hel
 Module Name: Az.DeploymentManager
 online version: https://docs.microsoft.com/powershell/module/az.deploymentmanager/remove-azdeploymentmanagerstep
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DeploymentManager/DeploymentManager/help/Remove-AzDeploymentManagerStep.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DeploymentManager/DeploymentManager/help/Remove-AzDeploymentManagerStep.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DeploymentManager/DeploymentManager/help/Remove-AzDeploymentManagerStep.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DeploymentManager/DeploymentManager/help/Remove-AzDeploymentManagerStep.md
 ---
 
 # Remove-AzDeploymentManagerStep
@@ -53,7 +53,6 @@ PS C:\> Remove-AzDeploymentManagerStep -ResourceId "/subscriptions/subscriptionI
 This command deletes a step named ContosoService1WaitStep in ContosoResourceGroup.
 
 ### Example 3: Remove a step using an object returned by New-AzDeploymentManagerStep
-### Example 1
 ```powershell
 PS C:\> Remove-AzDeploymentManagerStep -InputObject $stepObject
 ```

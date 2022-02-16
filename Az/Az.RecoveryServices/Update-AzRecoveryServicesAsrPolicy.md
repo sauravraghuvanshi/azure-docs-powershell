@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.SiteReco
 Module Name: Az.RecoveryServices
 online version: https://docs.microsoft.com/powershell/module/az.recoveryservices/update-azrecoveryservicesasrpolicy
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Update-AzRecoveryServicesAsrPolicy.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Update-AzRecoveryServicesAsrPolicy.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RecoveryServices/RecoveryServices/help/Update-AzRecoveryServicesAsrPolicy.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RecoveryServices/RecoveryServices/help/Update-AzRecoveryServicesAsrPolicy.md
 ---
 
 # Update-AzRecoveryServicesAsrPolicy
@@ -64,6 +64,14 @@ Update-AzRecoveryServicesAsrPolicy [-VmmToVmm] -InputObject <ASRPolicy> [-Replic
  [-ApplicationConsistentSnapshotFrequencyInHours <Int32>] [-Compression <String>] [-ReplicationPort <UInt16>]
  [-Authentication <String>] [-ReplicationStartTime <TimeSpan>] [-ReplicaDeletion <String>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ReplicateVMwareToAzure
+```
+Update-AzRecoveryServicesAsrPolicy [-ReplicateVMwareToAzure] -InputObject <ASRPolicy>
+ [-RecoveryPointRetentionInHours <Int32>] [-ApplicationConsistentSnapshotFrequencyInHours <Int32>]
+ [-MultiVmSyncStatus <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -222,7 +230,7 @@ Specifies multiVm sync status for the policy.
 
 ```yaml
 Type: System.String
-Parameter Sets: VMwareToAzure, AzureToAzure, AzureToVMware
+Parameter Sets: VMwareToAzure, AzureToAzure, AzureToVMware, ReplicateVMwareToAzure
 Aliases:
 Accepted values: Enable, Disable
 
@@ -269,7 +277,7 @@ Time in hours to retain recovery points after creation.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: VMwareToAzure, AzureToAzure, AzureToVMware
+Parameter Sets: VMwareToAzure, AzureToAzure, AzureToVMware, ReplicateVMwareToAzure
 Aliases:
 
 Required: False
@@ -290,6 +298,21 @@ Accepted values: Required, NotRequired
 
 Required: False
 Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ReplicateVMwareToAzure
+Switch parameter specifying VMware to Azure replication scenario.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ReplicateVMwareToAzure
+Aliases:
+
+Required: True
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

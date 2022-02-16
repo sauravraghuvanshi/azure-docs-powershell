@@ -4,8 +4,8 @@ Module Guid: bba49006-4c09-406e-8fad-dd48d1b381e7
 Download Help Link: https://docs.microsoft.com/powershell/module/az.addomainservices
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ADDomainServices/help/Az.ADDomainServices.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ADDomainServices/help/Az.ADDomainServices.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ADDomainServices/help/Az.ADDomainServices.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ADDomainServices/help/Az.ADDomainServices.md
 ---
 
 # Az.ADDomainServices Module

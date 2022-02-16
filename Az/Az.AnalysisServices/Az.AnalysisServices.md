@@ -4,8 +4,8 @@ Module Guid: acace26c-1775-4100-85c0-20c4d71eaa21
 Download Help Link: https://docs.microsoft.com/powershell/module/az.analysisservices
 Help Version: 0.0.1.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AnalysisServices/AnalysisServices/help/Az.AnalysisServices.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AnalysisServices/AnalysisServices/help/Az.AnalysisServices.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AnalysisServices/AnalysisServices/help/Az.AnalysisServices.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AnalysisServices/AnalysisServices/help/Az.AnalysisServices.md
 ---
 
 # Az.AnalysisServices Module

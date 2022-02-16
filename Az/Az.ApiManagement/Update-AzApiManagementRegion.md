@@ -4,8 +4,8 @@ Module Name: Az.ApiManagement
 ms.assetid: 5B7B285A-6418-44D7-BD78-E14AFFAA7765
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/update-azapimanagementregion
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Update-AzApiManagementRegion.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Update-AzApiManagementRegion.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Update-AzApiManagementRegion.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Update-AzApiManagementRegion.md
 ---
 
 # Update-AzApiManagementRegion
@@ -17,8 +17,8 @@ Updates existing deployment region in PsApiManagement instance.
 
 ```
 Update-AzApiManagementRegion -ApiManagement <PsApiManagement> -Location <String> -Sku <PsApiManagementSku>
- -Capacity <Int32> [-VirtualNetwork <PsApiManagementVirtualNetwork>] [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+ -Capacity <Int32> [-VirtualNetwork <PsApiManagementVirtualNetwork>] [-Zone <String[]>]
+ [-DisableGateway <Boolean>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,9 +30,9 @@ To update a deployment of an API Management use the modified **PsApiManagementIn
 
 ### Example 1: Increases capacity of Additional Region in a PsApiManagement instance
 ```powershell
-PS C:\>$apimService = Get-AzApiManagement -ResourceGroupName $resourceGroupName -Name $apiManagementName
-PS C:\>$apimService = Update-AzApiManagementRegion -ApiManagement $apimService -Location "North Central US" -Capacity 2 -Sku Premium
-PS C:\>$apimService = Set-AzApiManagement -InputObject $apimService -PassThru
+$apimService = Get-AzApiManagement -ResourceGroupName $resourceGroupName -Name $apiManagementName
+$apimService = Update-AzApiManagementRegion -ApiManagement $apimService -Location "North Central US" -Capacity 2 -Sku Premium
+$apimService = Set-AzApiManagement -InputObject $apimService -PassThru
 ```
 
 This command gets the API Management Premium SKU service, having regions in South Central US and North Central US. It then increases the Capacity of the North Central US region to 2 using the **Set-AzApiManagement**. The next cmdlet **Set-AzApiManagement** applies the configuration change to the Api Management service.
@@ -93,6 +93,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DisableGateway
+Flag only meant to be used for Premium SKU ApiManagement Service and Non Internal VNET deployments. This is useful in case we want to take a gateway region out of rotation. This can also be used to standup a new region in Passive mode, test it and then make it Live later.
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Location
 Specifies the location of the deployment region to update.
 Specifies the location of the new deployment region amongst the supported region for Api Management service.
@@ -122,7 +137,7 @@ Valid values are:
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSku
 Parameter Sets: (All)
 Aliases:
-Accepted values: Developer, Standard, Premium, Basic, Consumption
+Accepted values: Developer, Standard, Premium, Basic, Consumption, Isolated
 
 Required: True
 Position: Named
@@ -137,6 +152,21 @@ Passing $null will remove virtual network configuration for the region.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Zone
+A list of availability zones denoting where the api management service is deployed into.
+
+```yaml
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

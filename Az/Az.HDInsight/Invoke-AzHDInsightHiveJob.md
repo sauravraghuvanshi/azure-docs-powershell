@@ -4,8 +4,8 @@ Module Name: Az.HDInsight
 ms.assetid: 3C6DCC81-82F7-4044-AFBC-4EE1BCC306F2
 online version: https://docs.microsoft.com/powershell/module/az.hdinsight/invoke-azhdinsighthivejob
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/Invoke-AzHDInsightHiveJob.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/Invoke-AzHDInsightHiveJob.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HDInsight/HDInsight/help/Invoke-AzHDInsightHiveJob.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HDInsight/HDInsight/help/Invoke-AzHDInsightHiveJob.md
 ---
 
 # Invoke-AzHDInsightHiveJob

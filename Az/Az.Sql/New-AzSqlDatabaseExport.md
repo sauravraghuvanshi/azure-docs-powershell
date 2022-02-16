@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: 3D4822DD-736B-42DF-8D9A-1CB23FEF052E
 online version: https://docs.microsoft.com/powershell/module/az.sql/new-azsqldatabaseexport
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlDatabaseExport.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlDatabaseExport.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/New-AzSqlDatabaseExport.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/New-AzSqlDatabaseExport.md
 ---
 
 # New-AzSqlDatabaseExport

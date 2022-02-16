@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: B02CEAC8-C838-4890-8C21-9897CA39EF45
 online version: https://docs.microsoft.com/powershell/module/az.compute/remove-azvmsqlserverextension
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Remove-AzVMSqlServerExtension.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Remove-AzVMSqlServerExtension.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Remove-AzVMSqlServerExtension.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Remove-AzVMSqlServerExtension.md
 ---
 
 # Remove-AzVMSqlServerExtension

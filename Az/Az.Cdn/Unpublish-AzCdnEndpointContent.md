@@ -4,8 +4,8 @@ Module Name: Az.Cdn
 ms.assetid: 21E9F441-A00B-4F79-8FF1-968D92982471
 online version: https://docs.microsoft.com/powershell/module/az.cdn/unpublish-azcdnendpointcontent
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Unpublish-AzCdnEndpointContent.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Unpublish-AzCdnEndpointContent.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Unpublish-AzCdnEndpointContent.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Unpublish-AzCdnEndpointContent.md
 ---
 
 # Unpublish-AzCdnEndpointContent
@@ -32,6 +32,16 @@ Unpublish-AzCdnEndpointContent -CdnEndpoint <PSEndpoint> -PurgeContent <String[]
 The **Unpublish-AzCdnEndpointContent** cmdlet purges the content from an Azure Content Delivery Network (CDN) endpoint.
 
 ## EXAMPLES
+
+### Example 1: Purge some assets
+```powershell
+Unpublish-AzCdnEndpointContent -ResourceGroupName myresourcegroup -ProfileName mycdnprofile -EndpointName myendpoint -PurgeContent "/images/kitten.png","/video/rickroll.mp4"
+```
+
+### Example 2: Purge everything in /images/ on all endpoints
+```powershell
+Get-AzCdnProfile | Get-AzCdnEndpoint | Unpublish-AzCdnEndpointContent -PurgeContent "/images/*"
+```
 
 ## PARAMETERS
 

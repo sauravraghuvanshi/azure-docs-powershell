@@ -4,8 +4,8 @@ Module Name: Az.Websites
 ms.assetid: 38433470-CAFD-4B8F-980C-63D4B264B39F
 online version: https://docs.microsoft.com/powershell/module/az.websites/get-azwebapppublishingprofile
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Get-AzWebAppPublishingProfile.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Get-AzWebAppPublishingProfile.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Get-AzWebAppPublishingProfile.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Get-AzWebAppPublishingProfile.md
 ---
 
 # Get-AzWebAppPublishingProfile

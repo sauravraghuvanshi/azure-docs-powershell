@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.Migrate
 online version: https://docs.microsoft.com/powershell/module/az.migrate/start-azmigratetestmigration
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Migrate/help/Start-AzMigrateTestMigration.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Migrate/help/Start-AzMigrateTestMigration.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Migrate/help/Start-AzMigrateTestMigration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Migrate/help/Start-AzMigrateTestMigration.md
 ---
 
 # Start-AzMigrateTestMigration
@@ -115,7 +115,7 @@ The server object can be retrieved using the Get-AzMigrateServerReplication cmdl
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20180110.IMigrationItem
+Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20210210.IMigrationItem
 Parameter Sets: ByInputObjectVMwareCbt
 Aliases:
 
@@ -179,7 +179,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20180110.IJob
+### Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20210210.IJob
 
 ## NOTES
 
@@ -192,9 +192,6 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IMigrationItem>: Specifies the replicating server for which the test migration needs to be initiated. The server object can be retrieved using the Get-AzMigrateServerReplication cmdlet.
   - `[Location <String>]`: Resource Location
-  - `[CurrentJobId <String>]`: The ARM Id of the job being executed.
-  - `[CurrentJobName <String>]`: The job name.
-  - `[CurrentJobStartTime <DateTime?>]`: The start time of the job.
   - `[ProviderSpecificDetail <IMigrationProviderSpecificSettings>]`: The migration provider custom settings.
 
 ## RELATED LINKS

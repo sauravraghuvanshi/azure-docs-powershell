@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: 7302D785-9DD0-4CC0-93C9-9A6EA60591CF
 online version: https://docs.microsoft.com/powershell/module/az.sql/suspend-azsqldatabase
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Suspend-AzSqlDatabase.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Suspend-AzSqlDatabase.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Suspend-AzSqlDatabase.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Suspend-AzSqlDatabase.md
 ---
 
 # Suspend-AzSqlDatabase

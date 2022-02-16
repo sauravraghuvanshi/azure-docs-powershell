@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Accounts.dll-Help.xml
 Module Name: Az.Accounts
 online version: https://docs.microsoft.com/powershell/module/az.accounts/invoke-azrestmethod
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Invoke-AzRestMethod.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Invoke-AzRestMethod.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Invoke-AzRestMethod.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Invoke-AzRestMethod.md
 ---
 
 # Invoke-AzRestMethod
@@ -16,15 +16,21 @@ Construct and perform HTTP request to Azure resource management endpoint only
 
 ### ByPath (Default)
 ```
-Invoke-AzRestMethod -Path <String> -Method <String> [-Payload <String>] [-AsJob]
+Invoke-AzRestMethod -Path <String> [-Method <String>] [-Payload <String>] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByParameters
 ```
 Invoke-AzRestMethod [-SubscriptionId <String>] [-ResourceGroupName <String>] [-ResourceProviderName <String>]
- [-ResourceType <String[]>] [-Name <String[]>] -ApiVersion <String> -Method <String> [-Payload <String>]
+ [-ResourceType <String[]>] [-Name <String[]>] -ApiVersion <String> [-Method <String>] [-Payload <String>]
  [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ByURI
+```
+Invoke-AzRestMethod [-Uri] <Uri> [-ResourceId <Uri>] [-Method <String>] [-Payload <String>] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,7 +41,9 @@ Construct and perform HTTP request to Azure resource management endpoint only
 ### Example 1
 ```powershell
 Invoke-AzRestMethod -Path "/subscriptions/{subscription}/resourcegroups/{resourcegroup}/providers/microsoft.operationalinsights/workspaces/{workspace}?api-version={API}" -Method GET
+```
 
+```Output
 Headers    : {[Cache-Control, System.String[]], [Pragma, System.String[]], [x-ms-request-id, System.String[]], [Strict-Transport-Security, System.String[]]…}
 Version    : 1.1
 StatusCode : 200
@@ -76,6 +84,21 @@ Content    : {
 ```
 
 Get log analytics workspace by path
+
+### Example 2
+```powershell
+Invoke-AzRestMethod https://graph.microsoft.com/v1.0/me
+```
+
+```output
+Headers    : {[Date, System.String[]], [Cache-Control, System.String[]], [Transfer-Encoding, System.String[]], [Strict-Transport-Security, System.String[]]…}
+Version    : 1.1
+StatusCode : 200
+Method     : GET
+Content    : {"@odata.context":"https://graph.microsoft.com/v1.0/$metadata#users/$entity","businessPhones":["......}
+```
+
+Get current signed in user via MicrosoftGraph API. This example is equivalent to `Get-AzADUser -SignedIn`.
 
 ## PARAMETERS
 
@@ -133,7 +156,7 @@ Parameter Sets: (All)
 Aliases:
 Accepted values: GET, POST, PUT, PATCH, DELETE
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -200,6 +223,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ResourceId
+Identifier URI specified by the REST API you are calling. It shouldn't be the resource id of Azure Resource Manager.
+
+```yaml
+Type: System.Uri
+Parameter Sets: ByURI
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ResourceProviderName
 Target Resource Provider Name
 
@@ -240,6 +278,21 @@ Aliases:
 
 Required: False
 Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Uri
+Uniform Resource Identifier of the Azure resources. The target resource needs to support Azure AD authentication and the access token is derived according to resource id. If resource id is not set, its value is derived according to built-in service suffixes in current Azure Environment.
+
+```yaml
+Type: System.Uri
+Parameter Sets: ByURI
+Aliases:
+
+Required: True
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

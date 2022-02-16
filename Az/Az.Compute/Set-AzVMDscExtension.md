@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: 04F58D88-53D6-42CA-852C-9E2A129898C7
 online version: https://docs.microsoft.com/powershell/module/az.compute/set-azvmdscextension
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMDscExtension.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMDscExtension.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVMDscExtension.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVMDscExtension.md
 ---
 
 # Set-AzVMDscExtension

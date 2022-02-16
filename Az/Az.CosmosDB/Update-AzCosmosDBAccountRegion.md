@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.dll-Help.xml
 Module Name: Az.CosmosDB
 online version: https://docs.microsoft.com/powershell/module/az.cosmosdb/update-azcosmosdbaccountregion
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CosmosDB/CosmosDB/help/Update-AzCosmosDBAccountRegion.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CosmosDB/CosmosDB/help/Update-AzCosmosDBAccountRegion.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CosmosDB/CosmosDB/help/Update-AzCosmosDBAccountRegion.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CosmosDB/CosmosDB/help/Update-AzCosmosDBAccountRegion.md
 ---
 
 # Update-AzCosmosDBAccountRegion
@@ -36,7 +36,7 @@ Update-AzCosmosDBAccountRegion [-Location <String[]>] [-LocationObject <PSLocati
 
 ## DESCRIPTION
 Update Regions of a CosmosDB Account. Location can be provided either as an object of type PSLocation or as strings of Location Name ordered by failover priority.
-LocationObject parameter expects the list of current locations (failover prioritiies included) appended by the new LocationObjects corresponding to new locations to be added.
+LocationObject parameter expects the list of current locations (failover priorities included) appended by the new LocationObjects corresponding to new locations to be added.
 Location parameter expects the list of current location(ordered by failover priority) and the new locations. 
 Please note, we only support Addition of Regions. Please provide either Location or LocationObject.
 
@@ -44,27 +44,28 @@ Please note, we only support Addition of Regions. Please provide either Location
 
 ### Example 1
 ```powershell
-PS C:\> Update-AzCosmosDBAccountRegion -ResourceGroupName rg1 -Name dbname -Location "location1, location2"
+PS C:\> Update-AzCosmosDBAccountRegion -ResourceGroupName rg -Name dbname -Location "location1", "location2"
 
-Kind                          : GlobalDocumentDB
-ProvisioningState             : Succeeded
-DocumentEndpoint              : https://dbname.documents.azure.com:443/
-DatabaseAccountOfferType      : Standard
-IpRangeFilter                 :
-IsVirtualNetworkFilterEnabled : False
-EnableAutomaticFailover       : False
-ConsistencyPolicy             : Microsoft.Azure.Management.CosmosDB.Fluent.Models.ConsistencyPolicy
-Capabilities                  : {}
-WriteLocations                : {dbname-location1}
-ReadLocations                 : {dbname-location2}
-FailoverPolicies              : {dbname-location1, dbname-location2}
-VirtualNetworkRules           : {}
-EnableMultipleWriteLocations  : False
+Id                            : /subscriptions/{subscriptionid}/resourceGroups/rg/providers/Microsoft.DocumentDB/databaseAccounts/dbname
+Name                          : dbname
 Location                      : location1
 Tags                          : {}
-Id                            : /subscriptions/{subscriptionid}/resourceGroups/rg1/providers/Microsoft.DocumentDB/databaseAccounts/dbname
-Name                          : dbname
-Type                          : Microsoft.DocumentDB/databaseAccounts
+EnableCassandraConnector      :
+EnableMultipleWriteLocations  : True
+VirtualNetworkRules           : {}
+FailoverPolicies              : {dbname-location1, dbname-location2}
+Locations                     : {dbname-location1, dbname-location2}
+ReadLocations                 : {dbname-location1, dbname-location2}
+WriteLocations                : {dbname-location1}
+Capabilities                  : {}
+ConsistencyPolicy             : Microsoft.Azure.Management.CosmosDB.Fluent.Models.ConsistencyPolicy
+EnableAutomaticFailover       : False
+IsVirtualNetworkFilterEnabled : False
+IpRules                       : {}
+DatabaseAccountOfferType      : Standard
+DocumentEndpoint              : https://dbname.documents.azure.com:443/
+ProvisioningState             : Succeeded
+Kind                          : GlobalDocumentDB
 ```
 
 ## PARAMETERS
@@ -73,24 +74,9 @@ Type                          : Microsoft.DocumentDB/databaseAccounts
 Run cmdlet in the background
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
 
 Required: False
 Position: Named
@@ -103,7 +89,7 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: IAzureContextContainer
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -118,7 +104,7 @@ Accept wildcard characters: False
 ResourceId of the resource.
 
 ```yaml
-Type: PSDatabaseAccountGetResults
+Type: Microsoft.Azure.Commands.CosmosDB.Models.PSDatabaseAccountGetResults
 Parameter Sets: ByObjectParameterSet
 Aliases:
 
@@ -133,7 +119,7 @@ Accept wildcard characters: False
 Name of the location to be added.
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -148,7 +134,7 @@ Accept wildcard characters: False
 Add a location to the Cosmos DB database account. Array of PSLocation objects.
 
 ```yaml
-Type: PSLocation[]
+Type: Microsoft.Azure.Commands.CosmosDB.Models.PSLocation[]
 Parameter Sets: (All)
 Aliases:
 
@@ -163,7 +149,7 @@ Accept wildcard characters: False
 Name of the Cosmos DB database account.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByNameParameterSet
 Aliases:
 
@@ -178,7 +164,7 @@ Accept wildcard characters: False
 Name of resource group.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByNameParameterSet
 Aliases:
 
@@ -193,11 +179,26 @@ Accept wildcard characters: False
 ResourceId of the resource.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ByResourceIdParameterSet
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -209,7 +210,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

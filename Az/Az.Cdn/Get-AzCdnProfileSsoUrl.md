@@ -4,8 +4,8 @@ Module Name: Az.Cdn
 ms.assetid: 93D5E2D9-FB89-4311-8E8E-44CBFAFC98A9
 online version: https://docs.microsoft.com/powershell/module/az.cdn/get-azcdnprofilessourl
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Get-AzCdnProfileSsoUrl.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Get-AzCdnProfileSsoUrl.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzCdnProfileSsoUrl.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzCdnProfileSsoUrl.md
 ---
 
 # Get-AzCdnProfileSsoUrl
@@ -31,6 +31,17 @@ The **Get-AzCdnProfileSsoUrl** cmdlet gets the single sign-on URL of the Azure C
 This URL lets users connect to a supplementary portal and use additional features of  CDN.
 
 ## EXAMPLES
+
+### Example 1
+```powershell
+Get-AzCdnProfileSsoUrl -ResourceGroupName myresourcegroup -ProfileName mycdnprofile
+```
+
+```Output
+SsoUriValue
+-----------
+https://cdn.windowsazure.com/account/loginexternal/?token=IUQ9oj9b0H%2bZTL8gSnaBFbe9hfGEoy%2fBMtkbUQmWOAU%3d&timesta...
+```
 
 ## PARAMETERS
 

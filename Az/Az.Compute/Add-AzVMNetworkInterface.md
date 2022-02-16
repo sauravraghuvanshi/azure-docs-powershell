@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: BF80D456-DAB1-4B51-B50F-A75C2C66A472
 online version: https://docs.microsoft.com/powershell/module/az.compute/add-azvmnetworkinterface
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVMNetworkInterface.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVMNetworkInterface.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Add-AzVMNetworkInterface.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Add-AzVMNetworkInterface.md
 ---
 
 # Add-AzVMNetworkInterface
@@ -17,7 +17,7 @@ Adds a network interface to a virtual machine.
 
 ### GetNicFromNicId (Default)
 ```
-Add-AzVMNetworkInterface [-VM] <PSVirtualMachine> [-Id] <String> [-Primary]
+Add-AzVMNetworkInterface [-VM] <PSVirtualMachine> [-Id] <String> [-Primary] [-DeleteOption <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -25,7 +25,7 @@ Add-AzVMNetworkInterface [-VM] <PSVirtualMachine> [-Id] <String> [-Primary]
 ```
 Add-AzVMNetworkInterface [-VM] <PSVirtualMachine>
  [-NetworkInterface] <System.Collections.Generic.List`1[Microsoft.Azure.Management.Internal.Network.Common.INetworkInterfaceReference]>
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [-DeleteOption <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -70,6 +70,21 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DeleteOption
+Specifies Network Interface delete option after VM deletion. Options are Detach, Delete
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

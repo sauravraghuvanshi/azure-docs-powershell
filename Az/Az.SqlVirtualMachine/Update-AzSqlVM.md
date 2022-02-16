@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.SqlVirtualMachine.dll-Hel
 Module Name: Az.SqlVirtualMachine
 online version: https://docs.microsoft.com/powershell/module/az.sqlvirtualmachine/update-azsqlvm
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SqlVirtualMachine/SqlVirtualMachine/help/Update-AzSqlVM.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SqlVirtualMachine/SqlVirtualMachine/help/Update-AzSqlVM.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SqlVirtualMachine/SqlVirtualMachine/help/Update-AzSqlVM.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SqlVirtualMachine/SqlVirtualMachine/help/Update-AzSqlVM.md
 ---
 
 # Update-AzSqlVM

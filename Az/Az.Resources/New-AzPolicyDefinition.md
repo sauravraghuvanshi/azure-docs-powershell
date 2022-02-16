@@ -4,8 +4,8 @@ Module Name: Az.Resources
 ms.assetid: 31F2AF24-488D-4CAF-A9C8-C8DAE76E031F
 online version: https://docs.microsoft.com/powershell/module/az.resources/new-azpolicydefinition
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzPolicyDefinition.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzPolicyDefinition.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/New-AzPolicyDefinition.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/New-AzPolicyDefinition.md
 ---
 
 # New-AzPolicyDefinition

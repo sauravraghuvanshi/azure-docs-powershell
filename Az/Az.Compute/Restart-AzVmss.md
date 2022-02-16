@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: 47F0EE55-78C0-4C71-BD32-C7CB7B200DC3
 online version: https://docs.microsoft.com/powershell/module/az.compute/restart-azvmss
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Restart-AzVmss.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Restart-AzVmss.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Restart-AzVmss.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Restart-AzVmss.md
 ---
 
 # Restart-AzVmss

@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Batch.dll-Help.xml
 Module Name: Az.Batch
 online version: https://docs.microsoft.com/powershell/module/az.batch/get-azbatchtaskcount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchTaskCount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchTaskCount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Get-AzBatchTaskCount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Get-AzBatchTaskCount.md
 ---
 
 # Get-AzBatchTaskCount
@@ -34,8 +34,11 @@ Task counts provide a count of the tasks by active, running or completed task st
 ## EXAMPLES
 
 ### Example 1: Get task counts by ID
+```powershell
+Get-AzBatchTaskCount -JobId "Job01" -Id "Task03" -BatchContext $Context
 ```
-PS C:\> Get-AzBatchTaskCount -JobId "Job01" -Id "Task03" -BatchContext $Context
+
+```output
 Active              : 1
 Completed           : 0
 Failed              : 0

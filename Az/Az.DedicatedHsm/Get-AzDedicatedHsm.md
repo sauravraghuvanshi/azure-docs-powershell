@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.DedicatedHsm
 online version: https://docs.microsoft.com/powershell/module/az.dedicatedhsm/get-azdedicatedhsm
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DedicatedHsm/help/Get-AzDedicatedHsm.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DedicatedHsm/help/Get-AzDedicatedHsm.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DedicatedHsm/help/Get-AzDedicatedHsm.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DedicatedHsm/help/Get-AzDedicatedHsm.md
 ---
 
 # Get-AzDedicatedHsm

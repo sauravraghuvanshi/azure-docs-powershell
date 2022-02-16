@@ -1,108 +1,92 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.dll-Help.xml
+external help file: 
 Module Name: Az.ManagedServices
 online version: https://docs.microsoft.com/powershell/module/az.managedservices/get-azmanagedservicesassignment
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ManagedServices/ManagedServices/help/Get-AzManagedServicesAssignment.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ManagedServices/ManagedServices/help/Get-AzManagedServicesAssignment.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ManagedServices/help/Get-AzManagedServicesAssignment.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ManagedServices/help/Get-AzManagedServicesAssignment.md
 ---
 
 # Get-AzManagedServicesAssignment
 
 ## SYNOPSIS
-Gets a specific registration assignment or a list of the registration assignments.
+Gets the details of the specified registration assignment.
 
 ## SYNTAX
 
-### Default (Default)
+### List (Default)
 ```
-Get-AzManagedServicesAssignment [-Scope <String>] [-ExpandRegistrationDefinition]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzManagedServicesAssignment [-Scope <String>] [-ExpandRegistrationDefinition] [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
 ```
 
-### ByName
+### Get
 ```
-Get-AzManagedServicesAssignment [-Scope <String>] [-Name <String>] [-ExpandRegistrationDefinition]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzManagedServicesAssignment -Name <String> [-Scope <String>] [-ExpandRegistrationDefinition]
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-AzManagedServicesAssignment -InputObject <IManagedServicesIdentity> [-ExpandRegistrationDefinition]
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets a specific registration assignment or a list of the registration assignments.
+Gets the details of the specified registration assignment.
 
 ## EXAMPLES
 
-### Example 1
-```
+### Example 1: List all Azure Lighthouse registration assignments in a subscription
+```powershell
 PS C:\> Get-AzManagedServicesAssignment
 
-Name                                 Id                                                                                                                                                   ProvisioningState
-----                                 --                                                                                                                                                   -----------------
-0413e647-6915-45e3-944d-79a587e57f80 /subscriptions/24ab6047-da91-48c0-66e5-20a8c6daefc8/providers/Microsoft.ManagedServices/registrationAssignments/0413e647-6915-45e3-944d-79a587e57f80 Succeeded
-
-PS C:\>
+Name                                 Type
+----                                 ----
+xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Microsoft.ManagedServices/registrationAssignments
+xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Microsoft.ManagedServices/registrationAssignments
+xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Microsoft.ManagedServices/registrationAssignments
 ```
 
-Gets all registration assignments under the default scope.
+Lists all the Azure Lighthouse registration assignments in a given subscription in context.
 
-### Example 2
-```
-PS C:\> $assignments = Get-AzManagedServicesAssignment -ExpandRegistrationDefinition
-PS C:\> $assignments[0].Properties.RegistrationDefinition
+### Example 2: Get Azure Lighthouse registration assignment by name with selected properties
+```powershell
+PS C:\> Get-AzManagedServicesAssignment -Name xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Format-List -Property Id, Name, Type, RegistrationDefinitionId, ProvisioningState
 
-
-Properties : Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models.PSRegistrationAssignmentPropertiesRegistrationDefinitionProperties
-Plan       :
-Id         : /subscriptions/24ab6047-da91-48c0-66e5-20a8c6daefc8/providers/Microsoft.ManagedServices/registrationDefinitions/0c146106-c927-4098-a7ca-30bbcf44a502
-Type       : Microsoft.ManagedServices/registrationDefinitions
-Name       : 0c146106-c927-4098-a7ca-30bbcf44a502
-
-PS C:\>
+Id                       : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.ManagedServices/registrationAssignments/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Name                     : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Type                     : Microsoft.ManagedServices/registrationAssignments
+RegistrationDefinitionId : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.ManagedServices/registrationDefinitions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+ProvisioningState        : Succeeded
 ```
 
-Gets all registration assignments with the registration definition details.
+Gets Azure Lighthouse registration assignment by name with selected properties.
 
-### Example 3
-```
-PS C:\> Get-AzManagedServicesAssignment -Name 0413e647-6915-45e3-944d-79a587e57f80
+### Example 3: List all Azure Lighthouse registration assignments by scope
+```powershell
+PS C:\>  Get-AzManagedServicesAssignment -Scope /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Format-List -Property Id, Name, Type, RegistrationDefinitionId, ProvisioningState
 
-Name                                 Id                                                                                                                                                   ProvisioningState
-----                                 --                                                                                                                                                   -----------------
-0413e647-6915-45e3-944d-79a587e57f80 /subscriptions/24ab6047-da91-48c0-66e5-20a8c6daefc8/providers/Microsoft.ManagedServices/registrationAssignments/0413e647-6915-45e3-944d-79a587e57f80 Succeeded
+Id                       : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.ManagedServices/registrationAssignments/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Name                     : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Type                     : Microsoft.ManagedServices/registrationAssignments
+RegistrationDefinitionId : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.ManagedServices/registrationDefinitions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+ProvisioningState        : Succeeded
 
-PS C:\>
-```
+Id                       : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.ManagedServices/registrationAssignments/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Name                     : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Type                     : Microsoft.ManagedServices/registrationAssignments
+RegistrationDefinitionId : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.ManagedServices/registrationDefinitions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+ProvisioningState        : Succeeded
 
-Gets a registration assignment by name without registration definition details.
-
-### Example 4
-```
-PS C:\> $assignment = Get-AzManagedServicesAssignment -Name 0413e647-6915-45e3-944d-79a587e57f80 -ExpandRegistrationDefinition
-PS C:\> $assignment.Properties.RegistrationDefinition
-
-
-Properties : Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models.PSRegistrationAssignmentPropertiesRegistrationDefinitionProperties
-Plan       :
-Id         : /subscriptions/24ab6047-da91-48c0-66e5-20a8c6daefc8/providers/Microsoft.ManagedServices/registrationDefinitions/0c146106-c927-4098-a7ca-30bbcf44a502
-Type       : Microsoft.ManagedServices/registrationDefinitions
-Name       : 0c146106-c927-4098-a7ca-30bbcf44a502
-
-PS C:\>
+Id                       : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.ManagedServices/registrationAssignments/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Name                     : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Type                     : Microsoft.ManagedServices/registrationAssignments
+RegistrationDefinitionId : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.ManagedServices/registrationDefinitions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+ProvisioningState        : Succeeded
 ```
 
-Gets a registration assignment by name with registration definition details.
-
-### Example 5
-```
-PS C:\> Get-AzManagedServicesAssignment -Scope /subscriptions/24ab6047-da91-48c0-66e5-20a8c6daefc8
-
-Name                                 Id                                                                                                                                                   ProvisioningState
-----                                 --                                                                                                                                                   -----------------
-0413e647-6915-45e3-944d-79a587e57f80 /subscriptions/24ab6047-da91-48c0-66e5-20a8c6daefc8/providers/Microsoft.ManagedServices/registrationAssignments/0413e647-6915-45e3-944d-79a587e57f80 Succeeded
-
-PS C:\>
-```
-
-Gets all the registration assignments at given scope.
+Lists all the Azure Lighthouse registration assignments in a given subscription or resource group scope.
 
 ## PARAMETERS
 
@@ -110,9 +94,9 @@ Gets all the registration assignments at given scope.
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -122,7 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpandRegistrationDefinition
-Whether to include registration definition details.
+The flag indicating whether to return the registration definition details along with the registration assignment details.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -131,20 +115,36 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models.IManagedServicesIdentity
+Parameter Sets: GetViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -Name
-The unique name of the Registration Assignment.
+The GUID of the registration assignment.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByName
-Aliases:
+Parameter Sets: Get
+Aliases: RegistrationAssignmentId
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -152,16 +152,16 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
-The scope where the registration assignment created.
+The scope of the resource.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Get, List
 Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: "subscriptions/" + (Get-AzContext).Subscription.Id
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -171,10 +171,27 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
+### Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models.IManagedServicesIdentity
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models.PSRegistrationAssignment
+### Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models.Api20200201Preview.IRegistrationAssignment
+
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT <IManagedServicesIdentity>: Identity Parameter
+  - `[Id <String>]`: Resource identity path
+  - `[MarketplaceIdentifier <String>]`: The Azure Marketplace identifier. Expected formats: {publisher}.{product[-preview]}.{planName}.{version} or {publisher}.{product[-preview]}.{planName} or {publisher}.{product[-preview]} or {publisher}).
+  - `[RegistrationAssignmentId <String>]`: The GUID of the registration assignment.
+  - `[RegistrationDefinitionId <String>]`: The GUID of the registration definition.
+  - `[Scope <String>]`: The scope of the resource.
+
 ## RELATED LINKS
+

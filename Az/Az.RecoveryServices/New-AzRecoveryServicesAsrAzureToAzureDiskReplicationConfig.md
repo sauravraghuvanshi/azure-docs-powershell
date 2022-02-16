@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.SiteReco
 Module Name: Az.RecoveryServices
 online version: https://docs.microsoft.com/powershell/module/az.recoveryservices/new-azrecoveryservicesasrazuretoazurediskreplicationconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/New-AzRecoveryServicesAsrAzureToAzureDiskReplicationConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/New-AzRecoveryServicesAsrAzureToAzureDiskReplicationConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RecoveryServices/RecoveryServices/help/New-AzRecoveryServicesAsrAzureToAzureDiskReplicationConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RecoveryServices/RecoveryServices/help/New-AzRecoveryServicesAsrAzureToAzureDiskReplicationConfig.md
 ---
 
 # New-AzRecoveryServicesAsrAzureToAzureDiskReplicationConfig
@@ -242,7 +242,7 @@ Specifies the account type of replicated managed disk.
 Type: System.String
 Parameter Sets: AzureToAzureManagedDisk
 Aliases:
-Accepted values: Premium_LRS, Standard_LRS, StandardSSD_LRS
+Accepted values: Premium_LRS, Premium_ZRS, Standard_LRS, StandardSSD_LRS, StandardSSD_ZRS
 
 Required: True
 Position: Named
@@ -273,7 +273,7 @@ Specifies the recovery target disk for replicated managed disk.
 Type: System.String
 Parameter Sets: AzureToAzureManagedDisk
 Aliases:
-Accepted values: Premium_LRS, Standard_LRS, StandardSSD_LRS
+Accepted values: Premium_LRS, Premium_ZRS, Standard_LRS, StandardSSD_LRS, StandardSSD_ZRS
 
 Required: True
 Position: Named

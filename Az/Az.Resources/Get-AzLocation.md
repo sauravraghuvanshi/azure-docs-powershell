@@ -4,8 +4,8 @@ Module Name: Az.Resources
 ms.assetid: DC870E11-2129-4906-8357-D9BC1CF2E08E
 online version: https://docs.microsoft.com/powershell/module/az.resources/get-azlocation
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzLocation.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzLocation.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Get-AzLocation.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Get-AzLocation.md
 ---
 
 # Get-AzLocation
@@ -30,6 +30,26 @@ PS C:\>Get-AzLocation
 ```
 
 This command gets all locations and the supported resource providers for each location.
+
+### Example 2: Get all locations supporting resource provider Microsoft.AppConfiguration
+```
+PS C:\>Get-AzLocation | Where-Object {$_.Providers -contains "Microsoft.AppConfiguration"}
+
+Location    : eastasia
+DisplayName : East Asia
+Providers   : {Microsoft.Devices, Microsoft.Cache, Microsoft.AppConfiguration, microsoft.insights…}
+
+Location    : southeastasia
+DisplayName : Southeast Asia
+Providers   : {Microsoft.Devices, Microsoft.Cache, Microsoft.AppConfiguration, microsoft.insights…}
+
+Location    : centralus
+DisplayName : Central US
+Providers   : {Microsoft.Devices, Microsoft.Cache, Microsoft.AppConfiguration, microsoft.insights…}
+...
+```
+
+This example gets all locations which supports resource provider "Microsoft.AppConfiguration".
 
 ## PARAMETERS
 

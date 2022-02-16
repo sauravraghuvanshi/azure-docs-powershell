@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: 760C03A0-12DB-43C4-A180-B013FA77A513
 online version: https://docs.microsoft.com/powershell/module/az.automation/remove-azautomationvariable
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Remove-AzAutomationVariable.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Remove-AzAutomationVariable.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Remove-AzAutomationVariable.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Remove-AzAutomationVariable.md
 ---
 
 # Remove-AzAutomationVariable

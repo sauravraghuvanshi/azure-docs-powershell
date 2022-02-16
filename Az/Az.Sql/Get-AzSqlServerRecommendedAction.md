@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: BB513A53-48A0-4F8F-93F0-D3DFA2C3D523
 online version: https://docs.microsoft.com/powershell/module/az.sql/get-azsqlserverrecommendedaction
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServerRecommendedAction.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServerRecommendedAction.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlServerRecommendedAction.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlServerRecommendedAction.md
 ---
 
 # Get-AzSqlServerRecommendedAction

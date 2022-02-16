@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: BA508F0B-847F-4531-9D5D-A5A044A2D207
 online version: https://docs.microsoft.com/powershell/module/az.automation/import-azautomationdscconfiguration
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Import-AzAutomationDscConfiguration.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Import-AzAutomationDscConfiguration.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Import-AzAutomationDscConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Import-AzAutomationDscConfiguration.md
 ---
 
 # Import-AzAutomationDscConfiguration

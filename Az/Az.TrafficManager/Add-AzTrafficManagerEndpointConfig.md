@@ -4,8 +4,8 @@ Module Name: Az.TrafficManager
 ms.assetid: 25E3F297-1D91-4102-B4D3-1E7195A5D33D
 online version: https://docs.microsoft.com/powershell/module/az.trafficmanager/add-aztrafficmanagerendpointconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/TrafficManager/TrafficManager/help/Add-AzTrafficManagerEndpointConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/TrafficManager/TrafficManager/help/Add-AzTrafficManagerEndpointConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/TrafficManager/TrafficManager/help/Add-AzTrafficManagerEndpointConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/TrafficManager/TrafficManager/help/Add-AzTrafficManagerEndpointConfig.md
 ---
 
 # Add-AzTrafficManagerEndpointConfig
@@ -18,7 +18,7 @@ Adds an endpoint to a local Traffic Manager profile object.
 ```
 Add-AzTrafficManagerEndpointConfig -EndpointName <String> -TrafficManagerProfile <TrafficManagerProfile>
  -Type <String> [-TargetResourceId <String>] [-Target <String>] -EndpointStatus <String> [-Weight <UInt32>]
- [-Priority <UInt32>] [-EndpointLocation <String>] [-MinChildEndpoints <UInt32>]
+ [-Priority <UInt32>] [-EndpointLocation <String>] [-MinChildEndpoints <UInt32>] [-MinChildEndpointsIPv4 <UInt32>] [-MinChildEndpointsIPv6 <UInt32>]
  [-GeoMapping <System.Collections.Generic.List`1[System.String]>]
  [-SubnetMapping <System.Collections.Generic.List`1[Microsoft.Azure.Commands.TrafficManager.Models.TrafficManagerIpAddressRange]>]
  [-CustomHeader <System.Collections.Generic.List`1[Microsoft.Azure.Commands.TrafficManager.Models.TrafficManagerCustomHeader]>]
@@ -157,6 +157,14 @@ Accept wildcard characters: False
 
 ### -MinChildEndpoints
 The minimum number of endpoints that must be available in the child profile in order for the Nested Endpoint in the parent profile to be considered available.
+Only applicable to endpoint of type 'NestedEndpoints'.
+
+### -MinChildEndpointsIPv4
+The minimum number of IPv4 (DNS record type A) endpoints that must be available in the child profile in order for the Nested Endpoint in the parent profile to be considered available.
+Only applicable to endpoint of type 'NestedEndpoints'.
+
+### -MinChildEndpointsIPv6
+The minimum number of IPv6 (DNS record type AAAA) endpoints that must be available in the child profile in order for the Nested Endpoint in the parent profile to be considered available.
 Only applicable to endpoint of type 'NestedEndpoints'.
 
 ```yaml

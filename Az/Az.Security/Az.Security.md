@@ -4,8 +4,8 @@ Module Guid: 5e312bb4-9d3a-4c88-94c3-8e5bbb2e3da4
 Download Help Link: https://docs.microsoft.com/powershell/module/az.security
 Help Version: 0.1.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Security/Security/help/Az.Security.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Security/Security/help/Az.Security.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Security/Security/help/Az.Security.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Security/Security/help/Az.Security.md
 ---
 
 # Az.Security Module
@@ -46,7 +46,7 @@ Get IoT security solution
 ### [Get-AzJitNetworkAccessPolicy](Get-AzJitNetworkAccessPolicy.md)
 Gets the JIT network access policies
 
-### [Get-AzRegulatoryComplainceAssessment](Get-AzRegulatoryComplainceAssessment.md)
+### [Get-AzRegulatoryComplianceAssessment](Get-AzRegulatoryComplianceAssessment.md)
 Gets regulatory compliance assessments
 
 ### [Get-AzRegulatoryComplianceControl](Get-AzRegulatoryComplianceControl.md)
@@ -151,7 +151,7 @@ Invokes a temporary network access request.
 ### [Update-AzIotSecuritySolution](Update-AzIotSecuritySolution.md)
 Update one or more of the following properties in IoT security solution: tags, recommendation configuration, user defined resources
 
-### [Get-AzRegulatoryComplainceAssessment](Get-AzRegulatoryComplainceAssessment.md)
+### [Get-AzRegulatoryComplianceAssessment](Get-AzRegulatoryComplianceAssessment.md)
 Gets regulatory compliance assessments
 
 ### [Get-AzRegulatoryComplianceControl](Get-AzRegulatoryComplianceControl.md)

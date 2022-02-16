@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.AnalysisServices.dll-Help
 Module Name: Az.AnalysisServices
 online version: https://docs.microsoft.com/powershell/module/az.analysisservices/resume-azanalysisservicesserver
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AnalysisServices/AnalysisServices/help/Resume-AzAnalysisServicesServer.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AnalysisServices/AnalysisServices/help/Resume-AzAnalysisServicesServer.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AnalysisServices/AnalysisServices/help/Resume-AzAnalysisServicesServer.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AnalysisServices/AnalysisServices/help/Resume-AzAnalysisServicesServer.md
 ---
 
 # Resume-AzAnalysisServicesServer
@@ -25,8 +25,8 @@ The Resume-AzAnalysisServicesServer cmdlet resumes an instance of Analysis Servi
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> Resume-AzAnalysisServicesServer -Name "testserver" -ResourceGroupName "testgroup"
+```powershell
+Resume-AzAnalysisServicesServer -Name "testserver" -ResourceGroupName "testgroup"
 ```
 
 This command will resume a paused server named testserver in the resourcegroup testgroup

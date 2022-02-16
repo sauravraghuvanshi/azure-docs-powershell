@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.MySql
 online version: https://docs.microsoft.com/powershell/module/az.mysql/new-azmysqlfirewallrule
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MySql/help/New-AzMySqlFirewallRule.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MySql/help/New-AzMySqlFirewallRule.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MySql/help/New-AzMySqlFirewallRule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MySql/help/New-AzMySqlFirewallRule.md
 ---
 
 # New-AzMySqlFirewallRule

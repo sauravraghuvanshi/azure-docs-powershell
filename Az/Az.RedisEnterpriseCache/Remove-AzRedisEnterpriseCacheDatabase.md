@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.RedisEnterpriseCache
 online version: https://docs.microsoft.com/powershell/module/az.redisenterprisecache/remove-azredisenterprisecachedatabase
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RedisEnterpriseCache/help/Remove-AzRedisEnterpriseCacheDatabase.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RedisEnterpriseCache/help/Remove-AzRedisEnterpriseCacheDatabase.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RedisEnterpriseCache/help/Remove-AzRedisEnterpriseCacheDatabase.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RedisEnterpriseCache/help/Remove-AzRedisEnterpriseCacheDatabase.md
 ---
 
 # Remove-AzRedisEnterpriseCacheDatabase

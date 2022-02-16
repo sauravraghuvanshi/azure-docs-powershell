@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: 8FB78A4A-8392-44EE-A907-10FDF756071B
 online version: https://docs.microsoft.com/powershell/module/az.automation/get-azautomationvariable
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Get-AzAutomationVariable.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Get-AzAutomationVariable.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Get-AzAutomationVariable.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Get-AzAutomationVariable.md
 ---
 
 # Get-AzAutomationVariable

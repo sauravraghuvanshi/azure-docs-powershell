@@ -4,8 +4,8 @@ Module Guid: 32c4dede-9b85-43d4-83ab-447e2938c400
 Download Help Link: https://docs.microsoft.com/powershell/module/az.communication
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Communication/help/Az.Communication.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Communication/help/Az.Communication.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Communication/help/Az.Communication.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Communication/help/Az.Communication.md
 ---
 
 # Az.Communication Module
@@ -31,6 +31,9 @@ Operation to delete a CommunicationService.
 
 ### [Set-AzCommunicationServiceNotificationHub](Set-AzCommunicationServiceNotificationHub.md)
 Links an Azure Notification Hub to this communication service.
+
+### [Test-AzCommunicationServiceNameAvailability](Test-AzCommunicationServiceNameAvailability.md)
+Checks that the CommunicationService name is valid and is not already in use.
 
 ### [Update-AzCommunicationService](Update-AzCommunicationService.md)
 Operation to update an existing CommunicationService.

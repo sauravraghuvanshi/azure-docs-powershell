@@ -4,8 +4,8 @@ Module Name: Az.ApiManagement
 ms.assetid: A7CABC63-2E9C-474B-A4F0-69F13A16F65A
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/get-azapimanagementssotoken
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementSsoToken.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementSsoToken.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Get-AzApiManagementSsoToken.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Get-AzApiManagementSsoToken.md
 ---
 
 # Get-AzApiManagementSsoToken
@@ -33,8 +33,8 @@ The **Get-AzApiManagementSsoToken** cmdlet returns a link (URL) containing a sin
 ## EXAMPLES
 
 ### Example 1: Get the SSO token of an API Management service
-```
-PS C:\>Get-AzApiManagementSsoToken -ResourceGroupName "Contoso" -Name "ContosoApi"
+```powershell
+Get-AzApiManagementSsoToken -ResourceGroupName "Contoso" -Name "ContosoApi"
 ```
 
 This command gets the SSO token of an API Management service.

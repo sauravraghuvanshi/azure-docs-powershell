@@ -4,14 +4,14 @@ Module Name: Az.Sql
 ms.assetid: 14814BF3-51AF-4E51-A8A6-661825BD88D1
 online version: https://docs.microsoft.com/powershell/module/az.sql/get-azsqlinstancedatabasesensitivityclassification
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlInstanceDatabaseSensitivityClassification.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlInstanceDatabaseSensitivityClassification.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlInstanceDatabaseSensitivityClassification.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlInstanceDatabaseSensitivityClassification.md
 ---
 
 # Get-AzSqlInstanceDatabaseSensitivityClassification
 
 ## SYNOPSIS
-Gets the current information types and sensitivity labels of columns in the Azure SQL managed instance database.
+Gets the current information types and sensitivity labels of columns in the Azure SQL Managed Instance database.
 
 ## SYNTAX
 
@@ -42,11 +42,11 @@ Get-AzSqlInstanceDatabaseSensitivityClassification -DatabaseObject <AzureSqlMana
 ```
 
 ## DESCRIPTION
-The Get-AzSqlInstanceDatabaseSensitivityClassification cmdlet returns the current information types and sensitivity labels of columns in the Azure SQL managed instance database.
+The Get-AzSqlInstanceDatabaseSensitivityClassification cmdlet returns the current information types and sensitivity labels of columns in the Azure SQL Managed Instance database.
 
 ## EXAMPLES
 
-### Example 1: Get current information types and sensitivity labels of an Azure SQL managed instance database.
+### Example 1: Get current information types and sensitivity labels of an Azure SQL Managed Instance database.
 ```powershell
 PS C:\> Get-AzSqlInstanceDatabaseSensitivityClassification -ResourceGroupName resourceGroup -InstanceName managedInstance -DatabaseName database
 
@@ -74,7 +74,7 @@ SensitivityLabels : {{
                     }}
 ```
 
-### Example 2: Get current information types and sensitivity labels of an Azure SQL managed Instance database with Piping.
+### Example 2: Get current information types and sensitivity labels of an Azure SQL Managed Instance database with Piping.
 ```powershell
 PS C:\> Get-AzSqlInstanceDatabase -ResourceGroupName resourceGroup -InstanceName managedInstance -Name database | Get-AzSqlInstanceDatabaseSensitivityClassification
 
@@ -102,7 +102,7 @@ SensitivityLabels : {{
                     }}
 ```
 
-### Example 3: Get current information type and sensitivity label of a specific column of an Azure SQL managed instance database.
+### Example 3: Get current information type and sensitivity label of a specific column of an Azure SQL Managed Instance database.
 ```powershell
 PS C:\> Get-AzSqlInstanceDatabaseSensitivityClassification -ResourceGroupName resourceGroup -InstanceName managedInstance -DatabaseName database -SchemaName dbo -TableName EMailLog -ColumnName BounceEmailSubject
 
@@ -119,7 +119,7 @@ SensitivityLabels : {{
                     }}
 ```
 
-### Example 4: Get current information type and sensitivity label of a specific column of an Azure SQL managed instance database using Piping.
+### Example 4: Get current information type and sensitivity label of a specific column of an Azure SQL Managed Instance database using Piping.
 ```powershell
 PS C:\> Get-AzSqlInstanceDatabase -ResourceGroupName resourceGroup -InstanceName managedInstance -Name database | Get-AzSqlInstanceDatabaseSensitivityClassification -SchemaName dbo -TableName EMailLog -ColumnName BounceEmailSubject
 
@@ -169,7 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseName
-The name of the Azure SQL managed instance database.
+The name of the Azure SQL Managed Instance database.
 
 ```yaml
 Type: System.String
@@ -184,7 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseObject
-The Azure SQL managed instance database object.
+The Azure SQL Managed Instance database object.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Sql.ManagedDatabase.Model.AzureSqlManagedDatabaseModel
@@ -214,7 +214,8 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceName
-Azure SQL managed instance name.
+Azure SQL Managed Instance name.
+
 
 ```yaml
 Type: System.String

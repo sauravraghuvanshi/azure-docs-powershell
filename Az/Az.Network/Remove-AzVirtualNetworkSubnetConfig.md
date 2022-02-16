@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 47FE9EF4-6000-4096-8F04-26A0C6661FDB
 online version: https://docs.microsoft.com/powershell/module/az.network/remove-azvirtualnetworksubnetconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzVirtualNetworkSubnetConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzVirtualNetworkSubnetConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzVirtualNetworkSubnetConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzVirtualNetworkSubnetConfig.md
 ---
 
 # Remove-AzVirtualNetworkSubnetConfig

@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.CustomProviders
 online version: https://docs.microsoft.com/powershell/module/az.customproviders/update-azcustomprovider
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CustomProviders/help/Update-AzCustomProvider.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CustomProviders/help/Update-AzCustomProvider.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CustomProviders/help/Update-AzCustomProvider.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CustomProviders/help/Update-AzCustomProvider.md
 ---
 
 # Update-AzCustomProvider

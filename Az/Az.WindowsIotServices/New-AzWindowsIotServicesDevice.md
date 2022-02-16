@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.WindowsIotServices
 online version: https://docs.microsoft.com/powershell/module/az.windowsiotservices/new-azwindowsiotservicesdevice
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/WindowsIotServices/help/New-AzWindowsIotServicesDevice.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/WindowsIotServices/help/New-AzWindowsIotServicesDevice.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/WindowsIotServices/help/New-AzWindowsIotServicesDevice.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/WindowsIotServices/help/New-AzWindowsIotServicesDevice.md
 ---
 
 # New-AzWindowsIotServicesDevice

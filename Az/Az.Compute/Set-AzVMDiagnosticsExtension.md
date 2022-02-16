@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: 13ED884A-6224-4BD4-9F12-F896932F7842
 online version: https://docs.microsoft.com/powershell/module/az.compute/set-azvmdiagnosticsextension
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMDiagnosticsExtension.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMDiagnosticsExtension.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVMDiagnosticsExtension.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVMDiagnosticsExtension.md
 ---
 
 # Set-AzVMDiagnosticsExtension

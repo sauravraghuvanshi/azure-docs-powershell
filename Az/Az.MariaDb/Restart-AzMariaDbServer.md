@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.MariaDb
 online version: https://docs.microsoft.com/powershell/module/az.mariadb/restart-azmariadbserver
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MariaDb/help/Restart-AzMariaDbServer.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MariaDb/help/Restart-AzMariaDbServer.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MariaDb/help/Restart-AzMariaDbServer.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MariaDb/help/Restart-AzMariaDbServer.md
 ---
 
 # Restart-AzMariaDbServer

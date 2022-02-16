@@ -4,8 +4,8 @@ Module Name: Az.RecoveryServices
 ms.assetid: F671A7CC-2A27-460E-B064-2FBF1B9C6A0B
 online version: https://docs.microsoft.com/powershell/module/az.recoveryservices/wait-azrecoveryservicesbackupjob
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Wait-AzRecoveryServicesBackupJob.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Wait-AzRecoveryServicesBackupJob.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RecoveryServices/RecoveryServices/help/Wait-AzRecoveryServicesBackupJob.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RecoveryServices/RecoveryServices/help/Wait-AzRecoveryServicesBackupJob.md
 ---
 
 # Wait-AzRecoveryServicesBackupJob

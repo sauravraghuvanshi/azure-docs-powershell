@@ -4,8 +4,8 @@ Module Name: Az.Websites
 ms.assetid: 89ED4231-7616-47D0-BDAA-D849C245DC79
 online version: https://docs.microsoft.com/powershell/module/az.websites/get-azappserviceplan
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Get-AzAppServicePlan.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Get-AzAppServicePlan.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Get-AzAppServicePlan.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Get-AzAppServicePlan.md
 ---
 
 # Get-AzAppServicePlan

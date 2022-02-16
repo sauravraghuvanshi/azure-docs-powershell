@@ -4,8 +4,8 @@ Module Name: Az.Media
 ms.assetid: 23C6C9D3-A745-46C8-AB2C-B874223FBFFF
 online version: https://docs.microsoft.com/powershell/module/az.media/get-azmediaservicenameavailability
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/Get-AzMediaServiceNameAvailability.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/Get-AzMediaServiceNameAvailability.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Media/Media/help/Get-AzMediaServiceNameAvailability.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Media/Media/help/Get-AzMediaServiceNameAvailability.md
 ---
 
 # Get-AzMediaServiceNameAvailability

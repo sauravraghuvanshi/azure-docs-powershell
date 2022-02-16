@@ -4,8 +4,8 @@ Module Name: Az.DataLakeStore
 ms.assetid: ECA70C6C-E0B0-445D-BCAD-041625FAC632
 online version: https://docs.microsoft.com/powershell/module/az.datalakestore/get-azdatalakestoreitem
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataLakeStore/DataLakeStore/help/Get-AzDataLakeStoreItem.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataLakeStore/DataLakeStore/help/Get-AzDataLakeStoreItem.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataLakeStore/DataLakeStore/help/Get-AzDataLakeStoreItem.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataLakeStore/DataLakeStore/help/Get-AzDataLakeStoreItem.md
 ---
 
 # Get-AzDataLakeStoreItem

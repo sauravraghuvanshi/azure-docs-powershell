@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Sql.dll-Help.xml
 Module Name: Az.Sql
 online version: https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabasebackupshorttermretentionpolicy
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseBackupShortTermRetentionPolicy.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseBackupShortTermRetentionPolicy.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlDatabaseBackupShortTermRetentionPolicy.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlDatabaseBackupShortTermRetentionPolicy.md
 ---
 
 # Get-AzSqlDatabaseBackupShortTermRetentionPolicy
@@ -34,7 +34,7 @@ Get-AzSqlDatabaseBackupShortTermRetentionPolicy -ResourceId <String> [-DefaultPr
 
 ## DESCRIPTION
 The **Get-AzSqlDatabaseBackupShortTermRetentionPolicy** cmdlet gets the short term retention policy registered to this database.
-The policy is the retention period, in days, for point-in-time restore backups.
+The policy is the retention period in days and differential backup interval in hours, for point-in-time restore backups.
 
 ## EXAMPLES
 
@@ -42,9 +42,9 @@ The policy is the retention period, in days, for point-in-time restore backups.
 ```powershell
 PS C:\> Get-AzSqlDatabaseBackupShortTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01
 
-ResourceGroupName ServerName  DatabaseName RetentionDays
------------------ ----------  ------------ -------------
-resourcegroup01   server01    database01   35
+ResourceGroupName ServerName  DatabaseName RetentionDays DiffBackupIntervalInHours
+----------------- ----------  ------------ ------------- -------------------------
+resourcegroup01   server01    database01   7             24
 ```
 
 This command gets the short term retention policy for database01.
@@ -53,9 +53,9 @@ This command gets the short term retention policy for database01.
 ```powershell
 PS C:\> Get-AzSqlDatabase -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 | Get-AzSqlDatabaseBackupShortTermRetentionPolicy
 
-ResourceGroupName ServerName  DatabaseName RetentionDays
------------------ ----------  ------------ -------------
-resourcegroup01   server01    database01   35
+ResourceGroupName ServerName  DatabaseName RetentionDays DiffBackupIntervalInHours
+----------------- ----------  ------------ ------------- -------------------------
+resourcegroup01   server01    database01   7             24
 ```
 
 This command gets the short term retention policy for database01 via piping in a database object.

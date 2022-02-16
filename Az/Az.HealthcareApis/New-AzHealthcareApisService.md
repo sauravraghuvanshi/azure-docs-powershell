@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.HealthcareApis.dll-Help.x
 Module Name: Az.HealthcareApis
 online version: https://docs.microsoft.com/powershell/module/az.healthcareapis/new-azhealthcareapisservice
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HealthcareApis/HealthcareApis/help/New-AzHealthcareApisService.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HealthcareApis/HealthcareApis/help/New-AzHealthcareApisService.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HealthcareApis/HealthcareApis/help/New-AzHealthcareApisService.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HealthcareApis/HealthcareApis/help/New-AzHealthcareApisService.md
 ---
 
 # New-AzHealthcareApisService

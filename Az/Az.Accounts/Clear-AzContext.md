@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Accounts.dll-Help.xml
 Module Name: Az.Accounts
 online version: https://docs.microsoft.com/powershell/module/az.accounts/clear-azcontext
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Clear-AzContext.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Clear-AzContext.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Clear-AzContext.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Clear-AzContext.md
 ---
 
 # Clear-AzContext
@@ -26,7 +26,7 @@ Remove all Azure Credentials, account, and subscription information.
 
 ### Example 1: Clear global context
 ```powershell
-PS C:\> Clear-AzContext -Scope CurrentUser
+Clear-AzContext -Scope CurrentUser
 ```
 
 Remove all account, subscription, and credential information for any powershell session.

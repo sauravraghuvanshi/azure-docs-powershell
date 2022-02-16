@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: 975B707C-5001-43ED-81AB-9BB6665135BA
 online version: https://docs.microsoft.com/powershell/module/az.batch/stop-azbatchjob
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Stop-AzBatchJob.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Stop-AzBatchJob.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Stop-AzBatchJob.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Stop-AzBatchJob.md
 ---
 
 # Stop-AzBatchJob
@@ -27,8 +27,8 @@ This command marks the job as completed.
 ## EXAMPLES
 
 ### Example 1: Stop a Batch job
-```
-PS C:\>Stop-AzBatchJob -Id "Job-000001" -TerminateReason "No more tasks to run" -BatchContext $Context
+```powershell
+Stop-AzBatchJob -Id "Job-000001" -TerminateReason "No more tasks to run" -BatchContext $Context
 ```
 
 This command stops the job that has the ID Job-000001.

@@ -4,8 +4,8 @@ Module Name: Az.Cdn
 ms.assetid: F93D9D7C-AC2A-4D83-87EC-4A54CD45272B
 online version: https://docs.microsoft.com/powershell/module/az.cdn/get-azcdnendpoint
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Get-AzCdnEndpoint.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Get-AzCdnEndpoint.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzCdnEndpoint.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzCdnEndpoint.md
 ---
 
 # Get-AzCdnEndpoint
@@ -31,6 +31,38 @@ Get-AzCdnEndpoint [-EndpointName <String>] -CdnProfile <PSProfile> [-DefaultProf
 The **Get-AzCdnEndpoint** cmdlet gets an Azure Content Delivery Network (CDN) endpoint and its associated configuration data.
 
 ## EXAMPLES
+
+### Example 1: Get all endpoints in the CDN profile
+```powershell
+Get-AzCdnEndpoint -ResourceGroupName myresourcegroup -ProfileName mycdnprofile
+```
+
+```Output
+HostName                   : myendpoint.azureedge.net
+OriginHostHeader           :
+OriginPath                 :
+ContentTypesToCompress     : {}
+IsCompressionEnabled       : False
+IsHttpAllowed              : True
+IsHttpsAllowed             : True
+QueryStringCachingBehavior : IgnoreQueryString
+Origins                    : {mystorage}
+OptimizationType           :
+ProbePath                  :
+GeoFilters                 : {}
+DeliveryPolicy             :
+ResourceState              : Running
+DefaultOriginGroup         :
+ResourceGroupName          : myresourcegroup
+ProfileName                : mycdnprofile
+Location                   : WestUs
+Tags                       : {}
+Id                         : /subscriptions/11111111-1111-1111-1111-111111111111/resourcegroups/myresourcegroup/providers/Micr
+                             osoft.Cdn/profiles/mycdnprofile/endpoints/myendpoint
+Name                       : myendpoint
+Type                       : Microsoft.Cdn/profiles/endpoints
+ProvisioningState          : Succeeded
+```
 
 ## PARAMETERS
 

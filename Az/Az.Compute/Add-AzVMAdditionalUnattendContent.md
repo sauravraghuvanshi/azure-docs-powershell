@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: 50B64FFE-8277-4DAA-805A-271123B35355
 online version: https://docs.microsoft.com/powershell/module/az.compute/add-azvmadditionalunattendcontent
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVMAdditionalUnattendContent.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVMAdditionalUnattendContent.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Add-AzVMAdditionalUnattendContent.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Add-AzVMAdditionalUnattendContent.md
 ---
 
 # Add-AzVMAdditionalUnattendContent

@@ -4,8 +4,8 @@ Module Name: Az.KeyVault
 ms.assetid: 34985F06-4D8D-463B-B113-972666D18485
 online version: https://docs.microsoft.com/powershell/module/az.keyvault/remove-azkeyvaultcertificate
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultCertificate.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultCertificate.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/KeyVault/KeyVault/help/Remove-AzKeyVaultCertificate.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/KeyVault/KeyVault/help/Remove-AzKeyVaultCertificate.md
 ---
 
 # Remove-AzKeyVaultCertificate

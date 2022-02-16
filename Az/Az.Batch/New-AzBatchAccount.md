@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: 82C7B128-8818-4390-B1A5-CB40AC9D53CA
 online version: https://docs.microsoft.com/powershell/module/az.batch/new-azbatchaccount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/New-AzBatchAccount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/New-AzBatchAccount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/New-AzBatchAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/New-AzBatchAccount.md
 ---
 
 # New-AzBatchAccount
@@ -29,7 +29,10 @@ The **New-AzBatchAccount** cmdlet creates an Azure Batch account for the specifi
 
 ### Example 1: Create a Batch account
 ```powershell
-PS C:\>New-AzBatchAccount -AccountName "pfuller" -ResourceGroupName "ResourceGroup03" -Location "WestUS"
+New-AzBatchAccount -AccountName "pfuller" -ResourceGroupName "ResourceGroup03" -Location "WestUS"
+```
+
+```output
 AccountName                  : pfuller
 Location                     : westus
 ResourceGroupName            : ResourceGroup03

@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: 71043093-DEE5-4395-B67A-2F104CF67893
 online version: https://docs.microsoft.com/powershell/module/az.automation/remove-azautomationwebhook
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Remove-AzAutomationWebhook.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Remove-AzAutomationWebhook.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Remove-AzAutomationWebhook.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Remove-AzAutomationWebhook.md
 ---
 
 # Remove-AzAutomationWebhook

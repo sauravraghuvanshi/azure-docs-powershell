@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceFabric.dll-Help.xm
 Module Name: Az.ServiceFabric
 online version: https://docs.microsoft.com/powershell/module/az.servicefabric/new-azservicefabricmanagedclusterapplication
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/New-AzServiceFabricManagedClusterApplication.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/New-AzServiceFabricManagedClusterApplication.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ServiceFabric/ServiceFabric/help/New-AzServiceFabricManagedClusterApplication.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ServiceFabric/ServiceFabric/help/New-AzServiceFabricManagedClusterApplication.md
 ---
 
 # New-AzServiceFabricManagedClusterApplication
@@ -18,7 +18,7 @@ Create new service fabric managed application under the specified resource group
 ```
 New-AzServiceFabricManagedClusterApplication [-ResourceGroupName] <String> [-ClusterName] <String>
  [-ApplicationTypeName] <String> [-ApplicationTypeVersion] <String> -Name <String>
- [-ApplicationParameter <Hashtable>] [-Tags <Hashtable>] [-Force] [-AsJob]
+ [-ApplicationParameter <Hashtable>] [-Tag <Hashtable>] [-Force] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -26,7 +26,7 @@ New-AzServiceFabricManagedClusterApplication [-ResourceGroupName] <String> [-Clu
 ```
 New-AzServiceFabricManagedClusterApplication [-ResourceGroupName] <String> [-ClusterName] <String>
  [-ApplicationTypeName] <String> [-ApplicationTypeVersion] <String> -Name <String>
- [-ApplicationParameter <Hashtable>] -PackageUrl <String> [-Tags <Hashtable>] [-Force] [-AsJob]
+ [-ApplicationParameter <Hashtable>] -PackageUrl <String> [-Tag <Hashtable>] [-Force] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -215,7 +215,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Tags
+### -Tag
 Specify the tags as key/value pairs.
 
 ```yaml

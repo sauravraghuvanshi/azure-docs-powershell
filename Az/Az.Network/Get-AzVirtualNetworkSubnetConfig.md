@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 7688CE56-0A25-4409-9676-BF1B67C3F05F
 online version: https://docs.microsoft.com/powershell/module/az.network/get-azvirtualnetworksubnetconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVirtualNetworkSubnetConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVirtualNetworkSubnetConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzVirtualNetworkSubnetConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzVirtualNetworkSubnetConfig.md
 ---
 
 # Get-AzVirtualNetworkSubnetConfig

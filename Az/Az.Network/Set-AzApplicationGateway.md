@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 7C8B47B4-2F6A-45EF-A351-88C8C3F9D0D3
 online version: https://docs.microsoft.com/powershell/module/az.network/set-azapplicationgateway
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGateway.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGateway.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzApplicationGateway.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzApplicationGateway.md
 ---
 
 # Set-AzApplicationGateway

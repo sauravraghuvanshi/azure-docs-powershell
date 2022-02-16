@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Cdn.dll-Help.xml
 Module Name: Az.Cdn
 online version: https://docs.microsoft.com/powershell/module/az.cdn/get-azcdnedgenode
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Get-AzCdnEdgeNode.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Get-AzCdnEdgeNode.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzCdnEdgeNode.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzCdnEdgeNode.md
 ---
 
 # Get-AzCdnEdgeNode
@@ -19,16 +19,32 @@ Get-AzCdnEdgeNode [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+The **Get-AzCdnEdgeNode** cmdlet gets Azure CDN edgenodes.
 
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> {{ Add example code here }}
+```powershell
+(Get-AzCdnEdgeNode).IpAddressGroups[0] | ConvertTo-Json
 ```
 
-{{ Add example description here }}
+```Output
+{
+  "DeliveryRegion": "All",
+  "Ipv4Addresses": [
+    {
+      "BaseIpAddress": "23.200.152.0",
+      "PrefixLength": 21
+    }
+  ],
+  "Ipv6Addresses": [
+    {
+      "BaseIpAddress": "2600:1417:9800::",
+      "PrefixLength": 48
+    }
+  ]
+}
+```
 
 ## PARAMETERS
 

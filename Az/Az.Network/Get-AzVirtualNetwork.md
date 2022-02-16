@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: CBDF4BCB-7EB3-4D64-B19C-1314D4AB84E4
 online version: https://docs.microsoft.com/powershell/module/az.network/get-azvirtualnetwork
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVirtualNetwork.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVirtualNetwork.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzVirtualNetwork.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzVirtualNetwork.md
 ---
 
 # Get-AzVirtualNetwork
@@ -28,12 +28,12 @@ Get-AzVirtualNetwork -Name <String> -ResourceGroupName <String> -ExpandResource 
 ```
 
 ## DESCRIPTION
-The **Get-AzVirtualNetwork** cmdlet gets one or more virtual networks n a resource group.
+The **Get-AzVirtualNetwork** cmdlet gets one or more virtual networks in a resource group.
 
 ## EXAMPLES
 
-### 1: Retrieve a virtual network
-```
+### Example 1: Retrieve a virtual network
+```powershell
 Get-AzVirtualNetwork -Name MyVirtualNetwork -ResourceGroupName TestResourceGroup
 
 Name                   : MyVirtualNetwork1
@@ -51,6 +51,7 @@ AddressSpace           : {
                            ]
                          }
 DhcpOptions            : {}
+FlowTimeoutInMinutes   : null
 Subnets                : []
 VirtualNetworkPeerings : []
 EnableDdosProtection   : false
@@ -59,8 +60,8 @@ DdosProtectionPlan     : null
 
 This command gets the virtual network named MyVirtualNetwork in the resource group TestResourceGroup
 
-### 2: List virtual networks using filter
-```
+### Example 2: List virtual networks using filter
+```powershell
 Get-AzVirtualNetwork -Name MyVirtualNetwork*
 
 Name                   : MyVirtualNetwork1
@@ -78,6 +79,7 @@ AddressSpace           : {
                            ]
                          }
 DhcpOptions            : {}
+FlowTimeoutInMinutes   : null
 Subnets                : []
 VirtualNetworkPeerings : []
 EnableDdosProtection   : false

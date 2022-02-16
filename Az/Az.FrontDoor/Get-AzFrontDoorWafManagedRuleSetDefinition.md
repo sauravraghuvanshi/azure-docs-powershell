@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.FrontDoor.dll-Help.xml
 Module Name: Az.FrontDoor
 online version: https://docs.microsoft.com/powershell/module/az.frontdoor/get-azfrontdoorwafmanagedrulesetdefinition
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Get-AzFrontDoorWafManagedRuleSetDefinition.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Get-AzFrontDoorWafManagedRuleSetDefinition.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/FrontDoor/FrontDoor/help/Get-AzFrontDoorWafManagedRuleSetDefinition.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/FrontDoor/FrontDoor/help/Get-AzFrontDoorWafManagedRuleSetDefinition.md
 ---
 
 # Get-AzFrontDoorWafManagedRuleSetDefinition
@@ -35,7 +35,7 @@ Succeeded         DefaultRuleSet              preview-0.1    {LFI, RFI, RCE, PHP
 Succeeded         BotProtection               preview-0.1    {KnownBadBots}
 ```
 
-{{ Add example description here }}
+Get WAF managed rule set definitions.
 
 ## PARAMETERS
 

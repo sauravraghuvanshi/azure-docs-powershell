@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: 5D4F13F9-57E7-446B-AA28-8C44B149E1CB
 online version: https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabaseimportexportstatus
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseImportExportStatus.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseImportExportStatus.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlDatabaseImportExportStatus.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlDatabaseImportExportStatus.md
 ---
 
 # Get-AzSqlDatabaseImportExportStatus

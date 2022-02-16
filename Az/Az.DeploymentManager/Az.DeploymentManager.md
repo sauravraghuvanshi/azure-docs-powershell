@@ -4,8 +4,8 @@ Module Guid: F022ED20-7D3B-4BF4-88AF-F97CC50484DA
 Download Help Link: {{ Update Download Link }}
 Help Version: 0.9.0
 Locale: {{ Update Locale }}
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DeploymentManager/DeploymentManager/help/Az.DeploymentManager.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DeploymentManager/DeploymentManager/help/Az.DeploymentManager.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DeploymentManager/DeploymentManager/help/Az.DeploymentManager.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DeploymentManager/DeploymentManager/help/Az.DeploymentManager.md
 ---
 
 # Az.DeploymentManager Module

@@ -4,8 +4,8 @@ Module Name: Az.ApiManagement
 ms.assetid: A935ABAC-6C60-4AE3-9434-B9BCC1182A34
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/get-azapimanagementlogger
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementLogger.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementLogger.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Get-AzApiManagementLogger.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Get-AzApiManagementLogger.md
 ---
 
 # Get-AzApiManagementLogger
@@ -33,17 +33,17 @@ The **Get-AzApiManagementLogger** cmdlet gets an Azure API Management **Logger**
 ## EXAMPLES
 
 ### Example 1: Get all loggers
-```
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Get-AzApiManagementLogger -Context $apimContext
+```powershell
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Get-AzApiManagementLogger -Context $apimContext
 ```
 
 This command gets all the loggers for the specified context.
 
 ### Example 2: Get a specific logger
-```
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Get-AzApiManagementLogger -Context $apimContext -LoggerId "Logger123"
+```powershell
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Get-AzApiManagementLogger -Context $apimContext -LoggerId "Logger123"
 ```
 
 This command removes a logger that has the ID Logger123.

@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.DataMigration.dll-Help.xm
 Module Name: Az.DataMigration
 online version: https://docs.microsoft.com/powershell/module/az.datamigration/New-AzDataMigrationService
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataMigration/DataMigration/help/New-AzDataMigrationService.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataMigration/DataMigration/help/New-AzDataMigrationService.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataMigration/DataMigration/help/New-AzDataMigrationService.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataMigration/DataMigration/help/New-AzDataMigrationService.md
 ---
 
 # New-AzDataMigrationService
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -Sku
-The sku for the Azure Database Migration Service instance. Possible values currently are Basic_1vCore,Basic_2vCores,GeneralPurpose_4vCores
+The sku for the Azure Database Migration Service instance. Possible values currently are Standard_1vCores, Standard_2vCores, Standard_4vCores, Premium_4vCores.
 
 ```yaml
 Type: System.String

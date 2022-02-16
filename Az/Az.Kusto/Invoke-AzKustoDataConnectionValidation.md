@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.Kusto
 online version: https://docs.microsoft.com/powershell/module/az.kusto/invoke-azkustodataconnectionvalidation
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/help/Invoke-AzKustoDataConnectionValidation.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/help/Invoke-AzKustoDataConnectionValidation.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Kusto/help/Invoke-AzKustoDataConnectionValidation.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Kusto/help/Invoke-AzKustoDataConnectionValidation.md
 ---
 
 # Invoke-AzKustoDataConnectionValidation
@@ -519,7 +519,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Kusto.Models.Api20200918.IDataConnectionValidationResult
+### Microsoft.Azure.PowerShell.Cmdlets.Kusto.Models.Api202101.IDataConnectionValidationResult
 
 ## NOTES
 
@@ -536,9 +536,11 @@ INPUTOBJECT <IKustoIdentity>: Identity Parameter
   - `[DataConnectionName <String>]`: The name of the data connection.
   - `[DatabaseName <String>]`: The name of the database in the Kusto cluster.
   - `[Id <String>]`: Resource identity path
-  - `[Location <String>]`: Azure location.
+  - `[Location <String>]`: Azure location (region) name.
+  - `[OperationId <String>]`: The Guid of the operation ID
   - `[PrincipalAssignmentName <String>]`: The name of the Kusto principalAssignment.
   - `[ResourceGroupName <String>]`: The name of the resource group containing the Kusto cluster.
+  - `[ScriptName <String>]`: The name of the Kusto database script.
   - `[SubscriptionId <String>]`: Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 
 ## RELATED LINKS

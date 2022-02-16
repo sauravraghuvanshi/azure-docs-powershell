@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceFabric.dll-Help.xm
 Module Name: Az.ServiceFabric
 online version: https://docs.microsoft.com/powershell/module/az.servicefabric/set-azservicefabricmanagedclusterapplicationtype
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Set-AzServiceFabricManagedClusterApplicationType.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Set-AzServiceFabricManagedClusterApplicationType.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ServiceFabric/ServiceFabric/help/Set-AzServiceFabricManagedClusterApplicationType.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ServiceFabric/ServiceFabric/help/Set-AzServiceFabricManagedClusterApplicationType.md
 ---
 
 # Set-AzServiceFabricManagedClusterApplicationType
@@ -17,19 +17,19 @@ Update a service fabric managed application type. This allows you to update the 
 ### ByResourceGroup (Default)
 ```
 Set-AzServiceFabricManagedClusterApplicationType [-ResourceGroupName] <String> [-ClusterName] <String>
- [-Name <String>] [-Tags <Hashtable>] [-Force] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [-Name <String>] [-Tag <Hashtable>] [-Force] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### ByInputObject
 ```
-Set-AzServiceFabricManagedClusterApplicationType [-Tags <Hashtable>] -InputObject <PSManagedApplicationType>
+Set-AzServiceFabricManagedClusterApplicationType [-Tag <Hashtable>] -InputObject <PSManagedApplicationType>
  [-Force] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByResourceId
 ```
-Set-AzServiceFabricManagedClusterApplicationType [-Tags <Hashtable>] -ResourceId <String> [-Force]
+Set-AzServiceFabricManagedClusterApplicationType [-Tag <Hashtable>] -ResourceId <String> [-Force]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -177,7 +177,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Tags
+### -Tag
 Specify the tags as key/value pairs.
 
 ```yaml

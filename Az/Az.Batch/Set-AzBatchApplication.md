@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: DCA1FD7A-54AF-48B1-A245-BFA9C43ACA9B
 online version: https://docs.microsoft.com/powershell/module/az.batch/set-azbatchapplication
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Set-AzBatchApplication.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Set-AzBatchApplication.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Set-AzBatchApplication.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Set-AzBatchApplication.md
 ---
 
 # Set-AzBatchApplication
@@ -28,7 +28,7 @@ The **Set-AzBatchApplication** cmdlet modifies settings for the specified Azure 
 
 ### Example 1: Update an application in a Batch account
 ```powershell
-PS C:\>Set-AzBatchApplication -AccountName "ContosoBatch" -ResourceGroupName "ContosoBatchGroup" -ApplicationName "Litware" -AllowUpdates $False
+Set-AzBatchApplication -AccountName "ContosoBatch" -ResourceGroupName "ContosoBatchGroup" -ApplicationName "Litware" -AllowUpdates $False
 ```
 
 This command changes whether the Litware application in the ContosoBatch account allows updates.

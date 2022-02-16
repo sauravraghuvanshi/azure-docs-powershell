@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Accounts.dll-Help.xml
 Module Name: Az.Accounts
 online version: https://docs.microsoft.com/powershell/module/az.accounts/disconnect-azaccount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Disconnect-AzAccount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Disconnect-AzAccount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Disconnect-AzAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Disconnect-AzAccount.md
 ---
 
 # Disconnect-AzAccount
@@ -52,21 +52,21 @@ After executing this cmdlet, you will need to login again using Connect-AzAccoun
 
 ### Example 1: Logout of the current account
 ```powershell
-PS C:\> Disconnect-AzAccount
+Disconnect-AzAccount
 ```
 
 Logs out of the Azure account associated with the current context.
 
 ### Example 2: Logout of the account associated with a particular context
 ```powershell
-PS C:\> Get-AzContext "Work" | Disconnect-AzAccount -Scope CurrentUser
+Get-AzContext "Work" | Disconnect-AzAccount -Scope CurrentUser
 ```
 
 Logs out the account associated with the given context (named 'Work'). Because this uses the 'CurrentUser' scope, all credentials and contexts will be permanently deleted.
 
 ### Example 3: Log out a particular user
 ```powershell
-PS C:\> Disconnect-AzAccount -Username 'user1@contoso.org'
+Disconnect-AzAccount -Username 'user1@contoso.org'
 ```
 
 Logs out the 'user1@contoso.org' user - all credentials and all contexts associated with this user will be removed.

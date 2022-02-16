@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: 48D6288A-EBE1-44FD-B871-80A0681BBEA3
 online version: https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlservercommunicationlink
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Remove-AzSqlServerCommunicationLink.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Remove-AzSqlServerCommunicationLink.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Remove-AzSqlServerCommunicationLink.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Remove-AzSqlServerCommunicationLink.md
 ---
 
 # Remove-AzSqlServerCommunicationLink

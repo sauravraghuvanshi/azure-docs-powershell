@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Sql.dll-Help.xml
 Module Name: Az.Sql
 online version: https://docs.microsoft.com/powershell/module/az.sql/get-azsqlservertrustgroup
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServerTrustGroup.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServerTrustGroup.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlServerTrustGroup.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlServerTrustGroup.md
 ---
 
 # Get-AzSqlServerTrustGroup
@@ -13,6 +13,12 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/
 Gets information about Server Trust Group.
 
 ## SYNTAX
+
+### ListByLocationSet (Default)
+```
+Get-AzSqlServerTrustGroup [-ResourceGroupName] <String> [-Location] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
 
 ### GetByName
 ```
@@ -23,12 +29,6 @@ Get-AzSqlServerTrustGroup [-ResourceGroupName] <String> [-Location] <String> [-N
 ### ListByInstanceSet
 ```
 Get-AzSqlServerTrustGroup [-ResourceGroupName] <String> [-InstanceName] <String>
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
-```
-
-### ListByLocationSet
-```
-Get-AzSqlServerTrustGroup [-ResourceGroupName] <String> [-Location] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -108,7 +108,7 @@ The location of the Server Trust Group to retrieve.
 
 ```yaml
 Type: System.String
-Parameter Sets: GetByName, ListByLocationSet
+Parameter Sets: ListByLocationSet, GetByName
 Aliases:
 
 Required: True
@@ -138,7 +138,7 @@ The name of the resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: GetByName, ListByInstanceSet, ListByLocationSet
+Parameter Sets: ListByLocationSet, GetByName, ListByInstanceSet
 Aliases:
 
 Required: True

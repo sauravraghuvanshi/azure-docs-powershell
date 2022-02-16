@@ -4,8 +4,8 @@ Module Name: Az.HDInsight
 ms.assetid: AFE90092-8B25-4897-8D3A-3E732CC5CBA6
 online version: https://docs.microsoft.com/powershell/module/az.hdinsight/get-azhdinsightjob
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/Get-AzHDInsightJob.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/Get-AzHDInsightJob.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HDInsight/HDInsight/help/Get-AzHDInsightJob.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HDInsight/HDInsight/help/Get-AzHDInsightJob.md
 ---
 
 # Get-AzHDInsightJob

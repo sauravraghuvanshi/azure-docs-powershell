@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 13901193-8C68-4969-ADCD-2E82EA714354
 online version: https://docs.microsoft.com/powershell/module/az.network/add-azvirtualnetworkpeering
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzVirtualNetworkPeering.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzVirtualNetworkPeering.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzVirtualNetworkPeering.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzVirtualNetworkPeering.md
 ---
 
 # Add-AzVirtualNetworkPeering
@@ -234,3 +234,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Remove-AzVirtualNetworkPeering](./Remove-AzVirtualNetworkPeering.md)
 
 [Set-AzVirtualNetworkPeering](./Set-AzVirtualNetworkPeering.md)
+
+[Sync-AzVirtualNetworkPeering](./Sync-AzVirtualNetworkPeering.md)

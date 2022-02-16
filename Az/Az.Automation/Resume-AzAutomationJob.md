@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: 9400E9EB-E927-44D5-8722-9706BDD92FD5
 online version: https://docs.microsoft.com/powershell/module/az.automation/resume-azautomationjob
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Resume-AzAutomationJob.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Resume-AzAutomationJob.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Resume-AzAutomationJob.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Resume-AzAutomationJob.md
 ---
 
 # Resume-AzAutomationJob

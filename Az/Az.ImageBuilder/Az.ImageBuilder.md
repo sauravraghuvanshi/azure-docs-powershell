@@ -4,8 +4,8 @@ Module Guid: bdedc683-d9b6-41ea-b310-d068b8c72305
 Download Help Link: https://docs.microsoft.com/powershell/module/az.imagebuilder
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ImageBuilder/help/Az.ImageBuilder.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ImageBuilder/help/Az.ImageBuilder.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ImageBuilder/help/Az.ImageBuilder.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ImageBuilder/help/Az.ImageBuilder.md
 ---
 
 # Az.ImageBuilder Module

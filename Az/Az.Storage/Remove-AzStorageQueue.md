@@ -4,8 +4,8 @@ Module Name: Az.Storage
 ms.assetid: 22975A89-CAFF-4F18-8DCE-B695413FBAC7
 online version: https://docs.microsoft.com/powershell/module/az.storage/remove-azstoragequeue
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Remove-AzStorageQueue.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Remove-AzStorageQueue.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Remove-AzStorageQueue.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Remove-AzStorageQueue.md
 ---
 
 # Remove-AzStorageQueue

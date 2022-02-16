@@ -4,8 +4,8 @@ Module Name: Az.LogicApp
 ms.assetid: F9871519-F470-470C-8CCE-A674B6B5A3EE
 online version: https://docs.microsoft.com/powershell/module/az.logicapp/remove-azintegrationaccountcertificate
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/Remove-AzIntegrationAccountCertificate.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/Remove-AzIntegrationAccountCertificate.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/LogicApp/LogicApp/help/Remove-AzIntegrationAccountCertificate.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/LogicApp/LogicApp/help/Remove-AzIntegrationAccountCertificate.md
 ---
 
 # Remove-AzIntegrationAccountCertificate

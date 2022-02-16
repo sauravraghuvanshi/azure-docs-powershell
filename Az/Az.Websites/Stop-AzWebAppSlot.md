@@ -4,8 +4,8 @@ Module Name: Az.Websites
 ms.assetid: 86E0D477-DD32-49BD-82E7-1CF191E4F612
 online version: https://docs.microsoft.com/powershell/module/az.websites/stop-azwebappslot
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Stop-AzWebAppSlot.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Stop-AzWebAppSlot.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Stop-AzWebAppSlot.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Stop-AzWebAppSlot.md
 ---
 
 # Stop-AzWebAppSlot

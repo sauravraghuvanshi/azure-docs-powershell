@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 2E43D0D8-EF93-443B-AA8F-58C992026E95
 online version: https://docs.microsoft.com/powershell/module/az.network/remove-aznetworksecurityruleconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkSecurityRuleConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkSecurityRuleConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzNetworkSecurityRuleConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzNetworkSecurityRuleConfig.md
 ---
 
 # Remove-AzNetworkSecurityRuleConfig

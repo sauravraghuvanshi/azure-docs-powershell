@@ -4,8 +4,8 @@ Module Name: Az.DataLakeStore
 ms.assetid: 30C10687-F172-4663-8D4A-F0DDEA5C3741
 online version: https://docs.microsoft.com/powershell/module/az.datalakestore/remove-azdatalakestoretrustedidprovider
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataLakeStore/DataLakeStore/help/Remove-AzDataLakeStoreTrustedIdProvider.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataLakeStore/DataLakeStore/help/Remove-AzDataLakeStoreTrustedIdProvider.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataLakeStore/DataLakeStore/help/Remove-AzDataLakeStoreTrustedIdProvider.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataLakeStore/DataLakeStore/help/Remove-AzDataLakeStoreTrustedIdProvider.md
 ---
 
 # Remove-AzDataLakeStoreTrustedIdProvider

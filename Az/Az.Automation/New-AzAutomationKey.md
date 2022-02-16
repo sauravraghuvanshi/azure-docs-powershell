@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: 055526FA-5DB7-4F1D-81B3-5D9753283FE2
 online version: https://docs.microsoft.com/powershell/module/az.automation/new-azautomationkey
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/New-AzAutomationKey.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/New-AzAutomationKey.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/New-AzAutomationKey.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/New-AzAutomationKey.md
 ---
 
 # New-AzAutomationKey

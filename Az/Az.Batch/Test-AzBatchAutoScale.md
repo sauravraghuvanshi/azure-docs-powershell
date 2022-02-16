@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: BF0C1A2F-2703-492F-A3A7-053416A5D1EB
 online version: https://docs.microsoft.com/powershell/module/az.batch/test-azbatchautoscale
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Test-AzBatchAutoScale.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Test-AzBatchAutoScale.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Test-AzBatchAutoScale.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Test-AzBatchAutoScale.md
 ---
 
 # Test-AzBatchAutoScale
@@ -26,10 +26,10 @@ The **Test-AzBatchAutoScale** cmdlet gets the result of an automatic scaling for
 ## EXAMPLES
 
 ### Example 1: Evaluate an autoscale formula on a pool
-```
-PS C:\>$Formula = 'totalNodes=($CPUPercent.GetSamplePercent(TimeInterval_Minute*0,TimeInterval_Minute*10)<0.7?5:(min($CPUPercent.GetSample(TimeInterval_Minute*0, TimeInterval_Minute*10))>0.8?($CurrentDedicated*1.1):$CurrentDedicated));$TargetDedicated=min(100,totalNodes);';
-PS C:\> $Evaluation = Test-AzBatchAutoScale -Id "ContosoPool" -AutoScaleFormula $Formula -BatchContext $Context
-PS C:\> $Evaluation.AutoScaleRun.Results
+```powershell
+$Formula = 'totalNodes=($CPUPercent.GetSamplePercent(TimeInterval_Minute*0,TimeInterval_Minute*10)<0.7?5:(min($CPUPercent.GetSample(TimeInterval_Minute*0, TimeInterval_Minute*10))>0.8?($CurrentDedicated*1.1):$CurrentDedicated));$TargetDedicated=min(100,totalNodes);';
+$Evaluation = Test-AzBatchAutoScale -Id "ContosoPool" -AutoScaleFormula $Formula -BatchContext $Context
+$Evaluation.AutoScaleRun.Results
 $TargetDedicated=5;$NodeDeallocationOption=requeue;totalNodes=5
 ```
 

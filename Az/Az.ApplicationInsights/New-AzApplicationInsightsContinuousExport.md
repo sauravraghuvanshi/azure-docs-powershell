@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.ApplicationInsights.dll-H
 Module Name: Az.ApplicationInsights
 online version: https://docs.microsoft.com/powershell/module/az.applicationinsights/new-azapplicationinsightscontinuousexport
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApplicationInsights/ApplicationInsights/help/New-AzApplicationInsightsContinuousExport.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApplicationInsights/ApplicationInsights/help/New-AzApplicationInsightsContinuousExport.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/ApplicationInsights/help/New-AzApplicationInsightsContinuousExport.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/ApplicationInsights/help/New-AzApplicationInsightsContinuousExport.md
 ---
 
 # New-AzApplicationInsightsContinuousExport
@@ -41,13 +41,18 @@ Create a new application insights continuous export configuration for an applica
 ## EXAMPLES
 
 ### Example 1 Create a new continuous export configuration for an application insights resource
-```
-PS C:\> $sastoken = New-AzStorageContainerSASToken -Name testcontainer -Context $context -ExpiryTime (Get-Date).AddYears(50) -Permission w
-PS C:\> $sasuri = "https://teststorageaccount.blob.core.windows.net/testcontainer" + $sastoken
-PS C:\> New-AzApplicationInsightsContinuousExport -ResourceGroupName "testgroup" -Name "test"
+```powershell
+$sastoken = New-AzStorageContainerSASToken -Name testcontainer -Context $context -ExpiryTime (Get-Date).AddYears(50) -Permission w
+ ```
+ ```powershell
+ $sasuri = "https://teststorageaccount.blob.core.windows.net/testcontainer" + $sastoken
+ ```
+ ```powershell
+New-AzApplicationInsightsContinuousExport -ResourceGroupName "testgroup" -Name "test"
  -DocumentType "Request","Trace", "Custom Event" -StorageAccountId "/subscriptions/50359d91-7b9d-4823-85af-eb298a61ba96/resourceGroups/testgroup/providers/Microsoft.Storage/storageAccounts/teststorageaccount" -StorageLocation sourcecentralus
  -StorageSASUri $sasuri
-
+```
+```output
 ExportId                         : jlTFEiBg1rkDXOCIeJQ2mB2TxZg=
 StorageName                      : teststorageaccount
 ContainerName                    : testcontainer

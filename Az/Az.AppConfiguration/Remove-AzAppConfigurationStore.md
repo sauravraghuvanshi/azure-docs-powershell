@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.AppConfiguration
 online version: https://docs.microsoft.com/powershell/module/az.appconfiguration/remove-azappconfigurationstore
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AppConfiguration/help/Remove-AzAppConfigurationStore.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AppConfiguration/help/Remove-AzAppConfigurationStore.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/Remove-AzAppConfigurationStore.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/Remove-AzAppConfigurationStore.md
 ---
 
 # Remove-AzAppConfigurationStore
@@ -33,7 +33,7 @@ Deletes a configuration store.
 
 ### Example 1: Remove an app configuration store
 ```powershell
-PS C:\> Remove-AzAppConfigurationStore -Name appconfig-test03 -ResourceGroupName lucas-manual-test
+Remove-AzAppConfigurationStore -Name appconfig-test03 -ResourceGroupName lucas-manual-test
 
 ```
 
@@ -41,7 +41,7 @@ This command removes an app configuration store.
 
 ### Example 2: Remove an app configuration store
 ```powershell
-PS C:\> Get-AzAppConfigurationStore -Name appconfig-test02 -ResourceGroupName lucas-manual-test | Remove-AzAppConfigurationStore
+Get-AzAppConfigurationStore -Name appconfig-test02 -ResourceGroupName lucas-manual-test | Remove-AzAppConfigurationStore
 
 ```
 

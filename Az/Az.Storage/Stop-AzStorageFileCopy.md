@@ -4,8 +4,8 @@ Module Name: Az.Storage
 ms.assetid: 3AC3F8DE-E25D-41AE-9083-5C459A4C8CD0
 online version: https://docs.microsoft.com/powershell/module/az.storage/stop-azstoragefilecopy
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Stop-AzStorageFileCopy.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Stop-AzStorageFileCopy.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Stop-AzStorageFileCopy.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Stop-AzStorageFileCopy.md
 ---
 
 # Stop-AzStorageFileCopy

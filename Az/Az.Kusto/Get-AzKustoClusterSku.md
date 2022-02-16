@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.Kusto
 online version: https://docs.microsoft.com/powershell/module/az.kusto/get-azkustoclustersku
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/help/Get-AzKustoClusterSku.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/help/Get-AzKustoClusterSku.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Kusto/help/Get-AzKustoClusterSku.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Kusto/help/Get-AzKustoClusterSku.md
 ---
 
 # Get-AzKustoClusterSku
@@ -159,9 +159,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Kusto.Models.Api20200918.IAzureResourceSku
+### Microsoft.Azure.PowerShell.Cmdlets.Kusto.Models.Api202101.IAzureResourceSku
 
-### Microsoft.Azure.PowerShell.Cmdlets.Kusto.Models.Api20200918.ISkuDescription
+### Microsoft.Azure.PowerShell.Cmdlets.Kusto.Models.Api202101.ISkuDescription
 
 ## NOTES
 

@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.ConnectedMachine
 online version: https://docs.microsoft.com/powershell/module/az.connectedmachine/connect-azconnectedmachine
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ConnectedMachine/help/Connect-AzConnectedMachine.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ConnectedMachine/help/Connect-AzConnectedMachine.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ConnectedMachine/help/Connect-AzConnectedMachine.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ConnectedMachine/help/Connect-AzConnectedMachine.md
 ---
 
 # Connect-AzConnectedMachine

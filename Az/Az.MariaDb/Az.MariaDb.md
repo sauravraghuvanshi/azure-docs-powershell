@@ -4,8 +4,8 @@ Module Guid: c3b6a676-7237-4989-99d0-9df520acda9f
 Download Help Link: https://docs.microsoft.com/powershell/module/az.mariadb
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MariaDb/help/Az.MariaDb.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MariaDb/help/Az.MariaDb.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MariaDb/help/Az.MariaDb.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MariaDb/help/Az.MariaDb.md
 ---
 
 # Az.MariaDb Module

@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: 5AF6F70F-7137-48E2-96ED-2C509042F127
 online version: https://docs.microsoft.com/powershell/module/az.automation/new-azautomationvariable
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/New-AzAutomationVariable.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/New-AzAutomationVariable.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/New-AzAutomationVariable.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/New-AzAutomationVariable.md
 ---
 
 # New-AzAutomationVariable

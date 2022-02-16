@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 95731734-EDCA-432A-A7BF-94D1E3725FB2
 online version: https://docs.microsoft.com/powershell/module/az.network/start-azapplicationgateway
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Start-AzApplicationGateway.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Start-AzApplicationGateway.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Start-AzApplicationGateway.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Start-AzApplicationGateway.md
 ---
 
 # Start-AzApplicationGateway

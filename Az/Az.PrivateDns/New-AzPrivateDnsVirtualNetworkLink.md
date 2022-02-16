@@ -4,8 +4,8 @@ Module Name: Az.PrivateDns
 ms.assetid: B78F3E8B-C7D2-458C-AB23-06F584FE97E0
 online version: https://docs.microsoft.com/powershell/module/az.privatedns/New-AzPrivateDnsVirtualNetworkLink
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/PrivateDns/PrivateDns/help/New-AzPrivateDnsVirtualNetworkLink.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/PrivateDns/PrivateDns/help/New-AzPrivateDnsVirtualNetworkLink.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/PrivateDns/PrivateDns/help/New-AzPrivateDnsVirtualNetworkLink.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/PrivateDns/PrivateDns/help/New-AzPrivateDnsVirtualNetworkLink.md
 ---
 
 # New-AzPrivateDnsVirtualNetworkLink

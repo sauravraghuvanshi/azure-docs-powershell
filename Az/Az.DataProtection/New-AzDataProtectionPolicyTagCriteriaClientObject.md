@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.DataProtection
 online version: https://docs.microsoft.com/powershell/module/az.dataprotection/new-azdataprotectionpolicytagcriteriaclientobject
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataProtection/help/New-AzDataProtectionPolicyTagCriteriaClientObject.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataProtection/help/New-AzDataProtectionPolicyTagCriteriaClientObject.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataProtection/help/New-AzDataProtectionPolicyTagCriteriaClientObject.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataProtection/help/New-AzDataProtectionPolicyTagCriteriaClientObject.md
 ---
 
 # New-AzDataProtectionPolicyTagCriteriaClientObject
@@ -159,7 +159,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20210201Preview.IScheduleBasedBackupCriteria
+### Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20210701.IScheduleBasedBackupCriteria
 
 ## NOTES
 

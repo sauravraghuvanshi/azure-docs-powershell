@@ -4,8 +4,8 @@ Module Guid: 43d3b085-6323-4ac4-a7c3-81d75ea036e5
 Download Help Link: https://docs.microsoft.com/powershell/module/az.reservations
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Reservations/Reservations/help/Az.Reservations.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Reservations/Reservations/help/Az.Reservations.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Reservations/Reservations/help/Az.Reservations.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Reservations/Reservations/help/Az.Reservations.md
 ---
 
 # Az.Reservations Module

@@ -4,8 +4,8 @@ Module Name: Az.LogicApp
 ms.assetid: C0086E73-CCB1-4B75-B367-C79E17738122
 online version: https://docs.microsoft.com/powershell/module/az.logicapp/get-azintegrationaccountcertificate
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/Get-AzIntegrationAccountCertificate.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/Get-AzIntegrationAccountCertificate.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/LogicApp/LogicApp/help/Get-AzIntegrationAccountCertificate.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/LogicApp/LogicApp/help/Get-AzIntegrationAccountCertificate.md
 ---
 
 # Get-AzIntegrationAccountCertificate

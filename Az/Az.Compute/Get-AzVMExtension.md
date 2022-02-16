@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: 842652D4-0F1C-4D0D-AB55-0D43D3C5D82A
 online version: https://docs.microsoft.com/powershell/module/az.compute/get-azvmextension
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMExtension.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMExtension.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Get-AzVMExtension.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Get-AzVMExtension.md
 ---
 
 # Get-AzVMExtension

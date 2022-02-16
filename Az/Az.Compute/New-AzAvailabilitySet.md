@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: BF6AA8D4-D624-4BE1-A393-1A43909450C4
 online version: https://docs.microsoft.com/powershell/module/az.compute/new-azavailabilityset
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/New-AzAvailabilitySet.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/New-AzAvailabilitySet.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/New-AzAvailabilitySet.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/New-AzAvailabilitySet.md
 ---
 
 # New-AzAvailabilitySet

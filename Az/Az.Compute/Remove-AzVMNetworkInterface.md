@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: 6B26DADE-BF71-48D2-98C9-87B2F6182AC2
 online version: https://docs.microsoft.com/powershell/module/az.compute/remove-azvmnetworkinterface
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Remove-AzVMNetworkInterface.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Remove-AzVMNetworkInterface.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Remove-AzVMNetworkInterface.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Remove-AzVMNetworkInterface.md
 ---
 
 # Remove-AzVMNetworkInterface
@@ -24,6 +24,18 @@ Remove-AzVMNetworkInterface [-VM] <PSVirtualMachine> [[-NetworkInterfaceIDs] <St
 The **Remove-AzVMNetworkInterface** cmdlet removes a network interface from a virtual machine.
 
 ## EXAMPLES
+
+### Example 1
+```powershell
+Remove-AzVMNetworkInterface -VM $vmConfig
+$vmConfig.NetworkProfile
+```
+
+```Output
+NetworkInterfaces NetworkApiVersion NetworkInterfaceConfigurations
+----------------- ----------------- ------------------------------
+{}
+```
 
 ## PARAMETERS
 

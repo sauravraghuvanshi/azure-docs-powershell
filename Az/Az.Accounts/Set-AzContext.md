@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Accounts.dll-Help.xml
 Module Name: Az.Accounts
 online version: https://docs.microsoft.com/powershell/module/az.accounts/set-azcontext
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Set-AzContext.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Set-AzContext.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Set-AzContext.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Set-AzContext.md
 ---
 
 # Set-AzContext
@@ -61,9 +61,11 @@ The context includes tenant, subscription, and environment information.
 ## EXAMPLES
 
 ### Example 1: Set the subscription context
+```powershell
+Set-AzContext -Subscription "xxxx-xxxx-xxxx-xxxx"
 ```
-PS C:\>Set-AzContext -Subscription "xxxx-xxxx-xxxx-xxxx"
 
+```Output
 Name    Account             SubscriptionName    Environment         TenantId
 ----    -------             ----------------    -----------         --------
 Work    test@outlook.com    Subscription1       AzureCloud          xxxxxxxx-x...
@@ -195,7 +197,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tenant
-Tenant name or ID
+Tenant domain name or ID
 
 ```yaml
 Type: System.String

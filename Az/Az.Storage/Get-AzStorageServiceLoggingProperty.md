@@ -4,8 +4,8 @@ Module Name: Az.Storage
 ms.assetid: 494291A1-D854-4E97-B5EE-27BB5653D97C
 online version: https://docs.microsoft.com/powershell/module/az.storage/get-azstorageserviceloggingproperty
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Get-AzStorageServiceLoggingProperty.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Get-AzStorageServiceLoggingProperty.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Get-AzStorageServiceLoggingProperty.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Get-AzStorageServiceLoggingProperty.md
 ---
 
 # Get-AzStorageServiceLoggingProperty

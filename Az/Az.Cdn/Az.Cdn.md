@@ -4,8 +4,8 @@ Module Guid: 91832aaa-dc11-4583-8239-bce5fd531604
 Download Help Link: https://docs.microsoft.com/powershell/module/az.cdn
 Help Version: 4.2.4.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Az.Cdn.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Az.Cdn.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Az.Cdn.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Az.Cdn.md
 ---
 
 # Az.Cdn Module

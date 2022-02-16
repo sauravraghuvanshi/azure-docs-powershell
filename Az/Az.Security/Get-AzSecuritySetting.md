@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Security.dll-Help.xml
 Module Name: Az.Security
 online version: https://docs.microsoft.com/powershell/module/az.security/Get-AzSecuritySetting
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Security/Security/help/Get-AzSecuritySetting.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Security/Security/help/Get-AzSecuritySetting.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Security/Security/help/Get-AzSecuritySetting.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Security/Security/help/Get-AzSecuritySetting.md
 ---
 
 # Get-AzSecuritySetting
@@ -31,7 +31,7 @@ The Get-AzSecuritySetting cmdlet get security settings in Azure Security Center.
 
 ### Example 1
 ```powershell
-PS C:\> Set-AzSecuritySetting -SettingName "MCAS"
+PS C:\> Get-AzSecuritySetting -SettingName "MCAS"
 
 Id: "/subscriptions/487bb485-b5b0-471e-9c0d-10717612f869/providers/Microsoft.Security/settings/MCAS"
 Name: "MCAS"
@@ -59,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -SettingName
-Setting name. (MCAS/WDATP)
+Setting name. (MCAS/WDATP/Sentinel)
 
 ```yaml
 Type: String
@@ -84,6 +84,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Azure.Commands.Security.Models.Settings.PSSecuritySetting
 ### Microsoft.Azure.Commands.Security.Models.Settings.PSSecurityDataExportSetting
+### Microsoft.Azure.Commands.Security.Models.Settings.PSSecurityAlertSyncSettings
 
 ## NOTES
 

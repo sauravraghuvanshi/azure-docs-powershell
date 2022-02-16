@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Attestation.dll-Help.xml
 Module Name: Az.Attestation
 online version: https://docs.microsoft.com/powershell/module/az.attestation/remove-azattestationpolicysigner
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Attestation/Attestation/help/Remove-AzAttestationPolicySigner.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Attestation/Attestation/help/Remove-AzAttestationPolicySigner.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Attestation/Attestation/help/Remove-AzAttestationPolicySigner.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Attestation/Attestation/help/Remove-AzAttestationPolicySigner.md
 ---
 
 # Remove-AzAttestationPolicySigner
@@ -33,8 +33,10 @@ The Remove-AzAttestationPolicySigner cmdlet removes a trusted policy signer for 
 
 ### Example 1
 ```powershell
-PS C:\> $trustedSigner = Get-Content -Path .\trusted.signer.txt
-PS C:\> Remove-AzAttestationPolicySigner -Name pshtest -ResourceGroupName psh-test-rg -Signer $trustedSigner
+$trustedSigner = Get-Content -Path .\trusted.signer.txt
+```
+```powershell
+Remove-AzAttestationPolicySigner -Name pshtest -ResourceGroupName psh-test-rg -Signer $trustedSigner
 ```
 
 Remove a trusted signer for the Attestation Provider named *pshtest*.

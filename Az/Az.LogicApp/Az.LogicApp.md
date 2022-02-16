@@ -4,8 +4,8 @@ Module Guid: 8a7d44bb-e747-4265-8f22-b3937961d709
 Download Help Link: https://docs.microsoft.com/powershell/module/az.logicapp
 Help Version: 4.0.3.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/Az.LogicApp.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/Az.LogicApp.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/LogicApp/LogicApp/help/Az.LogicApp.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/LogicApp/LogicApp/help/Az.LogicApp.md
 ---
 
 # Az.LogicApp Module

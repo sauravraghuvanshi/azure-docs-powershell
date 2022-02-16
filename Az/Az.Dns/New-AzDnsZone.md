@@ -4,8 +4,8 @@ Module Name: Az.Dns
 ms.assetid: B78F3E8B-C7D2-458C-AB23-06F584FE97E0
 online version: https://docs.microsoft.com/powershell/module/az.dns/new-azdnszone
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Dns/Dns/help/New-AzDnsZone.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Dns/Dns/help/New-AzDnsZone.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Dns/Dns/help/New-AzDnsZone.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Dns/Dns/help/New-AzDnsZone.md
 ---
 
 # New-AzDnsZone

@@ -4,8 +4,8 @@ Module Name: Az.LogicApp
 ms.assetid: 39D1576D-7042-4A62-AB41-0B5131C150D5
 online version: https://docs.microsoft.com/powershell/module/az.logicapp/remove-azlogicapp
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/Remove-AzLogicApp.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/Remove-AzLogicApp.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/LogicApp/LogicApp/help/Remove-AzLogicApp.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/LogicApp/LogicApp/help/Remove-AzLogicApp.md
 ---
 
 # Remove-AzLogicApp

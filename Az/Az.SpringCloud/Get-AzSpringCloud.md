@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.SpringCloud
 online version: https://docs.microsoft.com/powershell/module/az.springcloud/get-azspringcloud
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SpringCloud/help/Get-AzSpringCloud.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SpringCloud/help/Get-AzSpringCloud.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SpringCloud/help/Get-AzSpringCloud.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SpringCloud/help/Get-AzSpringCloud.md
 ---
 
 # Get-AzSpringCloud

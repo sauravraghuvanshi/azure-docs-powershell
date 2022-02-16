@@ -4,8 +4,8 @@ Module Name: Az.HDInsight
 ms.assetid: 15C5D659-472B-41DD-806A-A0A175434EE3
 online version: https://docs.microsoft.com/powershell/module/az.hdinsight/submit-azhdinsightscriptaction
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/Submit-AzHDInsightScriptAction.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/Submit-AzHDInsightScriptAction.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HDInsight/HDInsight/help/Submit-AzHDInsightScriptAction.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HDInsight/HDInsight/help/Submit-AzHDInsightScriptAction.md
 ---
 
 # Submit-AzHDInsightScriptAction

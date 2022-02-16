@@ -4,8 +4,8 @@ Module Name: Az.Monitor
 ms.assetid: A4C605DD-9B2E-4EE9-BD1F-1352D605C33F
 online version: https://docs.microsoft.com/powershell/module/az.monitor/new-azautoscaleprofile
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAutoscaleProfile.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAutoscaleProfile.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/New-AzAutoscaleProfile.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/New-AzAutoscaleProfile.md
 ---
 
 # New-AzAutoscaleProfile

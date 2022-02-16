@@ -4,8 +4,8 @@ Module Guid: a290eead-f293-4588-b61e-b465b237591e
 Download Help Link: https://docs.microsoft.com/powershell/module/az.resourcegraph
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ResourceGraph/ResourceGraph/help/Az.ResourceGraph.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ResourceGraph/ResourceGraph/help/Az.ResourceGraph.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ResourceGraph/ResourceGraph/help/Az.ResourceGraph.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ResourceGraph/ResourceGraph/help/Az.ResourceGraph.md
 ---
 
 # Az.ResourceGraph Module

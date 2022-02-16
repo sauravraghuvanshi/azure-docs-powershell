@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: B4737AE8-F57C-4B95-B81E-74802EF8E7AE
 online version: https://docs.microsoft.com/powershell/module/az.batch/disable-azbatchjobschedule
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Disable-AzBatchJobSchedule.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Disable-AzBatchJobSchedule.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Disable-AzBatchJobSchedule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Disable-AzBatchJobSchedule.md
 ---
 
 # Disable-AzBatchJobSchedule
@@ -28,8 +28,8 @@ You can enable a disabled schedule later.
 ## EXAMPLES
 
 ### Example 1: Disable a job schedule
-```
-PS C:\>Disable-AzBatchJobSchedule -Id "JobSchedule17" -BatchContext $Context
+```powershell
+Disable-AzBatchJobSchedule -Id "JobSchedule17" -BatchContext $Context
 ```
 
 This command disables the job schedule that has the ID JobSchedule17.

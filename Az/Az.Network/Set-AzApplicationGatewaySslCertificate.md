@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: D7C275E5-BC43-454B-BF1E-48D639C4B4F0
 online version: https://docs.microsoft.com/powershell/module/az.network/set-azapplicationgatewaysslcertificate
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewaySslCertificate.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewaySslCertificate.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzApplicationGatewaySslCertificate.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzApplicationGatewaySslCertificate.md
 ---
 
 # Set-AzApplicationGatewaySslCertificate

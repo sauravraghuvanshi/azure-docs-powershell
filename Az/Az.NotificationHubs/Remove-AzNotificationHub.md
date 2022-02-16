@@ -4,8 +4,8 @@ Module Name: Az.NotificationHubs
 ms.assetid: 62631E1C-FB43-4E87-82C2-159A9D1D4221
 online version: https://docs.microsoft.com/powershell/module/az.notificationhubs/remove-aznotificationhub
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Remove-AzNotificationHub.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Remove-AzNotificationHub.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/NotificationHubs/NotificationHubs/help/Remove-AzNotificationHub.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/NotificationHubs/NotificationHubs/help/Remove-AzNotificationHub.md
 ---
 
 # Remove-AzNotificationHub

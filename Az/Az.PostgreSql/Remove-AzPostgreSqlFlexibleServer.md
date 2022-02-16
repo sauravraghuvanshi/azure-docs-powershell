@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.PostgreSql
 online version: https://docs.microsoft.com/powershell/module/az.postgresql/remove-azpostgresqlflexibleserver
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/PostgreSql/help/Remove-AzPostgreSqlFlexibleServer.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/PostgreSql/help/Remove-AzPostgreSqlFlexibleServer.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/PostgreSql/help/Remove-AzPostgreSqlFlexibleServer.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/PostgreSql/help/Remove-AzPostgreSqlFlexibleServer.md
 ---
 
 # Remove-AzPostgreSqlFlexibleServer
@@ -41,7 +41,7 @@ This cmdlet removes PostgreSql server by resourceGroup and server name.
 
 ### Example 2: Remove PostgreSql server by identity
 ```powershell
-PS C:\> $ID = "/subscriptions/<SubscriptionId>/resourceGroups/PowershellPostgreSqlTest/providers/Microsoft.DBForPostgreSql/flexibleServers/postgresql-test"
+PS C:\> $ID = "/subscriptions/<SubscriptionId>/resourceGroups/PowershellPostgreSqlTest/providers/Microsoft.DBforPostgreSQL/flexibleServers/postgresql-test"
 PS C:\> Remove-AzPostgreSqlFlexibleServer -InputObject $ID
  
 ```

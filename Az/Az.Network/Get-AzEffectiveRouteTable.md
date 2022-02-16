@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 84FDB0F7-E6DE-4E1B-BD71-89535EDC6AA1
 online version: https://docs.microsoft.com/powershell/module/az.network/get-azeffectiveroutetable
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzEffectiveRouteTable.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzEffectiveRouteTable.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzEffectiveRouteTable.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzEffectiveRouteTable.md
 ---
 
 # Get-AzEffectiveRouteTable

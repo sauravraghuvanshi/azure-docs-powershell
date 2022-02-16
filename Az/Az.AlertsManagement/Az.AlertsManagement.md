@@ -4,8 +4,8 @@ Module Guid: ab73cb67-5713-4179-b6d7-f76ab3ad148f
 Download Help Link: https://docs.microsoft.com/powershell/module/az.alertsmanagement
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AlertsManagement/AlertsManagement/help/Az.AlertsManagement.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AlertsManagement/AlertsManagement/help/Az.AlertsManagement.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AlertsManagement/AlertsManagement/help/Az.AlertsManagement.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AlertsManagement/AlertsManagement/help/Az.AlertsManagement.md
 ---
 
 # Az.AlertsManagement Module

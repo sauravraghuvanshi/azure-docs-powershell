@@ -4,8 +4,8 @@ Module Name: Az.Monitor
 ms.assetid: 18D5B95E-4CF1-4C79-AE8B-9F4DA49B46A9
 online version: https://docs.microsoft.com/powershell/module/az.monitor/add-azlogprofile
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Add-AzLogProfile.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Add-AzLogProfile.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/Add-AzLogProfile.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/Add-AzLogProfile.md
 ---
 
 # Add-AzLogProfile

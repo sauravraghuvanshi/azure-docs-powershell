@@ -4,8 +4,8 @@ Module Name: Az.DataFactory
 ms.assetid: F8C67F7B-64C5-45E4-A0BF-32212BEBE885
 online version: https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryactivitywindow
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryActivityWindow.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryActivityWindow.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryActivityWindow.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryActivityWindow.md
 ---
 
 # Get-AzDataFactoryActivityWindow

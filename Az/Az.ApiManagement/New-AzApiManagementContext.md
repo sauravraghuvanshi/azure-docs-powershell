@@ -4,8 +4,8 @@ Module Name: Az.ApiManagement
 ms.assetid: 15634C76-6B34-4E2B-9354-86155827F200
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/new-azapimanagementcontext
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementContext.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementContext.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/New-AzApiManagementContext.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/New-AzApiManagementContext.md
 ---
 
 # New-AzApiManagementContext
@@ -33,8 +33,8 @@ The context is used for all of the API Management service cmdlets.
 ## EXAMPLES
 
 ### Example 1: Create a PsApiManagementContext instance
-```
-PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "ContosoResources" -ServiceName "Contoso"
+```powershell
+$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "ContosoResources" -ServiceName "Contoso"
 ```
 
 This command creates an instance of **PsApiManagementContext**.

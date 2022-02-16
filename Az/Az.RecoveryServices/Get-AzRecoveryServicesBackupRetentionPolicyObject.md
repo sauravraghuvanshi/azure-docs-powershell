@@ -4,8 +4,8 @@ Module Name: Az.RecoveryServices
 ms.assetid: 476094CC-A320-4B2D-B53D-6BFFE30C76CC
 online version: https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupretentionpolicyobject
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesBackupRetentionPolicyObject.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesBackupRetentionPolicyObject.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesBackupRetentionPolicyObject.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesBackupRetentionPolicyObject.md
 ---
 
 # Get-AzRecoveryServicesBackupRetentionPolicyObject
@@ -18,7 +18,7 @@ Gets a base retention policy object.
 ```
 Get-AzRecoveryServicesBackupRetentionPolicyObject [-WorkloadType] <WorkloadType>
  [[-BackupManagementType] <BackupManagementType>] [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+ [[-ScheduleRunFrequency] <ScheduleRunType>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -40,6 +40,15 @@ The first command gets the retention policy object, and then stores it in the $R
 The second command sets the duration for the retention policy object to 365 days.
 The third command gets the schedule policy object, and then stores it in the $SchPol variable.
 The last command creates a backup protection policy using the retention policy and schedule policy created with the previous commands.
+
+### Example 2: Get base hourly retention object for fileshare policy 
+```powershell
+PS C:\> $retentionPolicy = Get-AzRecoveryServicesBackupRetentionPolicyObject -WorkloadType AzureFiles -BackupManagementType AzureStorage -ScheduleRunFrequency Hourly
+PS C:\> $retentionPolicy.DailySchedule.DurationCountInDays = 10
+```
+
+The first command gets a base hourly **RetentionPolicy** object, and then stores it in the $retentionPolicy variable.
+The second command sets the retention duration for daily recovery points to 10 days.
 
 ## PARAMETERS
 
@@ -72,6 +81,22 @@ Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ScheduleRunFrequency
+Frequency of the schedule for which base retention policy object is fetched. Acceptable values are Daily and Hourly.
+
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.ScheduleRunType
+Parameter Sets: (All)
+Aliases:
+Accepted values: Daily, Hourly
+
+Required: False
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

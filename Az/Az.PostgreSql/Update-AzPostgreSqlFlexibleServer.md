@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.PostgreSql
 online version: https://docs.microsoft.com/powershell/module/az.postgresql/update-azpostgresqlflexibleserver
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/PostgreSql/help/Update-AzPostgreSqlFlexibleServer.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/PostgreSql/help/Update-AzPostgreSqlFlexibleServer.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/PostgreSql/help/Update-AzPostgreSqlFlexibleServer.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/PostgreSql/help/Update-AzPostgreSqlFlexibleServer.md
 ---
 
 # Update-AzPostgreSqlFlexibleServer
@@ -19,19 +19,17 @@ Use Update-AzPostSqlFlexibleServerConfiguration instead if you want update serve
 ### UpdateExpanded (Default)
 ```
 Update-AzPostgreSqlFlexibleServer -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-AdministratorLoginPassword <SecureString>] [-BackupRetentionDay <Int32>] [-HaEnabled <HaEnabledEnum>]
- [-MaintenanceWindow <String>] [-ReplicationRole <String>] [-Sku <String>] [-SkuTier <SkuTier>]
- [-SslEnforcement <SslEnforcementEnum>] [-StorageAutogrow <StorageAutogrow>] [-StorageInMb <Int32>]
- [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdministratorLoginPassword <SecureString>] [-BackupRetentionDay <Int32>] [-HaEnabled <Object>]
+ [-MaintenanceWindow <String>] [-Sku <String>] [-SkuTier <SkuTier>] [-StorageInMb <Int32>] [-Tag <Hashtable>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-AzPostgreSqlFlexibleServer -InputObject <IPostgreSqlIdentity>
- [-AdministratorLoginPassword <SecureString>] [-BackupRetentionDay <Int32>] [-HaEnabled <HaEnabledEnum>]
- [-MaintenanceWindow <String>] [-ReplicationRole <String>] [-Sku <String>] [-SkuTier <SkuTier>]
- [-SslEnforcement <SslEnforcementEnum>] [-StorageAutogrow <StorageAutogrow>] [-StorageInMb <Int32>]
- [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdministratorLoginPassword <SecureString>] [-BackupRetentionDay <Int32>] [-HaEnabled <Object>]
+ [-MaintenanceWindow <String>] [-Sku <String>] [-SkuTier <SkuTier>] [-StorageInMb <Int32>] [-Tag <Hashtable>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,20 +43,20 @@ Use Update-AzPostgreSqlFlexibleServerConfiguration instead if you want update se
 ```powershell
 PS C:\> Update-AzPostgreSqlFlexibleServer -ResourceGroupName PowershellPostgreSqlTest -Name postgresql-test -Sku Standard_D4s_v3
 
-Name          Location AdministratorLogin Version StorageProfileStorageMb SkuName          SkuTier        
-----          -------- ------------------ ------- ----------------------- ---------------- -------------
-postgresql-test eastus postgresql_test     12     131072                  Standard_D4s_v3 GeneralPurpose
+Name                Location  SkuName         SkuTier        AdministratorLogin StorageSizeGb
+----                --------  -------         -------        ------------------ -------------
+postgresql-test     East US   Standard_D4s_v3 GeneralPurpose daeunyim           256 GeneralPurpose
 ```
 
 This cmdlet updates PostgreSql server by resource group and server name.
 
 ### Example 2: Update PostgreSql server by identity.
 ```powershell
-PS C:\> Get-AzPostgreSqlFlexibleServer -ResourceGroupName PowershellPostgreSqlTest -ServerName postgresql-test | Update-AzPostgreSqlFlexibleServer -BackupRetentionDay 23 -StorageMb 10240
+PS C:\> Get-AzPostgreSqlFlexibleServer -ResourceGroupName PowershellPostgreSqlTest -ServerName postgresql-test | Update-AzPostgreSqlFlexibleServer -BackupRetentionDay 23 -StorageMb 262144
 
-Name            Location AdministratorLogin Version StorageProfileStorageMb SkuName          SkuTier        
-----            -------- ------------------ ------- ----------------------- ---------------- -------------
-postgresql-test eastus   postgresql_test     12     131072                  Standard_D2s_v3 GeneralPurpose
+Name                Location  SkuName         SkuTier        AdministratorLogin StorageSizeGb
+----                --------  -------         -------        ------------------ -------------
+postgresql-test     East US   Standard_D2s_v3 GeneralPurpose daeunyim           256
 ```
 
 This cmdlet updates PostgreSql server by identity.
@@ -128,9 +126,10 @@ Accept wildcard characters: False
 
 ### -HaEnabled
 Enable or disable high availability feature.
+Allowed values: Enabled, Disabled
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.PostgreSql.Support.HaEnabledEnum
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
@@ -204,21 +203,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ReplicationRole
-The replication role of the server.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ResourceGroupName
 The name of the resource group that contains the resource.
 You can obtain this value from the Azure Resource Manager API or the portal.
@@ -258,36 +242,6 @@ Default: Burstable.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.PostgreSql.Support.SkuTier
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SslEnforcement
-Enable ssl enforcement or not when connect to server.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.PostgreSql.Support.SslEnforcementEnum
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -StorageAutogrow
-Enable Storage Auto Grow.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.PostgreSql.Support.StorageAutogrow
 Parameter Sets: (All)
 Aliases:
 
@@ -383,7 +337,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.PostgreSql.Models.Api20200214Preview.IServerAutoGenerated
+### Microsoft.Azure.PowerShell.Cmdlets.PostgreSql.Models.Api20210601.IServerAutoGenerated
 
 ## NOTES
 

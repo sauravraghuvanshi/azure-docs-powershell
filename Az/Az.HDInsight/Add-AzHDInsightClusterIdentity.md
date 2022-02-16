@@ -4,8 +4,8 @@ Module Name: Az.HDInsight
 ms.assetid: A40AB6AB-D3CB-4A6C-B614-0B22085759DA
 online version: https://docs.microsoft.com/powershell/module/az.hdinsight/add-azhdinsightclusteridentity
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/Add-AzHDInsightClusterIdentity.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/Add-AzHDInsightClusterIdentity.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HDInsight/HDInsight/help/Add-AzHDInsightClusterIdentity.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HDInsight/HDInsight/help/Add-AzHDInsightClusterIdentity.md
 ---
 
 # Add-AzHDInsightClusterIdentity

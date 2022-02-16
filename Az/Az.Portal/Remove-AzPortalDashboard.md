@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.Portal
 online version: https://docs.microsoft.com/powershell/module/az.portal/remove-azportaldashboard
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Portal/help/Remove-AzPortalDashboard.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Portal/help/Remove-AzPortalDashboard.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Portal/help/Remove-AzPortalDashboard.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Portal/help/Remove-AzPortalDashboard.md
 ---
 
 # Remove-AzPortalDashboard

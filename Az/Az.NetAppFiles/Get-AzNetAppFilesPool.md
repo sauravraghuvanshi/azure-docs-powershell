@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.NetAppFiles.dll-Help.xml
 Module Name: Az.NetAppFiles
 online version: https://docs.microsoft.com/powershell/module/az.netappfiles/get-aznetappfilespool
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NetAppFiles/NetAppFiles/help/Get-AzNetAppFilesPool.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NetAppFiles/NetAppFiles/help/Get-AzNetAppFilesPool.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/NetAppFiles/NetAppFiles/help/Get-AzNetAppFilesPool.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/NetAppFiles/NetAppFiles/help/Get-AzNetAppFilesPool.md
 ---
 
 # Get-AzNetAppFilesPool
@@ -38,7 +38,7 @@ The **Get-AzNetAppFilesPool** cmdlet gets details of an ANF pool.
 
 ### Example 1: Get an ANF pool
 ```
-PS C:\>Get-AzAnfPool -ResourceGroupName "MyRG" -AccountName "MyAnfAccount" -Name "MyAnfPool"
+PS C:\>Get-AzNetAppFilesPool -ResourceGroupName "MyRG" -AccountName "MyAnfAccount" -Name "MyAnfPool"
 
 Output:
 

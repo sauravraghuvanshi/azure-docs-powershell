@@ -4,8 +4,8 @@ Module Name: Az.Websites
 ms.assetid: B2FDB54F-0318-4037-BC1D-6113E77DDE7E
 online version: https://docs.microsoft.com/powershell/module/az.websites/get-azwebappslotpublishingprofile
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Get-AzWebAppSlotPublishingProfile.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Get-AzWebAppSlotPublishingProfile.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Get-AzWebAppSlotPublishingProfile.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Get-AzWebAppSlotPublishingProfile.md
 ---
 
 # Get-AzWebAppSlotPublishingProfile

@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.ADDomainServices
 online version: https://docs.microsoft.com/powershell/module/az.ADDomainServices/new-AzADDomainServiceReplicaSet
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ADDomainServices/help/New-AzADDomainServiceReplicaSet.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ADDomainServices/help/New-AzADDomainServiceReplicaSet.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ADDomainServices/help/New-AzADDomainServiceReplicaSet.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ADDomainServices/help/New-AzADDomainServiceReplicaSet.md
 ---
 
 # New-AzADDomainServiceReplicaSet
@@ -26,7 +26,9 @@ Create a in-memory object for ReplicaSet
 ### Example 1: Create ReplicaSet for AdDomain
 ```powershell
 PS C:\> New-AzADDomainServiceReplicaSet -Location eastus -SubnetId /subscriptions/**********-****-****-****-****-**********/resourceGroups/youriADDomain-rg-test/providers/Microsoft.Network/virtualNetworks/yourinttest/subnets/default
+```
 
+```output
 DomainControllerIPAddress ExternalAccessIPAddress HealthLastEvaluated Location ServiceStatus SubnetId
 ------------------------- ----------------------- ------------------- -------- ------------- --------
                                                                       eastus                 /subscriptions/****

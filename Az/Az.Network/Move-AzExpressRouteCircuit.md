@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: F845ED42-A7C1-4CCC-9AD8-E9A91C3EEC7A
 online version: https://docs.microsoft.com/powershell/module/az.network/move-azexpressroutecircuit
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Move-AzExpressRouteCircuit.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Move-AzExpressRouteCircuit.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Move-AzExpressRouteCircuit.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Move-AzExpressRouteCircuit.md
 ---
 
 # Move-AzExpressRouteCircuit

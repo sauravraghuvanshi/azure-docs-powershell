@@ -1,95 +1,76 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.dll-Help.xml
+external help file: 
 Module Name: Az.ManagedServices
 online version: https://docs.microsoft.com/powershell/module/az.managedservices/remove-azmanagedservicesassignment
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ManagedServices/ManagedServices/help/Remove-AzManagedServicesAssignment.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ManagedServices/ManagedServices/help/Remove-AzManagedServicesAssignment.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ManagedServices/help/Remove-AzManagedServicesAssignment.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ManagedServices/help/Remove-AzManagedServicesAssignment.md
 ---
 
 # Remove-AzManagedServicesAssignment
 
 ## SYNOPSIS
-Deletes a registration assignment.
+Deletes the specified registration assignment.
 
 ## SYNTAX
 
-### Default (Default)
+### Delete (Default)
 ```
-Remove-AzManagedServicesAssignment [-Scope <String>] -Name <String> [-AsJob] [-DefaultProfile <IAzureContextContainer>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzManagedServicesAssignment -Name <String> [-Scope <String>] [-DefaultProfile <PSObject>] [-AsJob]
+ [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ByInputObject
+### DeleteViaIdentity
 ```
-Remove-AzManagedServicesAssignment -InputObject <PSRegistrationAssignment> [-AsJob]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzManagedServicesAssignment -InputObject <IManagedServicesIdentity> [-DefaultProfile <PSObject>]
+ [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Deletes a registration assignment.
+Deletes the specified registration assignment.
 
 ## EXAMPLES
 
-### Example 1
-```
-PS C:\> Remove-AzManagedServicesAssignment -Name 0413e647-6915-45e3-944d-79a587e57f80
-PS C:\>
-```
+### Example 1: Removes Azure Lighthouse registration assignment at subscription scope
+```powershell
+PS C:\> Remove-AzManagedServicesAssignment -Name xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -Scope "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
-Deletes the registration assignment by name at the default scope.
-
-### Example 2
-```
-PS C:\> New-AzManagedServicesAssignment -RegistrationDefinitionId /subscriptions/24ab6047-da91-48c0-66e5-20a8c6daefc8/providers/Microsoft.ManagedServices/registrationDefinitions/55a89269-0347-4a9c-a778-c3f37b9f8672 -Name 12b05f0f-3426-48da-9e67-738e1dbf775f
-
-Name                                 Id                                                                                                                                                   ProvisioningState
-----                                 --                                                                                                                                                   -----------------
-12b05f0f-3426-48da-9e67-738e1dbf775f /subscriptions/24ab6047-da91-48c0-66e5-20a8c6daefc8/providers/Microsoft.ManagedServices/registrationAssignments/12b05f0f-3426-48da-9e67-738e1dbf775f Succeeded
-
-
-PS C:\> $assignment = Get-AzManagedServicesAssignment -Name 12b05f0f-3426-48da-9e67-738e1dbf775f
-PS C:\> Remove-AzManagedServicesAssignment -InputObject $assignment
-PS C:\>
 ```
 
-Deletes the registration assignment using the input object provided.
+Removes Azure Lighthouse registration assignment at subscription scope.
 
-### Example 3
-```
-PS C:\> $auths = @(
->>   [Microsoft.Azure.Management.ManagedServices.Models.Authorization]@{RoleDefinitionId = "acdd72a7-3385-48ef-bd42-f606fba81ae7"; PrincipalId = "714160ec-87d5-42bb-8b17-287c0dd7417d" }
->>  );
-PS C:\> $definition = New-AzManagedServicesDefinition -DisplayName "MyTestDefinition" -ManagedByTenantId 72f9acbf-86f1-41af-91ab-2d7ef011db47 -Authorization $auths
-PS C:\> $definition
+### Example 2: Removes Azure Lighthouse registration assignment at resource group scope
+```powershell
+PS C:\> Remove-AzManagedServicesAssignment -Name xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -Scope "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testgroup"
 
-Name                                 Id                                                                                                                                                   ProvisioningState
-----                                 --                                                                                                                                                   -----------------
-55a89269-0347-4a9c-a778-c3f37b9f8672 /subscriptions/24ab6047-da91-48c0-66e5-20a8c6daefc8/providers/Microsoft.ManagedServices/registrationDefinitions/55a89269-0347-4a9c-a778-c3f37b9f8672 Succeeded
-
-
-PS C:\> New-AzManagedServicesAssignment -RegistrationDefinition $definition
-
-Name                                 Id                                                                                                                                                   ProvisioningState
-----                                 --                                                                                                                                                   -----------------
-b279ec53-b42f-4952-bd62-cd49982e9572 /subscriptions/24ab6047-da91-48c0-66e5-20a8c6daefc8/providers/Microsoft.ManagedServices/registrationAssignments/b279ec53-b42f-4952-bd62-cd49982e9572 Succeeded
-
-
-PS C:\> Remove-AzManagedServicesAssignment -Name b279ec53-b42f-4952-bd62-cd49982e9572 -Scope /subscriptions/24ab6047-da91-48c0-66e5-20a8c6daefc8
-PS C:\>
 ```
 
-Deletes the registration assignment by name at the given scope.
+Removes Azure Lighthouse registration assignment at resource group scope.
 
 ## PARAMETERS
+
+### -AsJob
+Run the command as a job
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -99,11 +80,12 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-The registration assignment object.
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models.PSRegistrationAssignment
-Parameter Sets: ByInputObject
+Type: Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models.IManagedServicesIdentity
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -114,12 +96,12 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-The unique name of the Registration Assignment.
+The GUID of the registration assignment.
 
 ```yaml
 Type: System.String
-Parameter Sets: Default
-Aliases:
+Parameter Sets: Delete
+Aliases: RegistrationAssignmentId
 
 Required: True
 Position: Named
@@ -128,23 +110,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Scope
-The scope of the registration assignment.
-
-```yaml
-Type: System.String
-Parameter Sets: Default
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AsJob
-Run cmdlet in the background
+### -NoWait
+Run the command asynchronously
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -154,6 +121,36 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Scope
+The scope of the resource.
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: False
+Position: Named
+Default value: "subscriptions/" + (Get-AzContext).Subscription.Id
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -168,7 +165,7 @@ Aliases: cf
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -184,7 +181,7 @@ Aliases: wi
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -194,10 +191,27 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models.PSRegistrationAssignment
+### Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models.IManagedServicesIdentity
+
 ## OUTPUTS
 
-### System.Void
+### System.Boolean
+
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT <IManagedServicesIdentity>: Identity Parameter
+  - `[Id <String>]`: Resource identity path
+  - `[MarketplaceIdentifier <String>]`: The Azure Marketplace identifier. Expected formats: {publisher}.{product[-preview]}.{planName}.{version} or {publisher}.{product[-preview]}.{planName} or {publisher}.{product[-preview]} or {publisher}).
+  - `[RegistrationAssignmentId <String>]`: The GUID of the registration assignment.
+  - `[RegistrationDefinitionId <String>]`: The GUID of the registration definition.
+  - `[Scope <String>]`: The scope of the resource.
+
 ## RELATED LINKS
+

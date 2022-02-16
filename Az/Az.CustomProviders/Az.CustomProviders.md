@@ -4,8 +4,8 @@ Module Guid: b98dded0-6e9a-4371-b2c6-d74464fb724b
 Download Help Link: https://docs.microsoft.com/powershell/module/az.customproviders
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CustomProviders/help/Az.CustomProviders.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CustomProviders/help/Az.CustomProviders.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CustomProviders/help/Az.CustomProviders.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CustomProviders/help/Az.CustomProviders.md
 ---
 
 # Az.CustomProviders Module

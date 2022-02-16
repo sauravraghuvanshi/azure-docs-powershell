@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.AppConfiguration
 online version: https://docs.microsoft.com/powershell/module/az.appconfiguration/update-azappconfigurationstore
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AppConfiguration/help/Update-AzAppConfigurationStore.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AppConfiguration/help/Update-AzAppConfigurationStore.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/Update-AzAppConfigurationStore.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/Update-AzAppConfigurationStore.md
 ---
 
 # Update-AzAppConfigurationStore
@@ -37,11 +37,18 @@ Updates a configuration store with the specified parameters.
 
 ### Example 1: Enable data encryption of the app configuration store by system-assigned managed identity
 ```powershell
-PS C:\> $key = Add-AzKeyVaultKey -VaultName kv-Name -Name key-Name -Destination 'Software'
-PS C:\> $systemAssignedAppStore = New-AzAppConfigurationStore -Name appconfig-test11 -ResourceGroupName azpwsh-manual-test -Location $env.location -Sku 'standard' -IdentityType "SystemAssigned"
-PS C:\> Set-AzKeyVaultAccessPolicy -VaultName kv-Name -ObjectId $systemAssignedAppStore.IdentityPrincipalId -PermissionsToKeys get,unwrapKey,wrapKey -PassThru
-PS C:\> Update-AzAppConfigurationStore -Name appconfig-test11 -ResourceGroupName azpwsh-manual-test -EncryptionKeyIdentifier $key.Id
-
+$key = Add-AzKeyVaultKey -VaultName kv-Name -Name key-Name -Destination 'Software'
+```
+```powershell
+$systemAssignedAppStore = New-AzAppConfigurationStore -Name appconfig-test11 -ResourceGroupName azpwsh-manual-test -Location $env.location -Sku 'standard' -IdentityType "SystemAssigned"
+```
+```powershell
+Set-AzKeyVaultAccessPolicy -VaultName kv-Name -ObjectId $systemAssignedAppStore.IdentityPrincipalId -PermissionsToKeys get,unwrapKey,wrapKey -PassThru
+```
+```powershell
+Update-AzAppConfigurationStore -Name appconfig-test11 -ResourceGroupName azpwsh-manual-test -EncryptionKeyIdentifier $key.Id
+```
+```output
 Location Name             Type
 -------- ----             ----
 eastus   appconfig-test01 Microsoft.AppConfiguration/configurationStores
@@ -52,12 +59,21 @@ The vault must have enabled soft-delete and purge-protection, and the managed id
 
 ### Example 2: Enable data encryption of the app configuration store by user-assigned managed identity
 ```powershell
-PS C:\> $key = Add-AzKeyVaultKey -VaultName kv-Name -Name key-Name -Destination 'Software'
-PS C:\> $assignedIdentity = New-AzUserAssignedIdentity -ResourceGroupName azpwsh-manual-test -Name assignedIdentity
-PS C:\> New-AzAppConfigurationStore -Name appconfig-test11 -ResourceGroupName azpwsh-manual-test -Location $env.location -Sku 'standard' -IdentityType "UserAssigned" -UserAssignedIdentity $assignedIdentity.Id
-PS C:\> Set-AzKeyVaultAccessPolicy -VaultName kv-Name -ObjectId $assignedIdentity.PrincipalId -PermissionsToKeys get,unwrapKey,wrapKey -PassThru
-PS C:\> Update-AzAppConfigurationStore -ResourceGroupName azpwsh-manual-test -Name appconfig-test11 -EncryptionKeyIdentifier $key.Id -KeyVaultIdentityClientId $assignedIdentity.ClientId
-
+$key = Add-AzKeyVaultKey -VaultName kv-Name -Name key-Name -Destination 'Software'
+```
+```powershell
+$assignedIdentity = New-AzUserAssignedIdentity -ResourceGroupName azpwsh-manual-test -Name assignedIdentity
+```
+```powershell
+New-AzAppConfigurationStore -Name appconfig-test11 -ResourceGroupName azpwsh-manual-test -Location $env.location -Sku 'standard' -IdentityType "UserAssigned" -UserAssignedIdentity $assignedIdentity.Id
+```
+```powershell
+Set-AzKeyVaultAccessPolicy -VaultName kv-Name -ObjectId $assignedIdentity.PrincipalId -PermissionsToKeys get,unwrapKey,wrapKey -PassThru
+```
+```powershell
+Update-AzAppConfigurationStore -ResourceGroupName azpwsh-manual-test -Name appconfig-test11 -EncryptionKeyIdentifier $key.Id -KeyVaultIdentityClientId $assignedIdentity.ClientId
+```
+```output
 Location Name             Type
 -------- ----             ----
 eastus   appconfig-test10 Microsoft.AppConfiguration/configurationStores
@@ -69,8 +85,9 @@ The vault must have enabled soft-delete and purge-protection, and the managed id
 
 ### Example 3: Disable encryption of an app configuration store.
 ```powershell
-PS C:\> $appConf = Get-AzAppConfigurationStore -ResourceGroupName azpwsh-manual-test -Name appconfig-test10 | Update-AzAppConfigurationStore -EncryptionKeyIdentifier $null
-
+$appConf = Get-AzAppConfigurationStore -ResourceGroupName azpwsh-manual-test -Name appconfig-test10 | Update-AzAppConfigurationStore -EncryptionKeyIdentifier $null
+```
+```output
 Location Name             Type
 -------- ----             ----
 eastus   appconfig-test10 Microsoft.AppConfiguration/configurationStores
@@ -78,10 +95,11 @@ eastus   appconfig-test10 Microsoft.AppConfiguration/configurationStores
 
 This command disables encryption of an app configuration store.
 
-### Example 3: Update sku and tag of an app configuration store by pipeline.
+### Example 4: Update sku and tag of an app configuration store by pipeline.
 ```powershell
-PS C:\> Get-AzAppConfigurationStore -ResourceGroupName azpwsh-manual-test -Name appconfig-test10 | Update-AzAppConfigurationStore -Sku 'standard' -Tag @{'key'='update'}
-
+Get-AzAppConfigurationStore -ResourceGroupName azpwsh-manual-test -Name appconfig-test10 | Update-AzAppConfigurationStore -Sku 'standard' -Tag @{'key'='update'}
+```
+```output
 Location Name             Type
 -------- ----             ----
 eastus   appconfig-test10 Microsoft.AppConfiguration/configurationStores

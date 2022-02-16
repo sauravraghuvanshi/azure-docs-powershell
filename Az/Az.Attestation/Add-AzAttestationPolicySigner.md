@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Attestation.dll-Help.xml
 Module Name: Az.Attestation
 online version: https://docs.microsoft.com/powershell/module/az.attestation/add-azattestationpolicysigner
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Attestation/Attestation/help/Add-AzAttestationPolicySigner.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Attestation/Attestation/help/Add-AzAttestationPolicySigner.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Attestation/Attestation/help/Add-AzAttestationPolicySigner.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Attestation/Attestation/help/Add-AzAttestationPolicySigner.md
 ---
 
 # Add-AzAttestationPolicySigner
@@ -33,8 +33,10 @@ The Add-AzAttestationPolicySigner cmdlet adds a trusted policy signer for a tena
 
 ### Example 1
 ```powershell
-PS C:\> $trustedSigner = Get-Content -Path .\trusted.signer.txt
-PS C:\> Add-AzAttestationPolicySigner -Name pshtest -ResourceGroupName psh-test-rg -Signer $trustedSigner
+$trustedSigner = Get-Content -Path .\trusted.signer.txt
+```
+```powershell
+Add-AzAttestationPolicySigner -Name pshtest -ResourceGroupName psh-test-rg -Signer $trustedSigner
 ```
 
 Add a trusted signer for the Atteestation Provider named *pshtest*.

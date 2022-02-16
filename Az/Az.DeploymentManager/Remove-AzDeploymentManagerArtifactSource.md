@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.DeploymentManager.dll-Hel
 Module Name: Az.DeploymentManager
 online version: https://docs.microsoft.com/powershell/module/az.deploymentmanager/remove-azdeploymentmanagerartifactsource
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DeploymentManager/DeploymentManager/help/Remove-AzDeploymentManagerArtifactSource.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DeploymentManager/DeploymentManager/help/Remove-AzDeploymentManagerArtifactSource.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DeploymentManager/DeploymentManager/help/Remove-AzDeploymentManagerArtifactSource.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DeploymentManager/DeploymentManager/help/Remove-AzDeploymentManagerArtifactSource.md
 ---
 
 # Remove-AzDeploymentManagerArtifactSource
@@ -39,7 +39,6 @@ Specify the artifact source by its name and resource group name. Alternately, yo
 ## EXAMPLES
 
 ### Example 1: Delete an artifact source
-### Example 1
 ```powershell
 PS C:\> Remove-AzDeploymentManagerArtifactSource -ResourceGroupName "ContosoResourceGroup" -Name "ContosoArtifactSource"
 ```

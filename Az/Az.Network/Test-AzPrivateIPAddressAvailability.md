@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 0780CB09-9C3B-468A-A718-3A646FE3D152
 online version: https://docs.microsoft.com/powershell/module/az.network/test-azprivateipaddressavailability
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Test-AzPrivateIPAddressAvailability.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Test-AzPrivateIPAddressAvailability.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Test-AzPrivateIPAddressAvailability.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Test-AzPrivateIPAddressAvailability.md
 ---
 
 # Test-AzPrivateIPAddressAvailability

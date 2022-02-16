@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: 89F604DD-EE77-440D-BCC9-3F74D994C447
 online version: https://docs.microsoft.com/powershell/module/az.batch/remove-azbatchaccount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Remove-AzBatchAccount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Remove-AzBatchAccount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Remove-AzBatchAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Remove-AzBatchAccount.md
 ---
 
 # Remove-AzBatchAccount
@@ -27,8 +27,8 @@ This cmdlet prompts you before it removes an account, unless you specify the *Fo
 ## EXAMPLES
 
 ### Example 1: Remove a Batch account
-```
-PS C:\>Remove-AzBatchAccount -AccountName "pfuller"
+```powershell
+Remove-AzBatchAccount -AccountName "pfuller"
 ```
 
 This command removes the Batch account named pfuller.

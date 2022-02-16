@@ -4,8 +4,8 @@ Module Guid: 91832aaa-dc11-4583-8239-bce5fd531604
 Download Help Link: {{ Update Download Link }}
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SqlVirtualMachine/SqlVirtualMachine/help/Az.SqlVirtualMachine.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SqlVirtualMachine/SqlVirtualMachine/help/Az.SqlVirtualMachine.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SqlVirtualMachine/SqlVirtualMachine/help/Az.SqlVirtualMachine.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SqlVirtualMachine/SqlVirtualMachine/help/Az.SqlVirtualMachine.md
 ---
 
 # Az.SqlVirtualMachine Module

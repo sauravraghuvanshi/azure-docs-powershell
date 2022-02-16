@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: F1A2861F-14EF-4F67-8452-31FD498528BB
 online version: https://docs.microsoft.com/powershell/module/az.automation/set-azautomationcertificate
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Set-AzAutomationCertificate.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Set-AzAutomationCertificate.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Set-AzAutomationCertificate.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Set-AzAutomationCertificate.md
 ---
 
 # Set-AzAutomationCertificate

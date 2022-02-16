@@ -4,8 +4,8 @@ Module Name: Az.OperationalInsights
 ms.assetid: 4682807D-34E8-4057-8894-36820447067B
 online version: https://docs.microsoft.com/powershell/module/az.operationalinsights/new-azoperationalinsightsworkspace
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/OperationalInsights/OperationalInsights/help/New-AzOperationalInsightsWorkspace.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/OperationalInsights/OperationalInsights/help/New-AzOperationalInsightsWorkspace.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/OperationalInsights/OperationalInsights/help/New-AzOperationalInsightsWorkspace.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/OperationalInsights/OperationalInsights/help/New-AzOperationalInsightsWorkspace.md
 ---
 
 # New-AzOperationalInsightsWorkspace
@@ -17,9 +17,10 @@ Creates a workspace, or restore a soft-deleted workspace.
 
 ```
 New-AzOperationalInsightsWorkspace [-ResourceGroupName] <String> [-Name] <String> [-Location] <String>
- [[-Sku] <String>] [[-Tag] <Hashtable>] [[-RetentionInDays] <Int32>] [-Force]
+ [[-Sku] <String>] [-SkuCapacity <Int32>] [[-Tag] <Hashtable>] [[-RetentionInDays] <Int32>] [-Force]
  [-DefaultProfile <IAzureContextContainer>] [[-PublicNetworkAccessForIngestion] <String>]
- [[-PublicNetworkAccessForQuery] <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [[-PublicNetworkAccessForQuery] <String>] [[-ForceCmkForQuery] <Boolean>] [[-DisableLocalAuth] <Boolean>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,7 +30,7 @@ The **New-AzOperationalInsightsWorkspace** cmdlet creates a workspace in the spe
 
 ### Example 1: Create a workspace by name
 ```
-PS C:\>New-AzOperationalInsightsWorkspace -ResourceGroupName "ContosoResourceGroup" -Name "MyWorkspace" -Location "East US" -Sku "Standard"
+PS C:\>New-AzOperationalInsightsWorkspace -ResourceGroupName "ContosoResourceGroup" -Name "MyWorkspace" -Location "East US"
 ```
 
 This command creates a standard SKU workspace named MyWorkspace in the resource group named ContosoResourceGroup.
@@ -38,7 +39,7 @@ This command creates a standard SKU workspace named MyWorkspace in the resource 
 ```
 PS C:\>$OILinkTargets = Get-AzOperationalInsightsLinkTargets
 
-PS C:\>$OILinkTargets[0] | New-AzOperationalInsightsWorkspace -ResourceGroupName "ContosoResourceGroup" -Name "MyWorkspace" -Sku "Standard"
+PS C:\>$OILinkTargets[0] | New-AzOperationalInsightsWorkspace -ResourceGroupName "ContosoResourceGroup" -Name "MyWorkspace"
 ```
 
 The first command uses the Get-AzOperationalInsightsLinkTargets cmdlet to get Operational Insights account link targets, and then stores them in the $OILinkTargets variable.
@@ -62,6 +63,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DisableLocalAuth
+Allow to opt-out of local authentication and ensure customers can use only MSI and AAD for exclusive authentication
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 10
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Force
 Forces the command to run without asking for user confirmation.
 
@@ -72,6 +88,21 @@ Aliases:
 
 Required: False
 Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ForceCmkForQuery
+Gets or sets indicates whether customer managed storage is mandatory for query management
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 9
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -169,14 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -Sku
-Specifies the service tier of the workspace. For more information regarding which value to use please check https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#legacy-pricing-tiers.
-Valid values are:
-- free
-- pergb2018
-- pernode
-- premium
-- standalone
-- standard
+The service tier of the workspace.
 
 ```yaml
 Type: System.String
@@ -187,6 +211,21 @@ Required: False
 Position: 3
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -SkuCapacity
+Sku Capacity, value need to be multiple of 100 and at least 0.
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -243,11 +282,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-### System.Nullable`1[[System.Guid, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
-
 ### System.Collections.Hashtable
 
-### System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
+### System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
 
 ## OUTPUTS
 
@@ -260,7 +297,3 @@ A new pricing model has been released. If you are a CSP that means that you have
 ## RELATED LINKS
 
 [Azure Operational Insights Cmdlets](./Az.OperationalInsights.md)
-
-[Get-AzOperationalInsightsLinkTargets](./Get-AzOperationalInsightsLinkTargets.md)
-
-

@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Consumption.dll-Help.xml
 Module Name: Az.Billing
 online version: https://docs.microsoft.com/powershell/module/az.billing/get-azconsumptionpricesheet
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Billing/Billing/help/Get-AzConsumptionPriceSheet.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Billing/Billing/help/Get-AzConsumptionPriceSheet.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Billing/Billing/help/Get-AzConsumptionPriceSheet.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Billing/Billing/help/Get-AzConsumptionPriceSheet.md
 ---
 
 # Get-AzConsumptionPriceSheet
@@ -26,7 +26,10 @@ The **Get-AzConsumptionPriceSheet** cmdlet gets price sheets of the subscription
 
 ### Example 1: Get price sheets
 ```powershell
-PS C:\> Get-AzConsumptionPriceSheet
+Get-AzConsumptionPriceSheet
+```
+
+```output
 Id:  subscriptions/1caaa5a3-2b66-438e-8ab4-bce37d518c5d/providers/Microsoft.Billing/billingPeriods/20180601/providers/Microsoft.Consumption/pricesheets/default
 Name:  default
 Type:  Microsoft.Consumption/pricesheets
@@ -41,7 +44,10 @@ Pricesheets:  BillingPeriodId:  subscriptions/1caaa5a3-2b66-438e-8ab4-bce37d518c
 
 ### Example 2: Get price sheets with expand of MeterDetails
 ```powershell
-PS C:\> Get-AzConsumptionPriceSheet -ExpandMeterDetail
+Get-AzConsumptionPriceSheet -ExpandMeterDetail
+```
+
+```output
 Id:  subscriptions/1caaa5a3-2b66-438e-8ab4-bce37d518c5d/providers/Microsoft.Billing/billingPeriods/20180601/providers/Microsoft.Consumption/pricesheets/default
 Name:  default
 Type:  Microsoft.Consumption/pricesheets
@@ -61,7 +67,10 @@ Pricesheets:  BillingPeriodId:  subscriptions/1caaa5a3-2b66-438e-8ab4-bce37d518c
 
 ### Example 3: Get price sheets of BillingPeriodName
 ```powershell
-PS C:\> Get-AzConsumptionPriceSheet -BillingPeriodName 201712
+Get-AzConsumptionPriceSheet -BillingPeriodName 201712
+```
+
+```output
 Id:  subscriptions/1caaa5a3-2b66-438e-8ab4-bce37d518c5d/providers/Microsoft.Billing/billingPeriods/20180601/providers/Microsoft.Consumption/pricesheets/default
 Name:  default
 Type:  Microsoft.Consumption/pricesheets
@@ -76,7 +85,10 @@ Pricesheets:  BillingPeriodId:  subscriptions/1caaa5a3-2b66-438e-8ab4-bce37d518c
 
 ### Example 4: Get top 5 records of price sheets
 ```powershell
-PS C:\> Get-AzConsumptionPriceSheet -Top 5
+Get-AzConsumptionPriceSheet -Top 5
+```
+
+```output
 Id:  subscriptions/1caaa5a3-2b66-438e-8ab4-bce37d518c5d/providers/Microsoft.Billing/billingPeriods/20180601/providers/Microsoft.Consumption/pricesheets/default
 Name:  default
 Type:  Microsoft.Consumption/pricesheets

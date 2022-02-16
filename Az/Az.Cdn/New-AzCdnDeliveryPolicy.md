@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Cdn.dll-Help.xml
 Module Name: Az.Cdn
 online version: https://docs.microsoft.com/powershell/module/az.cdn/new-azcdndeliverypolicy
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/New-AzCdnDeliveryPolicy.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/New-AzCdnDeliveryPolicy.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/New-AzCdnDeliveryPolicy.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/New-AzCdnDeliveryPolicy.md
 ---
 
 # New-AzCdnDeliveryPolicy
@@ -26,8 +26,10 @@ The **New-AzCdnDeliveryPolicy** cmdlet creates a delivery policy for CDN endpoin
 
 ### Example 1
 ```powershell
-PS C:\> New-AzCdnDeliveryPolicy -Description "Sample Policy" -Rule $rule
+New-AzCdnDeliveryPolicy -Description "Sample Policy" -Rule $rule
+```
 
+```output
 Description   Rules
 -----------   -----
 Sample Policy {rule1}

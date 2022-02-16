@@ -4,8 +4,8 @@ Module Guid: ef36c942-4a71-4e19-9450-05a35843deb6
 Download Help Link: https://docs.microsoft.com/powershell/module/az.blueprint
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Blueprint/Blueprint/help/Az.Blueprint.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Blueprint/Blueprint/help/Az.Blueprint.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Blueprint/Blueprint/help/Az.Blueprint.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Blueprint/Blueprint/help/Az.Blueprint.md
 ---
 
 # Az.Blueprint Module

@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: 65BF37D3-4FCE-48A3-BC5D-01AA20FEB6CA
 online version: https://docs.microsoft.com/powershell/module/az.compute/set-azvmaddomainextension
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMADDomainExtension.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMADDomainExtension.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVMADDomainExtension.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVMADDomainExtension.md
 ---
 
 # Set-AzVMADDomainExtension
@@ -17,7 +17,7 @@ Adds an AD domain extension to a virtual machine.
 
 ```
 Set-AzVMADDomainExtension -DomainName <String> [-OUPath <String>] [-JoinOption <UInt32>]
- [-Credential <PSCredential>] [-Restart] [-ResourceGroupName] <String> [-VMName] <String> [-Name <String>]
+ [-Credential <PSCredential>] [-Restart] [-ResourceGroupName] <String> [-VMName] <String> -Name <String>
  [-TypeHandlerVersion <String>] [-Location <String>] [-DisableAutoUpgradeMinorVersion] [-ForceRerun <String>]
  [-NoWait] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -27,6 +27,17 @@ The **Set-AzVMADDomainExtension** cmdlet adds an Azure Active Directory (AD) dom
 This extension lets your virtual machine join a domain.
 
 ## EXAMPLES
+
+### Example 1
+```powershell
+Set-AzVMADDomainExtension -ResourceGroupName "ResourceGroup11" -VMName "VirtualMachine07" -DomainName "abc.com"
+```
+
+```Output
+RequestId IsSuccessStatusCode StatusCode ReasonPhrase
+--------- ------------------- ---------- ------------
+                         True         OK OK
+```
 
 ## PARAMETERS
 
@@ -147,7 +158,7 @@ Type: System.String
 Parameter Sets: (All)
 Aliases: ExtensionName
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)

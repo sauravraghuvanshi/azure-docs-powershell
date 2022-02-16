@@ -4,8 +4,8 @@ Module Name: Az.Resources
 ms.assetid: 60BED40A-EEA4-4667-93E9-8A9B35037726
 online version: https://docs.microsoft.com/powershell/module/az.resources/move-azresource
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Move-AzResource.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Move-AzResource.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Move-AzResource.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Move-AzResource.md
 ---
 
 # Move-AzResource

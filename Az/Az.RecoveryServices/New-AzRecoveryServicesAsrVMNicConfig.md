@@ -1,10 +1,10 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.SiteRecovery.dll-Help.xml
 Module Name: Az.RecoveryServices
-online version: https://docs.microsoft.com/powershell/module/az.recoveryservices/new-azrecoveryservicesasrvmnicconfig
+online version: https://docs.microsoft.com/powershell/module/az.recoveryservices/New-AzRecoveryServicesAsrVMNicConfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/New-AzRecoveryServicesAsrVMNicConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/New-AzRecoveryServicesAsrVMNicConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RecoveryServices/RecoveryServices/help/New-AzRecoveryServicesAsrVMNicConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RecoveryServices/RecoveryServices/help/New-AzRecoveryServicesAsrVMNicConfig.md
 ---
 
 # New-AzRecoveryServicesAsrVMNicConfig
@@ -17,27 +17,33 @@ Creates an ASR NIC config that contains the failover and test failover related c
 ```
 New-AzRecoveryServicesAsrVMNicConfig -NicId <String> -ReplicationProtectedItem <ASRReplicationProtectedItem>
  [-RecoveryVMNetworkId <String>] [-RecoveryNicName <String>] [-RecoveryNicResourceGroupName <String>]
- [-ReuseExistingNic] [-RecoveryVMSubnetName <String>] [-RecoveryNetworkSecurityGroupId <String>]
- [-EnableAcceleratedNetworkingOnRecovery] [-RecoveryNicStaticIPAddress <String>]
- [-RecoveryPublicIPAddressId <String>] [-RecoveryLBBackendAddressPoolId <String[]>] [-TfoVMNetworkId <String>]
- [-TfoNicName <String>] [-TfoNicResourceGroupName <String>] [-TfoReuseExistingNic] [-TfoVMSubnetName <String>]
- [-TfoNetworkSecurityGroupId <String>] [-EnableAcceleratedNetworkingOnTfo] [-TfoNicStaticIPAddress <String>]
- [-TfoPublicIPAddressId <String>] [-TfoLBBackendAddressPoolId <String[]>]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-ReuseExistingNic] [-RecoveryNetworkSecurityGroupId <String>] [-EnableAcceleratedNetworkingOnRecovery]
+ [-TfoVMNetworkId <String>] [-TfoNicName <String>] [-TfoNicResourceGroupName <String>] [-TfoReuseExistingNic]
+ [-TfoNetworkSecurityGroupId <String>] [-EnableAcceleratedNetworkingOnTfo]
+ [-IPConfig <PSIPConfigInputDetails[]>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 The **New-AzRecoveryServicesAsrVMNicConfig** cmdlet creates an ASR NIC config object that contains the failover and test failover related details. In case any information is not passed, the corresponding values are picked from the replication protected item to avoid these values being updated to null.
 
+> [!IMPORTANT]
+> We have deprecated the parameters corresponding to IP Configs from the cmdlet, and encapsulated them into a new cmdlet object. Please create a new object using the cmdlet **New-AzRecoveryServicesAsrVMNicIPConfig** and pass that as a parameter. Please refer to the examples below for more clarity.
+
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> $nicConfig = New-AzRecoveryServicesAsrVMNicConfig -NicId $AsrNicGuid -ReplicationProtectedItem $Rpi -RecoveryVMNetworkId $recoveryNetworkId -RecoveryVMSubnetName $recoverySubnetName -RecoveryNicStaticIPAddress "10.0.0.1" `
-    -TfoVMNetworkId $tfoNetworkId -TfoVMSubnetName $tfoSubnetName -TfoNicStaticIPAddress "10.0.1.1"
+PS C:\> $ipConfig1 = New-AzRecoveryServicesAsrVMNicIPConfig -IpConfigName "ipconfig1" -RecoverySubnetName "default" `
+-TfoSubnetName "default" -RecoveryStaticIPAddress "10.1.40.10" -TfoStaticIPAddress "10.3.4.33"
+PS C:\> $ipConfig2 = New-AzRecoveryServicesAsrVMNicIPConfig -IpConfigName "ipconfig2" -IsSelectedForFailover -RecoverySubnetName "default" `
+-TfoSubnetName "default" -RecoveryStaticIPAddress "10.1.40.13" -TfoStaticIPAddress "10.3.4.32"
+PS C:\> $ipConfigs = @($ipConfig1, $ipConfig2)
+PS C:\> $nicConfig = New-AzRecoveryServicesAsrVMNicConfig -NicId $AsrNicGuid -ReplicationProtectedItem $Rpi -RecoveryVMNetworkId $recoveryNetworkId `
+    -TfoVMNetworkId $tfoNetworkId -IPConfig $ipConfigs
 ```
 
-Creates an ASRVmNicConfig object with the failover and test faiover networking settings configured for the NIC. Any property that's not passed above is fetched from the protected item passed.
+Creates an ASRVmNicConfig object with the failover and test failover networking settings configured for the NIC. Any property that's not passed above is fetched from the protected item passed.
 
 ### Example 2
 ```powershell
@@ -45,16 +51,6 @@ PS C:\> $nicConfig = New-AzRecoveryServicesAsrVMNicConfig -NicId $AsrNicGuid -Re
 ```
 
 Creates an ASRVmNicConfig object with the test faiover networking settings configured for the NIC renaming. Any property that's not passed above is fetched from the protected item passed.
-
-
-### Example 3
-
-Creates an ASR NIC config that contains the failover and test failover related configuration details. (autogenerated)
-
-```powershell
-<!-- Aladdin Generated Example --> 
-New-AzRecoveryServicesAsrVMNicConfig -NicId $AsrNicGuid -RecoveryNetworkSecurityGroupId <String> -RecoveryNicStaticIPAddress '10.0.0.1' -RecoveryVMNetworkId $recoveryNetworkId -RecoveryVMSubnetName $recoverySubnetName -ReplicationProtectedItem $Rpi -TfoNetworkSecurityGroupId <String> -TfoNicStaticIPAddress <String> -TfoVMNetworkId <String> -TfoVMSubnetName <String>
-```
 
 ## PARAMETERS
 
@@ -103,6 +99,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -IPConfig
+Specifies test failover/failover settings of NIC IP configs.
+
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.PSIPConfigInputDetails[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -NicId
 Specify the ASR NIC GUID.
 
@@ -112,21 +123,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RecoveryLBBackendAddressPoolId
-Specifies the IDs of backend address pools for the recovery NIC.
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -178,53 +174,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RecoveryNicStaticIPAddress
-Specifies the IP address of the recovery NIC.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RecoveryPublicIPAddressId
-Specifies the ID of the public IP address associated with recovery NIC.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -RecoveryVMNetworkId
 Specifies the ID of the recovery virtual network.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RecoveryVMSubnetName
-Specifies the name of the recovery subnet.
 
 ```yaml
 Type: System.String
@@ -258,21 +209,6 @@ Specifies whether an existing NIC can be used during failover.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TfoLBBackendAddressPoolId
-Specifies the IDs of backend address pools for the recovery NIC.
-
-```yaml
-Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -328,36 +264,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TfoNicStaticIPAddress
-Specifies the IP address of the test failover NIC.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TfoPublicIPAddressId
-Specifies the ID of the public IP address associated with test failover NIC.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -TfoReuseExistingNic
 Specifies whether an existing NIC can be used during test failover.
 
@@ -388,21 +294,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TfoVMSubnetName
-Specifies the name of the test failover subnet.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -419,7 +310,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

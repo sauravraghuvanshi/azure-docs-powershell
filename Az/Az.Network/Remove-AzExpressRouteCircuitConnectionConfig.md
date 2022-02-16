@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: cc944e06-4fa0-4ce5-88e9-ea6454b41d55
 online version: https://docs.microsoft.com/powershell/module/az.network/remove-azexpressroutecircuitconnectionconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
 ---
 
 # Remove-AzExpressRouteCircuitConnectionConfig
@@ -97,7 +97,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 ### -AddressPrefixType
-Specifies the address family that needs to be removed from the config 
+Specifies the address family that needs to be removed from the config
 
 ```yaml
 Type: System.String
@@ -107,7 +107,7 @@ Accepted values: IPv4, IPv6, All
 
 Required: False
 Position: Named
-Default value: IPv4 
+Default value: IPv4
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -164,8 +164,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Add-AzExpressRouteCircuitConnectionConfig](Add-AzExpressRouteCircuitConnectionConfig.md)
 
 [Set-AzExpressRouteCircuitConnectionConfig](Set-AzExpressRouteCircuitConnectionConfig.md)
-
-[New-AzExpressRouteCircuitConnectionConfig](New-AzExpressRouteCircuitConnectionConfig.md)
 
 [Set-AzExpressRouteCircuit](Set-AzExpressRouteCircuit.md)
 

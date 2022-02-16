@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.DedicatedHsm
 online version: https://docs.microsoft.com/powershell/module/az.dedicatedhsm/new-azdedicatedhsm
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DedicatedHsm/help/New-AzDedicatedHsm.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DedicatedHsm/help/New-AzDedicatedHsm.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DedicatedHsm/help/New-AzDedicatedHsm.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DedicatedHsm/help/New-AzDedicatedHsm.md
 ---
 
 # New-AzDedicatedHsm
@@ -28,14 +28,16 @@ Create or Update a dedicated HSM in the specified subscription.
 
 ### Example 1: Create a Dedicated HSM into an existing virtual network
 ```powershell
-PS C:\> New-AzDedicatedHsm -Name  hsm-n7wfxi -ResourceGroupName dedicatedhsm-rg-n359cz -Location eastus -Sku "SafeNet Luna Network HSM A790" -StampId stamp1 -SubnetId "/subscriptions/xxxx-xxxx-xxx-xxx/resourceGroups/dedicatedhsm-rg-n359cz/providers/Microsoft.Network/virtualNetworks/vnetq30la9/subnets/hsmsubnet" -NetworkInterface @{PrivateIPAddress = '10.2.1.120' }
+New-AzDedicatedHsm -Name  hsm-n7wfxi -ResourceGroupName dedicatedhsm-rg-n359cz -Location eastus -Sku "SafeNet Luna Network HSM A790" -StampId stamp1 -SubnetId "/subscriptions/xxxx-xxxx-xxx-xxx/resourceGroups/dedicatedhsm-rg-n359cz/providers/Microsoft.Network/virtualNetworks/vnetq30la9/subnets/hsmsubnet" -NetworkInterface @{PrivateIPAddress = '10.2.1.120' }
+```
 
+```output
 Name       Provisioning State SKU                           Location
 ----       ------------------ ---                           --------
 hsm-n7wfxi Succeeded          SafeNet Luna Network HSM A790 eastus
 ```
 
-This command creates a Dedicated HSM into an existing virtual network.
+This command creates a Dedicated HSM into an existing virtual network. Defalut value `SafteNet Luna Network HSM 790` is the only `sku` for the existing service. More details reference Azure Dedicated HSM documents.
 
 **NOTE:** Currently `New-AzDedicatedHsm` has a limitation that it returns before the HSM is fully provisioned on Azure.
 Therefore after creating a new HSM, please query its state by `Get-AzDedicatedHsm` and make sure its `Provisioning State` is `Succeeded` before using it.

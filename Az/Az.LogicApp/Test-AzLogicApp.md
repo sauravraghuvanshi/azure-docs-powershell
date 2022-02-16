@@ -4,8 +4,8 @@ Module Name: Az.LogicApp
 ms.assetid: 929F4593-2A71-49B9-87F8-F24FA9F6E314
 online version: https://docs.microsoft.com/powershell/module/az.logicapp/test-azlogicapp
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/Test-AzLogicApp.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/Test-AzLogicApp.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/LogicApp/LogicApp/help/Test-AzLogicApp.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/LogicApp/LogicApp/help/Test-AzLogicApp.md
 ---
 
 # Test-AzLogicApp

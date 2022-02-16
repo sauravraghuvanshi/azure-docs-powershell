@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.BotService
 online version: https://docs.microsoft.com/powershell/module/az.botservice/publish-azbotserviceapp
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/BotService/help/Publish-AzBotServiceApp.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/BotService/help/Publish-AzBotServiceApp.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/BotService/help/Publish-AzBotServiceApp.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/BotService/help/Publish-AzBotServiceApp.md
 ---
 
 # Publish-AzBotServiceApp

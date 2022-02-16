@@ -4,8 +4,8 @@ Module Name: Az.DevTestLabs
 ms.assetid: 869167AA-54F8-4A1C-AC08-5555A63EE1BC
 online version: https://docs.microsoft.com/powershell/module/az.devtestlabs/get-azdtlallowedvmsizespolicy
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DevTestLabs/DevTestLabs/help/Get-AzDtlAllowedVMSizesPolicy.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DevTestLabs/DevTestLabs/help/Get-AzDtlAllowedVMSizesPolicy.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DevTestLabs/DevTestLabs/help/Get-AzDtlAllowedVMSizesPolicy.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DevTestLabs/DevTestLabs/help/Get-AzDtlAllowedVMSizesPolicy.md
 ---
 
 # Get-AzDtlAllowedVMSizesPolicy
@@ -25,6 +25,26 @@ The **Get-AzDtlAllowedVMSizesPolicy** cmdlet gets the allowed virtual machine si
 The cmdlet returns the enabled or disabled status of the policy and a list of all the allowed virtual machine sizes that you have set in the specified policy.
 
 ## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> Get-AzDtlAllowedVMSizesPolicy -LabName debtestlab -ResourceGroupName yuzhi-rg
+
+Name               : AllowedVmSizesInLab
+Type               : Microsoft.DevTestLab/labs/policySets/policies
+Tags               : 
+Id                 : /subscriptions/0b1f6471-1bf0-4dda-aec3-cb9272f09590/resourcegroups/yuzhi-rg/providers/microsoft.devtestlab/labs/debte
+                     stlab/policysets/default/policies/allowedvmsizesinlab
+Location           : 
+Fact Name          : LabVmSize
+Threshold          : ["Basic_A0"]
+Evaluator Type     : AllowedValuesPolicy
+Description        : 
+Status             : Enabled
+Provisioning State : 
+```
+Gets the allowed virtual machine sizes policy of a lab in DevTest Labs.
+
 
 ## PARAMETERS
 

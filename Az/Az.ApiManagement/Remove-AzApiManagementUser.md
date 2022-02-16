@@ -4,8 +4,8 @@ Module Name: Az.ApiManagement
 ms.assetid: 441BC2EE-DBB7-4579-BA64-9D3042B7EBD8
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/remove-azapimanagementuser
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementUser.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementUser.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementUser.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementUser.md
 ---
 
 # Remove-AzApiManagementUser
@@ -26,9 +26,9 @@ The **Remove-AzApiManagementUser** cmdlet deletes an existing user.
 ## EXAMPLES
 
 ### Example 1: Delete a user
-```
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Remove-AzApiManagementUser -Context $apimContext -UserId "0123456789" -Force
+```powershell
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Remove-AzApiManagementUser -Context $apimContext -UserId "0123456789" -Force
 ```
 
 This command deletes an existing user.

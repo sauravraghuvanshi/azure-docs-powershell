@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: A1EA7D34-A8B4-4FA0-BD8C-3E846715AFBA
 online version: https://docs.microsoft.com/powershell/module/az.compute/set-azvmplan
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMPlan.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMPlan.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVMPlan.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVMPlan.md
 ---
 
 # Set-AzVMPlan
@@ -25,6 +25,18 @@ The **Set-AzVMPlan** cmdlet sets the Azure Marketplace plan information for a vi
 Before being able to deploy a Marketplace image through the command-line, programmatic access must be enabled or the virtual machine must be deployed by using the Azure portal.
 
 ## EXAMPLES
+
+### Example 1
+```powershell
+New-AzVMConfig -VMName "VirtualMachine07" -VMSize "Standard_B1s" |
+    Set-AzVMPlan -Publisher "Canonical" -Product "UbuntuServer" -Name "18.04-LTS"
+```
+
+```Output
+Name            : VirtualMachine07
+HardwareProfile : {VmSize}
+Plan            : {Name, Publisher, Product}
+```
 
 ## PARAMETERS
 
@@ -46,7 +58,7 @@ Accept wildcard characters: False
 ### -Name
 Specifies the name of the image from the Marketplace.
 This is the same value that is returned by the Get-AzVMImageSku cmdlet.
-For more information about how to find image information, see Navigating and Selecting Azure Virtual Machine images with PowerShell and the Azure CLIhttps://azure.microsoft.com/documentation/articles/resource-groups-vm-searching/ (https://azure.microsoft.com/documentation/articles/resource-groups-vm-searching/) in the Microsoft Azure documentation.
+For more information about how to find image information, see [Find and use Azure Marketplace VM images with Azure PowerShell](/azure/virtual-machines/windows/cli-ps-findimage) in the Microsoft Azure documentation.
 
 ```yaml
 Type: System.String

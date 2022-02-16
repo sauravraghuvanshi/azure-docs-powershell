@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Accounts.dll-Help.xml
 Module Name: Az.Accounts
 online version: https://docs.microsoft.com/powershell/module/az.accounts/get-aztenant
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Get-AzTenant.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Get-AzTenant.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Get-AzTenant.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Get-AzTenant.md
 ---
 
 # Get-AzTenant
@@ -24,10 +24,12 @@ The Get-AzTenant cmdlet gets tenants authorized for the current user.
 ## EXAMPLES
 
 ### Example 1: Getting all tenants
+```powershell
+Connect-AzAccount
+Get-AzTenant
 ```
-PS C:\> Connect-AzAccount
-PS C:\> Get-AzTenant
 
+```Output
 Id                                   Name        Category Domains
 --                                   ----------- -------- -------
 xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Microsoft   Home     {test0.com, test1.com, test2.microsoft.com, test3.microsoft.com...}
@@ -37,10 +39,12 @@ yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy Testhost    Home     testhost.onmicrosoft.c
 This example shows how to get all of the authorized tenants of an Azure account.
 
 ### Example 2: Getting a specific tenant
+```powershell
+Connect-AzAccount
+Get-AzTenant -TenantId xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
-PS C:\> Connect-AzAccount
-PS C:\> Get-AzTenant -TenantId xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
+```Output
 Id                                   Name        Category Domains
 --                                   ----------- -------- -------
 xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Microsoft   Home     {test0.com, test1.com, test2.microsoft.com, test3.microsoft.com...}

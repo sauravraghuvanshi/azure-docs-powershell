@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: B5C909D7-6087-463A-83BF-99DD196B9862
 online version: https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabaseactivity
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseActivity.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseActivity.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlDatabaseActivity.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlDatabaseActivity.md
 ---
 
 # Get-AzSqlDatabaseActivity

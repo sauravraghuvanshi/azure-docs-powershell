@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: 87E7FA51-427E-4DB8-A6A2-D8638FD3DB8B
 online version: https://docs.microsoft.com/powershell/module/az.batch/new-azbatchjobschedule
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/New-AzBatchJobSchedule.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/New-AzBatchJobSchedule.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/New-AzBatchJobSchedule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/New-AzBatchJobSchedule.md
 ---
 
 # New-AzBatchJobSchedule
@@ -28,13 +28,13 @@ The *BatchAccountContext* parameter specifies the account in which this cmdlet c
 ## EXAMPLES
 
 ### Example 1: Create a job schedule
-```
-PS C:\>$Schedule = New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSSchedule"
-PS C:\> $Schedule.RecurrenceInterval = [TimeSpan]::FromDays(1)
-PS C:\> $JobSpecification = New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSJobSpecification"
-PS C:\> $JobSpecification.PoolInformation = New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSPoolInformation"
-PS C:\> $JobSpecification.PoolInformation.PoolId = "ContosoPool06"
-PS C:\> New-AzBatchJobSchedule -Id "JobSchedule17" -Schedule $Schedule -JobSpecification $JobSpecification -BatchContext $Context
+```powershell
+$Schedule = New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSSchedule"
+$Schedule.RecurrenceInterval = [TimeSpan]::FromDays(1)
+$JobSpecification = New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSJobSpecification"
+$JobSpecification.PoolInformation = New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSPoolInformation"
+$JobSpecification.PoolInformation.PoolId = "ContosoPool06"
+New-AzBatchJobSchedule -Id "JobSchedule17" -Schedule $Schedule -JobSpecification $JobSpecification -BatchContext $Context
 ```
 
 This example creates a job schedule.

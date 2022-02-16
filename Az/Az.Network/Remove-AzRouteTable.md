@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: FDA33633-EB2E-4095-8498-DF8910F1D434
 online version: https://docs.microsoft.com/powershell/module/az.network/remove-azroutetable
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzRouteTable.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzRouteTable.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzRouteTable.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzRouteTable.md
 ---
 
 # Remove-AzRouteTable

@@ -3,8 +3,8 @@ external help file: Az.StackHCI-help.xml
 Module Name: Az.StackHCI
 online version: https://docs.microsoft.com/powershell/module/az.stackhci/unregister-azstackhci
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/StackHCI/help/Unregister-AzStackHCI.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/StackHCI/help/Unregister-AzStackHCI.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/StackHCI/help/Unregister-AzStackHCI.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/StackHCI/help/Unregister-AzStackHCI.md
 ---
 
 # Unregister-AzStackHCI
@@ -18,8 +18,9 @@ The registered information available on the cluster is used to unregister the cl
 ```
 Unregister-AzStackHCI [[-SubscriptionId] <String>] [[-ResourceName] <String>] [[-TenantId] <String>]
  [[-ResourceGroupName] <String>] [[-ArmAccessToken] <String>] [[-GraphAccessToken] <String>]
- [[-AccountId] <String>] [[-EnvironmentName] <String>] [[-ComputerName] <String>] [-UseDeviceAuthentication]
- [[-Credential] <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [[-AccountId] <String>] [[-EnvironmentName] <String>] [[-Region] <String>] [[-ComputerName] <String>]
+ [-UseDeviceAuthentication] [-DisableOnlyAzureArcServer] [[-Credential] <PSCredential>] [-Force] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,6 +34,7 @@ The registered information available on the cluster is used to unregister the cl
 C:\PS\>Unregister-AzStackHCI
 Result: Success
 ```
+
 Invoking on one of the cluster node
 
 ### EXAMPLE 2
@@ -40,6 +42,7 @@ Invoking on one of the cluster node
 C:\PS\>Unregister-AzStackHCI -ComputerName ClusterNode1
 Result: Success
 ```
+
 Invoking from the management node
 
 ### EXAMPLE 3
@@ -47,6 +50,7 @@ Invoking from the management node
 C:\PS\>Unregister-AzStackHCI -SubscriptionId "12a0f531-56cb-4340-9501-257726d741fd" -ArmAccessToken etyer..ere= -GraphAccessToken acyee..rerrer -AccountId user1@corp1.com -ResourceName DemoHCICluster3 -ResourceGroupName DemoHCIRG -Confirm:$False
 Result: Success
 ```
+
 Invoking from WAC
 
 ### EXAMPLE 4
@@ -54,6 +58,7 @@ Invoking from WAC
 C:\PS\>Unregister-AzStackHCI -SubscriptionId "12a0f531-56cb-4340-9501-257726d741fd" -ResourceName HciCluster1 -TenantId "c31c0dbb-ce27-4c78-ad26-a5f717c14557" -ResourceGroupName HciClusterRG -ArmAccessToken eerrer..ere= -GraphAccessToken acee..rerrer -AccountId user1@corp1.com -EnvironmentName AzureCloud -ComputerName node1hci -Credential Get-Credential
 Result: Success
 ```
+
 Invoking with all the parameters
 
 ## PARAMETERS
@@ -99,7 +104,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 9
+Position: 10
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -115,8 +120,23 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 10
+Position: 11
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DisableOnlyAzureArcServer
+Specifying this parameter to $true will only unregister the cluster nodes with Arc for servers and Azure Stack HCI registration will not be altered.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -138,6 +158,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Force
+Specifies that unregistration should continue even if we could not delete the Arc extensions on the nodes.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -GraphAccessToken
 Specifies the Graph access token.
 Specifying this along with ArmAccessToken and AccountId will avoid Azure interactive logon.
@@ -149,6 +184,21 @@ Aliases:
 
 Required: False
 Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Region
+Specifies the Region the resource is created in Azure.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 9
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

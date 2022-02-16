@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: A39A415A-B403-48D3-AF80-CF7CFE382577
 online version: https://docs.microsoft.com/powershell/module/az.batch/get-azbatchlocationquota
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchLocationQuota.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchLocationQuota.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Get-AzBatchLocationQuota.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Get-AzBatchLocationQuota.md
 ---
 
 # Get-AzBatchLocationQuota
@@ -25,8 +25,11 @@ Gets the Batch service quotas for the specified subscription at the given locati
 ## EXAMPLES
 
 ### Example 1: Get the Batch service quotas for the subscription in the West US region
+```powershell
+Get-AzBatchLocationQuota -Location "westus"
 ```
-PS C:\>Get-AzBatchLocationQuota -Location "westus"
+
+```output
           AccountQuota Location
           ------------ --------
           1            westus

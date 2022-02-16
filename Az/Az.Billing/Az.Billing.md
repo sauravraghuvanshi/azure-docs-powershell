@@ -4,8 +4,8 @@ Module Guid: a1f34ce9-bf46-4180-b36c-be232a1f8f63
 Download Help Link: https://docs.microsoft.com/powershell/module/az.billing
 Help Version: 2.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Billing/Billing/help/Az.Billing.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Billing/Billing/help/Az.Billing.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Billing/Billing/help/Az.Billing.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Billing/Billing/help/Az.Billing.md
 ---
 
 # Az.Billing Module

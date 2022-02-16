@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: A65E82D5-706B-4470-A51E-936E381DA78F
 online version: https://docs.microsoft.com/powershell/module/az.compute/remove-azvmcustomscriptextension
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Remove-AzVMCustomScriptExtension.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Remove-AzVMCustomScriptExtension.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Remove-AzVMCustomScriptExtension.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Remove-AzVMCustomScriptExtension.md
 ---
 
 # Remove-AzVMCustomScriptExtension

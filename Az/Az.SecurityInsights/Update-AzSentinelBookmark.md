@@ -3,14 +3,14 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.dll-Help
 Module Name: Az.SecurityInsights
 online version: https://docs.microsoft.com/powershell/module/az.securityinsights/update-azsentinelbookmark
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SecurityInsights/SecurityInsights/help/Update-AzSentinelBookmark.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SecurityInsights/SecurityInsights/help/Update-AzSentinelBookmark.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Update-AzSentinelBookmark.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Update-AzSentinelBookmark.md
 ---
 
 # Update-AzSentinelBookmark
 
 ## SYNOPSIS
-Update a Bookmark.
+Updates a Bookmark.
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Update a Bookmark.
 ```
 Update-AzSentinelBookmark -ResourceGroupName <String> -WorkspaceName <String> -BookmarkId <String>
  [-DisplayName <String>] [-IncidentInfo <PSSentinelBookmarkIncidentInfo>]
- [-Label <System.Collections.Generic.IList`1[System.String]>] [-Notes <String>] [-Query <String>]
+ [-Label <System.Collections.Generic.IList`1[System.String]>] [-Note <String>] [-Query <String>]
  [-QueryResult <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -26,7 +26,7 @@ Update-AzSentinelBookmark -ResourceGroupName <String> -WorkspaceName <String> -B
 ```
 Update-AzSentinelBookmark -InputObject <PSSentinelBookmark> [-DisplayName <String>]
  [-IncidentInfo <PSSentinelBookmarkIncidentInfo>] [-Label <System.Collections.Generic.IList`1[System.String]>]
- [-Notes <String>] [-Query <String>] [-QueryResult <String>] [-DefaultProfile <IAzureContextContainer>]
+ [-Note <String>] [-Query <String>] [-QueryResult <String>] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -34,7 +34,7 @@ Update-AzSentinelBookmark -InputObject <PSSentinelBookmark> [-DisplayName <Strin
 ```
 Update-AzSentinelBookmark -ResourceId <String> [-DisplayName <String>]
  [-IncidentInfo <PSSentinelBookmarkIncidentInfo>] [-Label <System.Collections.Generic.IList`1[System.String]>]
- [-Notes <String>] [-Query <String>] [-QueryResult <String>] [-DefaultProfile <IAzureContextContainer>]
+ [-Note <String>] [-Query <String>] [-QueryResult <String>] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -50,7 +50,7 @@ You can use the *Confirm* parameter and $ConfirmPreference Windows PowerShell va
 PS C:\> Update-AzSentinelBookmark -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceNAme" -BookmarkId "MyBookmarkId" -Notes "Found something interesting"
 ```
 
-The command updates the Bookmark by setting the *Notes* property.  All other propreties stay the same.
+The command updates the Bookmark by setting the *Notes* property.  All other properties stay the same.
 
 ### Example 2
 ```powershell
@@ -59,7 +59,7 @@ PS C:\> $Bookmark | Set-AzSentinelBookmark -Notes "Found something interesting"
 ```
 
 The first command gets the Bookmark by *BookmarkId* from the specified workspace, and then stores it in the $Bookmark variable.
-The second command updates the Notes property.   All other propreties stay the same.
+The second command updates the Notes property. All other properties stay the same.
 
 ## PARAMETERS
 
@@ -67,8 +67,8 @@ The second command updates the Notes property.   All other propreties stay the s
 Bookmark Id,
 
 ```yaml
-Type: String
-Parameter Sets: BookmarkId., ParentObject
+Type: System.String
+Parameter Sets: BookmarkId.
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: IAzureContextContainer
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -97,7 +97,7 @@ Accept wildcard characters: False
 Bookmark Rule Display Name.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 Bookmark Incident Info.
 
 ```yaml
-Type: PSSentinelBookmarkIncidentInfo
+Type: Microsoft.Azure.Commands.SecurityInsights.Models.Bookmarks.PSSentinelBookmarkIncidentInfo
 Parameter Sets: (All)
 Aliases:
 
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 InputObject.
 
 ```yaml
-Type: PSSentinelBookmark
+Type: Microsoft.Azure.Commands.SecurityInsights.Models.Bookmarks.PSSentinelBookmark
 Parameter Sets: InputObject
 Aliases:
 
@@ -153,11 +153,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Notes
+### -Note
 Bookmark Notes.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 Bookmark Query.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 Bookmark Query Result.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -202,7 +202,7 @@ Accept wildcard characters: False
 Resource group name.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: BookmarkId.
 Aliases:
 
@@ -217,7 +217,7 @@ Accept wildcard characters: False
 Resource Id.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ResourceId
 Aliases:
 
@@ -232,7 +232,7 @@ Accept wildcard characters: False
 Workspace Name.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: BookmarkId.
 Aliases:
 
@@ -247,7 +247,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -263,7 +263,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

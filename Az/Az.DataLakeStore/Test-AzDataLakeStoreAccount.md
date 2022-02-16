@@ -4,8 +4,8 @@ Module Name: Az.DataLakeStore
 ms.assetid: 613DE097-65E0-4F08-839D-F9B53F772382
 online version: https://docs.microsoft.com/powershell/module/az.datalakestore/test-azdatalakestoreaccount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataLakeStore/DataLakeStore/help/Test-AzDataLakeStoreAccount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataLakeStore/DataLakeStore/help/Test-AzDataLakeStoreAccount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataLakeStore/DataLakeStore/help/Test-AzDataLakeStoreAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataLakeStore/DataLakeStore/help/Test-AzDataLakeStoreAccount.md
 ---
 
 # Test-AzDataLakeStoreAccount

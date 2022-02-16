@@ -2,8 +2,8 @@
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Websites.dll-Help.xml
 Module Name: Az.Websites
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Get-AzWebAppTrafficRouting.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Get-AzWebAppTrafficRouting.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Get-AzWebAppTrafficRouting.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Get-AzWebAppTrafficRouting.md
 ---
 
 # Get-AzWebAppTrafficRouting
@@ -23,7 +23,7 @@ The **Get-AzWebAppTrafficRouting** cmdlet Gets a routing rule configuration from
 
 ## EXAMPLES
 
-### Example 1 Gets the specific routing rule from webapp slot
+### Example 1: Gets the specific routing rule from webapp slot
 ```powershell
 PS C:\> Get-AzWebAppTrafficRouting -ResourceGroupName "Default-Web-WestUS" -WebAppName "ContosoSite"  -RuleName 'Stg'
 ```

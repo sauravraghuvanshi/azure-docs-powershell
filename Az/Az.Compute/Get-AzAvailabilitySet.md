@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: 45D55DC9-0027-4EB9-B2F7-9ABF6685E6B5
 online version: https://docs.microsoft.com/powershell/module/az.compute/get-azavailabilityset
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzAvailabilitySet.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzAvailabilitySet.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Get-AzAvailabilitySet.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Get-AzAvailabilitySet.md
 ---
 
 # Get-AzAvailabilitySet

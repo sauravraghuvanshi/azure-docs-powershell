@@ -1,39 +1,42 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.Maps.dll-Help.xml
+external help file: 
 Module Name: Az.Maps
 online version: https://docs.microsoft.com/powershell/module/az.maps/new-azmapsaccount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Maps/Maps/help/New-AzMapsAccount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Maps/Maps/help/New-AzMapsAccount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Maps/help/New-AzMapsAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Maps/help/New-AzMapsAccount.md
 ---
 
 # New-AzMapsAccount
 
 ## SYNOPSIS
-Creates an Azure Maps account.
+Create or update a Maps Account.
+A Maps Account holds the keys which allow access to the Maps REST APIs.
 
 ## SYNTAX
 
 ```
-New-AzMapsAccount [-ResourceGroupName] <String> [-Name] <String> [-SkuName] <String> [-Tag <Hashtable[]>]
- [-Force] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzMapsAccount -Name <String> -ResourceGroupName <String> -Location <String> -SkuName <Name>
+ [-SubscriptionId <String>] [-DisableLocalAuth] [-Kind <Kind>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The New-AzMapsAccount cmdlet creates an Azure Maps account with the specified SKU.
+Create or update a Maps Account.
+A Maps Account holds the keys which allow access to the Maps REST APIs.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Create a Maps Account.
 ```powershell
-PS C:\> New-AzMapsAccount -ResourceGroupName MyResourceGroup -Name MyAccount -SkuName S0 -Tags @{Name="test";Value="true"}
+PS C:\> New-AzMapsAccount -ResourceGroupName azure-rg-test -Name pwsh-mapsAccount01 -SkuName S0 -Location eastus
 
-ResourceGroupName AccountName Id
------------------ ----------- --
-MyResourceGroup   MyAccount   /subscriptions/21a9967a-e8a9-4656-a70b-96ff1c4d05a0/resourceGroups/MyResourceGroup/providers/Microsoft.Maps/accounts/MyAccount
+Location Name               Type                    Kind
+-------- ----               ----                    ----
+eastus   pwsh-mapsAccount01 Microsoft.Maps/accounts Gen1
 ```
 
-Creates a new Azure Maps account named MyAccount in the resource group MyResourceGroup with the SKU S0 and a tag.
+This command creates a Maps Account.A Maps Account holds the keys which allow access to the Maps REST APIs.
 
 ## PARAMETERS
 
@@ -41,9 +44,9 @@ Creates a new Azure Maps account named MyAccount in the resource group MyResourc
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -52,8 +55,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
-Don't ask for confirmation.
+### -DisableLocalAuth
+Allows toggle functionality on Azure Policy to disable Azure Maps local authentication support.
+This will disable Shared Keys authentication from any usage.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -67,23 +71,54 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name
-Maps Account Name.
+### -Kind
+Get or Set Kind property.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.Maps.Support.Kind
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Location
+The geo-location where the resource lives
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases: MapsAccountName, AccountName
+Aliases:
 
 Required: True
-Position: 1
+Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+The name of the Maps Account.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: AccountName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Resource Group Name.
+The name of the resource group.
+The name is case insensitive.
 
 ```yaml
 Type: System.String
@@ -91,34 +126,49 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 0
+Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -SkuName
-Maps Account Sku Name.
+The name of the SKU, in standard format (such as S0).
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.Maps.Support.Name
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubscriptionId
+The ID of the target subscription.
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
-Position: 2
-Default value: None
-Accept pipeline input: True (ByPropertyName)
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Tag
-Maps Account Tags.
+Resource tags.
 
 ```yaml
-Type: System.Collections.Hashtable[]
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
-Aliases: Tags
+Aliases:
 
 Required: False
 Position: Named
@@ -159,16 +209,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### System.String
-
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.Maps.Models.PSMapsAccount
+### Microsoft.Azure.PowerShell.Cmdlets.Maps.Models.Api20210201.IMapsAccount
 
 ## NOTES
 
+ALIASES
+
 ## RELATED LINKS
+

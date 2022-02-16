@@ -4,8 +4,8 @@ Module Name: Az.Resources
 ms.assetid: 2D882B33-2B62-4785-AF8F-5F4644E9504D
 online version: https://docs.microsoft.com/powershell/module/az.resources/remove-azroledefinition
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzRoleDefinition.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzRoleDefinition.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Remove-AzRoleDefinition.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Remove-AzRoleDefinition.md
 ---
 
 # Remove-AzRoleDefinition

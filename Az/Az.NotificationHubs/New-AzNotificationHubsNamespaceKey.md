@@ -4,8 +4,8 @@ Module Name: Az.NotificationHubs
 ms.assetid: 1EC19069-B64C-4F0F-99A3-07C16E46C0A0
 online version: https://docs.microsoft.com/powershell/module/az.notificationhubs/new-aznotificationhubsnamespacekey
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/New-AzNotificationHubsNamespaceKey.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/New-AzNotificationHubsNamespaceKey.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/NotificationHubs/NotificationHubs/help/New-AzNotificationHubsNamespaceKey.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/NotificationHubs/NotificationHubs/help/New-AzNotificationHubsNamespaceKey.md
 ---
 
 # New-AzNotificationHubsNamespaceKey
@@ -22,16 +22,24 @@ New-AzNotificationHubsNamespaceKey [-ResourceGroup] <String> [-Namespace] <Strin
 ```
 
 ## DESCRIPTION
-New-AzNotificationHubNamespaceKey cmdlet regenerates the Primary Key/Secondary Key for the Namespace Authorization Rule.
+New-AzNotificationHubsNamespaceKey cmdlet regenerates the Primary Key/Secondary Key for the Namespace Authorization Rule.
 
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> {{ Add example code here }}
+```powershell
+New-AzNotificationHubsNamespaceKey -ResourceGroup "ContosoNotificationsGroup" -Namespace "ContosoNamespace" -AuthorizationRule "RootManageSharedAccessKey" -PolicyKey "PrimaryKey"
 ```
 
-{{ Add example description here }}
+```Output
+PrimaryConnectionString   : Endpoint=sb://contosonamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAc
+                            cessKey;SharedAccessKey=VUhKcGJXRnllVU52Ym01bFkzUnBiMjVUZEhKcGJtYz0=
+SecondaryConnectionString : Endpoint=sb://contosonamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAc
+                            cessKey;SharedAccessKey=VTJWamIyNWtZWEo1UTI5dWJtVmpkR2x2YmxOMGNtbHV=
+PrimaryKey                : VUhKcGJXRnllVU52Ym01bFkzUnBiMjVUZEhKcGJtYz0=
+SecondaryKey              : VTJWamIyNWtZWEo1UTI5dWJtVmpkR2x2YmxOMGNtbHV=
+KeyName                   : RootManageSharedAccessKey
+```
 
 ## PARAMETERS
 

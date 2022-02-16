@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: EE854F8A-4B6B-4831-992A-6EC318BEE234
 online version: https://docs.microsoft.com/powershell/module/az.automation/get-azautomationscheduledrunbook
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Get-AzAutomationScheduledRunbook.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Get-AzAutomationScheduledRunbook.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Get-AzAutomationScheduledRunbook.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Get-AzAutomationScheduledRunbook.md
 ---
 
 # Get-AzAutomationScheduledRunbook

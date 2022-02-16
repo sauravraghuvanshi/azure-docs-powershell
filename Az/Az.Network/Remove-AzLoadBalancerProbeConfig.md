@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 2B15B224-E36C-454B-B6C2-F2BE032AE962
 online version: https://docs.microsoft.com/powershell/module/az.network/remove-azloadbalancerprobeconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzLoadBalancerProbeConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzLoadBalancerProbeConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzLoadBalancerProbeConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzLoadBalancerProbeConfig.md
 ---
 
 # Remove-AzLoadBalancerProbeConfig

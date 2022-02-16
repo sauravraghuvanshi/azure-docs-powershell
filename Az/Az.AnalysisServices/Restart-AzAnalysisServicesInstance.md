@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.AnalysisServices.Dataplan
 Module Name: Az.AnalysisServices
 online version: https://docs.microsoft.com/powershell/module/az.analysisservices/restart-azanalysisservicesinstance
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AnalysisServices/AnalysisServices/help/Restart-AzAnalysisServicesInstance.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AnalysisServices/AnalysisServices/help/Restart-AzAnalysisServicesInstance.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AnalysisServices/AnalysisServices/help/Restart-AzAnalysisServicesInstance.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AnalysisServices/AnalysisServices/help/Restart-AzAnalysisServicesInstance.md
 ---
 
 # Restart-AzAnalysisServicesInstance
@@ -24,8 +24,11 @@ The Restart-AzAnalysisServicesInstance cmdlet restarts an instance of Azure Anal
 ## EXAMPLES
 
 ### Example 1
+```powershell
+Restart-AzAnalysisServicesInstance
 ```
-PS C:\>Restart-AzAnalysisServicesInstance
+
+```output
 Instance: testserver
 ```
 

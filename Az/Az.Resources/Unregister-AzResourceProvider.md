@@ -4,8 +4,8 @@ Module Name: Az.Resources
 ms.assetid: D5126B7B-7FBB-4C72-B77E-13ADE2BE9B1B
 online version: https://docs.microsoft.com/powershell/module/az.resources/unregister-azresourceprovider
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Unregister-AzResourceProvider.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Unregister-AzResourceProvider.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Unregister-AzResourceProvider.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Unregister-AzResourceProvider.md
 ---
 
 # Unregister-AzResourceProvider

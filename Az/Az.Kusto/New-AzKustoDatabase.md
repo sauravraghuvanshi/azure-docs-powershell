@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.Kusto
 online version: https://docs.microsoft.com/powershell/module/az.kusto/new-azkustodatabase
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/help/New-AzKustoDatabase.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/help/New-AzKustoDatabase.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Kusto/help/New-AzKustoDatabase.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Kusto/help/New-AzKustoDatabase.md
 ---
 
 # New-AzKustoDatabase
@@ -25,7 +25,7 @@ Creates or updates a database.
 
 ## EXAMPLES
 
-### Example 1: Create a new Kusto database by name
+### Example 1: Create a new database
 ```powershell
 PS C:\> New-AzKustoDatabase -ResourceGroupName testrg -ClusterName testnewkustocluster -Name mykustodatabase -Kind ReadWrite -Location 'East US'
 
@@ -34,7 +34,7 @@ Kind      Location Name                                Type
 ReadWrite East US  testnewkustocluster/mykustodatabase Microsoft.Kusto/Clusters/Databases
 ```
 
-The above command creates a new Kusto database named "mykustodatabase" in the existing cluster "testnewkustocluster" found in the resource group "testrg".
+The above command creates a new datebase named "mykustodatabase" in the resource group "testrg".
 
 ## PARAMETERS
 
@@ -242,7 +242,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Kusto.Models.Api20200918.IDatabase
+### Microsoft.Azure.PowerShell.Cmdlets.Kusto.Models.Api202101.IDatabase
 
 ## NOTES
 

@@ -4,8 +4,8 @@ Module Name: Az.DataFactory
 ms.assetid: E1E0919A-062B-4794-ADE7-E17133A40604
 online version: https://docs.microsoft.com/powershell/module/az.datafactory/remove-azdatafactorypipeline
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Remove-AzDataFactoryPipeline.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Remove-AzDataFactoryPipeline.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Remove-AzDataFactoryPipeline.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Remove-AzDataFactoryPipeline.md
 ---
 
 # Remove-AzDataFactoryPipeline

@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Accounts.dll-Help.xml
 Module Name: Az.Accounts
 online version: https://docs.microsoft.com/powershell/module/az.accounts/disable-azurermalias
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Disable-AzureRmAlias.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Disable-AzureRmAlias.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Disable-AzureRmAlias.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Disable-AzureRmAlias.md
 ---
 
 # Disable-AzureRmAlias
@@ -25,15 +25,15 @@ Disables AzureRm prefix aliases for Az modules. If -Module is specified, only mo
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> Disable-AzureRmAlias
+```powershell
+Disable-AzureRmAlias
 ```
 
 Disables all AzureRm prefixes for the current PowerShell session.
 
-### Example 1
-```
-PS C:\> Disable-AzureRmAlias -Module Az.Accounts -Scope CurrentUser
+### Example 2
+```powershell
+Disable-AzureRmAlias -Module Az.Accounts -Scope CurrentUser
 ```
 
 Disables AzureRm aliases for the Az.Accounts module for both the current process and for the current user.

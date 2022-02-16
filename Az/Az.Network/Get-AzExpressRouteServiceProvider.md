@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 009F6E65-0268-4505-AEC1-FF379CB96804
 online version: https://docs.microsoft.com/powershell/module/az.network/get-azexpressrouteserviceprovider
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteServiceProvider.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteServiceProvider.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzExpressRouteServiceProvider.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzExpressRouteServiceProvider.md
 ---
 
 # Get-AzExpressRouteServiceProvider

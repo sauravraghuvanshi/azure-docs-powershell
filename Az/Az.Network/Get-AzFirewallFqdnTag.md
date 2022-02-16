@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 98CB62E1-0A18-4207-81FA-07CC60310896
 online version: https://docs.microsoft.com/powershell/module/az.network/get-azfirewallfqdntag
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzFirewallFqdnTag.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzFirewallFqdnTag.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzFirewallFqdnTag.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzFirewallFqdnTag.md
 ---
 
 # Get-AzFirewallFqdnTag

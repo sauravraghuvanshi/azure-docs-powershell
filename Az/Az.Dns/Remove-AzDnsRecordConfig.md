@@ -4,8 +4,8 @@ Module Name: Az.Dns
 ms.assetid: D1A2326C-CD41-45A6-B37A-FC6176193B01
 online version: https://docs.microsoft.com/powershell/module/az.dns/remove-azdnsrecordconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Dns/Dns/help/Remove-AzDnsRecordConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Dns/Dns/help/Remove-AzDnsRecordConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Dns/Dns/help/Remove-AzDnsRecordConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Dns/Dns/help/Remove-AzDnsRecordConfig.md
 ---
 
 # Remove-AzDnsRecordConfig

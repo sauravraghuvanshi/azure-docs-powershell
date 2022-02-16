@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Storage.Management.dll-He
 Module Name: Az.Storage
 online version: https://docs.microsoft.com/powershell/module/az.storage/update-azstorageencryptionscope
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Update-AzStorageEncryptionScope.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Update-AzStorageEncryptionScope.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Update-AzStorageEncryptionScope.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Update-AzStorageEncryptionScope.md
 ---
 
 # Update-AzStorageEncryptionScope
@@ -106,7 +106,7 @@ PS C:\> Update-AzStorageEncryptionScope -ResourceGroupName "myresourcegroup" -Ac
 
 Name      State    Source             KeyVaultKeyUri                                                                          RequireInfrastructureEncryption 
 ----      -----    ------             --------------                                                                          -------------------------------
-testscope Enabled  Microsoft.Keyvault https://keyvalutname.vault.azure.net:443/keys/keyname/34a0ba563b4243d9a0ef2b1d3c0c7d57   
+testscope Enabled  Microsoft.Keyvault https://keyvalutname.vault.azure.net:443/keys/keyname/34a0ba563b4243d9a0ef2b1d3c0c7d57
 ```
 
 This command updtaes an encryption scope to use Keyvault Encryption.

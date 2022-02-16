@@ -4,8 +4,8 @@ Module Name: Az.Websites
 ms.assetid: 65A78654-A490-4B60-8C16-B0CC597EE995
 online version: https://docs.microsoft.com/powershell/module/az.websites/remove-azwebappbackup
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Remove-AzWebAppBackup.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Remove-AzWebAppBackup.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Remove-AzWebAppBackup.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Remove-AzWebAppBackup.md
 ---
 
 # Remove-AzWebAppBackup

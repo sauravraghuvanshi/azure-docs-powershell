@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceFabric.dll-Help.xm
 Module Name: Az.ServiceFabric
 online version: https://docs.microsoft.com/powershell/module/az.servicefabric/set-azservicefabricmanagedclusterapplication
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Set-AzServiceFabricManagedClusterApplication.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Set-AzServiceFabricManagedClusterApplication.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ServiceFabric/ServiceFabric/help/Set-AzServiceFabricManagedClusterApplication.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ServiceFabric/ServiceFabric/help/Set-AzServiceFabricManagedClusterApplication.md
 ---
 
 # Set-AzServiceFabricManagedClusterApplication
@@ -25,7 +25,7 @@ Set-AzServiceFabricManagedClusterApplication [-ResourceGroupName] <String> [-Clu
  [-DefaultServiceTypeMaxPercentUnhealthyPartitionsPerService <Int32>]
  [-DefaultServiceTypeMaxPercentUnhealthyReplicasPerPartition <Int32>]
  [-DefaultServiceTypeUnhealthyServicesMaxPercent <Int32>] [-UnhealthyDeployedApplicationsMaxPercent <Int32>]
- [-ServiceTypeHealthPolicyMap <Hashtable>] [-Tags <Hashtable>] [-Force] [-AsJob]
+ [-ServiceTypeHealthPolicyMap <Hashtable>] [-Tag <Hashtable>] [-Force] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -40,7 +40,7 @@ Set-AzServiceFabricManagedClusterApplication [[-ApplicationTypeVersion] <String>
  [-DefaultServiceTypeMaxPercentUnhealthyPartitionsPerService <Int32>]
  [-DefaultServiceTypeMaxPercentUnhealthyReplicasPerPartition <Int32>]
  [-DefaultServiceTypeUnhealthyServicesMaxPercent <Int32>] [-UnhealthyDeployedApplicationsMaxPercent <Int32>]
- [-ServiceTypeHealthPolicyMap <Hashtable>] [-Tags <Hashtable>] -ResourceId <String> [-Force] [-AsJob]
+ [-ServiceTypeHealthPolicyMap <Hashtable>] [-Tag <Hashtable>] -ResourceId <String> [-Force] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -55,7 +55,7 @@ Set-AzServiceFabricManagedClusterApplication [[-ApplicationTypeVersion] <String>
  [-DefaultServiceTypeMaxPercentUnhealthyPartitionsPerService <Int32>]
  [-DefaultServiceTypeMaxPercentUnhealthyReplicasPerPartition <Int32>]
  [-DefaultServiceTypeUnhealthyServicesMaxPercent <Int32>] [-UnhealthyDeployedApplicationsMaxPercent <Int32>]
- [-ServiceTypeHealthPolicyMap <Hashtable>] [-Tags <Hashtable>] -InputObject <PSManagedApplication> [-Force]
+ [-ServiceTypeHealthPolicyMap <Hashtable>] [-Tag <Hashtable>] -InputObject <PSManagedApplication> [-Force]
  [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -445,7 +445,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Tags
+### -Tag
 Specify the tags as key/value pairs.
 
 ```yaml

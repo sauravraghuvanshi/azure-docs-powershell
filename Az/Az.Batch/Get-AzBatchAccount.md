@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: 818D5D85-B6D5-458C-A26E-E4DE8E111A10
 online version: https://docs.microsoft.com/powershell/module/az.batch/get-azbatchaccount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchAccount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchAccount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Get-AzBatchAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Get-AzBatchAccount.md
 ---
 
 # Get-AzBatchAccount
@@ -28,8 +28,11 @@ parameter to get accounts under that resource group.
 ## EXAMPLES
 
 ### Example 1: Get a batch account by name
+```powershell
+Get-AzBatchAccount -AccountName "pfuller"
 ```
-PS C:\>Get-AzBatchAccount -AccountName "pfuller"
+
+```output
 AccountName                  : pfuller
 Location                     : westus
 ResourceGroupName            : CmdletExampleRG
@@ -44,8 +47,11 @@ TaskTenantUrl                : https://pfuller.westus.batch.azure.com
 This command gets the batch account named pfuller.
 
 ### Example 2: Get the batch accounts associated with a resource group
+```powershell
+Get-AzBatchAccount -ResourceGroupName "CmdletExampleRG"
 ```
-PS C:\>Get-AzBatchAccount -ResourceGroupName "CmdletExampleRG"
+
+```output
 AccountName                  : cmdletexample
 Location                     : westus
 ResourceGroupName            : CmdletExampleRG

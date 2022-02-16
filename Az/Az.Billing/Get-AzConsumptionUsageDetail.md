@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Consumption.dll-Help.xml
 Module Name: Az.Billing
 online version: https://docs.microsoft.com/powershell/module/az.billing/get-azconsumptionusagedetail
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Billing/Billing/help/Get-AzConsumptionUsageDetail.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Billing/Billing/help/Get-AzConsumptionUsageDetail.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Billing/Billing/help/Get-AzConsumptionUsageDetail.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Billing/Billing/help/Get-AzConsumptionUsageDetail.md
 ---
 
 # Get-AzConsumptionUsageDetail
@@ -28,7 +28,10 @@ The **Get-AzConsumptionUsageDetail** cmdlet gets usage details of the subscripti
 
 ### Example 1: Get usage details with expand of MeterDetails
 ```powershell
-PS C:\> Get-AzConsumptionUsageDetail -Expand MeterDetails -Top 10
+Get-AzConsumptionUsageDetail -Expand MeterDetails -Top 10
+```
+
+```output
 AccountName:  AAAA
 BillingPeriodId:  subscriptions/1caaa5a3-2b66-438e-8ab4-bce37d518c5d/providers/Microsoft.Billing/billingPeriods/20180601
 ConsumedService:  Microsoft.Compute
@@ -59,7 +62,10 @@ UsageStart:  6/1/2018 12:00:00 AM
 
 ### Example 2: Get usage details with date range
 ```powershell
-PS C:\> Get-AzConsumptionUsageDetail -StartDate 2017-10-02 -EndDate 2017-10-05 -Top 10
+Get-AzConsumptionUsageDetail -StartDate 2017-10-02 -EndDate 2017-10-05 -Top 10
+```
+
+```output
 AccountName:  AAAA
 BillingPeriodId:  subscriptions/1caaa5a3-2b66-438e-8ab4-bce37d518c5d/providers/Microsoft.Billing/billingPeriods/20171001
 ConsumedService:  Storage
@@ -85,7 +91,10 @@ UsageStart:  10/2/2017 12:00:00 AM
 
 ### Example 3: Get usage details of BillingPeriodName with InstanceName filter
 ```powershell
-PS C:\> Get-AzConsumptionUsageDetail -BillingPeriodName 201710 -InstanceName 1c2052westus -Top 10
+Get-AzConsumptionUsageDetail -BillingPeriodName 201710 -InstanceName 1c2052westus -Top 10
+```
+
+```output
 AccountName:  AAAA
 BillingPeriodId:  subscriptions/1caaa5a3-2b66-438e-8ab4-bce37d518c5d/providers/Microsoft.Billing/billingPeriods/20171001
 ConsumedService:  Microsoft.Storage

@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: F34C5D18-C505-4815-9DDB-C563E205515C
 online version: https://docs.microsoft.com/powershell/module/az.network/remove-azapplicationgatewaybackendaddresspool
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayBackendAddressPool.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayBackendAddressPool.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzApplicationGatewayBackendAddressPool.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzApplicationGatewayBackendAddressPool.md
 ---
 
 # Remove-AzApplicationGatewayBackendAddressPool
@@ -29,10 +29,11 @@ The **Remove-AzApplicationGatewayBackendAddressPool** cmdlet removes a back-end 
 ```
 PS C:\>$AppGw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
 PS C:\> Remove-AzApplicationGatewayBackendAddressPool -ApplicationGateway $AppGw -Name "BackEndPool02"
+PS C:\> Set-AzApplicationGateway -ApplicationGateway $AppGw
 ```
 
 The first command gets the application gateway named ApplicationGateway01 belonging to the resource group named ResourceGroup01 and saves it in the $AppGw variable.
-The second command removes the back-end address pool named BackEndPool02 from the application gateway.
+The second command removes the back-end address pool named BackEndPool02 from the application gateway. Finally, the third command updates the application gateway.
 
 ## PARAMETERS
 

@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: A1F949A9-7AEF-41C1-B757-114421B79493
 online version: https://docs.microsoft.com/powershell/module/az.network/new-azapplicationgatewaypathruleconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayPathRuleConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayPathRuleConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/New-AzApplicationGatewayPathRuleConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/New-AzApplicationGatewayPathRuleConfig.md
 ---
 
 # New-AzApplicationGatewayPathRuleConfig

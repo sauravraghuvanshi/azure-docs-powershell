@@ -4,8 +4,8 @@ Module Name: Az.LogicApp
 ms.assetid: 3308F901-4C9F-424D-8BEB-877A6038B246
 online version: https://docs.microsoft.com/powershell/module/az.logicapp/stop-azlogicapprun
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/Stop-AzLogicAppRun.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/Stop-AzLogicAppRun.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/LogicApp/LogicApp/help/Stop-AzLogicAppRun.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/LogicApp/LogicApp/help/Stop-AzLogicAppRun.md
 ---
 
 # Stop-AzLogicAppRun

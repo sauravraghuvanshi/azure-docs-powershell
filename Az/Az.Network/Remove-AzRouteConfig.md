@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 03285628-6BD3-4F2F-8129-E3CAE4C70EC8
 online version: https://docs.microsoft.com/powershell/module/az.network/remove-azrouteconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzRouteConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzRouteConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzRouteConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzRouteConfig.md
 ---
 
 # Remove-AzRouteConfig

@@ -4,8 +4,8 @@ Module Guid: 5e5ed8bc-27bf-4380-9de1-4b22ba0920b2
 Download Help Link: https://docs.microsoft.com/powershell/module/az.dns
 Help Version: 4.1.2.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Dns/Dns/help/Az.DNS.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Dns/Dns/help/Az.DNS.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Dns/Dns/help/Az.DNS.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Dns/Dns/help/Az.DNS.md
 ---
 
 # Az.Dns Module

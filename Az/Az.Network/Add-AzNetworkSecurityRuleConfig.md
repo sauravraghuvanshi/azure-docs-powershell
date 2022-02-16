@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 9160A21D-0F83-415B-830B-F35C8B863E90
 online version: https://docs.microsoft.com/powershell/module/az.network/add-aznetworksecurityruleconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzNetworkSecurityRuleConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzNetworkSecurityRuleConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzNetworkSecurityRuleConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzNetworkSecurityRuleConfig.md
 ---
 
 # Add-AzNetworkSecurityRuleConfig
@@ -40,25 +40,25 @@ The **Add-AzNetworkSecurityRuleConfig** cmdlet adds a network security rule conf
 
 ## EXAMPLES
 
-### 1: Adding a network security group
-```
+### Example 1: Adding a network security group
+```powershell
 Get-AzNetworkSecurityGroup -Name nsg1 -ResourceGroupName rg1 | 
-Add-AzNetworkSecurityRuleConfig -Name rdp-rule -Description "Allow RDP" -Access 
-    Allow -Protocol Tcp -Direction Inbound -Priority 100 -SourceAddressPrefix Internet 
-    -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange 3389 | 
+Add-AzNetworkSecurityRuleConfig -Name rdp-rule -Description "Allow RDP" -Access `
+    Allow -Protocol Tcp -Direction Inbound -Priority 100 -SourceAddressPrefix Internet `
+    -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange 3389 |
     Set-AzNetworkSecurityGroup
 ```
 
 The first command retrieves an Azure network security group named "nsg1" from resource group "rg1". The second command adds a network security rule named "rdp-rule" that allows traffic from internet on port 3389 to the retrieved network security group object. Persists the modified Azure network security group.
 
-### 2: Adding a new security rule with application security groups
-```
+### Example 2: Adding a new security rule with application security groups
+```powershell
 $srcAsg = New-AzApplicationSecurityGroup -ResourceGroupName MyResourceGroup -Name srcAsg -Location "West US"
 $destAsg = New-AzApplicationSecurityGroup -ResourceGroupName MyResourceGroup -Name destAsg -Location "West US"
 
 Get-AzNetworkSecurityGroup -Name nsg1 -ResourceGroupName rg1 |
-Add-AzNetworkSecurityRuleConfig -Name rdp-rule -Description "Allow RDP" -Access
-    Allow -Protocol Tcp -Direction Inbound -Priority 100 -SourceApplicationSecurityGroup
+Add-AzNetworkSecurityRuleConfig -Name rdp-rule -Description "Allow RDP" -Access `
+    Allow -Protocol Tcp -Direction Inbound -Priority 100 -SourceApplicationSecurityGroup `
     $srcAsg -SourcePortRange * -DestinationApplicationSecurityGroup $destAsg -DestinationPortRange 3389 |
 Set-AzNetworkSecurityGroup
 ```
@@ -119,7 +119,7 @@ Specifies a destination address prefix.
 The acceptable values for this parameter are:
 - A Classless Interdomain Routing (CIDR) address
 - A destination IP address range
-- A wildcard character (*) to match any IP address
+- A wildcard character (*) to match any IP address.
 You can use tags such as VirtualNetwork, AzureLoadBalancer, and Internet.
 
 ```yaml

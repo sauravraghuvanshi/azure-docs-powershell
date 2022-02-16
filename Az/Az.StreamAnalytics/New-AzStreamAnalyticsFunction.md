@@ -1,66 +1,127 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.StreamAnalytics.dll-Help.xml
+external help file: 
 Module Name: Az.StreamAnalytics
-ms.assetid: 79EB2AD9-BFE1-49BE-870F-7DFC99D6FE17
 online version: https://docs.microsoft.com/powershell/module/az.streamanalytics/new-azstreamanalyticsfunction
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/StreamAnalytics/StreamAnalytics/help/New-AzStreamAnalyticsFunction.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/StreamAnalytics/StreamAnalytics/help/New-AzStreamAnalyticsFunction.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/StreamAnalytics/help/New-AzStreamAnalyticsFunction.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/StreamAnalytics/help/New-AzStreamAnalyticsFunction.md
 ---
 
 # New-AzStreamAnalyticsFunction
 
 ## SYNOPSIS
-Creates or replaces a function in a Stream Analytics job.
+Creates a function or replaces an already existing function under an existing streaming job.
 
 ## SYNTAX
 
 ```
-New-AzStreamAnalyticsFunction [-JobName] <String> [[-Name] <String>] [-File] <String> [-Force]
- [-ResourceGroupName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+New-AzStreamAnalyticsFunction -File <String> -JobName <String> -Name <String> -ResourceGroupName <String>
+ [-SubscriptionId <String>] [-IfMatch <String>] [-IfNoneMatch <String>] [-DefaultProfile <PSObject>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **New-AzStreamAnalyticsFunction** cmdlet creates a function in an Azure Stream Analytics job or replaces an existing function.
-Define the function in a JavaScript Object Notation (JSON) file.
-You can specify the name of the function by using the *Name* parameter or in the .json file.
-If you specify the name in both ways, the names must match.
-To replace an existing function, specify the name of the existing function.
+Creates a function or replaces an already existing function under an existing streaming job.
 
 ## EXAMPLES
 
 ### Example 1: Create a Stream Analytics function
-```
-PS C:\>New-AzStreamAnalyticsFunction -ResourceGroupName "StreamAnalytics-Default-West-US" -JobName "StreamJob07" -File "C:\Function07.json"
+```powershell
+PS C:\> New-AzStreamAnalyticsFunction -ResourceGroupName azure-rg-test -JobName sajob-02-pwsh -Name function-01 -File .\test\template-json\Function_JavascriptUdf.json
+
+Name        Type                                              ETag
+----        ----                                              ----
+function-01 Microsoft.StreamAnalytics/streamingjobs/functions 7bbd6ccd-c7a4-4910-b2ae-a3eae19d9b18
+
 ```
 
-This command creates a function from the file Function07.json.
-The name of the function is stored in the .json file.
+This command creates a function from the file Function_JavascriptUdf.json.
 
-### Example 2: Create a Stream Analytics function named ScoreTweet
-```
-PS C:\>New-AzStreamAnalyticsFunction -ResourceGroupName "StreamAnalytics-Default-West-US" -JobName "StreamJob22" -File "C:\Function22.json" -Name "ScoreTweet"
+(below is an example for "Function_JavascriptUdf.json")
+{
+  "properties": {
+    "type": "Scalar",
+    "properties": {
+      "inputs": [
+        {
+          "dataType": "any"
+        },
+        {
+          "dataType": "any"
+        }
+      ],
+      "output": {
+        "dataType": "any"
+      },
+      "binding": {
+        "type": "Microsoft.StreamAnalytics/JavascriptUdf",
+        "properties": {
+          "script": "// Sample UDF which returns sum of two values.\nfunction main(arg3, arg4) {\n    return arg1 + arg2;\n}"
+        }
+      }
+    }
+  }
+}
+
+### Example 2: Create a Stream Analytics function
+```powershell
+PS C:\> New-AzStreamAnalyticsFunction -ResourceGroupName azure-rg-test -JobName sajob-02-pwsh -Name function-01 -File .\test\template-json\MachineLearningServices.json
+
+Name        Type                                              ETag
+----        ----                                              ----
+function-01 Microsoft.StreamAnalytics/streamingjobs/functions 7bbd6ccd-c7a4-4910-b2ae-a3eae19d9b18
 ```
 
-This command creates a function on the job named ScoreTweet.
+This command creates a function from the file MachineLearningServices.json.
 
-### Example 3: Replace a Stream Analytics function
-```
-PS C:\>New-AzStreamAnalyticsFunction -ResourceGroupName "StreamAnalytics-Default-West-US" -JobName "StreamJob22" -File "C:\Function22.json" -Name "ScoreTweet" -Force
-```
-
-This command replaces the definition of the existing function named ScoreTweet with the definition in Function22.json.
+(below is an example for "MachineLearningServices.json")
+{
+  "properties": {
+    "type": "Scalar",
+    "properties": {
+      "inputs": [
+        {
+          "dataType": "record"
+        }
+      ],
+      "output": {
+        "dataType": "bigint"
+      },
+      "binding": {
+        "type": "Microsoft.MachineLearningServices",
+        "properties": {
+          "endpoint": "http://xxxxxxxxxxxxxxxxxxx.eastus.azurecontainer.io/score",
+          "inputs": [
+            {
+              "name": "data",
+              "dataType": "object",
+              "mapTo": 0
+            }
+          ],
+          "outputs": [
+            {
+              "name": "output",
+              "dataType": "int64",
+              "mapTo": 0
+            }
+          ],
+          "batchSize": 10000,
+          "numberOfParallelRequests": 1
+        }
+      }
+    }
+  }
+}
 
 ## PARAMETERS
 
 ### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure.
+The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -70,7 +131,8 @@ Accept wildcard characters: False
 ```
 
 ### -File
-Specifies the path of a .json file that contains the JSON representation of the Stream Analytics function.
+The name of the resource group.
+The name is case insensitive.
 
 ```yaml
 Type: System.String
@@ -78,17 +140,35 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 3
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
-Indicates that this cmdlet replaces an existing Stream Analytics function without prompting you for confirmation.
+### -IfMatch
+The ETag of the function.
+Omit this value to always overwrite the current function.
+Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IfNoneMatch
+Set to '*' to allow a new function to be created, but to prevent updating an existing function.
+Other values will result in a 412 Pre-condition Failed response.
+
+```yaml
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -100,7 +180,7 @@ Accept wildcard characters: False
 ```
 
 ### -JobName
-Specifies the name of the Stream Analytics job under which this cmdlet creates a Stream Analytics function.
+The name of the streaming job.
 
 ```yaml
 Type: System.String
@@ -108,14 +188,45 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Name
-Specifies the name of the Stream Analytics function that this cmdlet creates.
+The name of the function.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: FunctionName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+The name of the resource group.
+The name is case insensitive.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubscriptionId
+The ID of the target subscription.
 
 ```yaml
 Type: System.String
@@ -123,24 +234,9 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -ResourceGroupName
-Specifies the name of the resource group under which this cmdlet creates a Stream Analytics function.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: True (ByPropertyName)
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -154,7 +250,7 @@ Aliases: cf
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -170,30 +266,27 @@ Aliases: wi
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### System.String
+### Microsoft.Azure.PowerShell.Cmdlets.StreamAnalytics.Models.Api20170401Preview.IFunction
+
+### Microsoft.Azure.PowerShell.Cmdlets.StreamAnalytics.Models.IStreamAnalyticsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.StreamAnalytics.Models.PSFunction
+### Microsoft.Azure.PowerShell.Cmdlets.StreamAnalytics.Models.Api20170401Preview.IFunction
 
 ## NOTES
 
+ALIASES
+
 ## RELATED LINKS
-
-[Get-AzStreamAnalyticsFunction](./Get-AzStreamAnalyticsFunction.md)
-
-[Remove-AzStreamAnalyticsFunction](./Remove-AzStreamAnalyticsFunction.md)
-
-[Test-AzStreamAnalyticsFunction](./Test-AzStreamAnalyticsFunction.md)
-
 

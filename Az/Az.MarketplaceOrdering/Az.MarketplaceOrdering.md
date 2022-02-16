@@ -4,8 +4,8 @@ Module Guid: 6e0e216b-1dff-4992-b943-b3a4f14679ab
 Download Help Link: https://docs.microsoft.com/powershell/module/az.marketplaceordering
 Help Version: 0.1.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MarketplaceOrdering/MarketplaceOrdering/help/Az.MarketplaceOrdering.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MarketplaceOrdering/MarketplaceOrdering/help/Az.MarketplaceOrdering.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MarketplaceOrdering/MarketplaceOrdering/help/Az.MarketplaceOrdering.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MarketplaceOrdering/MarketplaceOrdering/help/Az.MarketplaceOrdering.md
 ---
 
 # Az.MarketplaceOrdering Module

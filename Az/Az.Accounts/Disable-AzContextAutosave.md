@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Accounts.dll-Help.xml
 Module Name: Az.Accounts
 online version: https://docs.microsoft.com/powershell/module/az.accounts/disable-azcontextautosave
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Disable-AzContextAutosave.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Disable-AzContextAutosave.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Disable-AzContextAutosave.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Disable-AzContextAutosave.md
 ---
 
 # Disable-AzContextAutosave
@@ -26,7 +26,7 @@ Turn off autosaving Azure credentials.  Your login information will be forgotten
 
 ### Example 1: Disable autosaving the context
 ```powershell
-PS C:\> Disable-AzContextAutosave
+Disable-AzContextAutosave
 ```
 
 Disable autosave for the current user.

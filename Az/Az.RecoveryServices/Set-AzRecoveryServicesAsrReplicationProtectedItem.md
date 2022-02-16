@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.SiteReco
 Module Name: Az.RecoveryServices
 online version: https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesasrreplicationprotecteditem
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Set-AzRecoveryServicesAsrReplicationProtectedItem.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Set-AzRecoveryServicesAsrReplicationProtectedItem.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RecoveryServices/RecoveryServices/help/Set-AzRecoveryServicesAsrReplicationProtectedItem.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RecoveryServices/RecoveryServices/help/Set-AzRecoveryServicesAsrReplicationProtectedItem.md
 ---
 
 # Set-AzRecoveryServicesAsrReplicationProtectedItem
@@ -18,18 +18,23 @@ Sets recovery properties such as target network and virtual machine size for the
 Set-AzRecoveryServicesAsrReplicationProtectedItem -InputObject <ASRReplicationProtectedItem> [-Name <String>]
  [-Size <String>] [-UpdateNic <String>] [-RecoveryNetworkId <String>] [-PrimaryNic <String>]
  [-RecoveryCloudServiceId <String>] [-RecoveryNicSubnetName <String>] [-RecoveryNicStaticIPAddress <String>]
- [-NicSelectionType <String>] [-RecoveryResourceGroupId <String>] [-LicenseType <String>]
- [-RecoveryAvailabilitySet <String>] [-RecoveryAvailabilityZone <String>]
- [-RecoveryProximityPlacementGroupId <String>] [-EnableAcceleratedNetworkingOnRecovery]
- [-RecoveryBootDiagStorageAccountId <String>]
+ [-TestNicSubnetName <String>] [-TestNicStaticIPAddress <String>] [-NicSelectionType <String>]
+ [-RecoveryResourceGroupId <String>] [-LicenseType <String>] [-RecoveryAvailabilitySet <String>]
+ [-SqlServerLicenseType <String>]
+ [-RecoveryVmTag <System.Collections.Generic.IDictionary`2[System.String,System.String]>]
+ [-DiskTag <System.Collections.Generic.IDictionary`2[System.String,System.String]>]
+ [-RecoveryNicTag <System.Collections.Generic.IDictionary`2[System.String,System.String]>]
+ [-RecoveryAvailabilityZone <String>] [-RecoveryProximityPlacementGroupId <String>]
+ [-RecoveryVirtualMachineScaleSetId <String>] [-RecoveryCapacityReservationGroupId <String>]
+ [-EnableAcceleratedNetworkingOnRecovery] [-RecoveryBootDiagStorageAccountId <String>]
  [-AzureToAzureUpdateReplicationConfiguration <ASRAzuretoAzureDiskReplicationConfig[]>]
  [-DiskEncryptionVaultId <String>] [-DiskEncryptionSecretUrl <String>] [-KeyEncryptionKeyUrl <String>]
  [-KeyEncryptionVaultId <String>] [-UseManagedDisk <String>]
  [-DiskIdToDiskEncryptionSetMap <System.Collections.Generic.IDictionary`2[System.String,System.String]>]
  [-RecoveryPublicIPAddressId <String>] [-RecoveryNetworkSecurityGroupId <String>]
  [-RecoveryLBBackendAddressPoolId <String[]>] [-TfoAzureVMName <String>]
- [-ASRVMNicConfiguration <ASRVMNicConfig[]>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-ASRVMNicConfiguration <ASRVMNicConfig[]>] [-TestNetworkId <String>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,35 +65,42 @@ Starts the operation of updating the replication protected item primary NIC(to u
 
 ### Example 4
 ```
-PS C:\>Set-ASRReplicationProtectedItem -InputObject $rpi -UpdateNic $updateNic -RecoveryNetworkId $recoveryNetworkId -RecoveryNicSubnetName $recoveryNicSubnetName�-NicSelectionType SelectedByUser
+PS C:\> Set-AzRecoveryServicesAsrReplicationProtectedItem -InputObject $rpi -UpdateNic $updateNic -RecoveryNetworkId $recoveryNetworkId -RecoveryNicSubnetName $recoveryNicSubnetName -NicSelectionType SelectedByUser
 ```
 
 Starts the operation of updating the replication protected item NIC (to used for recovered vm )settings using the specified parameters and returns the ASR job used to track the operation.
 
 ### Example 5
 ```
-PS C:\> $currentJob = Set-AzureRmRecoveryServicesAsrReplicationProtectedItem -InputObject $ rpi -UpdateNic $updateNic `
+PS C:\> $currentJob = Set-AzRecoveryServicesAsrReplicationProtectedItem -InputObject $rpi -UpdateNic $updateNic `
 		-RecoveryNetworkId $recoveryNetworkId -RecoveryNicSubnetName $recoveryNicSubnetName -EnableAcceleratedNetworkingOnRecovery
 ```
 
 Starts the operation of updating the replication protected item selected noc tp enable accelerated networking on recovery VM(for Azure to Azure disaster recovery).
-Don�t pass -EnableAcceleratedNetworkingOnRecovery to disable accelerated Networking.
+Don't pass -EnableAcceleratedNetworkingOnRecovery to disable accelerated Networking.
 
 ### Example 6
 ```
-PS C:\> $currentJob = Set-AzureRmRecoveryServicesAsrReplicationProtectedItem -InputObject $ rpi `
-	-DiskEncryptionVaultId  $DiskEncryptionVaultId   �-DiskEncryptionSecertUrl $DiskEncryptionSecertUrl `
-	 -KeyEncryptionVaultId $KeyEncryptionVaultId  -KeyEncryptionKeyUrl $KeyEncryptionKeyUrl
+PS C:\> $currentJob = Set-AzRecoveryServicesAsrReplicationProtectedItem -InputObject $rpi `
+		-DiskEncryptionVaultId $DiskEncryptionVaultId -DiskEncryptionSecertUrl $DiskEncryptionSecertUrl `
+		-KeyEncryptionVaultId $KeyEncryptionVaultId -KeyEncryptionKeyUrl $KeyEncryptionKeyUrl
 ```
 
 Start the update operation for the specified encrypted replication protected item to use supplied encryption details for failover VM.
 
 ### Example 7
 ```
-PS C:\> $currentJob = Set-AzureRmRecoveryServicesAsrReplicationProtectedItem -InputObject $ rpi -RecoveryProximityPlacementGroupId $ppg
+PS C:\> $currentJob = Set-AzRecoveryServicesAsrReplicationProtectedItem -InputObject $rpi -RecoveryProximityPlacementGroupId $ppg
 ```
 
 Start the update operation for the specified replication protected item to use the supplied proximity placement group for failover VM.
+
+### Example 8
+```
+PS C:\> $currentJob = Set-AzRecoveryServicesAsrReplicationProtectedItem -InputObject $rpi -RecoveryVirtualMachineScaleSetId $vmss
+```
+
+Start the update operation for the specified replication protected item to use the supplied virtual machine scale set for failover VM.
 
 ## PARAMETERS
 
@@ -170,6 +182,21 @@ Accept wildcard characters: False
 
 ### -DiskIdToDiskEncryptionSetMap
 The dictionary of disk resource Id to disk encryption set ARM Id.
+
+```yaml
+Type: System.Collections.Generic.IDictionary`2[System.String,System.String]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DiskTag
+Specify the tags for the disks of the VM. This is applicable for Vmware to Azure and HyperV to Azure providers.
 
 ```yaml
 Type: System.Collections.Generic.IDictionary`2[System.String,System.String]
@@ -352,6 +379,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RecoveryCapacityReservationGroupId
+Specify the capacity reservation group Id to be used by the failover VM in target recovery region.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -RecoveryCloudServiceId
 The resource ID of the recovery cloud service to failover this virtual machine to.
 
@@ -442,6 +484,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RecoveryNicTag
+Specify the tags for the target NICs of the VM. This is applicable for Vmware to Azure and HyperV to Azure providers.
+
+```yaml
+Type: System.Collections.Generic.IDictionary`2[System.String,System.String]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -RecoveryProximityPlacementGroupId
 Specifies the Resource Id of the recovery proximity placement group to failover teh virtual machine to.
 
@@ -487,9 +544,100 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RecoveryVirtualMachineScaleSetId
+Specifies the target virtual machine scale set to be configured.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RecoveryVmTag
+Specify the tags for target VM. This is applicable for Vmware to Azure and HyperV to Azure providers.
+
+```yaml
+Type: System.Collections.Generic.IDictionary`2[System.String,System.String]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Size
 Specifies the recovery virtual machine size.
 The value should be from the set of sizes supported by Azure virtual machines.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SqlServerLicenseType
+Specify the SQL Server license type of the VM. This is applicable for Vmware to Azure and HyperV to Azure providers.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: NoLicenseType, PAYG, AHUB
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TestNetworkId
+Specifies the ARM Id of test network (Applicable only for VMware to Azure replication scenario).
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TestNicStaticIPAddress
+Specifies the test static IP address (Applicable only for VMware to Azure replication scenario).
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TestNicSubnetName
+Specifies the name of the test subnet (Applicable only for VMware to Azure replication scenario).
 
 ```yaml
 Type: System.String

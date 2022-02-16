@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.CostManagement
 online version: https://docs.microsoft.com/powershell/module/az.costmanagement/new-azcostmanagementexport
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CostManagement/help/New-AzCostManagementExport.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CostManagement/help/New-AzCostManagementExport.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CostManagement/help/New-AzCostManagementExport.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CostManagement/help/New-AzCostManagementExport.md
 ---
 
 # New-AzCostManagementExport

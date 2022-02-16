@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 31B0FBEF-366A-41AF-9182-2EB087019F36
 online version: https://docs.microsoft.com/powershell/module/az.network/remove-azloadbalancer
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzLoadBalancer.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzLoadBalancer.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzLoadBalancer.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzLoadBalancer.md
 ---
 
 # Remove-AzLoadBalancer

@@ -4,8 +4,8 @@ Module Guid: 2a27df8b-15e3-4fb9-b885-22c6bcafc203
 Download Help Link: https://docs.microsoft.com/powershell/module/az.managedserviceidentity
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ManagedServiceIdentity/ManagedServiceIdentity/help/Az.ManagedServiceIdentity.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ManagedServiceIdentity/ManagedServiceIdentity/help/Az.ManagedServiceIdentity.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ManagedServiceIdentity/ManagedServiceIdentity/help/Az.ManagedServiceIdentity.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ManagedServiceIdentity/ManagedServiceIdentity/help/Az.ManagedServiceIdentity.md
 ---
 
 # Az.ManagedServiceIdentity Module

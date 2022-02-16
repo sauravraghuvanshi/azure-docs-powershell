@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.MariaDb
 online version: https://docs.microsoft.com/powershell/module/az.mariadb/update-azmariadbconfiguration
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MariaDb/help/Update-AzMariaDbConfiguration.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MariaDb/help/Update-AzMariaDbConfiguration.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MariaDb/help/Update-AzMariaDbConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MariaDb/help/Update-AzMariaDbConfiguration.md
 ---
 
 # Update-AzMariaDbConfiguration

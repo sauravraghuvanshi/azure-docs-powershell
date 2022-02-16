@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: F8068AF1-3380-4E60-B6CF-CC584BD053A7
 online version: https://docs.microsoft.com/powershell/module/az.network/set-azapplicationgatewayhttplistener
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewayHttpListener.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewayHttpListener.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzApplicationGatewayHttpListener.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzApplicationGatewayHttpListener.md
 ---
 
 # Set-AzApplicationGatewayHttpListener

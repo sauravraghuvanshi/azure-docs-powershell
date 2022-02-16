@@ -4,8 +4,8 @@ Module Guid: 91832aaa-dc11-4583-8239-adb7df531604
 Download Help Link: https://docs.microsoft.com/powershell/module/az.guestconfiguration
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/GuestConfiguration/GuestConfiguration/help/Az.GuestConfiguration.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/GuestConfiguration/GuestConfiguration/help/Az.GuestConfiguration.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/GuestConfiguration/GuestConfiguration/help/Az.GuestConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/GuestConfiguration/GuestConfiguration/help/Az.GuestConfiguration.md
 ---
 
 # Az.GuestConfiguration Module

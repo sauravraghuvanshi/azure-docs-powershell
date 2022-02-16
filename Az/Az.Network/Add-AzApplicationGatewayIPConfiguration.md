@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 5358C08F-A1EB-457E-85B1-7F12396A873A
 online version: https://docs.microsoft.com/powershell/module/az.network/add-azapplicationgatewayipconfiguration
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzApplicationGatewayIPConfiguration.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzApplicationGatewayIPConfiguration.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzApplicationGatewayIPConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzApplicationGatewayIPConfiguration.md
 ---
 
 # Add-AzApplicationGatewayIPConfiguration

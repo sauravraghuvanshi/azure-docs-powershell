@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Batch.dll-Help.xml
 Module Name: Az.Batch
 online version: https://docs.microsoft.com/powershell/module/az.batch/get-azbatchsupportedimage.md
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchSupportedImage.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchSupportedImage.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Get-AzBatchSupportedImage.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Get-AzBatchSupportedImage.md
 ---
 
 # Get-AzBatchSupportedImage
@@ -28,8 +28,11 @@ Specify the account by using the *BatchContext* parameter.
 ### Example 1: Get all available supported images
 
 ```powershell
-PS C:\>$Context = Get-AzBatchAccountKey -AccountName "ContosoBatchAccount"
-PS C:\> Get-AzBatchSupportedImage -BatchContext $Context
+$Context = Get-AzBatchAccountKey -AccountName "ContosoBatchAccount"
+Get-AzBatchSupportedImage -BatchContext $Context
+```
+
+```output
 BatchSupportEndOfLife :
 Capabilities          :
 ImageReference        : canonical:ubuntuserver:16.04-lts:latest

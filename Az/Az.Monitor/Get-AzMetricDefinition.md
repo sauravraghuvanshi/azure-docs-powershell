@@ -4,8 +4,8 @@ Module Name: Az.Monitor
 ms.assetid: 7915A7AC-5A47-4868-B846-2896BCEBFAB2
 online version: https://docs.microsoft.com/powershell/module/az.monitor/get-azmetricdefinition
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzMetricDefinition.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzMetricDefinition.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/Get-AzMetricDefinition.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/Get-AzMetricDefinition.md
 ---
 
 # Get-AzMetricDefinition

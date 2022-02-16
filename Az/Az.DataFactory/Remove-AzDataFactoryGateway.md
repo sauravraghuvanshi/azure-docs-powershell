@@ -4,8 +4,8 @@ Module Name: Az.DataFactory
 ms.assetid: E1461540-DEAE-43C3-83DF-7DF3FE8D4EC0
 online version: https://docs.microsoft.com/powershell/module/az.datafactory/remove-azdatafactorygateway
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Remove-AzDataFactoryGateway.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Remove-AzDataFactoryGateway.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Remove-AzDataFactoryGateway.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Remove-AzDataFactoryGateway.md
 ---
 
 # Remove-AzDataFactoryGateway

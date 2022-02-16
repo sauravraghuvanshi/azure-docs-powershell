@@ -4,8 +4,8 @@ Module Name: Az.ApiManagement
 ms.assetid: B88EC6DB-84AC-4F1D-AD79-0D243E0DC88A
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/remove-azapimanagementgroup
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementGroup.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementGroup.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementGroup.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementGroup.md
 ---
 
 # Remove-AzApiManagementGroup
@@ -27,8 +27,8 @@ The **Remove-AzApiManagementGroup** cmdlet removes an existing API management gr
 
 ### Example 1: Remove an existing management group
 ```powershell
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Remove-AzApiManagementGroup -Context $apimContext -GroupId "Group0001" -Force
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Remove-AzApiManagementGroup -Context $apimContext -GroupId "Group0001" -Force
 ```
 
 This command removes an existing management group named Group0001 and does not prompt the user for confirmation.

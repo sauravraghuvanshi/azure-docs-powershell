@@ -4,8 +4,8 @@ Module Guid: 249cb945-683e-4866-a9af-5704a2d890a5
 Download Help Link: https://docs.microsoft.com/powershell/module/az.attestation
 Help Version: 0.0.1.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Attestation/Attestation/help/Az.Attestation.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Attestation/Attestation/help/Az.Attestation.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Attestation/Attestation/help/Az.Attestation.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Attestation/Attestation/help/Az.Attestation.md
 ---
 
 # Az.Attestation Module

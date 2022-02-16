@@ -4,8 +4,8 @@ Module Guid: 8074e741-0979-4b4e-8f9b-7243f213d98a
 Download Help Link: https://docs.microsoft.com/powershell/module/az.subscription
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Subscription/Subscription/help/Az.Subscription.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Subscription/Subscription/help/Az.Subscription.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Subscription/Subscription/help/Az.Subscription.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Subscription/Subscription/help/Az.Subscription.md
 ---
 
 # Az.Subscription Module

@@ -3,14 +3,17 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.dll-Help
 Module Name: Az.SecurityInsights
 online version: https://docs.microsoft.com/powershell/module/az.securityinsights/get-azsentinelalertruleaction
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SecurityInsights/SecurityInsights/help/Get-AzSentinelAlertRuleAction.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SecurityInsights/SecurityInsights/help/Get-AzSentinelAlertRuleAction.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Get-AzSentinelAlertRuleAction.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Get-AzSentinelAlertRuleAction.md
 ---
 
 # Get-AzSentinelAlertRuleAction
 
 ## SYNOPSIS
-Get an Automated Response (Alert Rule Action).
+Gets an Automated Response (Alert Rule Action) for an Analytics Rule, like an Azure Logic Apps Playbook.<br/>
+Azure Sentinel Automation Rules will be supported in the future.
+
+*Note: This requires a parameter value of "AlertRuleId"*
 
 ## SYNTAX
 
@@ -28,7 +31,7 @@ Get-AzSentinelAlertRuleAction -ResourceGroupName <String> -WorkspaceName <String
 
 ## DESCRIPTION
 The **Get-AzSentinelAlertRuleAction** cmdlet gets an Automated Response (Alert Rule Action) from the specified workspace.
-If you specify the *ActionId* and *AlertRuleId* parameters, a single **AlertRuleAction** object is returned.
+If you specify the *ActionId* and *AlertRuleId* parameters, a single **AlertRuleAction** object is returned.<br/>
 If you do not specify the *ActionId* parameter, an array containing all of the Actions for the specificed Alert Rule in the specified workspace are returned.
 You can use the **Action** object to update the Action, for example you can change the the **Action** for an Alert Rule.
 
@@ -36,10 +39,12 @@ You can use the **Action** object to update the Action, for example you can chan
 
 ### Example 1
 ```powershell
-PS C:\> $AlertRuleActions = Get-AzSentinelAlertRuleAction -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName" -AlertRuleId "MyAlertRuleId"
+PS C:\> $AlertRuleActions = Get-AzSentinelAlertRuleAction -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName" -AlertRuleId "29d2523f-84ce-42d3-b5f1-9e63c85aaed1"
 ```
 
-This example gets all of the **Actions** for the specified Alert Rule in the specified workspace, and then stores it in the $AlertRuleActions variable.
+This example gets all of the **Actions** for the specified Alert Rule in the specified workspace, and then stores it in the $AlertRuleActions variable.<br/><br/>
+
+*Note: the field **LogicAppResourceID** contains the full Azure Resource Manager (ARM) ID, which contains the name of the Azure Logic Apps Playbook.*
 
 ### Example 2
 ```powershell

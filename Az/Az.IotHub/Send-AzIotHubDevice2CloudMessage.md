@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.IotHub.dll-Help.xml
 Module Name: Az.IotHub
 online version: https://docs.microsoft.com/powershell/module/az.iothub/send-aziothubdevice2cloudmessage
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/IotHub/IotHub/help/Send-AzIotHubDevice2CloudMessage.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/IotHub/IotHub/help/Send-AzIotHubDevice2CloudMessage.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/IotHub/IotHub/help/Send-AzIotHubDevice2CloudMessage.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/IotHub/IotHub/help/Send-AzIotHubDevice2CloudMessage.md
 ---
 
 # Send-AzIotHubDevice2CloudMessage

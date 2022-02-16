@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.CostManagement
 online version: https://docs.microsoft.com/powershell/module/az.costmanagement/invoke-azcostmanagementquery
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CostManagement/help/Invoke-AzCostManagementQuery.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CostManagement/help/Invoke-AzCostManagementQuery.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CostManagement/help/Invoke-AzCostManagementQuery.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CostManagement/help/Invoke-AzCostManagementQuery.md
 ---
 
 # Invoke-AzCostManagementQuery

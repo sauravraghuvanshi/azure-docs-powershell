@@ -4,8 +4,8 @@ Module Name: Az.Websites
 ms.assetid: 100A5980-31E2-41F9-84D4-2F5F0CB78B8A
 online version: https://docs.microsoft.com/powershell/module/az.websites/get-azwebappslot
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Get-AzWebAppSlot.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Get-AzWebAppSlot.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Get-AzWebAppSlot.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Get-AzWebAppSlot.md
 ---
 
 # Get-AzWebAppSlot

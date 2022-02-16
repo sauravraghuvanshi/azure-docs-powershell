@@ -4,8 +4,8 @@ Module Name: Az.Resources
 ms.assetid: 726E01DD-D73C-4D4B-8FC0-52767927367C
 online version: https://docs.microsoft.com/powershell/module/az.resources/get-aztag
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzTag.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzTag.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Get-AzTag.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Get-AzTag.md
 ---
 
 # Get-AzTag

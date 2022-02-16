@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: 64AB1BAE-A756-43A8-A40F-10B746EA0946
 online version: https://docs.microsoft.com/powershell/module/az.compute/set-azvmcustomscriptextension
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMCustomScriptExtension.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMCustomScriptExtension.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVMCustomScriptExtension.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVMCustomScriptExtension.md
 ---
 
 # Set-AzVMCustomScriptExtension

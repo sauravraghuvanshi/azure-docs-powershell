@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: 23893EAE-47F3-45AA-AEB2-354FB8316C25
 online version: https://docs.microsoft.com/powershell/module/az.batch/set-azbatchpool
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Set-AzBatchPool.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Set-AzBatchPool.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Set-AzBatchPool.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Set-AzBatchPool.md
 ---
 
 # Set-AzBatchPool
@@ -28,12 +28,12 @@ Modify the properties of that object, and then use the current cmdlet to commit 
 ## EXAMPLES
 
 ### Example 1: Update a pool
-```
-PS C:\>$Pool = Get-AzBatchPool "ContosoPool" -BatchContext $Context
-PS C:\> $StartTask = New-Object Microsoft.Azure.Commands.Batch.Models.PSStartTask
-PS C:\> $StartTask.CommandLine = "cmd /c echo example"
-PS C:\> $Pool.StartTask = $StartTask
-PS C:\> Set-AzBatchPool -Pool $Pool -BatchContext $Context
+```powershell
+$Pool = Get-AzBatchPool "ContosoPool" -BatchContext $Context
+$StartTask = New-Object Microsoft.Azure.Commands.Batch.Models.PSStartTask
+$StartTask.CommandLine = "cmd /c echo example"
+$Pool.StartTask = $StartTask
+Set-AzBatchPool -Pool $Pool -BatchContext $Context
 ```
 
 The first command gets a pool by using **Get-AzBatchPool**, and then stores it in the $Pool variable.

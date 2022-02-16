@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: EE8F5D57-1ECE-4F23-9A5B-F226DD2C5ECB
 online version: https://docs.microsoft.com/powershell/module/az.network/add-azloadbalancerinboundnatruleconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzLoadBalancerInboundNatRuleConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzLoadBalancerInboundNatRuleConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzLoadBalancerInboundNatRuleConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzLoadBalancerInboundNatRuleConfig.md
 ---
 
 # Add-AzLoadBalancerInboundNatRuleConfig
@@ -37,7 +37,7 @@ The **Add-AzLoadBalancerInboundNatRuleConfig** cmdlet adds an inbound network ad
 ## EXAMPLES
 
 ### Example 1: Add an inbound NAT rule configuration to a load balancer
-```
+```powershell
 PS C:\>$slb = Get-AzLoadBalancer -Name "MyLoadBalancer" -ResourceGroupName "MyResourceGroup"
 PS C:\> $slb | Add-AzLoadBalancerInboundNatRuleConfig -Name "NewNatRule" -FrontendIPConfiguration $slb.FrontendIpConfigurations[0] -Protocol "Tcp" -FrontendPort 3350 -BackendPort 3350 -EnableFloatingIP
 PS C:\> $slb | Set-AzLoadBalancer

@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.CognitiveServices.dll-Hel
 Module Name: Az.CognitiveServices
 online version: https://docs.microsoft.com/powershell/module/az.cognitiveservices/get-azcognitiveservicesaccountnetworkruleset
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CognitiveServices/CognitiveServices/help/Get-AzCognitiveServicesAccountNetworkRuleSet.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CognitiveServices/CognitiveServices/help/Get-AzCognitiveServicesAccountNetworkRuleSet.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CognitiveServices/CognitiveServices/help/Get-AzCognitiveServicesAccountNetworkRuleSet.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CognitiveServices/CognitiveServices/help/Get-AzCognitiveServicesAccountNetworkRuleSet.md
 ---
 
 # Get-AzCognitiveServicesAccountNetworkRuleSet
@@ -25,8 +25,8 @@ The **Get-AzCognitiveServicesAccountNetworkRuleSet** cmdlet gets the NetworkRule
 ## EXAMPLES
 
 ### Example 1: Get NetworkRule property of a specified Cognitive Services account
-```
-PS C:\> Get-AzCognitiveServicesAccountNetworkRuleSet  -ResourceGroupName "rg1" -Name "myaccount"
+```powershell
+Get-AzCognitiveServicesAccountNetworkRuleSet  -ResourceGroupName "rg1" -Name "myaccount"
 ```
 
 This command gets NetworkRule property of a specified Cognitive Services account

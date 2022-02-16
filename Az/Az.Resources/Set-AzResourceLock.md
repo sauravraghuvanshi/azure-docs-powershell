@@ -4,8 +4,8 @@ Module Name: Az.Resources
 ms.assetid: 770093CD-CE2A-4076-8A28-F4DCFFB7A075
 online version: https://docs.microsoft.com/powershell/module/az.resources/set-azresourcelock
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Set-AzResourceLock.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Set-AzResourceLock.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Set-AzResourceLock.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Set-AzResourceLock.md
 ---
 
 # Set-AzResourceLock

@@ -4,8 +4,8 @@ Module Name: Az.Cdn
 ms.assetid: 6BBD68B4-BCC6-479A-AA70-D4ED445CFB32
 online version: https://docs.microsoft.com/powershell/module/az.cdn/get-azcdnendpointnameavailability
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Get-AzCdnEndpointNameAvailability.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Get-AzCdnEndpointNameAvailability.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzCdnEndpointNameAvailability.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzCdnEndpointNameAvailability.md
 ---
 
 # Get-AzCdnEndpointNameAvailability
@@ -24,6 +24,17 @@ Get-AzCdnEndpointNameAvailability -EndpointName <String> [-DefaultProfile <IAzur
 The **Get-AzCdnEndpointNameAvailability** cmdlet gets availability status of the Azure Content Delivery Network (CDN) endpoint.
 
 ## EXAMPLES
+
+### Example 1
+```powershell
+Get-AzCdnEndpointNameAvailability -EndpointName myendpoint
+```
+
+```Output
+NameAvailable Reason Message
+------------- ------ -------
+         True
+```
 
 ## PARAMETERS
 

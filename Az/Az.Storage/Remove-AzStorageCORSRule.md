@@ -4,8 +4,8 @@ Module Name: Az.Storage
 ms.assetid: 26E06BA3-C550-40A5-B8E3-FEC8E9BF3867
 online version: https://docs.microsoft.com/powershell/module/az.storage/remove-azstoragecorsrule
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Remove-AzStorageCORSRule.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Remove-AzStorageCORSRule.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Remove-AzStorageCORSRule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Remove-AzStorageCORSRule.md
 ---
 
 # Remove-AzStorageCORSRule

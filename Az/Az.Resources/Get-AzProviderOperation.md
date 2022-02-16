@@ -4,8 +4,8 @@ Module Name: Az.Resources
 ms.assetid: 6424B740-DBFB-490C-AEAA-EDD60952B435
 online version: https://docs.microsoft.com/powershell/module/az.resources/get-azprovideroperation
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzProviderOperation.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzProviderOperation.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Get-AzProviderOperation.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Get-AzProviderOperation.md
 ---
 
 # Get-AzProviderOperation

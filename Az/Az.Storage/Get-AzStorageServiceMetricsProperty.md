@@ -4,8 +4,8 @@ Module Name: Az.Storage
 ms.assetid: 3B5B828A-6B3E-49BD-8BA9-916F8B69B8E9
 online version: https://docs.microsoft.com/powershell/module/az.storage/get-azstorageservicemetricsproperty
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Get-AzStorageServiceMetricsProperty.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Get-AzStorageServiceMetricsProperty.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Get-AzStorageServiceMetricsProperty.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Get-AzStorageServiceMetricsProperty.md
 ---
 
 # Get-AzStorageServiceMetricsProperty

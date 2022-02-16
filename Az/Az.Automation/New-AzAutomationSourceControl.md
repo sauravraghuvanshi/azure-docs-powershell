@@ -3,14 +3,14 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Automation.dll-Help.xml
 Module Name: Az.Automation
 online version: https://docs.microsoft.com/powershell/module/az.automation/new-azautomationsourcecontrol
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/New-AzAutomationSourceControl.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/New-AzAutomationSourceControl.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/New-AzAutomationSourceControl.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/New-AzAutomationSourceControl.md
 ---
 
 # New-AzAutomationSourceControl
 
 ## SYNOPSIS
-Creates an A Automation source control.
+Creates an Azure Automation source control.
 
 ## SYNTAX
 
@@ -22,12 +22,12 @@ New-AzAutomationSourceControl -Name <String> -RepoUrl <Uri> -SourceType <String>
 ```
 
 ## DESCRIPTION
-The New-AzAutomationSourceControl cmdlet creates a configuration to link my Azure Automation account with my VSTS TFVC, VSTS Git or GitHub.
+The New-AzAutomationSourceControl cmdlet creates a configuration to link an Azure Automation account with a VSTS TFVC, VSTS Git or GitHub.
 
 ## EXAMPLES
 
 ### Example 1
-Create a source control configuration to link my Azure Automation account with my VSTS TFVC project. TFVC projects do not have branches, and therefore, the Branch parameter is not specified.
+Create a source control configuration to link an Azure Automation account with a VSTS TFVC project. TFVC projects do not have branches, and therefore, the Branch parameter is not specified.
 
 ```powershell
 PS C:\> # VSTS Personal access token
@@ -47,7 +47,7 @@ VSTSNative  VsoTfvc            /Runbooks True     True           https://dev.azu
 ```
 
 ### Example 2
-Create a source control configuration to link my Azure Automation account with my VSTS Git project.
+Create a source control configuration to link an Azure Automation account with a VSTS Git project.
 
 
 ```powershell
@@ -69,7 +69,7 @@ VSTSGit VsoGit     Development /          True     True           https://dev.az
 ```
 
 ### Example 3
-Create a source control configuration to link my Azure Automation account with my GitHub project.
+Create a source control configuration to link an Azure Automation account with a GitHub project.
 
 
 ```powershell

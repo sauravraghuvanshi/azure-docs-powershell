@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Storage.Management.dll-He
 Module Name: Az.Storage
 online version: https://docs.microsoft.com/powershell/module/az.storage/update-azstorageblobserviceproperty
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Update-AzStorageBlobServiceProperty.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Update-AzStorageBlobServiceProperty.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Update-AzStorageBlobServiceProperty.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Update-AzStorageBlobServiceProperty.md
 ---
 
 # Update-AzStorageBlobServiceProperty
@@ -52,7 +52,7 @@ DeleteRetentionPolicy.Enabled : False
 DeleteRetentionPolicy.Days    : 
 RestorePolicy.Enabled         : 
 RestorePolicy.Days            : 
-ChangeFeed                    : 
+ChangeFeed.Enabled            : 
 ChangeFeed.RetentionInDays    :
 IsVersioningEnabled           :
 ```
@@ -70,7 +70,7 @@ DeleteRetentionPolicy.Enabled : False
 DeleteRetentionPolicy.Days    : 
 RestorePolicy.Enabled         : 
 RestorePolicy.Days            : 
-ChangeFeed                    : True
+ChangeFeed.Enabled            : True
 ChangeFeed.RetentionInDays    : 5
 IsVersioningEnabled           :
 ```

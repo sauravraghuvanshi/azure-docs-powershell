@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: B2CF11FC-520C-4C14-9A1B-13F06B250B5D
 online version: https://docs.microsoft.com/powershell/module/az.network/get-azloadbalancerruleconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzLoadBalancerRuleConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzLoadBalancerRuleConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzLoadBalancerRuleConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzLoadBalancerRuleConfig.md
 ---
 
 # Get-AzLoadBalancerRuleConfig

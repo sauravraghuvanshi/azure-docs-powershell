@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: F01CB88A-49E7-41D8-B4E7-F1A4DCDC6B84
 online version: https://docs.microsoft.com/powershell/module/az.network/get-azapplicationgatewaysku
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzApplicationGatewaySku.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzApplicationGatewaySku.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzApplicationGatewaySku.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzApplicationGatewaySku.md
 ---
 
 # Get-AzApplicationGatewaySku

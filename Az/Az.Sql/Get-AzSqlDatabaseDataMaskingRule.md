@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: 848A6972-AB29-46FB-8E03-FF2ADB113A0E
 online version: https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabasedatamaskingrule
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseDataMaskingRule.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseDataMaskingRule.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlDatabaseDataMaskingRule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlDatabaseDataMaskingRule.md
 ---
 
 # Get-AzSqlDatabaseDataMaskingRule

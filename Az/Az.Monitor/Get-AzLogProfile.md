@@ -4,8 +4,8 @@ Module Name: Az.Monitor
 ms.assetid: 019EFD94-4087-45F6-812D-FBDFE1B2E48A
 online version: https://docs.microsoft.com/powershell/module/az.monitor/get-azlogprofile
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzLogProfile.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzLogProfile.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/Get-AzLogProfile.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/Get-AzLogProfile.md
 ---
 
 # Get-AzLogProfile
@@ -23,7 +23,33 @@ Get-AzLogProfile [-Name <String>] [-DefaultProfile <IAzureContextContainer>] [<C
 The **Get-AzLogProfile** cmdlet gets a log profile.
 
 ## EXAMPLES
+### Example 1: Gets a log profile
+```
+PS C:\>Get-AzLogProfile
+StorageAccountId : /subscriptions/xxxx-xxxx-xxxx-xxxx-xxxx/resourceGroups/testrg/providers/Microsoft.Stor
+age/storageAccounts/storageaccount
+ServiceBusRuleId :
+Locations
+     : eastus
+Categories
+     : Delete
+     : Write
+     : Action
+RetentionPolicy
+Enabled : False
+Days    : 0
 
+Id               :
+/subscriptions/xxxx-xxxx-xxxx-xxxx-xxxx/providers/microsoft.insights/logprofiles/exportlogprofile
+Name             : exportlogprofile
+Type             :
+Location         :
+Tags             :
+Kind             :
+Etag             :
+```
+
+This command gets a log profile.
 ## PARAMETERS
 
 ### -DefaultProfile

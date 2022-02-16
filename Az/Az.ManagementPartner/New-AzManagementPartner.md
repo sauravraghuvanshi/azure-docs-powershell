@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.ManagementPartner.dll-Hel
 Module Name: Az.ManagementPartner
 online version: https://docs.microsoft.com/powershell/module/az.managementpartner/new-azmanagementpartner
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ManagementPartner/ManagementPartner/help/New-AzManagementPartner.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ManagementPartner/ManagementPartner/help/New-AzManagementPartner.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ManagementPartner/ManagementPartner/help/New-AzManagementPartner.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ManagementPartner/ManagementPartner/help/New-AzManagementPartner.md
 ---
 
 # New-AzManagementPartner

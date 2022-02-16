@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 40E56EC1-3327-4DFF-8262-E2EEBB5E4447
 online version: https://docs.microsoft.com/powershell/module/az.network/set-azfirewall
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzFirewall.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzFirewall.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzFirewall.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzFirewall.md
 ---
 
 # Set-AzFirewall
@@ -156,6 +156,21 @@ $azFw | Set-AzFirewall
 ```
 
 In this example, Active FTP is allowed on the Firewall.
+
+### 12: Deallocate and allocate the Firewall from a Virtual Hub
+```
+$firewall=Get-AzFirewall -ResourceGroupName rgName -Name azFw
+$firewall.Deallocate()
+$firewall | Set-AzFirewall
+
+$Hub = Get-AzVirtualHub -ResourceGroupName "testRG" -Name "westushub"
+$firewall.Allocate($Hub.Id)
+$firewall | Set-AzFirewall
+```
+This example retrieves a Hub Firewall, deallocates the hub firewall, and saves it. The Deallocate command removes the reference 
+to the virtual hub but preserves the firewall's configuration. For changes to be reflected in cloud, Set-AzFirewall must be called.
+The Allocate method assigns the virtual hub reference to the firewall. Again, for changes to be reflected in cloud,
+Set-AzFirewall must be called.
 
 ## PARAMETERS
 

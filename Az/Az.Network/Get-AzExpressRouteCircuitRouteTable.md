@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: BA7F6BAC-6047-42B0-B8CA-0B36302951B0
 online version: https://docs.microsoft.com/powershell/module/az.network/get-azexpressroutecircuitroutetable
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitRouteTable.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitRouteTable.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzExpressRouteCircuitRouteTable.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzExpressRouteCircuitRouteTable.md
 ---
 
 # Get-AzExpressRouteCircuitRouteTable
@@ -31,7 +31,7 @@ connectivity.
 
 ### Example 1: Display the route table for the primary path
 ```
-Get-AzExpressRouteCircuitRouteTable -ResourceGroupName $RG -ExpressRouteCircuitName $CircuitName -DevicePath 'Primary'
+Get-AzExpressRouteCircuitRouteTable -ResourceGroupName $RG -ExpressRouteCircuitName $CircuitName -PeeringType 'AzurePrivatePeering' -DevicePath 'Primary'
 ```
 
 ## PARAMETERS

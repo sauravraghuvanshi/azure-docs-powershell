@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.HealthBot
 online version: https://docs.microsoft.com/powershell/module/az.healthbot/update-azhealthbot
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HealthBot/help/Update-AzHealthBot.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HealthBot/help/Update-AzHealthBot.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HealthBot/help/Update-AzHealthBot.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HealthBot/help/Update-AzHealthBot.md
 ---
 
 # Update-AzHealthBot

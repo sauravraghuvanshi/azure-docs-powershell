@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: CC033DA8-FACC-44E2-82F9-E30FADBF8926
 online version: https://docs.microsoft.com/powershell/module/az.network/remove-azapplicationgatewayrequestroutingrule
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayRequestRoutingRule.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayRequestRoutingRule.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzApplicationGatewayRequestRoutingRule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzApplicationGatewayRequestRoutingRule.md
 ---
 
 # Remove-AzApplicationGatewayRequestRoutingRule
@@ -29,10 +29,12 @@ The **Remove-AzApplicationGatewayRequestRoutingRule** cmdlet removes a request r
 ```
 PS C:\>$AppGw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
 PS C:\> Remove-AzApplicationGatewayRequestRoutingRule -ApplicationGateway $AppGw -Name "Rule02"
+PS C:\> Set-AzApplicationGateway -ApplicationGateway $AppGw
 ```
 
 The first command gets an application gateway and stores it in the $AppGw variable.
 The second command removes the request routing rule named Rule02 from the application gateway stored in $AppGw.
+The last command updates the application gateway.
 
 ## PARAMETERS
 

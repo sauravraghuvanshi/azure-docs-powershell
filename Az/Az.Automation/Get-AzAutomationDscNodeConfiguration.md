@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: 89C931AE-DA81-47A7-80E4-159C36497DA0
 online version: https://docs.microsoft.com/powershell/module/az.automation/get-azautomationdscnodeconfiguration
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Get-AzAutomationDscNodeConfiguration.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Get-AzAutomationDscNodeConfiguration.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Get-AzAutomationDscNodeConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Get-AzAutomationDscNodeConfiguration.md
 ---
 
 # Get-AzAutomationDscNodeConfiguration

@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: C1C0F69D-6A3F-4523-BB70-27676A3DDCBD
 online version: https://docs.microsoft.com/powershell/module/az.automation/remove-azautomationconnection
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Remove-AzAutomationConnection.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Remove-AzAutomationConnection.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Remove-AzAutomationConnection.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Remove-AzAutomationConnection.md
 ---
 
 # Remove-AzAutomationConnection

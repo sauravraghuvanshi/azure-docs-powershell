@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.DigitalTwins
 online version: https://docs.microsoft.com/powershell/module/az.digitaltwins/new-azdigitaltwinsendpoint
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DigitalTwins/help/New-AzDigitalTwinsEndpoint.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DigitalTwins/help/New-AzDigitalTwinsEndpoint.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DigitalTwins/help/New-AzDigitalTwinsEndpoint.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DigitalTwins/help/New-AzDigitalTwinsEndpoint.md
 ---
 
 # New-AzDigitalTwinsEndpoint
@@ -46,7 +46,7 @@ Create or update DigitalTwinsInstance endpoint.
 
 ### Example 1: Create an AzDigitalTwinsEndpoint for Eventhub
 ```powershell
-PS C:\> New-AzDigitalTwinsEndpoint -EndpointName youriEventHubEndPoint  -EndpointType EventHub -ResourceGroupName youritemp -ResourceName youriDigitalTwins -connectionStringPrimaryKey 'Endpoint=sb://yourieventhubnp.servicebus.windows.net/;SharedAccessKeyName=youriEventhubPolicy;SharedAccessKey=********;EntityPath=yourieventhub'
+PS C:\> New-AzDigitalTwinsEndpoint -EndpointName youriEventHubEndPoint -EndpointType EventHub -ResourceGroupName youritemp -ResourceName youriDigitalTwins -connectionStringPrimaryKey 'Endpoint=sb://yourieventhubnp.servicebus.windows.net/;SharedAccessKeyName=youriEventhubPolicy;SharedAccessKey=********;EntityPath=yourieventhub'
 
 Name                  Type
 ----                  ----
@@ -57,7 +57,7 @@ Create an AzDigitalTwinsEndpoint for Eventhub by connectionStringPrimaryKey
 
 ### Example 2: Create an AzDigitalTwinsEndpoint for EventGrid
 ```powershell
-PS C:\> New-AzDigitalTwinsEndpoint -EndpointName youriEventGridPoint  -EndpointType EventGrid -ResourceGroupName youritemp -ResourceName youriDigitalTwins -TopicEndpoint 'https://yourieventgrid.eastus-1.eventgrid.azure.net/api/events' -AccessKey1 'xxxxxxxxx='
+PS C:\> New-AzDigitalTwinsEndpoint -EndpointName youriEventGridPoint -EndpointType EventGrid -ResourceGroupName youritemp -ResourceName youriDigitalTwins -TopicEndpoint 'https://yourieventgrid.eastus-1.eventgrid.azure.net/api/events' -AccessKey1 'xxxxxxxxx='
 
 Name                  Type
 ----                  ----
@@ -68,7 +68,7 @@ Create an AzDigitalTwinsEndpoint for Eventhub by TopicEndpoint and accessKey1
 
 ### Example 3: Create an AzDigitalTwinsEndpoint for ServiceBus
 ```powershell
-PS C:\> New-AzDigitalTwinsEndpoint -EndpointName youriServiceBusPoint  -EndpointType EventGrid -ResourceGroupName youritemp -ResourceName youriDigitalTwins -PrimaryConnectionString "Endpoint=sb://yourieventhubnp.servicebus.windows.net/;SharedAccessKeyName=******;SharedAccessKey=********;EntityPath=yourieventhub"
+PS C:\> New-AzDigitalTwinsEndpoint -EndpointName youriServiceBusPoint -EndpointType ServiceBus -ResourceGroupName youritemp -ResourceName youriDigitalTwins -PrimaryConnectionString "Endpoint=sb://yourieventhubnp.servicebus.windows.net/;SharedAccessKeyName=******;SharedAccessKey=********;EntityPath=yourieventhub"
 
 Name                  Type
 ----                  ----

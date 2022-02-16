@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 617FB2F9-05EA-4224-B9A9-2F00A7599486
 online version: https://docs.microsoft.com/powershell/module/az.network/get-azvirtualnetworkgatewayconnection
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVirtualNetworkGatewayConnection.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVirtualNetworkGatewayConnection.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzVirtualNetworkGatewayConnection.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzVirtualNetworkGatewayConnection.md
 ---
 
 # Get-AzVirtualNetworkGatewayConnection

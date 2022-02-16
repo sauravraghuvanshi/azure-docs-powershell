@@ -4,8 +4,8 @@ Module Name: Az.Websites
 ms.assetid: DC400E32-CAB9-4354-99B2-ABA4AA776030
 online version: https://docs.microsoft.com/powershell/module/az.websites/restore-azwebappbackup
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Restore-AzWebAppBackup.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Restore-AzWebAppBackup.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Restore-AzWebAppBackup.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Restore-AzWebAppBackup.md
 ---
 
 # Restore-AzWebAppBackup

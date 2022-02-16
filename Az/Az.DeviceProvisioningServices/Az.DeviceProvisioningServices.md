@@ -4,8 +4,8 @@ Module Guid: a9f5b86f-63be-4e7a-8e16-c8c7c36cae40
 Download Help Link: https://docs.microsoft.com/powershell/module/az.deviceprovisioningservices
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DeviceProvisioningServices/DeviceProvisioningServices/help/Az.DeviceProvisioningServices.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DeviceProvisioningServices/DeviceProvisioningServices/help/Az.DeviceProvisioningServices.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DeviceProvisioningServices/DeviceProvisioningServices/help/Az.DeviceProvisioningServices.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DeviceProvisioningServices/DeviceProvisioningServices/help/Az.DeviceProvisioningServices.md
 ---
 
 # Az.DeviceProvisioningServices Module

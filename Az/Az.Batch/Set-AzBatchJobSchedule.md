@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: 14026F0E-4959-4150-A31F-A94BC56ED808
 online version: https://docs.microsoft.com/powershell/module/az.batch/set-azbatchjobschedule
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Set-AzBatchJobSchedule.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Set-AzBatchJobSchedule.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Set-AzBatchJobSchedule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Set-AzBatchJobSchedule.md
 ---
 
 # Set-AzBatchJobSchedule
@@ -26,10 +26,10 @@ The **Set-AzBatchJobSchedule** cmdlet sets a job schedule in the Azure Batch ser
 ## EXAMPLES
 
 ### Example 1: Update a job schedule
-```
-PS C:\> $JobSchedule = Get-AzBatchJobSchedule -Id "MyJobSchedule" -BatchContext $Context
-PS C:\> $JobSchedule.Schedule.RecurrenceInterval = New-TimeSpan -Days 2
-PS C:\> Set-AzBatchJobSchedule -JobSchedule $Job -BatchContext $Context
+```powershell
+$JobSchedule = Get-AzBatchJobSchedule -Id "MyJobSchedule" -BatchContext $Context
+$JobSchedule.Schedule.RecurrenceInterval = New-TimeSpan -Days 2
+Set-AzBatchJobSchedule -JobSchedule $Job -BatchContext $Context
 ```
 
 The first command gets a job by using **Get-AzBatchJobSchedule**, and then stores it in the $JobSchedule variable.

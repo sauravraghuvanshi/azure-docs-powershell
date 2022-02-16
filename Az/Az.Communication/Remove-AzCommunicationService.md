@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.Communication
 online version: https://docs.microsoft.com/powershell/module/az.communication/remove-azcommunicationservice
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Communication/help/Remove-AzCommunicationService.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Communication/help/Remove-AzCommunicationService.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Communication/help/Remove-AzCommunicationService.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Communication/help/Remove-AzCommunicationService.md
 ---
 
 # Remove-AzCommunicationService
@@ -33,7 +33,7 @@ Operation to delete a CommunicationService.
 
 ### Example 1: Remove the specified Azure Communication resource
 ```powershell
-PS C:\> Remove-AzCommunicationService -Name ContosoAcsResource1 -ResourceGroupName ContosoResourceProvider1
+Remove-AzCommunicationService -Name ContosoAcsResource1 -ResourceGroupName ContosoResourceProvider1
 ```
 
 Remove / Delete the Azure Communication resource.
@@ -132,8 +132,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The name of the resource group that contains the resource.
-You can obtain this value from the Azure Resource Manager API or the portal.
+The name of the resource group.
+The name is case insensitive.
 
 ```yaml
 Type: System.String
@@ -148,8 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -SubscriptionId
-Gets subscription ID which uniquely identifies the Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
+The ID of the target subscription.
 
 ```yaml
 Type: System.String
@@ -217,10 +216,8 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <ICommunicationIdentity>: Identity Parameter
   - `[CommunicationServiceName <String>]`: The name of the CommunicationService resource.
   - `[Id <String>]`: Resource identity path
-  - `[Location <String>]`: The Azure region
-  - `[OperationId <String>]`: The ID of an ongoing async operation
-  - `[ResourceGroupName <String>]`: The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
-  - `[SubscriptionId <String>]`: Gets subscription ID which uniquely identifies the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
+  - `[SubscriptionId <String>]`: The ID of the target subscription.
 
 ## RELATED LINKS
 

@@ -4,8 +4,8 @@ Module Guid: bcea1c70-a32b-48c3-a05c-323e1c02f4d3
 Download Help Link: https://docs.microsoft.com/powershell/module/az.automation
 Help Version: 4.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Az.Automation.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Az.Automation.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Az.Automation.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Az.Automation.md
 ---
 
 # Az.Automation Module

@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: 89DA3965-5344-4A1D-AEF1-10EA58E129CF
 online version: https://docs.microsoft.com/powershell/module/az.compute/remove-azvmdiagnosticsextension
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Remove-AzVMDiagnosticsExtension.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Remove-AzVMDiagnosticsExtension.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Remove-AzVMDiagnosticsExtension.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Remove-AzVMDiagnosticsExtension.md
 ---
 
 # Remove-AzVMDiagnosticsExtension

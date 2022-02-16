@@ -4,8 +4,8 @@ Module Name: Az.LogicApp
 ms.assetid: 70C96DFC-F265-4792-AE62-DD224A4EE237
 online version: https://docs.microsoft.com/powershell/module/az.logicapp/get-azintegrationaccountagreement
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/Get-AzIntegrationAccountAgreement.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/Get-AzIntegrationAccountAgreement.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/LogicApp/LogicApp/help/Get-AzIntegrationAccountAgreement.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/LogicApp/LogicApp/help/Get-AzIntegrationAccountAgreement.md
 ---
 
 # Get-AzIntegrationAccountAgreement

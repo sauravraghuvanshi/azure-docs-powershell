@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.Functions
 online version: https://docs.microsoft.com/powershell/module/az.functions/remove-azfunctionappplan
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Functions/help/Remove-AzFunctionAppPlan.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Functions/help/Remove-AzFunctionAppPlan.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Functions/help/Remove-AzFunctionAppPlan.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Functions/help/Remove-AzFunctionAppPlan.md
 ---
 
 # Remove-AzFunctionAppPlan

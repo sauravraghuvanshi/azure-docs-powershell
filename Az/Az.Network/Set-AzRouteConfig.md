@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 6E967F9C-949E-4485-9B57-FC4F523D5DC9
 online version: https://docs.microsoft.com/powershell/module/az.network/set-azrouteconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzRouteConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzRouteConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzRouteConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzRouteConfig.md
 ---
 
 # Set-AzRouteConfig
@@ -66,10 +66,17 @@ This command gets the route table named RouteTable01 by using the Get-AzRouteTab
 The command passes that table to the current cmdlet by using the pipeline operator.
 The current cmdlet modifies the route named Route02, and then passes the result to the **Set-AzRouteTable** cmdlet, which updates the table to reflect your changes.
 
+### Example 2: Modify a route using a Service Tag (Public Preview)
+```powershell
+Set-AzRouteConfig -Name "Route02" -AddressPrefix "AppService" -NextHopType "VirtualAppliance" -NextHopIpAddress "10.0.2.4"
+```
+
+This command modifies the route named Route02, supplying a Service Tag as the AddressPrefix parameter.
+
 ## PARAMETERS
 
 ### -AddressPrefix
-Specifies the destination, in Classless Interdomain Routing (CIDR) format, to which the route applies.
+Specifies the destination, in Classless Interdomain Routing (CIDR) format, to which the route applies. You can also specify a Service Tag here (this feature is in Public Preview).
 
 ```yaml
 Type: System.String

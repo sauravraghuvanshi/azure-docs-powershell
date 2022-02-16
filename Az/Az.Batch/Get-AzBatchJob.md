@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: 8BF49C4D-E7CD-4FD0-AFAC-9856239D24EC
 online version: https://docs.microsoft.com/powershell/module/az.batch/get-azbatchjob
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchJob.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchJob.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Get-AzBatchJob.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Get-AzBatchJob.md
 ---
 
 # Get-AzBatchJob
@@ -44,8 +44,11 @@ If you supply a job schedule ID or **PSCloudJobSchedule** instance, this cmdlet 
 ## EXAMPLES
 
 ### Example 1: Get a Batch job by ID
+```powershell
+Get-AzBatchJob -Id "Job01" -BatchContext $Context
 ```
-PS C:\>Get-AzBatchJob -Id "Job01" -BatchContext $Context
+
+```output
 CommonEnvironmentSettings   :
 Constraints                 : Microsoft.Azure.Commands.Batch.Models.PSJobConstraints
 CreationTime                : 7/25/2015 9:12:07 PM
@@ -72,8 +75,11 @@ This command gets the job that has the ID Job01.
 Use the Get-AzBatchAccountKey cmdlet to assign a context to the $Context variable.
 
 ### Example 2: Get all active jobs for a job schedule
+```powershell
+Get-AzBatchJob -JobScheduleId "JobSchedule27" -Filter "state eq 'active'" -BatchContext $Context
 ```
-PS C:\>Get-AzBatchJob -JobScheduleId "JobSchedule27" -Filter "state eq 'active'" -BatchContext $Context
+
+```output
 CommonEnvironmentSettings   :
 Constraints                 : Microsoft.Azure.Commands.Batch.Models.PSJobConstraints
 CreationTime                : 7/25/2015 9:15:44 PM
@@ -99,8 +105,11 @@ Url                         : https://pfuller.westus.batch.azure.com/jobs/JobSch
 This command gets the active jobs for the job schedule that has the ID JobSchedule27.
 
 ### Example 3: Gets all jobs under a job schedule by using the pipeline
+```powershell
+Get-AzBatchJobSchedule -Id "JobSchedule27" -BatchContext $Context | Get-AzBatchJob -BatchContext $Context
 ```
-PS C:\>Get-AzBatchJobSchedule -Id "JobSchedule27" -BatchContext $Context | Get-AzBatchJob -BatchContext $Context
+
+```output
 CommonEnvironmentSettings   :
 Constraints                 : Microsoft.Azure.Commands.Batch.Models.PSJobConstraints
 CreationTime                : 7/25/2015 9:15:44 PM

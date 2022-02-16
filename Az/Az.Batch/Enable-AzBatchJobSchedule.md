@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: 02F91510-F14F-4401-BC5F-06B0874AEB4B
 online version: https://docs.microsoft.com/powershell/module/az.batch/enable-azbatchjobschedule
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Enable-AzBatchJobSchedule.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Enable-AzBatchJobSchedule.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Enable-AzBatchJobSchedule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Enable-AzBatchJobSchedule.md
 ---
 
 # Enable-AzBatchJobSchedule
@@ -27,8 +27,8 @@ After you enable a job schedule, jobs can be created according to that schedule.
 ## EXAMPLES
 
 ### Example 1: Enable a job schedule
-```
-PS C:\>Enable-AzBatchJobSchedule -Id "JobSchedule17" -BatchContext $Context
+```powershell
+Enable-AzBatchJobSchedule -Id "JobSchedule17" -BatchContext $Context
 ```
 
 This command enables the job schedule that has the ID JobSchedule17.

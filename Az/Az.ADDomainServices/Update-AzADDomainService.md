@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.ADDomainServices
 online version: https://docs.microsoft.com/powershell/module/az.addomainservices/update-azaddomainservice
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ADDomainServices/help/Update-AzADDomainService.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ADDomainServices/help/Update-AzADDomainService.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ADDomainServices/help/Update-AzADDomainService.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ADDomainServices/help/Update-AzADDomainService.md
 ---
 
 # Update-AzADDomainService
@@ -52,7 +52,9 @@ The update call only supports the properties listed in the PATCH body.
 ```powershell
 PS C:\> $ADDomainSetting = New-AzADDomainServiceDomainSecuritySettingObject -TlsV1 Disabled
 Update-AzADDomainService -Name youriADdomain -ResourceGroupName youriADdomain -DomainSecuritySetting $ADDomainSetting
+```
 
+```output
 Name          Domain Name       Location Sku
 ----          -----------       -------- ---
 youriADdomain youriAddomain.com westus   Enterprise
@@ -65,7 +67,9 @@ Update AzADDomainService By ResourceGroupName and Name
 PS C:\> $getAzAddomain = Get-AzADDomainService -Name youriADdomain -ResourceGroupName youriADdomain
 $ADDomainSetting = New-AzADDomainServiceDomainSecuritySettingObject -TlsV1 Disabled
 Update-AzADDomainService -InputObject $getAzAddomain -DomainSecuritySetting $ADDomainSetting
+```
 
+```output
 Name          Domain Name       Location Sku
 ----          -----------       -------- ---
 youriADdomain youriAddomain.com westus   Enterprise

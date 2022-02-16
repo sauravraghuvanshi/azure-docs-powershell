@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.ImageBuilder
 online version: https://docs.microsoft.com/powershell/module/az.imagebuilder/start-azimagebuildertemplate
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ImageBuilder/help/Start-AzImageBuilderTemplate.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ImageBuilder/help/Start-AzImageBuilderTemplate.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ImageBuilder/help/Start-AzImageBuilderTemplate.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ImageBuilder/help/Start-AzImageBuilderTemplate.md
 ---
 
 # Start-AzImageBuilderTemplate

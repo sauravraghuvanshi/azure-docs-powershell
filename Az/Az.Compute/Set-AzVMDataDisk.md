@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: C453485D-67A7-480E-83F6-527D4F5EBC93
 online version: https://docs.microsoft.com/powershell/module/az.compute/set-azvmdatadisk
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMDataDisk.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMDataDisk.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVMDataDisk.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVMDataDisk.md
 ---
 
 # Set-AzVMDataDisk

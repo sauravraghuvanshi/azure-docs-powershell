@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.Databricks
 online version: https://docs.microsoft.com/powershell/module/az.databricks/get-azdatabricksworkspace
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Databricks/help/Get-AzDatabricksWorkspace.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Databricks/help/Get-AzDatabricksWorkspace.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Databricks/help/Get-AzDatabricksWorkspace.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Databricks/help/Get-AzDatabricksWorkspace.md
 ---
 
 # Get-AzDatabricksWorkspace

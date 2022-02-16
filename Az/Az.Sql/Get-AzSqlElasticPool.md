@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: 350E19F6-5B1C-4D3F-B4CD-7225CDC984C4
 online version: https://docs.microsoft.com/powershell/module/az.sql/get-azsqlelasticpool
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlElasticPool.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlElasticPool.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlElasticPool.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlElasticPool.md
 ---
 
 # Get-AzSqlElasticPool
@@ -204,7 +204,7 @@ Required: False
 Position: 2
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -ResourceGroupName

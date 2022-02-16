@@ -3,14 +3,14 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Synapse.dll-Help.xml
 Module Name: Az.Synapse
 online version: https://docs.microsoft.com/powershell/module/az.synapse/get-azsynapsesparkpool
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Synapse/Synapse/help/Get-AzSynapseSparkPool.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Synapse/Synapse/help/Get-AzSynapseSparkPool.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Synapse/Synapse/help/Get-AzSynapseSparkPool.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Synapse/Synapse/help/Get-AzSynapseSparkPool.md
 ---
 
 # Get-AzSynapseSparkPool
 
 ## SYNOPSIS
-Gets a Synapse Analytics Spark pool.
+Gets a Apache Spark pool in Azure Synapse Analytics.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-AzSynapseSparkPool -ResourceId <String> [-DefaultProfile <IAzureContextConta
 ```
 
 ## DESCRIPTION
-The **Get-AzSynapseSparkPool** cmdlet gets information about an Azure Synapse Analytics Spark pool.
+The **Get-AzSynapseSparkPool** cmdlet gets information about an Apache Spark pool in Azure Synapse Analytics.
 
 ## EXAMPLES
 

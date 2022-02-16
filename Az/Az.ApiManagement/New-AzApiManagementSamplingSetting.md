@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.ServiceMana
 Module Name: Az.ApiManagement
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/new-azapimanagementsamplingsetting
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementSamplingSetting.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementSamplingSetting.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/New-AzApiManagementSamplingSetting.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/New-AzApiManagementSamplingSetting.md
 ---
 
 # New-AzApiManagementSamplingSetting
@@ -26,8 +26,10 @@ The cmdlet **New-AzApiManagementSamplingSetting** creates a new sampling setting
 
 ### Example 1: Create a basic Sampling setting
 ```powershell
-PS C:\> New-AzApiManagementSamplingSetting -SamplingType fixed -Percentage 100
+New-AzApiManagementSamplingSetting -SamplingType fixed -Percentage 100
+```
 
+```output
 SamplingType Percentage
 ------------ ----------
 fixed               100

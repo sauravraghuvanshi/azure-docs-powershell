@@ -4,8 +4,8 @@ Module Guid: 342714fc-4009-4863-8afb-a9067e3db04b
 Download Help Link: https://docs.microsoft.com/powershell/module/az.accounts
 Help Version: 4.6.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Az.Accounts.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Az.Accounts.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Az.Accounts.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Az.Accounts.md
 ---
 
 # Az.Accounts Module
@@ -82,6 +82,9 @@ Loads Azure authentication information from a file.
 
 ### [Invoke-AzRestMethod](Invoke-AzRestMethod.md)
 Construct and perform HTTP request to Azure resource management endpoint only
+
+### [Open-AzSurveyLink](Open-AzSurveyLink.md)
+Open survey link in default browser.
 
 ### [Register-AzModule](Register-AzModule.md)
 FOR INTERNAL USE ONLY - Provide Runtime Support for AutoRest Generated cmdlets

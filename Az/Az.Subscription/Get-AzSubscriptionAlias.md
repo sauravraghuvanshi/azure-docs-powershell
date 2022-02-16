@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Subscription.dll-Help.xml
 Module Name: Az.Subscription
 online version: https://docs.microsoft.com/powershell/module/az.subscription/get-azsubscriptionalias
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Subscription/Subscription/help/Get-AzSubscriptionAlias.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Subscription/Subscription/help/Get-AzSubscriptionAlias.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Subscription/Subscription/help/Get-AzSubscriptionAlias.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Subscription/Subscription/help/Get-AzSubscriptionAlias.md
 ---
 
 # Get-AzSubscriptionAlias

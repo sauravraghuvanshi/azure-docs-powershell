@@ -1,13 +1,13 @@
 ---
 external help file: 
-Module Name: Az.VMWare
+Module Name: Az.VMware
 online version: https://docs.microsoft.com/powershell/module/az.vmware/new-azvmwarecluster
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/VMware/help/New-AzVMwareCluster.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/VMware/help/New-AzVMwareCluster.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/VMware/help/New-AzVMwareCluster.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/VMware/help/New-AzVMwareCluster.md
 ---
 
-# New-AzVMWareCluster
+# New-AzVMwareCluster
 
 ## SYNOPSIS
 Create or update a cluster in a private cloud
@@ -15,8 +15,8 @@ Create or update a cluster in a private cloud
 ## SYNTAX
 
 ```
-New-AzVMWareCluster -Name <String> -PrivateCloudName <String> -ResourceGroupName <String> -ClusterSize <Int32>
- -SkuName <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
+New-AzVMwareCluster -Name <String> -PrivateCloudName <String> -ResourceGroupName <String> -SkuName <String>
+ [-SubscriptionId <String>] [-ClusterSize <Int32>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -25,16 +25,16 @@ Create or update a cluster in a private cloud
 
 ## EXAMPLES
 
-### Example 1: Create cluster
+### Example 1: Create a cluster
 ```powershell
-PS C:\> New-AzVMWareCluster -Name azps-test-cluster -PrivateCloudName azps-test-cloud -ResourceGroupName azps-test-group -ClusterSize 3 -SkuName av36
+PS C:\> New-AzVMwareCluster -Name azps_test_cluster -PrivateCloudName azps_test_cloud -ResourceGroupName azps_test_group -ClusterSize 3 -SkuName av36
 
-Name              Type
-----              ----
-azps-test-cluster Microsoft.AVS/privateClouds/clusters
+Name              Type                                 ResourceGroupName
+----              ----                                 -----------------
+azps_test_cluster Microsoft.AVS/privateClouds/clusters azps_test_group
 ```
 
-Create cluster
+Create a cluster
 
 ## PARAMETERS
 
@@ -61,7 +61,7 @@ Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -212,7 +212,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.VMWare.Models.Api20200320.ICluster
+### Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.Api20210601.ICluster
 
 ## NOTES
 

@@ -4,8 +4,8 @@ Module Guid: 0b3b43eb-9078-4d06-8c79-d156a1410906
 Download Help Link: https://docs.microsoft.com/powershell/module/az.redisenterprisecache
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RedisEnterpriseCache/help/Az.RedisEnterpriseCache.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RedisEnterpriseCache/help/Az.RedisEnterpriseCache.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RedisEnterpriseCache/help/Az.RedisEnterpriseCache.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RedisEnterpriseCache/help/Az.RedisEnterpriseCache.md
 ---
 
 # Az.RedisEnterpriseCache Module

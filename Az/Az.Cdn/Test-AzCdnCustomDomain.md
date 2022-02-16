@@ -4,8 +4,8 @@ Module Name: Az.Cdn
 ms.assetid: 8C4E824F-FB4A-4DE7-8FD9-3FDA3848F25C
 online version: https://docs.microsoft.com/powershell/module/az.cdn/test-azcdncustomdomain
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Test-AzCdnCustomDomain.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Test-AzCdnCustomDomain.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Test-AzCdnCustomDomain.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Test-AzCdnCustomDomain.md
 ---
 
 # Test-AzCdnCustomDomain
@@ -31,6 +31,17 @@ Test-AzCdnCustomDomain -CdnEndpoint <PSEndpoint> -CustomDomainHostName <String>
 The **Test-AzCdnCustomDomain** cmdlet checks whether a custom domain can be added to an endpoint by validating the CName mapping.
 
 ## EXAMPLES
+
+### Example 1
+```powershell
+Test-AzCdnCustomDomain -ResourceGroupName myresourcegroup -ProfileName mycdnprofile -EndpointName myendpoint -CustomDomainHostName cdn.example.com
+```
+
+```Output
+CustomDomainValidated Reason Message
+--------------------- ------ -------
+                 True
+```
 
 ## PARAMETERS
 

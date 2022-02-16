@@ -4,8 +4,8 @@ Module Name: Az.HDInsight
 ms.assetid: 8F0634BD-D817-4365-B6D1-924DC36AE4C9
 online version: https://docs.microsoft.com/powershell/module/az.hdinsight/add-azhdinsightscriptaction
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/Add-AzHDInsightScriptAction.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/Add-AzHDInsightScriptAction.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HDInsight/HDInsight/help/Add-AzHDInsightScriptAction.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HDInsight/HDInsight/help/Add-AzHDInsightScriptAction.md
 ---
 
 # Add-AzHDInsightScriptAction

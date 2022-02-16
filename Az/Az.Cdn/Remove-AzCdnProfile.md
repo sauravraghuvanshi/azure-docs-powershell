@@ -4,8 +4,8 @@ Module Name: Az.Cdn
 ms.assetid: 3A4F8442-1268-44BC-91ED-47C03CD20C47
 online version: https://docs.microsoft.com/powershell/module/az.cdn/remove-azcdnprofile
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Remove-AzCdnProfile.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Remove-AzCdnProfile.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Remove-AzCdnProfile.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Remove-AzCdnProfile.md
 ---
 
 # Remove-AzCdnProfile
@@ -31,6 +31,11 @@ Remove-AzCdnProfile -CdnProfile <PSProfile> [-PassThru] [-Force] [-DefaultProfil
 The **Remove-AzCdnProfile** cmdlet removes a Azure Content Delivery Network (CDN) profile.
 
 ## EXAMPLES
+
+### Example 1
+```powershell
+Remove-AzCdnProfile -ResourceGroupName myresourcegroup -ProfileName mycdnprofile -Force
+```
 
 ## PARAMETERS
 

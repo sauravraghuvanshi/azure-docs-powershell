@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: EAD39EE1-C66F-4092-8876-E7F9FA612481
 online version: https://docs.microsoft.com/powershell/module/az.automation/remove-azautomationschedule
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Remove-AzAutomationSchedule.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Remove-AzAutomationSchedule.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Remove-AzAutomationSchedule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Remove-AzAutomationSchedule.md
 ---
 
 # Remove-AzAutomationSchedule

@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 0CD03BF8-8DB6-44BC-91F0-D863949DBD17
 online version: https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzPublicIpAddress.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzPublicIpAddress.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzPublicIpAddress.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzPublicIpAddress.md
 ---
 
 # Get-AzPublicIpAddress

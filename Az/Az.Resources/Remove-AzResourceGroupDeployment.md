@@ -4,8 +4,8 @@ Module Name: Az.Resources
 ms.assetid: C3DD193E-B8FE-468D-BEE7-00C3D99B469E
 online version: https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroupdeployment
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzResourceGroupDeployment.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzResourceGroupDeployment.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Remove-AzResourceGroupDeployment.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Remove-AzResourceGroupDeployment.md
 ---
 
 # Remove-AzResourceGroupDeployment

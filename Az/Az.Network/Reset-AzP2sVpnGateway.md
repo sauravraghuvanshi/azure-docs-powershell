@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 443F6492-EFA7-4417-943A-3A8D47F8C83C
 online version: https://docs.microsoft.com/powershell/module/az.network/reset-azp2svpngateway
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Reset-AzP2sVpnGateway.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Reset-AzP2sVpnGateway.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Reset-AzP2sVpnGateway.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Reset-AzP2sVpnGateway.md
 ---
 
 # Reset-AzP2sVpnGateway

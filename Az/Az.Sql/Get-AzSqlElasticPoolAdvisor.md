@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: BC8C0D59-662F-47D2-8619-9F69D78B171D
 online version: https://docs.microsoft.com/powershell/module/az.sql/get-azsqlelasticpooladvisor
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlElasticPoolAdvisor.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlElasticPoolAdvisor.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlElasticPoolAdvisor.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlElasticPoolAdvisor.md
 ---
 
 # Get-AzSqlElasticPoolAdvisor
@@ -211,7 +211,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -DefaultProfile

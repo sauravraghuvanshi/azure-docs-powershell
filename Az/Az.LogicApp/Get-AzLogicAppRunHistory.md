@@ -4,8 +4,8 @@ Module Name: Az.LogicApp
 ms.assetid: F271BCB1-6D43-48E5-BB51-00288F57BFFB
 online version: https://docs.microsoft.com/powershell/module/az.logicapp/get-azlogicapprunhistory
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/Get-AzLogicAppRunHistory.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/Get-AzLogicAppRunHistory.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/LogicApp/LogicApp/help/Get-AzLogicAppRunHistory.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/LogicApp/LogicApp/help/Get-AzLogicAppRunHistory.md
 ---
 
 # Get-AzLogicAppRunHistory

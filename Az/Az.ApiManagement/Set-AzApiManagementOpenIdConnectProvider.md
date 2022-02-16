@@ -4,8 +4,8 @@ Module Name: Az.ApiManagement
 ms.assetid: F3F21304-CED1-4742-B8BD-2841C4107DCC
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/set-azapimanagementopenidconnectprovider
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Set-AzApiManagementOpenIdConnectProvider.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Set-AzApiManagementOpenIdConnectProvider.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Set-AzApiManagementOpenIdConnectProvider.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Set-AzApiManagementOpenIdConnectProvider.md
 ---
 
 # Set-AzApiManagementOpenIdConnectProvider
@@ -29,8 +29,8 @@ The **Set-AzApiManagementOpenIdConnectProvider** cmdlet modifies an OpenID Conne
 
 ### Example 1: Change the client secret for a provider
 ```powershell
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Set-AzApiManagementOpenIdConnectProvider -Context $apimContext -OpenIdConnectProviderId "OICProvider01" -ClientSecret "q2w3e43r45" -PassThru
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Set-AzApiManagementOpenIdConnectProvider -Context $apimContext -OpenIdConnectProviderId "OICProvider01" -ClientSecret "q2w3e43r45" -PassThru
 ```
 
 This command modifies the provider that has the ID OICProvider01.

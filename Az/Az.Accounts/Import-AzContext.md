@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Accounts.dll-Help.xml
 Module Name: Az.Accounts
 online version: https://docs.microsoft.com/powershell/module/az.accounts/import-azcontext
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Import-AzContext.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Import-AzContext.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Import-AzContext.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Import-AzContext.md
 ---
 
 # Import-AzContext
@@ -33,9 +33,11 @@ Cmdlets that you run in the current session use this information to authenticate
 ## EXAMPLES
 
 ### Example 1: Importing a context from a AzureRmProfile
+```powershell
+Import-AzContext -AzContext (Connect-AzAccount)
 ```
-PS C:\> Import-AzContext -AzContext (Connect-AzAccount)
 
+```Output
 Account                SubscriptionName TenantId                Environment
 -------                ---------------- --------                -----------
 azureuser@contoso.com  Subscription1    xxxx-xxxx-xxxx-xxxx     AzureCloud
@@ -44,9 +46,11 @@ azureuser@contoso.com  Subscription1    xxxx-xxxx-xxxx-xxxx     AzureCloud
 This example imports a context from a PSAzureProfile that is passed through to the cmdlet.
 
 ### Example 2: Importing a context from a JSON file
+```powershell
+Import-AzContext -Path C:\test.json
 ```
-PS C:\> Import-AzContext -Path C:\test.json
 
+```Output
 Account                SubscriptionName TenantId                Environment
 -------                ---------------- --------                -----------
 azureuser@contoso.com  Subscription1    xxxx-xxxx-xxxx-xxxx     AzureCloud

@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: 91B2DE2F-442D-4428-8A6F-9C2CEC181CA7
 online version: https://docs.microsoft.com/powershell/module/az.compute/set-azvmsourceimage
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMSourceImage.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMSourceImage.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVMSourceImage.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVMSourceImage.md
 ---
 
 # Set-AzVMSourceImage

@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.FrontDoor.dll-Help.xml
 Module Name: Az.FrontDoor
 online version: https://docs.microsoft.com/powershell/module/az.frontdoor/enable-azfrontdoorcustomdomainhttps
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Enable-AzFrontDoorCustomDomainHttps.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Enable-AzFrontDoorCustomDomainHttps.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/FrontDoor/FrontDoor/help/Enable-AzFrontDoorCustomDomainHttps.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/FrontDoor/FrontDoor/help/Enable-AzFrontDoorCustomDomainHttps.md
 ---
 
 # Enable-AzFrontDoorCustomDomainHttps
@@ -24,7 +24,7 @@ Enable-AzFrontDoorCustomDomainHttps -ResourceGroupName <String> -FrontDoorName <
 ### ByFieldsWithVaultParameterSet
 ```
 Enable-AzFrontDoorCustomDomainHttps -ResourceGroupName <String> -FrontDoorName <String>
- -FrontendEndpointName <String> -VaultId <String> -SecretName <String> -SecretVersion <String>
+ -FrontendEndpointName <String> -VaultId <String> -SecretName <String> [-SecretVersion <String>]
  [-MinimumTlsVersion <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
@@ -38,7 +38,7 @@ Enable-AzFrontDoorCustomDomainHttps -ResourceId <String> [-MinimumTlsVersion <St
 ### ByResourceIdWithVaultParameterSet
 ```
 Enable-AzFrontDoorCustomDomainHttps -ResourceId <String> -VaultId <String> -SecretName <String>
- -SecretVersion <String> [-MinimumTlsVersion <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-SecretVersion <String>] [-MinimumTlsVersion <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ Enable-AzFrontDoorCustomDomainHttps -InputObject <PSFrontendEndpoint> [-MinimumT
 ### ByObjectWithVaultParameterSet
 ```
 Enable-AzFrontDoorCustomDomainHttps -InputObject <PSFrontendEndpoint> -VaultId <String> -SecretName <String>
- -SecretVersion <String> [-MinimumTlsVersion <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-SecretVersion <String>] [-MinimumTlsVersion <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
@@ -88,7 +88,7 @@ Type                             : Microsoft.Network/frontdoors/frontendendpoint
 
 Enable HTTPS for a custom domain "frontendpointname1-custom-xyz" that is part of Front Door "frontdoor1" in resource group "resourcegroup1" using Front Door managed certificate.
 
-### Example 2: Enable HTTPS for a custom domain with FrontDoorName and ResourceGroupName using own certificate in Key Vault.
+### Example 2: Enable HTTPS for a custom domain with FrontDoorName and ResourceGroupName using customer's own certificate in Key Vault with the specific version.
 ```powershell
 PS C:\> $vaultId = (Get-AzKeyVault -VaultName $vaultName).ResourceId
 PS C:\> Enable-AzFrontDoorCustomDomainHttps -ResourceGroupName "resourcegroup1" -FrontDoorName "frontdoor1" -FrontendEndpointName "frontendpointname1-custom-xyz" -Vault $vaultId -secretName $secretName -SecretVersion $secretVersion -MinimumTlsVersion "1.0"
@@ -115,7 +115,7 @@ Name                             : frontendpointname1-custom-xyz
 Type                             : Microsoft.Network/frontdoors/frontendendpoints
 ```
 
-Enable HTTPS for a custom domain "frontendpointname1-custom-xyz" that is part of Front Door "frontdoor1" in resource group "resourcegroup1" using Front Door managed certificate.
+Enable HTTPS for a custom domain "frontendpointname1-custom-xyz" that is part of Front Door "frontdoor1" in resource group "resourcegroup1" using customer's own certificate in Key Vault with the specific version.
 
 ### Example 3: Enable HTTPS for a custom domain with PSFrontendEndpoint object using Front Door managed certificate.
 ```powershell
@@ -172,6 +172,35 @@ Type                             : Microsoft.Network/frontdoors/frontendendpoint
 ```
 
 Enable HTTPS for a custom domain "frontendpointname1-custom-xyz" with resource id $resourceId using Front Door managed certificate.
+
+### Example 5: Enable HTTPS for a custom domain with FrontDoorName and ResourceGroupName using customer's own certificate in Key Vault with the latest version to enable certificate auto-rotation.
+```powershell
+PS C:\> $vaultId = (Get-AzKeyVault -VaultName $vaultName).ResourceId
+PS C:\> Enable-AzFrontDoorCustomDomainHttps -ResourceGroupName "resourcegroup1" -FrontDoorName "frontdoor1" -FrontendEndpointName "frontendpointname1-custom-xyz" -Vault $vaultId -secretName $secretName -MinimumTlsVersion "1.0"
+
+
+HostName                         : frontendpointname1.custom.xyz
+SessionAffinityEnabledState      : Disabled
+SessionAffinityTtlSeconds        : 0
+WebApplicationFirewallPolicyLink :
+Backends                         :
+CustomHttpsProvisioningState     : Enabling
+CustomHttpsProvisioningSubstate  : SubmittingDomainControlValidationRequest
+CertificateSource                : AzureKeyVault
+ProtocolType                     : ServerNameIndication
+MinimumTlsVersion                : 1.0
+Vault                            :
+SecretName                       :
+SecretVersion                    :
+CertificateType                  :
+ResourceState                    : Enabled
+Id                               : /subscriptions/{guid}/resourcegroups/resourcegroup1
+                                   /providers/Microsoft.Network/frontdoors/frontdoor1/frontendendpoints/frontendpointname1-custom-xyz
+Name                             : frontendpointname1-custom-xyz
+Type                             : Microsoft.Network/frontdoors/frontendendpoints
+```
+
+Enable HTTPS for a custom domain "frontendpointname1-custom-xyz" that is part of Front Door "frontdoor1" in resource group "resourcegroup1" using customer's own certificate in Key Vault with the the latest version to enable certificate auto-rotation.
 
 ## PARAMETERS
 
@@ -296,14 +325,15 @@ Accept wildcard characters: False
 ```
 
 ### -SecretVersion
-The version of the Key Vault secret representing the full certificate PFX
+The version of the Key Vault secret representing the full certificate PFX.
+If not specified, the 'Latest' version will always been used and the deployed certificate will be automatically rotated to the latest version when a newer version of the certificate is available.
 
 ```yaml
 Type: System.String
 Parameter Sets: ByFieldsWithVaultParameterSet, ByResourceIdWithVaultParameterSet, ByObjectWithVaultParameterSet
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

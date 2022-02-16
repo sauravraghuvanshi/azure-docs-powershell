@@ -4,8 +4,8 @@ Module Guid: 79ad50da-e6b5-4703-885a-d36974a4d9b9
 Download Help Link: https://docs.microsoft.com/powershell/module/az.hanaonazure
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HanaOnAzure/help/Az.HanaOnAzure.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HanaOnAzure/help/Az.HanaOnAzure.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HanaOnAzure/help/Az.HanaOnAzure.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HanaOnAzure/help/Az.HanaOnAzure.md
 ---
 
 # Az.HanaOnAzure Module

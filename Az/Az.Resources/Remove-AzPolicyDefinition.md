@@ -4,8 +4,8 @@ Module Name: Az.Resources
 ms.assetid: DEC01722-EB1A-45CE-BD30-9DB861718573
 online version: https://docs.microsoft.com/powershell/module/az.resources/remove-azpolicydefinition
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzPolicyDefinition.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzPolicyDefinition.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Remove-AzPolicyDefinition.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Remove-AzPolicyDefinition.md
 ---
 
 # Remove-AzPolicyDefinition

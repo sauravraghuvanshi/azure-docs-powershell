@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: 6BCB36BC-F5E6-4EDD-983C-8BDE7A9B004D
 online version: https://docs.microsoft.com/powershell/module/az.compute/set-azvmdiskencryptionextension
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMDiskEncryptionExtension.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMDiskEncryptionExtension.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVMDiskEncryptionExtension.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVMDiskEncryptionExtension.md
 ---
 
 # Set-AzVMDiskEncryptionExtension
@@ -46,6 +46,16 @@ Set-AzVMDiskEncryptionExtension [-ResourceGroupName] <String> [-VMName] <String>
  [[-Passphrase] <String>] [-Force] [-DisableAutoUpgradeMinorVersion] [-SkipVmBackup] [-ExtensionType <String>]
  [-ExtensionPublisherName <String>] [-EncryptFormatAll] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
+```
+
+### MigrateADEVersionParameterSet
+```
+Set-AzVMDiskEncryptionExtension [-ResourceGroupName] <String> [-VMName] <String> [-Migrate]
+```
+
+### MigrateADEVersionRecoveryParameterSet
+```
+Set-AzVMDiskEncryptionExtension [-ResourceGroupName] <String> [-VMName] <String> [-MigrationRecovery]
 ```
 
 ## DESCRIPTION
@@ -325,7 +335,7 @@ Specifies the resource ID of the **KeyVault** to which the virtual machine encry
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: AADClientSecretParameterSet, AADClientCertParameterSet, SinglePassParameterSet
 Aliases:
 
 Required: True
@@ -340,7 +350,7 @@ Specifies the **KeyVault** URL to which the virtual machine encryption keys shou
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: AADClientSecretParameterSet, AADClientCertParameterSet, SinglePassParameterSet
 Aliases:
 
 Required: True
@@ -410,6 +420,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Migrate
+Initiates migration of the VM to latest Azure Disk Encryption extension version (ADE without AAD credentials).
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: MigrateADEVersionParameterSet
+Aliases:
+
+Required: true
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MigrationRecovery
+Initiates migration recovery for failures during migration of ADE extension version with AAD to ADE extension version without AAD.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: MigrateADEVersionRecoveryParameterSet
+Aliases:
+
+Required: true
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -KeyEncryptionAlgorithm
 Specifies the algorithm that is used to wrap and unwrap the key encryption key of the virtual machine.
 The default value is RSA-OAEP.
@@ -433,7 +473,7 @@ This must be the full versioned URL.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: AADClientSecretParameterSet, AADClientCertParameterSet, SinglePassParameterSet
 Aliases:
 
 Required: False
@@ -449,7 +489,7 @@ This must be a full versioned URL.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: AADClientSecretParameterSet, AADClientCertParameterSet, SinglePassParameterSet
 Aliases:
 
 Required: False

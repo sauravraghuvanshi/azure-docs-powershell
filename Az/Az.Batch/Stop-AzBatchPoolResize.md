@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: 3E736E85-0488-4D10-BEA1-4F9B8DA54C4B
 online version: https://docs.microsoft.com/powershell/module/az.batch/stop-azbatchpoolresize
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Stop-AzBatchPoolResize.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Stop-AzBatchPoolResize.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Stop-AzBatchPoolResize.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Stop-AzBatchPoolResize.md
 ---
 
 # Stop-AzBatchPoolResize
@@ -26,16 +26,16 @@ The **Stop-AzBatchPoolResize** cmdlet stops an Azure Batch resize operation on a
 ## EXAMPLES
 
 ### Example 1: Stop resizing a pool
-```
-PS C:\>Stop-AzBatchPoolResize -Id "ContosoPool06" -BatchContext $Context
+```powershell
+Stop-AzBatchPoolResize -Id "ContosoPool06" -BatchContext $Context
 ```
 
 This command stops a resize operation on the pool that has the ID ContosoPool06.
 Use the Get-AzBatchAccountKey cmdlet to assign a context to the $Context variable.
 
 ### Example 2: Stop resizing a pool by using the pipeline
-```
-PS C:\>Get-AzBatchPool -Id "ContosoPool06" -BatchContext $Context | Stop-AzBatchPoolResize -BatchContext $Context
+```powershell
+Get-AzBatchPool -Id "ContosoPool06" -BatchContext $Context | Stop-AzBatchPoolResize -BatchContext $Context
 ```
 
 This command stops resizing a pool by using the pipeline operator.

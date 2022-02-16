@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
 online version: https://docs.microsoft.com/powershell/module/az.network/get-azprivatelinkresource
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzPrivateLinkResource.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzPrivateLinkResource.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzPrivateLinkResource.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzPrivateLinkResource.md
 ---
 
 # Get-AzPrivateLinkResource
@@ -16,13 +16,13 @@ Gets a private link resource.
 
 ### ByPrivateLinkResourceId (Default)
 ```
-Get-AzPrivateLinkResource -PrivateLinkResourceId <String> [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+Get-AzPrivateLinkResource -PrivateLinkResourceId <String> [-Name <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### ByResource
 ```
-Get-AzPrivateLinkResource -ResourceGroupName <String> -ServiceName <String>
+Get-AzPrivateLinkResource -ResourceGroupName <String> -ServiceName <String> [-Name <String>]
  [-DefaultProfile <IAzureContextContainer>] [-PrivateLinkResourceType <String>] [<CommonParameters>]
 ```
 
@@ -55,13 +55,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Name
+The private link resource name.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: GroupName
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -PrivateLinkResourceId
 The Azure resource manager id of the private link resource.
 
 ```yaml
 Type: System.String
 Parameter Sets: ByPrivateLinkResourceId
-Aliases:
+Aliases: PrivateLinkServiceId
 
 Required: True
 Position: Named

@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: 5CC89899-00B6-424A-8896-FD32DE9DDA28
 online version: https://docs.microsoft.com/powershell/module/az.compute/new-azvmssvaultcertificateconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/New-AzVmssVaultCertificateConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/New-AzVmssVaultCertificateConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/New-AzVmssVaultCertificateConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/New-AzVmssVaultCertificateConfig.md
 ---
 
 # New-AzVmssVaultCertificateConfig

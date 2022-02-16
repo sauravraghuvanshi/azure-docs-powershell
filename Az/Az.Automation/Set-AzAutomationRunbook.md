@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: 920C028B-0471-43EB-9123-C444289FD845
 online version: https://docs.microsoft.com/powershell/module/az.automation/set-azautomationrunbook
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Set-AzAutomationRunbook.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Set-AzAutomationRunbook.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Set-AzAutomationRunbook.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Set-AzAutomationRunbook.md
 ---
 
 # Set-AzAutomationRunbook

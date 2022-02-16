@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: 251A4546-AC23-4880-B197-773B1B814607
 online version: https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlserverfirewallrule
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Remove-AzSqlServerFirewallRule.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Remove-AzSqlServerFirewallRule.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Remove-AzSqlServerFirewallRule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Remove-AzSqlServerFirewallRule.md
 ---
 
 # Remove-AzSqlServerFirewallRule

@@ -1,74 +1,87 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.dll-Help.xml
+external help file: 
 Module Name: Az.ManagedServices
 online version: https://docs.microsoft.com/powershell/module/az.managedservices/get-azmanagedservicesdefinition
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ManagedServices/ManagedServices/help/Get-AzManagedServicesDefinition.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ManagedServices/ManagedServices/help/Get-AzManagedServicesDefinition.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ManagedServices/help/Get-AzManagedServicesDefinition.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ManagedServices/help/Get-AzManagedServicesDefinition.md
 ---
 
 # Get-AzManagedServicesDefinition
 
 ## SYNOPSIS
-Gets a specific registration definition or a list of the registration definitions.
+Gets the registration definition details.
 
 ## SYNTAX
 
-### ByName (Default)
+### List (Default)
 ```
-Get-AzManagedServicesDefinition [-Scope <String>] [-Name <String>] [-DefaultProfile <IAzureContextContainer>]
+Get-AzManagedServicesDefinition [-Scope <String>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### Get
+```
+Get-AzManagedServicesDefinition -Name <String> [-Scope <String>] [-DefaultProfile <PSObject>]
  [<CommonParameters>]
 ```
 
-### Default
+### GetViaIdentity
 ```
-Get-AzManagedServicesDefinition [-Scope <String>] [-DefaultProfile <IAzureContextContainer>]
+Get-AzManagedServicesDefinition -InputObject <IManagedServicesIdentity> [-DefaultProfile <PSObject>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets a specific registration definition or a list of the registration definitions.
+Gets the registration definition details.
 
 ## EXAMPLES
 
-### Example 1
-```
+### Example 1: List all Azure Lighthouse registration definitions in a subscription
+```powershell
 PS C:\> Get-AzManagedServicesDefinition
 
-Name                                 Id                                                                                                                                                   ProvisioningState
-----                                 --                                                                                                                                                   -----------------
-0c146106-c927-4098-a7ca-30bbcf44a502 /subscriptions/24ab6047-da91-48c0-66e5-20a8c6daefc8/providers/Microsoft.ManagedServices/registrationDefinitions/0c146106-c927-4098-a7ca-30bbcf44a502 Succeeded
-
-PS C:\>
+Name                                 Type
+----                                 ----
+xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Microsoft.ManagedServices/registrationDefinitions
+xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Microsoft.ManagedServices/registrationDefinitions
 ```
 
-Gets all registration definitions at default scope.
+Lists all the Azure Lighthouse registration definitions in a given subscription in context.
 
-### Example 2
-```
-PS C:\> Get-AzManagedServicesDefinition -Name 0c146106-c927-4098-a7ca-30bbcf44a502
+### Example 2: Get Azure Lighthouse registration definition by name with selected properties
+```powershell
+PS C:\>  Get-AzManagedServicesDefinition -Name xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx |Format-List -Property Id, Name, Type, ManagedByTenantId, Authorization, EligibleAuthorization
 
-Name                                 Id                                                                                                                                                   ProvisioningState
-----                                 --                                                                                                                                                   -----------------
-0c146106-c927-4098-a7ca-30bbcf44a502 /subscriptions/24ab6047-da91-48c0-66e5-20a8c6daefc8/providers/Microsoft.ManagedServices/registrationDefinitions/0c146106-c927-4098-a7ca-30bbcf44a502 Succeeded
-
-PS C:\>
-```
-
-Gets the registration definition by name at default scope.
-
-### Example 3
-```
-PS C:\> Get-AzManagedServicesDefinition -Scope /subscriptions/24ab6047-da91-48c0-66e5-20a8c6daefc8
-
-Name                                 Id                                                                                                                                                   ProvisioningState
-----                                 --                                                                                                                                                   -----------------
-0c146106-c927-4098-a7ca-30bbcf44a502 /subscriptions/24ab6047-da91-48c0-66e5-20a8c6daefc8/providers/Microsoft.ManagedServices/registrationDefinitions/0c146106-c927-4098-a7ca-30bbcf44a502 Succeeded
-
-PS C:\>
+Id                    : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.ManagedServices/registrationDefinitions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Name                  : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Type                  : Microsoft.ManagedServices/registrationDefinitions
+ManagedByTenantId     : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Authorization         : {Test user}
+EligibleAuthorization : {Test user}
 ```
 
-Gets all registration definitions at the given scope.
+Gets Azure Lighthouse registration definition by name with selected properties.
+
+### Example 3: List all Azure Lighthouse registration definitions by scope
+```powershell
+PS C:\> Get-AzManagedServicesDefinition -Scope /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | Format-List -Property Id, Name, Type, ManagedByTenantId, Authorization, EligibleAuthorization
+
+Id                    : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.ManagedServices/registrationDefinitions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Name                  : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Type                  : Microsoft.ManagedServices/registrationDefinitions
+ManagedByTenantId     : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Authorization         : {Test user}
+EligibleAuthorization : {Test user}
+
+Id                    : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.ManagedServices/registrationDefinitions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Name                  : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Type                  : Microsoft.ManagedServices/registrationDefinitions
+ManagedByTenantId     : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Authorization         : {}
+EligibleAuthorization :
+```
+
+Lists all Azure Lighthouse registration definitions by given subscription scope.
 
 ## PARAMETERS
 
@@ -76,9 +89,9 @@ Gets all registration definitions at the given scope.
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -87,15 +100,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models.IManagedServicesIdentity
+Parameter Sets: GetViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -Name
-The unique name of the Registration Definition.
+The GUID of the registration definition.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByName
-Aliases:
+Parameter Sets: Get
+Aliases: RegistrationDefinitionId
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -103,16 +132,16 @@ Accept wildcard characters: False
 ```
 
 ### -Scope
-The scope where the registration definition created.
+The scope of the resource.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Get, List
 Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: "subscriptions/" + (Get-AzContext).Subscription.Id
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -122,10 +151,27 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
+### Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models.IManagedServicesIdentity
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models.PSRegistrationDefinition
+### Microsoft.Azure.PowerShell.Cmdlets.ManagedServices.Models.Api20200201Preview.IRegistrationDefinition
+
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT <IManagedServicesIdentity>: Identity Parameter
+  - `[Id <String>]`: Resource identity path
+  - `[MarketplaceIdentifier <String>]`: The Azure Marketplace identifier. Expected formats: {publisher}.{product[-preview]}.{planName}.{version} or {publisher}.{product[-preview]}.{planName} or {publisher}.{product[-preview]} or {publisher}).
+  - `[RegistrationAssignmentId <String>]`: The GUID of the registration assignment.
+  - `[RegistrationDefinitionId <String>]`: The GUID of the registration definition.
+  - `[Scope <String>]`: The scope of the resource.
+
 ## RELATED LINKS
+

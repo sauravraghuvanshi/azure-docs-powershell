@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.DataProtection
 online version: https://docs.microsoft.com/powershell/module/az.dataprotection/get-azdataprotectionbackuppolicy
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataProtection/help/Get-AzDataProtectionBackupPolicy.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataProtection/help/Get-AzDataProtectionBackupPolicy.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataProtection/help/Get-AzDataProtectionBackupPolicy.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataProtection/help/Get-AzDataProtectionBackupPolicy.md
 ---
 
 # Get-AzDataProtectionBackupPolicy
@@ -162,7 +162,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20210201Preview.IBaseBackupPolicyResource
+### Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20210701.IBaseBackupPolicyResource
 
 ## NOTES
 
@@ -174,7 +174,6 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDataProtectionIdentity>: Identity Parameter
-  - `[BackupInstance <String>]`: 
   - `[BackupInstanceName <String>]`: The name of the backup instance
   - `[BackupPolicyName <String>]`: 
   - `[Id <String>]`: Resource identity path
@@ -182,7 +181,9 @@ INPUTOBJECT <IDataProtectionIdentity>: Identity Parameter
   - `[Location <String>]`: The location in which uniqueness will be verified.
   - `[OperationId <String>]`: 
   - `[RecoveryPointId <String>]`: 
+  - `[RequestName <String>]`: 
   - `[ResourceGroupName <String>]`: The name of the resource group where the backup vault is present.
+  - `[ResourceGuardsName <String>]`: The name of ResourceGuard
   - `[SubscriptionId <String>]`: The subscription Id.
   - `[VaultName <String>]`: The name of the backup vault.
 

@@ -4,8 +4,8 @@ Module Guid: 97d87543-8eef-4574-a70d-7317ec4abe54
 Download Help Link: https://docs.microsoft.com/powershell/module/az.resourcemover
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ResourceMover/help/Az.ResourceMover.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ResourceMover/help/Az.ResourceMover.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ResourceMover/help/Az.ResourceMover.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ResourceMover/help/Az.ResourceMover.md
 ---
 
 # Az.ResourceMover Module

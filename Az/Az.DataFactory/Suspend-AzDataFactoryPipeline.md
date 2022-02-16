@@ -4,8 +4,8 @@ Module Name: Az.DataFactory
 ms.assetid: 1FF0B0F9-4B2C-46BC-8BED-12BE865E4480
 online version: https://docs.microsoft.com/powershell/module/az.datafactory/suspend-azdatafactorypipeline
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Suspend-AzDataFactoryPipeline.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Suspend-AzDataFactoryPipeline.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Suspend-AzDataFactoryPipeline.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Suspend-AzDataFactoryPipeline.md
 ---
 
 # Suspend-AzDataFactoryPipeline

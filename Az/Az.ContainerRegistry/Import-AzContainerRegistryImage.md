@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.ContainerRegistry.dll-Hel
 Module Name: Az.ContainerRegistry
 online version: https://docs.microsoft.com/powershell/module/az.containerregistry/import-azcontainerregistryimage
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ContainerRegistry/ContainerRegistry/help/Import-AzContainerRegistryImage.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ContainerRegistry/ContainerRegistry/help/Import-AzContainerRegistryImage.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ContainerRegistry/ContainerRegistry/help/Import-AzContainerRegistryImage.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ContainerRegistry/ContainerRegistry/help/Import-AzContainerRegistryImage.md
 ---
 
 # Import-AzContainerRegistryImage

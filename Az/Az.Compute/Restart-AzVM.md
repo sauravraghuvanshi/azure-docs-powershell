@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: EF155949-5766-4BC4-9C8A-2B97E8EA032D
 online version: https://docs.microsoft.com/powershell/module/az.compute/restart-azvm
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Restart-AzVM.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Restart-AzVM.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Restart-AzVM.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Restart-AzVM.md
 ---
 
 # Restart-AzVM

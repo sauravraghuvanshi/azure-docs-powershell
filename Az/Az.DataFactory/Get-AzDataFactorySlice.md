@@ -4,8 +4,8 @@ Module Name: Az.DataFactory
 ms.assetid: C102232A-C9C8-4CEE-8535-7C7A70057B06
 online version: https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactoryslice
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactorySlice.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactorySlice.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Get-AzDataFactorySlice.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Get-AzDataFactorySlice.md
 ---
 
 # Get-AzDataFactorySlice

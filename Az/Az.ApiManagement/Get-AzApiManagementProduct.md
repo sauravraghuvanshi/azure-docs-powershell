@@ -4,8 +4,8 @@ Module Name: Az.ApiManagement
 ms.assetid: B64E9C13-97A6-4E8B-92DB-EFAF8A48C5B8
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/get-azapimanagementproduct
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementProduct.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementProduct.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Get-AzApiManagementProduct.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Get-AzApiManagementProduct.md
 ---
 
 # Get-AzApiManagementProduct
@@ -45,17 +45,17 @@ The **Get-AzApiManagementProduct** cmdlet gets a list or a particular product.
 ## EXAMPLES
 
 ### Example 1: Get all products
-```
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Get-AzApiManagementProduct -Context $apimContext
+```powershell
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Get-AzApiManagementProduct -Context $apimContext
 ```
 
 This command get all API Management products.
 
 ### Example 2: Get a product by ID
-```
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Get-AzApiManagementProduct -Context $apimContext -ProductId "0123456789"
+```powershell
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Get-AzApiManagementProduct -Context $apimContext -ProductId "0123456789"
 ```
 
 This command get an API Management product by ID.

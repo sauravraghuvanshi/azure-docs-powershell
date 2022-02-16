@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Accounts.dll-Help.xml
 Module Name: Az.Accounts
 online version: https://docs.microsoft.com/powershell/module/az.accounts/resolve-azerror
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Resolve-AzError.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Resolve-AzError.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Resolve-AzError.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Accounts/Accounts/help/Resolve-AzError.md
 ---
 
 # Resolve-AzError
@@ -33,9 +33,11 @@ that caused the error.
 ## EXAMPLES
 
 ### Example 1: Resolve the Last Error
+```powershell
+Resolve-AzError -Last
 ```
-PS C:\> Resolve-AzError -Last
 
+```Output
    HistoryId: 3
 
 
@@ -59,10 +61,11 @@ HistoryId      : 3
 Get details of the last error.
 
 ### Example 2: Resolve all Errors in the Session
+```powershell
+Resolve-AzError
 ```
-PS C:\> Resolve-AzError
 
-
+```Output
    HistoryId: 8
 
 
@@ -127,10 +130,11 @@ HistoryId      : 5
 Get details of all errors that have occurred in the current session.
 
 ### Example 3: Resolve a Specific Error
+```powershell
+Resolve-AzError $Error[0]
 ```
-PS C:\> Resolve-AzError $Error[0]
 
-
+```Output
    HistoryId: 8
 
 

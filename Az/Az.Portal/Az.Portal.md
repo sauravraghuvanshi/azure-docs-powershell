@@ -4,8 +4,8 @@ Module Guid: abd8c13e-6209-4e5a-a276-61e7a80845f9
 Download Help Link: https://docs.microsoft.com/powershell/module/az.portal
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Portal/help/Az.Portal.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Portal/help/Az.Portal.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Portal/help/Az.Portal.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Portal/help/Az.Portal.md
 ---
 
 # Az.Portal Module

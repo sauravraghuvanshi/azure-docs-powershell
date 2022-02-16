@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: CFE184E2-6DEF-4E92-A9C3-E82F29BB4FB8
 online version: https://docs.microsoft.com/powershell/module/az.network/get-azexpressroutecircuitstat
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitStat.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitStat.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzExpressRouteCircuitStat.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzExpressRouteCircuitStat.md
 ---
 
 # Get-AzExpressRouteCircuitStat

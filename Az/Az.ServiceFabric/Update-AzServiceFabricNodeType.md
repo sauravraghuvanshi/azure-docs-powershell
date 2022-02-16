@@ -3,9 +3,10 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceFabric.dll-Help.xm
 Module Name: Az.ServiceFabric
 online version: https://docs.microsoft.com/powershell/module/az.servicefabric/update-azservicefabricnodetype
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Update-AzServiceFabricNodeType.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Update-AzServiceFabricNodeType.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ServiceFabric/ServiceFabric/help/Update-AzServiceFabricNodeType.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ServiceFabric/ServiceFabric/help/Update-AzServiceFabricNodeType.md
 ---
+
 # Update-AzServiceFabricNodeType
 
 ## SYNOPSIS
@@ -14,9 +15,8 @@ Update a node type within the cluster.
 ## SYNTAX
 
 ```
-Update-AzServiceFabricNodeType [-ResourceGroupName] <String> [-Name] <String> -NodeType <String>
- [-IsPrimaryNodeType <Bool>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Update-AzServiceFabricNodeType [-ResourceGroupName] <String> [-Name] <String> [-IsPrimaryNodeType <Boolean>]
+ -NodeType <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -53,7 +53,7 @@ Accept wildcard characters: False
 Define whether the node type is a primary node type. Primary node type may have seed nodes and system services.
 
 ```yaml
-Type: System.Nullable<System.Boolean>
+Type: System.Nullable`1[System.Boolean]
 Parameter Sets: (All)
 Aliases:
 

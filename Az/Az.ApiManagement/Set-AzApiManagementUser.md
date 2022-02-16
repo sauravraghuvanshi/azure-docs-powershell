@@ -4,8 +4,8 @@ Module Name: Az.ApiManagement
 ms.assetid: 562DE7FA-F2A7-49E9-9273-3C4E2BF8D4B5
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/set-azapimanagementuser
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Set-AzApiManagementUser.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Set-AzApiManagementUser.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Set-AzApiManagementUser.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Set-AzApiManagementUser.md
 ---
 
 # Set-AzApiManagementUser
@@ -29,9 +29,9 @@ The **Set-AzApiManagementUser** cmdlet sets user details.
 
 ### Example 1: Change a user's password, email address and state
 ```powershell
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>$securePassword = ConvertTo-SecureString "qwerty" -AsPlainText -Force
-PS C:\>Set-AzApiManagementUser -Context $apimContext -UserId "0123456789" -Email "patti.fuller@contoso.com" -Password $securePassword -State "Blocked"
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+$securePassword = ConvertTo-SecureString "qwerty" -AsPlainText -Force
+Set-AzApiManagementUser -Context $apimContext -UserId "0123456789" -Email "patti.fuller@contoso.com" -Password $securePassword -State "Blocked"
 ```
 
 This command sets a new user password and email address and blocks the user.

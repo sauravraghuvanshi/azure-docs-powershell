@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: D79AEF8C-F0DC-40F8-9EEE-A2BB6AE5C4BF
 online version: https://docs.microsoft.com/powershell/module/az.batch/remove-azbatchtask
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Remove-AzBatchTask.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Remove-AzBatchTask.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Remove-AzBatchTask.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Remove-AzBatchTask.md
 ---
 
 # Remove-AzBatchTask
@@ -34,8 +34,8 @@ This cmdlet prompts you for confirmation, unless you specify the *Force* paramet
 ## EXAMPLES
 
 ### Example 1: Delete a Batch task by ID
-```
-PS C:\>Remove-AzBatchTask -JobId "Job-000001" -Id "Task23" -BatchContext $Context
+```powershell
+Remove-AzBatchTask -JobId "Job-000001" -Id "Task23" -BatchContext $Context
 ```
 
 This command deletes a task that has the ID Task23 under the job that has the ID Job-000001.
@@ -43,8 +43,8 @@ The command prompts you for confirmation.
 Use the **Get-AzBatchAccountKey** cmdlet to assign a context to the $Context variable.
 
 ### Example 2: Delete a Batch task by using the pipeline without confirmation
-```
-PS C:\>Get-AzBatchTask -JobId "Job-000001" -Id "Task26" -BatchContext $Context | Remove-AzBatchTask -Force -BatchContext $Context
+```powershell
+Get-AzBatchTask -JobId "Job-000001" -Id "Task26" -BatchContext $Context | Remove-AzBatchTask -Force -BatchContext $Context
 ```
 
 This command gets the Batch task that has the ID Task26 in the job that has the ID Job-000001 by using the **Get-AzBatchTask** cmdlet.

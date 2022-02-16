@@ -4,8 +4,8 @@ Module Name: Az.Websites
 ms.assetid: D70A61D8-0C9A-4BDB-A546-37C32D25797C
 online version: https://docs.microsoft.com/powershell/module/az.websites/start-azwebapp
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Start-AzWebApp.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Start-AzWebApp.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Start-AzWebApp.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Start-AzWebApp.md
 ---
 
 # Start-AzWebApp

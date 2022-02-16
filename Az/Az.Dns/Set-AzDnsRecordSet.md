@@ -4,8 +4,8 @@ Module Name: Az.Dns
 ms.assetid: 99E6C4DD-11AF-4DC0-848B-39811240BE06
 online version: https://docs.microsoft.com/powershell/module/az.dns/set-azdnsrecordset
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Dns/Dns/help/Set-AzDnsRecordSet.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Dns/Dns/help/Set-AzDnsRecordSet.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Dns/Dns/help/Set-AzDnsRecordSet.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Dns/Dns/help/Set-AzDnsRecordSet.md
 ---
 
 # Set-AzDnsRecordSet

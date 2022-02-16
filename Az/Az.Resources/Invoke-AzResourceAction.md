@@ -4,8 +4,8 @@ Module Name: Az.Resources
 ms.assetid: 427F7300-0FEB-4F28-9C1D-27592AEBF6A0
 online version: https://docs.microsoft.com/powershell/module/az.resources/invoke-azresourceaction
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Invoke-AzResourceAction.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Invoke-AzResourceAction.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Invoke-AzResourceAction.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Invoke-AzResourceAction.md
 ---
 
 # Invoke-AzResourceAction

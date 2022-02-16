@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.HanaOnAzure
 online version: https://docs.microsoft.com/powershell/module/az.hanaonazure/new-azsapmonitorproviderinstance
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HanaOnAzure/help/New-AzSapMonitorProviderInstance.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HanaOnAzure/help/New-AzSapMonitorProviderInstance.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HanaOnAzure/help/New-AzSapMonitorProviderInstance.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HanaOnAzure/help/New-AzSapMonitorProviderInstance.md
 ---
 
 # New-AzSapMonitorProviderInstance

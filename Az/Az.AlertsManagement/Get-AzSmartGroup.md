@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.AlertsManagement.dll-Help
 Module Name: Az.AlertsManagement
 online version: https://docs.microsoft.com/powershell/module/az.alertsmanagement/get-azsmartgroup
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AlertsManagement/AlertsManagement/help/Get-AzSmartGroup.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AlertsManagement/AlertsManagement/help/Get-AzSmartGroup.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AlertsManagement/AlertsManagement/help/Get-AzSmartGroup.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AlertsManagement/AlertsManagement/help/Get-AzSmartGroup.md
 ---
 
 # Get-AzSmartGroup
@@ -32,14 +32,14 @@ Get-AzSmartGroup -SmartGroupId <String> [-DefaultProfile <IAzureContextContainer
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzSmartGroup -TimeRange "1h"
+Get-AzSmartGroup -TimeRange "1h"
 ```
 
 List all smart groups formed in last 1 hour. Use Format-List to get the complete details of each smart group in list.
 
 ### Example 2
 ```powershell
-PS C:\> Get-AzSmartGroup -SmartGroupId "afbf1b3a-0a6c-4f19-9c9b-644ccd7b1529" | Format-List
+Get-AzSmartGroup -SmartGroupId "afbf1b3a-0a6c-4f19-9c9b-644ccd7b1529" | Format-List
 ```
 
 Get Smart Group details by Id (GUID) or Resource Id (Complete ARM Id)

@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: CBFFBF1B-1AF0-4D2F-9315-C3790A4E9346
 online version: https://docs.microsoft.com/powershell/module/az.compute/set-azvmbackupextension
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMBackupExtension.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMBackupExtension.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVMBackupExtension.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVMBackupExtension.md
 ---
 
 # Set-AzVMBackupExtension

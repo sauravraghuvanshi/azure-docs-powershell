@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: 84CF049A-D293-4FEB-8608-179146EADE41
 online version: https://docs.microsoft.com/powershell/module/az.sql/resume-azsqldatabase
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Resume-AzSqlDatabase.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Resume-AzSqlDatabase.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Resume-AzSqlDatabase.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Resume-AzSqlDatabase.md
 ---
 
 # Resume-AzSqlDatabase

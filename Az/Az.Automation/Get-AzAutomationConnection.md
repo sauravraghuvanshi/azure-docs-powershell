@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: D12007E8-8693-45B9-8919-CF8A4BA63AAA
 online version: https://docs.microsoft.com/powershell/module/az.automation/get-azautomationconnection
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Get-AzAutomationConnection.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Get-AzAutomationConnection.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Get-AzAutomationConnection.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Get-AzAutomationConnection.md
 ---
 
 # Get-AzAutomationConnection

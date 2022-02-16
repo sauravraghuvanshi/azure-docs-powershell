@@ -4,8 +4,8 @@ Module Guid: be2ca175-bfb9-4601-b01c-4de13eb2105c
 Download Help Link: https://docs.microsoft.com/powershell/module/az.devtestlabs
 Help Version: 4.0.4.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DevTestLabs/DevTestLabs/help/Az.DevTestLabs.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DevTestLabs/DevTestLabs/help/Az.DevTestLabs.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DevTestLabs/DevTestLabs/help/Az.DevTestLabs.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DevTestLabs/DevTestLabs/help/Az.DevTestLabs.md
 ---
 
 # Az.DevTestLabs Module

@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: C48E204D-D7EC-4EFD-ADC5-C6F593313B9B
 online version: https://docs.microsoft.com/powershell/module/az.network/remove-azvirtualnetwork
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzVirtualNetwork.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzVirtualNetwork.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzVirtualNetwork.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzVirtualNetwork.md
 ---
 
 # Remove-AzVirtualNetwork

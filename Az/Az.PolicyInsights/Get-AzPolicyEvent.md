@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.PolicyInsights.dll-Help.x
 Module Name: Az.PolicyInsights
 online version: https://docs.microsoft.com/powershell/module/az.policyinsights/get-azpolicyevent
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/PolicyInsights/PolicyInsights/help/Get-AzPolicyEvent.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/PolicyInsights/PolicyInsights/help/Get-AzPolicyEvent.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/PolicyInsights/PolicyInsights/help/Get-AzPolicyEvent.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/PolicyInsights/PolicyInsights/help/Get-AzPolicyEvent.md
 ---
 
 # Get-AzPolicyEvent

@@ -4,8 +4,8 @@ Module Name: Az.NotificationHubs
 ms.assetid: 8EDDA991-55B6-4151-8619-E13E14599ECD
 online version: https://docs.microsoft.com/powershell/module/az.notificationhubs/new-aznotificationhub
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/New-AzNotificationHub.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/New-AzNotificationHub.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/NotificationHubs/NotificationHubs/help/New-AzNotificationHub.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/NotificationHubs/NotificationHubs/help/New-AzNotificationHub.md
 ---
 
 # New-AzNotificationHub

@@ -4,8 +4,8 @@ Module Guid: b3ca459c-feb9-41cc-a954-46222505acb3
 Download Help Link: https://docs.microsoft.com/powershell/module/az.containerregistry
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ContainerRegistry/ContainerRegistry/help/Az.ContainerRegistry.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ContainerRegistry/ContainerRegistry/help/Az.ContainerRegistry.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ContainerRegistry/ContainerRegistry/help/Az.ContainerRegistry.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ContainerRegistry/ContainerRegistry/help/Az.ContainerRegistry.md
 ---
 
 # Az.ContainerRegistry Module

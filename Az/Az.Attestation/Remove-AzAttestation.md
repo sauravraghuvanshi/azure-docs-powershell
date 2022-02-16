@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Attestation.dll-Help.xml
 Module Name: Az.Attestation
 online version: https://docs.microsoft.com/powershell/module/az.attestation/remove-azattestation
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Attestation/Attestation/help/Remove-AzAttestation.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Attestation/Attestation/help/Remove-AzAttestation.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Attestation/Attestation/help/Remove-AzAttestation.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Attestation/Attestation/help/Remove-AzAttestation.md
 ---
 
 # Remove-AzAttestation
@@ -39,7 +39,7 @@ The Remove-AzAttestation cmdlet deletes the specified attestation.
 
 ### Example 1
 ```powershell
-PS C:\> Remove-AzAttestation -Name pshtest3 -ResourceGroupName psh-test-rg
+Remove-AzAttestation -Name pshtest3 -ResourceGroupName psh-test-rg
 ```
 
 Delete the Attestation Provider named *pshtest3* in the resource group named *psh-test-rg* from the current subscription.

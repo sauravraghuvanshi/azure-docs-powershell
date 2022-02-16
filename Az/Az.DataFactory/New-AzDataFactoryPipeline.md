@@ -4,8 +4,8 @@ Module Name: Az.DataFactory
 ms.assetid: 30C1AF6C-A8DC-4CA0-9E5F-10641A29D0E8
 online version: https://docs.microsoft.com/powershell/module/az.datafactory/new-azdatafactorypipeline
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/New-AzDataFactoryPipeline.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/New-AzDataFactoryPipeline.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/New-AzDataFactoryPipeline.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/New-AzDataFactoryPipeline.md
 ---
 
 # New-AzDataFactoryPipeline

@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: 44F8EFF4-8E3D-4657-9D17-2A3F49CEA515
 online version: https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserverdisasterrecoveryconfiguration
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Set-AzSqlServerDisasterRecoveryConfiguration.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Set-AzSqlServerDisasterRecoveryConfiguration.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Set-AzSqlServerDisasterRecoveryConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Set-AzSqlServerDisasterRecoveryConfiguration.md
 ---
 
 # Set-AzSqlServerDisasterRecoveryConfiguration

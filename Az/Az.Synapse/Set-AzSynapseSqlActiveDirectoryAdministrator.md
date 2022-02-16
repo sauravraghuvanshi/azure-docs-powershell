@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Synapse.dll-Help.xml
 Module Name: Az.Synapse
 online version: https://docs.microsoft.com/powershell/module/az.synapse/set-azsynapsesqlactivedirectoryadministrator
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Synapse/Synapse/help/Set-AzSynapseSqlActiveDirectoryAdministrator.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Synapse/Synapse/help/Set-AzSynapseSqlActiveDirectoryAdministrator.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Synapse/Synapse/help/Set-AzSynapseSqlActiveDirectoryAdministrator.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Synapse/Synapse/help/Set-AzSynapseSqlActiveDirectoryAdministrator.md
 ---
 
 # Set-AzSynapseSqlActiveDirectoryAdministrator
@@ -14,24 +14,41 @@ Provisions an Azure AD administrator for Synapse Analytics SQL pool.
 
 ## SYNTAX
 
-### SetByNameParameterSet (Default)
+### SetByNameAndDisplayNameParameterSet (Default)
 ```
 Set-AzSynapseSqlActiveDirectoryAdministrator [-ResourceGroupName <String>] -WorkspaceName <String>
- -DisplayName <String> [-ObjectId <Guid>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
-```
-
-### SetByInputObjectParameterSet
-```
-Set-AzSynapseSqlActiveDirectoryAdministrator -InputObject <PSSynapseWorkspace> -DisplayName <String>
- [-ObjectId <Guid>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ -DisplayName <String> [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### SetByResourceIdParameterSet
+### SetByNameAndObjectIdParameterSet
 ```
-Set-AzSynapseSqlActiveDirectoryAdministrator -ResourceId <String> -DisplayName <String> [-ObjectId <Guid>]
- [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-AzSynapseSqlActiveDirectoryAdministrator [-ResourceGroupName <String>] -WorkspaceName <String>
+ -ObjectId <Guid> [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetByInputObjectAndDisplayNameParameterSet
+```
+Set-AzSynapseSqlActiveDirectoryAdministrator -InputObject <PSSynapseWorkspace> -DisplayName <String> [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetByInputObjectAndObjectIdParameterSet
+```
+Set-AzSynapseSqlActiveDirectoryAdministrator -InputObject <PSSynapseWorkspace> -ObjectId <Guid> [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetByResourceIdAndDisplayNameParameterSet
+```
+Set-AzSynapseSqlActiveDirectoryAdministrator -ResourceId <String> -DisplayName <String> [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetByResourceIdAndObjectIdParameterSet
+```
+Set-AzSynapseSqlActiveDirectoryAdministrator -ResourceId <String> -ObjectId <Guid> [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,6 +63,12 @@ Microsoft accounts, such as those in the Outlook.com, Hotmail.com, or Live.com d
 Other guest accounts, such as those in the Gmail.com or Yahoo.com domains, are not supported as administrators.
 We recommend that you provision a dedicated Azure AD group as an administrator.
 
+The cmdlet may call below Microsoft Graph API according to input parameters:
+
+* GET /users/{id}
+* GET /servicePrincipals/{id}
+* GET /groups/{id}
+
 ## EXAMPLES
 
 ### Example 1
@@ -57,11 +80,10 @@ This command provisions an Azure AD administrator group named DBAs for the works
 
 ### Example 2
 ```powershell
-PS C:\> Set-AzSynapseSqlActiveDirectoryAdministrator -WorkspaceName ContosoWorkspace -DisplayName "DBAs" -ObjectId "40b79501-b343-44ed-9ce7-da4c8cc7353b"
+PS C:\> Set-AzSynapseSqlActiveDirectoryAdministrator -WorkspaceName ContosoWorkspace -ObjectId "40b79501-b343-44ed-9ce7-da4c8cc7353b"
 ```
 
-This command provisions an Azure AD administrator group named DBAs for the workspace named ContosoWorkspace.
-This makes sure that the command succeeds even if the display name of the group is not unique.
+This command provisions an Azure AD administrator by objectId for the workspace named ContosoWorkspace.
 
 ## PARAMETERS
 
@@ -101,7 +123,7 @@ This display name must exist in the active directory associated with the current
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: SetByNameAndDisplayNameParameterSet, SetByInputObjectAndDisplayNameParameterSet, SetByResourceIdAndDisplayNameParameterSet
 Aliases:
 
 Required: True
@@ -116,7 +138,7 @@ workspace input object, usually passed through the pipeline.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Synapse.Models.PSSynapseWorkspace
-Parameter Sets: SetByInputObjectParameterSet
+Parameter Sets: SetByInputObjectAndDisplayNameParameterSet, SetByInputObjectAndObjectIdParameterSet
 Aliases:
 
 Required: True
@@ -131,10 +153,10 @@ Specifies the object ID of the user or group in Azure Active Directory for which
 
 ```yaml
 Type: System.Guid
-Parameter Sets: (All)
+Parameter Sets: SetByNameAndObjectIdParameterSet, SetByInputObjectAndObjectIdParameterSet, SetByResourceIdAndObjectIdParameterSet
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -146,7 +168,7 @@ Resource group name.
 
 ```yaml
 Type: System.String
-Parameter Sets: SetByNameParameterSet
+Parameter Sets: SetByNameAndDisplayNameParameterSet, SetByNameAndObjectIdParameterSet
 Aliases:
 
 Required: False
@@ -161,7 +183,7 @@ Resource identifier of Synapse workspace.
 
 ```yaml
 Type: System.String
-Parameter Sets: SetByResourceIdParameterSet
+Parameter Sets: SetByResourceIdAndDisplayNameParameterSet, SetByResourceIdAndObjectIdParameterSet
 Aliases:
 
 Required: True
@@ -176,7 +198,7 @@ Name of Synapse workspace.
 
 ```yaml
 Type: System.String
-Parameter Sets: SetByNameParameterSet
+Parameter Sets: SetByNameAndDisplayNameParameterSet, SetByNameAndObjectIdParameterSet
 Aliases:
 
 Required: True

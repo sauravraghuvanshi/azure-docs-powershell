@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.DataProtection
 online version: https://docs.microsoft.com/powershell/module/az.dataprotection/new-azdataprotectionbackupvaultstoragesettingobject
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataProtection/help/New-AzDataProtectionBackupVaultStorageSettingObject.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataProtection/help/New-AzDataProtectionBackupVaultStorageSettingObject.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataProtection/help/New-AzDataProtectionBackupVaultStorageSettingObject.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataProtection/help/New-AzDataProtectionBackupVaultStorageSettingObject.md
 ---
 
 # New-AzDataProtectionBackupVaultStorageSettingObject

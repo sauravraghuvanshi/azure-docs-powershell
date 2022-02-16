@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
 online version: https://docs.microsoft.com/powershell/module/az.network/remove-azapplicationgatewaytrustedclientcertificate
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayTrustedClientCertificate.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayTrustedClientCertificate.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzApplicationGatewayTrustedClientCertificate.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzApplicationGatewayTrustedClientCertificate.md
 ---
 
 # Remove-AzApplicationGatewayTrustedClientCertificate
@@ -28,9 +28,10 @@ The **Remove-AzApplicationGatewayTrustedClientCertificate** cmdlet removes the t
 ```powershell
 PS C:\> $gw = Get-AzApplicationGateway -Name $appgwName -ResourceGroupName $resgpName
 PS C:\> $gw = Remove-AzApplicationGatewayTrustedClientCertificate -ApplicationGateway $gw -Name "TrustedClientCertificate01"
+PS C:\> Set-AzApplicationGateway -ApplicationGateway $gw
 ```
 
-The first command gets an application gateway and stores it in the $gw variable. The second command removes the trusted client CA certificate chain named "TrustedClientCertificate01" from the application gateway stored in $gw.
+The first command gets an application gateway and stores it in the $gw variable. The second command removes the trusted client CA certificate chain named "TrustedClientCertificate01" from the application gateway stored in $gw. The last command updates the application gateway.
 
 ## PARAMETERS
 

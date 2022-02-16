@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: A1E19A66-CD70-467E-8C59-1F88453905A4
 online version: https://docs.microsoft.com/powershell/module/az.sql/get-azsqlelasticpoolrecommendation
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlElasticPoolRecommendation.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlElasticPoolRecommendation.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlElasticPoolRecommendation.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlElasticPoolRecommendation.md
 ---
 
 # Get-AzSqlElasticPoolRecommendation

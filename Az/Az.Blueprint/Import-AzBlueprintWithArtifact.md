@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Blueprint.dll-Help.xml
 Module Name: Az.Blueprint
 online version: https://docs.microsoft.com/powershell/module/az.blueprint/import-azblueprintwithartifact
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Blueprint/Blueprint/help/Import-AzBlueprintWithArtifact.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Blueprint/Blueprint/help/Import-AzBlueprintWithArtifact.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Blueprint/Blueprint/help/Import-AzBlueprintWithArtifact.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Blueprint/Blueprint/help/Import-AzBlueprintWithArtifact.md
 ---
 
 # Import-AzBlueprintWithArtifact
@@ -27,7 +27,7 @@ Import a blueprint definition with its artifacts.
 
 ### Example 1
 ```powershell
-PS C:\> Import-AzBlueprintWithArtifact -Name MySimpleBlueprint -SubscriptionId 00000000-1111-0000-1111-000000000000 -InputPath  C:\Blueprints\SimpleBlueprint
+Import-AzBlueprintWithArtifact -Name MySimpleBlueprint -SubscriptionId 00000000-1111-0000-1111-000000000000 -InputPath  C:\Blueprints\SimpleBlueprint
 ```
 
 Import a blueprint definition with its artifacts and save within a subscription.

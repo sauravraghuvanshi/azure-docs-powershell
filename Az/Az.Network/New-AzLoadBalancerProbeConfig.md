@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 2049CB74-E3CB-4294-B97C-B41E91209A1E
 online version: https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerprobeconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzLoadBalancerProbeConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzLoadBalancerProbeConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/New-AzLoadBalancerProbeConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/New-AzLoadBalancerProbeConfig.md
 ---
 
 # New-AzLoadBalancerProbeConfig

@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: D1C5B35C-5419-4739-9D57-6C4228E98DAC
 online version: https://docs.microsoft.com/powershell/module/az.batch/stop-azbatchjobschedule
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Stop-AzBatchJobSchedule.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Stop-AzBatchJobSchedule.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Stop-AzBatchJobSchedule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Stop-AzBatchJobSchedule.md
 ---
 
 # Stop-AzBatchJobSchedule
@@ -26,8 +26,8 @@ The **Stop-AzBatchJobSchedule** cmdlet stops an Azure Batch job schedule.
 ## EXAMPLES
 
 ### Example 1: Stop a job schedule
-```
-PS C:\>Stop-AzBatchJobSchedule -Id "JobSchedule17" -BatchContext $Context
+```powershell
+Stop-AzBatchJobSchedule -Id "JobSchedule17" -BatchContext $Context
 ```
 
 This command stops the job schedule that has the ID JobSchedule17.

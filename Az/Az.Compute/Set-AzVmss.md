@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: 6442E5BB-D59D-483B-8AC5-2586C6C1E925
 online version: https://docs.microsoft.com/powershell/module/az.compute/set-azvmss
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVmss.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVmss.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVmss.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Set-AzVmss.md
 ---
 
 # Set-AzVmss

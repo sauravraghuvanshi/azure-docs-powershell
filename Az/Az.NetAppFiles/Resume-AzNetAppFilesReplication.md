@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.NetAppFiles.dll-Help.xml
 Module Name: Az.NetAppFiles
 online version: https://docs.microsoft.com/powershell/module/az.netappfiles/resume-aznetappfilesreplication
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NetAppFiles/NetAppFiles/help/Resume-AzNetAppFilesReplication.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NetAppFiles/NetAppFiles/help/Resume-AzNetAppFilesReplication.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/NetAppFiles/NetAppFiles/help/Resume-AzNetAppFilesReplication.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/NetAppFiles/NetAppFiles/help/Resume-AzNetAppFilesReplication.md
 ---
 
 # Resume-AzNetAppFilesReplication
@@ -40,7 +40,7 @@ Resume/Resync the connection on the destination volume
 
 ### Example 1
 ```powershell
-PS C:\> Resume-AnfReplication -ResourceGroupName "MyRG" -AccountName "MyAnfAccount" -PoolName "MyAnfPool" -VolumeName "MyDestinationAnfVolume"
+PS C:\> Resume-AzNetAppReplication -ResourceGroupName "MyRG" -AccountName "MyAnfAccount" -PoolName "MyAnfPool" -Name "MyDestinationAnfVolume"
 ```
 
 This command resumes the ANF Replication connection on volume "MyDestinationAnfVolume".

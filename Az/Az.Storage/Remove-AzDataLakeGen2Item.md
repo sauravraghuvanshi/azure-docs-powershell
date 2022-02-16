@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Storage.dll-Help.xml
 Module Name: Az.Storage
 online version: https://docs.microsoft.com/powershell/module/az.storage/remove-azdatalakegen2item
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Remove-AzDataLakeGen2Item.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Remove-AzDataLakeGen2Item.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Remove-AzDataLakeGen2Item.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Remove-AzDataLakeGen2Item.md
 ---
 
 # Remove-AzDataLakeGen2Item
@@ -36,14 +36,14 @@ This cmdlet only works if Hierarchical Namespace is enabled for the Storage acco
 
 ### Example 1: Removes a directory
 ```
-PS C:\>Remove-AzDataLakeGen2tem -FileSystem "filesystem1" -Path "dir1/"
+PS C:\>Remove-AzDataLakeGen2Item -FileSystem "filesystem1" -Path "dir1/"
 ```
 
 This command removes a directory from a Filesystem.
 
 ### Example 2: Removes a file without prompt
 ```
-PS C:\>Remove-AzDataLakeGen2tem -FileSystem "filesystem1" -Path "dir1/file1" -Force
+PS C:\>Remove-AzDataLakeGen2Item -FileSystem "filesystem1" -Path "dir1/file1" -Force
 ```
 
 This command removes a directory from a Filesystem, without prompt.

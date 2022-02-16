@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.ContainerRegistry.dll-Hel
 Module Name: Az.ContainerRegistry
 online version: https://docs.microsoft.com/powershell/module/az.containerregistry/new-azcontainerregistry
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ContainerRegistry/ContainerRegistry/help/New-AzContainerRegistry.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ContainerRegistry/ContainerRegistry/help/New-AzContainerRegistry.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ContainerRegistry/ContainerRegistry/help/New-AzContainerRegistry.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ContainerRegistry/ContainerRegistry/help/New-AzContainerRegistry.md
 ---
 
 # New-AzContainerRegistry
@@ -133,13 +133,12 @@ Accept wildcard characters: False
 
 ### -Sku
 Container Registry SKU.
-Allowed values: Basic.
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
 Aliases: ContainerRegistrySku, RegistrySku
-Accepted values: Basic, Premium, Standard
+Accepted values: Basic, Classic, Premium, Standard
 
 Required: True
 Position: 2

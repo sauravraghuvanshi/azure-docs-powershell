@@ -4,8 +4,8 @@ Module Name: Az.RecoveryServices
 ms.assetid: A8FDC5A3-F309-49B3-B417-8E0A1535BAF4
 online version: https://docs.microsoft.com/powershell/module/az.recoveryservices/stop-azrecoveryservicesbackupjob
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Stop-AzRecoveryServicesBackupJob.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Stop-AzRecoveryServicesBackupJob.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RecoveryServices/RecoveryServices/help/Stop-AzRecoveryServicesBackupJob.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/RecoveryServices/RecoveryServices/help/Stop-AzRecoveryServicesBackupJob.md
 ---
 
 # Stop-AzRecoveryServicesBackupJob

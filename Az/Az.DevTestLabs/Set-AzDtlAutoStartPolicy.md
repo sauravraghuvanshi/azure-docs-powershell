@@ -4,8 +4,8 @@ Module Name: Az.DevTestLabs
 ms.assetid: 3FADEC2E-4A2B-46EB-8A94-CF48D717C7FC
 online version: https://docs.microsoft.com/powershell/module/az.devtestlabs/set-azdtlautostartpolicy
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DevTestLabs/DevTestLabs/help/Set-AzDtlAutoStartPolicy.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DevTestLabs/DevTestLabs/help/Set-AzDtlAutoStartPolicy.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DevTestLabs/DevTestLabs/help/Set-AzDtlAutoStartPolicy.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DevTestLabs/DevTestLabs/help/Set-AzDtlAutoStartPolicy.md
 ---
 
 # Set-AzDtlAutoStartPolicy

@@ -4,8 +4,8 @@ Module Guid: 868389ce-dd36-4f57-a674-0970db085d9a
 Download Help Link: https://docs.microsoft.com/powershell/module/az.powerbiembedded
 Help Version: 4.1.4.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/PowerBIEmbedded/PowerBIEmbedded/help/Az.PowerBIEmbedded.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/PowerBIEmbedded/PowerBIEmbedded/help/Az.PowerBIEmbedded.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/PowerBIEmbedded/PowerBIEmbedded/help/Az.PowerBIEmbedded.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/PowerBIEmbedded/PowerBIEmbedded/help/Az.PowerBIEmbedded.md
 ---
 
 # Az.PowerBIEmbedded Module

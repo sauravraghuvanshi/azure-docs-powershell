@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: 4D2E0956-FBFA-43CC-ABE3-A6CBB9409263
 online version: https://docs.microsoft.com/powershell/module/az.sql/stop-azsqldatabaseexecuteindexrecommendation
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Stop-AzSqlDatabaseExecuteIndexRecommendation.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Stop-AzSqlDatabaseExecuteIndexRecommendation.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Stop-AzSqlDatabaseExecuteIndexRecommendation.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Stop-AzSqlDatabaseExecuteIndexRecommendation.md
 ---
 
 # Stop-AzSqlDatabaseExecuteIndexRecommendation

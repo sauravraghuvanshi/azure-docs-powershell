@@ -4,8 +4,8 @@ Module Name: Az.DataFactory
 ms.assetid: 4DCF54BA-CFFA-4555-8CA3-66B98F704EFB
 online version: https://docs.microsoft.com/powershell/module/az.datafactory/new-azdatafactorygateway
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/New-AzDataFactoryGateway.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/New-AzDataFactoryGateway.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/New-AzDataFactoryGateway.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/New-AzDataFactoryGateway.md
 ---
 
 # New-AzDataFactoryGateway

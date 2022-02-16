@@ -4,8 +4,8 @@ Module Guid: da67eaa7-4cb1-4bfa-a194-8bf3faae8ac6
 Download Help Link: https://docs.microsoft.com/powershell/module/az.applicationinsights
 Help Version: 0.1.2.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApplicationInsights/ApplicationInsights/help/Az.ApplicationInsights.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApplicationInsights/ApplicationInsights/help/Az.ApplicationInsights.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/ApplicationInsights/help/Az.ApplicationInsights.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/ApplicationInsights/help/Az.ApplicationInsights.md
 ---
 
 # Az.ApplicationInsights Module
@@ -63,4 +63,22 @@ update an existing application insights resource
 
 ### [Update-AzApplicationInsightsLinkedStorageAccount](Update-AzApplicationInsightsLinkedStorageAccount.md)
 Update application insights linked storage account
+
+### [Get-AzApplicationInsightsWebTest](Get-AzApplicationInsightsWebTest.md)
+Get a specific Application Insights web test definition.
+
+### [New-AzApplicationInsightsWebTest](New-AzApplicationInsightsWebTest.md)
+Creates or updates an Application Insights web test definition.
+
+### [New-AzApplicationInsightsWebTestGeolocationObject](New-AzApplicationInsightsWebTestGeolocationObject.md)
+Create an in-memory object for WebTestGeolocation.
+
+### [New-AzApplicationInsightsWebTestHeaderFieldObject](New-AzApplicationInsightsWebTestHeaderFieldObject.md)
+Create a in-memory object for HeaderField
+
+### [Remove-AzApplicationInsightsWebTest](Remove-AzApplicationInsightsWebTest.md)
+Deletes an Application Insights web test.
+
+### [Update-AzApplicationInsightsWebTestTag](Update-AzApplicationInsightsWebTestTag.md)
+Creates or updates an Application Insights web test definition.
 

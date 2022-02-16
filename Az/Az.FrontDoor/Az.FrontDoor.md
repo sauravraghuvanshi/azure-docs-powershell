@@ -4,8 +4,8 @@ Module Guid: 91832aaa-dc11-4583-8239-adb7df531604
 Download Help Link: https://docs.microsoft.com/powershell/module/az.frontdoor
 Help Version: 0.1.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Az.FrontDoor.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Az.FrontDoor.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/FrontDoor/FrontDoor/help/Az.FrontDoor.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/FrontDoor/FrontDoor/help/Az.FrontDoor.md
 ---
 
 # Az.FrontDoor Module

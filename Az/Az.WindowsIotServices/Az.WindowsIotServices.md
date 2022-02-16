@@ -4,8 +4,8 @@ Module Guid: d5c7f2ce-fe23-49d5-a869-fb780e78a663
 Download Help Link: https://docs.microsoft.com/powershell/module/az.windowsiotservices
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/WindowsIotServices/help/Az.WindowsIotServices.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/WindowsIotServices/help/Az.WindowsIotServices.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/WindowsIotServices/help/Az.WindowsIotServices.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/WindowsIotServices/help/Az.WindowsIotServices.md
 ---
 
 # Az.WindowsIotServices Module

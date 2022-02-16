@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 93D8A341-540A-43F1-8C62-28323EAA58E0
 online version: https://docs.microsoft.com/powershell/module/az.network/set-azvirtualnetwork
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzVirtualNetwork.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzVirtualNetwork.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzVirtualNetwork.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzVirtualNetwork.md
 ---
 
 # Set-AzVirtualNetwork

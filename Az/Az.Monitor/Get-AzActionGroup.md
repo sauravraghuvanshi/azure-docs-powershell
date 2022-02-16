@@ -4,8 +4,8 @@ Module Name: Az.Monitor
 ms.assetid: 1CA26790-C791-4BFD-B986-70F28E3B095B
 online version: https://docs.microsoft.com/powershell/module/az.monitor/get-azactiongroup
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActionGroup.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActionGroup.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/Get-AzActionGroup.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/Get-AzActionGroup.md
 ---
 
 # Get-AzActionGroup

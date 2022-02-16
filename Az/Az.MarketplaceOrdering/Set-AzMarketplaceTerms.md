@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.MarketplaceOrdering.dll-H
 Module Name: Az.MarketplaceOrdering
 online version: https://docs.microsoft.com/powershell/module/az.marketplaceordering/set-azmarketplaceterms
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MarketplaceOrdering/MarketplaceOrdering/help/Set-AzMarketplaceTerms.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/MarketplaceOrdering/MarketplaceOrdering/help/Set-AzMarketplaceTerms.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MarketplaceOrdering/MarketplaceOrdering/help/Set-AzMarketplaceTerms.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MarketplaceOrdering/MarketplaceOrdering/help/Set-AzMarketplaceTerms.md
 ---
 
 # Set-AzMarketplaceTerms

@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: BFEAE1F7-56E3-4EA9-B39A-ED09582C8A09
 online version: https://docs.microsoft.com/powershell/module/az.sql/get-azsqlserverupgradehint
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServerUpgradeHint.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServerUpgradeHint.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlServerUpgradeHint.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Get-AzSqlServerUpgradeHint.md
 ---
 
 # Get-AzSqlServerUpgradeHint

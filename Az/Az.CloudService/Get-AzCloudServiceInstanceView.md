@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.CloudService
 online version: https://docs.microsoft.com/powershell/module/az.cloudservice/get-azcloudserviceinstanceview
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CloudService/help/Get-AzCloudServiceInstanceView.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CloudService/help/Get-AzCloudServiceInstanceView.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CloudService/help/Get-AzCloudServiceInstanceView.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CloudService/help/Get-AzCloudServiceInstanceView.md
 ---
 
 # Get-AzCloudServiceInstanceView
@@ -26,14 +26,11 @@ Gets the status of a cloud service.
 
 ### Example 1: Get cloud service instance view
 ```powershell
-PS C:\>$cloudServiceInstanceView = Get-AzCloudServiceInstanceView -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS"
+$cloudServiceInstanceView = Get-AzCloudServiceInstanceView -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS"
+$cloudServiceInstanceView.ToJsonString()
+```
 
-PS C:\>$cloudServiceInstanceView
-RoleInstanceStatusesSummary                                   Statuses
----------------------------                                   --------
-{{ProvisioningState/succeeded : 4}, {PowerState/started : 4}} {Provisioning succeeded, Started, Current Upgrade Domain of cloud service is -1., Max Upgrade Domain of cloud service is 1.}
-
-PS C:\>$cloudServiceInstanceView.ToJsonString()
+```Output
 {
   "roleInstance": {
     "statusesSummary": [
@@ -146,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.CloudService.Models.Api20201001Preview.ICloudServiceInstanceView
+### Microsoft.Azure.PowerShell.Cmdlets.CloudService.Models.Api20210301.ICloudServiceInstanceView
 
 ## NOTES
 

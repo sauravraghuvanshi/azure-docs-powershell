@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Security.dll-Help.xml
 Module Name: Az.Security
 online version: https://docs.microsoft.com/powershell/module/az.security/Set-AzSecuritySetting
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Security/Security/help/Set-AzSecuritySetting.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Security/Security/help/Set-AzSecuritySetting.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Security/Security/help/Set-AzSecuritySetting.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Security/Security/help/Set-AzSecuritySetting.md
 ---
 
 # Set-AzSecuritySetting
@@ -108,7 +108,7 @@ Accept wildcard characters: False
 ```
 
 ### -SettingKind
-Setting kind. (DataExportSettings)
+Setting kind. (DataExportSettings/AlertSyncSettings)
 
 ```yaml
 Type: System.String
@@ -123,7 +123,7 @@ Accept wildcard characters: False
 ```
 
 ### -SettingName
-Setting name. (MCAS/WDATP)
+Setting name. (MCAS/WDATP/Sentinel)
 
 ```yaml
 Type: System.String
@@ -176,6 +176,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### System.String
 ### Microsoft.Azure.Commands.Security.Models.Settings.PSSecuritySetting
 ### Microsoft.Azure.Commands.Security.Models.Settings.PSSecurityDataExportSetting
+### Microsoft.Azure.Commands.Security.Models.Settings.PSSecurityAlertSyncSettings
 
 ### System.Boolean
 
@@ -183,6 +184,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Azure.Commands.Security.Models.Settings.PSSecuritySetting
 ### Microsoft.Azure.Commands.Security.Models.Settings.PSSecurityDataExportSetting
+### Microsoft.Azure.Commands.Security.Models.Settings.PSSecurityAlertSyncSettings
 
 ## NOTES
 

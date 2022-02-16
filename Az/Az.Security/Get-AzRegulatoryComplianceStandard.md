@@ -3,14 +3,14 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Security.dll-Help.xml
 Module Name: Az.Security
 online version: https://docs.microsoft.com/powershell/module/az.security/Get-AzRegulatoryComplianceStandard
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Security/Security/help/Get-AzRegulatoryComplianceStandard.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Security/Security/help/Get-AzRegulatoryComplianceStandard.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Security/Security/help/Get-AzRegulatoryComplianceStandard.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Security/Security/help/Get-AzRegulatoryComplianceStandard.md
 ---
 
 # Get-AzRegulatoryComplianceStandard
 
 ## SYNOPSIS
-Gets regulatoey compliance standards
+Gets regulatory compliance standards
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-AzRegulatoryComplianceStandard -ResourceId <String> [-DefaultProfile <IAzure
 ```
 
 ## DESCRIPTION
-Get a spcific regulatory compliance satandard details or list all regulatory compliance standards under specific subscription.
+Get a specific regulatory compliance standard details or list all regulatory compliance standards under a specific subscription.
 
 ## EXAMPLES
 

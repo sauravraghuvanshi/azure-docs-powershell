@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
 online version: https://docs.microsoft.com/powershell/module/az.network/set-azapplicationgatewayfirewallpolicy
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewayFirewallPolicy.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewayFirewallPolicy.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzApplicationGatewayFirewallPolicy.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzApplicationGatewayFirewallPolicy.md
 ---
 
 # Set-AzApplicationGatewayFirewallPolicy
@@ -48,10 +48,10 @@ The **Set-AzApplicationGatewayFirewallPolicy** cmdlet updates an Azure applicati
 
 ### Example 1
 ```powershell
-PS C:\> $UpdatedAppGwFirewallPolicy = Set-AzApplicationGatewayFirewallPolicy -ApplicationGateway $AppGwFirewallPolicy
+PS C:\> $UpdatedAppGwFirewallPolicy = Set-AzApplicationGatewayFirewallPolicy -InputObject $AppGwFirewallPolicy
 ```
 
-This command updates the application gateway firewall policy with settings in the $AppGwFirewallPolicy variable and stores the updated gateway in the $UpdatedAppGwFirewallPolicy variable.
+This command updates the application gateway firewall policy with settings in the $AppGwFirewallPolicy variable and stores the updated application gateway firewall policy in the $UpdatedAppGwFirewallPolicy variable.
 
 ## PARAMETERS
 

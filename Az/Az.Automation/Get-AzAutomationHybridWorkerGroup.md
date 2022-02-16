@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: 9B0BBBB4-A7A0-4243-9264-362A00F5B399
 online version: https://docs.microsoft.com/powershell/module/az.automation/get-azautomationhybridworkergroup
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Get-AzAutomationHybridWorkerGroup.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Get-AzAutomationHybridWorkerGroup.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Get-AzAutomationHybridWorkerGroup.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Get-AzAutomationHybridWorkerGroup.md
 ---
 
 # Get-AzAutomationHybridWorkerGroup

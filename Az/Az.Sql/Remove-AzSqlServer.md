@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: 068D70EF-39D1-4199-BD74-0EC266DF7072
 online version: https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlserver
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Remove-AzSqlServer.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Remove-AzSqlServer.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Remove-AzSqlServer.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Remove-AzSqlServer.md
 ---
 
 # Remove-AzSqlServer

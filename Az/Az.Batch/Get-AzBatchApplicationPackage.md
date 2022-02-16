@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: 17653793-3CE1-465F-87F7-20B4B8F56193
 online version: https://docs.microsoft.com/powershell/module/az.batch/get-azbatchapplicationpackage
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchApplicationPackage.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Get-AzBatchApplicationPackage.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Get-AzBatchApplicationPackage.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Get-AzBatchApplicationPackage.md
 ---
 
 # Get-AzBatchApplicationPackage
@@ -26,8 +26,11 @@ The **Get-AzBatchApplicationPackage** cmdlet gets information about an applicati
 ## EXAMPLES
 
 ### Example 1: Get details of an application package in a Batch account
+```powershell
+Get-AzBatchApplicationPackage -AccountName "ContosoBatch" -ResourceGroupName "ContosoBatchGroup" -ApplicationName "Litware" -ApplicationVersion "1.0"
 ```
-PS C:\>Get-AzBatchApplicationPackage -AccountName "ContosoBatch" -ResourceGroupName "ContosoBatchGroup" -ApplicationName "Litware" -ApplicationVersion "1.0"
+
+```output
 Format             : zip
 State              : Active
 Version            : 1.0

@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: 52664E45-7EAB-41C9-BF78-304F10BFC51A
 online version: https://docs.microsoft.com/powershell/module/az.sql/new-azsqlservercommunicationlink
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlServerCommunicationLink.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlServerCommunicationLink.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/New-AzSqlServerCommunicationLink.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/New-AzSqlServerCommunicationLink.md
 ---
 
 # New-AzSqlServerCommunicationLink

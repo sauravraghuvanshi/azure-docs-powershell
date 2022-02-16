@@ -4,8 +4,8 @@ Module Guid: f875725d-8ce4-423f-a6af-ea880bc63f13
 Download Help Link: https://docs.microsoft.com/powershell/module/az.notificationhubs
 Help Version: 4.1.1.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Az.NotificationHubs.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Az.NotificationHubs.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/NotificationHubs/NotificationHubs/help/Az.NotificationHubs.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/NotificationHubs/NotificationHubs/help/Az.NotificationHubs.md
 ---
 
 # Az.NotificationHubs Module

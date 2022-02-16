@@ -4,8 +4,8 @@ Module Name: Az.Resources
 ms.assetid: D5067FD8-2FB1-413C-9F59-84E83A74343E
 online version: https://docs.microsoft.com/powershell/module/az.resources/register-azresourceprovider
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Register-AzResourceProvider.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Register-AzResourceProvider.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Register-AzResourceProvider.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Resources/Resources/help/Register-AzResourceProvider.md
 ---
 
 # Register-AzResourceProvider
@@ -16,8 +16,9 @@ Registers a resource provider.
 ## SYNTAX
 
 ```
-Register-AzResourceProvider -ProviderNamespace <String> [-ApiVersion <String>] [-Pre]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Register-AzResourceProvider -ProviderNamespace <String> [-ConsentToPermissions <Boolean>]
+ [-ApiVersion <String>] [-Pre] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,6 +48,21 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConsentToPermissions
+A value indicating whether permissions are consented or not.
+
+```yaml
+Type: System.Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

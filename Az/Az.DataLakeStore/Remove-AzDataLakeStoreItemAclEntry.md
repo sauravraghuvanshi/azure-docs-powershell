@@ -4,8 +4,8 @@ Module Name: Az.DataLakeStore
 ms.assetid: 33E7607E-C2BC-4F46-9038-91AC92041F00
 online version: https://docs.microsoft.com/powershell/module/az.datalakestore/remove-azdatalakestoreitemaclentry
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataLakeStore/DataLakeStore/help/Remove-AzDataLakeStoreItemAclEntry.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataLakeStore/DataLakeStore/help/Remove-AzDataLakeStoreItemAclEntry.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataLakeStore/DataLakeStore/help/Remove-AzDataLakeStoreItemAclEntry.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataLakeStore/DataLakeStore/help/Remove-AzDataLakeStoreItemAclEntry.md
 ---
 
 # Remove-AzDataLakeStoreItemAclEntry
@@ -48,9 +48,9 @@ PS C:\>Remove-AzDataLakeStoreItemAclEntry -AccountName "ContosoADL" -Path / -Ace
 
 ### Example 3: Remove permissions for an ACE recursively using Acl object
 ```
-PS C:\>$fullAcl="user:userid1,default:user:userid1
-PS C:\>$newFullAcl = $fullAcl.Split("{,}")
-PS C:\>Remove-AzDataLakeStoreItemAclEntry -AccountName "ContosoADL" -Path / -Acl $newFullAcl -Recurse -Concurrency 128
+PS C:\>$fullAcl="user:enterpriseObjectID:rwx,default:user:enterpriseObjectID:rwx"
+PS C:\>$newFullAcl = $fullAcl.Split(",")
+PS C:\>Remove-AzDataLakeStoreItemAclEntry -AccountName "ContosoADL" -Path / -Acl $newFullAcl -Recurse -Concurrency 128 -ShowProgress -Verbose
 ```
 
 This command removes the user ACE for Patti Fuller from the root and recursively from all it's subdirectories and files for account ContosoADL.

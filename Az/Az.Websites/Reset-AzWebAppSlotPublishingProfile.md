@@ -4,8 +4,8 @@ Module Name: Az.Websites
 ms.assetid: 3CD449A1-084E-4950-80EF-06B5ECDFB70F
 online version: https://docs.microsoft.com/powershell/module/az.websites/reset-azwebappslotpublishingprofile
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Reset-AzWebAppSlotPublishingProfile.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Reset-AzWebAppSlotPublishingProfile.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Reset-AzWebAppSlotPublishingProfile.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Reset-AzWebAppSlotPublishingProfile.md
 ---
 
 # Reset-AzWebAppSlotPublishingProfile

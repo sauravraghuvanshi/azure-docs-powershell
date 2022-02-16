@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Subscription.dll-Help.xml
 Module Name: Az.Subscription
 online version: https://docs.microsoft.com/powershell/module/az.subscription/new-azsubscriptionalias
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Subscription/Subscription/help/New-AzSubscriptionAlias.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Subscription/Subscription/help/New-AzSubscriptionAlias.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Subscription/Subscription/help/New-AzSubscriptionAlias.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Subscription/Subscription/help/New-AzSubscriptionAlias.md
 ---
 
 # New-AzSubscriptionAlias
@@ -27,10 +27,18 @@ The **New-AzSubscriptionAlias** cmdlet creates new alias and subscription
 
 ### Example 1
 ```powershell
-PS C:\> New-AzSubscriptionAlias -AliasName "NewAliasName" -SubscriptionName "SubscriptionName" -BillingScope "BillingScope" -Workload "WorkloadType"
+PS C:\> New-AzSubscriptionAlias -AliasName "NewAlias1" -SubscriptionName "Subscription1" -BillingScope $BillingScope -Workload Production
 ```
 
-Creates new alias and subscription
+Creates new alias and EA subscription
+
+### Example 2
+```powershell
+PS C:\> New-AzSubscriptionAlias -AliasName "NewAlias2" -SubscriptionName "Subscription2" -BillingScope $BillingScope -Workload DevTest
+```
+
+Creates new alias and Dev/Test EA subscription
+
 
 ## PARAMETERS
 

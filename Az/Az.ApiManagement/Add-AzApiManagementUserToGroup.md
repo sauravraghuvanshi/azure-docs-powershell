@@ -4,8 +4,8 @@ Module Name: Az.ApiManagement
 ms.assetid: 8C014335-9622-4F2E-A163-4B0C84531506
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/add-azapimanagementusertogroup
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Add-AzApiManagementUserToGroup.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Add-AzApiManagementUserToGroup.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Add-AzApiManagementUserToGroup.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Add-AzApiManagementUserToGroup.md
 ---
 
 # Add-AzApiManagementUserToGroup
@@ -26,9 +26,9 @@ The **Add-AzApiManagementUserToGroup** cmdlet adds a user to a group.
 ## EXAMPLES
 
 ### Example 1: Add a user to a group
-```
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Add-AzApiManagementUserToGroup -Context $apimContext -GroupId "0001" -UserId "0123456789"
+```powershell
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Add-AzApiManagementUserToGroup -Context $apimContext -GroupId "0001" -UserId "0123456789"
 ```
 
 This command adds an existing user to an existing group.

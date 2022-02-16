@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Storage.dll-Help.xml
 Module Name: Az.Storage
 online version: https://docs.microsoft.com/powershell/module/az.storage/update-azdatalakegen2aclrecursive
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Update-AzDataLakeGen2AclRecursive.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Update-AzDataLakeGen2AclRecursive.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Update-AzDataLakeGen2AclRecursive.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Update-AzDataLakeGen2AclRecursive.md
 ---
 
 # Update-AzDataLakeGen2AclRecursive
@@ -102,7 +102,7 @@ do
     $totalFailure += $result.TotalFailureCount
     $FailedEntries += $result.FailedEntries
     $token = $result.ContinuationToken
-}while (($token -ne $null) -and (($ContinueOnFailure) -or ($result.TotalFailureCount -eq 0)))
+}while (($null -ne $token) -and (($ContinueOnFailure) -or ($result.TotalFailureCount -eq 0)))
 echo ""
 echo "[Result Summary]"
 echo "TotalDirectoriesSuccessfulCount: `t$($TotalDirectoriesSuccess)"

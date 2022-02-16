@@ -3,14 +3,14 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.dll-Help
 Module Name: Az.SecurityInsights
 online version: https://docs.microsoft.com/powershell/module/az.securityinsights/new-azsentinelincidentcomment
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SecurityInsights/SecurityInsights/help/New-AzSentinelIncidentComment.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/SecurityInsights/SecurityInsights/help/New-AzSentinelIncidentComment.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/New-AzSentinelIncidentComment.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/New-AzSentinelIncidentComment.md
 ---
 
 # New-AzSentinelIncidentComment
 
 ## SYNOPSIS
-Add an Incident Comment to an Incident.
+Adds a Comment to an Incident.
 
 ## SYNTAX
 
@@ -21,7 +21,7 @@ New-AzSentinelIncidentComment -ResourceGroupName <String> -WorkspaceName <String
 ```
 
 ## DESCRIPTION
-The **New-AzSentinelIncidentComment** cmdlet creates a Incident Comment from the specified workspace.
+The **New-AzSentinelIncidentComment** cmdlet creates a Incident Comment.
 You can use the *Confirm* parameter and $ConfirmPreference Windows PowerShell variable to control whether the cmdlet prompts you for confirmation.
 
 ## EXAMPLES
@@ -32,7 +32,7 @@ PS C:\> $Incident = Get-AzSentinelIncident -ResourceGroupName "MyResourceGroup" 
 PS C:\> $IncidentComment = New-AzSentinelIncidentComment -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName" -IncidentId ($Incident.Name) -Message "Still needs investigation"
 ```
 
-This example creates an **IncidentComment** in the specified workspace, and then stores it in the $IncidentComment variable.
+This example creates an IncidentComment in the specified workspace, and then stores it in the $IncidentComment variable.
 
 ## PARAMETERS
 

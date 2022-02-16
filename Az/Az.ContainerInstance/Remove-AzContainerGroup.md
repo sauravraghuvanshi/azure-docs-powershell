@@ -1,72 +1,84 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.ContainerInstance.dll-Help.xml
+external help file: 
 Module Name: Az.ContainerInstance
 online version: https://docs.microsoft.com/powershell/module/az.containerinstance/remove-azcontainergroup
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ContainerInstance/ContainerInstance/help/Remove-AzContainerGroup.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ContainerInstance/ContainerInstance/help/Remove-AzContainerGroup.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ContainerInstance/help/Remove-AzContainerGroup.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ContainerInstance/help/Remove-AzContainerGroup.md
 ---
 
 # Remove-AzContainerGroup
 
 ## SYNOPSIS
-Removes a container group.
+Delete the specified container group in the specified subscription and resource group.
+The operation does not delete other resources provided by the user, such as volumes.
 
 ## SYNTAX
 
-### RemoveContainerGroupByResourceGroupAndNameParamSet (Default)
+### Delete (Default)
 ```
-Remove-AzContainerGroup [-ResourceGroupName] <String> [-Name] <String> [-PassThru]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### RemoveContainerGroupByPSContainerGroupParamSet
-```
-Remove-AzContainerGroup -InputObject <PSContainerGroup> [-PassThru] [-DefaultProfile <IAzureContextContainer>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzContainerGroup -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### RemoveContainerGroupByResourceIdParamSet
+### DeleteViaIdentity
 ```
-Remove-AzContainerGroup -ResourceId <String> [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Remove-AzContainerGroup -InputObject <IContainerInstanceIdentity> [-DefaultProfile <PSObject>] [-AsJob]
+ [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Remove-AzContainerGroup** cmdlet removes a container group.
+Delete the specified container group in the specified subscription and resource group.
+The operation does not delete other resources provided by the user, such as volumes.
 
 ## EXAMPLES
 
-### Example 1: Removes a container group
-```
-PS C:\> Remove-AzContainerGroup -ResourceGroupName MyResourceGroup -Name MyContainer
+### Example 1: Remove a container group
+```powershell
+PS C:\> Remove-AzContainerGroup -Name test-cg -ResourceGroupName test-rg
+
+Location Name    Zone ResourceGroupName
+-------- ----    ---- -----------------
+eastus   test-cg      test-rg
 ```
 
 This command removes the specified container group.
 
 ### Example 2: Removes a container group by piping
-```
-PS C:\> Get-AzContainerGroup -ResourceGroupName MyResourceGroup -Name MyContainer | Remove-AzContainerGroup
+```powershell
+PS C:\> Get-AzContainerGroup -Name test-cg -ResourceGroupName bez-rg | Remove-AzContainerGroup
+
+Location Name    Zone ResourceGroupName
+-------- ----    ---- -----------------
+eastus   test-cg      test-rg
 ```
 
 This command removes a container group by piping.
 
-### Example 3: Removes a container group by resource Id.
-```
-PS C:\> Find-AzResource -ResourceGroupEquals MyResourceGroup -ResourceNameEquals MyContainer | Remove-AzContainerGroup
-```
-
-This command removes a container group by resource Id.
-
 ## PARAMETERS
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure.
+### -AsJob
+Run the command as a job
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with Azure.
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -76,11 +88,12 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-The container group to remove.
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ContainerInstance.Models.PSContainerGroup
-Parameter Sets: RemoveContainerGroupByPSContainerGroupParamSet
+Type: Microsoft.Azure.PowerShell.Cmdlets.ContainerInstance.Models.IContainerInstanceIdentity
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -91,22 +104,37 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-The container group name.
+The name of the container group.
 
 ```yaml
 Type: System.String
-Parameter Sets: RemoveContainerGroupByResourceGroupAndNameParamSet
-Aliases:
+Parameter Sets: Delete
+Aliases: ContainerGroupName
 
 Required: True
-Position: 1
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoWait
+Run the command asynchronously
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -PassThru
-{{Fill PassThru Description}}
+Returns true when the command succeeds
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -121,32 +149,33 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The resource group name.
+The name of the resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: RemoveContainerGroupByResourceGroupAndNameParamSet
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResourceId
-The resource id.
-
-```yaml
-Type: System.String
-Parameter Sets: RemoveContainerGroupByResourceIdParamSet
+Parameter Sets: Delete
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubscriptionId
+Subscription credentials which uniquely identify Microsoft Azure subscription.
+The subscription ID forms part of the URI for every service call.
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -182,18 +211,32 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### Microsoft.Azure.Commands.ContainerInstance.Models.PSContainerGroup
-
-### System.String
+### Microsoft.Azure.PowerShell.Cmdlets.ContainerInstance.Models.IContainerInstanceIdentity
 
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.ContainerInstance.Models.PSContainerGroup
+### Microsoft.Azure.PowerShell.Cmdlets.ContainerInstance.Models.Api20210901.IContainerGroup
 
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT <IContainerInstanceIdentity>: Identity Parameter
+  - `[ContainerGroupName <String>]`: The name of the container group.
+  - `[ContainerName <String>]`: The name of the container instance.
+  - `[Id <String>]`: Resource identity path
+  - `[Location <String>]`: The identifier for the physical azure location.
+  - `[ResourceGroupName <String>]`: The name of the resource group.
+  - `[SubscriptionId <String>]`: Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+
 ## RELATED LINKS
+

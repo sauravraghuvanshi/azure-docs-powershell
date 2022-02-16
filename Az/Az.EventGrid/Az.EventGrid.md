@@ -4,8 +4,8 @@ Module Guid: 53BF7132-5BB4-46EB-AC05-61A49A6CD5EB
 Download Help Link: https://docs.microsoft.com/powershell/module/az.eventgrid
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/EventGrid/EventGrid/help/Az.EventGrid.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/EventGrid/EventGrid/help/Az.EventGrid.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/EventGrid/EventGrid/help/Az.EventGrid.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/EventGrid/EventGrid/help/Az.EventGrid.md
 ---
 
 # Az.EventGrid Module

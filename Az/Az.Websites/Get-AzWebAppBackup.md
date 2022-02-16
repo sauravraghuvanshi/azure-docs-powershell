@@ -4,8 +4,8 @@ Module Name: Az.Websites
 ms.assetid: EAAF615B-6139-438B-A2FD-6966E72B3AA9
 online version: https://docs.microsoft.com/powershell/module/az.websites/get-azwebappbackup
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Get-AzWebAppBackup.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Get-AzWebAppBackup.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Get-AzWebAppBackup.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Get-AzWebAppBackup.md
 ---
 
 # Get-AzWebAppBackup

@@ -4,8 +4,8 @@ Module Guid: 3C11EF12-C79F-45FE-ACDF-A2C784D99C97
 Download Help Link: 
 Help Version: 
 Locale: 
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/StackEdge/StackEdge/help/Az.StackEdge.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/StackEdge/StackEdge/help/Az.StackEdge.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/StackEdge/StackEdge/help/Az.StackEdge.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/StackEdge/StackEdge/help/Az.StackEdge.md
 ---
 
 # Az.StackEdge Module

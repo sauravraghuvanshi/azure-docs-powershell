@@ -4,8 +4,8 @@ Module Name: Az.DataFactory
 ms.assetid: 5490BB24-127E-4C21-B85F-B70D817B659A
 online version: https://docs.microsoft.com/powershell/module/az.datafactory/save-azdatafactorylog
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Save-AzDataFactoryLog.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Save-AzDataFactoryLog.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Save-AzDataFactoryLog.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Save-AzDataFactoryLog.md
 ---
 
 # Save-AzDataFactoryLog

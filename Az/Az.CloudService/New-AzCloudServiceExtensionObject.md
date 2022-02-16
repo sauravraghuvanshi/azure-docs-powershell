@@ -1,10 +1,10 @@
 ---
 external help file: 
 Module Name: Az.CloudService
-online version: https://docs.microsoft.com/powershell/module/az.CloudService/new-AzCloudServiceExtensionObject
+online version: https://docs.microsoft.com/powershell/module/az.cloudservice/new-azcloudserviceextensionobject
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CloudService/help/New-AzCloudServiceExtensionObject.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CloudService/help/New-AzCloudServiceExtensionObject.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CloudService/help/New-AzCloudServiceExtensionObject.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CloudService/help/New-AzCloudServiceExtensionObject.md
 ---
 
 # New-AzCloudServiceExtensionObject
@@ -27,7 +27,7 @@ Create a in-memory object for Extension
 
 ### Example 1: Create Geneva extension object
 ```powershell
-PS C:\> $extension = New-AzCloudServiceExtensionObject -Name "GenevaExtension" -Publisher "Microsoft.Azure.Geneva" -Type "GenevaMonitoringPaaS" -TypeHandlerVersion "2.14.0.2"
+$extension = New-AzCloudServiceExtensionObject -Name "GenevaExtension" -Publisher "Microsoft.Azure.Geneva" -Type "GenevaMonitoringPaaS" -TypeHandlerVersion "2.14.0.2"
 ```
 
 This command creates Geneva extension object which is used for creating or updating a cloud service.
@@ -162,7 +162,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.CloudService.Models.Api20201001Preview.Extension
+### Microsoft.Azure.PowerShell.Cmdlets.CloudService.Models.Api20210301.Extension
 
 ## NOTES
 

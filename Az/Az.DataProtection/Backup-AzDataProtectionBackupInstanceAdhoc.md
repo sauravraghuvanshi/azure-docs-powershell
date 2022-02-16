@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.DataProtection
 online version: https://docs.microsoft.com/powershell/module/az.dataprotection/backup-azdataprotectionbackupinstanceadhoc
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataProtection/help/Backup-AzDataProtectionBackupInstanceAdhoc.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataProtection/help/Backup-AzDataProtectionBackupInstanceAdhoc.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataProtection/help/Backup-AzDataProtectionBackupInstanceAdhoc.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataProtection/help/Backup-AzDataProtectionBackupInstanceAdhoc.md
 ---
 
 # Backup-AzDataProtectionBackupInstanceAdhoc
@@ -42,6 +42,25 @@ PS C:\> Backup-AzDataProtectionBackupInstanceAdhoc -BackupInstanceName $instance
 ```
 
 This Command Triggers Backup for a given backup instance.
+
+### Example 2: Backup a protected backup instance
+```powershell
+PS C:\> $instance = Get-AzDataProtectionBackupInstance -SubscriptionId "xxxx-xxx-xxx" -ResourceGroupName "MyResourceGroup" -VaultName "MyVault"
+PS C:\> $policy = Get-AzDataProtectionBackupPolicy -SubscriptionId $sub -VaultName "MyVault" -ResourceGroupName "MyResourceGroup" | where {$_.Name -eq "policyName"}
+PS C:\> $backupJob = Backup-AzDataProtectionBackupInstanceAdhoc -BackupInstanceName $instance.Name -ResourceGroupName "MyResourceGroup" -SubscriptionId "xxxx-xxx-xxxx" -VaultName "MyVault" -BackupRuleOptionRuleName $policy.Property.PolicyRule[0].Name -TriggerOptionRetentionTagOverride $policy.Property.PolicyRule[0].Trigger.TaggingCriterion[0].TagInfoTagName
+PS C:\> $jobid = $backupJob.JobId.Split("/")[-1]
+PS C:\> $jobstatus = "InProgress"
+PS C:\> while($jobstatus -ne "Completed")
+>> {
+>>     Start-Sleep -Seconds 10
+>>     $currentjob = Get-AzDataProtectionJob -Id $jobid -SubscriptionId $sub -ResourceGroupName $rgName -VaultName $vaultName
+>>     $jobstatus = $currentjob.Status
+>> }
+
+```
+
+This Command Triggers Backup for a given backup instance using protection policy used to protect the backup instance.
+Then we track the backup job in a loop until it's completed.
 
 ## PARAMETERS
 
@@ -236,7 +255,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20210201Preview.IOperationJobExtendedInfo
+### Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20210701.IOperationJobExtendedInfo
 
 ## NOTES
 
@@ -248,7 +267,6 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDataProtectionIdentity>: Identity Parameter
-  - `[BackupInstance <String>]`: 
   - `[BackupInstanceName <String>]`: The name of the backup instance
   - `[BackupPolicyName <String>]`: 
   - `[Id <String>]`: Resource identity path
@@ -256,7 +274,9 @@ INPUTOBJECT <IDataProtectionIdentity>: Identity Parameter
   - `[Location <String>]`: The location in which uniqueness will be verified.
   - `[OperationId <String>]`: 
   - `[RecoveryPointId <String>]`: 
+  - `[RequestName <String>]`: 
   - `[ResourceGroupName <String>]`: The name of the resource group where the backup vault is present.
+  - `[ResourceGuardsName <String>]`: The name of ResourceGuard
   - `[SubscriptionId <String>]`: The subscription Id.
   - `[VaultName <String>]`: The name of the backup vault.
 

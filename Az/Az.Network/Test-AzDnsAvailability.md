@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 556A9F12-DF72-468F-9C3F-A747CC70BD2F
 online version: https://docs.microsoft.com/powershell/module/az.network/test-azdnsavailability
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Test-AzDnsAvailability.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Test-AzDnsAvailability.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Test-AzDnsAvailability.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Test-AzDnsAvailability.md
 ---
 
 # Test-AzDnsAvailability

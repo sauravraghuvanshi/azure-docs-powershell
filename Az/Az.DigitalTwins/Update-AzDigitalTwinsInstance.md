@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.DigitalTwins
 online version: https://docs.microsoft.com/powershell/module/az.digitaltwins/update-azdigitaltwinsinstance
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DigitalTwins/help/Update-AzDigitalTwinsInstance.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DigitalTwins/help/Update-AzDigitalTwinsInstance.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DigitalTwins/help/Update-AzDigitalTwinsInstance.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DigitalTwins/help/Update-AzDigitalTwinsInstance.md
 ---
 
 # Update-AzDigitalTwinsInstance

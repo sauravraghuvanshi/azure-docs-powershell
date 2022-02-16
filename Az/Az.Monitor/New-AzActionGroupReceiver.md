@@ -4,8 +4,8 @@ Module Name: Az.Monitor
 ms.assetid: 9830CD16-D797-47EB-BEF5-6CFE3454BCAA
 online version: https://docs.microsoft.com/powershell/module/az.monitor/new-azactiongroupreceiver
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzActionGroupReceiver.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzActionGroupReceiver.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/New-AzActionGroupReceiver.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/New-AzActionGroupReceiver.md
 ---
 
 # New-AzActionGroupReceiver

@@ -4,8 +4,8 @@ Module Guid: fe925c54-a246-4a80-89ed-b8768f5dc3cd
 Download Help Link: https://docs.microsoft.com/powershell/module/az.datashare
 Help Version: 0.1.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataShare/DataShare/help/Az.DataShare.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataShare/DataShare/help/Az.DataShare.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataShare/DataShare/help/Az.DataShare.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataShare/DataShare/help/Az.DataShare.md
 ---
 
 # Az.DataShare Module

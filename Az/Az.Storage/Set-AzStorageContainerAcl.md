@@ -4,8 +4,8 @@ Module Name: Az.Storage
 ms.assetid: BDEEF1EA-A785-4E17-9887-C2000BDFCF57
 online version: https://docs.microsoft.com/powershell/module/az.storage/set-azstoragecontaineracl
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Set-AzStorageContainerAcl.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Set-AzStorageContainerAcl.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Set-AzStorageContainerAcl.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Set-AzStorageContainerAcl.md
 ---
 
 # Set-AzStorageContainerAcl

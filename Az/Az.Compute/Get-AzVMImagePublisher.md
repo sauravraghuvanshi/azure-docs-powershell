@@ -4,8 +4,8 @@ Module Name: Az.Compute
 ms.assetid: 7311F66C-3370-4436-8030-6D98D42C3112
 online version: https://docs.microsoft.com/powershell/module/az.compute/get-azvmimagepublisher
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMImagePublisher.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMImagePublisher.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Get-AzVMImagePublisher.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Compute/Compute/help/Get-AzVMImagePublisher.md
 ---
 
 # Get-AzVMImagePublisher

@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Billing.dll-Help.xml
 Module Name: Az.Billing
 online version: https://docs.microsoft.com/powershell/module/az.billing/get-azbillingperiod
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Billing/Billing/help/Get-AzBillingPeriod.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Billing/Billing/help/Get-AzBillingPeriod.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Billing/Billing/help/Get-AzBillingPeriod.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Billing/Billing/help/Get-AzBillingPeriod.md
 ---
 
 # Get-AzBillingPeriod
@@ -31,22 +31,22 @@ The **Get-AzBillingPeriod** cmdlet gets billing periods of the subscription.
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> Get-AzBillingPeriod
+```powershell
+Get-AzBillingPeriod
 ```
 
 Get all available billing periods of the subscription.
 
 ### Example 2
-```
-PS C:\> Get-AzBillingPeriod -Name 201704-1
+```powershell
+Get-AzBillingPeriod -Name 201704-1
 ```
 
 Get the billing period of the subscription with the specified name.
 
 ### Example 3
-```
-PS C:\> Get-AzBillingPeriod -MaxCount 2
+```powershell
+Get-AzBillingPeriod -MaxCount 2
 ```
 
 Get at most 2 billing periods of the subscription.

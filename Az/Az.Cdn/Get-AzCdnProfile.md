@@ -4,8 +4,8 @@ Module Name: Az.Cdn
 ms.assetid: 28DECA86-37A5-48BE-9727-0C1A3B867E9B
 online version: https://docs.microsoft.com/powershell/module/az.cdn/get-azcdnprofile
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Get-AzCdnProfile.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Get-AzCdnProfile.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzCdnProfile.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzCdnProfile.md
 ---
 
 # Get-AzCdnProfile
@@ -24,6 +24,24 @@ Get-AzCdnProfile [-ProfileName <String>] [-ResourceGroupName <String>]
 The **Get-AzCdnProfile** cmdlet gets an Azure Content Delivery Network (CDN) profile and its related information.
 
 ## EXAMPLES
+
+### Example 1: Get all CDN profiles in the resource group
+```powershell
+Get-AzCdnProfile -ResourceGroupName myresourcegroup
+```
+
+```Output
+Sku               : Microsoft.Azure.Commands.Cdn.Models.Profile.PSSku
+ResourceState     : Active
+ResourceGroupName : myresourcegroup
+Location          : WestUs
+Tags              : {}
+Id                : /subscriptions/11111111-1111-1111-1111-111111111111/resourcegroups/myresourcegroup/providers/Microsoft.Cdn
+                    /profiles/mycdnprofile
+Name              : mycdnprofile
+Type              : Microsoft.Cdn/profiles
+ProvisioningState : Succeeded
+```
 
 ## PARAMETERS
 

@@ -2,8 +2,8 @@
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Websites.dll-Help.xml
 Module Name: Az.Websites
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Update-AzWebAppTrafficRouting.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Update-AzWebAppTrafficRouting.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Update-AzWebAppTrafficRouting.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Websites/Websites/help/Update-AzWebAppTrafficRouting.md
 ---
 
 # Update-AzWebAppTrafficRouting
@@ -23,7 +23,7 @@ The **Update-AzWebAppTrafficRouting** cmdlet updates the routing rule configurat
 
 ## EXAMPLES
 
-### Example 1 Update a routing rule to transfer 15% of production traffice to  Stg slot
+### Example 1: Update a routing rule to transfer 15% of production traffice to  Stg slot
 ```powershell
 PS C:\>Update-AzWebAppTrafficRouting -ResourceGroupName "Default-Web-WestUS" -WebAppName "ContosoSite" 
 - RoutingRule @{AtionHostName='XXXX.azurewebsites.net';ReroutePercentage=15;Name='Stg'}
@@ -31,7 +31,7 @@ PS C:\>Update-AzWebAppTrafficRouting -ResourceGroupName "Default-Web-WestUS" -We
 
 This command updates a routing rule to transfer 15% of production traffic to Stg slot.
 
-### Example 2 Update a routing rule to transfer the production traffice to Stg slot ranges from 50% to 90% in incremental manner.
+### Example 2: Update a routing rule to transfer the production traffice to Stg slot ranges from 50% to 90% in incremental manner.
 ```powershell
 PS C:\>Update-AzWebAppTrafficRouting -ResourceGroupName "Default-Web-WestUS" -WebAppName "ContosoSite" 
 -RoutingRule @{ActionHostName='XXXX.azurewebsites.net';ReroutePercentage=50;ChangeIntervalInMinutes=1;

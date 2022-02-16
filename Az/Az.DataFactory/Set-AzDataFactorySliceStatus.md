@@ -4,8 +4,8 @@ Module Name: Az.DataFactory
 ms.assetid: 1D07222C-17D1-421C-8C9B-37043CBCF517
 online version: https://docs.microsoft.com/powershell/module/az.datafactory/set-azdatafactoryslicestatus
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Set-AzDataFactorySliceStatus.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Set-AzDataFactorySliceStatus.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Set-AzDataFactorySliceStatus.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Set-AzDataFactorySliceStatus.md
 ---
 
 # Set-AzDataFactorySliceStatus

@@ -4,8 +4,8 @@ Module Name: Az.Storage
 ms.assetid: CBD157D2-37C5-491F-A806-6B39F1D0415A
 online version: https://docs.microsoft.com/powershell/module/az.storage/get-azstorageblobcopystate
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Get-AzStorageBlobCopyState.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Get-AzStorageBlobCopyState.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Get-AzStorageBlobCopyState.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Storage/Storage.Management/help/Get-AzStorageBlobCopyState.md
 ---
 
 # Get-AzStorageBlobCopyState

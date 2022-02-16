@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
 online version: https://docs.microsoft.com/powershell/module/az.network/update-azcustomipprefix
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Update-AzCustomIpPrefix.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Update-AzCustomIpPrefix.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Update-AzCustomIpPrefix.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Update-AzCustomIpPrefix.md
 ---
 
 # Update-AzCustomIpPrefix
@@ -16,25 +16,25 @@ Updates a CustomIpPrefix
 
 ### UpdateByNameParameterSet
 ```
-Update-AzCustomIpPrefix -Name <String> -ResourceGroupName <String> [-Commission] [-Decomission]
+Update-AzCustomIpPrefix -Name <String> -ResourceGroupName <String> [-Commission] [-Decomission] [-Provision] [-Deprovision] [-Cidr <String>]
  [-Tag <Hashtable>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### UpdateByInputObjectParameterSet
 ```
-Update-AzCustomIpPrefix -InputObject <PSCustomIpPrefix> [-Commission] [-Decomission] [-Tag <Hashtable>]
+Update-AzCustomIpPrefix -InputObject <PSCustomIpPrefix> [-Commission] [-Decomission] [-Provision] [-Deprovision] [-Cidr <String>] [-Tag <Hashtable>]
  [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateByResourceIdParameterSet
 ```
-Update-AzCustomIpPrefix -ResourceId <String> [-Commission] [-Decomission] [-Tag <Hashtable>] [-AsJob]
+Update-AzCustomIpPrefix -ResourceId <String> [-Commission] [-Decomission] [-Provision] [-Deprovision] [-Cidr <String>] [-Tag <Hashtable>] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Update-AzCustomIpPrefix** cmdlet allows the user to either commission or decommission their CustomIpPrefix, or edit the tags of the resource.
+The **Update-AzCustomIpPrefix** cmdlet allows the user to provision, commission, deprovision or decommission their CustomIpPrefix, or edit the tags or Cidr of the resource.
 
 ## EXAMPLES
 
@@ -52,12 +52,33 @@ PS C:\> Update-AzCustomIpPrefix -Name $prefixName -ResourceGroupName $rgName -De
 
 The above command will start the de-commissioning process of the CustomIpPrefix.
 
-### Example 3 : Update tags for the CustomIpPrefix
+### Example 3 : Provision the CustomIpPrefix
+```powershell
+PS C:\> Update-AzCustomIpPrefix -Name $prefixName -ResourceGroupName $rgName -Provision
+```
+
+The above command will start the provisioning process of the CustomIpPrefix.
+
+### Example 4 : Deprovision the CustomIpPrefix
+```powershell
+PS C:\> Update-AzCustomIpPrefix -Name $prefixName -ResourceGroupName $rgName -Deprovision
+```
+
+The above command will start the deprovisioning process of the CustomIpPrefix.
+
+### Example 5 : Update tags for the CustomIpPrefix
 ```powershell
 PS C:\> Update-AzCustomIpPrefix -Name $prefixName -ResourceGroupName $rgName -Tag $tags
 ```
 
 The above command will update the tags for the CustomIpPrefix.
+
+### Example 6 : Update CIDR for the CustomIpPrefix
+```powershell
+PS C:\> Update-AzCustomIpPrefix -Name $prefixName -ResourceGroupName $rgName -Cidr $cidr
+```
+
+The above command will update the cidr for the CustomIpPrefix. This would work only when resource is in validationfailed state.
 
 ## PARAMETERS
 
@@ -92,6 +113,36 @@ Accept wildcard characters: False
 ```
 
 ### -Decomission
+Run cmdlet in the background
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Provision
+Run cmdlet in the background
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Deprovision
 Run cmdlet in the background
 
 ```yaml
@@ -145,6 +196,21 @@ Parameter Sets: SetByNameParameterSet
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Cidr
+The CIDR to update.
+
+```yaml
+Type: String
+Parameter Sets: SetByNameParameterSet
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)

@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.ServiceMana
 Module Name: Az.ApiManagement
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/get-azapimanagementidentityprovider
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementIdentityProvider.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementIdentityProvider.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Get-AzApiManagementIdentityProvider.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Get-AzApiManagementIdentityProvider.md
 ---
 
 # Get-AzApiManagementIdentityProvider
@@ -35,18 +35,19 @@ ClientSecret will not be included into result details. To get client secret, use
 ### Example 1: Get all Identity Providers
 
 ```powershell
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Get-AzApiManagementIdentityProvider -Context $apimContext
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Get-AzApiManagementIdentityProvider -Context $apimContext
 ```
 
 Get all the identity provider Configuration on the service.
 
 ### Example 2: Get the AAD Type Identity Provider
 ```powershell
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\> Get-AzApiManagementIdentityProvider -Context $apimContext -Type Aad
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Get-AzApiManagementIdentityProvider -Context $apimContext -Type Aad
+```
 
-
+```output
 Type                     : Aad
 ClientId                 : aaa
 ClientSecret             : xxxxx
@@ -66,10 +67,11 @@ Gets the Identity Provider Configuration of Azure Active Directory.
 
 ### Example 3: Get the AAD B2C Type Identity Provider
 ```powershell
-PS C:\>$context = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\> Get-AzApiManagementIdentityProvider -Context $context -Type AadB2C
+$context = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Get-AzApiManagementIdentityProvider -Context $context -Type AadB2C
+```
 
-
+```output
 Type                     : AadB2C
 ClientId                 : f02dafe2-b8b8-48ec-a38e-27e5c16c51e5
 ClientSecret             : xxxxxx

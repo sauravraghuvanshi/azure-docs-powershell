@@ -4,8 +4,8 @@ Module Name: Az.Monitor
 ms.assetid: C7EC21C7-1C7E-49B2-9B33-486532FCDAEC
 online version: https://docs.microsoft.com/powershell/module/az.monitor/remove-azactivitylogalert
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Remove-AzActivityLogAlert.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Remove-AzActivityLogAlert.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/Remove-AzActivityLogAlert.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/Remove-AzActivityLogAlert.md
 ---
 
 # Remove-AzActivityLogAlert

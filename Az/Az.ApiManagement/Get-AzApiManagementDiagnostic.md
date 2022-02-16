@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.ServiceMana
 Module Name: Az.ApiManagement
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/get-azapimanagementdiagnostic
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementDiagnostic.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementDiagnostic.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Get-AzApiManagementDiagnostic.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Get-AzApiManagementDiagnostic.md
 ---
 
 # Get-AzApiManagementDiagnostic
@@ -33,9 +33,11 @@ The **Get-AzApiManagementDiagnostic** gets details of the diagnostics configured
 
 ### Example 1: Get all the diagnostic configured at the tenant scope.
 ```powershell
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Get-AzApiManagementDiagnostic -Context $apimContext
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Get-AzApiManagementDiagnostic -Context $apimContext
+```
 
+```output
 DiagnosticId                 : applicationinsights
 ApiId                        :
 AlwaysLog                    : allErrors
@@ -65,9 +67,11 @@ This command gets all the diagnostics configured in the Api Management service.
 
 ### Example 2: Get all the diagnostics configured at the Api scope
 ```powershell
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Get-AzApiManagementDiagnostic -Context $apimContext -ApiId "echo-api"
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Get-AzApiManagementDiagnostic -Context $apimContext -ApiId "echo-api"
+```
 
+```output
 DiagnosticId                 : applicationinsights
 ApiId                        : echo-api
 AlwaysLog                    : allErrors
@@ -85,9 +89,11 @@ This command gets all the diagnostics configured at the `echo-api` Api scope
 
 ### Example 3: Get the API-scope diagnostic specified by an Id
 ```powershell
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Get-AzApiManagementDiagnostic -Context $apimContext -ApiId "echo-api" -DiagnosticId "applicationinsights"
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Get-AzApiManagementDiagnostic -Context $apimContext -ApiId "echo-api" -DiagnosticId "applicationinsights"
+```
 
+```output
 DiagnosticId                 : applicationinsights
 ApiId                        : echo-api
 AlwaysLog                    : allErrors

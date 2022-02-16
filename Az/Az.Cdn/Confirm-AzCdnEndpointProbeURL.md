@@ -3,8 +3,8 @@ external help file: Microsoft.Azure.PowerShell.Cmdlets.Cdn.dll-Help.xml
 Module Name: Az.Cdn
 online version: https://docs.microsoft.com/powershell/module/az.cdn/confirm-azcdnendpointprobeurl
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Confirm-AzCdnEndpointProbeURL.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Cdn/Cdn/help/Confirm-AzCdnEndpointProbeURL.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Confirm-AzCdnEndpointProbeURL.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Confirm-AzCdnEndpointProbeURL.md
 ---
 
 # Confirm-AzCdnEndpointProbeURL
@@ -26,7 +26,10 @@ The **Confirm-AzCdnEndpointProbeURL** cmdlet confirms if the probe URL provided 
 
 ### Example 1
 ```powershell
-PS C:\> Confirm-AzCdnEndpointProbeURL -ProbeUrl "http://www.bing.com/images"
+Confirm-AzCdnEndpointProbeURL -ProbeUrl "http://www.bing.com/images"
+```
+
+```output
 IsValid: true
 ErrorCode: None
 Message:

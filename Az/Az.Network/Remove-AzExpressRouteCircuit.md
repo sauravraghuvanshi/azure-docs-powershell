@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: EDB94194-650C-4892-8DDC-E67D435522DD
 online version: https://docs.microsoft.com/powershell/module/az.network/remove-azexpressroutecircuit
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuit.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuit.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzExpressRouteCircuit.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzExpressRouteCircuit.md
 ---
 
 # Remove-AzExpressRouteCircuit

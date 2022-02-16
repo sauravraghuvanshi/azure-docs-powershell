@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: 595D3304-3331-4F44-BA57-AE090FB8A132
 online version: https://docs.microsoft.com/powershell/module/az.automation/export-azautomationdscconfiguration
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Export-AzAutomationDscConfiguration.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Export-AzAutomationDscConfiguration.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Export-AzAutomationDscConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Export-AzAutomationDscConfiguration.md
 ---
 
 # Export-AzAutomationDscConfiguration

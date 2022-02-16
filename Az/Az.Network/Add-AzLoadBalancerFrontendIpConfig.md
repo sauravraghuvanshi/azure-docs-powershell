@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 07FF274A-F365-44E5-A66B-6740CD165664
 online version: https://docs.microsoft.com/powershell/module/az.network/add-azloadbalancerfrontendipconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzLoadBalancerFrontendIpConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzLoadBalancerFrontendIpConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzLoadBalancerFrontendIpConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzLoadBalancerFrontendIpConfig.md
 ---
 
 # Add-AzLoadBalancerFrontendIpConfig

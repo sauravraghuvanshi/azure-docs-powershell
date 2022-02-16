@@ -4,8 +4,8 @@ Module Name: Az.DataFactory
 ms.assetid: ECE1F469-E3C3-4294-A288-8BAE851E8599
 online version: https://docs.microsoft.com/powershell/module/az.datafactory/get-azdatafactory
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactory.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactory.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Get-AzDataFactory.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DataFactory/DataFactoryV2/help/Get-AzDataFactory.md
 ---
 
 # Get-AzDataFactory

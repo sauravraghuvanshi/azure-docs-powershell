@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 6943BB5C-D709-4A80-AF5E-DC9501C20680
 online version: https://docs.microsoft.com/powershell/module/az.network/remove-azapplicationgatewayipconfiguration
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayIPConfiguration.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayIPConfiguration.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzApplicationGatewayIPConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzApplicationGatewayIPConfiguration.md
 ---
 
 # Remove-AzApplicationGatewayIPConfiguration
@@ -29,10 +29,12 @@ The **Remove-AzApplicationGatewayIPConfiguration** cmdlet removes an IP configur
 ```
 PS C:\>$AppGw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
 PS C:\> Remove-AzApplicationGatewayIPConfiguration -ApplicationGateway $AppGw -Name "Subnet02"
+PS C:\> Set-AzApplicationGateway -ApplicationGateway $AppGW
 ```
 
 The first command gets an application gateway and stores it in the $AppGw variable.
 The second command removes the IP configuration named Subnet02 from the application gateway stored in $AppGw.
+The last command updates the application gateway.
 
 ## PARAMETERS
 

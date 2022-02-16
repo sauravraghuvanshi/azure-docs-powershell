@@ -4,8 +4,8 @@ Module Name: Az.Media
 ms.assetid: 4D64CA4D-1066-4D3E-9317-60D37D9DE2BB
 online version: https://docs.microsoft.com/powershell/module/az.media/new-azmediaservicestorageconfig
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/New-AzMediaServiceStorageConfig.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/New-AzMediaServiceStorageConfig.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Media/Media/help/New-AzMediaServiceStorageConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Media/Media/help/New-AzMediaServiceStorageConfig.md
 ---
 
 # New-AzMediaServiceStorageConfig

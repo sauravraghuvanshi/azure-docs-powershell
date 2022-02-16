@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: F9703508-DD4D-4D25-A7CA-7E3432B5DCA9
 online version: https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabasesecondary
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Set-AzSqlDatabaseSecondary.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Set-AzSqlDatabaseSecondary.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Set-AzSqlDatabaseSecondary.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Set-AzSqlDatabaseSecondary.md
 ---
 
 # Set-AzSqlDatabaseSecondary

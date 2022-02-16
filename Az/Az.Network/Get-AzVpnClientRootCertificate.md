@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 16754F70-9619-4F68-86E9-5C8B27812707
 online version: https://docs.microsoft.com/powershell/module/az.network/get-azvpnclientrootcertificate
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVpnClientRootCertificate.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVpnClientRootCertificate.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzVpnClientRootCertificate.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzVpnClientRootCertificate.md
 ---
 
 # Get-AzVpnClientRootCertificate

@@ -4,8 +4,8 @@ Module Name: Az.ApiManagement
 ms.assetid: D6B7F253-03CD-40BE-87D6-E4AE300A29D5
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/remove-azapimanagementproduct
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementProduct.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementProduct.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementProduct.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementProduct.md
 ---
 
 # Remove-AzApiManagementProduct
@@ -27,8 +27,8 @@ The **Remove-AzApiManagementProduct** cmdlet removes an existing API Management 
 
 ### Example 1: Remove an existing product and all subscriptions
 ```powershell
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Remove-AzApiManagementProduct -Context $apimContext -ProductId "0123456789" -DeleteSubscriptions
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Remove-AzApiManagementProduct -Context $apimContext -ProductId "0123456789" -DeleteSubscriptions
 ```
 
 This command removes an existing product and all subscriptions.

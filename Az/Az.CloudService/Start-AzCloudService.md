@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.CloudService
 online version: https://docs.microsoft.com/powershell/module/az.cloudservice/start-azcloudservice
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CloudService/help/Start-AzCloudService.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CloudService/help/Start-AzCloudService.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CloudService/help/Start-AzCloudService.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CloudService/help/Start-AzCloudService.md
 ---
 
 # Start-AzCloudService
@@ -33,7 +33,7 @@ Starts the cloud service.
 
 ### Example 1: Start cloud service
 ```powershell
-PS C:\> Start-AzCloudService -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS"
+Start-AzCloudService -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS"
 ```
 
 This command starts all the role instances that belong to the the cloud service named ContosoCS.
@@ -216,6 +216,9 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <ICloudServiceIdentity>: Identity Parameter
   - `[CloudServiceName <String>]`: 
   - `[Id <String>]`: Resource identity path
+  - `[Location <String>]`: Name of the location that the OS version pertains to.
+  - `[OSFamilyName <String>]`: Name of the OS family.
+  - `[OSVersionName <String>]`: Name of the OS version.
   - `[ResourceGroupName <String>]`: 
   - `[RoleInstanceName <String>]`: Name of the role instance.
   - `[RoleName <String>]`: Name of the role.

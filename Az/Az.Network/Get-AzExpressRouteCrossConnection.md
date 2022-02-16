@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 3efb6270-f908-4734-bdb1-6c7e4e4eb382
 online version: https://docs.microsoft.com/powershell/module/az.network/get-azexpressroutecrossconnection
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCrossConnection.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCrossConnection.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzExpressRouteCrossConnection.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzExpressRouteCrossConnection.md
 ---
 
 # Get-AzExpressRouteCrossConnection

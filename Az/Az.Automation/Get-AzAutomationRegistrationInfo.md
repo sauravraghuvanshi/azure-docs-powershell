@@ -4,8 +4,8 @@ Module Name: Az.Automation
 ms.assetid: 09823BE3-A98B-42EF-B6F4-99F95F2B342E
 online version: https://docs.microsoft.com/powershell/module/az.automation/get-azautomationregistrationinfo
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Get-AzAutomationRegistrationInfo.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Get-AzAutomationRegistrationInfo.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Get-AzAutomationRegistrationInfo.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Automation/Automation/help/Get-AzAutomationRegistrationInfo.md
 ---
 
 # Get-AzAutomationRegistrationInfo

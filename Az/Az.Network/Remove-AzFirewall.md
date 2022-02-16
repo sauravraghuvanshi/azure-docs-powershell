@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: 9DBD5ADF-C30E-4D1A-A4CB-4D70C21088F3
 online version: https://docs.microsoft.com/powershell/module/az.network/remove-azfirewall
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzFirewall.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzFirewall.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzFirewall.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Remove-AzFirewall.md
 ---
 
 # Remove-AzFirewall

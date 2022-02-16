@@ -4,8 +4,8 @@ Module Name: Az.Sql
 ms.assetid: 26EC220C-5123-4CEF-8CC6-5FFD08F33481
 online version: https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserverrecommendedactionstate
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Set-AzSqlServerRecommendedActionState.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Set-AzSqlServerRecommendedActionState.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Set-AzSqlServerRecommendedActionState.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Sql/Sql/help/Set-AzSqlServerRecommendedActionState.md
 ---
 
 # Set-AzSqlServerRecommendedActionState

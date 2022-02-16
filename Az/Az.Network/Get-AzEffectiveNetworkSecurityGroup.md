@@ -4,8 +4,8 @@ Module Name: Az.Network
 ms.assetid: B9409AD6-F761-4B80-8E08-DBB2356F567D
 online version: https://docs.microsoft.com/powershell/module/az.network/get-azeffectivenetworksecuritygroup
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzEffectiveNetworkSecurityGroup.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzEffectiveNetworkSecurityGroup.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzEffectiveNetworkSecurityGroup.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzEffectiveNetworkSecurityGroup.md
 ---
 
 # Get-AzEffectiveNetworkSecurityGroup

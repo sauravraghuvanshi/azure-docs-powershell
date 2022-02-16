@@ -4,8 +4,8 @@ Module Name: Az.ApiManagement
 ms.assetid: A4A8D996-72A2-4154-98DA-5F84CAA010B9
 online version: https://docs.microsoft.com/powershell/module/az.apimanagement/remove-azapimanagementoperation
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementOperation.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementOperation.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementOperation.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementOperation.md
 ---
 
 # Remove-AzApiManagementOperation
@@ -28,8 +28,8 @@ The **Remove-AzApiManagementOperation** cmdlet removes an existing operation.
 
 ### Example 1: Remove an existing API Operation
 ```powershell
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Remove-AzApiManagementOperation -Context $apimContext -ApiId "0123456789" -OperationId "9876543210" -Force
+$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+Remove-AzApiManagementOperation -Context $apimContext -ApiId "0123456789" -OperationId "9876543210" -Force
 ```
 
 This command removes an existing API Operation.

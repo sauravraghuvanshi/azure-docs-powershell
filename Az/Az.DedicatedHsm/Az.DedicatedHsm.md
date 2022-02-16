@@ -4,8 +4,8 @@ Module Guid: 841c2fad-e8c0-4924-b9b9-9d27d0f40b48
 Download Help Link: https://docs.microsoft.com/powershell/module/az.dedicatedhsm
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DedicatedHsm/help/Az.DedicatedHsm.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DedicatedHsm/help/Az.DedicatedHsm.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DedicatedHsm/help/Az.DedicatedHsm.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/DedicatedHsm/help/Az.DedicatedHsm.md
 ---
 
 # Az.DedicatedHsm Module

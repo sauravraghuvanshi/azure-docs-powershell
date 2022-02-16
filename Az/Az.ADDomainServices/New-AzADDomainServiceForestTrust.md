@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.ADDomainServices
 online version: https://docs.microsoft.com/powershell/module/az.ADDomainServices/new-AzADDomainServiceForestTrust
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ADDomainServices/help/New-AzADDomainServiceForestTrust.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ADDomainServices/help/New-AzADDomainServiceForestTrust.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ADDomainServices/help/New-AzADDomainServiceForestTrust.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ADDomainServices/help/New-AzADDomainServiceForestTrust.md
 ---
 
 # New-AzADDomainServiceForestTrust
@@ -27,7 +27,9 @@ Create a in-memory object for ForestTrust
 ### Example 1: Create ServiceForestTrust for ADDomain
 ```powershell
 PS C:\> New-AzADDomainServiceForestTrust -FriendlyName FriendlyNameTest
+```
 
+```output
 FriendlyName     RemoteDnsIP TrustDirection TrustPassword TrustedDomainFqdn
 ------------     ----------- -------------- ------------- -----------------
 FriendlyNameTest

@@ -4,8 +4,8 @@ Module Name: Az.Batch
 ms.assetid: 9BEE5888-304D-4438-BE97-D1FE254AEE98
 online version: https://docs.microsoft.com/powershell/module/az.batch/set-azbatchaccount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Set-AzBatchAccount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Batch/Batch/help/Set-AzBatchAccount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Set-AzBatchAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Batch/Batch/help/Set-AzBatchAccount.md
 ---
 
 # Set-AzBatchAccount
@@ -27,8 +27,11 @@ Currently, this cmdlet can update only tags.
 ## EXAMPLES
 
 ### Example 1: Update the tags on a Batch account
+```powershell
+Set-AzBatchAccount -AccountName "cmdletexample" -Tag @{key0="value0";key1=$null;key2="value2"}
 ```
-PS C:\>Set-AzBatchAccount -AccountName "cmdletexample" -Tag @{key0="value0";key1=$null;key2="value2"}
+
+```output
 AccountName                  : cmdletexample
 Location                     : westus
 ResourceGroupName            : CmdletExampleRG
