@@ -32,7 +32,7 @@ Gets the profile.
 
 ### Example 1
 ```powershell
-Get-AzFrontDoorCdnProfile -ProfileName $profileName -ResourceGroupName $resourceGroupName
+PS C:\> Get-AzFrontDoorCdnProfile -ProfileName $profileName -ResourceGroupName $resourceGroupName
 ```
 
 Gets the profile.

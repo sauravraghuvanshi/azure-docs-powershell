@@ -25,11 +25,8 @@ Gets the Batch service quotas for the specified subscription at the given locati
 ## EXAMPLES
 
 ### Example 1: Get the Batch service quotas for the subscription in the West US region
-```powershell
-Get-AzBatchLocationQuota -Location "westus"
 ```
-
-```output
+PS C:\>Get-AzBatchLocationQuota -Location "westus"
           AccountQuota Location
           ------------ --------
           1            westus

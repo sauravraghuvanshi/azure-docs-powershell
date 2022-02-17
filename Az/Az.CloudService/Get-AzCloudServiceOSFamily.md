@@ -39,10 +39,8 @@ Gets properties of a guest operating system family that can be specified in the 
 
 ### Example 1: Get all OS families in a location
 ```powershell
-Get-AzCloudServiceOSFamily -location 'westus2'
-```
+PS C:\> Get-AzCloudServiceOSFamily -location 'westus2'
 
-```Output
 Name Label
 ---- -----
 5    Windows Server 2016
@@ -56,10 +54,8 @@ This command gets all OS families in location westus2
 
 ### Example 2: Get OS family
 ```powershell
-Get-AzCloudServiceOSFamily -location 'westus2' -OSFamilyName 5
-```
+PS C:\> Get-AzCloudServiceOSFamily -location 'westus2' -OSFamilyName 5
 
-```Output
 Name Label
 ---- -----
 5    Windows Server 2016

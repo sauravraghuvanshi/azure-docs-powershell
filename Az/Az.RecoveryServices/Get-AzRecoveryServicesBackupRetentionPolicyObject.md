@@ -18,7 +18,7 @@ Gets a base retention policy object.
 ```
 Get-AzRecoveryServicesBackupRetentionPolicyObject [-WorkloadType] <WorkloadType>
  [[-BackupManagementType] <BackupManagementType>] [-DefaultProfile <IAzureContextContainer>]
- [[-ScheduleRunFrequency] <ScheduleRunType>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -40,15 +40,6 @@ The first command gets the retention policy object, and then stores it in the $R
 The second command sets the duration for the retention policy object to 365 days.
 The third command gets the schedule policy object, and then stores it in the $SchPol variable.
 The last command creates a backup protection policy using the retention policy and schedule policy created with the previous commands.
-
-### Example 2: Get base hourly retention object for fileshare policy 
-```powershell
-PS C:\> $retentionPolicy = Get-AzRecoveryServicesBackupRetentionPolicyObject -WorkloadType AzureFiles -BackupManagementType AzureStorage -ScheduleRunFrequency Hourly
-PS C:\> $retentionPolicy.DailySchedule.DurationCountInDays = 10
-```
-
-The first command gets a base hourly **RetentionPolicy** object, and then stores it in the $retentionPolicy variable.
-The second command sets the retention duration for daily recovery points to 10 days.
 
 ## PARAMETERS
 
@@ -81,22 +72,6 @@ Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ScheduleRunFrequency
-Frequency of the schedule for which base retention policy object is fetched. Acceptable values are Daily and Hourly.
-
-```yaml
-Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.ScheduleRunType
-Parameter Sets: (All)
-Aliases:
-Accepted values: Daily, Hourly
-
-Required: False
-Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

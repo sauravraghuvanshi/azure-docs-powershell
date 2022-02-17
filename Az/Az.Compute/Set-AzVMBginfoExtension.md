@@ -16,7 +16,7 @@ Adds the BGInfo extension to a virtual machine.
 ## SYNTAX
 
 ```
-Set-AzVMBginfoExtension [-ResourceGroupName] <String> [-VMName] <String> -Name <String>
+Set-AzVMBginfoExtension [-ResourceGroupName] <String> [-VMName] <String> [-Name <String>]
  [-TypeHandlerVersion <String>] [-Location <String>] [-DisableAutoUpgradeMinorVersion] [-ForceRerun <String>]
  [-NoWait] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -108,7 +108,7 @@ Type: System.String
 Parameter Sets: (All)
 Aliases: ExtensionName
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)

@@ -39,7 +39,7 @@ Removes the profile.
 
 ### Example 1
 ```powershell
-Remove-AzFrontDoorCdnProfile -ResourceId $profileResourceId
+PS C:\> Remove-AzFrontDoorCdnProfile -ResourceId $profileResourceId
 ```
 
 Removes the profile.

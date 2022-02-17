@@ -26,7 +26,7 @@ Creates the endpoint.
 
 ### Example 1
 ```powershell
-New-AzFrontDoorCdnEndpoint -EndpointName $endpointName -ProfileName $profileName -ResourceGroupName $resourceGroupName
+PS C:\> New-AzFrontDoorCdnEndpoint -EndpointName $endpointName -ProfileName $profileName -ResourceGroupName $resourceGroupName
 ```
 
 Creates the endpoint.

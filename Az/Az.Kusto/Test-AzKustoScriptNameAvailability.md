@@ -32,27 +32,23 @@ Checks that the script name is valid and is not already in use.
 
 ## EXAMPLES
 
-### Example 1: Check that the script name which is not in use
+### Example 1: {{ Add title here }}
 ```powershell
-PS C:\> Test-AzKustoScriptNameAvailability -ClusterName testnewkustocluster -DatabaseName mykustodatabase -ResourceGroupName testrg -Name newkustoscript
+PS C:\> {{ Add code here }}
 
-Message Name           NameAvailable Reason
-------- ----           ------------- ------
-        newkustoscript True
+{{ Add output here }}
 ```
 
-The above command checks that the script name which is not in use.
+{{ Add description here }}
 
-### Example 2: Check that the script name which is not valid
+### Example 2: {{ Add title here }}
 ```powershell
-PS C:\> Test-AzKustoScriptNameAvailability -ClusterName testnewkustocluster -DatabaseName mykustodatabase -ResourceGroupName testrg -Name newkustoscript!
+PS C:\> {{ Add code here }}
 
-Message                                                                                                           Name            NameAvailable Reason
--------                                                                                                           ----            ------------- ------
-Script: Name='newkustoscript!' does not comply with naming rules (contains invalid characters or format mismatch) newkustoscript! False
+{{ Add output here }}
 ```
 
-The above command checks that the script name which is not valid.
+{{ Add description here }}
 
 ## PARAMETERS
 

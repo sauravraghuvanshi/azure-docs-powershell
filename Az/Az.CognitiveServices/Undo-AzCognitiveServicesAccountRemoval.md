@@ -26,7 +26,7 @@ The **Undo-AzCognitiveServicesAccountRemoval** cmdlet recover a soft-deleted Cog
 
 ### Example 1
 ```powershell
-Undo-AzCognitiveServicesAccountRemoval -Location "Central US EUAP" -ResourceGroupName "ResourceGroupName" -Name "ResourceName"
+PS C:\> Undo-AzCognitiveServicesAccountRemoval -Location "Central US EUAP" -ResourceGroupName "ResourceGroupName" -Name "ResourceName"
 ```
 
 Recover a soft-deleted Cognitive Services account. The account was created in "Central US EUAP", the resource group and resource name were "ResourceGroupName" and "ResourceName". 

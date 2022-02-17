@@ -33,10 +33,7 @@ The **Get-AzCdnProfileSupportedOptimizationType** cmdlet gets the supported opti
 
 ### Example 1
 ```powershell
-Get-AzCdnProfileSupportedOptimizationType -ProfileName $profileName -ResourceGroupName $resourceGroupName
-```
-
-```output
+PS C:\> Get-AzCdnProfileSupportedOptimizationType -ProfileName $profileName -ResourceGroupName $resourceGroupName
 OptimizationType: GeneralWebDelivery
 OptimizationType: DynamicSiteAcceleration
 ```

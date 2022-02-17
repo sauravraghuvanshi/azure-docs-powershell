@@ -33,7 +33,7 @@ Updates the endpoint.
 
 ### Example 1
 ```powershell
-Set-AzFrontDoorCdnEndpoint -Endpoint $endpointObject
+PS C:\> Set-AzFrontDoorCdnEndpoint -Endpoint $endpointObject
 ```
 
 Updates the endpoint.

@@ -499,7 +499,7 @@ Accept wildcard characters: False
 ```
 
 ### -NodeOsDiskSize
-Specifies the size, in GB, of the operating system disk.
+The default number of nodes for the node pools.
 
 ```yaml
 Type: System.Int32

@@ -39,7 +39,7 @@ Removes the secret.
 
 ### Example 1
 ```powershell
-Remove-AzFrontDoorCdnSecret -ResourceId $secretResourceId
+PS C:\> Remove-AzFrontDoorCdnSecret -ResourceId $secretResourceId
 ```
 
 Removes the secret.

@@ -26,11 +26,8 @@ The **Get-AzBatchApplicationPackage** cmdlet gets information about an applicati
 ## EXAMPLES
 
 ### Example 1: Get details of an application package in a Batch account
-```powershell
-Get-AzBatchApplicationPackage -AccountName "ContosoBatch" -ResourceGroupName "ContosoBatchGroup" -ApplicationName "Litware" -ApplicationVersion "1.0"
 ```
-
-```output
+PS C:\>Get-AzBatchApplicationPackage -AccountName "ContosoBatch" -ResourceGroupName "ContosoBatchGroup" -ApplicationName "Litware" -ApplicationVersion "1.0"
 Format             : zip
 State              : Active
 Version            : 1.0

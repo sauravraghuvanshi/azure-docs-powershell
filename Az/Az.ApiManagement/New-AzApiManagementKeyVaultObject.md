@@ -26,9 +26,9 @@ The **New-AzApiManagementKeyVaultObject** cmdlet creates an instance of PsApiMan
 
 ### Example 1 : Create a keyVault Namedvalue
 ```powershell
-$secretIdentifier = 'https://contoso.vault.azure.net/secrets/xxxx'
-$keyvault = New-AzApiManagementKeyVaultObject -SecretIdentifier $secretIdentifier 
-$keyVaultNamedValue = New-AzApiManagementNamedValue -Context $context -NamedValueId $keyVaultNamedValueId -Name $keyVaultNamedValueName -keyVault $keyvault -Secret
+PS C:\>$secretIdentifier = 'https://contoso.vault.azure.net/secrets/xxxx'
+PS C:\>$keyvault = New-AzApiManagementKeyVaultObject -SecretIdentifier $secretIdentifier 
+PS C:\>$keyVaultNamedValue = New-AzApiManagementNamedValue -Context $context -NamedValueId $keyVaultNamedValueId -Name $keyVaultNamedValueName -keyVault $keyvault -Secret
 ```
 
 The first command creates a keyvault.
@@ -36,9 +36,9 @@ The second command creates a named value using secret from this keyvault.
 
 ### Example 2 : Create a keyVault Certificate
 ```powershell
-$secretIdentifier = 'https://contoso.vault.azure.net/secrets/xxxx'
-$keyvault = New-AzApiManagementKeyVaultObject -SecretIdentifier $secretIdentifier 
-$keyVaultcert = New-AzApiManagementCertificate -Context $context -CertificateId $kvcertId -KeyVault $keyvault
+PS C:\>$secretIdentifier = 'https://contoso.vault.azure.net/secrets/xxxx'
+PS C:\>$keyvault = New-AzApiManagementKeyVaultObject -SecretIdentifier $secretIdentifier 
+PS C:\>$keyVaultcert = New-AzApiManagementCertificate -Context $context -CertificateId $kvcertId -KeyVault $keyvault
 ```
 
 The first command creates a keyvault.

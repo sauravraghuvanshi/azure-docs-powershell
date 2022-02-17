@@ -32,11 +32,11 @@ Get the details of the Cache configured in Api Management service.
 
 ### Example 1: Get all Caches
 ```powershell
-$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-Get-AzApiManagementCache -Context $apimContext
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Get-AzApiManagementCache -Context $apimContext
 ```
 
-```output
+```
 CacheId           : westus
 Description       : apim.redis.cache.windows.net
 ConnectionString  : {{5cc1848125a3f724dcf9a928}}
@@ -50,11 +50,11 @@ Gets a list of all the Caches configured in the Api Management service.
 
 ### Example 2: Get the Cache specified by the Identifier westus
 ```powershell
-$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-Get-AzApiManagementCache -Context $apimContext -cacheId westus
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Get-AzApiManagementCache -Context $apimContext -cacheId westus
 ```
 
-```output
+```
 CacheId           : westus
 Description       : apim.redis.cache.windows.net
 ConnectionString  : {{5cc1848125a3f724dcf9a928}}

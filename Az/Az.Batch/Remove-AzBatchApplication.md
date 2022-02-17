@@ -26,8 +26,8 @@ The **Remove-AzBatchApplication** cmdlet deletes an application from an Azure Ba
 ## EXAMPLES
 
 ### Example 1: Delete an application from a Batch account
-```powershell
-Remove-AzBatchApplication -AccountName "ContosoBatch" -ResourceGroupName "ContosoBatchGroup" -ApplicationName "Litware"
+```
+PS C:\>Remove-AzBatchApplication -AccountName "ContosoBatch" -ResourceGroupName "ContosoBatchGroup" -ApplicationName "Litware"
 ```
 
 This command deletes the Litware application from the ContosoBatch account.

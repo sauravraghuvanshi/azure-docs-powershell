@@ -27,8 +27,8 @@ The **Remove-AzApiManagementAuthorizationServer** cmdlet removes an Azure API Ma
 
 ### Example 1: Remove an authorization server
 ```powershell
-$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-Remove-AzApiManagementAuthorizationServer -Context $ApiMgmtContext -ServerId "authserverid" -Force
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Remove-AzApiManagementAuthorizationServer -Context $ApiMgmtContext -ServerId "authserverid" -Force
 ```
 
 This command removes the specified API Management Authorization Server.

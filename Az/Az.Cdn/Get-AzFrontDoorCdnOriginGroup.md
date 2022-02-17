@@ -39,7 +39,7 @@ Gets the origin group.
 
 ### Example 1
 ```powershell
-Get-AzFrontDoorCdnOriginGroup -OriginGroupName $originGroupName -ProfileName $profileName -ResourceGroupName $resourceGroupName
+PS C:\> Get-AzFrontDoorCdnOriginGroup -OriginGroupName $originGroupName -ProfileName $profileName -ResourceGroupName $resourceGroupName
 ```
 
 Gets the origin group.

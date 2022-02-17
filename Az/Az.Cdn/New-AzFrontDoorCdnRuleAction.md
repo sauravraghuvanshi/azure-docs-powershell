@@ -58,7 +58,7 @@ Creates the rule action.
 
 ### Example 1
 ```powershell
-New-AzFrontDoorCdnRuleAction -CacheBehavior BypassCache
+PS C:\> New-AzFrontDoorCdnRuleAction -CacheBehavior BypassCache
 ```
 
 Creates the rule action.

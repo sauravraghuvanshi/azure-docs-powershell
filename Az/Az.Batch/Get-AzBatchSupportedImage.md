@@ -28,11 +28,8 @@ Specify the account by using the *BatchContext* parameter.
 ### Example 1: Get all available supported images
 
 ```powershell
-$Context = Get-AzBatchAccountKey -AccountName "ContosoBatchAccount"
-Get-AzBatchSupportedImage -BatchContext $Context
-```
-
-```output
+PS C:\>$Context = Get-AzBatchAccountKey -AccountName "ContosoBatchAccount"
+PS C:\> Get-AzBatchSupportedImage -BatchContext $Context
 BatchSupportEndOfLife :
 Capabilities          :
 ImageReference        : canonical:ubuntuserver:16.04-lts:latest

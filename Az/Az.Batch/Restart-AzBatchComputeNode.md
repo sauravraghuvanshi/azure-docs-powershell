@@ -33,15 +33,15 @@ The **Restart-AzBatchComputeNode** cmdlet reboots the specified compute node.
 ## EXAMPLES
 
 ### Example 1: Restart a compute node
-```powershell
-Restart-AzBatchComputeNode -PoolId "MyPool" -Id "tvm-3257026573_2-20150813t200938z" -BatchContext $Context
+```
+PS C:\>Restart-AzBatchComputeNode -PoolId "MyPool" -Id "tvm-3257026573_2-20150813t200938z" -BatchContext $Context
 ```
 
 This command reboots the compute node with the ID "tvm-3257026573_2-20150813t200938z" in the pool MyPool.
 
 ### Example 2: Restart every compute node in a pool
-```powershell
-Get-AzBatchComputeNode -PoolId "MyPool" -BatchContext $Context | Restart-AzBatchComputeNode -BatchContext $Context
+```
+PS C:\>Get-AzBatchComputeNode -PoolId "MyPool" -BatchContext $Context | Restart-AzBatchComputeNode -BatchContext $Context
 ```
 
 This command reboots every compute node in the pool MyPool.

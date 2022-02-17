@@ -28,7 +28,7 @@ The **Set-AzBatchApplication** cmdlet modifies settings for the specified Azure 
 
 ### Example 1: Update an application in a Batch account
 ```powershell
-Set-AzBatchApplication -AccountName "ContosoBatch" -ResourceGroupName "ContosoBatchGroup" -ApplicationName "Litware" -AllowUpdates $False
+PS C:\>Set-AzBatchApplication -AccountName "ContosoBatch" -ResourceGroupName "ContosoBatchGroup" -ApplicationName "Litware" -AllowUpdates $False
 ```
 
 This command changes whether the Litware application in the ContosoBatch account allows updates.

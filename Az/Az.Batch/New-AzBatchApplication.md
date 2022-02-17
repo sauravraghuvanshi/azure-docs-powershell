@@ -27,8 +27,8 @@ The **New-AzBatchApplication** cmdlet adds an application to the specified Azure
 ## EXAMPLES
 
 ### Example 1: Add an empty application to a Batch account
-```powershell
-New-AzBatchApplication -AccountName "ContosoBatch" -ResourceGroupName "ContosoBatchGroup" -ApplicationName "Litware" -AllowUpdates $True -DisplayName "Litware Advanced Reticulator"
+```
+PS C:\>New-AzBatchApplication -AccountName "ContosoBatch" -ResourceGroupName "ContosoBatchGroup" -ApplicationName "Litware" -AllowUpdates $True -DisplayName "Litware Advanced Reticulator"
 ```
 
 This command creates the Litware application in the ContosoBatch account.

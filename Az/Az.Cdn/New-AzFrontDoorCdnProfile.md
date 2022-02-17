@@ -26,7 +26,7 @@ Creates the profile.
 
 ### Example 1
 ```powershell
-New-AzFrontDoorCdnProfile -ProfileName $profileName -ResourceGroupName $resourceGroupName -Sku $sku
+PS C:\> New-AzFrontDoorCdnProfile -ProfileName $profileName -ResourceGroupName $resourceGroupName -Sku $sku
 ```
 
 Creates the profile.

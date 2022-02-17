@@ -33,9 +33,8 @@ Creates or updates an Application Insights web test definition.
 
 ### Example 1: Updates Application Insights link of the Web test
 ```powershell
-Update-AzApplicationInsightsWebTestTag -ResourceGroupName azpwsh-rg-test -Name webtest01-lucasappinsights -Tag @{"hidden-link:/subscriptions/xxxxxxxxxx-xxxxx-xxxx-xxxxxxxxxxxx/resourceGroups/azpwsh-rg-test/providers/microsoft.insights/components/lucasappinsights" = "Resource"}
-```
-```output
+PS C:\> Update-AzApplicationInsightsWebTestTag -ResourceGroupName azpwsh-rg-test -Name webtest01-lucasappinsights -Tag @{"hidden-link:/subscriptions/xxxxxxxxxx-xxxxx-xxxx-xxxxxxxxxxxx/resourceGroups/azpwsh-rg-test/providers/microsoft.insights/components/lucasappinsights" = "Resource"}
+
 Location Name                       WebTestKind   ResourceGroupName   Enabled
 -------- ----                       -----------   -----------------   -------
 westus2  webtest01-lucasappinsights standard      azpwsh-rg-test      True
@@ -45,9 +44,8 @@ This command updates Application Insights link of the Web test.
 
 ### Example 2: Updates Application Insights link of the Web test by pipeline
 ```powershell
-Get-AzApplicationInsightsWebTest -ResourceGroupName azpwsh-rg-test -WebTestName webtest01-lucasappinsights | Update-AzApplicationInsightsWebTestTag -Tag @{"hidden-link:/subscriptions/xxxxxxxxxx-xxxxx-xxxx-xxxxxxxxxxxx/resourceGroups/azpwsh-rg-test/providers/microsoft.insights/components/appinsightsportal01" = "Resource"}
-```
-```output
+PS C:\> Get-AzApplicationInsightsWebTest -ResourceGroupName azpwsh-rg-test -WebTestName webtest01-lucasappinsights | Update-AzApplicationInsightsWebTestTag -Tag @{"hidden-link:/subscriptions/xxxxxxxxxx-xxxxx-xxxx-xxxxxxxxxxxx/resourceGroups/azpwsh-rg-test/providers/microsoft.insights/components/appinsightsportal01" = "Resource"}
+
 Location Name                       WebTestKind   ResourceGroupName     Enabled
 -------- ----                       -----------   -----------------     -------
 westus2  webtest01-lucasappinsights standard      azpwsh-rg-test        True

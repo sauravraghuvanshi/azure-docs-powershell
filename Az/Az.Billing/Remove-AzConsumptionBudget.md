@@ -33,28 +33,19 @@ The Remove-AzConsumptionBudget cmdlet removes a budget in either a subscription 
 
 ### Example 1: Remove a budget with a budget name at subscription level
 ```powershell
-Remove-AzConsumptionBudget -Name PSBudget -PassThru
-```
-
-```output
+PS C:\> Remove-AzConsumptionBudget -Name PSBudget -PassThru
 True
 ```
 
 ### Example 2: Remove a budget with a budget name at resource group level
 ```powershell
-Remove-AzConsumptionBudget -ResourceGroupName RGBudgets -Name PSBudgetRG -PassThru
-```
-
-```output
+PS C:\> Remove-AzConsumptionBudget -ResourceGroupName RGBudgets -Name PSBudgetRG -PassThru
 True
 ```
 
 ### Example 3: Remove a budget through piping at subscription level
 ```powershell
-Get-AzConsumptionBudget -Name PSBudget | Remove-AzConsumptionBudget -PassThru
-```
-
-```output
+PS C:\> Get-AzConsumptionBudget -Name PSBudget | Remove-AzConsumptionBudget -PassThru
 True
 ```
 

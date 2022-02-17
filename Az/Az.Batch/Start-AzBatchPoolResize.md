@@ -28,8 +28,8 @@ The **Start-AzBatchPoolResize** cmdlet starts an Azure Batch resize operation on
 ## EXAMPLES
 
 ### Example 1: Resize a pool to 12 nodes
-```powershell
-Start-AzBatchPoolResize -Id "ContosoPool06" -TargetDedicatedComputeNodes 12 -BatchContext $Context
+```
+PS C:\>Start-AzBatchPoolResize -Id "ContosoPool06" -TargetDedicatedComputeNodes 12 -BatchContext $Context
 ```
 
 This command starts a resize operation on the pool that has the ID ContosoPool06.
@@ -37,8 +37,8 @@ The target for the operation is 12 dedicated compute nodes.
 Use the Get-AzBatchAccountKey cmdlet to assign a context to the $Context variable.
 
 ### Example 2: Resize a pool using a deallocation option
-```powershell
-Get-AzBatchPool -Id "ContosoPool06" -BatchContext $Context | Start-AzBatchPoolResize -TargetDedicatedComputeNodes 5 -ResizeTimeout ([TimeSpan]::FromHours(1)) -ComputeNodeDeallocationOption ([Microsoft.Azure.Batch.Common.ComputeNodeDeallocationOption]::Terminate) -BatchContext $Context
+```
+PS C:\>Get-AzBatchPool -Id "ContosoPool06" -BatchContext $Context | Start-AzBatchPoolResize -TargetDedicatedComputeNodes 5 -ResizeTimeout ([TimeSpan]::FromHours(1)) -ComputeNodeDeallocationOption ([Microsoft.Azure.Batch.Common.ComputeNodeDeallocationOption]::Terminate) -BatchContext $Context
 ```
 
 This cmdlet resizes a pool to five dedicated compute nodes.

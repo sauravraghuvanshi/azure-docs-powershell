@@ -294,7 +294,7 @@ PS C:\> New-AzADServicePrincipal -ApplicationId $appid
 
 Create service principal with existing application
 
-### Example 3: Create application with display name and associated new service principal with it
+### Example 3: Create application with display name and associated new service pincipal with it
 ```powershell
 PS C:\> New-AzADServicePrincipal -DisplayName $name
 ```

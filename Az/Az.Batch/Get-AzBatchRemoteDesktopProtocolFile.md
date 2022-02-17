@@ -45,8 +45,8 @@ The **Get-AzBatchRemoteDesktopProtocolFile** cmdlet gets a Remote Desktop Protoc
 ## EXAMPLES
 
 ### Example 1: Get an RDP file from a specified compute node and save the file
-```powershell
-Get-AzBatchRemoteDesktopProtocolFile -PoolId "Pool06" -ComputeNodeId "ComputeNode01" -DestinationPath "C:\PowerShell\ComputeNode01.rdp" -BatchContext $Context
+```
+PS C:\>Get-AzBatchRemoteDesktopProtocolFile -PoolId "Pool06" -ComputeNodeId "ComputeNode01" -DestinationPath "C:\PowerShell\ComputeNode01.rdp" -BatchContext $Context
 ```
 
 This command gets an RDP file from the compute node that has the ID ComputeNode01 in the pool that has the ID Pool06.
@@ -54,8 +54,8 @@ The command saves the .rdp file as C:\PowerShell\MyComputeNode.rdp.
 Use the Get-AzBatchAccountKey cmdlet to assign a context to the $Context variable.
 
 ### Example 2: Get an RDP file from a compute node and save the file by using the pipeline
-```powershell
-Get-AzBatchComputeNode -PoolId "Pool06" -Id "ComputeNode02" -BatchContext $Context | Get-AzBatchRemoteDesktopProtocolFile -DestinationPath "C:\PowerShell\MyComputeNode02.rdp" -BatchContext $Context
+```
+PS C:\>Get-AzBatchComputeNode -PoolId "Pool06" -Id "ComputeNode02" -BatchContext $Context | Get-AzBatchRemoteDesktopProtocolFile -DestinationPath "C:\PowerShell\MyComputeNode02.rdp" -BatchContext $Context
 ```
 
 This command gets the compute node that has the ID ComputeNode02 in the pool that has the ID Pool06.
@@ -63,9 +63,9 @@ The command passes that compute node to the current cmdlet by using the pipeline
 The current cmdlet gets an .rpd file from the compute node, and then saves the contents as a file that is named C:\PowerShell\MyComputeNode02.rdp.
 
 ### Example 3: Get a RDP file from a specified compute node and direct it to a stream
-```powershell
-$Stream = New-Object -TypeName "System.IO.MemoryStream"
-Get-AzBatchRemoteDesktopProtocolFile "Pool06" -ComputeNodeId "ComputeNode03" -DestinationStream $Stream -BatchContext $Context
+```
+PS C:\>$Stream = New-Object -TypeName "System.IO.MemoryStream"
+PS C:\> Get-AzBatchRemoteDesktopProtocolFile "Pool06" -ComputeNodeId "ComputeNode03" -DestinationStream $Stream -BatchContext $Context
 ```
 
 The first command creates a stream by using the New-Object cmdlet, and then stores it in the $Stream variable.

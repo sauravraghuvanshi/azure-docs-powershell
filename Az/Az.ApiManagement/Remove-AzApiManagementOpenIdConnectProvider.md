@@ -26,9 +26,9 @@ The **Remove-AzApiManagementOpenIdConnectProvider** cmdlet removes an OpenID Con
 ## EXAMPLES
 
 ### Example 1: Remove a provider
-```powershell
-$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-Remove-AzApiManagementOpenIdConnectProvider -Context $apimContext -OpenIdConnectProviderId "OICProvider01" -PassThru
+```
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Remove-AzApiManagementOpenIdConnectProvider -Context $apimContext -OpenIdConnectProviderId "OICProvider01" -PassThru
 ```
 
 This command removes a provider that has the ID OICProvider01.

@@ -10,7 +10,7 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Update-AzCosmosDBAccountFailoverPriority
 
 ## SYNOPSIS
-Update Failover Region Priority of a CosmosDB Account.
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
@@ -33,34 +33,13 @@ Update-AzCosmosDBAccountFailoverPriority -FailoverPolicy <String[]> -InputObject
 ```
 
 ## DESCRIPTION
-Update Failover Region Priority of a CosmosDB Account.
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Update-AzCosmosDBAccountFailoverPriority -ResourceGroupName rg -Name dbname -FailoverPolicy "region1", "region2", "region3"
-
-Id                            : /subscriptions/{subscriptionid}/resourceGroups/rg/providers/Microsoft.DocumentDB/databaseAccounts/dbname
-Name                          : dbname
-Location                      : region1
-Tags                          : {}
-EnableCassandraConnector      :
-EnableMultipleWriteLocations  : True
-VirtualNetworkRules           : {}
-FailoverPolicies              : {dbname-region1, dbname-region2, dbname-region3}
-Locations                     : {dbname-region1, dbname-region2, dbname-region3}
-ReadLocations                 : {dbname-region1, dbname-region2, dbname-region3}
-WriteLocations                : {dbname-region1}
-Capabilities                  : {}
-ConsistencyPolicy             : Microsoft.Azure.Management.CosmosDB.Fluent.Models.ConsistencyPolicy
-EnableAutomaticFailover       : False
-IsVirtualNetworkFilterEnabled : False
-IpRules                       : {}
-DatabaseAccountOfferType      : Standard
-DocumentEndpoint              : https://dbname.documents.azure.com:443/
-ProvisioningState             : Succeeded
-Kind                          : GlobalDocumentDB
+PS C:\> Update-AzCosmosDBAccountFailoverPriority -ResourceGroupName rg -Name dbname -FailoverPolicy "region1, region2, region3"
 ```
 
 FailoverPolicies updated with region1 as FailoverPriority 1, region2 as FailoverPriority 2 and region3 as FailoverPriority 3.

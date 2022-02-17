@@ -40,7 +40,7 @@ Removes the origin.
 
 ### Example 1
 ```powershell
-Remove-AzFrontDoorCdnOrigin -ResourceId $originResourceId
+PS C:\> Remove-AzFrontDoorCdnOrigin -ResourceId $originResourceId
 ```
 
 Removes the origin.

@@ -43,11 +43,8 @@ You can specify the *Filter* parameter to get the tasks that match an Open Data 
 ## EXAMPLES
 
 ### Example 1: Get a task by ID
-```powershell
-Get-AzBatchTask -JobId "Job01" -Id "Task03" -BatchContext $Context
 ```
-
-```output
+PS C:\>Get-AzBatchTask -JobId "Job01" -Id "Task03" -BatchContext $Context
 AffinityInformation         :
 CommandLine                 : cmd /c dir /s
 ComputeNodeInformation      : Microsoft.Azure.Commands.Batch.Models.PSComputeNodeInformation
@@ -73,11 +70,8 @@ This command gets the task with ID Task03 under job Job01.
 Use the Get-AzBatchAccountKey cmdlet to assign a context to the $Context variable.
 
 ### Example 2: Get all completed tasks from a specified job
-```powershell
-Get-AzBatchTask -JobId "Job02" -Filter "state eq 'completed'" -BatchContext $Context
 ```
-
-```output
+PS C:\>Get-AzBatchTask -JobId "Job02" -Filter "state eq 'completed'" -BatchContext $Context
 AffinityInformation         :
 CommandLine                 : cmd /c dir /s
 ComputeNodeInformation      : Microsoft.Azure.Commands.Batch.Models.PSComputeNodeInformation
