@@ -39,7 +39,7 @@ Gets the security policy.
 
 ### Example 1
 ```powershell
-Get-AzFrontDoorCdnSecurityPolicy -ProfileName $profileName -ResourceGroupName $resourceGroupName -SecurityPolicyName $securityPolicyName
+PS C:\> Get-AzFrontDoorCdnSecurityPolicy -ProfileName $profileName -ResourceGroupName $resourceGroupName -SecurityPolicyName $securityPolicyName
 ```
 
 Gets the security policy.

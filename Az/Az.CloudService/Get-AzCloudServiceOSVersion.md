@@ -39,10 +39,8 @@ Gets properties of a guest operating system version that can be specified in the
 
 ### Example 1: Get all OS versions in a location
 ```powershell
-Get-AzCloudServiceOSVersion -location 'westus2'
-```
+PS C:\> Get-AzCloudServiceOSVersion -location 'westus2'
 
-```Output
 Name                        Label                                            IsDefault IsActive Family FamilyLabel
 ----                        -----                                            --------- -------- ------ -----------
 WA-GUEST-OS-6.7_201905-01   Windows Azure Guest OS 6.7 (Release 201905-01)   False     False    6      Windows Server 2019
@@ -56,10 +54,8 @@ This command gets all OS versions in location westus2
 
 ### Example 2: Get OS version
 ```powershell
-Get-AzCloudServiceOSVersion -location 'westus2' -OSVersionName 'WA-GUEST-OS-6.7_201905-01'
-```
+PS C:\> Get-AzCloudServiceOSVersion -location 'westus2' -OSVersionName 'WA-GUEST-OS-6.7_201905-01'
 
-```Output
 Name                      Label                                          IsDefault IsActive Family FamilyLabel
 ----                      -----                                          --------- -------- ------ -----------
 WA-GUEST-OS-6.7_201905-01 Windows Azure Guest OS 6.7 (Release 201905-01) False     False    6      Windows Server 2019

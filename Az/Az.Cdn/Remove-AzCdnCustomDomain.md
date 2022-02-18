@@ -33,11 +33,6 @@ The **Remove-AzCdnCustomDomain** cmdlet removes the custom domain from an Azure 
 
 ## EXAMPLES
 
-### Example 1
-```powershell
-Remove-AzCdnCustomDomain -ResourceGroupName myresourcegroup -ProfileName mycdnprofile -EndpointName myendpoint -CustomDomainName cdn-example-com
-```
-
 ## PARAMETERS
 
 ### -CdnCustomDomain

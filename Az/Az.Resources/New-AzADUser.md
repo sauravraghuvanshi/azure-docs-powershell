@@ -16,7 +16,7 @@ Adds new entity to users
 
 ```
 New-AzADUser -DisplayName <String> -MailNickname <String> -UserPrincipalName <String> -Password <SecureString>
- [-AboutMe <String>] [-AccountEnabled <Boolean>] [-AgeGroup <String>] [-Birthday <DateTime>] [-City <String>]
+ [-AboutMe <String>] [-AccountEnabled] [-AgeGroup <String>] [-Birthday <DateTime>] [-City <String>]
  [-CompanyName <String>] [-ConsentProvidedForMinor <String>] [-Country <String>] [-DeletedDateTime <DateTime>]
  [-Department <String>] [-DeviceEnrollmentLimit <Int32>] [-EmployeeHireDate <DateTime>] [-EmployeeId <String>]
  [-EmployeeType <String>] [-ExternalUserState <String>] [-ExternalUserStateChangeDateTime <DateTime>]
@@ -62,12 +62,14 @@ Accept wildcard characters: False
 ```
 
 ### -AccountEnabled
-true for enabling the account; otherwise, false.
+true if the account is enabled; otherwise, false.
+This property is required when a user is created.
+Supports $filter (eq, ne, NOT, and in).
 
 ```yaml
-Type: System.Boolean
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases: EnableAccount
+Aliases:
 
 Required: False
 Position: Named

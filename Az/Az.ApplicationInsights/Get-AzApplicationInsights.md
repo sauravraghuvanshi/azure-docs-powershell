@@ -38,10 +38,9 @@ Get application insights resources in a resource group or specific resource
 ## EXAMPLES
 
 ### Example 1 Get application insights resource
-```powershell
-Get-AzApplicationInsights -ResourceGroupName "testgroup" -Name "test"
 ```
-```output
+PS C:\> Get-AzApplicationInsights -ResourceGroupName "testgroup" -Name "test"
+
 Id                 : /subscriptions/{subid}/resourceGroups/testgroup/providers/microsoft.insights/components/test
 ResourceGroupName  : testgroup
 Name               : test
@@ -65,10 +64,9 @@ TenantId           : b90b0dec-9b9a-4778-a84e-4ffb73bb17f7
 Get application insights resource named "test" in resource group "testgroup"
 
 ### Example 2 Get application insights resource with pricing plan information
-```powershell
-Get-AzApplicationInsights -ResourceGroupName "testgroup" -Name "test" -IncludePricingPlan
 ```
-```output
+PS C:\> Get-AzApplicationInsights -ResourceGroupName "testgroup" -Name "test" -IncludePricingPlan
+
 Cap                            : 330
 ResetTime                      : 0
 StopSendNotificationWhenHitCap : True

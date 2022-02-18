@@ -33,11 +33,9 @@ The **Get-AzApiManagementDiagnostic** gets details of the diagnostics configured
 
 ### Example 1: Get all the diagnostic configured at the tenant scope.
 ```powershell
-$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-Get-AzApiManagementDiagnostic -Context $apimContext
-```
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Get-AzApiManagementDiagnostic -Context $apimContext
 
-```output
 DiagnosticId                 : applicationinsights
 ApiId                        :
 AlwaysLog                    : allErrors
@@ -67,11 +65,9 @@ This command gets all the diagnostics configured in the Api Management service.
 
 ### Example 2: Get all the diagnostics configured at the Api scope
 ```powershell
-$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-Get-AzApiManagementDiagnostic -Context $apimContext -ApiId "echo-api"
-```
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Get-AzApiManagementDiagnostic -Context $apimContext -ApiId "echo-api"
 
-```output
 DiagnosticId                 : applicationinsights
 ApiId                        : echo-api
 AlwaysLog                    : allErrors
@@ -89,11 +85,9 @@ This command gets all the diagnostics configured at the `echo-api` Api scope
 
 ### Example 3: Get the API-scope diagnostic specified by an Id
 ```powershell
-$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-Get-AzApiManagementDiagnostic -Context $apimContext -ApiId "echo-api" -DiagnosticId "applicationinsights"
-```
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Get-AzApiManagementDiagnostic -Context $apimContext -ApiId "echo-api" -DiagnosticId "applicationinsights"
 
-```output
 DiagnosticId                 : applicationinsights
 ApiId                        : echo-api
 AlwaysLog                    : allErrors

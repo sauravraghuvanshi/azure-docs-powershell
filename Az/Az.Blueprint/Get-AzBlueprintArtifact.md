@@ -26,11 +26,9 @@ Retrieve artifacts from a blueprint definition. If a blueprint definition versio
 
 ### Example 1
 ```powershell
-$bp = Get-AzBlueprint -Name SimpleBlueprint
-Get-AzBlueprintArtifact -Blueprint $bp 
-```
+PS C:\> $bp = Get-AzBlueprint -Name SimpleBlueprint
+PS C:\> Get-AzBlueprintArtifact -Blueprint $bp 
 
-```output
 DisplayName        : Audit use of classic virtual machines
 Description        :
 DependsOn          :

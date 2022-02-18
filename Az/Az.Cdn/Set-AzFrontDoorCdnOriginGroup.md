@@ -36,7 +36,7 @@ Updates the origin group.
 
 ### Example 1
 ```powershell
-Set-AzFrontDoorCdnOriginGroup -OriginGroup $originGroupObject
+PS C:\> Set-AzFrontDoorCdnOriginGroup -OriginGroup $originGroupObject
 ```
 
 Updates the origin group.

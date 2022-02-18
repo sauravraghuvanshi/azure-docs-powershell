@@ -40,7 +40,7 @@ Delete a Deployment from a Cognitive Services account
 
 ### Example 1
 ```powershell
-Remove-AzCognitiveServicesAccountDeployment -ResourceGroupName cognitive-services-resource-group -AccountName resource-name -Name "plan"
+PS C:\> Remove-AzCognitiveServicesAccountDeployment -ResourceGroupName cognitive-services-resource-group -AccountName resource-name -Name "plan"
 ```
 
 Delete a Deployment from a Cognitive Services account

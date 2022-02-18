@@ -40,7 +40,7 @@ Removes the route.
 
 ### Example 1
 ```powershell
-Remove-AzFrontDoorCdnRoute -ResourceId $routeResourceId
+PS C:\> Remove-AzFrontDoorCdnRoute -ResourceId $routeResourceId
 ```
 
 Removes the route.

@@ -26,18 +26,18 @@ The **Get-AzBatchAccountKey** cmdlet gets the keys of an Azure Batch account in 
 ## EXAMPLES
 
 ### Example 1: Get batch account keys and save it in $Context variable for use later
-```powershell
-$Context = Get-AzBatchAccountKey -AccountName myaccount
+```
+PS C:\>$Context = Get-AzBatchAccountKey -AccountName myaccount
 ```
 
 This command gets the account details and stores it in a `$Context` object for use later.
 
 ### Example 2: Get batch account keys and display them
-```powershell
-$Context = Get-AzBatchAccountKey -AccountName myaccount
-$Context.PrimaryAccountKey
+```
+PS C:\>$Context = Get-AzBatchAccountKey -AccountName myaccount
+PS C:\>$Context.PrimaryAccountKey
 ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMN==
-$Context.SecondaryAccountKey
+PS C:\>$Context.SecondaryAccountKey
 ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMN==
 ```
 

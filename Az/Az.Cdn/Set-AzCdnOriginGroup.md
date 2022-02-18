@@ -36,7 +36,7 @@ Set-AzCdnOriginGroup will update the specified origin group within the given end
 
 ### Example 1
 ```powershell
-Set-AzCdnOriginGroup -ResourceGroupName $resourceGroupName -ProfileName $profileName -EndpointName $endpointName -OriginGroupName $originGroupName -OriginId $originIds -ProbeIntervalInSeconds $probeInterval
+PS C:\> Set-AzCdnOriginGroup -ResourceGroupName $resourceGroupName -ProfileName $profileName -EndpointName $endpointName -OriginGroupName $originGroupName -OriginId $originIds -ProbeIntervalInSeconds $probeInterval
 ```
 
 This cmdlet will update the ProbeIntervalInSeconds property in the origin group. 

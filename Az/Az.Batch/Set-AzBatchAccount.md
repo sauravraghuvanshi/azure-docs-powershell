@@ -27,11 +27,8 @@ Currently, this cmdlet can update only tags.
 ## EXAMPLES
 
 ### Example 1: Update the tags on a Batch account
-```powershell
-Set-AzBatchAccount -AccountName "cmdletexample" -Tag @{key0="value0";key1=$null;key2="value2"}
 ```
-
-```output
+PS C:\>Set-AzBatchAccount -AccountName "cmdletexample" -Tag @{key0="value0";key1=$null;key2="value2"}
 AccountName                  : cmdletexample
 Location                     : westus
 ResourceGroupName            : CmdletExampleRG

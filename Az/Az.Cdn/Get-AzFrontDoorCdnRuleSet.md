@@ -38,7 +38,7 @@ Gets the rule set.
 
 ### Example 1
 ```powershell
-Get-AzFrontDoorCdnRuleSet -ProfileName $profileName -ResourceGroupName $resourceGroupName -RuleSetName $ruleSetName
+PS C:\> Get-AzFrontDoorCdnRuleSet -ProfileName $profileName -ResourceGroupName $resourceGroupName -RuleSetName $ruleSetName
 ```
 
 Gets the rule set.

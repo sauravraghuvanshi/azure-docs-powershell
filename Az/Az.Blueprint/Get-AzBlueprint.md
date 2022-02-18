@@ -67,10 +67,8 @@ Get one or more blueprint definitions. Blueprint definitions exist at the manage
 
 ### Example 1
 ```powershell
-Get-AzBlueprint
-```
+PS> Get-AzBlueprint
 
-```output
 Name                 : PS-BlueprintDefinition
 Id                   : /subscriptions/00000000-1111-0000-1111-000000000000/providers/Microsoft.Blueprint/blueprints/PS-BlueprintDefinition
 SubscriptionId       : 00000000-1111-0000-1111-000000000000
@@ -86,10 +84,8 @@ Get the blueprint definitions within the current subscription and the management
 
 ### Example 2
 ```powershell
-Get-AzBlueprint -ManagementGroupId "myManagementGroupId"
-```
+PS> Get-AzBlueprint -ManagementGroupId "myManagementGroupId"
 
-```output
 Name                 : PS-MG-BlueprintDefinition
 Id                   : /providers/Microsoft.Management/managementGroups/myManagementGroupId/providers/Microsoft.Blueprint/blueprints/PS-MG-BlueprintDefinition
 ManagementGroupId    : myManagementGroupId
@@ -105,10 +101,8 @@ Get the blueprint definitions within the specified management group.
 
 ### Example 3
 ```powershell
-Get-AzBlueprint -SubscriptionId "00000000-1111-0000-1111-000000000000"
-```
+PS> Get-AzBlueprint -SubscriptionId "00000000-1111-0000-1111-000000000000"
 
-```output
 Name                 : PS-BlueprintDefinition
 Id                   : /subscriptions/00000000-1111-0000-1111-000000000000/providers/Microsoft.Blueprint/blueprints/PS-BlueprintDefinition
 SubscriptionId       : 00000000-1111-0000-1111-000000000000
@@ -124,21 +118,21 @@ Get the blueprint definitions within the specified subscription and the manageme
 
 ### Example 4
 ```powershell
-Get-AzBlueprint -SubscriptionId "00000000-1111-0000-1111-000000000000" -Name "myBlueprintName"
+PS> Get-AzBlueprint -SubscriptionId "00000000-1111-0000-1111-000000000000" -Name "myBlueprintName"
 ```
 
 Get the blueprint definition with the given name within the specified subscription.
 
 ### Example 5
 ```powershell
-Get-AzBlueprint -ManagementGroupId "myManagementGroupId" -Name "myBlueprintName" -Version "myBlueprintVersion"
+PS> Get-AzBlueprint -ManagementGroupId "myManagementGroupId" -Name "myBlueprintName" -Version "myBlueprintVersion"
 ```
 
 Get the blueprint definition with the given name and version within the specified management group.
 
 ### Example 6
 ```powershell
-Get-AzBlueprint -ManagementGroupId "myManagementGroupId" -Name "myBlueprintName" -LatestPublished
+PS> Get-AzBlueprint -ManagementGroupId "myManagementGroupId" -Name "myBlueprintName" -LatestPublished
 ```
 
 Get the latest published blueprint definition with the given name within the specified management group.

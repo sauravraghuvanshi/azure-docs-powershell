@@ -33,10 +33,8 @@ Update a blueprint definition and save it within the specified subscription or m
 
 ### Example 1
 ```powershell
-Set-AzBlueprint -Name MyBlueprint -SubscriptionId 00000000-1111-0000-1111-000000000000 -BlueprintFile C:\Blueprint.json
-```
+PS C:\> Set-AzBlueprint -Name MyBlueprint -SubscriptionId 00000000-1111-0000-1111-000000000000 -BlueprintFile C:\Blueprint.json
 
-```output
 Name              : SimpleBlueprint
 Id                : /providers/Microsoft.Management/managementGroups/{mgId}/providers/Microsoft.Blueprint/blueprints/SimpleBlueprint
 ManagementGroupId : myManagementGroupId

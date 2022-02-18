@@ -39,8 +39,8 @@ The cmdlet **Remove-AzApiManagementDiagnostic** removes the diagnostic entity sp
 
 ### Example 1: Remove the Diagnostic entity
 ```powershell
-$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-Remove-AzApiManagementDiagnostic -Context $apimContext -DiagnosticId "applicationinsights"
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Remove-AzApiManagementDiagnostic -Context $apimContext -DiagnosticId "applicationinsights"
 ```
 
 This example remove the diagnostic `applicationinsights` from the Api Management service.

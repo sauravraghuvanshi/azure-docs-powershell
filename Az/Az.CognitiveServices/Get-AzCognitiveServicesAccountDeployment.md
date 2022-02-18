@@ -33,7 +33,7 @@ Get Deployment of a Cognitive Services account
 
 ### Example 1
 ```powershell
-Get-AzCognitiveServicesAccountDeployment -ResourceGroupName cognitive-services-resource-group -AccountName resource-name
+PS C:\> Get-AzCognitiveServicesAccountDeployment -ResourceGroupName cognitive-services-resource-group -AccountName resource-name
 ```
 
 Get Deployment of a Cognitive Services account

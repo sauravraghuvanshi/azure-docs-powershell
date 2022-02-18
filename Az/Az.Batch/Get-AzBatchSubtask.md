@@ -34,9 +34,9 @@ Subtasks provide parallel processing for individual tasks, and enable precise mo
 ## EXAMPLES
 
 ### Example 1: Return all subtasks for a specified task
-```powershell
-$Context = Get-AzBatchAccountKey -AccountName "contosobatchaccount"
-Get-AzBatchSubtask -JobId "Job-01" -TaskID "myTask" -BatchContext $Context
+```
+PS C:\>$Context = Get-AzBatchAccountKey -AccountName "contosobatchaccount"
+PS C:\> Get-AzBatchSubtask -JobId "Job-01" -TaskID "myTask" -BatchContext $Context
 ```
 
 These commands return all the subtasks for the task with the ID myTask.

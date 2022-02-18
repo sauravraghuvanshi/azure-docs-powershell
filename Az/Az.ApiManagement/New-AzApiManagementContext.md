@@ -33,8 +33,8 @@ The context is used for all of the API Management service cmdlets.
 ## EXAMPLES
 
 ### Example 1: Create a PsApiManagementContext instance
-```powershell
-$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "ContosoResources" -ServiceName "Contoso"
+```
+PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "ContosoResources" -ServiceName "Contoso"
 ```
 
 This command creates an instance of **PsApiManagementContext**.

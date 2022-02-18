@@ -27,11 +27,8 @@ The cmdlet returns a **BatchAccountContext** object that has its current **Prima
 ## EXAMPLES
 
 ### Example 1: Regenerate the primary account key on a Batch account
-```powershell
-New-AzBatchAccountKey -AccountName "pfuller" -KeyType "Primary"
 ```
-
-```output
+PS C:\>New-AzBatchAccountKey -AccountName "pfuller" -KeyType "Primary"
 AccountName                  : pfuller
 Location                     : westus
 ResourceGroupName            : CmdletExampleRG

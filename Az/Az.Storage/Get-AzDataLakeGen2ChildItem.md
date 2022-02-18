@@ -68,7 +68,7 @@ PS C:\> do
      if($items.Length -le 0) { Break;}
      $Token = $items[$items.Count -1].ContinuationToken;
  }
- While ($null -ne $Token)
+ While ($Token -ne $Null)
 PS C:\> Echo "Total $Total items in Filesystem $FileSystemName"
 ```
 

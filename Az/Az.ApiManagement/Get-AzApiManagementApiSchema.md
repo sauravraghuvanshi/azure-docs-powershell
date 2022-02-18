@@ -33,11 +33,9 @@ The **Get-AzApiManagementApiSchema** cmdlet gets the details of the API Schema
 
 ### Example 1: Get the details of all the Api Schema of an Api
 ```powershell
-$context = New-AzApiManagementContext -ResourceId /subscriptions/subid/resourceGroups/resourceGroupName/providers/Microsoft.ApiManagement/service/sdktestapim4163
-Get-AzApiManagementApiSchema -Context $context -ApiId wsdlapitest
-```
+PS D:\github\azure-powershell> $context = New-AzApiManagementContext -ResourceId /subscriptions/subid/resourceGroups/resourceGroupName/providers/Microsoft.ApiManagement/service/sdktestapim4163
+PS D:\github\azure-powershell> Get-AzApiManagementApiSchema -Context $context -ApiId wsdlapitest
 
-```output
 SchemaId           : 2a03e1b4-1826-4e59-b372-4711f575db28
 Api Id             : wsdlapitest
 Schema ContentType : xsdschema
@@ -53,11 +51,9 @@ This command gets all the API schemas associated with an Api `swagger-petstore-e
 
 ### Example 2: Get the specific schema associated with an Api
 ```powershell
-$context = New-AzApiManagementContext -ResourceId /subscriptions/subid/resourceGroups/resourceGroupName/providers/Microsoft.ApiManagement/service/sdktestapim4163
-Get-AzApiManagementApiSchema -Context $context -ApiId swagger-petstore-extensive -SchemaId 5cc9cf67e6ed3b1154e638bd
-```
+PS D:\github\azure-powershell> $context = New-AzApiManagementContext -ResourceId /subscriptions/subid/resourceGroups/resourceGroupName/providers/Microsoft.ApiManagement/service/sdktestapim4163
+PS D:\github\azure-powershell> Get-AzApiManagementApiSchema -Context $context -ApiId swagger-petstore-extensive -SchemaId 5cc9cf67e6ed3b1154e638bd
 
-```output
 SchemaId           : 5cc9cf67e6ed3b1154e638bd
 Api Id             : swagger-petstore-extensive
 Schema ContentType : swaggerdefinition

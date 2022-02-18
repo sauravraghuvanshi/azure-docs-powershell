@@ -19,20 +19,16 @@ Get-AzCdnSubscriptionResourceUsage [-DefaultProfile <IAzureContextContainer>] [<
 ```
 
 ## DESCRIPTION
-The **Get-AzCdnSubscriptionResourceUsage** cmdlet gets the resource usage for a subscription.
+{{Fill in the Description}}
 
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzCdnSubscriptionResourceUsage
+```
+PS C:\> {{ Add example code here }}
 ```
 
-```Output
-ResourceType Unit  CurrentValue Limit
------------- ----  ------------ -----
-profile      count            0    25
-```
+{{ Add example description here }}
 
 ## PARAMETERS
 

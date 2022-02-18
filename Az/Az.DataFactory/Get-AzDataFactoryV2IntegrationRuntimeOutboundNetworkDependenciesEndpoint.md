@@ -40,8 +40,6 @@ The Get-AzDataFactoryV2IntegrationRuntimeOutboundNetworkDependenciesEndpoint cmd
 
 ### Example 1: List outbound network dependency
 ```
-PS C:\> Get-AzDataFactoryV2IntegrationRuntimeOutboundNetworkDependenciesEndpoint -Name 'integrationRuntime1' -ResourceGroupName 'testrg' -DataFactoryName 'newtestDataFactory1'
-
 Category                                 EndPoint
 --------                                 --------
 Azure Data Factory (Management)          [{"DomainName":"wu.frontend.clouddatahub.net","EndpointDetails":[{"Port":443}]}]

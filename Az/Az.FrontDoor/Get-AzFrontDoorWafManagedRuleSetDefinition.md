@@ -35,7 +35,7 @@ Succeeded         DefaultRuleSet              preview-0.1    {LFI, RFI, RCE, PHP
 Succeeded         BotProtection               preview-0.1    {KnownBadBots}
 ```
 
-Get WAF managed rule set definitions.
+{{ Add example description here }}
 
 ## PARAMETERS
 

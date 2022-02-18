@@ -37,7 +37,7 @@ Measure-AzAlertStatistic -GroupBy <String> [-TargetResourceType <String>] [-Targ
 
 ### Example 1
 ```powershell
-Measure-AzAlertStatistic -GroupBy "severity,alertstate" -State "Active"
+PS C:\> Measure-AzAlertStatistic -GroupBy "severity,alertstate" -State "Active"
 ```
 
 Summarize alerts count grouped by severity and state filtered by Active state.

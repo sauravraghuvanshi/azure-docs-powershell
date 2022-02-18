@@ -38,10 +38,8 @@ Remove an application insights resource
 ## EXAMPLES
 
 ### Example 1 Remove an application insights resource
-```powershell
-Remove-AzApplicationInsights -ResourceGroupName "testgroup" -Name "test" -PassThru
 ```
-```output
+PS C:\> Remove-AzApplicationInsights -ResourceGroupName "testgroup" -Name "test" -PassThru
 True
 ```
 

@@ -28,12 +28,12 @@ Modify the properties of that object, and then use the current cmdlet to commit 
 ## EXAMPLES
 
 ### Example 1: Update a pool
-```powershell
-$Pool = Get-AzBatchPool "ContosoPool" -BatchContext $Context
-$StartTask = New-Object Microsoft.Azure.Commands.Batch.Models.PSStartTask
-$StartTask.CommandLine = "cmd /c echo example"
-$Pool.StartTask = $StartTask
-Set-AzBatchPool -Pool $Pool -BatchContext $Context
+```
+PS C:\>$Pool = Get-AzBatchPool "ContosoPool" -BatchContext $Context
+PS C:\> $StartTask = New-Object Microsoft.Azure.Commands.Batch.Models.PSStartTask
+PS C:\> $StartTask.CommandLine = "cmd /c echo example"
+PS C:\> $Pool.StartTask = $StartTask
+PS C:\> Set-AzBatchPool -Pool $Pool -BatchContext $Context
 ```
 
 The first command gets a pool by using **Get-AzBatchPool**, and then stores it in the $Pool variable.

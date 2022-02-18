@@ -27,8 +27,8 @@ This command marks the job as completed.
 ## EXAMPLES
 
 ### Example 1: Stop a Batch job
-```powershell
-Stop-AzBatchJob -Id "Job-000001" -TerminateReason "No more tasks to run" -BatchContext $Context
+```
+PS C:\>Stop-AzBatchJob -Id "Job-000001" -TerminateReason "No more tasks to run" -BatchContext $Context
 ```
 
 This command stops the job that has the ID Job-000001.

@@ -51,33 +51,33 @@ The **Get-AzApiManagementApi** cmdlet gets one or more Azure API Management APIs
 ## EXAMPLES
 
 ### Example 1: Get all management APIs
-```powershell
-$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-Get-AzApiManagementApi -Context $ApiMgmtContext
+```
+PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Get-AzApiManagementApi -Context $ApiMgmtContext
 ```
 
 This command gets all of the APIs for the specified context.
 
 ### Example 2: Get a management API by ID
-```powershell
-$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-Get-AzApiManagementApi -Context $ApiMgmtContext -ApiId $ApiId
+```
+PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Get-AzApiManagementApi -Context $ApiMgmtContext -ApiId $ApiId
 ```
 
 This command gets the API with the specified ID.
 
 ### Example 3: Get a management API by name
-```powershell
-$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-Get-AzApiManagementApi -Context $ApiMgmtContext -Name "EchoApi"
+```
+PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Get-AzApiManagementApi -Context $ApiMgmtContext -Name "EchoApi"
 ```
 
 This command gets the API with the specified name.
 
 ### Example 4: Get a management API by GatewayId
-```powershell
-$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-Get-AzApiManagementApi -Context $ApiMgmtContext -GatewayId "g01"
+```
+PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Get-AzApiManagementApi -Context $ApiMgmtContext -GatewayId "g01"
 ```
 
 This command gets the API for the specified GatewayId.

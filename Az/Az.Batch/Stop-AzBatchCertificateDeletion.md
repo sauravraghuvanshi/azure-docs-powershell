@@ -28,8 +28,8 @@ This cmdlet restores the certificate to the **Active** state.
 ## EXAMPLES
 
 ### Example 1: Cancel a deletion
-```powershell
-Stop-AzBatchCertificateDeletion -ThumbprintAlgorithm "sha1" -Thumbprint "c1e494a415149c5f211c4778b52f2e834a07247c" -BatchContext $Context
+```
+PS C:\>Stop-AzBatchCertificateDeletion -ThumbprintAlgorithm "sha1" -Thumbprint "c1e494a415149c5f211c4778b52f2e834a07247c" -BatchContext $Context
 ```
 
 This command cancels the deletion of the certificate that has the specified thumbprint.

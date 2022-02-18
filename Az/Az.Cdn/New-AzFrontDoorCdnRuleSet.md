@@ -26,7 +26,7 @@ Creates the rule set.
 
 ### Example 1
 ```powershell
-New-AzFrontDoorCdnRuleSet -ProfileName $profileName -ResourceGroupName $resourceGroupName -RuleSetName $ruleSetName
+PS C:\> New-AzFrontDoorCdnRuleSet -ProfileName $profileName -ResourceGroupName $resourceGroupName -RuleSetName $ruleSetName
 ```
 
 Creates the rule set.
