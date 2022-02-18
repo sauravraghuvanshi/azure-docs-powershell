@@ -38,7 +38,7 @@ Gets the route.
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzFrontDoorCdnRoute -EndpointName $endpointName -ProfileName $profileName -ResourceGroupName $resourceGroupName -RouteName $routeName
+Get-AzFrontDoorCdnRoute -EndpointName $endpointName -ProfileName $profileName -ResourceGroupName $resourceGroupName -RouteName $routeName
 ```
 
 Gets the route.

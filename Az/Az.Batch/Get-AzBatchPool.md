@@ -34,8 +34,11 @@ You can use the *Id* parameter to get a single pool, or you can use the *Filter*
 ## EXAMPLES
 
 ### Example 1: Get a pool by ID
+```powershell
+Get-AzBatchPool -Id "MyPool" -BatchContext $Context
 ```
-PS C:\>Get-AzBatchPool -Id "MyPool" -BatchContext $Context
+
+```output
 AllocationState                      : Resizing
 AllocationStateTransitionTime        : 7/25/2015 9:30:28 PM
 AutoScaleEnabled                     : False
@@ -69,8 +72,11 @@ VirtualMachineSize                   : standard_d1_v2
 This command gets the pool with ID MyPool.
 
 ### Example 2: Get all pools using an OData filter
+```powershell
+Get-AzBatchPool -Filter "startswith(id,'My')" -BatchContext $Context
 ```
-PS C:\>Get-AzBatchPool -Filter "startswith(id,'My')" -BatchContext $Context
+
+```output
 AllocationState                      : Resizing
 AllocationStateTransitionTime        : 7/25/2015 9:30:28 PM
 AutoScaleEnabled                     : False

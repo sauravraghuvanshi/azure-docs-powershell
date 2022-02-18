@@ -39,7 +39,7 @@ Removes the rule set.
 
 ### Example 1
 ```powershell
-PS C:\> Remove-AzFrontDoorCdnRuleSet -ResourceId $ruleSetResourceId
+Remove-AzFrontDoorCdnRuleSet -ResourceId $ruleSetResourceId
 ```
 
 Removes the rule set.

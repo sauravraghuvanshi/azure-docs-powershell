@@ -27,7 +27,10 @@ The **Get-AzConsumptionMarketplace** cmdlet gets marketplaces of the subscriptio
 
 ### Example 1: Get marketplaces usage
 ```powershell
-PS C:\> Get-AzConsumptionMarketplace -Top 10
+Get-AzConsumptionMarketplace -Top 10
+```
+
+```output
 BillingPeriodId:  subscriptions/6b74c45b-9597-4939-a202-36b2ee8fbb3d/providers/Microsoft.Billing/billingPeriods/201807-1
 ConsumedQuantity:  24
 Currency:  USD
@@ -47,7 +50,10 @@ UsageStart:  2018-04-28T00:00:00Z
 
 ### Example 2: Get marketplace usage with date range
 ```powershell
-PS C:\> Get-AzConsumptionMarketplace -StartDate 2018-01-03 -EndDate 2018-01-20 -Top 10
+Get-AzConsumptionMarketplace -StartDate 2018-01-03 -EndDate 2018-01-20 -Top 10
+```
+
+```output
 BillingPeriodId:  subscriptions/6b74c45b-9597-4939-a202-36b2ee8fbb3d/providers/Microsoft.Billing/billingPeriods/201803-1
 ConsumedQuantity:  24
 Currency:  USD
@@ -67,7 +73,10 @@ UsageStart:  2018-01-03T00:00:00Z
 
 ### Example 3: Get marketplace usage of BillingPeriodName
 ```powershell
-PS C:\> Get-AzConsumptionMarketplace -BillingPeriodName 201801-1 -Top 10
+Get-AzConsumptionMarketplace -BillingPeriodName 201801-1 -Top 10
+```
+
+```output
 BillingPeriodId:  subscriptions/6b74c45b-9597-4939-a202-36b2ee8fbb3d/providers/Microsoft.Billing/billingPeriods/201801-1
 ConsumedQuantity:  24
 Currency:  USD
@@ -87,7 +96,10 @@ UsageStart:  2017-10-28T00:00:00Z
 
 ### Example 4: Get marketplace usage with InstanceName filter
 ```powershell
-PS C:\> Get-AzConsumptionMarketplace -InstanceName TestVM -Top 10
+Get-AzConsumptionMarketplace -InstanceName TestVM -Top 10
+```
+
+```output
 BillingPeriodId:  subscriptions/6b74c45b-9597-4939-a202-36b2ee8fbb3d/providers/Microsoft.Billing/billingPeriods/201807-1
 ConsumedQuantity:  24
 Currency:  USD
