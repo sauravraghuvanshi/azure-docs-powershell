@@ -1,5 +1,5 @@
 ---
-external help file: Az.Resources-help.xml
+external help file: 
 Module Name: Az.Resources
 online version: https://docs.microsoft.com/powershell/module/az.resources/add-azadapppermission
 schema: 2.0.0
@@ -16,14 +16,14 @@ Adds an API permission.
 
 ### ObjectIdParameterSet (Default)
 ```
-Add-AzADAppPermission -ApiId <Guid> -PermissionId <String> -ObjectId <Guid> [-Type <String>]
- [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Add-AzADAppPermission -ApiId <Guid> -ObjectId <Guid> -PermissionId <String> [-Type <String>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### AppIdParameterSet
 ```
-Add-AzADAppPermission -ApiId <Guid> -PermissionId <String> [-Type <String>] -ApplicationId <Guid>
- [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Add-AzADAppPermission -ApiId <Guid> -ApplicationId <Guid> -PermissionId <String> [-Type <String>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -193,3 +193,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
+

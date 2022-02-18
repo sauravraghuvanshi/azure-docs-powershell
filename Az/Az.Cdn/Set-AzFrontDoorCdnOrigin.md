@@ -36,7 +36,7 @@ Updates the origin.
 
 ### Example 1
 ```powershell
-Set-AzFrontDoorCdnOrigin -Origin $originObject
+PS C:\> Set-AzFrontDoorCdnOrigin -Origin $originObject
 ```
 
 Updates the origin.

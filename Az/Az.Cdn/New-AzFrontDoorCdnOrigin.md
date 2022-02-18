@@ -38,7 +38,7 @@ Creates the origin.
 
 ### Example 1
 ```powershell
-New-AzFrontDoorCdnOrigin -HostName $hostName -OriginGroupName $originGroupName -OriginName $originName -ProfileName $profileName -ResourceGroupName $resourceGroupName
+PS C:\> New-AzFrontDoorCdnOrigin -HostName $hostName -OriginGroupName $originGroupName -OriginName $originName -ProfileName $profileName -ResourceGroupName $resourceGroupName
 ```
 
 Creates the origin.

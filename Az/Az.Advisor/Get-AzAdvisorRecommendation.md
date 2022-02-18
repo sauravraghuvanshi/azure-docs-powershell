@@ -33,10 +33,7 @@ Obtains the list of Azure Advisor recommendations. Can be filtered by Category, 
 
 ### Example 1
 ```powershell
-Get-AzAdvisorRecommendation
-```
-
-```output
+PS C:\> Get-AzAdvisorRecommendation
 ResourceId                   : /subscriptions/{user_subscription}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/xyz/providers/Microsoft.Advisor/recommen
                        dations/{recommendation-Id}
 Category             : Performance
@@ -57,10 +54,7 @@ Gets the list of all recommendations.
 
 ### Example 2
 ```powershell
-Get-AzAdvisorRecommendation -Category Performance
-```
-
-```output
+PS C:\> Get-AzAdvisorRecommendation -Category Performance
 ResourceId                   : /subscriptions/{user_subscription}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/xyz/providers/Microsoft.Advisor/recommen
                        dations/{recommendation-Id}
 Category             : Performance

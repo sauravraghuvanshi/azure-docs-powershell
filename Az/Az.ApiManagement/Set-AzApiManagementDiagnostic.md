@@ -48,9 +48,9 @@ The cmdlet **Set-AzApiManagementDiagnostic** updates the diagnostics which is co
 
 ### Example 1: Modify a diagnostic at the Global scope
 ```powershell
-$context =New-AzApiManagementContext -ResourceGroupName Api-Default-WestUS -ServiceName contoso
-$diagnostic=Get-AzApiManagementDiagnostic -Context $context -DiagnosticId "applicationinsights"
-$diagnostic
+PS c:\> $context =New-AzApiManagementContext -ResourceGroupName Api-Default-WestUS -ServiceName contoso
+PS c:\> $diagnostic=Get-AzApiManagementDiagnostic -Context $context -DiagnosticId "applicationinsights"
+PS c:\> $diagnostic
 
 DiagnosticId      : applicationinsights
 AlwaysLog         : allErrors
@@ -63,20 +63,20 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 
 
-$diagnostic.Sampling
+PS c:\> $diagnostic.Sampling
 
 SamplingType Percentage
 ------------ ----------
 fixed               100
 
-$diagnostic.Sampling.Percentage = 50
-$diagnostic.Sampling
+PS c:\> $diagnostic.Sampling.Percentage = 50
+PS c:\> $diagnostic.Sampling
 
 SamplingType Percentage
 ------------ ----------
 fixed                50
 
-Set-AzApiManagementDiagnostic -InputObject $diagnostic
+PS c:\> Set-AzApiManagementDiagnostic -InputObject $diagnostic
 ```
 
 This command modifies the specified diagnostic Sampling Percentage from 100 to 50%

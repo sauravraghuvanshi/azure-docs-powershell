@@ -1,5 +1,5 @@
 ---
-external help file: Az.Resources-help.xml
+external help file: 
 Module Name: Az.Resources
 online version: https://docs.microsoft.com/powershell/module/az.resources/new-azadspcredential
 schema: 2.0.0
@@ -16,78 +16,60 @@ Creates key credentials or password credentials for an service principal.
 
 ### SpObjectIdWithPasswordParameterSet (Default)
 ```
-New-AzADSpCredential -ObjectId <String> [-StartDate <DateTime>] [-EndDate <DateTime>]
- [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### SpObjectIdWithCertValueParameterSet
-```
-New-AzADSpCredential -ObjectId <String> [-StartDate <DateTime>] [-EndDate <DateTime>] -CertValue <String>
- [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### SpObjectIdWithKeyCredentialParameterSet
-```
-New-AzADSpCredential -ObjectId <String> -KeyCredentials <MicrosoftGraphKeyCredential[]>
- [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### SpObjectIdWithPasswordCredentialParameterSet
-```
-New-AzADSpCredential -ObjectId <String> -PasswordCredentials <MicrosoftGraphPasswordCredential[]>
- [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzADSpCredential -ObjectId <String> [-EndDate <DateTime>] [-StartDate <DateTime>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ServicePrincipalObjectWithCertValueParameterSet
 ```
-New-AzADSpCredential [-StartDate <DateTime>] [-EndDate <DateTime>] -CertValue <String>
- -ServicePrincipalObject <IMicrosoftGraphServicePrincipal> [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm]
+New-AzADSpCredential -CertValue <String> -ServicePrincipalObject <IMicrosoftGraphServicePrincipal>
+ [-EndDate <DateTime>] [-StartDate <DateTime>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
+```
+
+### ServicePrincipalObjectWithCredentialParameterSet
+```
+New-AzADSpCredential -ServicePrincipalObject <IMicrosoftGraphServicePrincipal>
+ [-KeyCredentials <MicrosoftGraphKeyCredential[]>] [-PasswordCredentials <MicrosoftGraphPasswordCredential[]>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ServicePrincipalObjectWithPasswordParameterSet
 ```
-New-AzADSpCredential [-StartDate <DateTime>] [-EndDate <DateTime>]
- -ServicePrincipalObject <IMicrosoftGraphServicePrincipal> [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+New-AzADSpCredential -ServicePrincipalObject <IMicrosoftGraphServicePrincipal> [-EndDate <DateTime>]
+ [-StartDate <DateTime>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SPNWithCertValueParameterSet
 ```
-New-AzADSpCredential [-StartDate <DateTime>] [-EndDate <DateTime>] -CertValue <String>
- -ServicePrincipalName <String> [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzADSpCredential -CertValue <String> -ServicePrincipalName <String> [-EndDate <DateTime>]
+ [-StartDate <DateTime>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### SPNWithCredentialParameterSet
+```
+New-AzADSpCredential -ServicePrincipalName <String> [-KeyCredentials <MicrosoftGraphKeyCredential[]>]
+ [-PasswordCredentials <MicrosoftGraphPasswordCredential[]>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### SPNWithPasswordParameterSet
 ```
-New-AzADSpCredential [-StartDate <DateTime>] [-EndDate <DateTime>] -ServicePrincipalName <String>
- [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzADSpCredential -ServicePrincipalName <String> [-EndDate <DateTime>] [-StartDate <DateTime>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ServicePrincipalObjectWithPasswordCredentialParameterSet
+### SpObjectIdWithCertValueParameterSet
 ```
-New-AzADSpCredential -PasswordCredentials <MicrosoftGraphPasswordCredential[]>
- -ServicePrincipalObject <IMicrosoftGraphServicePrincipal> [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm]
+New-AzADSpCredential -CertValue <String> -ObjectId <String> [-EndDate <DateTime>] [-StartDate <DateTime>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### SpObjectIdWithCredentialParameterSet
+```
+New-AzADSpCredential -ObjectId <String> [-KeyCredentials <MicrosoftGraphKeyCredential[]>]
+ [-PasswordCredentials <MicrosoftGraphPasswordCredential[]>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
-```
-
-### SPNWithPasswordCredentialParameterSet
-```
-New-AzADSpCredential -PasswordCredentials <MicrosoftGraphPasswordCredential[]> -ServicePrincipalName <String>
- [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### ServicePrincipalObjectWithKeyCredentialParameterSet
-```
-New-AzADSpCredential -KeyCredentials <MicrosoftGraphKeyCredential[]>
- -ServicePrincipalObject <IMicrosoftGraphServicePrincipal> [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
-```
-
-### SPNWithKeyCredentialParameterSet
-```
-New-AzADSpCredential -KeyCredentials <MicrosoftGraphKeyCredential[]> -ServicePrincipalName <String>
- [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -122,7 +104,7 @@ It represents the base 64 encoded certificate.
 
 ```yaml
 Type: System.String
-Parameter Sets: SpObjectIdWithCertValueParameterSet, ServicePrincipalObjectWithCertValueParameterSet, SPNWithCertValueParameterSet
+Parameter Sets: ServicePrincipalObjectWithCertValueParameterSet, SPNWithCertValueParameterSet, SpObjectIdWithCertValueParameterSet
 Aliases:
 
 Required: True
@@ -154,7 +136,7 @@ For an 'asymmetric' type credential, this must be set to on or before the date t
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: SpObjectIdWithPasswordParameterSet, SpObjectIdWithCertValueParameterSet, ServicePrincipalObjectWithCertValueParameterSet, ServicePrincipalObjectWithPasswordParameterSet, SPNWithCertValueParameterSet, SPNWithPasswordParameterSet
+Parameter Sets: ServicePrincipalObjectWithCertValueParameterSet, ServicePrincipalObjectWithPasswordParameterSet, SPNWithCertValueParameterSet, SPNWithPasswordParameterSet, SpObjectIdWithCertValueParameterSet, SpObjectIdWithPasswordParameterSet
 Aliases:
 
 Required: False
@@ -170,10 +152,10 @@ To construct, see NOTES section for KEYCREDENTIALS properties and create a hash 
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.Resources.MSGraph.Models.ApiV10.MicrosoftGraphKeyCredential[]
-Parameter Sets: SpObjectIdWithKeyCredentialParameterSet, ServicePrincipalObjectWithKeyCredentialParameterSet, SPNWithKeyCredentialParameterSet
+Parameter Sets: ServicePrincipalObjectWithCredentialParameterSet, SPNWithCredentialParameterSet, SpObjectIdWithCredentialParameterSet
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -185,7 +167,7 @@ The object Id of application.
 
 ```yaml
 Type: System.String
-Parameter Sets: SpObjectIdWithPasswordParameterSet, SpObjectIdWithCertValueParameterSet, SpObjectIdWithKeyCredentialParameterSet, SpObjectIdWithPasswordCredentialParameterSet
+Parameter Sets: SpObjectIdWithCertValueParameterSet, SpObjectIdWithCredentialParameterSet, SpObjectIdWithPasswordParameterSet
 Aliases: Id, ServicePrincipalObjectId
 
 Required: True
@@ -201,10 +183,10 @@ To construct, see NOTES section for PASSWORDCREDENTIALS properties and create a 
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.Resources.MSGraph.Models.ApiV10.MicrosoftGraphPasswordCredential[]
-Parameter Sets: SpObjectIdWithPasswordCredentialParameterSet, ServicePrincipalObjectWithPasswordCredentialParameterSet, SPNWithPasswordCredentialParameterSet
+Parameter Sets: ServicePrincipalObjectWithCredentialParameterSet, SPNWithCredentialParameterSet, SpObjectIdWithCredentialParameterSet
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -216,7 +198,7 @@ The service principal name.
 
 ```yaml
 Type: System.String
-Parameter Sets: SPNWithCertValueParameterSet, SPNWithPasswordParameterSet, SPNWithPasswordCredentialParameterSet, SPNWithKeyCredentialParameterSet
+Parameter Sets: SPNWithCertValueParameterSet, SPNWithCredentialParameterSet, SPNWithPasswordParameterSet
 Aliases: SPN
 
 Required: True
@@ -232,7 +214,7 @@ To construct, see NOTES section for SERVICEPRINCIPALOBJECT properties and create
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.Resources.MSGraph.Models.ApiV10.IMicrosoftGraphServicePrincipal
-Parameter Sets: ServicePrincipalObjectWithCertValueParameterSet, ServicePrincipalObjectWithPasswordParameterSet, ServicePrincipalObjectWithPasswordCredentialParameterSet, ServicePrincipalObjectWithKeyCredentialParameterSet
+Parameter Sets: ServicePrincipalObjectWithCertValueParameterSet, ServicePrincipalObjectWithCredentialParameterSet, ServicePrincipalObjectWithPasswordParameterSet
 Aliases:
 
 Required: True
@@ -249,7 +231,7 @@ For an 'asymmetric' type credential, this must be set to on or after the date th
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: SpObjectIdWithPasswordParameterSet, SpObjectIdWithCertValueParameterSet, ServicePrincipalObjectWithCertValueParameterSet, ServicePrincipalObjectWithPasswordParameterSet, SPNWithCertValueParameterSet, SPNWithPasswordParameterSet
+Parameter Sets: ServicePrincipalObjectWithCertValueParameterSet, ServicePrincipalObjectWithPasswordParameterSet, SPNWithCertValueParameterSet, SPNWithPasswordParameterSet, SpObjectIdWithCertValueParameterSet, SpObjectIdWithPasswordParameterSet
 Aliases:
 
 Required: False
@@ -452,4 +434,3 @@ SERVICEPRINCIPALOBJECT <IMicrosoftGraphServicePrincipal>: The service principal 
 
 ## RELATED LINKS
 
-## RELATED LINKS

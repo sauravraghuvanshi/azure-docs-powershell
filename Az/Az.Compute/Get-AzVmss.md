@@ -228,8 +228,8 @@ VirtualMachineProfile                       :
       EnableAutomaticUpgrade                : True
       Settings                              : {}
   UserData                                  : dQBwAGQAYQB0AGUAIAB2AG0AcwBzAA==
-```
 
+```
 The UserData value must be Base64 encoded. This command assumes you have created a Vmss with a UserData value. 
 
 ## PARAMETERS
@@ -305,7 +305,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 

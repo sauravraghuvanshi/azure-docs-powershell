@@ -17,9 +17,8 @@ Creates a private endpoint.
 ```
 New-AzPrivateEndpoint -Name <String> -ResourceGroupName <String> -Location <String> -Subnet <PSSubnet>
  -PrivateLinkServiceConnection <PSPrivateLinkServiceConnection[]> [-ByManualRequest] [-EdgeZone <String>]
- [-Tag <Hashtable>] [-Force] [-AsJob] [-ApplicationSecurityGroup <PSApplicationSecurityGroup[]>]
- [-IpConfiguration <PSPrivateEndpointIPConfiguration[]>] [-CustomNetworkInterfaceName <String>]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Tag <Hashtable>] [-Force] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -41,21 +40,6 @@ New-AzPrivateEndpoint -Name 'MyPrivateEndpoint' -ResourceGroup 'myResourceGroup'
 ```
 
 ## PARAMETERS
-
-### -ApplicationSecurityGroup
-The application security group
-
-```yaml
-Type: Microsoft.Azure.Commands.Network.Models.PSApplicationSecurityGroup[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -AsJob
 
@@ -79,21 +63,6 @@ Use manual request to establish the connection.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CustomNetworkInterfaceName
-The custom network interface name
-
-```yaml
-Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -141,21 +110,6 @@ Do not ask for confirmation to overwrite a resource.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IpConfiguration
-The private endpoint IP configuration
-
-```yaml
-Type: Microsoft.Azure.Commands.Network.Models.PSPrivateEndpointIPConfiguration[]
 Parameter Sets: (All)
 Aliases:
 

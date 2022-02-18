@@ -27,8 +27,8 @@ This cmdlet prompts you before it removes an account, unless you specify the *Fo
 ## EXAMPLES
 
 ### Example 1: Remove a Batch account
-```powershell
-Remove-AzBatchAccount -AccountName "pfuller"
+```
+PS C:\>Remove-AzBatchAccount -AccountName "pfuller"
 ```
 
 This command removes the Batch account named pfuller.

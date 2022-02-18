@@ -1,5 +1,5 @@
 ---
-external help file: Az.Resources-help.xml
+external help file: 
 Module Name: Az.Resources
 online version: https://docs.microsoft.com/powershell/module/az.resources/remove-azadgroupmember
 schema: 2.0.0
@@ -20,43 +20,43 @@ Supports $expand.
 
 ### ExplicitParameterSet  (Default)
 ```
-Remove-AzADGroupMember [-DefaultProfile <PSObject>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzADGroupMember [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### MemberObjectIdWithGroupDisplayName
+```
+Remove-AzADGroupMember -GroupDisplayName <String> -MemberObjectId <String[]> [-DefaultProfile <PSObject>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### MemberObjectIdWithGroupObject
+```
+Remove-AzADGroupMember -GroupObject <MicrosoftGraphGroup> -MemberObjectId <String[]>
+ [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MemberObjectIdWithGroupObjectId
 ```
 Remove-AzADGroupMember -GroupObjectId <String> -MemberObjectId <String[]> [-DefaultProfile <PSObject>]
- [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### MemberUPNWithGroupObjectIdParameterSet
-```
-Remove-AzADGroupMember -GroupObjectId <String> -MemberUserPrincipalName <String[]> [-DefaultProfile <PSObject>]
- [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### MemberUPNWithGroupObjectParameterSet
-```
-Remove-AzADGroupMember -MemberUserPrincipalName <String[]> -GroupObject <MicrosoftGraphGroup>
- [-DefaultProfile <PSObject>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### MemberUPNWithGroupDisplayNameParameterSet
 ```
-Remove-AzADGroupMember -MemberUserPrincipalName <String[]> -GroupDisplayName <String>
- [-DefaultProfile <PSObject>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzADGroupMember -GroupDisplayName <String> -MemberUserPrincipalName <String[]>
+ [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### MemberObjectIdWithGroupObject
+### MemberUPNWithGroupObjectIdParameterSet
 ```
-Remove-AzADGroupMember -MemberObjectId <String[]> -GroupObject <MicrosoftGraphGroup>
- [-DefaultProfile <PSObject>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzADGroupMember -GroupObjectId <String> -MemberUserPrincipalName <String[]>
+ [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### MemberObjectIdWithGroupDisplayName
+### MemberUPNWithGroupObjectParameterSet
 ```
-Remove-AzADGroupMember -MemberObjectId <String[]> -GroupDisplayName <String> [-DefaultProfile <PSObject>]
- [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzADGroupMember -GroupObject <MicrosoftGraphGroup> -MemberUserPrincipalName <String[]>
+ [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -100,7 +100,7 @@ The display name of target group.
 
 ```yaml
 Type: System.String
-Parameter Sets: MemberUPNWithGroupDisplayNameParameterSet, MemberObjectIdWithGroupDisplayName
+Parameter Sets: MemberObjectIdWithGroupDisplayName, MemberUPNWithGroupDisplayNameParameterSet
 Aliases:
 
 Required: True
@@ -116,7 +116,7 @@ To construct, see NOTES section for GROUPOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.Resources.MSGraph.Models.ApiV10.MicrosoftGraphGroup
-Parameter Sets: MemberUPNWithGroupObjectParameterSet, MemberObjectIdWithGroupObject
+Parameter Sets: MemberObjectIdWithGroupObject, MemberUPNWithGroupObjectParameterSet
 Aliases:
 
 Required: True
@@ -146,7 +146,7 @@ The object Id of member to be removed from target group.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: MemberObjectIdWithGroupObjectId, MemberObjectIdWithGroupObject, MemberObjectIdWithGroupDisplayName
+Parameter Sets: MemberObjectIdWithGroupDisplayName, MemberObjectIdWithGroupObject, MemberObjectIdWithGroupObjectId
 Aliases:
 
 Required: True
@@ -161,7 +161,7 @@ The user principal name of member to be removed from target group.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: MemberUPNWithGroupObjectIdParameterSet, MemberUPNWithGroupObjectParameterSet, MemberUPNWithGroupDisplayNameParameterSet
+Parameter Sets: MemberUPNWithGroupDisplayNameParameterSet, MemberUPNWithGroupObjectIdParameterSet, MemberUPNWithGroupObjectParameterSet
 Aliases:
 
 Required: True
@@ -280,3 +280,4 @@ GROUPOBJECT <MicrosoftGraphGroup>: The target group object, could be used as pip
   - `[DisplayName <String>]`: The name displayed in directory
 
 ## RELATED LINKS
+

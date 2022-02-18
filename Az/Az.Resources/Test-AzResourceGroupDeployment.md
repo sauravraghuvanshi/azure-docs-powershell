@@ -46,14 +46,6 @@ Test-AzResourceGroupDeployment -ResourceGroupName <String> [-Mode <DeploymentMod
  [<CommonParameters>]
 ```
 
-### ByTemplateSpecResourceIdAndParamsObject
-```
-Test-AzResourceGroupDeployment -ResourceGroupName <String> [-Mode <DeploymentMode>] [-RollbackToLastDeployment]
- [-RollBackDeploymentName <String>] [-QueryString <String>] -TemplateParameterObject <Hashtable>
- -TemplateSpecId <String> [-SkipTemplateParameterPrompt] [-Pre] [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
-```
-
 ### ByTemplateObjectAndParameterFile
 ```
 Test-AzResourceGroupDeployment -ResourceGroupName <String> [-Mode <DeploymentMode>] [-RollbackToLastDeployment]
@@ -338,7 +330,7 @@ Specifies a hash table of template parameter names and values.
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: ByTemplateObjectAndParameterObject, ByTemplateFileAndParameterObject, ByTemplateUriAndParameterObject, ByTemplateSpecResourceIdAndParamsObject
+Parameter Sets: ByTemplateObjectAndParameterObject, ByTemplateFileAndParameterObject, ByTemplateUriAndParameterObject
 Aliases:
 
 Required: True
@@ -368,7 +360,7 @@ Resource ID of the templateSpec to be deployed.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByTemplateSpecResourceIdAndParamsObject, ByTemplateSpecResourceIdAndParams, ByTemplateSpecResourceIdAndParamsUri, ByTemplateSpecResourceId
+Parameter Sets: ByTemplateSpecResourceIdAndParams, ByTemplateSpecResourceIdAndParamsUri, ByTemplateSpecResourceId
 Aliases:
 
 Required: True

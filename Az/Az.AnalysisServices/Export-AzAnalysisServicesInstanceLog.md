@@ -25,8 +25,8 @@ The Export-AzAnalysisServicesInstance cmdlet exports log from an instance of Azu
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Export-AzAnalysisServicesInstanceLog -Instance testserver -OutputPath C:\path\to\log\testserver.log
+```
+PS C:\>Export-AzAnalysisServicesInstanceLog -Instance testserver -OutputPath C:\path\to\log\testserver.log
 ```
 
 This command will export log from the server 'testserver' in the environment specified in the Add-AzAnalysisServicesAccount command

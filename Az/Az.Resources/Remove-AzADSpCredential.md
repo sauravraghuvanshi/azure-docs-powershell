@@ -1,5 +1,5 @@
 ---
-external help file: Az.Resources-help.xml
+external help file: 
 Module Name: Az.Resources
 online version: https://docs.microsoft.com/powershell/module/az.resources/remove-azadspcredential
 schema: 2.0.0
@@ -16,26 +16,26 @@ Removes key credentials or password credentials for an service principal.
 
 ### ObjectIdWithKeyIdParameterSet (Default)
 ```
-Remove-AzADSpCredential -ObjectId <String> [-KeyId <Guid>] [-DefaultProfile <PSObject>] [-PassThru] [-WhatIf]
- [-Confirm] [<CommonParameters>]
-```
-
-### SPNWithKeyIdParameterSet
-```
-Remove-AzADSpCredential [-KeyId <Guid>] -ServicePrincipalName <String> [-DefaultProfile <PSObject>] [-PassThru]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzADSpCredential -ObjectId <String> [-KeyId <Guid>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### DisplayNameWithKeyIdParameterSet
 ```
-Remove-AzADSpCredential [-KeyId <Guid>] -DisplayName <String> [-DefaultProfile <PSObject>] [-PassThru]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzADSpCredential -DisplayName <String> [-KeyId <Guid>] [-DefaultProfile <PSObject>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### ServicePrincipalObjectParameterSet
 ```
-Remove-AzADSpCredential [-KeyId <Guid>] -ServicePrincipalObject <IMicrosoftGraphServicePrincipal>
- [-DefaultProfile <PSObject>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzADSpCredential -ServicePrincipalObject <IMicrosoftGraphServicePrincipal> [-KeyId <Guid>]
+ [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### SPNWithKeyIdParameterSet
+```
+Remove-AzADSpCredential -ServicePrincipalName <String> [-KeyId <Guid>] [-DefaultProfile <PSObject>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -339,4 +339,3 @@ SERVICEPRINCIPALOBJECT <IMicrosoftGraphServicePrincipal>: The service principal 
 
 ## RELATED LINKS
 
-## RELATED LINKS

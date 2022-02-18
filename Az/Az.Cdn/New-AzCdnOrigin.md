@@ -44,7 +44,7 @@ The New-AzCdnOrigin will create a new CDN origin within the specified endpoint.
 
 ### Example 1
 ```powershell
-New-AzCdnOrigin -ResourceGroupName $resourceGroupName -ProfileName $profileName -EndpointName $endpointName -OriginName $originName -HostName $hostName
+PS C:\> New-AzCdnOrigin -ResourceGroupName $resourceGroupName -ProfileName $profileName -EndpointName $endpointName -OriginName $originName -HostName $hostName
 ```
 
 This cmdlet will create a new CDN origin for the specified endpoint. It will use the provided hostname as the origin. 

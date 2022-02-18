@@ -1,5 +1,5 @@
 ---
-external help file: Az.Resources-help.xml
+external help file: 
 Module Name: Az.Resources
 online version: https://docs.microsoft.com/powershell/module/az.resources/get-azadspcredential
 schema: 2.0.0
@@ -16,25 +16,25 @@ Lists key credentials and password credentials for an service principal.
 
 ### ObjectIdParameterSet (Default)
 ```
-Get-AzADSpCredential -ObjectId <String> [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### SPNParameterSet
-```
-Get-AzADSpCredential -ServicePrincipalName <String> [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Get-AzADSpCredential -ObjectId <String> [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### DisplayNameParameterSet
 ```
-Get-AzADSpCredential -DisplayName <String> [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm]
+Get-AzADSpCredential -DisplayName <String> [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### SPNObjectParameterSet
 ```
 Get-AzADSpCredential -ServicePrincipalObject <IMicrosoftGraphServicePrincipal> [-DefaultProfile <PSObject>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### SPNParameterSet
+```
+Get-AzADSpCredential -ServicePrincipalName <String> [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -175,7 +175,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Get-AzADServicePrincipalCredential
+Get-ADServicePrincipalCredential
 
 COMPLEX PARAMETER PROPERTIES
 
@@ -303,4 +303,3 @@ SERVICEPRINCIPALOBJECT <IMicrosoftGraphServicePrincipal>: The service principal 
 
 ## RELATED LINKS
 
-## RELATED LINKS

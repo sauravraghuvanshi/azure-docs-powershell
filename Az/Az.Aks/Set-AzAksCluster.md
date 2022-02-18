@@ -22,11 +22,6 @@ Set-AzAksCluster [-NodePoolMode <String>] [-AcrNameToDetach <String>] [-NodeImag
  [-KubernetesVersion <String>] [-NodeName <String>] [-NodeMinCount <Int32>] [-NodeMaxCount <Int32>]
  [-EnableNodeAutoScaling] [-NodeCount <Int32>] [-NodeOsDiskSize <Int32>] [-NodeVmSize <String>]
  [-SshKeyValue <String>] [-AcrNameToAttach <String>] [-AsJob] [-Tag <Hashtable>]
- [-LoadBalancerAllocatedOutboundPort <Int32>] [-LoadBalancerManagedOutboundIpCount <Int32>]
- [-LoadBalancerOutboundIp <String[]>] [-LoadBalancerOutboundIpPrefix <String[]>]
- [-LoadBalancerIdleTimeoutInMinute <Int32>] [-ApiServerAccessAuthorizedIpRange <String[]>]
- [-EnableApiServerAccessPrivateCluster] [-ApiServerAccessPrivateDnsZone <String>]
- [-EnableApiServerAccessPrivateClusterPublicFQDN] [-FqdnSubdomain <String>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [-SubscriptionId <String>]
  [<CommonParameters>]
 ```
@@ -38,11 +33,6 @@ Set-AzAksCluster -InputObject <PSKubernetesCluster> [-NodePoolMode <String>] [-A
  [-DnsNamePrefix <String>] [-KubernetesVersion <String>] [-NodeName <String>] [-NodeMinCount <Int32>]
  [-NodeMaxCount <Int32>] [-EnableNodeAutoScaling] [-NodeCount <Int32>] [-NodeOsDiskSize <Int32>]
  [-NodeVmSize <String>] [-SshKeyValue <String>] [-AcrNameToAttach <String>] [-AsJob] [-Tag <Hashtable>]
- [-LoadBalancerAllocatedOutboundPort <Int32>] [-LoadBalancerManagedOutboundIpCount <Int32>]
- [-LoadBalancerOutboundIp <String[]>] [-LoadBalancerOutboundIpPrefix <String[]>]
- [-LoadBalancerIdleTimeoutInMinute <Int32>] [-ApiServerAccessAuthorizedIpRange <String[]>]
- [-EnableApiServerAccessPrivateCluster] [-ApiServerAccessPrivateDnsZone <String>]
- [-EnableApiServerAccessPrivateClusterPublicFQDN] [-FqdnSubdomain <String>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [-SubscriptionId <String>]
  [<CommonParameters>]
 ```
@@ -54,11 +44,6 @@ Set-AzAksCluster [-NodePoolMode <String>] [-AcrNameToDetach <String>] [-NodeImag
  [-KubernetesVersion <String>] [-NodeName <String>] [-NodeMinCount <Int32>] [-NodeMaxCount <Int32>]
  [-EnableNodeAutoScaling] [-NodeCount <Int32>] [-NodeOsDiskSize <Int32>] [-NodeVmSize <String>]
  [-SshKeyValue <String>] [-AcrNameToAttach <String>] [-AsJob] [-Tag <Hashtable>]
- [-LoadBalancerAllocatedOutboundPort <Int32>] [-LoadBalancerManagedOutboundIpCount <Int32>]
- [-LoadBalancerOutboundIp <String[]>] [-LoadBalancerOutboundIpPrefix <String[]>]
- [-LoadBalancerIdleTimeoutInMinute <Int32>] [-ApiServerAccessAuthorizedIpRange <String[]>]
- [-EnableApiServerAccessPrivateCluster] [-ApiServerAccessPrivateDnsZone <String>]
- [-EnableApiServerAccessPrivateClusterPublicFQDN] [-FqdnSubdomain <String>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [-SubscriptionId <String>]
  [<CommonParameters>]
 ```
@@ -94,36 +79,6 @@ Accept wildcard characters: False
 
 ### -AcrNameToDetach
 Disable the 'acrpull' role assignment to the ACR specified by name or resource ID, e.g. myacr
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ApiServerAccessAuthorizedIpRange
-The IP ranges authorized to access the Kubernetes API server.
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ApiServerAccessPrivateDnsZone
-The private DNS zone mode for the cluster.
 
 ```yaml
 Type: System.String
@@ -197,56 +152,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EnableApiServerAccessPrivateCluster
-Whether to create the cluster as a private cluster or not.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -EnableApiServerAccessPrivateClusterPublicFQDN
-Whether to create additional public FQDN for private cluster or not.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -EnableNodeAutoScaling
 Whether to enable auto-scaler
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -FqdnSubdomain
-The FQDN subdomain of the private cluster with custom private dns zone.
-
-```yaml
-Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -309,81 +219,6 @@ User name for the Linux Virtual Machines.
 Type: System.String
 Parameter Sets: (All)
 Aliases: AdminUserName
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LoadBalancerAllocatedOutboundPort
-The desired number of allocated SNAT ports per VM.
-
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LoadBalancerIdleTimeoutInMinute
-Desired outbound flow idle timeout in minutes.
-
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LoadBalancerManagedOutboundIpCount
-Desired managed outbound IPs count for the cluster load balancer.
-
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LoadBalancerOutboundIp
-Desired outbound IP resources for the cluster load balancer.
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LoadBalancerOutboundIpPrefix
-Desired outbound IP Prefix resources for the cluster load balancer.
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
 
 Required: False
 Position: Named
@@ -499,7 +334,7 @@ Accept wildcard characters: False
 ```
 
 ### -NodeOsDiskSize
-Specifies the size, in GB, of the operating system disk.
+The default number of nodes for the node pools.
 
 ```yaml
 Type: System.Int32

@@ -27,8 +27,8 @@ The **Remove-AzBatchComputeNodeUser** cmdlet deletes a user account from an Azur
 ## EXAMPLES
 
 ### Example 1: Delete a user from a compute node without confirmation
-```powershell
-Remove-AzBatchComputeNodeUser -PoolId "Pool01" -ComputeNodeId "ComputeNode01" -Name "User14" -Force -BatchContext $Context
+```
+PS C:\>Remove-AzBatchComputeNodeUser -PoolId "Pool01" -ComputeNodeId "ComputeNode01" -Name "User14" -Force -BatchContext $Context
 ```
 
 This command deletes the user named User14 from compute node named ComputeNode01.

@@ -26,10 +26,8 @@ Retrieves information about the run-time state of a role instance in a cloud ser
 
 ### Example 1: Get instance view details for cloud service role instance
 ```powershell
-Get-AzCloudServiceRoleInstanceView -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS" -RoleInstanceName "ContosoFrontEnd_IN_0"
-```
+PS C:\> Get-AzCloudServiceRoleInstanceView -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS" -RoleInstanceName "ContosoFrontEnd_IN_0"
 
-```Output
 Statuses           PlatformFaultDomain PlatformUpdateDomain
 --------           ------------------- --------------------
 {RoleStateStarted} 0                   0

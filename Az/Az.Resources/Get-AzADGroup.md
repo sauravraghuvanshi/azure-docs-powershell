@@ -1,5 +1,5 @@
 ---
-external help file: Az.Resources-help.xml
+external help file: 
 Module Name: Az.Resources
 online version: https://docs.microsoft.com/powershell/module/az.resources/get-azadgroup
 schema: 2.0.0
@@ -16,28 +16,28 @@ Lists entities from groups or get entity from groups by key
 
 ### EmptyParameterSet (Default)
 ```
-Get-AzADGroup [-Expand <String[]>] [-Select <String[]>] [-Filter <String>] [-Orderby <String[]>]
- [-Search <String>] [-ConsistencyLevel <String>] [-First <UInt64>] [-Skip <UInt64>] [-AppendSelected]
+Get-AzADGroup [-AppendSelected] [-ConsistencyLevel <String>] [-Expand <String[]>] [-Filter <String>]
+ [-First <UInt64>] [-Orderby <String[]>] [-Search <String>] [-Select <String[]>] [-Skip <UInt64>]
  [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ### DisplayNameParameterSet
 ```
-Get-AzADGroup [-Expand <String[]>] [-Select <String[]>] [-ConsistencyLevel <String>] [-First <UInt64>]
- [-Skip <UInt64>] [-AppendSelected] -DisplayName <String> [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### SearchStringParameterSet
-```
-Get-AzADGroup [-Expand <String[]>] [-Select <String[]>] [-ConsistencyLevel <String>] [-First <UInt64>]
- [-Skip <UInt64>] [-AppendSelected] -DisplayNameStartsWith <String> [-DefaultProfile <PSObject>]
- [<CommonParameters>]
+Get-AzADGroup -DisplayName <String> [-AppendSelected] [-ConsistencyLevel <String>] [-Expand <String[]>]
+ [-First <UInt64>] [-Select <String[]>] [-Skip <UInt64>] [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ### ObjectIdParameterSet
 ```
-Get-AzADGroup [-Expand <String[]>] [-Select <String[]>] [-ConsistencyLevel <String>] [-AppendSelected]
- -ObjectId <Guid> [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzADGroup -ObjectId <Guid> [-AppendSelected] [-ConsistencyLevel <String>] [-Expand <String[]>]
+ [-Select <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### SearchStringParameterSet
+```
+Get-AzADGroup -DisplayNameStartsWith <String> [-AppendSelected] [-ConsistencyLevel <String>]
+ [-Expand <String[]>] [-First <UInt64>] [-Select <String[]>] [-Skip <UInt64>] [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -174,6 +174,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -First
+Gets only the first 'n' objects.
+
+```yaml
+Type: System.UInt64
+Parameter Sets: DisplayNameParameterSet, EmptyParameterSet, SearchStringParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ObjectId
 key: id of group
 
@@ -239,22 +254,7 @@ Ignores the first 'n' objects and then gets the remaining objects.
 
 ```yaml
 Type: System.UInt64
-Parameter Sets: EmptyParameterSet, DisplayNameParameterSet, SearchStringParameterSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -First
-Gets only the first 'n' objects.
-
-```yaml
-Type: System.UInt64
-Parameter Sets: EmptyParameterSet, DisplayNameParameterSet, SearchStringParameterSet
+Parameter Sets: DisplayNameParameterSet, EmptyParameterSet, SearchStringParameterSet
 Aliases:
 
 Required: False
@@ -278,3 +278,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
+

@@ -28,11 +28,8 @@ parameter to get accounts under that resource group.
 ## EXAMPLES
 
 ### Example 1: Get a batch account by name
-```powershell
-Get-AzBatchAccount -AccountName "pfuller"
 ```
-
-```output
+PS C:\>Get-AzBatchAccount -AccountName "pfuller"
 AccountName                  : pfuller
 Location                     : westus
 ResourceGroupName            : CmdletExampleRG
@@ -47,11 +44,8 @@ TaskTenantUrl                : https://pfuller.westus.batch.azure.com
 This command gets the batch account named pfuller.
 
 ### Example 2: Get the batch accounts associated with a resource group
-```powershell
-Get-AzBatchAccount -ResourceGroupName "CmdletExampleRG"
 ```
-
-```output
+PS C:\>Get-AzBatchAccount -ResourceGroupName "CmdletExampleRG"
 AccountName                  : cmdletexample
 Location                     : westus
 ResourceGroupName            : CmdletExampleRG

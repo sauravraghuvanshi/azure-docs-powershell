@@ -25,17 +25,6 @@ The **Get-AzCdnEndpointNameAvailability** cmdlet gets availability status of the
 
 ## EXAMPLES
 
-### Example 1
-```powershell
-Get-AzCdnEndpointNameAvailability -EndpointName myendpoint
-```
-
-```Output
-NameAvailable Reason Message
-------------- ------ -------
-         True
-```
-
 ## PARAMETERS
 
 ### -DefaultProfile

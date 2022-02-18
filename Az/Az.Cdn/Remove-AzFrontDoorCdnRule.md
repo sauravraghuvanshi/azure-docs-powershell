@@ -40,7 +40,7 @@ Removes the rule.
 
 ### Example 1
 ```powershell
-Remove-AzFrontDoorCdnRule -ResourceId $ruleResourceId
+PS C:\> Remove-AzFrontDoorCdnRule -ResourceId $ruleResourceId
 ```
 
 Removes the rule.

@@ -27,9 +27,9 @@ In other words, this cmdlet assigns a group to a product.
 ## EXAMPLES
 
 ### Example 1: Add a product to a group
-```powershell
-$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-Add-AzApiManagementProductToGroup -Context $apimContext -GroupId "0001" -ProductId "0123456789"
+```
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Add-AzApiManagementProductToGroup -Context $apimContext -GroupId "0001" -ProductId "0123456789"
 ```
 
 This command adds a product to an existing group.

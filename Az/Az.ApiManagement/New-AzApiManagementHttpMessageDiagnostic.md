@@ -26,10 +26,8 @@ The cmdlet **New-AzApiManagementHttpMessageDiagnostic** creates the Http Message
 
 ### Example 1: Create a Basic Http Message diagnostic Setting
 ```powershell
-New-AzApiManagementHttpMessageDiagnostic -Headers 'Content-Type', 'UserAgent' -BodyBytes 100
-```
+PS C:\>  New-AzApiManagementHttpMessageDiagnostic -Headers 'Content-Type', 'UserAgent' -BodyBytes 100
 
-```output
 Headers                   Body
 -------                   ----
 {Content-Type, UserAgent} Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBodyDiagnosticSetting

@@ -48,19 +48,13 @@ MoveStatusErrorsPropertiesTarget  :
 MoveStatusMoveState               : PreparePending
 Name                              : PSDemoVM
 ProvisioningState                 : Succeeded
-ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.VirtualMachineResourceSettings
+ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.VirtualMachineResourceSettings
 SourceId                          : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/PSDemoRM/providers/Microsoft.Compute/virtualMachines/PSDemoVM
-SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.VirtualMachineResourceSettings
-SystemDataCreatedAt               :
-SystemDataCreatedBy               :
-SystemDataCreatedByType           :
-SystemDataLastModifiedAt          :
-SystemDataLastModifiedBy          :
-SystemDataLastModifiedByType      :
+SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.VirtualMachineResourceSettings
 TargetId                          : 
 Type                              : 
 
-PS C:\> $targetResourceSettingsObj = New-Object Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.VirtualMachineResourceSettings
+PS C:\> $targetResourceSettingsObj = New-Object Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.VirtualMachineResourceSettings
 PS C:\> $targetResourceSettingsObj.ResourceType = "Microsoft.Compute/virtualMachines"
 $targetResourceSettingsObj.TargetResourceName = "PSDemoVM"
 
@@ -90,15 +84,9 @@ MoveStatusErrorsPropertiesTarget  :
 MoveStatusMoveState               : CommitPending
 Name                              : psdemorm
 ProvisioningState                 : Succeeded
-ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.ResourceSettings
+ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.ResourceSettings
 SourceId                          : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/psdemorm
-SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.ResourceSettings
-SystemDataCreatedAt               :
-SystemDataCreatedBy               :
-SystemDataCreatedByType           :
-SystemDataLastModifiedAt          :
-SystemDataLastModifiedBy          :
-SystemDataLastModifiedByType      :
+SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.ResourceSettings
 TargetId                          : 
 Type                              : 
 
@@ -130,15 +118,9 @@ MoveStatusErrorsPropertiesTarget  :
 MoveStatusMoveState               : PreparePending
 Name                              : PSDemoVM
 ProvisioningState                 : Succeeded
-ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.VirtualMachineResourceSettings
+ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.VirtualMachineResourceSettings
 SourceId                          : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/PSDemoRM/providers/Microsoft.Compute/virtualMachines/PSDemoVM
-SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.VirtualMachineResourceSettings
-SystemDataCreatedAt               :
-SystemDataCreatedBy               :
-SystemDataCreatedByType           :
-SystemDataLastModifiedAt          :
-SystemDataLastModifiedBy          :
-SystemDataLastModifiedByType      :
+SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.VirtualMachineResourceSettings
 TargetId                          : 
 Type                              : 
 
@@ -187,7 +169,7 @@ Gets or sets the move resource dependencies overrides.
 To construct, see NOTES section for DEPENDSONOVERRIDE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.IMoveResourceDependencyOverride[]
+Type: Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.IMoveResourceDependencyOverride[]
 Parameter Sets: (All)
 Aliases:
 
@@ -278,7 +260,7 @@ Gets or sets the resource settings.
 To construct, see NOTES section for RESOURCESETTING properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.IResourceSettings
+Type: Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.IResourceSettings
 Parameter Sets: (All)
 Aliases:
 
@@ -357,7 +339,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.IMoveResource
+### Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.IMoveResource
 
 ## NOTES
 

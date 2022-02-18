@@ -28,8 +28,8 @@ You can enable a disabled schedule later.
 ## EXAMPLES
 
 ### Example 1: Disable a job schedule
-```powershell
-Disable-AzBatchJobSchedule -Id "JobSchedule17" -BatchContext $Context
+```
+PS C:\>Disable-AzBatchJobSchedule -Id "JobSchedule17" -BatchContext $Context
 ```
 
 This command disables the job schedule that has the ID JobSchedule17.

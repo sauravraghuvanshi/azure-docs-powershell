@@ -32,11 +32,6 @@ The **Stop-AzCdnEndpoint** cmdlet stops the Azure Content Delivery Network (CDN)
 
 ## EXAMPLES
 
-### Example 1
-```powershell
-Stop-AzCdnEndpoint -ResourceGroupName myresourcegroup -ProfileName mycdnprofile -EndpointName myendpoint
-```
-
 ## PARAMETERS
 
 ### -CdnEndpoint

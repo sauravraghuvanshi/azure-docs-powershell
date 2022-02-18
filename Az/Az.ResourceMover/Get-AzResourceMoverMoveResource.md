@@ -55,15 +55,9 @@ MoveStatusErrorsPropertiesTarget  :
 MoveStatusMoveState               : PreparePending
 Name                              : PSDemoVM
 ProvisioningState                 : Succeeded
-ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.VirtualMachineResourceSettings
+ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.VirtualMachineResourceSettings
 SourceId                          : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/PSDemoRM/providers/Microsoft.Compute/virtualMachines/PSDemoVM
-SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.VirtualMachineResourceSettings
-SystemDataCreatedAt               :
-SystemDataCreatedBy               :
-SystemDataCreatedByType           :
-SystemDataLastModifiedAt          :
-SystemDataLastModifiedBy          :
-SystemDataLastModifiedByType      :
+SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.VirtualMachineResourceSettings
 TargetId                          : 
 Type                              : 
 
@@ -88,16 +82,10 @@ MoveStatusErrorsPropertiesTarget  :
 MoveStatusMoveState               : PreparePending
 Name                              : psdemovm111
 ProvisioningState                 : Succeeded
-ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.NetworkInterfaceResourceSettings
+ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.NetworkInterfaceResourceSettings
 SourceId                          : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/psdemorm/providers/microsoft.network/networkinterfaces/psdemovm
                                     111
-SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.NetworkInterfaceResourceSettings
-SystemDataCreatedAt               :
-SystemDataCreatedBy               :
-SystemDataCreatedByType           :
-SystemDataLastModifiedAt          :
-SystemDataLastModifiedBy          :
-SystemDataLastModifiedByType      :
+SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.NetworkInterfaceResourceSettings
 TargetId                          : 
 Type                              : 
 
@@ -120,16 +108,10 @@ MoveStatusErrorsPropertiesTarget  :
 MoveStatusMoveState               : PreparePending
 Name                              : psdemorm-vnet
 ProvisioningState                 : Succeeded
-ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.VirtualNetworkResourceSettings
+ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.VirtualNetworkResourceSettings
 SourceId                          : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/psdemorm/providers/Microsoft.Network/virtualNetworks/psdemorm-v
                                     net
-SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.VirtualNetworkResourceSettings
-SystemDataCreatedAt               :
-SystemDataCreatedBy               :
-SystemDataCreatedByType           :
-SystemDataLastModifiedAt          :
-SystemDataLastModifiedBy          :
-SystemDataLastModifiedByType      :
+SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.VirtualNetworkResourceSettings
 TargetId                          : 
 Type                              : 
 
@@ -152,16 +134,10 @@ MoveStatusErrorsPropertiesTarget  :
 MoveStatusMoveState               : PreparePending
 Name                              : psdemovm-nsg
 ProvisioningState                 : Succeeded
-ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.NetworkSecurityGroupResourceSettings
+ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.NetworkSecurityGroupResourceSettings
 SourceId                          : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/psdemorm/providers/microsoft.network/networksecuritygroups/psde
                                     movm-nsg
-SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.NetworkSecurityGroupResourceSettings
-SystemDataCreatedAt               :
-SystemDataCreatedBy               :
-SystemDataCreatedByType           :
-SystemDataLastModifiedAt          :
-SystemDataLastModifiedBy          :
-SystemDataLastModifiedByType      :
+SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.NetworkSecurityGroupResourceSettings
 TargetId                          : 
 Type                              : 
 
@@ -184,15 +160,9 @@ MoveStatusErrorsPropertiesTarget  :
 MoveStatusMoveState               : DeleteSourcePending
 Name                              : psdemorm
 ProvisioningState                 : Succeeded
-ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.ResourceSettings
+ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.ResourceSettings
 SourceId                          : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/psdemorm
-SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.ResourceSettings
-SystemDataCreatedAt               :
-SystemDataCreatedBy               :
-SystemDataCreatedByType           :
-SystemDataLastModifiedAt          :
-SystemDataLastModifiedBy          :
-SystemDataLastModifiedByType      :
+SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.ResourceSettings
 TargetId                          : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/PSDemoRM-target
 Type                              :
 
@@ -224,15 +194,9 @@ MoveStatusErrorsPropertiesTarget  :
 MoveStatusMoveState               : PreparePending
 Name                              : PSDemoVM
 ProvisioningState                 : Succeeded
-ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.VirtualMachineResourceSettings
+ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.VirtualMachineResourceSettings
 SourceId                          : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/PSDemoRM/providers/Microsoft.Compute/virtualMachines/PSDemoVM
-SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.VirtualMachineResourceSettings
-SystemDataCreatedAt               :
-SystemDataCreatedBy               :
-SystemDataCreatedByType           :
-SystemDataLastModifiedAt          :
-SystemDataLastModifiedBy          :
-SystemDataLastModifiedByType      :
+SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.VirtualMachineResourceSettings
 TargetId                          : 
 Type                              : 
 
@@ -266,16 +230,10 @@ MoveStatusErrorsPropertiesTarget  :
 MoveStatusMoveState               : PreparePending
 Name                              : psdemovm111
 ProvisioningState                 : Succeeded
-ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.NetworkInterfaceResourceSettings
+ResourceSetting                   : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.NetworkInterfaceResourceSettings
 SourceId                          : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/psdemorm/providers/microsoft.network/networkinterfaces/psdemovm
                                     111
-SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.NetworkInterfaceResourceSettings
-SystemDataCreatedAt               :
-SystemDataCreatedBy               :
-SystemDataCreatedByType           :
-SystemDataLastModifiedAt          :
-SystemDataLastModifiedBy          :
-SystemDataLastModifiedByType      :
+SourceResourceSetting             : Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.NetworkInterfaceResourceSettings
 TargetId                          : 
 Type                              : 
 
@@ -383,7 +341,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api20210801.IMoveResource
+### Microsoft.Azure.PowerShell.Cmdlets.ResourceMover.Models.Api202101.IMoveResource
 
 ## NOTES
 

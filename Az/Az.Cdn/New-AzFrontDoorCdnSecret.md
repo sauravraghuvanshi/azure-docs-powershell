@@ -28,7 +28,7 @@ Creates the secret.
 
 ### Example 1
 ```powershell
-New-AzFrontDoorCdnSecret -ProfileName $profileName -ResourceGroupName $resourceGroupName -SecretName $secretName -SecretSource $secretSource
+PS C:\> New-AzFrontDoorCdnSecret -ProfileName $profileName -ResourceGroupName $resourceGroupName -SecretName $secretName -SecretSource $secretSource
 ```
 
 Creates the secret.

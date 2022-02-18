@@ -19,8 +19,7 @@ Modifies an Azure Cache for Redis.
 Set-AzRedisCache [-ResourceGroupName <String>] -Name <String> [-Size <String>] [-Sku <String>]
  [-RedisConfiguration <Hashtable>] [-EnableNonSslPort <Boolean>] [-TenantSettings <Hashtable>]
  [-ShardCount <Int32>] [-MinimumTlsVersion <String>] [-RedisVersion <String>] [-Tag <Hashtable>]
- [-IdentityType <String>] [-UserAssignedIdentity <String[]>] [-DefaultProfile <IAzureContextContainer>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -77,9 +76,7 @@ PS C:\>Set-AzRedisCache -Name "MyCache"  -RedisConfiguration @{"rdb-backup-enabl
           Sku                : Premium
           Tag                : {}
           Zone               : []
-```
-
-    
+```    
 
 This cmdlet disables RDB backup data persistence for Azure Cache for Redis. You can also disable AOF backup persistent cache.
 
@@ -107,7 +104,6 @@ PS C:\>Set-AzRedisCache -Name "MyCache" -RedisConfiguration @{"rdb-backup-enable
           Tag                : {}
           Zone               : []
 ```
-
 This cmdlet enables rdb-backup persistence on an already existing cache. You can also enable aof-backup persistence.
 
 ### Example 4: Modify Azure Cache for Redis - If you want to change rdb back up frequency.
@@ -136,7 +132,7 @@ PS C:\>Set-AzRedisCache -Name "MyCache" -RedisConfiguration @{"rdb-backup-freque
           Sku                : Premium
           Tag                : {}
           Zone               : []
-```
+``` 
 
 ### Example 5: Modify Azure Cache for Redis - If you want to change AOF back up data persistence to RDB back up.
 
@@ -162,10 +158,9 @@ PS C:\>Set-AzRedisCache -Name "MyCache"  -RedisConfiguration @{"aof-backup-enabl
           Sku                : Premium
           Tag                : {}
           Zone               : []
-```
-
- 
+``` 
 This cmdlet helps in changing persistence method.
+
 
 ### Example 6: Scale an Azure Cache for Redis Instance - Update to different size.
 
@@ -192,8 +187,8 @@ PS C:\>Set-AzRedisCache -Name "MyCache" -Size "P2" -Sku "Premium"
           Tag                : {}
           Zone               : []
 ```
-
 This command increases or decreases the memory size of your instance.
+
 
 ### Example 7: Scale an Azure Cache for Redis Instance - Update to different tier.
 
@@ -220,7 +215,6 @@ PS C:\>Set-AzRedisCache -Name "MyCache" -Size "P1" -Sku "Premium"
           Tag                : {}
           Zone               : []
 ```
-
 This command helps you change the tier of your cache. You can change from Basic to Standard, or Standard to Premium.
 
 ### Example 8: Scale an Azure Cache for Redis Instance - Enable Redis Clustering.
@@ -249,8 +243,8 @@ PS C:\>Set-AzRedisCache -Name "MyCache" -ShardCount 1
           Tag                : {}
           Zone               : []
 ```
-
 This cmdlet helps you in enable clustering for your Azure Cache for Redis instance. For increasing the shard count, must enable clustering first.
+
 
 ### Example 9: Scale an Azure Cache for Redis Instance - Use Redis Cluster to scale in/out.
 
@@ -278,8 +272,8 @@ PS C:\>Set-AzRedisCache -Name "MyCache" -ShardCount 2
           Tag                : {}
           Zone               : []
 ```
-
 This command increases or decreases the cluster size.
+
 
 ## PARAMETERS
 
@@ -304,21 +298,6 @@ The default value is $False (the non-SSL port is disabled).
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -IdentityType
-Specifies the type of identity used for the Azure Cache for Redis. Valid values: "SystemAssigned" or "UserAssigned" or "SystemAssignedUserAssigned" or "None"
-
-```yaml
-Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -536,21 +515,6 @@ This parameter has been deprecated.
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -UserAssignedIdentity
-Specifies one or more comma seperated user identities to be associated with the Azure Cache for Redis. The user identity references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/identities/{identityName}'
-
-```yaml
-Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 

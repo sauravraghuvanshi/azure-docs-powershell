@@ -28,17 +28,17 @@ You can alternatively validate the changes in a Git branch without publishing.
 ## EXAMPLES
 
 ### Example 1: Deploy Git changes
-```powershell
-$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-Publish-AzApiManagementTenantGitConfiguration -Context $apimContext -Branch 'master' -PassThru
+```
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Publish-AzApiManagementTenantGitConfiguration -Context $apimContext -Branch 'master' -PassThru
 ```
 
 This command publishes the changes from the specified branch to the configuration database.
 
 ### Example 2: Validate Git changes
-```powershell
-$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-Publish-AzApiManagementTenantGitConfiguration -Context $apimContext -Branch 'master' -ValidateOnly -PassThru
+```
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Publish-AzApiManagementTenantGitConfiguration -Context $apimContext -Branch 'master' -ValidateOnly -PassThru
 ```
 
 This command validates the changes in the Git branch against the configuration database.

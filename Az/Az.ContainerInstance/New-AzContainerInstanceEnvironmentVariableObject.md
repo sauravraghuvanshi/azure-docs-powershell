@@ -26,7 +26,9 @@ Create a in-memory object for EnvironmentVariable
 
 ### Example 1: Create an environment variable within a container instance
 ```powershell
-PS C:\> New-AzContainerInstanceEnvironmentVariableObject -Name "env1" -Value "value1"
+PS C:\> {{ Add code here }}
+
+New-AzContainerInstanceEnvironmentVariableObject -Name "env1" -Value "value1"
 
 Name SecureValue Value
 ---- ----------- -----

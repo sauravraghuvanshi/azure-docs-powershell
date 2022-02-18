@@ -27,9 +27,7 @@ The New-AzAttestation cmdlet creates an attestation in the specified resource gr
 
 ### Example 1
 ```powershell
-New-AzAttestation -Name pshtest4 -ResourceGroupName psh-test-rg -Location "East US" -Tags @{Test="true";CreationYear="2020"}
-```
-```output                                                                                                                                                                                         
+PS C:\> New-AzAttestation -Name pshtest4 -ResourceGroupName psh-test-rg -Location "East US" -Tags @{Test="true";CreationYear="2020"}                                                                                                                                                                                         
 Id                : subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx/resourceGroups/psh-test-rg/providers/Microsoft.Attestation/attestationProviders/pshtest4
 Location          : East US
 ResourceGroupName : psh-test-rg
@@ -49,9 +47,7 @@ Create a new instance of an Attestation Provider named *pshtest4* with a couple 
 
 ### Example 2
 ```powershell
-New-AzAttestation -Name pshtest3 -ResourceGroupName psh-test-rg -Location "East US" -PolicySignersCertificateFile .\cert1.pem
-```
-```output                                                                                                                                                
+PS C:\> New-AzAttestation -Name pshtest3 -ResourceGroupName psh-test-rg -Location "East US" -PolicySignersCertificateFile .\cert1.pem                                                                                                                                                
 Id                : subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx/resourceGroups/psh-test-rg/providers/Microsoft.Attestation/attestationProviders/pshtest3
 Location          : East US
 ResourceGroupName : psh-test-rg

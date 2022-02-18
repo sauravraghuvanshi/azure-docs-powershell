@@ -29,7 +29,7 @@ Creates the origin group.
 
 ### Example 1
 ```powershell
-New-AzFrontDoorCdnOriginGroup -OriginGroupName $originGroupName -ProfileName $profileName -ResourceGroupName $resourceGroupName
+PS C:\> New-AzFrontDoorCdnOriginGroup -OriginGroupName $originGroupName -ProfileName $profileName -ResourceGroupName $resourceGroupName
 ```
 
 Creates the origin group.

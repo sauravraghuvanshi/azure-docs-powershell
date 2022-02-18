@@ -39,7 +39,7 @@ Gets the custom domain.
 
 ### Example 1
 ```powershell
-Get-AzFrontDoorCdnCustomDomain -CustomDomainName $customDomainName -ProfileName $profileName -ResourceGroupName $resourceGroupName
+PS C:\> Get-AzFrontDoorCdnCustomDomain -CustomDomainName $customDomainName -ProfileName $profileName -ResourceGroupName $resourceGroupName
 ```
 
 Gets the custom domain.

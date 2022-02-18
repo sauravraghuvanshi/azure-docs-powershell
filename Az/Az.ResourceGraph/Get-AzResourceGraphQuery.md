@@ -1,5 +1,5 @@
 ---
-external help file: Az.ResourceGraph-help.xml
+external help file: 
 Module Name: Az.ResourceGraph
 online version: https://docs.microsoft.com/powershell/module/az.resourcegraph/get-azresourcegraphquery
 schema: 2.0.0
@@ -125,7 +125,7 @@ The name of the resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: List, Get
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -140,7 +140,7 @@ The Azure subscription Id.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, Get
+Parameter Sets: Get, List
 Aliases:
 
 Required: False
@@ -177,3 +177,4 @@ INPUTOBJECT <IResourceGraphIdentity>: Identity Parameter
   - `[SubscriptionId <String>]`: The Azure subscription Id.
 
 ## RELATED LINKS
+

@@ -25,8 +25,8 @@ The Suspend-AzAnalysisServicesServer cmdlet suspends an instance of Analysis Ser
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Suspend-AzAnalysisServicesServer -Name "testserver" -ResourceGroupName "testgroup"
+```
+PS C:\> Suspend-AzAnalysisServicesServer -Name "testserver" -ResourceGroupName "testgroup"
 ```
 
 This command will suspend an active server named testserver in the resourcegroup testgroup

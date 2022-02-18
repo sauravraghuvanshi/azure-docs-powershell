@@ -34,20 +34,16 @@ The Set-AzAttestationPolicy cmdlet sets the policy from a tenant in Azure Attest
 
 ### Example 1
 ```powershell
-$policy = Get-Content -Path .\custom.sgx.policy.txt
-```
-```powershell
-Set-AzAttestationPolicy -Name pshtest -ResourceGroupName psh-test-rg -Tee SgxEnclave -Policy $policy
+PS C:\> $policy = Get-Content -Path .\custom.sgx.policy.txt
+PS C:\> Set-AzAttestationPolicy -Name pshtest -ResourceGroupName psh-test-rg -Tee SgxEnclave -Policy $policy
 ```
 
 Sets the user defined policy for TEE type *SgxEnclave* for Attestation Provider *pshtest* using a text policy format (default).
 
 ### Example 2
 ```powershell
-$policyjwt = Get-Content -Path .\custom.sgx.policy.jwt.format.txt
-```
-```powershell
-Set-AzAttestationPolicy -Name pshtest -ResourceGroupName psh-test-rg -Tee SgxEnclave -Policy $policyjwt -PolicyFormat JWT
+PS C:\> $policyjwt = Get-Content -Path .\custom.sgx.policy.jwt.format.txt
+PS C:\> Set-AzAttestationPolicy -Name pshtest -ResourceGroupName psh-test-rg -Tee SgxEnclave -Policy $policyjwt -PolicyFormat JWT
 ```
 
 Sets the user defined policy for TEE type *SgxEnclave* for Attestation Provider *pshtest* using a JWT policy format.

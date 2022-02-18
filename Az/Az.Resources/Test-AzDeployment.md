@@ -16,109 +16,102 @@ Validates a deployment.
 
 ### ByTemplateFileWithNoParameters (Default)
 ```
-Test-AzDeployment [-Name <String>] -Location <String> [-QueryString <String>] -TemplateFile <String>
+Test-AzDeployment -Location <String> [-QueryString <String>] -TemplateFile <String>
  [-SkipTemplateParameterPrompt] [-Pre] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### ByTemplateObjectAndParameterObject
 ```
-Test-AzDeployment [-Name <String>] -Location <String> [-QueryString <String>]
- -TemplateParameterObject <Hashtable> -TemplateObject <Hashtable> [-SkipTemplateParameterPrompt] [-Pre]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Test-AzDeployment -Location <String> [-QueryString <String>] -TemplateParameterObject <Hashtable>
+ -TemplateObject <Hashtable> [-SkipTemplateParameterPrompt] [-Pre] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
 ```
 
 ### ByTemplateFileAndParameterObject
 ```
-Test-AzDeployment [-Name <String>] -Location <String> [-QueryString <String>]
- -TemplateParameterObject <Hashtable> -TemplateFile <String> [-SkipTemplateParameterPrompt] [-Pre]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Test-AzDeployment -Location <String> [-QueryString <String>] -TemplateParameterObject <Hashtable>
+ -TemplateFile <String> [-SkipTemplateParameterPrompt] [-Pre] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
 ```
 
 ### ByTemplateUriAndParameterObject
 ```
-Test-AzDeployment [-Name <String>] -Location <String> [-QueryString <String>]
- -TemplateParameterObject <Hashtable> -TemplateUri <String> [-SkipTemplateParameterPrompt] [-Pre]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
-```
-
-### ByTemplateSpecResourceIdAndParamsObject
-```
-Test-AzDeployment [-Name <String>] -Location <String> [-QueryString <String>]
- -TemplateParameterObject <Hashtable> -TemplateSpecId <String> [-SkipTemplateParameterPrompt] [-Pre]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Test-AzDeployment -Location <String> [-QueryString <String>] -TemplateParameterObject <Hashtable>
+ -TemplateUri <String> [-SkipTemplateParameterPrompt] [-Pre] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
 ```
 
 ### ByTemplateObjectAndParameterFile
 ```
-Test-AzDeployment [-Name <String>] -Location <String> [-QueryString <String>] -TemplateParameterFile <String>
+Test-AzDeployment -Location <String> [-QueryString <String>] -TemplateParameterFile <String>
  -TemplateObject <Hashtable> [-SkipTemplateParameterPrompt] [-Pre] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
 ### ByTemplateFileAndParameterFile
 ```
-Test-AzDeployment [-Name <String>] -Location <String> [-QueryString <String>] -TemplateParameterFile <String>
+Test-AzDeployment -Location <String> [-QueryString <String>] -TemplateParameterFile <String>
  -TemplateFile <String> [-SkipTemplateParameterPrompt] [-Pre] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
 ### ByTemplateUriAndParameterFile
 ```
-Test-AzDeployment [-Name <String>] -Location <String> [-QueryString <String>] -TemplateParameterFile <String>
+Test-AzDeployment -Location <String> [-QueryString <String>] -TemplateParameterFile <String>
  -TemplateUri <String> [-SkipTemplateParameterPrompt] [-Pre] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
 ### ByTemplateSpecResourceIdAndParams
 ```
-Test-AzDeployment [-Name <String>] -Location <String> [-QueryString <String>] -TemplateParameterFile <String>
+Test-AzDeployment -Location <String> [-QueryString <String>] -TemplateParameterFile <String>
  -TemplateSpecId <String> [-SkipTemplateParameterPrompt] [-Pre] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
 ### ByTemplateObjectAndParameterUri
 ```
-Test-AzDeployment [-Name <String>] -Location <String> [-QueryString <String>] -TemplateParameterUri <String>
+Test-AzDeployment -Location <String> [-QueryString <String>] -TemplateParameterUri <String>
  -TemplateObject <Hashtable> [-SkipTemplateParameterPrompt] [-Pre] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
 ### ByTemplateFileAndParameterUri
 ```
-Test-AzDeployment [-Name <String>] -Location <String> [-QueryString <String>] -TemplateParameterUri <String>
+Test-AzDeployment -Location <String> [-QueryString <String>] -TemplateParameterUri <String>
  -TemplateFile <String> [-SkipTemplateParameterPrompt] [-Pre] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
 ### ByTemplateUriAndParameterUri
 ```
-Test-AzDeployment [-Name <String>] -Location <String> [-QueryString <String>] -TemplateParameterUri <String>
+Test-AzDeployment -Location <String> [-QueryString <String>] -TemplateParameterUri <String>
  -TemplateUri <String> [-SkipTemplateParameterPrompt] [-Pre] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
 ### ByTemplateSpecResourceIdAndParamsUri
 ```
-Test-AzDeployment [-Name <String>] -Location <String> [-QueryString <String>] -TemplateParameterUri <String>
+Test-AzDeployment -Location <String> [-QueryString <String>] -TemplateParameterUri <String>
  -TemplateSpecId <String> [-SkipTemplateParameterPrompt] [-Pre] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
 ### ByTemplateObjectWithNoParameters
 ```
-Test-AzDeployment [-Name <String>] -Location <String> [-QueryString <String>] -TemplateObject <Hashtable>
+Test-AzDeployment -Location <String> [-QueryString <String>] -TemplateObject <Hashtable>
  [-SkipTemplateParameterPrompt] [-Pre] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### ByTemplateUriWithNoParameters
 ```
-Test-AzDeployment [-Name <String>] -Location <String> [-QueryString <String>] -TemplateUri <String>
+Test-AzDeployment -Location <String> [-QueryString <String>] -TemplateUri <String>
  [-SkipTemplateParameterPrompt] [-Pre] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### ByTemplateSpecResourceId
 ```
-Test-AzDeployment [-Name <String>] -Location <String> [-QueryString <String>] -TemplateSpecId <String>
+Test-AzDeployment -Location <String> [-QueryString <String>] -TemplateSpecId <String>
  [-SkipTemplateParameterPrompt] [-Pre] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -148,8 +141,6 @@ This command tests a deployment at the current subscription scope using the an i
 Validates a deployment. (autogenerated)
 
 <!-- Aladdin Generated Example -->
-
-
 ```powershell
 Test-AzDeployment -Location 'West US' -SkipTemplateParameterPrompt -TemplateFile 'D:\Azure\Templates\EngineeringSite.json' -TemplateParameterFile 'D:\Azure\Templates\EngSiteParams.json'
 ```
@@ -180,21 +171,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Name
-The name of the deployment it's going to test. If not specified, defaults to the template file name when a template file is provided
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: DeploymentName
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -296,7 +272,7 @@ A hash table which represents the parameters.
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: ByTemplateObjectAndParameterObject, ByTemplateFileAndParameterObject, ByTemplateUriAndParameterObject, ByTemplateSpecResourceIdAndParamsObject
+Parameter Sets: ByTemplateObjectAndParameterObject, ByTemplateFileAndParameterObject, ByTemplateUriAndParameterObject
 Aliases:
 
 Required: True
@@ -326,7 +302,7 @@ Resource ID of the templateSpec to be deployed.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByTemplateSpecResourceIdAndParamsObject, ByTemplateSpecResourceIdAndParams, ByTemplateSpecResourceIdAndParamsUri, ByTemplateSpecResourceId
+Parameter Sets: ByTemplateSpecResourceIdAndParams, ByTemplateSpecResourceIdAndParamsUri, ByTemplateSpecResourceId
 Aliases:
 
 Required: True

@@ -19,32 +19,16 @@ Get-AzCdnEdgeNode [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>
 ```
 
 ## DESCRIPTION
-The **Get-AzCdnEdgeNode** cmdlet gets Azure CDN edgenodes.
+{{Fill in the Description}}
 
 ## EXAMPLES
 
 ### Example 1
-```powershell
-(Get-AzCdnEdgeNode).IpAddressGroups[0] | ConvertTo-Json
+```
+PS C:\> {{ Add example code here }}
 ```
 
-```Output
-{
-  "DeliveryRegion": "All",
-  "Ipv4Addresses": [
-    {
-      "BaseIpAddress": "23.200.152.0",
-      "PrefixLength": 21
-    }
-  ],
-  "Ipv6Addresses": [
-    {
-      "BaseIpAddress": "2600:1417:9800::",
-      "PrefixLength": 48
-    }
-  ]
-}
-```
+{{ Add example description here }}
 
 ## PARAMETERS
 

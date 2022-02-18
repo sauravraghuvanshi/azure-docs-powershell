@@ -53,8 +53,8 @@ The Set-AzEnvironment cmdlet sets endpoints and metadata for connecting to an in
 ## EXAMPLES
 
 ### Example 1: Creating and modifying a new environment
-```powershell
-Add-AzEnvironment -Name TestEnvironment `
+```
+PS C:\> Add-AzEnvironment -Name TestEnvironment `
         -ActiveDirectoryEndpoint TestADEndpoint `
         -ActiveDirectoryServiceEndpointResourceId TestADApplicationId `
         -ResourceManagerEndpoint TestRMEndpoint `
@@ -65,8 +65,8 @@ Name            Resource Manager Url ActiveDirectory Authority
 ----            -------------------- -------------------------
 TestEnvironment TestRMEndpoint       TestADEndpoint/
 
-Set-AzEnvironment -Name TestEnvironment `
-        -ActiveDirectoryEndpoint NewTestADEndpoint `
+PS C:\> Set-AzEnvironment -Name TestEnvironment
+        -ActiveDirectoryEndpoint NewTestADEndpoint
         -GraphEndpoint NewTestGraphEndpoint | Format-List
 
 Name                                              : TestEnvironment

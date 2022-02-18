@@ -25,9 +25,8 @@ New-AzNetAppFilesVolume -ResourceGroupName <String> -Location <String> -AccountN
  [-KerberosEnabled] [-SmbEncryption] [-SmbContinuouslyAvailable] [-LdapEnabled] [-CoolAccess]
  [-CoolnessPeriod <Int32>] [-UnixPermissions <String>] [-AvsDataStore <String>] [-IsDefaultQuotaEnabled]
  [-DefaultUserQuotaInKiB <Int64>] [-DefaultGroupQuotaInKiB <Int64>] [-NetworkFeature <String>]
- [-CapacityPoolResourceId <String>] [-ProximityPlacementGroup <String>] [-VolumeSpecName <String>]
- [-PlacementRule <System.Collections.Generic.IList`1[Microsoft.Azure.Commands.NetAppFiles.Models.PSKeyValuePairs]>]
- [-Tag <Hashtable>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-NetworkSiblingSetId <String>] [-Tag <Hashtable>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### ByParentObjectParameterSet
@@ -38,10 +37,8 @@ New-AzNetAppFilesVolume -Name <String> -UsageThreshold <Int64> -SubnetId <String
  [-SnapshotPolicyId <String>] [-Backup <PSNetAppFilesVolumeBackupProperties>] [-ProtocolType <String[]>]
  [-SnapshotDirectoryVisible] [-SecurityStyle <String>] [-ThroughputMibps <Double>] [-KerberosEnabled]
  [-SmbEncryption] [-SmbContinuouslyAvailable] [-LdapEnabled] [-CoolAccess] [-CoolnessPeriod <Int32>]
- [-UnixPermissions <String>] [-AvsDataStore <String>] [-IsDefaultQuotaEnabled] [-DefaultUserQuotaInKiB <Int64>]
- [-DefaultGroupQuotaInKiB <Int64>] [-NetworkFeature <String>] [-CapacityPoolResourceId <String>]
- [-ProximityPlacementGroup <String>] [-VolumeSpecName <String>]
- [-PlacementRule <System.Collections.Generic.IList`1[Microsoft.Azure.Commands.NetAppFiles.Models.PSKeyValuePairs]>]
+ [-UnixPermissions <String>] [-AvsDataStore <String>] [-IsDefaultQuotaEnabled]
+ [-DefaultUserQuotaInKiB <Int64>] [-DefaultGroupQuotaInKiB <Int64>] [-NetworkFeature <String>]
  [-Tag <Hashtable>] -PoolObject <PSNetAppFilesPool> [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
@@ -125,21 +122,6 @@ Backup ID. UUID v4 or resource identifier used to identify the Backup
 ```yaml
 Type: System.String
 Parameter Sets: ByFieldsParameterSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CapacityPoolResourceId
-Pool Resource Id used in case of creating a volume through volume group.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -344,12 +326,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PlacementRule
-Application specific placement rules for the particular volume.
+### -NetworkSiblingSetId
+Network Sibling Set ID (GUID) for the group of volumes sharing networking resources example (9760acf5-4638-11e7-9bdb-020073ca3333).
 
 ```yaml
-Type: System.Collections.Generic.IList`1[Microsoft.Azure.Commands.NetAppFiles.Models.PSKeyValuePairs]
-Parameter Sets: (All)
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
 Aliases:
 
 Required: False
@@ -394,21 +376,6 @@ A hashtable array which represents the export policy
 
 ```yaml
 Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ProximityPlacementGroup
-Proximity placement group associated with the volume.
-
-```yaml
-Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -638,21 +605,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VolumeSpecName
-Volume spec name is the application specific designation or identifier for the particular volume in a volume group for e.g. data, log.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

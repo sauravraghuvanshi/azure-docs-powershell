@@ -33,17 +33,15 @@ The Reset-AzAttestationPolicy cmdlet resets the user defined attestation policy 
 
 ### Example 1
 ```powershell
-Reset-AzAttestationPolicy -Name pshtest -ResourceGroupName psh-test-rg -Tee SgxEnclave
+PS C:\> Reset-AzAttestationPolicy -Name pshtest -ResourceGroupName psh-test-rg -Tee SgxEnclave
 ```
 
 Reset the policy to the default for the Attestation Provider *pshtest* for Tee type *SgxEnclave*.
 
 ### Example 2
 ```powershell
-$resetJwt = Get-Content -Path .\reset.policy.txt.signed.txt
-```
-```powershell
-Reset-AzAttestationPolicy -Name pshtest -ResourceGroupName psh-test-rg -Tee SgxEnclave -Policy $resetJwt
+PS C:\> $resetJwt = Get-Content -Path .\reset.policy.txt.signed.txt
+PS C:\> Reset-AzAttestationPolicy -Name pshtest -ResourceGroupName psh-test-rg -Tee SgxEnclave -Policy $resetJwt
 ```
 
 If the Attestation Provider *pshtest* is configured to use the isolated trust model, reset the policy to the default for Tee type *SgxEnclave* by including a signed policy.

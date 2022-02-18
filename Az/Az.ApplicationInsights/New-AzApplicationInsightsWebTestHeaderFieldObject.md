@@ -25,9 +25,8 @@ Create a in-memory object for HeaderField
 
 ### Example 1: Create a in-memory object for HeaderField
 ```powershell
-New-AzApplicationInsightsWebTestHeaderFieldObject -Name 'version' -Value '2.0.1'
-```
-```output
+PS C:\> New-AzApplicationInsightsWebTestHeaderFieldObject -Name 'version' -Value '2.0.1'
+
 Name    Value
 ----    -----
 version 2.0.1
