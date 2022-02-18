@@ -26,7 +26,7 @@ Create a Cognitive Services Object
 
 ### Example 1
 ```powershell
-PS C:\> New-AzCognitiveServicesObject -Type DeploymentProperties
+New-AzCognitiveServicesObject -Type DeploymentProperties
 ```
 
 Create a Cognitive Services DeploymentProperties Object

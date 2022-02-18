@@ -51,7 +51,6 @@ PS C:\> Get-AzPeeringRegisteredPrefix -ResourceGroupName $resourceGroupName -Pee
 
 Gets registered peering asn.
 
-{{ Add example description here }}
 
 ## PARAMETERS
 

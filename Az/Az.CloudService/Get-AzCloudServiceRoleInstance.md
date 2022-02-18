@@ -40,8 +40,10 @@ Gets a role instance from a cloud service.
 
 ### Example 1: Get all role instances
 ```powershell
-PS C:\> Get-AzCloudServiceRoleInstance -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS"
+Get-AzCloudServiceRoleInstance -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS"
+```
 
+```Output
 Name                    Location    SkuName        SkuTier
 ----                    --------    -------        -------
 ContosoFrontEnd_IN_0    eastus2euap Standard_D1_v2 Standard
@@ -55,8 +57,10 @@ This command gets the properties of all role instances of cloud service named Co
 
 ### Example 2: Get properties for single role instance
 ```powershell
-PS C:\> Get-AzCloudServiceRoleInstance -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS" -RoleInstanceName "ContosoFrontEnd_IN_0"
+Get-AzCloudServiceRoleInstance -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS" -RoleInstanceName "ContosoFrontEnd_IN_0"
+```
 
+```Output
 Name                    Location    SkuName        SkuTier
 ----                    --------    -------        -------
 ContosoFrontEnd_IN_0    eastus2euap Standard_D1_v2 Standard

@@ -32,8 +32,8 @@ Remove an azure context from the set of contexts
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> Remove-AzContext -Name Default
+```powershell
+Remove-AzContext -Name Default
 ```
 
 Remove the context named default
