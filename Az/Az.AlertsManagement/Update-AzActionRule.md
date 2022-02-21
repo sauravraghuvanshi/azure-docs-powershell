@@ -39,7 +39,7 @@ Update-AzActionRule -InputObject <PSActionRule> [-Status <String>] [-Tag <Hashta
 
 ### Example 1
 ```powershell
-PS C:\> Update-AzActionRule -ResourceGroupName "test-rg" -Name "Test-ActionRule" -Status "Disabled"
+Update-AzActionRule -ResourceGroupName "test-rg" -Name "Test-ActionRule" -Status "Disabled"
 ```
 
 This cmdlet disables the action rule. 

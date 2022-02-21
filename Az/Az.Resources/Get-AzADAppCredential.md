@@ -1,5 +1,5 @@
 ---
-external help file: 
+external help file: Az.Resources-help.xml
 Module Name: Az.Resources
 online version: https://docs.microsoft.com/powershell/module/az.resources/get-azadappcredential
 schema: 2.0.0
@@ -16,26 +16,25 @@ Lists key credentials and password credentials for an application.
 
 ### ApplicationObjectIdParameterSet (Default)
 ```
-Get-AzADAppCredential -ObjectId <String> [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Get-AzADAppCredential -ObjectId <String> [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ApplicationIdParameterSet
 ```
-Get-AzADAppCredential -ApplicationId <Guid> [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+Get-AzADAppCredential -ApplicationId <Guid> [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### DisplayNameParameterSet
+```
+Get-AzADAppCredential -DisplayName <String> [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### ApplicationObjectParameterSet
 ```
-Get-AzADAppCredential -ApplicationObject <IMicrosoftGraphApplication> [-DefaultProfile <PSObject>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### DisplayNameParameterSet
-```
-Get-AzADAppCredential -DisplayName <String> [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Get-AzADAppCredential -ApplicationObject <IMicrosoftGraphApplication> [-DefaultProfile <PSObject>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -311,3 +310,4 @@ APPLICATIONOBJECT <IMicrosoftGraphApplication>: The application object, could be
 
 ## RELATED LINKS
 
+## RELATED LINKS

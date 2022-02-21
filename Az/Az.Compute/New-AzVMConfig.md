@@ -20,8 +20,8 @@ Creates a configurable virtual machine object.
 New-AzVMConfig [-VMName] <String> [-VMSize] <String> [[-AvailabilitySetId] <String>] [[-LicenseType] <String>]
  [-Zone <String[]>] [-ProximityPlacementGroupId <String>] [-HostId <String>] [-VmssId <String>]
  [-MaxPrice <Double>] [-EvictionPolicy <String>] [-Priority <String>] [-Tags <Hashtable>] [-EnableUltraSSD]
- [-EncryptionAtHost] [-CapacityReservationGroupId <String>] [-UserData <String>]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [-EncryptionAtHost] [-CapacityReservationGroupId <String>] [-UserData <String>] [-PlatformFaultDomain <Int32>]
+ [-HibernationEnabled] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### ExplicitIdentityParameterSet
@@ -30,8 +30,8 @@ New-AzVMConfig [-VMName] <String> [-VMSize] <String> [[-AvailabilitySetId] <Stri
  [-IdentityType] <ResourceIdentityType> [-IdentityId <String[]>] [-Zone <String[]>]
  [-ProximityPlacementGroupId <String>] [-HostId <String>] [-VmssId <String>] [-MaxPrice <Double>]
  [-EvictionPolicy <String>] [-Priority <String>] [-Tags <Hashtable>] [-EnableUltraSSD] [-EncryptionAtHost]
- [-CapacityReservationGroupId <String>] [-UserData <String>] [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+ [-CapacityReservationGroupId <String>] [-UserData <String>] [-PlatformFaultDomain <Int32>]
+ [-HibernationEnabled] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -154,6 +154,21 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -HibernationEnabled
+The flag that enables or disables hibernation capability on the VM.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -HostId
 The Id of Host
 
@@ -238,6 +253,21 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -PlatformFaultDomain
+Specifies the fault domain of the virtual machine.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -Priority
 The priority for the virtual machine.  Only supported values are 'Regular', 'Spot' and 'Low'.
 'Regular' is for regular virtual machine.
@@ -297,7 +327,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

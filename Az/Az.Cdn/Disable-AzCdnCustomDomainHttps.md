@@ -40,7 +40,7 @@ The **Disable-AzCdnCustomDomainHttps** cmdlet disables the secured HTTPS deliver
 
 ### Example 1
 ```powershell
-PS C:\> Disable-AzCdnCustomDomainHttps -ResourceGroupName $resourceGroupName -ProfileName $profileName -EndpointName $endpointName -CustomDomainName $customDomainName
+Disable-AzCdnCustomDomainHttps -ResourceGroupName $resourceGroupName -ProfileName $profileName -EndpointName $endpointName -CustomDomainName $customDomainName
 ```
 
 Disable secure delivery of the custom domain.

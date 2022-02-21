@@ -33,7 +33,7 @@ Updates the profile.
 
 ### Example 1
 ```powershell
-PS C:\> Set-AzFrontDoorCdnProfile -Profile $profileObject
+Set-AzFrontDoorCdnProfile -Profile $profileObject
 ```
 
 Updates the profile.

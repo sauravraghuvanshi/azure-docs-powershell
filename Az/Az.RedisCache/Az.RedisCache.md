@@ -71,7 +71,7 @@ Removes the patch schedule.
 Restarts nodes of a cache.
 
 ### [Set-AzRedisCache](Set-AzRedisCache.md)
-Modifies a Redis Cache.
+Modifies an Azure Cache for Redis.
 
 ### [Set-AzRedisCacheDiagnostic](Set-AzRedisCacheDiagnostic.md)
 Enables diagnostics on an Azure Redis Cache.

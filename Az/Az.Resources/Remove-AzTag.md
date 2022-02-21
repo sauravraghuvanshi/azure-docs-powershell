@@ -16,22 +16,15 @@ Deletes predefined Azure tags or values | Deletes the entire set of tags on a re
 ## SYNTAX
 
 ### RemovePredefinedTagParameterSet
-
-```powershell
+```
 Remove-AzTag [-Name] <String> [[-Value] <String[]>] [-PassThru] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### RemoveByResourceIdParameterSet
-
-```powershell
-Remove-AzTag
-   -ResourceId <String>
-   [-PassThru]
-   [-DefaultProfile <IAzureContextContainer>]
-   [-WhatIf]
-   [-Confirm]
-   [<CommonParameters>]
+```
+Remove-AzTag [-PassThru] -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -133,16 +126,16 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Value
-Deletes the specified values from the predefined tag, but does not delete the tag.
+### -PassThru
+Returns an object that represents the deleted tag or the resulting tag with deleted valued.
 
 ```yaml
-Type: System.String[]
-Parameter Sets: RemovePredefinedTagParameterSet
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -163,16 +156,16 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns an object that represents the deleted tag or the resulting tag with deleted valued.
+### -Value
+Deletes the specified values from the predefined tag, but does not delete the tag.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: System.String[]
+Parameter Sets: RemovePredefinedTagParameterSet
 Aliases:
 
 Required: False
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False

@@ -27,7 +27,8 @@ New-AzVM [[-ResourceGroupName] <String>] [[-Location] <String>] [-EdgeZone <Stri
  [-EnableUltraSSD] [-ProximityPlacementGroupId <String>] [-HostId <String>] [-VmssId <String>]
  [-Priority <String>] [-EvictionPolicy <String>] [-MaxPrice <Double>] [-EncryptionAtHost]
  [-HostGroupId <String>] [-SshKeyName <String>] [-GenerateSshKey] [-CapacityReservationGroupId <String>]
- [-UserData <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-UserData <String>] [-PlatformFaultDomain <Int32>] [-HibernationEnabled]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DefaultParameterSet
@@ -49,7 +50,8 @@ New-AzVM [[-ResourceGroupName] <String>] [[-Location] <String>] [-EdgeZone <Stri
  [-DataDiskDeleteOption <String>] [-EnableUltraSSD] [-ProximityPlacementGroupId <String>] [-HostId <String>]
  [-VmssId <String>] [-Priority <String>] [-EvictionPolicy <String>] [-MaxPrice <Double>] [-EncryptionAtHost]
  [-HostGroupId <String>] [-CapacityReservationGroupId <String>] [-UserData <String>]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-PlatformFaultDomain <Int32>] [-HibernationEnabled] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -459,6 +461,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -HibernationEnabled
+The flag that enables or disables hibernation capability on the VM.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: SimpleParameterSet, DiskFileParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -HostGroupId
 Specifies the dedicated host group the virtual machine will reside in.
 
@@ -598,7 +615,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkInterfaceDeleteOption
-{{ Fill NetworkInterfaceDeleteOption Description }}
+Specifies what action to perform on the NetworkInterface resource when the VM is deleted. Options are: Detach, Delete.
 
 ```yaml
 Type: System.String
@@ -639,6 +656,21 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PlatformFaultDomain
+Specifies the fault domain of the virtual machine.
+
+```yaml
+Type: System.Int32
+Parameter Sets: SimpleParameterSet, DiskFileParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -850,7 +882,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

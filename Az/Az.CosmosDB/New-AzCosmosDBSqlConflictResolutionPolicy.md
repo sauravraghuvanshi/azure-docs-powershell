@@ -33,8 +33,6 @@ Mode           ConflictResolutionPath ConflictResolutionProcedure
 LastWriterWins /myPath
 ```
 
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ConflictResolutionProcedure

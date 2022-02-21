@@ -62,7 +62,7 @@ Get-AzSqlInstanceDatabaseLongTermRetentionBackup [-InputObject] <AzureSqlManaged
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+The **Get-AzSqlInstanceDatabaseLongTermRetentionBackup** cmdlet gets long term retention backup(s).
 
 ## EXAMPLES
 

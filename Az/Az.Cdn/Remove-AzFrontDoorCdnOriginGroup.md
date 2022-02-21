@@ -39,7 +39,7 @@ Removes the origin group.
 
 ### Example 1
 ```powershell
-PS C:\> Remove-AzFrontDoorCdnOriginGroup -ResourceId $originGroupResourceId
+Remove-AzFrontDoorCdnOriginGroup -ResourceId $originGroupResourceId
 ```
 
 Removes the origin group.
