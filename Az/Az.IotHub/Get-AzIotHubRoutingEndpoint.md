@@ -38,9 +38,11 @@ Get information on the endpoint.
 ## EXAMPLES
 
 ### Example 1
+```powershell
+Get-AzIotHubRoutingEndpoint -ResourceGroupName "myresourcegroup" -Name "myiothub"
 ```
-PS C:\> Get-AzIotHubRoutingEndpoint -ResourceGroupName "myresourcegroup" -Name "myiothub"
 
+```output
 Name EndpointType			AzureResource
 ---- ------------			-------------
 E1   EventHub				resourcegroup1/event1
@@ -51,9 +53,11 @@ S1   AzureStorageContainer	mystorage1/container
 Get all the endpoints from "myiothub" IoT Hub.
 
 ### Example 2
+```powershell
+Get-AzIotHubRoutingEndpoint -ResourceGroupName "myresourcegroup" -Name "myiothub" -EndpointType EventHub
 ```
-PS C:\> Get-AzIotHubRoutingEndpoint -ResourceGroupName "myresourcegroup" -Name "myiothub" -EndpointType EventHub
 
+```output
 ResourceGroupName SubscriptionId                       EndpointName
 ----------------- --------------                       ------------
 resourcegroup1    91d12343-a3de-345d-b2ea-135792468abc E1
@@ -63,9 +67,11 @@ resourcegroup1    91d12343-a3de-345d-b2ea-135792468abc E2
 Get all the endpoints of type EventHub from "myiothub" IoT Hub. 
 
 ### Example 3
+```powershell
+Get-AzIotHubRoutingEndpoint -ResourceGroupName "myresourcegroup" -Name "myiothub" -EndpointType EventHub
 ```
-PS C:\> Get-AzIotHubRoutingEndpoint -ResourceGroupName "myresourcegroup" -Name "myiothub" -EndpointType EventHub
 
+```output
 ResourceGroupName : resourcegroup1
 SubscriptionId    : 91d12343-a3de-345d-b2ea-135792468abc
 EndpointName      : E1
@@ -75,9 +81,11 @@ ConnectionString  : Endpoint=sb://myeventhub1.servicebus.windows.net:5671/;Share
 Get all the endpoints of type EventHub from "myiothub" IoT Hub.
 
 ### Example 4
+```powershell
+Get-AzIotHubRoutingEndpoint -ResourceGroupName "myresourcegroup" -Name "myiothub" -EndpointName E1
 ```
-PS C:\> Get-AzIotHubRoutingEndpoint -ResourceGroupName "myresourcegroup" -Name "myiothub" -EndpointName E1
 
+```output
 ResourceGroupName : resourcegroup1
 SubscriptionId    : 91d12343-a3de-345d-b2ea-135792468abc
 EndpointName      : E1

@@ -26,8 +26,8 @@ The **Remove-AzDataLakeStoreItemAcl** cmdlet clears the access control list (ACL
 ## EXAMPLES
 
 ### Example 1: Remove the ACL from a folder
-```
-PS C:\>Remove-AzDataLakeStoreItemAcl -AccountName "ContosoADL" -Path "/"
+```powershell
+Remove-AzDataLakeStoreItemAcl -AccountName "ContosoADL" -Path "/"
 ```
 
 This command removes the ACL for the root directory for the ContosoADL account.

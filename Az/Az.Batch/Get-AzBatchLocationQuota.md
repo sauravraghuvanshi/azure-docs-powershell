@@ -30,7 +30,7 @@ Get-AzBatchLocationQuota -Location "westus"
 ```
 
 ```output
-          AccountQuota Location
+AccountQuota Location
           ------------ --------
           1            westus
 ```

@@ -26,7 +26,7 @@ Create a in-memory object for ForestTrust
 
 ### Example 1: Create ServiceForestTrust for ADDomain
 ```powershell
-PS C:\> New-AzADDomainServiceForestTrust -FriendlyName FriendlyNameTest
+New-AzADDomainServiceForestTrust -FriendlyName FriendlyNameTest
 ```
 
 ```output

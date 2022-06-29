@@ -28,10 +28,12 @@ The **Enable-AzSqlServerAdvancedDataSecurity** cmdlet enables Advanced Data Secu
 
 ### Example 1: Enable server Advanced Data Security
 ```powershell
-PS C:\>  Enable-AzSqlServerAdvancedDataSecurity `
+Enable-AzSqlServerAdvancedDataSecurity `
             -ResourceGroupName "ResourceGroup01" `
-            -ServerName "Server01" 
+            -ServerName "Server01"
+```
 
+```output
 ResourceGroupName	         : ResourceGroup01
 ServerName		             : Server01
 IsEnabled		             : True
@@ -39,11 +41,13 @@ IsEnabled		             : True
 
 ### Example 2: Enable server Advanced Data Security from server resource
 ```powershell
-PS C:\>  Get-AzSqlServer `
+Get-AzSqlServer `
            -ResourceGroupName "ResourceGroup01" `
            -ServerName "Server01" `
            | Enable-AzSqlServerAdvancedDataSecurity
+```
 
+```output
 ResourceGroupName	         : ResourceGroup01
 ServerName		             : Server01
 IsEnabled		             : True

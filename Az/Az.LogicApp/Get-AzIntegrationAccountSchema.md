@@ -31,8 +31,11 @@ If you omit a required template parameter, the cmdlet prompts you for the value.
 ## EXAMPLES
 
 ### Example 1: Get an integration account schema
+```powershell
+Get-AzIntegrationAccountSchema -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31" -SchemaName "IntegrationAccountSchema43"
 ```
-PS C:\>Get-AzIntegrationAccountSchema -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31" -SchemaName "IntegrationAccountSchema43"
+
+```output
 Id                   : /subscriptions/<SubscriptionId>/resourceGroups/ResourceGroup11/providers/Microsoft.Logic/integrationAccounts/IntegrationAccount31/schemas/IntegrationAccountSchema43
 Name                 : IntegrationAccountSchema43
 Type                 : Microsoft.Logic/integrationAccounts/schemas
@@ -49,8 +52,11 @@ MetaData             :
 This command gets the integration account schema named IntegrationAccountSchema43.
 
 ### Example 2: Get integration account schemas for a resource group
+```powershell
+Get-AzIntegrationAccountSchema -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31"
 ```
-PS C:\>Get-AzIntegrationAccountSchema -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31"
+
+```output
 Id                   : /subscriptions/<SubscriptionId>/resourceGroups/ResourceGroup11/providers/Microsoft.Logic/integrationAccounts/IntegrationAccount31/schemas/IntegrationAccountSchema43
 Name                 : IntegrationAccountSchema43
 Type                 : Microsoft.Logic/integrationAccounts/schemas

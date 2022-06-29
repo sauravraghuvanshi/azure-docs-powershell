@@ -31,22 +31,22 @@ The **Test-AzEventhubName** Cmdlet Check Availability of the NameSpace Name or A
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> Test-AzEventhubName -Namespace MyNameSapceName
+```powershell
+Test-AzEventhubName -Namespace MyNameSapceName
 ```
 
 Returns the status on availability of the namespace name 'MyNameSapceName' as True if available
 
 ### Example 2
-```
-PS C:\> Test-AzEventhubName -Namespace MyNameSapceName
+```powershell
+Test-AzEventhubName -Namespace MyNameSapceName
 ```
 
 Returns the status on availability of the namespace name 'MyNameSapceName' as False with Reason
 
 ### Example 3
-```
-PS C:\> Test-AzEventhubName -ResourceGroupName MyResourceGroup -Namespace Test123 -AliasName myAliasName
+```powershell
+Test-AzEventhubName -ResourceGroupName MyResourceGroup -Namespace Test123 -AliasName myAliasName
 ```
 
 Returns the status on availability of the alias name 'myAliasName' for namespace 'MyNameSapceName' as True if available

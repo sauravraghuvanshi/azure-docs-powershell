@@ -39,7 +39,7 @@ The **Remove-AzDataBoxEdgeUser** cmdlet removes a user on the Data Box Edge devi
 
 ### Example 1
 ```powershell
-PS C:\> Remove-AzDataBoxEdgeUser -ResourceGroupName resourceGroupName -DeviceName deviceName -Name username
+Remove-AzDataBoxEdgeUser -ResourceGroupName resourceGroupName -DeviceName deviceName -Name username
 ```
 
 ## PARAMETERS

@@ -38,8 +38,8 @@ The **Set-AzServiceBusGeoDRConfigurationFailOver** cmdlet invokes GEO DR failove
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> Set-AzServiceBusGeoDRConfigurationFailOver -ResourceGroupName "SampleResourceGroup" -Namespace "SampleNamespace_Secondary" -Name "SampleDRConfigName"
+```powershell
+Set-AzServiceBusGeoDRConfigurationFailOver -ResourceGroupName "SampleResourceGroup" -Namespace "SampleNamespace_Secondary" -Name "SampleDRConfigName"
 ```
 
 Invokes the Failover over alias "SampleDRConfigName", reconfigures and point to Secondary namespace "SampleNamespace_Secondary"

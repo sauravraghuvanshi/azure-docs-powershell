@@ -26,8 +26,10 @@ Object corresponding to Gremlin API's ConflictResolutionPolicy.
 
 ### Example 1
 ```powershell
-PS C:\> New-AzCosmosDBGremlinConflictResolutionPolicy -Type LastWriterWins -Path "/myPath"
+New-AzCosmosDBGremlinConflictResolutionPolicy -Type LastWriterWins -Path "/myPath"
+```
 
+```output
 Mode           ConflictResolutionPath ConflictResolutionProcedure
 ----           ---------------------- ---------------------------
 LastWriterWins /myPath

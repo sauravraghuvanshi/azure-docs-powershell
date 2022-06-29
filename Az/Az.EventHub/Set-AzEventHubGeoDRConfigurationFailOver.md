@@ -38,8 +38,8 @@ The **Set-AzEventHubGeoDRConfigurationFailOver** cmdlet invokes GEO DR failover 
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\>Set-AzEventHubGeoDRConfigurationFailOver -ResourceGroupName "SampleResourceGroup" -Namespace "SampleNamespace_Secondary" -Name "SampleDRConfigName"
+```powershell
+Set-AzEventHubGeoDRConfigurationFailOver -ResourceGroupName "SampleResourceGroup" -Namespace "SampleNamespace_Secondary" -Name "SampleDRConfigName"
 ```
 
 Invokes the Failover over alias "SampleDRConfigName", reconfigures and point to Secondary namespace "SampleNamespace_Secondary"

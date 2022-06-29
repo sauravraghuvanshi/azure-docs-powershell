@@ -22,8 +22,8 @@ Update-AzVpnServerConfiguration -ResourceGroupName <String> -Name <String> [-Vpn
  [-RadiusServerSecret <SecureString>] [-RadiusServerList <PSRadiusServer[]>]
  [-RadiusServerRootCertificateFilesList <String[]>] [-RadiusClientRootCertificateFilesList <String[]>]
  [-AadTenant <String>] [-AadAudience <String>] [-AadIssuer <String>] [-VpnClientIpsecPolicy <PSIpsecPolicy[]>]
- [-Tag <Hashtable>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-ConfigurationPolicyGroup <PSVpnServerConfigurationPolicyGroup[]>] [-Tag <Hashtable>] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByVpnServerConfigurationObject
@@ -34,8 +34,8 @@ Update-AzVpnServerConfiguration -InputObject <PSVpnServerConfiguration> [-VpnPro
  [-RadiusServerSecret <SecureString>] [-RadiusServerList <PSRadiusServer[]>]
  [-RadiusServerRootCertificateFilesList <String[]>] [-RadiusClientRootCertificateFilesList <String[]>]
  [-AadTenant <String>] [-AadAudience <String>] [-AadIssuer <String>] [-VpnClientIpsecPolicy <PSIpsecPolicy[]>]
- [-Tag <Hashtable>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-ConfigurationPolicyGroup <PSVpnServerConfigurationPolicyGroup[]>] [-Tag <Hashtable>] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByVpnServerConfigurationResourceId
@@ -46,8 +46,8 @@ Update-AzVpnServerConfiguration -ResourceId <String> [-VpnProtocol <String[]>]
  [-RadiusServerSecret <SecureString>] [-RadiusServerList <PSRadiusServer[]>]
  [-RadiusServerRootCertificateFilesList <String[]>] [-RadiusClientRootCertificateFilesList <String[]>]
  [-AadTenant <String>] [-AadAudience <String>] [-AadIssuer <String>] [-VpnClientIpsecPolicy <PSIpsecPolicy[]>]
- [-Tag <Hashtable>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-ConfigurationPolicyGroup <PSVpnServerConfigurationPolicyGroup[]>] [-Tag <Hashtable>] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -57,9 +57,12 @@ The **Update-AzVpnServerConfiguration** cmdlet enables you to update the existin
 
 ### Example 1
 ```powershell
-PS C:\> Update-AzVpnServerConfiguration -Name "test1config" -ResourceGroupName "P2SCortexGATesting" -VpnProtocol IkeV2
+Update-AzVpnServerConfiguration -Name "test1config" -ResourceGroupName "P2SCortexGATesting" -VpnProtocol IkeV2
 
-PS C:\> New-AzVpnServerConfiguration -Name "test1config" -ResourceGroupName "P2SCortexGATesting" -VpnProtocol IkeV2 -VpnAuthenticationType Certificate -VpnClientRootCertificateFilesList $listOfCerts -VpnClientRevokedCertificateFilesList $listOfCerts -Location "westus"
+New-AzVpnServerConfiguration -Name "test1config" -ResourceGroupName "P2SCortexGATesting" -VpnProtocol IkeV2 -VpnAuthenticationType Certificate -VpnClientRootCertificateFilesList $listOfCerts -VpnClientRevokedCertificateFilesList $listOfCerts -Location "westus"
+```
+
+```output
 ResourceGroupName            : P2SCortexGATesting
 Name                         : test1config
 Id                           : /subscriptions/b1f1deed-af60-4bab-9223-65d340462e24/resourceGroups/P2SCortexGATesting/providers/Microsoft.Network/vpnServerConfigurations/test1config
@@ -137,6 +140,21 @@ Run cmdlet in the background
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConfigurationPolicyGroup
+The list of VpnServerConfigurationPolicyGroups that this P2SVpnGateway needs to have.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSVpnServerConfigurationPolicyGroup[]
 Parameter Sets: (All)
 Aliases:
 

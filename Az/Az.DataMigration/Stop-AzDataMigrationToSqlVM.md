@@ -1,5 +1,5 @@
 ---
-external help file: 
+external help file: Az.DataMigration-help.xml
 Module Name: Az.DataMigration
 online version: https://docs.microsoft.com/powershell/module/az.datamigration/stop-azdatamigrationtosqlvm
 schema: 2.0.0
@@ -16,8 +16,8 @@ Stop in-progress database migration to SQL VM.
 
 ```
 Stop-AzDataMigrationToSqlVM -ResourceGroupName <String> -SqlVirtualMachineName <String> -TargetDbName <String>
- [-SubscriptionId <String>] [-MigrationOperationId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SubscriptionId <String>] -MigrationOperationId <String> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -27,10 +27,12 @@ Stop in-progress database migration to SQL VM.
 
 ### Example 1: Stop in-progress migration to SQL Virtual Machine
 ```powershell
-PS C:\> $vmMigration = Get-AzDataMigrationToSqlVM -ResourceGroupName "MyResourceGroup" -SqlVirtualMachineName "MySqlVM" -TargetDbName "MyDatabase"
-PS C:\> Stop-AzDataMigrationToSqlVM -ResourceGroupName "MyResourceGroup" -SqlVirtualMachineName "MySqlVM" -TargetDbName "MyDatabase" -MigrationOperationId $vmMigration.MigrationOperationId
-PS C:\> Get-AzDataMigrationToSqlVM -InputObject $vmMigration
+$vmMigration = Get-AzDataMigrationToSqlVM -ResourceGroupName "MyResourceGroup" -SqlVirtualMachineName "MySqlVM" -TargetDbName "MyDatabase"
+Stop-AzDataMigrationToSqlVM -ResourceGroupName "MyResourceGroup" -SqlVirtualMachineName "MySqlVM" -TargetDbName "MyDatabase" -MigrationOperationId $vmMigration.MigrationOperationId
+Get-AzDataMigrationToSqlVM -InputObject $vmMigration
+```
 
+```output
 Name                 Type                                       Kind  ProvisioningState MigrationStatus
 ----                 ----                                       ----  ----------------- ---------------
 MyDatabase           Microsoft.DataMigration/databaseMigrations SqlVm Canceling         Canceling
@@ -78,7 +80,7 @@ Type: System.String
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -221,4 +223,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
-

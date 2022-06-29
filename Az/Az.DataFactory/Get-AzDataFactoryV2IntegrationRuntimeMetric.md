@@ -38,9 +38,11 @@ The Get-AzDataFactoryV2IntegrationRuntimeMetric cmdlet gets metric data about in
 ## EXAMPLES
 
 ### Example 1: Get integration runtime metric
+```powershell
+Get-AzDataFactoryV2IntegrationRuntimeMetric -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name 'test-selfhost-ir'
 ```
-PS C:\> Get-AzDataFactoryV2IntegrationRuntimeMetric -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name 'test-selfhost-ir'
 
+```output
 IntegrationRuntimeName ResourceGroupName DataFactoryName   Nodes   
 ---------------------- ----------------- ---------------   -----   
 test-selfhost-ir       rg-test-dfv2      test-df-eu2       {Node_1}

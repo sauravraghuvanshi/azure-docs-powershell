@@ -56,11 +56,13 @@ Data Collection Rules (DCR) define data coming into Azure Monitor and specify wh
 ## EXAMPLES
 
 ### Example 1: Update data collection rule tags
-```
-PS C:\>Update-AzDataCollectionRule -RuleName 'newDcr'
-                                   -ResourceGroupName 'testdcr'
+```powershell
+Update-AzDataCollectionRule -RuleName 'newDcr' `
+                                   -ResourceGroupName 'testdcr' `
                                    -Tag @{"tag1"="value1"; "tag2"="value2"}
+```
 
+```output
 Description       : 
 DataSources       : Microsoft.Azure.Commands.Insights.OutputClasses.PSDataCollectionRuleDataSources
 Destinations      : Microsoft.Azure.Commands.Insights.OutputClasses.PSDataCollectionRuleDestinations
@@ -77,10 +79,12 @@ Tags              : {[tag2, value2], [tag1, value1]}
 This command updates the tags property for the given data collection rule.
 
 ### Example 2: Update data collection rule tags
-```
-PS C:\>Update-AzDataCollectionRule -RuleId '/subscriptions/{subId}/resourceGroups/testdcr/providers/Microsoft.Insights/dataCollectionRules/newDcr'
+```powershell
+Update-AzDataCollectionRule -RuleId '/subscriptions/{subId}/resourceGroups/testdcr/providers/Microsoft.Insights/dataCollectionRules/newDcr'
                                    -Tag @{"tag1"="value1"; "tag2"="value2"}
+```
 
+```output
 Description       : 
 DataSources       : Microsoft.Azure.Commands.Insights.OutputClasses.PSDataCollectionRuleDataSources
 Destinations      : Microsoft.Azure.Commands.Insights.OutputClasses.PSDataCollectionRuleDestinations
@@ -97,10 +101,12 @@ Tags              : {[tag2, value2], [tag1, value1]}
 This command updates the tags property for the given data collection rule.
 
 ### Example 3: Update data collection rule tags
+```powershell
+$dcr = Get-AzDataCollectionRule -ResourceGroupName "testdcr" -Name "newDcr"
+$dcr | Update-AzDataCollectionRule -Tag @{"tag1"="value1"; "tag2"="value2"}
 ```
-PS C:\>$dcr = Get-AzDataCollectionRule -ResourceGroupName "testdcr" -Name "newDcr"
-PS C:\>$dcr | Update-AzDataCollectionRule -Tag @{"tag1"="value1"; "tag2"="value2"}
 
+```output
 Description       : 
 DataSources       : Microsoft.Azure.Commands.Insights.OutputClasses.PSDataCollectionRuleDataSources
 Destinations      : Microsoft.Azure.Commands.Insights.OutputClasses.PSDataCollectionRuleDestinations

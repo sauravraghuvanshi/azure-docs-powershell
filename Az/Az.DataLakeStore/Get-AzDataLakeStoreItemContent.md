@@ -40,15 +40,15 @@ The **Get-AzDataLakeStoreItemContent** cmdlet gets the contents of a file in Dat
 ## EXAMPLES
 
 ### Example 1: Get the contents of a file
-```
-PS C:\>Get-AzDataLakeStoreItemContent -AccountName "ContosoADL" -Path "/MyFile.txt"
+```powershell
+Get-AzDataLakeStoreItemContent -AccountName "ContosoADL" -Path "/MyFile.txt"
 ```
 
 This command gets the contents of the file MyFile.txt in the ContosoADL account.
 
 ### Example 2: Get the first two rows of a file
-```
-PS C:\>Get-AzDataLakeStoreItemContent -AccountName "ContosoADL" -Path "/MyFile.txt" -Head 2
+```powershell
+Get-AzDataLakeStoreItemContent -AccountName "ContosoADL" -Path "/MyFile.txt" -Head 2
 ```
 
 This command gets the first two new line separated rows in the file MyFile.txt in the ContosoADL account.

@@ -38,8 +38,11 @@ The Remove-AzDataFactoryV2 cmdlet removes a data factory.
 ## EXAMPLES
 
 ### Example 1: Remove a data factory
+```powershell
+Remove-AzDataFactoryV2 -Name "WikiADF" -ResourceGroupName "ADF"
 ```
-PS C:\> Remove-AzDataFactoryV2 -Name "WikiADF" -ResourceGroupName "ADF"
+
+```output
           Confirm
           Are you sure you want to remove data factory 'WikiADF' in resource group 'ADF'?
           [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y

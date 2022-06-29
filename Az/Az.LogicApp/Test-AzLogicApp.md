@@ -41,7 +41,7 @@ If you omit a required template parameter, the cmdlet prompts you for the value.
 
 ### Example 1: Validate a logic app by using file paths
 ```powershell
-PS C:\>Test-AzLogicApp -ResourceGroupName "ResourceGroup11" -Name "LogicApp01" -Location "westus" -State "Enabled" -DefinitionFilePath "d:\workflows\Definition.json" -ParameterFilePath "d:\workflows\Parameters.json"
+Test-AzLogicApp -ResourceGroupName "ResourceGroup11" -Name "LogicApp01" -Location "westus" -State "Enabled" -DefinitionFilePath "d:\workflows\Definition.json" -ParameterFilePath "d:\workflows\Parameters.json"
 ```
 
 This command validates a logic app named LogicApp01 in the specified resource group.
@@ -49,7 +49,7 @@ The command specifies definition and parameter file paths.
 
 ### Example 2: Validate a logic app by using objects
 ```powershell
-PS C:\>Test-AzLogicApp -ResourceGroupName "ResourceGroup11" -Name "LogicApp01" -Location "westus" -State "Enabled" -Definition [IO.File]::ReadAllText("d:\Workflows\Definition.json") -Parameters @{name1="value1", name2="value2"}
+Test-AzLogicApp -ResourceGroupName "ResourceGroup11" -Name "LogicApp01" -Location "westus" -State "Enabled" -Definition [IO.File]::ReadAllText("d:\Workflows\Definition.json") -Parameters @{name1="value1";name2="value2"}
 ```
 
 This command validates a logic app named LogicApp01 in the specified resource group.

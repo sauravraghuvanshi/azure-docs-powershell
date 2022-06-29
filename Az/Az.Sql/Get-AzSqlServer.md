@@ -27,8 +27,11 @@ Specify the name of a server to see information for only that server.
 ## EXAMPLES
 
 ### Example 1: Get all instances of SQL Server assigned to a resource group
+```powershell
+Get-AzSqlServer -ResourceGroupName "ResourceGroup01"
 ```
-PS C:\>Get-AzSqlServer -ResourceGroupName "ResourceGroup01"
+
+```output
 ResourceGroupName        : resourcegroup01
 ServerName               : server01
 Location                 : Central US
@@ -53,8 +56,11 @@ FullyQualifiedDomainName : server02.database.windows.net
 This command gets information about all the Azure SQL Database servers assigned to the resource group ResourceGroup01.
 
 ### Example 2: Get information about an Azure SQL Database server
+```powershell
+Get-AzSqlServer -ResourceGroupName "ResourceGroup01" -ServerName "Server01"
 ```
-PS C:\>Get-AzSqlServer -ResourceGroupName "ResourceGroup01" -ServerName "Server01"
+
+```output
 ResourceGroupName        : resourcegroup01
 ServerName               : server01
 Location                 : Central US
@@ -69,8 +75,11 @@ FullyQualifiedDomainName : server01.database.windows.net
 This command gets information about the Azure SQL Database server named Server01.
 
 ### Example 3: Get all instances of SQL Server in the subscription
+```powershell
+Get-AzResourceGroup | Get-AzSqlServer
 ```
-PS C:\>Get-AzResourceGroup | Get-AzSqlServer
+
+```output
 ResourceGroupName        : resourcegroup01
 ServerName               : server01
 Location                 : Central US
@@ -105,8 +114,11 @@ FullyQualifiedDomainName : server03.database.windows.net
 This command gets information about all the Azure SQL Database servers in the current subscription.
 
 ### Example 4: Get all instances of SQL Server assigned to a resource group using filtering
+```powershell
+Get-AzSqlServer -ResourceGroupName "ResourceGroup01" -ServerName "server*"
 ```
-PS C:\>Get-AzSqlServer -ResourceGroupName "ResourceGroup01" -ServerName "server*"
+
+```output
 ResourceGroupName        : resourcegroup01
 ServerName               : server01
 Location                 : Central US
@@ -131,8 +143,9 @@ FullyQualifiedDomainName : server02.database.windows.net
 This command gets information about all the Azure SQL Database servers assigned to the resource group ResourceGroup01 that start with "server".
 
 ### Example 5: Get all instances of SQL Server assigned to a resource group with external administrator information
-```
-PS C:\>$val = Get-AzSqlServer -ResourceGroupName "ResourceGroup01" -ExpandActiveDirectoryAdministrator
+```powershell
+$val = Get-AzSqlServer -ResourceGroupName "ResourceGroup01" -ExpandActiveDirectoryAdministrator
+
 ResourceGroupName        : resourcegroup01
 ServerName               : server01
 Location                 : Central US
@@ -155,7 +168,7 @@ Identity                 :
 FullyQualifiedDomainName : server02.database.windows.net
 Administrators           : Microsoft.Azure.Management.Sql.Models.ServerExternalAdministrator
 
-PS C:\>$val.Administrators
+$val.Administrators
 AdministratorType         : ActiveDirectory
 PrincipalType             : Group
 Login                     : Dummy
@@ -174,8 +187,8 @@ AzureADOnlyAuthentication : True
 This command gets information about all the Azure SQL Database servers assigned to the resource group ResourceGroup01.
 
 ### Example 6: Get information about an Azure SQL Database server with external administrator information
-```
-PS C:\>$val = Get-AzSqlServer -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -ExpandActiveDirectoryAdministrator
+```powershell
+$val = Get-AzSqlServer -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -ExpandActiveDirectoryAdministrator
 ResourceGroupName        : resourcegroup01
 ServerName               : server01
 Location                 : Central US
@@ -187,7 +200,7 @@ Identity                 :
 FullyQualifiedDomainName : server01.database.windows.net
 Administrators           : Microsoft.Azure.Management.Sql.Models.ServerExternalAdministrator
 
-PS C:\>$val.Administrators
+$val.Administrators
 AdministratorType         : ActiveDirectory
 PrincipalType             : Group
 Login                     : Dummy

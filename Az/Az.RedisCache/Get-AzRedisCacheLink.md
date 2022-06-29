@@ -43,9 +43,11 @@ There are four different ways to get geo-replication link detail. Either provide
 ## EXAMPLES
 
 ### Example 1: Get using parameter set AllLinksForCache
+```powershell
+Get-AzRedisCacheLink -Name "mycache1"
 ```
-PS C:\>Get-AzRedisCacheLink -Name "mycache1"
 
+```output
         PrimaryServerName   : mycache1
         SecondaryServerName : mycache2
         ProvisioningState   : Succeeded
@@ -54,9 +56,11 @@ PS C:\>Get-AzRedisCacheLink -Name "mycache1"
 This command gets all geo-replication links for Redis Cache named mycache1.
 
 ### Example 2: Get using parameter set AllLinksForPrimaryCache
+```powershell
+Get-AzRedisCacheLink -PrimaryServerName "mycache1"
 ```
-PS C:\>Get-AzRedisCacheLink -PrimaryServerName "mycache1"
 
+```output
         PrimaryServerName   : mycache1
         SecondaryServerName : mycache2
         ProvisioningState   : Succeeded
@@ -65,9 +69,11 @@ PS C:\>Get-AzRedisCacheLink -PrimaryServerName "mycache1"
 This command gets geo-replication links where Redis Cache named mycache1 is primary.
 
 ### Example 3: Get using parameter set AllLinksForSecondaryCache
+```powershell
+Get-AzRedisCacheLink -SecondaryServerName "mycache2"
 ```
-PS C:\>Get-AzRedisCacheLink -SecondaryServerName "mycache2"
 
+```output
         PrimaryServerName   : mycache1
         SecondaryServerName : mycache2
         ProvisioningState   : Succeeded
@@ -76,9 +82,11 @@ PS C:\>Get-AzRedisCacheLink -SecondaryServerName "mycache2"
 This command gets geo-replication links where Redis Cache named mycache2 is secondary.
 
 ### Example 4: Get using parameter set SingleLink
+```powershell
+Get-AzRedisCacheLink -PrimaryServerName "mycache1" -SecondaryServerName "mycache2"
 ```
-PS C:\>Get-AzRedisCacheLink -PrimaryServerName "mycache1" -SecondaryServerName "mycache2"
 
+```output
         PrimaryServerName   : mycache1
         SecondaryServerName : mycache2
         ProvisioningState   : Succeeded

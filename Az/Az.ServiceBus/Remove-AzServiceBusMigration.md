@@ -39,7 +39,7 @@ The **Remove-AzServiceBusMigration** cmdlet deletes the Migration configuration 
 
 ### Example 1
 ```powershell
-PS C:\> Remove-AzServiceBusMigration -ResourceGroupName ResourceGroup -Name TestingNamespaceStandardMigration
+Remove-AzServiceBusMigration -ResourceGroupName ResourceGroup -Name TestingNamespaceStandardMigration
 ```
 
 Deletes the 'TestingNamespaceStandardMigration' migration configuration

@@ -39,8 +39,10 @@ Show all assigned non-edge devices as comma-separated list of all edge devices o
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzIotHubDeviceChildren -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1"
+Get-AzIotHubDeviceChildren -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1"
+```
 
+```output
 DeviceId  ChildrenDeviceId
 --------  ----------------
 myDevice1 {device1, device2}
@@ -50,8 +52,10 @@ Show all assigned non-edge devices as comma-separated list.
 
 ### Example 2
 ```powershell
-PS C:\> Get-AzIotHubDeviceChildren -ResourceGroupName "myresourcegroup" -IotHubName "myiothub"
+Get-AzIotHubDeviceChildren -ResourceGroupName "myresourcegroup" -IotHubName "myiothub"
+```
 
+```output
 DeviceId  ChildrenDeviceId
 --------  ----------------
 myDevice1 {device1, device2}

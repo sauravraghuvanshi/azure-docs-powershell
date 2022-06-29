@@ -46,7 +46,10 @@ In the policy you can also see the connection request that were made with this p
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzJitNetworkAccessPolicy
+Get-AzJitNetworkAccessPolicy
+```
+
+```output
 Id                : /subscriptions/487bb485-b5b0-471e-9c0d-10717612f869/resourceGroups/myService1/providers/Microsoft.Security/locations/centralus/jitNetworkAccessPolicies/default
 Name              : default
 Kind              : Basic
@@ -66,7 +69,10 @@ Get all the JIT network access polices on a subscription
 
 ### Example 2
 ```powershell
-PS C:\> Get-AzJitNetworkAccessPolicy -ResourceGroupName "myService1"
+Get-AzJitNetworkAccessPolicy -ResourceGroupName "myService1"
+```
+
+```output
 Id                : /subscriptions/487bb485-b5b0-471e-9c0d-10717612f869/resourceGroups/myService1/providers/Microsoft.Security/locations/centralus/jitNetworkAccessPolicies/default
 Name              : default
 Kind              : Basic
@@ -86,7 +92,10 @@ Get all the JIT network access polices on the "myService1" resource group
 
 ### Example 3
 ```powershell
-PS C:\> Get-AzJitNetworkAccessPolicy -ResourceGroupName "myService1" -Location "centralus" -Name "default"
+Get-AzJitNetworkAccessPolicy -ResourceGroupName "myService1" -Location "centralus" -Name "default"
+```
+
+```output
 Id                : /subscriptions/487bb485-b5b0-471e-9c0d-10717612f869/resourceGroups/myService1/providers/Microsoft.Security/locations/centralus/jitNetworkAccessPolicies/default
 Name              : default
 Kind              : Basic

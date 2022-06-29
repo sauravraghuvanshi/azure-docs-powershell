@@ -27,8 +27,8 @@ The **Add-AzDataLakeStoreFirewallRule** cmdlet adds a firewall rule to the speci
 ## EXAMPLES
 
 ### Example 1: Add a new firewall rule to a Data Lake Store account
-```
-PS C:\> Add-AzDataLakeStoreFirewallRule -AccountName "ContosoADL" -Name MyRule -StartIpAddress "127.0.0.1" -EndIpAddress "127.0.0.2"
+```powershell
+Add-AzDataLakeStoreFirewallRule -AccountName "ContosoADL" -Name MyRule -StartIpAddress "127.0.0.1" -EndIpAddress "127.0.0.2"
 ```
 
 This creates a new firewall rule called "MyRule" in account "ContosoADL" with an IP range of 127.0.0.1 - 127.0.0.2

@@ -33,9 +33,11 @@ The **Get-AzLoadBalancer** cmdlet gets one or more Azure load balancers that are
 ## EXAMPLES
 
 ### Example 1: Get a load balancer
+```powershell
+Get-AzLoadBalancer -Name "MyLoadBalancer1" -ResourceGroupName "MyResourceGroup"
 ```
-PS C:\> Get-AzLoadBalancer -Name "MyLoadBalancer1" -ResourceGroupName "MyResourceGroup"
 
+```output
 Name                     : MyLoadBalancer1
 ResourceGroupName        : MyResourceGroup
 Location                 : australiaeast
@@ -61,9 +63,11 @@ This command gets the load balancer named MyLoadBalancer.
 A load balancer must exist before you can run this cmdlet.
 
 ### Example 2: List load balancers using filtering
+```powershell
+Get-AzLoadBalancer -Name MyLoadBalancer*
 ```
-PS C:\> Get-AzLoadBalancer -Name MyLoadBalancer*
 
+```output
 Name                     : MyLoadBalancer1
 ResourceGroupName        : MyResourceGroup
 Location                 : australiaeast

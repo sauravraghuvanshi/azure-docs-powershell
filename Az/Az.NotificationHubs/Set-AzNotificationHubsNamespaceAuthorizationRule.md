@@ -51,8 +51,8 @@ When used in conjunction with the **Set-AzNotificationHubsNamespaceAuthorization
 ## EXAMPLES
 
 ### Example 1: Modify an authorization rule assigned to a namespace
-```
-PS C:\>Set-AzNotificationHubsNamespaceAuthorizationRule -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationGroup" -InputFile "C:\Configuration\AuthorizationRules.json"
+```powershell
+Set-AzNotificationHubsNamespaceAuthorizationRule -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationGroup" -InputFile "C:\Configuration\AuthorizationRules.json"
 ```
 
 This command modifies an authorization rule assigned to the namespace named ContosoNamespace.

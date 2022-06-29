@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.ApplicationInsights
 online version: https://docs.microsoft.com/powershell/module/az.ApplicationInsights/new-AzApplicationInsightsWebTestHeaderFieldObject
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/ApplicationInsights/help/New-AzApplicationInsightsWebTestHeaderFieldObject.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/ApplicationInsights/help/New-AzApplicationInsightsWebTestHeaderFieldObject.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/help/New-AzApplicationInsightsWebTestHeaderFieldObject.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/help/New-AzApplicationInsightsWebTestHeaderFieldObject.md
 ---
 
 # New-AzApplicationInsightsWebTestHeaderFieldObject
@@ -27,6 +27,7 @@ Create a in-memory object for HeaderField
 ```powershell
 New-AzApplicationInsightsWebTestHeaderFieldObject -Name 'version' -Value '2.0.1'
 ```
+
 ```output
 Name    Value
 ----    -----

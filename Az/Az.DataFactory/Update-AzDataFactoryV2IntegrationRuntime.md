@@ -40,15 +40,17 @@ The **Update-AzDataFactoryV2IntegrationRuntime** cmdlet updates integration runt
 ## EXAMPLES
 
 ### Example 1: Updates an integration runtime
-```
-PS C:\> $ts = New-TimeSpan -Hours 3
-PS C:\> Update-AzDataFactoryV2IntegrationRuntime `
+```powershell
+$ts = New-TimeSpan -Hours 3
+Update-AzDataFactoryV2IntegrationRuntime `
     -ResourceGroupName 'rg-test-dfv2' `
     -DataFactoryName 'test-df-eu2' `
     -Name 'test-selfhost-ir' `
     -AutoUpdate Off `
     -AutoUpdateDelayOffset $ts
+```
 
+```output
 Nodes                     : {Node_1}
 CreateTime                : 11/18/2017 2:45:38 PM
 InternalChannelEncryption : 

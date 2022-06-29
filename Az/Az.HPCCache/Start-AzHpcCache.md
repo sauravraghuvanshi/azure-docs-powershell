@@ -39,7 +39,7 @@ The **Start-AzHpcCache** cmdlet starts a Azure HPC Cache.
 
 ### Example 1
 ```powershell
-PS C:\> Start-AzHpcCache -ResourceGroupName testRG -CacheName testCache
+Start-AzHpcCache -ResourceGroupName testRG -CacheName testCache
 ```
 
 ## PARAMETERS

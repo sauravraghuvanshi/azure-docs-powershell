@@ -36,8 +36,10 @@ Creates an in memory PSObject
 
 ### Example 1
 ```powershell
-PS C:>New-AzPeeringDirectConnectionObject -PeeringDBFacilityId 99999 -BandwidthInMbps 30000 -SessionPrefixV4 192.168.1.0/31 -SessionPrefixV6 fe01::0/127 -MaxPrefixesAdvertisedIPv4 20000 -MaxPrefixesAdvertisedIPv6 2000 -MD5AuthenticationKey 25234523452123411fd234qdwfas3234
+New-AzPeeringDirectConnectionObject -PeeringDBFacilityId 99999 -BandwidthInMbps 30000 -SessionPrefixV4 192.168.1.0/31 -SessionPrefixV6 fe01::0/127 -MaxPrefixesAdvertisedIPv4 20000 -MaxPrefixesAdvertisedIPv6 2000 -MD5AuthenticationKey 25234523452123411fd234qdwfas3234
+```
 
+```output
 PeeringDBFacilityId    : 99999
 UseForPeeringService   : False
 SessionAddressProvider : Peer
@@ -54,8 +56,10 @@ New local connection
 
 ### Example 2
 ```powershell
-PS C:>New-AzPeeringDirectConnectionObject -PeeringDBFacilityId 99999 -MicrosoftProvidedIPAddress -BandwidthInMbps 30000 -UseForPeeringService
+New-AzPeeringDirectConnectionObject -PeeringDBFacilityId 99999 -MicrosoftProvidedIPAddress -BandwidthInMbps 30000 -UseForPeeringService
+```
 
+```output
 PeeringDBFacilityId    : 99999
 UseForPeeringService   : True
 SessionAddressProvider : Microsoft
@@ -67,8 +71,10 @@ Create direct peering connection with use for peering service enabled and Micros
 
 ### Example 3
 ```powershell
-PS C:>New-AzPeeringDirectConnectionObject -PeeringDBFacilityId 99999 -BandwidthInMbps 30000 -SessionPrefixV4 192.168.1.0/31 -SessionPrefixV6 fe01::0/127 -UseForPeeringService
+New-AzPeeringDirectConnectionObject -PeeringDBFacilityId 99999 -BandwidthInMbps 30000 -SessionPrefixV4 192.168.1.0/31 -SessionPrefixV6 fe01::0/127 -UseForPeeringService
+```
 
+```output
 PeeringDBFacilityId    : 99999
 UseForPeeringService   : True
 SessionAddressProvider : Peer
@@ -84,8 +90,10 @@ Create direct peering connection with use for peering service enabled and peer p
 
 ### Example 4
 ```powershell
-PS C:>New-AzPeeringDirectConnectionObject -PeeringDBFacilityId 99999 -BandwidthInMbps 30000
+New-AzPeeringDirectConnectionObject -PeeringDBFacilityId 99999 -BandwidthInMbps 30000
+```
 
+```output
 PeeringDBFacilityId    : 99999
 UseForPeeringService   : False
 SessionAddressProvider : Peer

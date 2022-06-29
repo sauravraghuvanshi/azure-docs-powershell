@@ -26,8 +26,8 @@ The **Remove-AzDataLakeAnalyticsAccount** cmdlet permanently deletes an Azure Da
 ## EXAMPLES
 
 ### Example 1: Remove an account
-```
-PS C:\>Remove-AzDataLakeAnalyticsAccount -Name "ContosoAdlAccount"
+```powershell
+Remove-AzDataLakeAnalyticsAccount -Name "ContosoAdlAccount"
 ```
 
 This command removes the specified Data Lake Analytics account.

@@ -31,9 +31,9 @@ Update-AzNetAppFilesActiveDirectory -ActiveDirectoryId <String> [-Dns <String[]>
  [-Site <String>] [-SmbServerName <String>] [-Username <String>] [-Password <SecureString>]
  [-OrganizationalUnit <String>] [-KdcIP <String>] [-BackupOperator <String[]>]
  [-ServerRootCACertificate <String>] [-AdName <String>] [-SecurityOperator <String[]>] [-AesEncryption]
- [-LdapSigning] [-LdapOverTLS] [-AllowLocalNfsUsersWithLdap] [-Administrator <String[]>]
- [-EncryptDCConnection] -AccountObject <PSNetAppFilesAccount> [-DefaultProfile <IAzureContextContainer>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-LdapSigning] [-LdapOverTLS] [-AllowLocalNfsUsersWithLdap] [-Administrator <String[]>] [-EncryptDCConnection]
+ -AccountObject <PSNetAppFilesAccount> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### ByObjectParameterSet
@@ -53,7 +53,7 @@ The **Update-AzNetAppFilesAccount** cmdlet modifies an ANF active directory conf
 
 ### Example 1
 ```powershell
-PS C:\> Update-AzNetAppFilesActiveDirectory  -ResourceGroupName "MyRG" -AccountName "MyAccount" -Name "MyADName" -Username $adUsername
+Update-AzNetAppFilesActiveDirectory  -ResourceGroupName "MyRG" -AccountName "MyAccount" -AdName "MyADName" -Username $adUsername
 ```
 
 This command performs an update on the given active directory configuration modifying the username to that provided.
@@ -471,3 +471,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[Get-AzNetAppFilesActiveDirectory](./Get-AzNetAppFilesActiveDirectory.md)
+[New-AzNetAppFilesActiveDirectory](./New-AzNetAppFilesActiveDirectory.md)
+[Remove-AzNetAppFilesActiveDirectory](./Remove-AzNetAppFilesActiveDirectory.md)
+[Get-AzNetAppFilesAccount](./Get-AzNetAppFilesAccount.md)
+[New-AzNetAppFilesAccount](./New-AzNetAppFilesAccount.md)
+[Remove-AzNetAppFilesAccount](./Remove-AzNetAppFilesAccount.md)
+[Set-AzNetAppFilesAccount](./Set-AzNetAppFilesAccount.md)
+[Update-AzNetAppFilesAccount](./Update-AzNetAppFilesAccount.md)

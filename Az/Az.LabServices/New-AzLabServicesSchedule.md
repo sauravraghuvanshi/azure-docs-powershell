@@ -38,7 +38,7 @@ Operation to create or update a lab schedule.
 
 ### Example 1: Create a new schedule in a lab.
 ```powershell
-PS C:\>  New-AzLabServicesSchedule `
+New-AzLabServicesSchedule `
             -ResourceGroupName "Group Name" `
             -LabName "Lab Name" `
             -Name "Schedule Name" `
@@ -49,7 +49,9 @@ PS C:\>  New-AzLabServicesSchedule `
             -RecurrencePatternWeekDay @($((Get-Date).DayOfWeek)) `
             -RecurrencePatternExpirationDate $((Get-Date).AddDays(20)) `
             -TimeZoneId 'America/Los_Angeles'
+```
 
+```output
 Name
 ----
 Schedule Name

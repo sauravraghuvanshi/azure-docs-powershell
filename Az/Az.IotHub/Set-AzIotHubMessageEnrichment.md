@@ -39,8 +39,10 @@ For a detailed explanation of message enrichments in Azure IoT Hub, see https://
 
 ### Example 1
 ```powershell
-PS C:\> Set-AzIotHubMessageEnrichment -ResourceGroupName "myresourcegroup" -Name "myiothub" -Key "newKey" -Value "updatedValue"
+Set-AzIotHubMessageEnrichment -ResourceGroupName "myresourcegroup" -Name "myiothub" -Key "newKey" -Value "updatedValue"
+```
 
+```output
 Key         : newKey
 Value       : updatedValue
 Endpoint(s) : {endpoint1, endpoint2}
@@ -51,8 +53,10 @@ For a detailed explanation of message enrichments in Azure IoT Hub, see https://
 
 ### Example 2
 ```powershell
-PS C:\> Set-AzIotHubMessageEnrichment -ResourceGroupName "myresourcegroup" -Name "myiothub" -Key "newKey" -Endpoint endpoint1,endpoint2,endpoint3
+Set-AzIotHubMessageEnrichment -ResourceGroupName "myresourcegroup" -Name "myiothub" -Key "newKey" -Endpoint endpoint1,endpoint2,endpoint3
+```
 
+```output
 Key         : newKey
 Value       : value1
 Endpoint(s) : {endpoint1, endpoint2, endpoint3}

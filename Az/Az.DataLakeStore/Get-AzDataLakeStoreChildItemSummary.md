@@ -25,8 +25,8 @@ The **Get-AzDataLakeStoreChildItemSummary** retrieves the content summary for a 
 ## EXAMPLES
 
 ### Example 1: Get the content summary of a folder
-```
-PS C:\> Get-AzDataLakeStoreChildItemSummary -Account ContosoADL -Path /a -Concurrency 128
+```powershell
+Get-AzDataLakeStoreChildItemSummary -Account ContosoADL -Path /a -Concurrency 128
 ```
 
 It lists number of total directories, files and their size contained under /a.

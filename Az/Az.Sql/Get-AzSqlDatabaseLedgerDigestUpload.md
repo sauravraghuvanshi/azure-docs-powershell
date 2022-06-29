@@ -14,7 +14,7 @@ Gets the ledger digest upload settings of an Azure SQL database.
 
 ## SYNTAX
 
-### DatabaseParameterSet
+### DatabaseParameterSet (Default)
 ```
 Get-AzSqlDatabaseLedgerDigestUpload [-ResourceGroupName] <String> [-ServerName] <String>
  [-DatabaseName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -39,12 +39,14 @@ The Get-AzSqlDatabaseLedgerDigestUpload cmdlet gets the ledger digest upload set
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzSqlDatabaseLedgerDigestUpload -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" 
+Get-AzSqlDatabaseLedgerDigestUpload -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01"
 ```
 
+```output
 ResourceGroupName ServerName DatabaseName State   Endpoint
 ----------------- ---------- ------------ -----   --------
-ResourceGroup01   Server01   Database01   Enabled https://mystorage.blob.core.windows.net 
+ResourceGroup01   Server01   Database01   Enabled https://mystorage.blob.core.windows.net
+```
 
 ## PARAMETERS
 

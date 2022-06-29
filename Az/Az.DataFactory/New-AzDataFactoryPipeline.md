@@ -43,8 +43,11 @@ If you confirm to overwrite the existing pipeline, the pipeline definition is al
 ## EXAMPLES
 
 ### Example 1: Create a pipeline
+```powershell
+New-AzDataFactoryPipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF" -File "C:\DPWikisample.json" 
 ```
-PS C:\>New-AzDataFactoryPipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF" -File "C:\DPWikisample.json" 
+
+```output
 PipelineName      : DPWikisample
 ResourceGroupName : ADF
 DataFactoryName   : WikiADF11

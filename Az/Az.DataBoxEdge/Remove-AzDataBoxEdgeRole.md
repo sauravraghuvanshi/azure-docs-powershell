@@ -39,7 +39,7 @@ The **Remove-AzDataBoxEdgeRole** cmdlet removes the associated IoT role for a Da
 
 ### Example 1
 ```powershell
-PS C:\> Remove-AzDataBoxEdgeRole -ResourceGroupName resourceGroupName -DeviceName deviceName -Name roleName
+Remove-AzDataBoxEdgeRole -ResourceGroupName resourceGroupName -DeviceName deviceName -Name roleName
 ```
 
 ## PARAMETERS

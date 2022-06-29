@@ -46,6 +46,7 @@ Get or list app configuration stores.
 ```powershell
 Get-AzAppConfigurationStore
 ```
+
 ```output
 Location Name               Type
 -------- ----               ----
@@ -59,6 +60,7 @@ This command lists all app configuration stores under a subscription.
 ```powershell
 Get-AzAppConfigurationStore -ResourceGroupName azpwsh-manual-test
 ```
+
 ```output
 Location Name             Type
 -------- ----             ----
@@ -72,6 +74,7 @@ This command lists all app configuration stores under a resource group.
 ```powershell
 Get-AzAppConfigurationStore -ResourceGroupName azpwsh-manual-test -Name appconfig-test01
 ```
+
 ```output
 Location Name             Type
 -------- ----             ----
@@ -84,6 +87,7 @@ This command gets an app configuration store by name.
 ```powershell
 Get-AzAppConfigurationStore -ResourceGroupName azpwsh-manual-test -Name appconfig-test01 | Get-AzAppConfigurationStore
 ```
+
 ```output
 Location Name             Type
 -------- ----             ----

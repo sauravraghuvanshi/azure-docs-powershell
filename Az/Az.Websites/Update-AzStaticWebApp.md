@@ -1,5 +1,5 @@
 ---
-external help file: 
+external help file: Az.Websites-help.xml
 Module Name: Az.Websites
 online version: https://docs.microsoft.com/powershell/module/az.websites/update-azstaticwebapp
 schema: 2.0.0
@@ -23,7 +23,7 @@ Update-AzStaticWebApp -Name <String> -ResourceGroupName <String> [-SubscriptionI
  [-GithubActionSecretNameOverride <String>] [-Kind <String>] [-OutputLocation <String>]
  [-RepositoryToken <String>] [-RepositoryUrl <String>] [-SkipGithubActionWorkflowGeneration]
  [-StagingEnvironmentPolicy <StagingEnvironmentPolicy>] [-TemplateRepositoryUrl <String>]
- [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -34,7 +34,7 @@ Update-AzStaticWebApp -InputObject <IWebsitesIdentity> [-AllowConfigFileUpdate] 
  [-ForkRepositoryName <String>] [-ForkRepositoryOwner <String>] [-GithubActionSecretNameOverride <String>]
  [-Kind <String>] [-OutputLocation <String>] [-RepositoryToken <String>] [-RepositoryUrl <String>]
  [-SkipGithubActionWorkflowGeneration] [-StagingEnvironmentPolicy <StagingEnvironmentPolicy>]
- [-TemplateRepositoryUrl <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TemplateRepositoryUrl <String>] [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,8 +44,10 @@ Description for Creates a new static site in an existing resource group, or upda
 
 ### Example 1: Update a static site
 ```powershell
-PS C:\> Update-AzStaticWebApp -ResourceGroupName 'resourceGroup' -Name 'staticweb00'
+Update-AzStaticWebApp -ResourceGroupName 'resourceGroup' -Name 'staticweb00'
+```
 
+```output
 Kind Location   Name             Type
 ---- --------   ----             ----
      Central US staticweb00 Microsoft.Web/staticSites
@@ -55,8 +57,10 @@ This command updates a static site.
 
 ### Example 2: Update a static site by pipeline
 ```powershell
-PS C:\> Get-AzStaticWebApp -ResourceGroupName 'resourceGroup' -Name 'staticweb00' | Update-AzStaticWebApp
+Get-AzStaticWebApp -ResourceGroupName 'resourceGroup' -Name 'staticweb00' | Update-AzStaticWebApp
+```
 
+```output
 Kind Location   Name             Type
 ---- --------   ----             ----
      Central US staticweb00 Microsoft.Web/staticSites
@@ -326,7 +330,7 @@ Accept wildcard characters: False
 
 ### -RepositoryToken
 A user's github repository token.
-This is used to setup the Github Actions workflow file and API secrets.
+This is used to setup the GitHub Actions workflow file and API secrets.
 
 ```yaml
 Type: System.String
@@ -490,12 +494,14 @@ INPUTOBJECT <IWebsitesIdentity>: Identity Parameter
   - `[EnvironmentName <String>]`: The stage site identifier.
   - `[FunctionAppName <String>]`: Name of the function app registered with the static site build.
   - `[Id <String>]`: Resource identity path
+  - `[JobHistoryId <String>]`: History ID.
   - `[Location <String>]`: Location where you plan to create the static site.
   - `[Name <String>]`: Name of the static site.
   - `[PrivateEndpointConnectionName <String>]`: Name of the private endpoint connection.
   - `[ResourceGroupName <String>]`: Name of the resource group to which the resource belongs.
+  - `[Slot <String>]`: Name of the deployment slot. If a slot is not specified, the API deletes a deployment for the production slot.
   - `[SubscriptionId <String>]`: Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
   - `[Userid <String>]`: The user id of the user.
+  - `[WebJobName <String>]`: Name of Web Job.
 
 ## RELATED LINKS
-

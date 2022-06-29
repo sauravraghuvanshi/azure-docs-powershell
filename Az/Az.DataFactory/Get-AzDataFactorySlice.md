@@ -59,7 +59,10 @@ For each of the slices, you can see more information about the run that produces
 
 ### Example 1: Get data slices for a dataset
 ```powershell
-PS C:\>Get-AzDataFactorySlice -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -DatasetName "DAWikiAggregatedData" -StartDateTime 2014-05-20T10:00:00Z
+Get-AzDataFactorySlice -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -DatasetName "DAWikiAggregatedData" -StartDateTime 2014-05-20T10:00:00Z
+```
+
+```output
 ResourceGroupName : ADF
 DataFactoryName   : WikiADF
 DatasetName         : DAWikiAggregatedData

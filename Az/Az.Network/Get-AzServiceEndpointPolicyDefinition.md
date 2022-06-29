@@ -25,7 +25,7 @@ The **Get-AzServiceEndpointPolicyDefinition** cmdlet gets a service endpoint pol
 ## EXAMPLES
 
 ### Example 1
-```
+```powershell
 $policydef= Get-AzServiceEndpointPolicyDefinition -Name "ServiceEndpointPolicyDefinition1" -ServiceEndpointPolicy $Policy
 ```
 

@@ -34,8 +34,11 @@ The **Remove-AzDataFactoryLinkedService** cmdlet removes a linked service from A
 ## EXAMPLES
 
 ### Example 1: Remove a linked service
+```powershell
+Remove-AzDataFactoryLinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "LinkedServiceTest"
 ```
-PS C:\>Remove-AzDataFactoryLinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "LinkedServiceTest"
+
+```output
 Confirm
 Are you sure you want to remove linked service 'LinkedServiceTest' in data factory 'WikiADF'? 
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y

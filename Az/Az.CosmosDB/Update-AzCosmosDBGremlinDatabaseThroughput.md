@@ -42,7 +42,10 @@ Updates the throughput value of a CosmosDB Gremlin Database.
 
 ### Example 1
 ```powershell
-PS C:\> Update-AzCosmosDBGremlinDatabaseThroughput -AccountName {myAccountName} -ResourceGroupName {myResourceGroupName} -Name {myDatabaseName} -Throughput {updatedThroughputValue}
+Update-AzCosmosDBGremlinDatabaseThroughput -AccountName "myAccountName" -ResourceGroupName "myResourceGroupName" -Name "myDatabaseName" -Throughput $updatedThroughputValue
+```
+
+```output
 Name                : mxGp
 Id                  : /subscriptions/{mySubscriptionId}/resourceGroups/{myResourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{myAccountName}/gremlinDatabases/{myDatabaseName}/throughputSettings/default
 Throughput          : {updatedThroughputValue}

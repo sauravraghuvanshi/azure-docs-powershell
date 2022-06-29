@@ -27,8 +27,8 @@ The **Remove-AzDataLakeStoreTrustedIdProvider** cmdlet removes the specified tru
 ## EXAMPLES
 
 ### Example 1: Remove a trusted identity provider.
-```
-PS C:\> Remove-AzDataLakeStoreTrustedIdProvider -AccountName "ContosoADL" -Name MyProvider
+```powershell
+Remove-AzDataLakeStoreTrustedIdProvider -AccountName "ContosoADL" -Name MyProvider
 ```
 
 Removes the provider "MyProvider" from account "ContosoADL"

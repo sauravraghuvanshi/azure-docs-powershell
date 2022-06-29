@@ -1,89 +1,61 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.ManagedServiceIdentity.dll-Help.xml
+external help file: 
 Module Name: Az.ManagedServiceIdentity
 online version: https://docs.microsoft.com/powershell/module/az.managedserviceidentity/remove-azuserassignedidentity
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ManagedServiceIdentity/ManagedServiceIdentity/help/Remove-AzUserAssignedIdentity.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ManagedServiceIdentity/ManagedServiceIdentity/help/Remove-AzUserAssignedIdentity.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ManagedServiceIdentity/help/Remove-AzUserAssignedIdentity.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ManagedServiceIdentity/help/Remove-AzUserAssignedIdentity.md
 ---
 
 # Remove-AzUserAssignedIdentity
 
 ## SYNOPSIS
-Removes a User Assigned Identity.
+Deletes the identity.
 
 ## SYNTAX
 
-### ResourceGroupAndNameParameterSet (Default)
+### Delete (Default)
 ```
-Remove-AzUserAssignedIdentity [-ResourceGroupName] <String> [-Name] <String> [-AsJob] [-Force]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### InputObjectParameterSet
-```
-Remove-AzUserAssignedIdentity -InputObject <PsUserAssignedIdentity> [-AsJob] [-Force]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzUserAssignedIdentity -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
+ [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ResourceIdParameterSet
+### DeleteViaIdentity
 ```
-Remove-AzUserAssignedIdentity -ResourceId <String> [-AsJob] [-Force] [-DefaultProfile <IAzureContextContainer>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzUserAssignedIdentity -InputObject <IManagedServiceIdentity> [-DefaultProfile <PSObject>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Remove-AzUserAssignedIdentity** deletes the specified User Assigned Identity.
+Deletes the identity.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Deletes an user assigned identity
 ```powershell
-PS C:\> Remove-AzUserAssignedIdentity -ResourceGroupName PSRG -Name ID1
+PS C:\> Remove-AzUserAssignedIdentity -ResourceGroupName azure-rg-test -Name uai-pwsh01
+
 ```
 
-This example cmdlet deletes the identity **ID1** under resource group **PSRG**.
-True
+This command deletes an user assigned identity.
+
+### Example 2: Deletes an user assigned identity by pipeline
+```powershell
+PS C:\> Get-AzUserAssignedIdentity -ResourceGroupName azure-rg-test -Name uai-pwsh01 | Remove-AzUserAssignedIdentity
+
+```
+
+This command deletes an user assigned identity by pipeline.
 
 ## PARAMETERS
-
-### -AsJob
-Run cmdlet in the background
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Force
-{{Fill Force Description}}
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -93,12 +65,13 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-The Identity object.
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.Commands.ManagedServiceIdentity.Models.PsUserAssignedIdentity
-Parameter Sets: InputObjectParameterSet
-Aliases: Identity
+Type: Microsoft.Azure.PowerShell.Cmdlets.ManagedServiceIdentity.Models.IManagedServiceIdentity
+Parameter Sets: DeleteViaIdentity
+Aliases:
 
 Required: True
 Position: Named
@@ -108,47 +81,62 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-The Identity name.
+The name of the identity resource.
 
 ```yaml
 Type: System.String
-Parameter Sets: ResourceGroupAndNameParameterSet
+Parameter Sets: Delete
 Aliases:
 
 Required: True
-Position: 1
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The resource group name.
+The name of the Resource Group to which the identity belongs.
 
 ```yaml
 Type: System.String
-Parameter Sets: ResourceGroupAndNameParameterSet
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResourceId
-The Identity's resource id.
-
-```yaml
-Type: System.String
-Parameter Sets: ResourceIdParameterSet
+Parameter Sets: Delete
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubscriptionId
+The Id of the Subscription to which the identity belongs.
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -184,13 +172,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### Microsoft.Azure.Commands.ManagedServiceIdentity.Models.PsUserAssignedIdentity
-
-### System.String
+### Microsoft.Azure.PowerShell.Cmdlets.ManagedServiceIdentity.Models.IManagedServiceIdentity
 
 ## OUTPUTS
 
@@ -198,4 +184,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT <IManagedServiceIdentity>: Identity Parameter
+  - `[Id <String>]`: Resource identity path
+  - `[ResourceGroupName <String>]`: The name of the Resource Group to which the identity belongs.
+  - `[ResourceName <String>]`: The name of the identity resource.
+  - `[Scope <String>]`: The resource provider scope of the resource. Parent resource being extended by Managed Identities.
+  - `[SubscriptionId <String>]`: The Id of the Subscription to which the identity belongs.
+
 ## RELATED LINKS
+

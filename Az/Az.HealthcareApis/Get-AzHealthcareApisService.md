@@ -1,10 +1,10 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.HealthcareApis.dll-Help.xml
+external help file: 
 Module Name: Az.HealthcareApis
 online version: https://docs.microsoft.com/powershell/module/az.healthcareapis/get-azhealthcareapisservice
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HealthcareApis/HealthcareApis/help/Get-AzHealthcareApisService.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HealthcareApis/HealthcareApis/help/Get-AzHealthcareApisService.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HealthcareApis/help/Get-AzHealthcareApisService.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HealthcareApis/help/Get-AzHealthcareApisService.md
 ---
 
 # Get-AzHealthcareApisService
@@ -14,154 +14,66 @@ Get the metadata of a service instance.
 
 ## SYNTAX
 
-### ListParameterSet (Default)
+### List (Default)
 ```
-Get-AzHealthcareApisService [-ResourceGroupName <String>] [-DefaultProfile <IAzureContextContainer>]
+Get-AzHealthcareApisService [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### Get
+```
+Get-AzHealthcareApisService -Name <String> -ResourceGroupName <String> [-SubscriptionId <String[]>]
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-AzHealthcareApisService -InputObject <IHealthcareApisIdentity> [-DefaultProfile <PSObject>]
  [<CommonParameters>]
 ```
 
-### ServiceNameParameterSet
+### List1
 ```
-Get-AzHealthcareApisService -ResourceGroupName <String> -Name <String>
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
-```
-
-### ResourceIdParameterSet
-```
-Get-AzHealthcareApisService -ResourceId <String> [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+Get-AzHealthcareApisService -ResourceGroupName <String> [-SubscriptionId <String[]>]
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets existing healthcareApis fhir service accounts created within the specified subscription or a resource group.
+Get the metadata of a service instance.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: List the metadata of service instance.
 ```powershell
-PS C:\> Get-AzHealthcareApisService -Name "MyService" -ResourceGroupName "MyResourceGroup"
+PS C:\>  Get-AzHealthcareApisService
 
-AccessPolicies          : {77777777-6666-5555-4444-1111111111111}
-Audience                : https://azurehealthcareapis.com
-Authority               : https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47
-CorsAllowCredentials    : False
-CorsHeaders             : {}
-CorsMaxAge              : 0
-CorsMethods             : {}
-CorsOrigins             : {}
-CosmosDbKeyVaultKeyUri  :
-CosmosDbOfferThroughput : 400
-Etag                    : "00000000-0000-0000-0000-000000000000"
-Id                      : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MyResourceGroup/providers/Microsoft
-                          .HealthcareApis/services/MyService
-Kind                    : fhir-R4
-Location                : westus2
-Name                    : MyService
-ResourceGroupName       : MyResourceGroup
-Tags                    : {}
-ResourceType            : Microsoft.HealthcareApis/services
-SmartProxyEnabled       : False
+Location Name           Kind ResourceGroupName
+-------- ----           ---- -----------------
+eastus2  azpsapiservice fhir azps_test_group
 ```
 
-### Example 2
+List the metadata of service instance.
 
-Gets the metadata for all HealthcareApis services in the provided Resource Group.
-
+### Example 2: List the metadata of service instance by resource group.
 ```powershell
-PS C:\> Get-AzHealthcareApisService -ResourceGroupName "MyResourceGroup"
+PS C:\> Get-AzHealthcareApisService -ResourceGroupName azps_test_group
 
-AccessPolicies          : {77777777-6666-5555-4444-1111111111111}
-Audience                : https://azurehealthcareapis.com
-Authority               : https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db48
-CorsAllowCredentials    : False
-CorsHeaders             : {}
-CorsMaxAge              : 0
-CorsMethods             : {}
-CorsOrigins             : {}
-CosmosDbKeyVaultKeyUri  :
-CosmosDbOfferThroughput : 400
-Etag                    : "00000000-0000-0000-0000-000000000000"
-Id                      : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MyResourceGroup/providers/Microsoft
-                          .HealthcareApis/services/MyService
-Kind                    : fhir-R4
-Location                : westus2
-Name                    : MyService
-ResourceGroupName       : MyResourceGroup
-Tags                    : {}
-ResourceType            : Microsoft.HealthcareApis/services
-SmartProxyEnabled       : False
-
-AccessPolicies          : {77777777-6666-5555-4444-1111111111111}
-Audience                : https://azurehealthcareapis.com
-Authority               : https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db478
-CorsAllowCredentials    : False
-CorsHeaders             : {}
-CorsMaxAge              : 0
-CorsMethods             : {}
-CorsOrigins             : {}
-CosmosDbKeyVaultKeyUri  :
-CosmosDbOfferThroughput : 400
-Etag                    : "00000000-0000-0000-0000-000000000000"
-Id                      : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MyResourceGroup/providers/Microsoft
-                          .HealthcareApis/services/MyService1
-Kind                    : fhir-R4
-Location                : westus2
-Name                    : MyService1
-ResourceGroupName       : MyResourceGroup
-Tags                    : {}
-ResourceType            : Microsoft.HealthcareApis/services
-SmartProxyEnabled       : False
+Location Name           Kind ResourceGroupName
+-------- ----           ---- -----------------
+eastus2  azpsapiservice fhir azps_test_group
 ```
 
-### Example 3
+List the metadata of service instance by resource group.
 
-Gets the metadata for all HealthcareApis services in the given subscription
-
+### Example 3: Get the metadata of a service instance.
 ```powershell
-PS C:\> Get-AzHealthcareApisService
+PS C:\> Get-AzHealthcareApisService -ResourceGroupName azps_test_group -Name azpsapiservice
 
-AccessPolicies          : {77777777-6666-5555-4444-1111111111111}
-Audience                : https://azurehealthcareapis.com
-Authority               : https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db48
-CorsAllowCredentials    : False
-CorsHeaders             : {}
-CorsMaxAge              : 0
-CorsMethods             : {}
-CorsOrigins             : {}
-CosmosDbKeyVaultKeyUri  :
-CosmosDbOfferThroughput : 400
-Etag                    : "00000000-0000-0000-0000-000000000000"
-Id                      : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MyResourceGroup/providers/Microsoft
-                          .HealthcareApis/services/MyService
-Kind                    : fhir-R4
-Location                : westus2
-Name                    : MyService
-ResourceGroupName       : MyResourceGroup
-Tags                    : {}
-ResourceType            : Microsoft.HealthcareApis/services
-SmartProxyEnabled       : False
-
-AccessPolicies          : {77777777-6666-5555-4444-1111111111111}
-Audience                : https://azurehealthcareapis.com
-Authority               : https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db478
-CorsAllowCredentials    : False
-CorsHeaders             : {}
-CorsMaxAge              : 0
-CorsMethods             : {}
-CorsOrigins             : {}
-CosmosDbKeyVaultKeyUri  :
-CosmosDbOfferThroughput : 400
-Etag                    : "00000000-0000-0000-0000-000000000000"
-Id                      : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MyResourceGroup/providers/Microsoft
-                          .HealthcareApis/services/MyService1
-Kind                    : fhir-R4
-Location                : westus2
-Name                    : MyService1
-ResourceGroupName       : MyResourceGroup
-Tags                    : {}
-ResourceType            : Microsoft.HealthcareApis/services
-SmartProxyEnabled       : False
+Location Name           Kind ResourceGroupName
+-------- ----           ---- -----------------
+eastus2  azpsapiservice fhir azps_test_group
 ```
+
+Get the metadata of a service instance.
 
 ## PARAMETERS
 
@@ -169,9 +81,9 @@ SmartProxyEnabled       : False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -180,13 +92,29 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.HealthcareApis.Models.IHealthcareApisIdentity
+Parameter Sets: GetViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -Name
-HealthcareApis Service Name.
+The name of the service instance.
 
 ```yaml
 Type: System.String
-Parameter Sets: ServiceNameParameterSet
-Aliases: HealthcareApisName, FhirServiceName
+Parameter Sets: Get
+Aliases:
 
 Required: True
 Position: Named
@@ -196,44 +124,32 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Resource Group Name.
+The name of the resource group that contains the service instance.
 
 ```yaml
 Type: System.String
-Parameter Sets: ListParameterSet
+Parameter Sets: Get, List1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubscriptionId
+The subscription identifier.
+
+```yaml
+Type: System.String[]
+Parameter Sets: Get, List, List1
 Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: (Get-AzContext).Subscription.Id
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-```yaml
-Type: System.String
-Parameter Sets: ServiceNameParameterSet
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResourceId
-Resource Id Name.
-
-```yaml
-Type: System.String
-Parameter Sets: ResourceIdParameterSet
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -242,12 +158,35 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String
+### Microsoft.Azure.PowerShell.Cmdlets.HealthcareApis.Models.IHealthcareApisIdentity
 
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.HealthcareApis.Models.PSHealthcareApisService
+### Microsoft.Azure.PowerShell.Cmdlets.HealthcareApis.Models.Api20211101.IServicesDescription
 
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT <IHealthcareApisIdentity>: Identity Parameter
+  - `[DicomServiceName <String>]`: The name of DICOM Service resource.
+  - `[FhirDestinationName <String>]`: The name of IoT Connector FHIR destination resource.
+  - `[FhirServiceName <String>]`: The name of FHIR Service resource.
+  - `[GroupName <String>]`: The name of the private link resource group.
+  - `[Id <String>]`: Resource identity path
+  - `[IotConnectorName <String>]`: The name of IoT Connector resource.
+  - `[LocationName <String>]`: The location of the operation.
+  - `[OperationResultId <String>]`: The ID of the operation result to get.
+  - `[PrivateEndpointConnectionName <String>]`: The name of the private endpoint connection associated with the Azure resource
+  - `[ResourceGroupName <String>]`: The name of the resource group that contains the service instance.
+  - `[ResourceName <String>]`: The name of the service instance.
+  - `[SubscriptionId <String>]`: The subscription identifier.
+  - `[WorkspaceName <String>]`: The name of workspace resource.
+
 ## RELATED LINKS
+

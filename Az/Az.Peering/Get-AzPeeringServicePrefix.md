@@ -39,8 +39,10 @@ List peering service prefixes for peering service objects
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzPeeringService -ResourceGroupName $rgName -Name $name | Get-AzPeeringServicePrefix
+Get-AzPeeringService -ResourceGroupName $rgName -Name $name | Get-AzPeeringServicePrefix
+```
 
+```output
 Prefix                : 200.25.69.0/31
 PrefixValidationState : Pending
 LearnedType           : None
@@ -64,8 +66,10 @@ Gets the prefixes for a peering service based on piping commands.
 
 ### Example 2
 ```powershell
-PS C:\> Get-AzPeeringServicePrefix -ResourceId $peeringServicePrefixResourceId 
+Get-AzPeeringServicePrefix -ResourceId $peeringServicePrefixResourceId 
+```
 
+```output
 Prefix                : 200.25.69.0/31
 PrefixValidationState : Pending
 LearnedType           : None
@@ -80,8 +84,10 @@ Gets a specific prefix for a peering service by resource id.
 
 ### Example 3
 ```powershell
-PS C:\> Get-AzPeeringServicePrefix -ResourceGroupName $rgName -PeeringServiceName $peeringServiceName -Name $prefixName
+Get-AzPeeringServicePrefix -ResourceGroupName $rgName -PeeringServiceName $peeringServiceName -Name $prefixName
+```
 
+```output
 Prefix                : 200.25.69.0/31
 PrefixValidationState : Pending
 LearnedType           : None
@@ -96,8 +102,10 @@ Gets a specific prefix for a peering service by resource id.
 
 ### Example 4
 ```powershell
-PS C:\> Get-AzPeeringServicePrefix -ResourceGroupName $rgName -PeeringServiceName $peeringServiceName -Name $prefixName -Expand
+Get-AzPeeringServicePrefix -ResourceGroupName $rgName -PeeringServiceName $peeringServiceName -Name $prefixName -Expand
+```
 
+```output
 Prefix                : 10.2.6.0/24
 PrefixValidationState : Failed
 LearnedType           : None

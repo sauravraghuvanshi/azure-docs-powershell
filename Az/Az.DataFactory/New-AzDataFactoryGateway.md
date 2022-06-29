@@ -33,8 +33,11 @@ The **New-AzDataFactoryGateway** cmdlet creates a gateway in Azure Data Factory.
 ## EXAMPLES
 
 ### Example 1: Create a gateway
+```powershell
+New-AzDataFactoryGateway -ResourceGroupName "ADF" -Name "ContosoGateway" -DataFactoryName "WikiADF" -Description "my gateway"
 ```
-PS C:\>New-AzDataFactoryGateway -ResourceGroupName "ADF" -Name "ContosoGateway" -DataFactoryName "WikiADF" -Description "my gateway"
+
+```output
 Name              : ContosoGateway
 Description       : my gateway
 Version           : 

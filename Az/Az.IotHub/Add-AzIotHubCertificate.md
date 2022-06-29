@@ -40,9 +40,11 @@ For a detailed explanation of CA certificates in Azure IoT Hub, see https://docs
 ## EXAMPLES
 
 ### Example 1
+```powershell
+Add-AzIotHubCertificate -ResourceGroupName "myresourcegroup" -Name "myiothub" -CertificateName "mycertificate" -Path "c:\mycertificate.cer"
 ```
-PS C:\> Add-AzIotHubCertificate -ResourceGroupName "myresourcegroup" -Name "myiothub" -CertificateName "mycertificate" -Path "c:\mycertificate.cer"
 
+```output
 Id					: /subscriptions/377cxxxxxxxxxxxx/resourceGroups/myresourcegroup/providers/Microsoft.Devices/IotHubs/myiothub/certificates/mycertificate
 ResourceGroupName	: myresourcegroup
 Name				: myiothub
@@ -58,9 +60,11 @@ Etag				: AAAAAAFpGcA=
 Uploads a CA certificate CER file to an IoT hub. 
 
 ### Example 2
+```powershell
+Add-AzIotHubCertificate -ResourceGroupName "myresourcegroup" -Name "myiothub" -CertificateName "mycertificate" -Path "c:\mycertificate.cer" -Etag "AAAAAAFPazE="
 ```
-PS C:\> Add-AzIotHubCertificate -ResourceGroupName "myresourcegroup" -Name "myiothub" -CertificateName "mycertificate" -Path "c:\mycertificate.cer" -Etag "AAAAAAFPazE="
 
+```output
 Id					: /subscriptions/377cxxxxxxxxxxxx/resourceGroups/myresourcegroup/providers/Microsoft.Devices/IotHubs/myiothub/certificates/mycertificate
 ResourceGroupName	: myresourcegroup
 Name				: myiothub

@@ -34,7 +34,7 @@ Delete an ExpressRoute Circuit Authorization in a private cloud
 
 ### Example 1: Delete authorization in private cloud
 ```powershell
-PS C:\> Remove-AzVMwareAuthorization -PrivateCloudName azps_test_cloud -ResourceGroupName azps_test_group -Name azps_test_authorization
+Remove-AzVMwareAuthorization -PrivateCloudName azps_test_cloud -ResourceGroupName azps_test_group -Name azps_test_authorization
 
 ```
 
@@ -42,7 +42,7 @@ Delete authorization in private cloud
 
 ### Example 2: Delete authorization in private cloud
 ```powershell
-PS C:\> Get-AzVMwareAuthorization -PrivateCloudName azps_test_cloud -ResourceGroupName azps_test_group -Name azps_test_authorization | Remove-AzVMwareAuthorization
+Get-AzVMwareAuthorization -PrivateCloudName azps_test_cloud -ResourceGroupName azps_test_group -Name azps_test_authorization | Remove-AzVMwareAuthorization
 
 ```
 
@@ -252,6 +252,7 @@ INPUTOBJECT <IVMwareIdentity>: Identity Parameter
   - `[HcxEnterpriseSiteName <String>]`: Name of the HCX Enterprise Site in the private cloud
   - `[Id <String>]`: Resource identity path
   - `[Location <String>]`: Azure region
+  - `[PlacementPolicyName <String>]`: Name of the VMware vSphere Distributed Resource Scheduler (DRS) placement policy
   - `[PortMirroringId <String>]`: NSX Port Mirroring identifier. Generally the same as the Port Mirroring display name
   - `[PrivateCloudName <String>]`: Name of the private cloud
   - `[PublicIPId <String>]`: NSX Public IP Block identifier. Generally the same as the Public IP Block's display name

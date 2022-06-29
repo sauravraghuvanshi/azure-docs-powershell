@@ -42,8 +42,10 @@ Edit a route. You can update all the fields in a route including the data source
 
 ### Example 1
 ```powershell
-PS C:\> Set-AzIotHubRoute -ResourceGroupName "myresourcegroup" -Name "myiothub" -RouteName R1 -Source TwinChangeEvents 
+Set-AzIotHubRoute -ResourceGroupName "myresourcegroup" -Name "myiothub" -RouteName R1 -Source TwinChangeEvents 
+```
 
+```output
 RouteName     : R1
 DataSource    : TwinChangeEvents
 EndpointNames : events
@@ -55,8 +57,10 @@ Updating the route information.
 
 ### Example 2
 ```powershell
-PS C:\> Set-AzIotHubRoute -ResourceGroupName "myresourcegroup" -Name "myiothub" -RouteName R1 -EndpointName E1 
+Set-AzIotHubRoute -ResourceGroupName "myresourcegroup" -Name "myiothub" -RouteName R1 -EndpointName E1 
+```
 
+```output
 RouteName     : R1
 DataSource    : TwinChangeEvents
 EndpointNames : E1
@@ -68,8 +72,10 @@ Updating the route information.
 
 ### Example 3
 ```powershell
-PS C:\> Set-AzIotHubRoute -ResourceGroupName "myresourcegroup" -Name "myiothub" -RouteName R1 -Enabled
+Set-AzIotHubRoute -ResourceGroupName "myresourcegroup" -Name "myiothub" -RouteName R1 -Enabled
+```
 
+```output
 RouteName     : R1
 DataSource    : TwinChangeEvents
 EndpointNames : E1

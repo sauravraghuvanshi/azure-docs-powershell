@@ -1,10 +1,10 @@
 ---
-external help file: 
+external help file: Az.Purview-help.xml
 Module Name: Az.Purview
 online version: https://docs.microsoft.com/powershell/module/az.purview/remove-azpurviewaccount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/help/Remove-AzPurviewAccount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/help/Remove-AzPurviewAccount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/Purview/help/Remove-AzPurviewAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/Purview/help/Remove-AzPurviewAccount.md
 ---
 
 # Remove-AzPurviewAccount
@@ -17,13 +17,13 @@ Deletes an account resource
 ### Delete (Default)
 ```
 Remove-AzPurviewAccount -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-AzPurviewAccount -InputObject <IPurviewIdentity> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,17 +33,15 @@ Deletes an account resource
 
 ### Example 1: Delete a purview account
 ```powershell
-PS C:\> Remove-AzPurviewAccount -Name test-pa -ResourceGroupName test-rg
-
+Remove-AzPurviewAccount -Name test-pa -ResourceGroupName test-rg
 ```
 
 Delete a purview account named 'test-pa'
 
 ### Example 2: Delete a purview account by InputObject
 ```powershell
-PS C:\> $get = Get-AzPurviewAccount -Name test-pa -ResourceGroupName test-rg
-PS C:\> Remove-AzPurviewAccount -InputObject $get
-
+$get = Get-AzPurviewAccount -Name test-pa -ResourceGroupName test-rg
+Remove-AzPurviewAccount -InputObject $get
 ```
 
 Delete a purview account named 'test-pa' by InputObject
@@ -231,4 +229,3 @@ INPUTOBJECT <IPurviewIdentity>: Identity Parameter
   - `[SubscriptionId <String>]`: The subscription identifier
 
 ## RELATED LINKS
-

@@ -38,9 +38,11 @@ Delete a routes to an endpoint
 ## EXAMPLES
 
 ### Example 1
+```powershell
+Remove-AzIotHubRoute -ResourceGroupName "myresourcegroup" -Name "myiothub" -RouteName R1 -PassThru
 ```
-PS C:\> Remove-AzIotHubRoute -ResourceGroupName "myresourcegroup" -Name "myiothub" -RouteName R1 -PassThru
 
+```output
 True
 ```
 

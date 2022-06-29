@@ -27,8 +27,8 @@ Use the *ClusterName* parameter to get details for a specific cluster.
 ## EXAMPLES
 
 ### Example 1: List all Azure HDInsight clusters
-```
-PS C:\>Get-AzHDInsightCluster
+```powershell
+Get-AzHDInsightCluster
 ```
 
 This command lists all the Azure HDInsight clusters.

@@ -30,6 +30,9 @@ first.
 ### Example 1
 ```powershell
 Remove-AzContainerRegistryTag -RegistryName registry -RepositoryName alpine -Name latest
+```
+
+```output
 True
 ```
 

@@ -33,9 +33,10 @@ Learn more about the query syntax here: https://aka.ms/resource-graph/learntoque
 
 ### Example 1
 ```powershell
-PS C:\> Search-AzGraph "project id, name, type, location, tags" -First 3
+Search-AzGraph "project id, name, type, location, tags" -First 3
+```
 
-
+```output
 id         : /subscriptions/1ef51df4-f8a9-4b69-9919-1ef51df4eff6/resourceGroups/Service-INT-a/providers/Microsoft.Compute/virtualMachineScaleSets/nt
 name       : nt
 type       : microsoft.compute/virtualmachinescalesets
@@ -55,8 +56,10 @@ Simple resources query requesting a subset of resource fields.
 
 ### Example 2
 ```powershell
-PS C:\> Search-AzGraph "project id, name, type, location | where type =~ 'Microsoft.Compute/virtualMachines' | summarize count() by location | top 3 by count_"
+Search-AzGraph "project id, name, type, location | where type =~ 'Microsoft.Compute/virtualMachines' | summarize count() by location | top 3 by count_"
+```
 
+```output
 location      count_
 --------      ------
 eastus            66
@@ -68,10 +71,11 @@ A complex query on resources featuring field selection, filtering and summarizin
 
 ### Example 3
 ```powershell
-PS C:\> $response = Search-AzGraph -Query "project id, name, type, location" -First 2
-PS C:\> Search-AzGraph -Query "project id, name, type, location" -SkipToken $response.SkipToken
+$response = Search-AzGraph -Query "project id, name, type, location" -First 2
+Search-AzGraph -Query "project id, name, type, location" -SkipToken $response.SkipToken
+```
 
-
+```output
 id         : /subscriptions/1ef51df4-f8a9-4b69-9919-1ef51df4eff6/resourceGroups/test/providers/Microsoft.Network/networkInterfaces/17ni
 name       : 17ni
 type       : microsoft.network/networkinterfaces
@@ -89,9 +93,10 @@ A query with the skip token passed from the previous query results. Please note 
 
 ### Example 4
 ```powershell
-PS C:\> Search-AzGraph -Query "project id, name, type, location, tags" -First 2 -ManagementGroup MyManagementGroupId -AllowPartialScope
+Search-AzGraph -Query "project id, name, type, location, tags" -First 2 -ManagementGroup MyManagementGroupId -AllowPartialScope
+```
 
-
+```output
 id         : /subscriptions/1ef51df4-f8a9-4b69-9919-1ef51df4eff6/resourceGroups/Service-INT-a/providers/Microsoft.Compute/virtualMachineScaleSets/nt
 name       : nt
 type       : microsoft.compute/virtualmachinescalesets

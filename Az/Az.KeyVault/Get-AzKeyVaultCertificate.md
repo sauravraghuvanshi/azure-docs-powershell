@@ -76,7 +76,10 @@ The **Get-AzKeyVaultCertificate** cmdlet gets the specified certificate or the v
 
 ### Example 1: Get a certificate
 ```powershell
-PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01"
+Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01"
+```
+
+```output
 Name        : testCert01
 Certificate : [Subject]
                 CN=contoso.com
@@ -118,8 +121,10 @@ $secretByte = [Convert]::FromBase64String(($secret.SecretValue | ConvertFrom-Sec
 
 ### Example 3: Get all the certificates that have been deleted but not purged for this key vault.
 ```powershell
-PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -InRemovedState
+Get-AzKeyVaultCertificate -VaultName 'contoso' -InRemovedState
+```
 
+```output
 DeletedDate        : 5/24/2018 6:08:32 PM
 Enabled            : True
 Expires            : 11/24/2018 6:08:13 PM
@@ -150,8 +155,10 @@ This command gets all the certificates that have been previously deleted, but no
 
 ### Example 4: Gets the certificate MyCert that has been deleted but not purged for this key vault.
 ```powershell
-PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -Name 'test1' -InRemovedState
+Get-AzKeyVaultCertificate -VaultName 'contoso' -Name 'test1' -InRemovedState
+```
 
+```output
 Certificate        : [Subject]
                        CN=contoso.com
 
@@ -193,8 +200,10 @@ This command will return metadata such as the deletion date, and the scheduled p
 
 ### Example 5: List certificates using filtering
 ```powershell
-PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "test*"
+Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "test*"
+```
 
+```output
 Enabled   : True
 Expires   : 8/5/2019 2:39:25 AM
 NotBefore : 2/5/2019 2:29:25 AM
@@ -216,9 +225,9 @@ VaultName : ContosoKV01
 Name      : test2
 Version   :
 Id        : https://ContosoKV01.vault.azure.net:443/certificates/test2
-
-This command gets all certificates starting with "test" from the key vault named ContosoKV01.
 ```
+This command gets all certificates starting with "test" from the key vault named ContosoKV01.
+
 
 ## PARAMETERS
 

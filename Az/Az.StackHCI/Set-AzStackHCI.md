@@ -28,7 +28,10 @@ Set-AzStackHCI modifies resource properties of the Microsoft.AzureStackHCI cloud
 
 ### EXAMPLE 1
 ```powershell
-PS C:\> Set-AzStackHCI -EnableWSSubscription $true
+Set-AzStackHCI -EnableWSSubscription $true
+```
+
+```output
 Result: Success
 ```
 
@@ -36,7 +39,10 @@ Invoking on one of the cluster node to enable Windows Server Subscription featur
 
 ### EXAMPLE 2
 ```powershell
-PS C:\> Set-AzStackHCI -ComputerName ClusterNode1 -DiagnosticLevel Basic
+Set-AzStackHCI -ComputerName ClusterNode1 -DiagnosticLevel Basic
+```
+
+```output
 Result: Success
 ```
 

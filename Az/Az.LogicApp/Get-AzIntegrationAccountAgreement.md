@@ -31,8 +31,11 @@ If you omit a required template parameter, the cmdlet prompts you for the value.
 ## EXAMPLES
 
 ### Example 1: Get an integration account agreement
+```powershell
+Get-AzIntegrationAccountAgreement -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31" -AgreementName "IntegrationAccountAgreement06"
 ```
-PS C:\>Get-AzIntegrationAccountAgreement -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31" -AgreementName "IntegrationAccountAgreement06"
+
+```output
 Id                     : /subscriptions/<SubscriptionId>/resourceGroups/ResourceGroup11/providers/Microsoft.Logic/integrationAccounts/TestIntegrationAccount/agreements/IntegrationAccount31
 Name                   : IntegrationAccount31
 Type                   : Microsoft.Logic/integrationAccounts/agreements
@@ -53,8 +56,11 @@ Content                : {"AS2":{"ReceiveAgreement":{"SenderBusinessIdentity":{"
 This command gets an integration account agreement named IntegrationAccountAgreement06.
 
 ### Example 2: Get integration account agreements by resource group name
+```powershell
+Get-AzIntegrationAccountAgreement -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31"
 ```
-PS C:\>Get-AzIntegrationAccountAgreement -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31"
+
+```output
 Id                     : /subscriptions/<SubscriptionId>/resourceGroups/ResourceGroup11/providers/Microsoft.Logic/integrationAccounts/TestIntegrationAccount/agreements/IntegrationAccount31
 Name                   : IntegrationAccount31
 Type                   : Microsoft.Logic/integrationAccounts/agreements

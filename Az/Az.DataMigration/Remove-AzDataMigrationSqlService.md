@@ -1,5 +1,5 @@
 ---
-external help file: 
+external help file: Az.DataMigration-help.xml
 Module Name: Az.DataMigration
 online version: https://docs.microsoft.com/powershell/module/az.datamigration/remove-azdatamigrationsqlservice
 schema: 2.0.0
@@ -17,13 +17,13 @@ Delete Database Migration Service.
 ### Delete (Default)
 ```
 Remove-AzDataMigrationSqlService -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-AzDataMigrationSqlService -InputObject <IDataMigrationIdentity> [-DefaultProfile <PSObject>] [-AsJob]
- [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-NoWait] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,7 +33,7 @@ Delete Database Migration Service.
 
 ### Example 1: Delete the Sql Migration Service
 ```powershell
-PS C:\> Remove-AzDataMigrationSqlService -ResourceGroupName "MyResourceGroup" -Name "MySqlMigrationService"
+Remove-AzDataMigrationSqlService -ResourceGroupName "MyResourceGroup" -Name "MySqlMigrationService"
 ```
 
 This command deletes the specified Sql Migration Service.
@@ -217,10 +217,10 @@ INPUTOBJECT <IDataMigrationIdentity>: Identity Parameter
   - `[Id <String>]`: Resource identity path
   - `[ManagedInstanceName <String>]`: 
   - `[ResourceGroupName <String>]`: Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+  - `[SqlDbInstanceName <String>]`: 
   - `[SqlMigrationServiceName <String>]`: Name of the SQL Migration Service.
   - `[SqlVirtualMachineName <String>]`: 
   - `[SubscriptionId <String>]`: Subscription ID that identifies an Azure subscription.
   - `[TargetDbName <String>]`: The name of the target database.
 
 ## RELATED LINKS
-

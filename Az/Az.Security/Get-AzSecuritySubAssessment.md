@@ -51,7 +51,7 @@ Gets sub assessments results in a subscription.
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzSecuritySubAssessment
+Get-AzSecuritySubAssessment
 ```
 
 Gets all the sub assessments results in a subscription.
@@ -62,7 +62,7 @@ Gets all the sub assessments results in a subscription.
 Full resource ID of the resource that the assessment is calculated on.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SubscriptionScope, SubscriptionLevelResource
 Aliases:
 
@@ -74,7 +74,7 @@ Accept wildcard characters: False
 ```
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ResourceIdLevelResource, ResourceIdScope
 Aliases:
 
@@ -89,7 +89,7 @@ Accept wildcard characters: False
 Name of the assessment resource.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ResourceIdLevelResource, ResourceIdScope
 Aliases:
 
@@ -104,7 +104,7 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: IAzureContextContainer
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -119,7 +119,7 @@ Accept wildcard characters: False
 Resource name.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SubscriptionLevelResource
 Aliases:
 
@@ -131,7 +131,7 @@ Accept wildcard characters: False
 ```
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ResourceIdLevelResource
 Aliases:
 
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 ID of the security resource that you want to invoke the command on.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ResourceId
 Aliases:
 

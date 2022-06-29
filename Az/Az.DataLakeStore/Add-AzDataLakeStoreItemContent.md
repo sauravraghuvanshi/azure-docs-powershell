@@ -26,8 +26,8 @@ The **Add-AzDataLakeStoreItemContent** cmdlet adds content to an item in an Azur
 ## EXAMPLES
 
 ### Example 1: Add content to a file
-```
-PS C:\>Add-AzDataLakeStoreItemContent -AccountName "ContosoADLS" -Path /abc/myFile.txt -Value "My content here"
+```powershell
+Add-AzDataLakeStoreItemContent -AccountName "ContosoADLS" -Path /abc/myFile.txt -Value "My content here"
 ```
 
 This command adds content to the file myFile.txt.

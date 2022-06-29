@@ -1,5 +1,5 @@
 ---
-external help file: 
+external help file: Az.DataMigration-help.xml
 Module Name: Az.DataMigration
 online version: https://docs.microsoft.com/powershell/module/az.datamigration/get-azdatamigrationtosqlvm
 schema: 2.0.0
@@ -16,9 +16,9 @@ Retrieve the specified database migration for a given SQL VM.
 
 ### Get (Default)
 ```
-Get-AzDataMigrationToSqlVM -ResourceGroupName <String> -SqlVirtualMachineName <String> -TargetDbName <String>
- [-SubscriptionId <String[]>] [-Expand <String>] [-MigrationOperationId <String>] [-DefaultProfile <PSObject>]
- [-PassThru] [<CommonParameters>]
+Get-AzDataMigrationToSqlVM -ResourceGroupName <String> -SqlVirtualMachineName <String>
+ [-SubscriptionId <String[]>] -TargetDbName <String> [-Expand <String>] [-MigrationOperationId <String>]
+ [-DefaultProfile <PSObject>] [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
@@ -34,8 +34,10 @@ Retrieve the specified database migration for a given SQL VM.
 
 ### Example 1: Get the details of a given Database Migration to a SQL Virtual Machine
 ```powershell
-PS C:\> Get-AzDataMigrationToSqlVM -ResourceGroupName "MyResourceGroup" -SqlVirtualMachineName "MySqlVM" -TargetDbName "MyDatabase"
+Get-AzDataMigrationToSqlVM -ResourceGroupName "MyResourceGroup" -SqlVirtualMachineName "MySqlVM" -TargetDbName "MyDatabase"
+```
 
+```output
 Name                 Type                                       Kind  ProvisioningState MigrationStatus
 ----                 ----                                       ----  ----------------- ---------------
 MyDatabase           Microsoft.DataMigration/databaseMigrations SqlVm Succeeded         Succeeded
@@ -45,12 +47,14 @@ This command gets the details of a given Database Migration to a SQL Virtual Mac
 
 ### Example 2: Get the expanded details of a given Database Migration to a SQL Virtual Machine
 ```powershell
-PS C:\> $vmMigration = Get-AzDataMigrationToSqlVM -ResourceGroupName "MyResouceGroup" -SqlVirtualMachineName "MySqlVM" -TargetDbName "MyDatabase" -Expand MigrationStatusDetails
-PS C:\> $vmMigration.MigrationStatusDetail
+$vmMigration = Get-AzDataMigrationToSqlVM -ResourceGroupName "MyResouceGroup" -SqlVirtualMachineName "MySqlVM" -TargetDbName "MyDatabase" -Expand MigrationStatusDetails
+$vmMigration.MigrationStatusDetail
+```
 
+```output
 BlobContainerName                    CompleteRestoreErrorMessage CurrentRestoringFilename          FileUploadBlockingError 
 -----------------                    --------------------------- ------------------------          ----------------------- 
-2673894b-451c-41cv-ae2b-58a8eefe3546                             AdventureWorks.bak                         
+2673894b-451c-41cv-ae2b-58a8eefe3546                             AdventureWorks.bak
 ```
 
 This command gets the expanded details of a given Database Migration to a SQL Virtual Machine.
@@ -73,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -Expand
-The child resources to include in the response.
+Complete migration details be included in the response.
 
 ```yaml
 Type: System.String
@@ -205,7 +209,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DataMigration.Models.Api20211030Preview.IDatabaseMigrationSqlVM
+### Microsoft.Azure.PowerShell.Cmdlets.DataMigration.Models.Api20220330Preview.IDatabaseMigrationSqlVM
 
 ## NOTES
 
@@ -220,10 +224,10 @@ INPUTOBJECT <IDataMigrationIdentity>: Identity Parameter
   - `[Id <String>]`: Resource identity path
   - `[ManagedInstanceName <String>]`: 
   - `[ResourceGroupName <String>]`: Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+  - `[SqlDbInstanceName <String>]`: 
   - `[SqlMigrationServiceName <String>]`: Name of the SQL Migration Service.
   - `[SqlVirtualMachineName <String>]`: 
   - `[SubscriptionId <String>]`: Subscription ID that identifies an Azure subscription.
   - `[TargetDbName <String>]`: The name of the target database.
 
 ## RELATED LINKS
-

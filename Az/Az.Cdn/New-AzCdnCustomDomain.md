@@ -1,85 +1,63 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.Cdn.dll-Help.xml
+external help file: 
 Module Name: Az.Cdn
-ms.assetid: 7060D3D7-B397-447E-88E3-B6F0D094770D
 online version: https://docs.microsoft.com/powershell/module/az.cdn/new-azcdncustomdomain
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/New-AzCdnCustomDomain.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/New-AzCdnCustomDomain.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/New-AzCdnCustomDomain.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/New-AzCdnCustomDomain.md
 ---
 
 # New-AzCdnCustomDomain
 
 ## SYNOPSIS
-Creates a custom domain for a CDN endpoint.
+Creates a new custom domain within an endpoint.
 
 ## SYNTAX
 
-### ByFieldsParameterSet (Default)
 ```
-New-AzCdnCustomDomain -HostName <String> -CustomDomainName <String> -EndpointName <String>
- -ProfileName <String> -ResourceGroupName <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
-```
-
-### ByObjectParameterSet
-```
-New-AzCdnCustomDomain -HostName <String> -CustomDomainName <String> -CdnEndpoint <PSEndpoint>
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzCdnCustomDomain -EndpointName <String> -Name <String> -ProfileName <String> -ResourceGroupName <String>
+ [-SubscriptionId <String>] [-HostName <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **New-AzCdnCustomDomain** cmdlet creates a custom domain for the Azure Content Delivery Network (CDN) endpoint.
+Creates a new custom domain within an endpoint.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: {{ Add title here }}
 ```powershell
-New-AzCdnCustomDomain -ResourceGroupName myresourcegroup -ProfileName mycdnprofile -EndpointName myendpoint -CustomDomainName cdn-example-com -HostName cdn.example.com
+{{ Add code here }}
 ```
 
-```Output
-HostName                        : cdn.example.com
-ValidationData                  :
-ResourceState                   : Active
-CustomHttpsProvisioningState    : Disabled
-CustomHttpsProvisioningSubstate : None
-ResourceGroupName               : myresourcegroup
-ProfileName                     : mycdnprofile
-EndpointName                    : myendpoint
-Id                              : /subscriptions/11111111-1111-1111-1111-111111111111/resourcegroups/myresourcegroup/providers
-                                  /Microsoft.Cdn/profiles/mycdnprofile/endpoints/myendpoint/customdomains/cdn-example-com
-Name                            : cdn-example-com
-Type                            : Microsoft.Cdn/profiles/endpoints/customdomains
-ProvisioningState               : Succeeded
+```output
+{{ Add output here }}
 ```
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+{{ Add code here }}
+```
+
+```output
+{{ Add output here }}
+```
+
+{{ Add description here }}
 
 ## PARAMETERS
 
-### -CdnEndpoint
-Specifies the CDN endpoint object to which the custom domain is added.
+### -AsJob
+Run the command as a job
 
 ```yaml
-Type: Microsoft.Azure.Commands.Cdn.Models.Endpoint.PSEndpoint
-Parameter Sets: ByObjectParameterSet
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -CustomDomainName
-Specifies the resource name of the custom domain.
-
-```yaml
-Type: System.String
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -87,12 +65,12 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
+The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -102,11 +80,11 @@ Accept wildcard characters: False
 ```
 
 ### -EndpointName
-Specifies the name of the endpoint.
+Name of the endpoint under the profile which is unique globally.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByFieldsParameterSet
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -117,7 +95,53 @@ Accept wildcard characters: False
 ```
 
 ### -HostName
-Specifies the host name of the custom domain.
+The host name of the custom domain.
+Must be a domain name.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+Name of the custom domain within an endpoint.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: CustomDomainName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoWait
+Run the command asynchronously
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProfileName
+Name of the CDN profile which is unique within the resource group.
 
 ```yaml
 Type: System.String
@@ -131,12 +155,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ProfileName
-Specifies the name of the profile.
+### -ResourceGroupName
+Name of the Resource group within the Azure subscription.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByFieldsParameterSet
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -146,17 +170,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResourceGroupName
-Specifies the name of the resource group to which the custom domain belongs.
+### -SubscriptionId
+Azure Subscription ID.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByFieldsParameterSet
+Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
-Default value: None
+Default value: (Get-AzContext).Subscription.Id
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -171,7 +195,7 @@ Aliases: cf
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -187,7 +211,7 @@ Aliases: wi
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -197,20 +221,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.Commands.Cdn.Models.Endpoint.PSEndpoint
-
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.Cdn.Models.CustomDomain.PSCustomDomain
+### Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.Api20210601.ICustomDomain
 
 ## NOTES
 
+ALIASES
+
 ## RELATED LINKS
-
-[Get-AzCdnCustomDomain](./Get-AzCdnCustomDomain.md)
-
-[Remove-AzCdnCustomDomain](./Remove-AzCdnCustomDomain.md)
-
-[Test-AzCdnCustomDomain](./Test-AzCdnCustomDomain.md)
-
 

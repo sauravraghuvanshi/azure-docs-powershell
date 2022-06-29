@@ -25,8 +25,8 @@ The **Remove-AzRelayNamespace** cmdlet removes the namespace from the specified 
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> Remove-AzRelayNamespace -ResourceGroupName Default-ServiceBus-WestUS -Name TestNameSpace-Relay1
+```powershell
+Remove-AzRelayNamespace -ResourceGroupName Default-ServiceBus-WestUS -Name TestNameSpace-Relay1
 ```
 
 Removes the Relay namespace `TestNameSpace-Relay1` from the specified resource group `Default-ServiceBus-WestUS`.

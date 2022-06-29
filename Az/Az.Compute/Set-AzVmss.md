@@ -48,7 +48,7 @@ The only action this cmdlet supports is Reimage.
 
 ### Example 1: Reimage a VMSS
 ```powershell
-PS C:\> Set-AzVmss -Reimage -ResourceGroupName "ContosoGroup" -VMScaleSetName "ContosoVMSS"
+Set-AzVmss -Reimage -ResourceGroupName "ContosoGroup" -VMScaleSetName "ContosoVMSS"
 ```
 
 This command reimages the VMSS named ContosoVMSS that belongs to the resource group named ContosoGroup.

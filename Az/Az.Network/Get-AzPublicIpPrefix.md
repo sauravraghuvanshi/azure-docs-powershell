@@ -32,8 +32,10 @@ The **Get-AzPublicIpPrefix** cmdlet gets one or more public IP prefixes in a res
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzPublicIpPrefix -ResourceGroupName myRg -Name myPublicIpPrefix1
+Get-AzPublicIpPrefix -ResourceGroupName myRg -Name myPublicIpPrefix1
+```
 
+```output
 Name                   : myPublicIpPrefix1
 ResourceGroupName      : myRg
 Location               : westus
@@ -60,8 +62,10 @@ This command gets a public IP prefix resource with myPublicIpPrefix1 in resource
 
 ### Example 2
 ```powershell
-PS C:\> Get-AzPublicIpPrefix -Name myPublicIpPrefix*
+Get-AzPublicIpPrefix -Name myPublicIpPrefix*
+```
 
+```output
 Name                   : myPublicIpPrefix1
 ResourceGroupName      : myRg
 Location               : westus

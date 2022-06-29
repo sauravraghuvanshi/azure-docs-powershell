@@ -27,9 +27,9 @@ The **New-AzDataLakeStoreItem** cmdlet creates a new file or folder in Data Lake
 ## EXAMPLES
 
 ### Example 1: Create a new file and a new folder
-```
-PS C:\>New-AzDataLakeStoreItem -AccountName "ContosoADL" -Path "/NewFile.txt"
-PS C:\> New-AzDataLakeStoreItem -AccountName "ContosoADL" -Path "/NewFolder" -Folder
+```powershell
+New-AzDataLakeStoreItem -AccountName "ContosoADL" -Path "/NewFile.txt"
+New-AzDataLakeStoreItem -AccountName "ContosoADL" -Path "/NewFolder" -Folder
 ```
 
 The first command creates the file NewFile.txt for the specified account.

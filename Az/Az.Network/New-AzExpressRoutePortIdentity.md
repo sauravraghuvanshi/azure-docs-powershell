@@ -25,10 +25,10 @@ The **New-AzExpressRoutePortIdentity** cmdlet creates a local Azure ExpressRoute
 
 ### Example 1
 ```powershell
-PS C:\> $parameters = @{
+$parameters = @{
     UserAssignedIdentityId='/subscriptions/<SubId>/resourceGroups/<ResourceGroupName>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<IdentityName>'
 	}
-PS C:\> New-AzExpressRoutePortIdentity @parameters
+New-AzExpressRoutePortIdentity @parameters
 ```
 
 ## PARAMETERS

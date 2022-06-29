@@ -39,8 +39,10 @@ For a detailed explanation of message enrichments in Azure IoT Hub, see https://
 
 ### Example 1
 ```powershell
-PS C:\> Remove-AzIotHubMessageEnrichment -ResourceGroupName "myresourcegroup" -Name "myiothub" -Key "newKey" -Passthru
+Remove-AzIotHubMessageEnrichment -ResourceGroupName "myresourcegroup" -Name "myiothub" -Key "newKey" -Passthru
+```
 
+```output
 True
 ```
 

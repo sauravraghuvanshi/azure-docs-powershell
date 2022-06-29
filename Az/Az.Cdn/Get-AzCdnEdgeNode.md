@@ -1,60 +1,59 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.Cdn.dll-Help.xml
+external help file: 
 Module Name: Az.Cdn
 online version: https://docs.microsoft.com/powershell/module/az.cdn/get-azcdnedgenode
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzCdnEdgeNode.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzCdnEdgeNode.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/Get-AzCdnEdgeNode.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/Get-AzCdnEdgeNode.md
 ---
 
 # Get-AzCdnEdgeNode
 
 ## SYNOPSIS
-Gets Azure CDN edgenodes.
+Edgenodes are the global Point of Presence (POP) locations used to deliver CDN content to end users.
 
 ## SYNTAX
 
 ```
-Get-AzCdnEdgeNode [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzCdnEdgeNode [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-AzCdnEdgeNode** cmdlet gets Azure CDN edgenodes.
+Edgenodes are the global Point of Presence (POP) locations used to deliver CDN content to end users.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: {{ Add title here }}
 ```powershell
-(Get-AzCdnEdgeNode).IpAddressGroups[0] | ConvertTo-Json
+{{ Add code here }}
 ```
 
-```Output
-{
-  "DeliveryRegion": "All",
-  "Ipv4Addresses": [
-    {
-      "BaseIpAddress": "23.200.152.0",
-      "PrefixLength": 21
-    }
-  ],
-  "Ipv6Addresses": [
-    {
-      "BaseIpAddress": "2600:1417:9800::",
-      "PrefixLength": 48
-    }
-  ]
-}
+```output
+{{ Add output here }}
 ```
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+{{ Add code here }}
+```
+
+```output
+{{ Add output here }}
+```
+
+{{ Add description here }}
 
 ## PARAMETERS
 
 ### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
+The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -68,12 +67,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.Cdn.EdgeNodes.PSEdgeNode
+### Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.Api20210601.IEdgeNode
 
 ## NOTES
 
+ALIASES
+
 ## RELATED LINKS
+

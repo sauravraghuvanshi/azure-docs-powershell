@@ -34,8 +34,11 @@ You can resume the pipeline by using the Resume-AzDataFactoryPipeline cmdlet.
 ## EXAMPLES
 
 ### Example 1: Suspend a pipeline
+```powershell
+Suspend-AzDataFactoryPipeline -ResourceGroupName "ADF" -Name "DPWikiSample" -DataFactoryName "WikiADF"
 ```
-PS C:\>Suspend-AzDataFactoryPipeline -ResourceGroupName "ADF" -Name "DPWikiSample" -DataFactoryName "WikiADF"
+
+```output
 Confirm
 Are you sure you want to suspend pipeline 'DPWikisample' in data factory 'WikiADF'? 
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y

@@ -21,6 +21,13 @@ Get-AzGalleryImageVersion [-ResourceGroupName] <String> [-GalleryName] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
+### SharedGalleryParameterSet
+```
+Get-AzGalleryImageVersion [-GalleryImageDefinitionName] <String> [[-Name] <String>] [-ExpandReplicationStatus]
+ -GalleryUniqueName <String> [-Scope <String>] -Location <String> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
 ### ResourceIdParameter
 ```
 Get-AzGalleryImageVersion [-ResourceId] <String> [-ExpandReplicationStatus]
@@ -34,8 +41,10 @@ Get or list gallery image versions.
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzGalleryImageVersion -ResourceGroupName rg1 -GalleryName gallery1 -GalleryImageDefinitionName image1 -GalleryImageVersionName 1.0.0
+Get-AzGalleryImageVersion -ResourceGroupName rg1 -GalleryName gallery1 -GalleryImageDefinitionName image1 -GalleryImageVersionName 1.0.0
+```
 
+```output
 ResourceGroupName        : rg1
 PublishingProfile        :
   TargetRegions[0]       :
@@ -72,8 +81,10 @@ Get the gallery image version.
 
 ### Example 2
 ```powershell
-PS C:\> Get-AzGalleryImageVersion -ResourceGroupName rg1 -GalleryName gallery1 -GalleryImageDefinitionName image1 -GalleryImageVersionName 1*
+Get-AzGalleryImageVersion -ResourceGroupName rg1 -GalleryName gallery1 -GalleryImageDefinitionName image1 -GalleryImageVersionName 1*
+```
 
+```output
 ResourceGroupName        : rg1
 PublishingProfile        :
   TargetRegions[0]       :
@@ -141,8 +152,10 @@ Get the gallery image versions that starts with "1".
 
 ### Example 3
 ```powershell
-PS C:\> Get-AzGalleryImageVersion -ResourceGroupName rg1 -GalleryName gallery1 -GalleryImageDefinitionName image1
+Get-AzGalleryImageVersion -ResourceGroupName rg1 -GalleryName gallery1 -GalleryImageDefinitionName image1
+```
 
+```output
 ResourceGroupName        : rg1
 PublishingProfile        :
   TargetRegions[0]       :
@@ -245,7 +258,7 @@ The name of the gallery image definition.
 
 ```yaml
 Type: System.String
-Parameter Sets: DefaultParameter
+Parameter Sets: DefaultParameter, SharedGalleryParameterSet
 Aliases:
 
 Required: True
@@ -270,12 +283,42 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -GalleryUniqueName
+The unique name of the Shared Image Gallery.
+
+```yaml
+Type: System.String
+Parameter Sets: SharedGalleryParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Location
+Location of the Shared Image Gallery.
+
+```yaml
+Type: System.String
+Parameter Sets: SharedGalleryParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -Name
 The name of the gallery image version.
 
 ```yaml
 Type: System.String
-Parameter Sets: DefaultParameter
+Parameter Sets: DefaultParameter, SharedGalleryParameterSet
 Aliases: GalleryImageVersionName
 
 Required: False
@@ -310,6 +353,21 @@ Aliases:
 
 Required: True
 Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Scope
+Specifies galleries shared to subscription or tenant.
+
+```yaml
+Type: System.String
+Parameter Sets: SharedGalleryParameterSet
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False

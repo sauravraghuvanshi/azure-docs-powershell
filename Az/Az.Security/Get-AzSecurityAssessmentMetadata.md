@@ -37,7 +37,7 @@ Gets security assessments types and metadta in a subscription. Security Assessme
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzSecurityAssessmentMetadata
+Get-AzSecurityAssessmentMetadata
 ```
 
 Gets all the built in assessments and the custom assessments that were configured on the current subscription.
@@ -48,7 +48,7 @@ Gets all the built in assessments and the custom assessments that were configure
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: IAzureContextContainer
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -63,7 +63,7 @@ Accept wildcard characters: False
 Resource name.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SubscriptionLevelResource
 Aliases:
 
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 ID of the security resource that you want to invoke the command on.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: ResourceId
 Aliases:
 

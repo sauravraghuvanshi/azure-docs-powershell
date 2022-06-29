@@ -41,7 +41,10 @@ The policy is the retention period, in days, for point-in-time restore backups.
 
 ### Example 1
 ```powershell
-PS C:\> Set-AzSqlInstanceDatabaseBackupShortTermRetentionPolicy -ResourceGroupName resourcegroup01 -InstanceName server01 -DatabaseName database01 -RetentionDays 35
+Set-AzSqlInstanceDatabaseBackupShortTermRetentionPolicy -ResourceGroupName resourcegroup01 -InstanceName server01 -DatabaseName database01 -RetentionDays 35
+```
+
+```output
 ResourceGroupName : resourcegroup01
 InstanceName      : instance01
 DatabaseName      : database01
@@ -53,7 +56,10 @@ This command sets the short term retention policy for database01 to 35 days.
 
 ### Example 2
 ```powershell
-PS C:\> Get-AzSqlInstanceDatabase -ResourceGroupName resourcegroup01 -InstanceName server01 -DatabaseName database01 | Set-AzSqlInstanceDatabaseBackupShortTermRetentionPolicy -RetentionDays 35
+Get-AzSqlInstanceDatabase -ResourceGroupName resourcegroup01 -InstanceName server01 -Name database01 | Set-AzSqlInstanceDatabaseBackupShortTermRetentionPolicy -RetentionDays 35
+```
+
+```output
 ResourceGroupName : resourcegroup01
 InstanceName      : instance01
 DatabaseName      : database01
@@ -65,7 +71,10 @@ This command sets the short term retention policy for database01 to 35 days via 
 
 ### Example 3
 ```powershell
-PS C:\> Set-AzSqlDeletedInstanceDatabaseBackup -ResourceGroupName "ContosoResourceGroup" -InstanceName "ContosoServer" -DatabaseName "DB1" | Set-AzSqlInstanceDatabaseBackupShortTermRetentionPolicy -RetentionDays 8
+Get-AzSqlDeletedInstanceDatabaseBackup -ResourceGroupName "ContosoResourceGroup" -InstanceName "ContosoServer" -DatabaseName "DB1" | Set-AzSqlInstanceDatabaseBackupShortTermRetentionPolicy -RetentionDays 8
+```
+
+```output
 ResourceGroupName : resourcegroup01
 InstanceName      : instance01
 DatabaseName      : database01

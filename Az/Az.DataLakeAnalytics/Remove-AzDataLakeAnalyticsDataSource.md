@@ -35,8 +35,8 @@ The **Remove-AzDataLakeAnalyticsDataSource** cmdlet removes a data source from a
 ## EXAMPLES
 
 ### Example 1: Remove a data source
-```
-PS C:\>Remove-AzDataLakeAnalyticsDataSource -Account "ContosoAdlAccount" -Blob "AzureStorage01"
+```powershell
+Remove-AzDataLakeAnalyticsDataSource -Account "ContosoAdlAccount" -Blob "AzureStorage01"
 ```
 
 This command removes the data source named AzureStorage01 from the account named ContosoAdlAccount.

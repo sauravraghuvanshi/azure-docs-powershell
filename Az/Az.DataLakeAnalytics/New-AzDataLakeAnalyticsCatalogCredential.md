@@ -35,8 +35,8 @@ The New-AzDataLakeAnalyticsCatalogCredential cmdlet creates a new credential to 
 ## EXAMPLES
 
 ### Example 1: Create a credential for a catalog specifying host and port
-```
-PS C:\> New-AzDataLakeAnalyticsCatalogCredential -AccountName "ContosoAdlAccount" `
+```powershell
+New-AzDataLakeAnalyticsCatalogCredential -AccountName "ContosoAdlAccount" `
                   -DatabaseName "databaseName" `
                   -CredentialName "exampleDbCred" `
                   -Credential (Get-Credential) `
@@ -46,8 +46,8 @@ PS C:\> New-AzDataLakeAnalyticsCatalogCredential -AccountName "ContosoAdlAccount
 This command creates the specified credential for the specified account, database, host and port using https protocol.
 
 ### Example 2: Create a credential for a catalog specifying full URI
-```
-PS C:\> New-AzDataLakeAnalyticsCatalogCredential -AccountName "ContosoAdlAccount" `
+```powershell
+New-AzDataLakeAnalyticsCatalogCredential -AccountName "ContosoAdlAccount" `
                   -DatabaseName "databaseName" `
                   -CredentialName "exampleDbCred" `
                   -Credential (Get-Credential) `

@@ -39,8 +39,10 @@ Gets a Key Vault managed Azure Storage Account if the name of the account is spe
 
 ### Example 1: List all Key Vault managed Storage Accounts
 ```powershell
-PS C:\> Get-AzKeyVaultManagedStorageAccount -VaultName 'myvault'
+Get-AzKeyVaultManagedStorageAccount -VaultName 'myvault'
+```
 
+```output
 Id                  : https://myvault.vault.azure.net:443/storage/mystorageaccount
 Vault Name          : myvault
 AccountName         : mystorageaccount
@@ -56,8 +58,10 @@ Lists all the accounts whose keys are managed by vault 'myvault'
 
 ### Example 2: Get a Key Vault managed Storage Account
 ```powershell
-PS C:\> Get-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -Name 'mystorageaccount'
+Get-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -Name 'mystorageaccount'
+```
 
+```output
 Id                  : https://myvault.vault.azure.net:443/storage/mystorageaccount
 Vault Name          : myvault
 AccountName         : mystorageaccount
@@ -76,8 +80,10 @@ Gets the details of Key Vault managed Storage Account of 'mystorageaccount' if i
 
 ### Example 3: List all Key Vault managed Storage Accounts using filtering
 ```powershell
-PS C:\> Get-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -Name "test*"
+Get-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -Name "test*"
+```
 
+```output
 Id                  : https://myvault.vault.azure.net:443/storage/test1
 Vault Name          : myvault
 AccountName         : test1

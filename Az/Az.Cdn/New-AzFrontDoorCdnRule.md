@@ -1,51 +1,80 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.Cdn.dll-Help.xml
+external help file: 
 Module Name: Az.Cdn
 online version: https://docs.microsoft.com/powershell/module/az.cdn/new-azfrontdoorcdnrule
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/New-AzFrontDoorCdnRule.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/New-AzFrontDoorCdnRule.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/New-AzFrontDoorCdnRule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/New-AzFrontDoorCdnRule.md
 ---
 
 # New-AzFrontDoorCdnRule
 
 ## SYNOPSIS
-Creates the rule.
+Creates a new delivery rule within the specified rule set.
 
 ## SYNTAX
 
 ```
-New-AzFrontDoorCdnRule
- -Action <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Cdn.AfdModels.PSAfdRuleAction]>
- [-Condition <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Cdn.AfdModels.PSAfdRuleCondition]>]
- -ProfileName <String> -ResourceGroupName <String> -RuleSetName <String> -RuleName <String> -Order <Int32>
- [-MatchProcessingBehavior <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+New-AzFrontDoorCdnRule -Name <String> -ProfileName <String> -ResourceGroupName <String> -SetName <String>
+ [-SubscriptionId <String>] [-Action <IDeliveryRuleAction1[]>] [-Condition <IDeliveryRuleCondition[]>]
+ [-MatchProcessingBehavior <MatchProcessingBehavior>] [-Order <Int32>] [-DefaultProfile <PSObject>] [-AsJob]
+ [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Creates the rule.
+Creates a new delivery rule within the specified rule set.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: {{ Add title here }}
 ```powershell
-New-AzFrontDoorCdnRule -Action $action -Condition $condition -ProfileName $profileName -ResourceGroupName $resourceGroupName -RuleSetName $ruleSetName -RuleName $ruleName -Order $order
+{{ Add code here }}
 ```
 
-Creates the rule.
+```output
+{{ Add output here }}
+```
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+{{ Add code here }}
+```
+
+```output
+{{ Add output here }}
+```
+
+{{ Add description here }}
 
 ## PARAMETERS
 
 ### -Action
-The set of actions for the delivery rule.
+A list of actions that are executed when all the conditions of a rule are satisfied.
+To construct, see NOTES section for ACTION properties and create a hash table.
 
 ```yaml
-Type: System.Collections.Generic.List`1[Microsoft.Azure.Commands.Cdn.AfdModels.PSAfdRuleAction]
+Type: Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.Api20210601.IDeliveryRuleAction1[]
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AsJob
+Run the command as a job
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -53,10 +82,11 @@ Accept wildcard characters: False
 ```
 
 ### -Condition
-The set of conditions for the delivery rule.
+A list of conditions that must be matched for the actions to be executed
+To construct, see NOTES section for CONDITION properties and create a hash table.
 
 ```yaml
-Type: System.Collections.Generic.List`1[Microsoft.Azure.Commands.Cdn.AfdModels.PSAfdRuleCondition]
+Type: Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.Api20210601.IDeliveryRuleCondition[]
 Parameter Sets: (All)
 Aliases:
 
@@ -71,9 +101,9 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -87,7 +117,37 @@ If this rule is a match should the rules engine continue running the remaining r
 If not present, defaults to Continue.
 
 ```yaml
-Type: String
+Type: Microsoft.Azure.PowerShell.Cmdlets.Cdn.Support.MatchProcessingBehavior
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+Name of the delivery rule which is unique within the endpoint.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: RuleName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoWait
+Run the command asynchronously
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -102,13 +162,15 @@ Accept wildcard characters: False
 The order in which the rules are applied for the endpoint.
 Possible values {0,1,2,3,………}.
 A rule with a lesser order will be applied before a rule with a greater order.
+Rule with order 0 is a special rule.
+It does not require any condition and actions listed in it will always be applied.
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -116,10 +178,10 @@ Accept wildcard characters: False
 ```
 
 ### -ProfileName
-The Azure Front Door profile name.
+Name of the Azure Front Door Standard or Azure Front Door Premium profile which is unique within the resource group.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -131,10 +193,10 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The Azure resource group name.
+Name of the Resource group within the Azure subscription.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -145,13 +207,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RuleName
-The Azure Front Door rule name.
+### -SetName
+Name of the rule set under the profile.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: RuleSetName
 
 Required: True
 Position: Named
@@ -160,17 +222,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RuleSetName
-The Azure Front Door rule set name.
+### -SubscriptionId
+Azure Subscription ID.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
-Default value: None
+Default value: (Get-AzContext).Subscription.Id
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -179,7 +241,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -195,7 +257,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -211,12 +273,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.Cdn.AfdModels.PSAfdRule
+### Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.Api20210601.IRule
 
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+ACTION <IDeliveryRuleAction1[]>: A list of actions that are executed when all the conditions of a rule are satisfied.
+  - `Name <DeliveryRuleAction>`: The name of the action for the delivery rule.
+
+CONDITION <IDeliveryRuleCondition[]>: A list of conditions that must be matched for the actions to be executed
+  - `Name <MatchVariable>`: The name of the condition for the delivery rule.
+
 ## RELATED LINKS
+

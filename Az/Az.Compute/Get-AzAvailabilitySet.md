@@ -27,9 +27,11 @@ You can specify the name of a specific availability set to get.
 ## EXAMPLES
 
 ### Example 1: Get a specific availability set
+```powershell
+Get-AzAvailabilitySet -ResourceGroupName "ResourceGroup11" -Name "AvailabilitySet03"
 ```
-PS C:\> Get-AzAvailabilitySet -ResourceGroupName "ResourceGroup11" -Name "AvailabilitySet03"
 
+```output
 ResourceGroupName         : ResourceGroup11
 Id                        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup11/providers/
                             Microsoft.Compute/availabilitySets/AvailabilitySet03
@@ -50,9 +52,11 @@ VirtualMachinesReferences : []
 This command gets the availability set named AvailabilitySet03 in the resource group named ResourceGroup11.
 
 ### Example 2: Get all availability sets
+```powershell
+Get-AzAvailabilitySet -ResourceGroupName "ResourceGroup11"
 ```
-PS C:\> Get-AzAvailabilitySet -ResourceGroupName "ResourceGroup11"
 
+```output
 ResourceGroupName         : ResourceGroup11
 Id                        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup11/providers/
                             Microsoft.Compute/availabilitySets/AvailabilitySet02
@@ -106,9 +110,11 @@ VirtualMachinesReferences : []
 This command gets all the availability sets in the resource group named ResourceGroup11.
 
 ### Example 3: Get all availability sets with filtering
+```powershell
+Get-AzAvailabilitySet -ResourceGroupName "ResourceGroup1*" -Name "AvailabilitySet0*"
 ```
-PS C:\> Get-AzAvailabilitySet -ResourceGroupName "ResourceGroup1*" -Name "AvailabilitySet0*"
 
+```output
 ResourceGroupName         : ResourceGroup11
 Id                        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup11/providers/
                             Microsoft.Compute/availabilitySets/AvailabilitySet02
@@ -146,9 +152,11 @@ VirtualMachinesReferences : []
 This command gets all the availability sets in the resource group named ResourceGroup11 that start with "AvailabilitySet0".
 
 ### Example 4: Get all availability sets with name starting with AvailabilitySet0
+```powershell
+Get-AzAvailabilitySet -Name AvailabilitySet0*
 ```
-PS C:\> Get-AzAvailabilitySet -Name AvailabilitySet0*
 
+```output
 ResourceGroupName         : ResourceGroup11
 Id                        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup11/providers/
                             Microsoft.Compute/availabilitySets/AvailabilitySet02

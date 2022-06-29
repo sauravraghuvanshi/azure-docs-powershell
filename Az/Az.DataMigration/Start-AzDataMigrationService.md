@@ -38,15 +38,15 @@ The Start-AzDataMigrationService cmdlet starts an instance of the Azure Database
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> Start-AzDataMigrationService -ResourceGroupName MyResourceGroup -ServiceName TestService
+```powershell
+Start-AzDataMigrationService -ResourceGroupName MyResourceGroup -ServiceName TestService
 ```
 
 The above example starts an Azure Database Migration Service instance named Test Service in a stopped state based on service name passed in as input
 
 ### Example 2
-```
-PS C:\> Start-AzDataMigrationService -InputObject $TestService
+```powershell
+Start-AzDataMigrationService -InputObject $TestService
 ```
 
 The above example starts an Azure Database Migration Service instance based on PSDataMigrationService passed in as input parameter
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
