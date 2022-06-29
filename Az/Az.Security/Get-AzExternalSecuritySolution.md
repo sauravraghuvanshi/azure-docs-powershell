@@ -44,10 +44,7 @@ Get external security solution
 
 ### Example 1
 ```powershell
-Get-AzExternalSecuritySolution
-```
-
-```output
+PS C:\> Get-AzExternalSecuritySolution
 ConnectivityState : Discovered
 DeviceType        : Azure Active Directory Identity Protection
 DeviceVendor      : microsoft
@@ -97,10 +94,7 @@ Get all the external security solutions in the subscription
 
 ### Example 2
 ```powershell
-Get-AzExternalSecuritySolution -ResourceGroupName "myservice1" -Location "centralus" -Name "aad_testservicews"
-```
-
-```output
+PS C:\> Get-AzExternalSecuritySolution -ResourceGroupName "myservice1" -Location "centralus" -Name "aad_testservicews"
 ConnectivityState : Discovered
 DeviceType        : Azure Active Directory Identity Protection
 DeviceVendor      : microsoft

@@ -55,23 +55,41 @@ Sets the PSPeering Object
 
 ## EXAMPLES
 
-### Example 1: Update Md5 Authentication Key
+### Update Md5 Authentication Key
 ```powershell
-$peering = Get-AzPeering -ResourceGroupName rg1 -Name "ContosoPeering"  
-$peering.Connections[0] = $peering.Connections[0] | Set-AzPeeringDirectConnectionObject -MD5AuthenticationKey $hash
-$peering | Update-AzPeering
+PS C:> $peering = Get-AzPeering -ResourceGroupName rg1 -PeerName "ContosoPeering"  
+PS C:> $peering.Connections[0] = $peering.Connections[0] | Set-AzPeeringDirectConnectionObject -MD5AuthenticationKey $hash
+PS C:> $peering | Update-AzPeering
 ```
 
 Sets the Md5 Authentication Key
 
-### Example 2: Update IPv4 Address for Exchange Peering
+### Update UseForPeeringService
 ```powershell
-$peering = Get-AzPeering -ResourceGroupName rg1 -Name "ContosoExchangePeering" 
-$peering.Connections[0] = $peering.Connections[0] | Set-AzPeeringExchangeConnectionObject -PeerSessionIPv4Address $ipv4Address
-Update-AzPeering -ResourceId $peering.Id $peering.Connections
+PS C:> Update-AzPeering -ResourceGroupName rg1 -Name ContosoPeering -UseForPeeringService $true
+
+Name                 : ContosoPeering
+Sku.Name             : Premium_Direct_Free
+Kind                 : Direct
+Connections          : {71}
+PeerAsn.Id           : /subscriptions//providers/Microsoft.Peering/peerAsns/Contoso
+UseForPeeringService : True
+PeeringLocation      : Seattle
+ProvisioningState    : Succeeded
+Location             : West US 2
+Id                   : /subscriptions//resourceGroups/rg1/providers/Microsoft.Peering/peerings/ContosoPeering
+Type                 : Microsoft.Peering/peerings
+Tags                 : {[tag2, value2], [tag1, value1]}
 ```
 
-```output
+Sets the Use for Peering Service Flag
+
+### Update IPv4 Address for Exchange Peering
+```powershell
+PS C:> $peering = Get-AzPeering -ResourceGroupName rg1  -PeerName "ContosoExchangePeering" 
+PS C:> $peering.Connections[0] = $peering.Connections[0] | Set-AzPeeringExchangeConnectionObject -PeerSessionIPv4Address $ipv4Address
+PS C:> Update-AzPeering -ResourceId $peering.Id $peering.Connections
+
 Name              : ContosoExchangePeering
 Sku.Name          : Basic_Exchange_Free
 Kind              : Exchange

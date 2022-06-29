@@ -42,10 +42,8 @@ Update the distributed tracing options for a device.
 
 ### Example 1
 ```powershell
-Set-AzIotHubDistributedTracing -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -SamplingMode Enabled -SamplingRate 22
-```
+PS C:\> Set-AzIotHubDistributedTracing -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -SamplingMode Enabled -SamplingRate 22
 
-```output
 DeviceId      : mydevice1
 Sampling Mode : Enabled
 Sampling Rate : 22%

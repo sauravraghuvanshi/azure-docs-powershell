@@ -39,7 +39,7 @@ The **Reset-AzVirtualNetworkGatewayConnection** cmdlet resets your virtual netwo
 
 ### Example 1
 ```powershell
-Reset-AzVirtualNetworkGatewayConnection -ResourceGroupName myRG -Name myTunnel
+PS C:\> Reset-AzVirtualNetworkGatewayConnection -ResourceGroupName myRG -Name myTunnel
 ```
 
 Resets the Virtual Network Gateway Connection with the name "myTunnel" within the resource group "myRG"

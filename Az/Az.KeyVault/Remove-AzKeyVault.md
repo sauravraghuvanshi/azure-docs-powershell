@@ -66,10 +66,8 @@ Note that although specifying the resource group is optional for this cmdlet, yo
 
 ### Example 1: Remove a key vault
 ```powershell
-Remove-AzKeyVault -VaultName "Contoso03Vault" -PassThru
-```
+PS C:\> Remove-AzKeyVault -VaultName "Contoso03Vault" -PassThru
 
-```output
 True
 ```
 
@@ -77,15 +75,22 @@ This command removes the key vault named Contoso03Vault from your current subscr
 
 ### Example 2: Remove a key vault from a specified resource group
 ```powershell
-Remove-AzKeyVault -Name "Contoso03Vault" -ResourceGroupName "Group14" -PassThru
-```
+PS C:\> Remove-AzKeyVault -Name "Contoso03Vault" -ResourceGroupName "Group14" -PassThru
 
-```output
 True
 ```
 
 This command removes the key vault named Contoso03Vault from the named resource group.
 If you do not specify the resource group name, the cmdlet searches for the named key vault to delete in your current subscription.
+
+### Example 3: Remove a managed hsm
+```powershell
+PS C:\>  Remove-AzKeyVault -Name "testManagedHsm" -Hsm -PassThru
+
+True
+```
+
+This command removes the managed hsm named testManagedHsm from your current subscription.
 
 ## PARAMETERS
 

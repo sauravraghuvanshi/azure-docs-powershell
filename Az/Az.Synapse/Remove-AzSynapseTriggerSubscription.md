@@ -39,23 +39,23 @@ The **Remove-AzSynapseTriggerSubscription** cmdlet unsubscribes the event trigge
 
 ### Example 1
 ```powershell
-Remove-AzSynapseTriggerSubscription -WorkspaceName ContosoWorkspace -Name ContosoTrigger
+PS C:\> Remove-AzSynapseTriggerSubscription -WorkspaceName ContosoWorkspace -Name ContosoTrigger
 ```
 
 This command will unsubscribe trigger called ContosoTrigger to the specified events from the trigger defintion.
 
 ### Example 2
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Remove-AzSynapseTriggerSubscription -Name ContosoTrigger
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Remove-AzSynapseTriggerSubscription -Name ContosoTrigger
 ```
 
 This command will unsubscribe trigger called ContosoTrigger to the specified events from the trigger defintion through pipeline.
 
 ### Example 3
 ```powershell
-$trigger = Get-AzSynapseTrigger -WorkspaceName ContosoWorkspace -Name ContosoTrigger
-$trigger | Remove-AzSynapseTriggerSubscription
+PS C:\> $trigger = Get-AzSynapseTrigger -WorkspaceName ContosoWorkspace -Name ContosoTrigger
+PS C:\> $trigger | Remove-AzSynapseTriggerSubscription
 ```
 
 This command will unsubscribe trigger called ContosoTrigger to the specified events from the trigger defintion through pipeline.

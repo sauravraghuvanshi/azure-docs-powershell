@@ -33,12 +33,10 @@ Adds or removes Retention Rule to existing Policy
 
 ### Example 1: Add Weekly Retention Rule
 ```powershell
-$pol = Get-AzDataProtectionPolicyTemplate
-$lifecycle = New-AzDataProtectionRetentionLifeCycleClientObject -SourceDataStore OperationalStore -SourceRetentionDurationType Weeks -SourceRetentionDurationCount 5
-Edit-AzDataProtectionPolicyRetentionRuleClientObject -Policy $pol -Name Weekly -LifeCycles $lifecycle -IsDefault $false
-```
+PS C:\> $pol = Get-AzDataProtectionPolicyTemplate
+PS C:\> $lifecycle = New-AzDataProtectionRetentionLifeCycleClientObject -SourceDataStore OperationalStore -SourceRetentionDurationType Weeks -SourceRetentionDurationCount 5
+PS C:\> Edit-AzDataProtectionPolicyRetentionRuleClientObject -Policy $pol -Name Weekly -LifeCycles $lifecycle -IsDefault $false
 
-```output
 DatasourceType            ObjectType
 --------------            ----------
 {Microsoft.Compute/disks} BackupPolicy
@@ -50,10 +48,8 @@ The third command adds a weekly retention rule to the default policy.
 
 ### Example 2: Remove Weekly Retention Rule
 ```powershell
-Edit-AzDataProtectionPolicyRetentionRuleClientObject -Policy $pol -Name Weekly -RemoveRule
-```
+PS C:\>  Edit-AzDataProtectionPolicyRetentionRuleClientObject -Policy $pol -Name Weekly -RemoveRule
 
-```output
 DatasourceType            ObjectType
 --------------            ----------
 {Microsoft.Compute/disks} BackupPolicy

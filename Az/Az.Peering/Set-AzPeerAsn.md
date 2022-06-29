@@ -27,10 +27,8 @@ Allows you to update contact information for a PeerAsn on the subscription.
 ### Example 1
 ```powershell
 #Get the Peer ASN object
-Get-AzPeerAsn -Name Contoso | Set-AzPeerAsn
-```
+PS C:> Get-AzPeerAsn -PeerName Contoso | Set-AzPeerAsn -Email noc1@contoso.com
 
-```output
 PeerContactInfo : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSContactInfo
 PeerName        : Contoso
 ValidationState : None

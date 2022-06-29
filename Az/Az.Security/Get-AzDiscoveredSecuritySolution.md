@@ -38,10 +38,7 @@ Security solutions are automatically discovered by Azure Security Center, use th
 
 ### Example 1
 ```powershell
-Get-AzDiscoveredSecuritySolution
-```
-
-```output
+PS C:\> Get-AzDiscoveredSecuritySolution
 Id             : /subscriptions/487bb485-b5b0-471e-9c0d-10717612f869/resourceGroups/myService1/providers/Microsoft.Secu
                  rity/locations/centralus/discoveredSecuritySolutions/ContosoWAF2
 Name           : ContosoWAF2
@@ -55,10 +52,7 @@ Get all the discovered security solutions in the subscription
 
 ### Example 2
 ```powershell
-Get-AzDiscoveredSecuritySolution -ResourceGroupName "myService1" -Location "centralus" -Name "ContosoWAF2"
-```
-
-```output
+PS C:\> Get-AzDiscoveredSecuritySolution -ResourceGroupName "myService1" -Location "centralus" -Name "ContosoWAF2"
 Id             : /subscriptions/487bb485-b5b0-471e-9c0d-10717612f869/resourceGroups/myService1/providers/Microsoft.Secu
                  rity/locations/centralus/discoveredSecuritySolutions/ContosoWAF2
 Name           : ContosoWAF2

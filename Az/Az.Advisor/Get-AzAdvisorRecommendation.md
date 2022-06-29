@@ -27,7 +27,7 @@ Get-AzAdvisorRecommendation [-ResourceId] <String> [-Category <String>]
 ```
 
 ## DESCRIPTION
-Obtains the list of Azure Advisor recommendations. Can be filtered by Category, ResourceId, Name etc.
+Obtains the list of Azure Advisor recommendations. Can be filtered by Category, resource-ID, name etc.
 
 ## EXAMPLES
 
@@ -37,8 +37,8 @@ Get-AzAdvisorRecommendation
 ```
 
 ```output
-ResourceId           : /subscriptions/{user_subscription}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/xyz/providers/Microsoft.Advisor/recommen
-                       dations/{recommendation_id}
+ResourceId                   : /subscriptions/{user_subscription}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/xyz/providers/Microsoft.Advisor/recommen
+                       dations/{recommendation-Id}
 Category             : Performance
 ExtendedProperties   : {}
 Impact               : Medium
@@ -50,7 +50,7 @@ RecommendationTypeId : 905a0026-8010-45b2-ab46-a92c3e4a5131
 Risk                 : None
 ShortDescription     : Microsoft.Azure.Commands.Advisor.Cmdlets.Models.PsRecommendationBaseShortDescription
 SuppressionIds       : {}
-Name                 : {recommendation_id}
+Name                 : {recommendation-Id}
 Type                 : Microsoft.Advisor/recommendations
 ```
 Gets the list of all recommendations.
@@ -61,8 +61,8 @@ Get-AzAdvisorRecommendation -Category Performance
 ```
 
 ```output
-ResourceId           : /subscriptions/{user_subscription}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/xyz/providers/Microsoft.Advisor/recommen
-                       dations/{recommendation_id}
+ResourceId                   : /subscriptions/{user_subscription}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/xyz/providers/Microsoft.Advisor/recommen
+                       dations/{recommendation-Id}
 Category             : Performance
 ExtendedProperties   : {}
 Impact               : Medium
@@ -74,7 +74,7 @@ RecommendationTypeId : 905a0026-8010-45b2-ab46-a92c3e4a5131
 Risk                 : None
 ShortDescription     : Microsoft.Azure.Commands.Advisor.Cmdlets.Models.PsRecommendationBaseShortDescription
 SuppressionIds       : {}
-Name                 : {recommendation_id}
+Name                 : {recommendation-Id}
 Type                 : Microsoft.Advisor/recommendations
 ```
 Gets the list of all recommendations filtered by category Performance.

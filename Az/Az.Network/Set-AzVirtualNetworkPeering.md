@@ -26,7 +26,7 @@ The **Set-AzVirtualNetworkPeering** cmdlet configures a virtual network peering.
 ## EXAMPLES
 
 ### Example 1: Change forwarded traffic configuration of a virtual network peering
-```powershell
+```
 # Get the virtual network peering you want to update information for
 Get-AzVirtualNetworkPeering -VirtualNetworkName "myVnet1" -ResourceGroupName "ResourceGroup" -Name "myVnet1ToMyVnet2"
 
@@ -38,7 +38,7 @@ Set-AzVirtualNetworkPeering -VirtualNetworkPeering $myVnet1ToMyVnet2
 ```
 
 ### Example 2: Change virtual network access of a virtual network peering
-```powershell
+```
 # Get the virtual network peering
 $myVnet1TomyVnet2 = Get-AzVirtualNetworkPeering -VirtualNetworkName "myVnet1" -ResourceGroupName "myResourceGroup" -Name "myVnet1TomyVnet2"
 
@@ -50,7 +50,7 @@ Set-AzVirtualNetworkPeering -VirtualNetworkPeering $myVnet1TomyVnet2
 ```
 
 ### Example 3: Change gateway transit property configuration of a virtual network peering
-```powershell
+```
 # Get the virtual network peering
 $myVnet1TomyVnet2 = Get-AzVirtualNetworkPeering -VirtualNetworkName "myVnet1" -ResourceGroupName "myResourceGroup" -Name "myVnet1TomyVnet2"
 
@@ -62,7 +62,7 @@ Set-AzVirtualNetworkPeering -VirtualNetworkPeering $myVnet1TomyVnet2
 ```
 
 ### Example 4: Use remote gateways in virtual network peering
-```powershell
+```
 # Get the virtual network peering 
 $myVnet1TomyVnet2 = Get-AzVirtualNetworkPeering -VirtualNetworkName "myVnet1" -ResourceGroupName "ResourceGroup001" -Name "myVnet1TomyVnet2"
 

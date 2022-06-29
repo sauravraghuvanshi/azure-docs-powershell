@@ -34,8 +34,8 @@ If you remove a hub, all linked services and pipelines in the hub are also remov
 ## EXAMPLES
 
 ### Example 1: Remove a hub
-```powershell
-Remove-AzDataFactoryHub -ResourceGroupName "ADFResourceGroup" -DataFactoryName "ADFDataFactory" -Name "ContosoDataHub"
+```
+PS C:\>Remove-AzDataFactoryHub -ResourceGroupName "ADFResourceGroup" -DataFactoryName "ADFDataFactory" -Name "ContosoDataHub"
 ```
 
 This command removes the hub named ContosoDataHub from the Azure resource group named ADFResourceGroup and the data factory named ADFDataFactory.

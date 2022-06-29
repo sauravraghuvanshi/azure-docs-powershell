@@ -43,9 +43,7 @@ Run a shell command (with kubectl, helm) on your aks cluster, support attaching 
 ### Example 1
 ```powershell
 Invoke-AzAksRunCommand -ResourceGroupName $resourceGroup -Name $clusterName -Command "kubectl get pods"
-```
 
-```output
 Id                : a887ecf432ad4e22a517cf4b5fb4e194
 ProvisioningState : Succeeded
 ExitCode          : 0
@@ -121,7 +119,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Execute the command without confirm
+Remove managed Kubernetes cluster without prompt
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

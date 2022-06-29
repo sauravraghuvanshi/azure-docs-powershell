@@ -21,8 +21,7 @@ Get-AzSecuritySecureScoreControlDefinition [-DefaultProfile <IAzureContextContai
 
 ### SubscriptionLevelResource
 ```
-Get-AzSecuritySecureScoreControlDefinition -Name <String> [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+Get-AzSecuritySecureScoreControlDefinition -Name <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,10 +31,8 @@ The Get-AzSecuritySecureScoreControlDefinition comlet gets security secure score
 
 ### Example 1
 ```powershell
-Get-AzSecuritySecureScoreControlDefinition
-```
+PS C:\> Get-AzSecuritySecureScoreControlDefinition
 
-```output
 Id                    : /providers/Microsoft.Security/secureScoreControlDefinitions/a9909064-42b4-4d34-8143-275477afe18b
 Name                  : a9909064-42b4-4d34-8143-275477afe18b
 Type                  : Microsoft.Security/secureScoreControlDefinitions
@@ -56,26 +53,11 @@ Gets all the security secure score control definitions in a subscription
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Name
-Resource name.
-
-```yaml
-Type: System.String
-Parameter Sets: SubscriptionLevelResource
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

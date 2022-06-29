@@ -40,10 +40,7 @@ If the **Get-AzVirtualNetworkGatewayConnection** cmdlet is issued without specif
 
 ### Example 1
 ```powershell
-Get-AzVirtualNetworkGatewayConnectionIkeSa -ResourceGroupName myRG -Name myTunnel
-```
-
-```output
+PS C:\> Get-AzVirtualNetworkGatewayConnectionIkeSa -ResourceGroupName myRG -Name myTunnel
 localEndpoint              : 52.180.160.154
 remoteEndpoint             : 104.208.54.1
 initiatorCookie            : 5490733703579933026

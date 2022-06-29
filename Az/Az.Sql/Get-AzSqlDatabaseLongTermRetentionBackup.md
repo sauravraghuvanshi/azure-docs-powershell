@@ -66,10 +66,9 @@ The **Get-AzSqlDatabaseLongTermRetentionBackup** cmdlet gets all long term reten
 
 ### Example 1: Get all backups for a location
 ```powershell
-Get-AzSqlDatabaseLongTermRetentionBackup -Location northeurope
-```
+PS C:\> Get-AzSqlDatabaseLongTermRetentionBackup -Location northeurope
 
-```output
+
 BackupExpirationTime			 : 3/22/2018 5:50:55 AM
 BackupName						 : 601061b7-d10b-46e0-bf77-a2bfb16a6add;131655666550000000
 BackupTime						 : 3/15/2018 5:50:55 AM
@@ -99,10 +98,9 @@ This command gets all long term retention backups for all databases (which may b
 
 ### Example 2: Get all backups for a location under a resource group
 ```powershell
-Get-AzSqlDatabaseLongTermRetentionBackup -Location northeurope -ResourceGroupName resourceGroup01
-```
+PS C:\> Get-AzSqlDatabaseLongTermRetentionBackup -Location northeurope -ResourceGroup resourceGroup01
 
-```output
+
 BackupExpirationTime			 : 3/22/2018 5:50:55 AM
 BackupName						     : 601061b7-d10b-46e0-bf77-a2bfb16a6add;131655666550000000
 BackupTime						     : 3/15/2018 5:50:55 AM
@@ -120,10 +118,9 @@ This command gets all long term retention backups for all databases (which may b
 
 ### Example 3: Get a specific long term retention backup
 ```powershell
-Get-AzSqlDatabaseLongTermRetentionBackup -Location northeurope -ServerName server01 -DatabaseName database01 -BackupName "601061b7-d10b-46e0-bf77-a2bfb16a6add;131655666550000000"
-```
+PS C:\> Get-AzSqlDatabaseLongTermRetentionBackup -Location northeurope -ServerName server01 -DatabaseName database01 -BackupName "601061b7-d10b-46e0-bf77-a2bfb16a6add;131655666550000000"
 
-```output
+
 BackupExpirationTime			 : 3/22/2018 5:50:55 AM
 BackupName						     : 601061b7-d10b-46e0-bf77-a2bfb16a6add;131655666550000000
 BackupTime						     : 3/15/2018 5:50:55 AM
@@ -141,10 +138,9 @@ This command gets the backup with name 601061b7-d10b-46e0-bf77-a2bfb16a6add;1316
 
 ### Example 4: Get all long term retention backups for a database
 ```powershell
-Get-AzSqlDatabase -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 | Get-AzSqlDatabaseLongTermRetentionBackup
-```
+PS C:\> Get-AzSqlDatabase -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 | Get-AzSqlDatabaseLongTermRetentionBackup
 
-```output
+
 BackupExpirationTime			 : 3/22/2018 5:50:55 AM
 BackupName						     : 601061b7-d10b-46e0-bf77-a2bfb16a6add;131655666550000000
 BackupTime						     : 3/15/2018 5:50:55 AM
@@ -162,10 +158,8 @@ This command gets all long term retention backups for database01
 
 ### Example 5: Get long term retention backups using filtering
 ```powershell
-Get-AzSqlDatabaseLongTermRetentionBackup -Location northeurope -ServerName server01 -DatabaseName database01 -BackupName "601061b7*"
-```
+PS C:\> Get-AzSqlDatabaseLongTermRetentionBackup -Location northeurope -ServerName server01 -DatabaseName database01 -BackupName "601061b7*"
 
-```output
 BackupExpirationTime			 : 3/22/2018 11:43:18 PM
 BackupName					       : 601061b7-164c-4a4a-88e5-7158d092d503;131656309980000000
 BackupTime						     : 3/15/2018 11:43:18 PM

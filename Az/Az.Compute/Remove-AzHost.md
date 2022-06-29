@@ -38,15 +38,15 @@ This cmdlet will delete a Host
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzHost -ResourceGroupName $resourceGroupName -HostGroupName $hostGroupName -Name $hostName | Remove-AzHost
+```
+PS C:\> Get-AzHost -ResourceGroupName $resourceGroupName -HostGroupName $hostGroupName -Name $hostName | Remove-AzHost
 ```
 
 This command gets and removes the given host.
 
 ### Example 2
-```powershell
-Remove-AzHost -ResourceGroupName $resourceGroupName -HostGroupName $hostGroupName -Name $hostName
+```
+PS C:\> Remove-AzHost -ResourceGroupName $resourceGroupName -HostGroupName $hostGroupName -Name $hostName
 ```
 
 This command removes the given host.

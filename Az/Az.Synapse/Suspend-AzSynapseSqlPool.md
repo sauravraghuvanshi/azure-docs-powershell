@@ -45,7 +45,7 @@ The **Suspend-AzSynapseSqlPool** cmdlet suspends an Azure Synapse Analytics SQL 
 
 ### Example 1
 ```powershell
-Suspend-AzSynapseSqlPool -WorkspaceName ContosoWorkspace -Name ContosoSqlPool
+PS C:\> Suspend-AzSynapseSqlPool -WorkspaceName ContosoWorkspace -Name ContosoSqlPool
 ```
 
 This command suspends an active Azure Synapse Analytics SQL pool.

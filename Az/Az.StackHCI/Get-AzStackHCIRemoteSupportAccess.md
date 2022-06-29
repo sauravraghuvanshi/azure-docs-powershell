@@ -24,13 +24,13 @@ Gets remote support access.
 ## EXAMPLES
 
 ### EXAMPLE 1
-```powershell
-Get-AzStackHCIRemoteSupportAccess -Cluster
+```poweshell
+C:\PS\>Get-AzStackHCIRemoteSupportAccess -Cluster
 ```
 
 ### EXAMPLE 2
 ```powershell
-Get-AzStackHCIRemoteSupportAccess -Cluster -IncludeExpired
+C:\PS\>Get-AzStackHCIRemoteSupportAccess -Cluster -IncludeExpired
 ```
 
 ## PARAMETERS

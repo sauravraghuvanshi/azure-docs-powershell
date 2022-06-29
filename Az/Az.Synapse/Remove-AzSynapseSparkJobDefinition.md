@@ -39,23 +39,23 @@ The **Remove-AzSynapseSparkJobDefinition** cmdlet removes a Spark job definition
 
 ### Example 1
 ```powershell
-Remove-AzSynapseSparkJobDefinition -WorkspaceName ContosoWorkspace -Name ContosoSparkJobDefinition
+PS C:\> Remove-AzSynapseSparkJobDefinition -WorkspaceName ContosoWorkspace -Name ContosoSparkJobDefinition
 ```
 
 This cmdlet removes the Spark job definition named ContosoSparkJobDefinition from the workspace named ContosoWorkspace.
 
 ### Example 2
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Remove-AzSynapseSparkJobDefinition -Name ContosoSparkJobDefinition
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Remove-AzSynapseSparkJobDefinition -Name ContosoSparkJobDefinition
 ```
 
 This cmdlet removes the Spark job definition named ContosoSparkJobDefinition from the workspace named ContosoWorkspace through pipeline.
 
 ### Example 3
 ```powershell
-$sparkJobDefinition = Get-AzSynapseSparkJobDefinition -WorkspaceName ContosoWorkspace -Name ContosoSparkJobDefinition
-$sparkJobDefinition | Remove-AzSynapseSparkJobDefinition
+PS C:\> $sparkJobDefinition = Get-AzSynapseSparkJobDefinition -WorkspaceName ContosoWorkspace -Name ContosoSparkJobDefinition
+PS C:\> $sparkJobDefinition | Remove-AzSynapseSparkJobDefinition
 ```
 
 This cmdlet removes the Spark job definition named ContosoSparkJobDefinition from the workspace named ContosoWorkspace through pipeline.

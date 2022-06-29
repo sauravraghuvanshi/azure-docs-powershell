@@ -25,11 +25,9 @@ The **Get-AzSnapshot** cmdlet gets the properties of a snapshot.
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzSnapshot
 ```
+PS C:\> Get-AzSnapshot
 
-```output
 ResourceGroupName  : ResourceGroupName1
 ManagedBy          :
 Sku                : Microsoft.Azure.Management.Compute.Models.SnapshotSku
@@ -82,11 +80,9 @@ Tags               : {}
 This command gets the properties of all snapshots of the subscription.
 
 ### Example 2
-```powershell
-Get-AzSnapshot -ResourceGroupName "ResourceGroupName1"
 ```
+PS C:\> Get-AzSnapshot -ResourceGroupName "ResourceGroupName1"
 
-```output
 ResourceGroupName  : ResourceGroupName1
 ManagedBy          :
 Sku                : Microsoft.Azure.Management.Compute.Models.SnapshotSku
@@ -123,11 +119,9 @@ Tags               : {}
 This command gets the properties of all snapshots in the resource group named "ResourceGroupName1"
 
 ### Example 3
-```powershell
-Get-AzSnapshot -ResourceGroupName "ResourceGroupName1" -SnapshotName "SnapshotName1"
 ```
+PS C:\> Get-AzSnapshot -ResourceGroupName "ResourceGroupName1" -SnapshotName "SnapshotName1"
 
-```output
 ResourceGroupName  : ResourceGroupName1
 ManagedBy          :
 Sku                : Microsoft.Azure.Management.Compute.Models.SnapshotSku
@@ -148,11 +142,9 @@ Tags               : {}
 This command gets the properties of the snapshot named "SnapshotName1" in the resource group named "ResourceGroupName1"
 
 ### Example 4
-```powershell
-Get-AzSnapshot -SnapshotName "SnapshotName*"
 ```
+PS C:\> Get-AzSnapshot -SnapshotName "SnapshotName*"
 
-```output
 ResourceGroupName  : ResourceGroupName1
 ManagedBy          :
 Sku                : Microsoft.Azure.Management.Compute.Models.SnapshotSku

@@ -27,12 +27,10 @@ The **Get-AzSqlInstanceAdvancedDataSecurityPolicy** cmdlet retrieves the Advance
 
 ### Example 1: Gets managed instance Advanced Data Security
 ```powershell
-Get-AzSqlInstanceAdvancedDataSecurityPolicy `
+PS C:\>  Get-AzSqlInstanceAdvancedDataSecurityPolicy `
             -ResourceGroupName "ResourceGroup01" `
             -InstanceName "ManagedInstance01" `
-```
 
-```output
 ResourceGroupName	         : ResourceGroup01
 ManagedInstanceName		     : ManagedInstance01
 IsEnabled		             : True
@@ -40,13 +38,11 @@ IsEnabled		             : True
 
 ### Example 2: Gets managed instance Advanced Data Security from managed instance resource
 ```powershell
-Get-AzSqlInstance `
+PS C:\>  Get-AzSqlInstance `
            -ResourceGroupName "ResourceGroup01" `
            -Name "ManagedInstance01" `
            | Get-AzSqlInstanceAdvancedDataSecurityPolicy
-```
 
-```output
 ResourceGroupName	         : ResourceGroup01
 ManagedInstanceName		     : ManagedInstance01
 IsEnabled		             : True

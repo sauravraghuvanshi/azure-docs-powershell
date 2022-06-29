@@ -26,8 +26,8 @@ The **Test-AzDataLakeAnalyticsAccount** cmdlet checks for the existence of a Dat
 ## EXAMPLES
 
 ### Example 1: Test whether an account exists
-```powershell
-Test-AzDataLakeAnalyticsAccount -Name "ContosoAdlAccount"
+```
+PS C:\>Test-AzDataLakeAnalyticsAccount -Name "ContosoAdlAccount"
 ```
 
 This command tests whether the account named ContosoAdlAccount exists.

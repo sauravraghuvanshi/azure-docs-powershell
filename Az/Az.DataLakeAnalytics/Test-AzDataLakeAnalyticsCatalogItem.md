@@ -26,8 +26,8 @@ The **Test-AzDataLakeAnalyticsCatalogItem** cmdlet checks for the existence of a
 ## EXAMPLES
 
 ### Example 1: Test whether a catalog item exists
-```powershell
-Test-AzDataLakeAnalyticsCatalogItem -Account "ContosoAdlAccount" -ItemType Schema -Path "databaseName.schemaName"
+```
+PS C:\>Test-AzDataLakeAnalyticsCatalogItem -Account "ContosoAdlAccount" -ItemType Schema -Path "databaseName.schemaName"
 ```
 
 This command tests whether a specified Schema item exists.

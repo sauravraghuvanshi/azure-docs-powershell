@@ -41,7 +41,7 @@ Update an application.
 
 ### Example 1: Update a Windows Virtual Desktop Application
 ```powershell
-Update-AzWvdApplication -ResourceGroupName ResourceGroupName `
+PS C:\> Update-AzWvdApplication -ResourceGroupName ResourceGroupName `
                              -GroupName ApplicationGroupName `
                              -Name ApplicationName `
                              -FilePath 'C:\windows\system32\mspaint.exe' `
@@ -51,9 +51,7 @@ Update-AzWvdApplication -ResourceGroupName ResourceGroupName `
                              -IconPath 'C:\windows\system32\mspaint.exe' `
                              -CommandLineSetting 'Allow' `
                              -ShowInPortal:$true
-```
 
-```output
 Name                                 Type
 ----                                 ----
 ApplicationGroupName/ApplicationName Microsoft.DesktopVirtualization/applicationgroups/applications

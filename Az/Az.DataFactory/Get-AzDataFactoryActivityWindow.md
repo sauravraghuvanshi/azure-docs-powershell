@@ -39,11 +39,8 @@ The **Get-AzDataFactoryActivityWindow** cmdlet gets information about the activi
 ## EXAMPLES
 
 ### Example 1: Get activity windows associated with a data factory
-```powershell
-Get-AzDataFactoryActivityWindow -DataFactoryName "WikiADF" -ResourceGroupName "ADF" -Top 3
 ```
-
-```output
+PS C:\>Get-AzDataFactoryActivityWindow -DataFactoryName "WikiADF" -ResourceGroupName "ADF" -Top 3
 ResourceGroupName : ADF
 DataFactoryName   : WikiADF
 PipelineName      : DP_WikipediaSamplePipeline

@@ -25,13 +25,13 @@ Enables Remote Support allows authorized Microsoft Support users to remotely acc
 ## EXAMPLES
 
 ### EXAMPLE 1
-```powershell
-Enable-AzStackHCIRemoteSupport -AccessLevel Diagnostics -ExpireInMinutes 1440 -SasCredential "Sample SAS"
+```poweshell
+C:\PS\>Enable-AzStackHCIRemoteSupport -AccessLevel Diagnostics -ExpireInMinutes 1440 -SasCredential "Sample SAS"
 ```
 
 ### EXAMPLE 2
 ```powershell
-Enable-AzStackHCIRemoteSupport -AccessLevel DiagnosticsRepair -ExpireInMinutes 1440 -SasCredential "Sample SAS" -AgreeToRemoteSupportConsent
+C:\PS\>Enable-AzStackHCIRemoteSupport -AccessLevel DiagnosticsRepair -ExpireInMinutes 1440 -SasCredential "Sample SAS" -AgreeToRemoteSupportConsent
 ```
 
 ## PARAMETERS

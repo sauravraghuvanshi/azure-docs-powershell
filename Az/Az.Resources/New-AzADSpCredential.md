@@ -97,19 +97,19 @@ Creates key credentials or password credentials for an service principal.
 
 ### Example 1: Create key credentials for service principal
 ```powershell
-$credential = New-Object -TypeName "Microsoft.Azure.PowerShell.Cmdlets.Resources.MSGraph.Models.ApiV10.MicrosoftGraphKeyCredential" `
+PS C:\> $credential = New-Object -TypeName "Microsoft.Azure.PowerShell.Cmdlets.Resources.MSGraph.Models.ApiV10.MicrosoftGraphKeyCredential" `
                                  -Property @{'Key' = $cert;
                                  'Usage'       = 'Verify'; 
                                  'Type'        = 'AsymmetricX509Cert'
                                  }
-New-AzADSpCredential -ObjectId $Id -KeyCredentials $credential
+PS C:\> New-AzADSpCredential -ObjectId $Id -KeyCredentials $credential
 ```
 
 Create key credentials for service principal
 
 ### Example 2: Create password credentials for service principal
 ```powershell
-Get-AzADServicePrincipal -ApplicationId $appId | New-AzADSpCredential -StartDate $startDate -EndDate $endDate
+PS C:\> Get-AzADServicePrincipal -ApplicationId $appId | New-AzADSpCredential -StartDate $startDate -EndDate $endDate
 ```
 
 Create password credentials for service principal

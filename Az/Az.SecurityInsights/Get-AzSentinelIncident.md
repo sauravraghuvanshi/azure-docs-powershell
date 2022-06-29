@@ -58,14 +58,14 @@ This example gets all the the Incidents using a connection object
 
 ### Example 2
 ```powershell
-$Incidents = Get-AzSentinelIncident -ResourceGroupName "myResourceGroup" -WorkspaceName "myWorkspaceName"
+PS C:\> $Incidents = Get-AzSentinelIncident -ResourceGroupName "myResourceGroup" -WorkspaceName "myWorkspaceName"
 ```
 
 This example gets all of the Incidents in the specified workspace, and then stores it in the $Incidents variable.
 
 ### Example 3
 ```powershell
-$Incident = Get-AzSentinelIncident -ResourceGroupName "myResourceGroup" -WorkspaceName "myWorkspaceName" -IncidentId "myIncidentId"
+PS C:\> $Incident = Get-AzSentinelIncident -ResourceGroupName "myResourceGroup" -WorkspaceName "myWorkspaceName" -IncidentId "myIncidentId"
 ```
 
 This example gets a specific Incident in the specified workspace, and then stores it in the $Incident variable.<br/>

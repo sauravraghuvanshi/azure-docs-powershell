@@ -26,11 +26,8 @@ Specify the name of a sync agent to see information for only that sync agent.
 ## EXAMPLES
 
 ### Example 1: Get all instances of Azure SQL Sync Agent assigned to an Azure SQL Server
-```powershell
-Get-AzSqlSyncAgent -ResourceGroupName "ResourceGroup01" -ServerName "Server01" | Format-List
 ```
-
-```output
+PS C:\>Get-AzSqlSyncAgent -ResourceGroupName "ResourceGroup01" -ServerName "Server01" | Format-List
 ResourceId                  : subscriptions/{subscriptionId}/resourceGroups/{ResourceGroup01}/servers/{Server01}/syncAgents/{SyncAgent01}
 ResourceGroupName           : ResourceGroup01
 ServerName                  : Server01
@@ -59,11 +56,8 @@ State                       : Online
 This command gets information about all the Azure SQL Sync Agents assigned to an Azure SQL Server.
 
 ### Example 2: Get information about an Azure SQL Sync Agent
-```powershell
-Get-AzSqlSyncAgent -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -Name "SyncAgent01" | Format-List
 ```
-
-```output
+PS C:\>Get-AzSqlSyncAgent -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -Name "SyncAgent01" | Format-List
 ResourceId                  : subscriptions/{subscriptionId}/resourceGroups/{ResourceGroup01}/servers/{Server01}/syncAgents/{SyncAgent01}
 ResourceGroupName           : ResourceGroup01
 ServerName                  : Server01
@@ -80,11 +74,8 @@ State                       : Online
 This command gets information about the Azure SQL Database Sync Agent with name "SyncAgent01"
 
 ### Example 3: Get all instances of Azure SQL Sync Agent assigned to an Azure SQL Server using filtering
-```powershell
-Get-AzSqlSyncAgent -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -Name SyncAgent* | Format-List
 ```
-
-```output
+PS C:\>Get-AzSqlSyncAgent -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -Name SyncAgent* | Format-List
 ResourceId                  : subscriptions/{subscriptionId}/resourceGroups/{ResourceGroup01}/servers/{Server01}/syncAgents/{SyncAgent01}
 ResourceGroupName           : ResourceGroup01
 ServerName                  : Server01

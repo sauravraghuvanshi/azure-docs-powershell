@@ -39,10 +39,8 @@ Get the details of an IoT device module or list modules located on an IoT device
 
 ### Example 1
 ```powershell
-Get-AzIotHubModule -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -ModuleId "myModule1"
-```
+PS C:\> Get-AzIotHubModule -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -ModuleId "myModule1"
 
-```output
 ModuleId                   : myModule1
 DeviceId                   : myDevice1
 GenerationId               : 637148941292917073
@@ -59,10 +57,8 @@ Get the details of an IoT device module in an IoT Hub.
 
 ### Example 2
 ```powershell
-Get-AzIotHubModule -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" 
-```
+PS C:\> Get-AzIotHubModule -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" 
 
-```output
 Module Id Device Id Connection State Authentication Last Activity Time
 --------- --------- ---------------- -------------- ------------------
 module1   myDevice1 Disconnected     Sas            1/1/0001 12:00:00 AM

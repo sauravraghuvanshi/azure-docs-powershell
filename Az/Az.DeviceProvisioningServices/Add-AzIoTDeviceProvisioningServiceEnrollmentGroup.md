@@ -54,25 +54,25 @@ Create an enrollment group in an Azure IoT Hub Device Provisioning Service.
 
 ### Example 1
 ```powershell
-Add-AzIoTDeviceProvisioningServiceEnrollmentGroup -ResourceGroupName "myresourcegroup" -DpsName "mydps" -Name "enroll1" -AttestationType SymmetricKey
+PS C:\> Add-AzIoTDeviceProvisioningServiceEnrollmentGroup -ResourceGroupName "myresourcegroup" -DpsName "mydps" -Name "enroll1" -AttestationType SymmetricKey
 ```
 
 Create an enrollment with attestation type SymmetricKey
 
 ### Example 2
 ```powershell
-Add-AzIoTDeviceProvisioningServiceEnrollmentGroup -ResourceGroupName "myresourcegroup" -DpsName "mydps" -Name "enroll1" -AttestationType X509 -PrimaryCertificate "D:/primary.cer"
+PS C:\> Add-AzIoTDeviceProvisioningServiceEnrollmentGroup -ResourceGroupName "myresourcegroup" -DpsName "mydps" -Name "enroll1" -AttestationType X509 -PrimaryCertificate "D:/primary.cer"
 ```
 
 Create an enrollment with attestation type X509
 
 ### Example 3
 ```powershell
-$tag = @{}
-$tag.Add("environment","test")
-$desired = @{}
-$desired.add("version_dps", "dps1")
-Add-AzIoTDeviceProvisioningServiceEnrollmentGroup -ResourceGroupName "myresourcegroup" -DpsName "mydps" -Name "enroll1" -AttestationType SymmetricKey -tag $tag -Desired $desired
+PS C:\> $tag = @{}
+PS C:\> $tag.Add("environment","test")
+PS C:\> $desired = @{}
+PS C:\> $desired.add("version_dps", "dps1")
+PS C:\> Add-AzIoTDeviceProvisioningServiceEnrollmentGroup -ResourceGroupName "myresourcegroup" -DpsName "mydps" -Name "enroll1" -AttestationType SymmetricKey -tag $tag -Desired $desired
 ```
 
 Create an enrollment with attestation type SymmetricKey and initial twin state.

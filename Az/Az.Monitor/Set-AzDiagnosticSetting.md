@@ -42,24 +42,21 @@ This cmdlet implements the ShouldProcess pattern, i.e. it might request confirma
 
 ### Example 1: Enable all metrics and logs for a resource
 ```powershell
-Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True
+PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True
 ```
 
 This command enables all available metrics and logs for Resource01.
 
 ### Example 2: Disable all metrics and logs
 ```powershell
-Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $False
+PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $False
 ```
 
 This command disables all available metrics and logs for the resource Resource01.
 
 ### Example 3: Enable/disable multiple metrics categories
 ```powershell
-Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $False -MetricCategory MetricCategory1,MetricCategory2
-```
-
-```output
+PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $False -MetricCategory MetricCategory1,MetricCategory2
 StorageAccountId   : <storageAccountId>
 StorageAccountName : <storageAccountName>
 Metrics
@@ -88,10 +85,7 @@ All the other categories remain the same.
 
 ### Example 4: Enable/disable multiple log categories
 ```powershell
-Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True -Category Category1,Category2
-```
-
-```output
+PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True -Category Category1,Category2
 StorageAccountId   : <storageAccountId>
 StorageAccountName : <storageAccountName>
 Metrics
@@ -120,7 +114,7 @@ All the other metrics and logs categories remain the same.
 
 ### Example 5: Enable a time grain and multiple categories
 ```powershell
-Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True -Category Category1,Category2 -Timegrain PT1M
+PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True -Category Category1,Category2 -Timegrain PT1M
 ```
 
 This command enables only Category1, Category2, and time grain PT1M.
@@ -128,7 +122,7 @@ All other time grains and categories are unchanged.
 
 ### Example 6: Using pipeline
 ```powershell
-Get-AzDiagnosticSetting -ResourceId "Resource01" | Set-AzDiagnosticSetting -Enabled $True -Category Category1,Category2
+PS C:\>Get-AzDiagnosticSetting -ResourceId "Resource01" | Set-AzDiagnosticSetting -Enabled $True -Category Category1,Category2
 ```
 
 This command uses the PowerShell pipeline to set (no change made) a diagnostic setting.
@@ -336,7 +330,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionEnabled
-Indicates whether retention of diagnostic information is enabled. Note that this only applies when saving data to a Storage account.
+Indicates whether retention of diagnostic information is enabled.
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -351,7 +345,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionInDays
-Specifies the retention policy, in days. Note that this only applies when saving data to a Storage account.
+Specifies the retention policy, in days.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]

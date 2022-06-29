@@ -41,14 +41,14 @@ Get the device registration state or the registration state of devices under the
 
 ### Example 1
 ```powershell
-Get-AzIoTDeviceProvisioningServiceRegistration -ResourceGroupName "myresourcegroup" -DpsName "mydps" -RegistrationId "enroll1"
+PS C:\> Get-AzIoTDeviceProvisioningServiceRegistration -ResourceGroupName "myresourcegroup" -DpsName "mydps" -RegistrationId "enroll1"
 ```
 
 Get the device registration state details in an Azure IoT Hub Device Provisioning Service.
 
 ### Example 2
 ```powershell
-Get-AzIoTDeviceProvisioningServiceRegistration -ResourceGroupName "myresourcegroup" -DpsName "mydps" -EnrollmentId "grp-enroll1"
+PS C:\> Get-AzIoTDeviceProvisioningServiceRegistration -ResourceGroupName "myresourcegroup" -DpsName "mydps" -EnrollmentId "grp-enroll1"
 ```
 
 List all the registration state of devices in this enrollmentGroup.

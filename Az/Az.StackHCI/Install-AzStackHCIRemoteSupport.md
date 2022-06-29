@@ -24,8 +24,8 @@ Install-AzStackHCIRemoteSupport installs Remote Support Deployment module.
 ## EXAMPLES
 
 ### EXAMPLE 1
-```powershell
-Install-AzStackHCIRemoteSupport
+```poweshell
+C:\PS\>Install-AzStackHCIRemoteSupport
 ```
 
 ## PARAMETERS

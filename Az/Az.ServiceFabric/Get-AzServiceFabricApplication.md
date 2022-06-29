@@ -39,19 +39,19 @@ This cmdlet gets the application details in the specified resource group and clu
 
 ### Example 1
 ```powershell
-$resourceGroupName = "testRG"
-$clusterName = "testCluster"
-$appName = "testApp"
-Get-AzServiceFabricApplication -ResourceGroupName $resourceGroupName -ClusterName $clusterName -Name $appName
+PS C:\> $resourceGroupName = "testRG"
+PS C:\> $clusterName = "testCluster"
+PS C:\> $appName = "testApp"
+PS C:\> Get-AzServiceFabricApplication -ResourceGroupName $resourceGroupName -ClusterName $clusterName -Name $appName
 ```
 
 This example gets the application resource details for the application "testApp".
 
 ### Example 2
 ```powershell
-$resourceGroupName = "testRG"
-$clusterName = "testCluster"
-Get-AzServiceFabricApplication -ResourceGroupName $resourceGroupName -ClusterName $clusterName
+PS C:\> $resourceGroupName = "testRG"
+PS C:\> $clusterName = "testCluster"
+PS C:\> Get-AzServiceFabricApplication -ResourceGroupName $resourceGroupName -ClusterName $clusterName
 ```
 
 This example gets a list of the applications under the cluster "testCluster".

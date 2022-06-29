@@ -28,8 +28,8 @@ The **New-AzDataLakeAnalyticsAccount** cmdlet creates an Azure Data Lake Analyti
 ## EXAMPLES
 
 ### Example 1: Create a Data Lake Analytics account
-```powershell
-New-AzDataLakeAnalyticsAccount -Name "ContosoAdlAccount" -ResourceGroupName "ContosoOrg" -Location "East US 2" -DefaultDataLakeStore "ContosoAdlStore"
+```
+PS C:\>New-AzDataLakeAnalyticsAccount -Name "ContosoAdlAccount" -ResourceGroupName "ContosoOrg" -Location "East US 2" -DefaultDataLakeStore "ContosoAdlStore"
 ```
 
 This command creates a Data Lake Analytics account named ContosoAdlAccount that uses the ContosoAdlStore Data Store, in the resource group named ContosoOrg.

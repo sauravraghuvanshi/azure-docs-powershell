@@ -29,24 +29,24 @@ The **Add-AzVmssExtension** cmdlet adds an extension to the Virtual Machine Scal
 ## EXAMPLES
 
 ### Example 1: Add an extension to the VMSS
-```powershell
-Add-AzVmssExtension -VirtualMachineScaleSet $VMSS -Name $ExtName -Publisher $Publisher -Type $ExtType -TypeHandlerVersion $ExtVer -AutoUpgradeMinorVersion $True
+```
+PS C:\> Add-AzVmssExtension -VirtualMachineScaleSet $VMSS -Name $ExtName -Publisher $Publisher -Type $ExtType -TypeHandlerVersion $ExtVer -AutoUpgradeMinorVersion $True
 ```
 
 This command adds an extension to the VMSS.
 
 ### Example 2: Add an extension to the VMSS with settings and protected settings
-```powershell
-$Settings = @{"fileUris" = "[]"; "commandToExecute" = ""};
-$ProtectedSettings = @{"storageAccountName" = $stoname; "storageAccountKey" = $stokey};
+```
+PS C:\> $Settings = @{"fileUris" = "[]"; "commandToExecute" = ""};
+PS C:\> $ProtectedSettings = @{"storageAccountName" = $stoname; "storageAccountKey" = $stokey};
 
-Add-AzVmssExtension -VirtualMachineScaleSet $vmss -Name $vmssExtensionName -Publisher $vmssPublisher  `
+PS C:\> Add-AzVmssExtension -VirtualMachineScaleSet $vmss -Name $vmssExtensionName -Publisher $vmssPublisher  `
   -Type $vmssExtensionType -TypeHandlerVersion $ExtVer -AutoUpgradeMinorVersion $True  `
   -Setting $Settings -ProtectedSetting $ProtectedSettings
 ```
 
 ### Example 3: Add an extension to the VMSS with settings and protected settings
-```powershell
+```
 $BatchFile = "runbook.sh"
 $ResourceGroupName = "HelloRG"
 $VMScaleSetName = "HelloVmSS"

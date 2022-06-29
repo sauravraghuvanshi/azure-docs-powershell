@@ -45,11 +45,10 @@ The New-AzNetworkWatcherConnectionMonitorObject cmdlet creates a connection moni
 
 ### Example 1
 ```powershell
-$cmtest = New-AzNetworkWatcherConnectionMonitorObject -Location westcentralus -Name cmV2test -TestGroup $testGroup1, $testGroup2 -Tag @{"name" = "value"}
-$cmtest
+PS> $cmtest = New-AzNetworkWatcherConnectionMonitorObject -Location westcentralus -Name cmV2test -TestGroup $testGroup1, $testGroup2 -Tag @{"name" = "value"}
+PS> $cmtest
 ```
 
-```output
 NetworkWatcherName : NetworkWatcher_westcentralus
 ResourceGroupName  : NetworkWatcherRG
 Name               : cmV2test
@@ -163,7 +162,7 @@ Notes              :
 Tags               : {
                        "name": "value"
                      }
-```      
+        
    
 
 ## PARAMETERS

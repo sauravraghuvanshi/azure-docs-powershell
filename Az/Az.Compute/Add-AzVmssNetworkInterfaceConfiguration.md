@@ -29,8 +29,8 @@ The **Add-AzVmssNetworkInterfaceConfiguration** cmdlet adds a network interface 
 ## EXAMPLES
 
 ### Example 1: Add a network interface configuration to the VMSS
-```powershell
-Add-AzVmssNetworkInterfaceConfiguration -VirtualMachineScaleSet $VMSS -Name "Test" -Primary $True -IPConfiguration $IPCfg
+```
+PS C:\> Add-AzVmssNetworkInterfaceConfiguration -VirtualMachineScaleSet $VMSS -Name "Test" -Primary $True -IPConfiguration $IPCfg
 ```
 
 This command adds a network interface configuration to the VMSS.

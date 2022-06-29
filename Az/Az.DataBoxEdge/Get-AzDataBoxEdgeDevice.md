@@ -86,10 +86,7 @@ The **Get-AzDataBoxEdgeDevice** cmdlet gets the information about the available 
 
 ### Example 1
 ```powershell
-Get-AzDataBoxEdgeDevice
-```
-
-```output
+PS C:\>Get-AzDataBoxEdgeDevice
 Name               ResourceGroupName  Model   Location
 ----               -----------------  -----   --------
 deviceNameOne      resourceGroupName1 Edge    eastus
@@ -99,10 +96,7 @@ deviceNameThree    resourceGroupName3 Gateway eastus
 
 ### Example 2
 ```powershell
-Get-AzDataBoxEdgeDevice -ResourceId /subscriptions/subscriptionId/resourcegroups/resourceGroupName/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/deviceName
-```
-
-```output
+PS C:\>Get-AzDataBoxEdgeDevice -ResourceId /subscriptions/subscriptionId/resourcegroups/resourceGroupName/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/deviceName
 Name            ResourceGroupName    Model   Location
 ----            -----------------    -----   --------
 deviceName      resourceGroupName    Edge    eastus
@@ -110,10 +104,7 @@ deviceName      resourceGroupName    Edge    eastus
 
 ### Example 3
 ```powershell
-Get-AzDataBoxEdgeDevice -ResourceGroupName resourceGroupName -Name deviceName
-```
-
-```output
+PS C:\>Get-AzDataBoxEdgeDevice -ResourceGroupName resourceGroupName -DeviceName deviceName
 Name            ResourceGroupName    Model   Location
 ----            -----------------    -----   --------
 deviceName      resourceGroupName    Edge    eastus
@@ -167,7 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Device Name
+Resource Group Name
 
 ```yaml
 Type: System.String

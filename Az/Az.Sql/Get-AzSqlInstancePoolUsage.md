@@ -39,10 +39,8 @@ The **Get-AzSqlInstancePoolUsage** cmdlet returns information an Azure SQL Insta
 
 ### Example 1 : Gets the usage of an Azure SQL Instance pool
 ```powershell
-Get-AzSqlInstancePoolUsage -ResourceGroupName resourcegroup01 -Name instancepool0
-```
+PS C:\> Get-AzSqlInstancePoolUsage -ResourceGroupName resourcegroup01 -Name instancepool0
 
-```output
 Id             : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/instancePools/instancepool0/usages/vcore_utilization
 CurrentValue   : 2
 Limit          : 8
@@ -72,11 +70,9 @@ Gets the usage for the Azure SQL Instance pool instancepool0.
 
 ### Example 2: Gets the usage of an Azure SQL Instance pool using an instance pool object
 ```powershell
-$instancePool = Get-AzSqlInstancePool -ResourceGroupName resourcegroup01 -Name instancepool0
-Get-AzSqlInstancePoolUsage -InstancePool $instancePool
-```
+PS C:\> $instancePool = Get-AzSqlInstancePool -ResourceGroupName resourcegroup01 -Name instancepool0
+PS C:\> Get-AzSqlInstancePoolUsage -InstancePool $instancePool
 
-```output
 Id             : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/instancePools/instancepool0/usages/vcore_utilization
 CurrentValue   : 2
 Limit          : 8
@@ -106,10 +102,8 @@ Gets the usage for the Azure SQL Instance pool instancepool0 using an instance p
 
 ### Example 3: Gets the usage of an Azure SQL Instance pool using an instance pool resource id
 ```powershell
-Get-AzSqlInstancePoolUsage -ResourceId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/instancePools/instancePool0"
-```
+PS C:\> Get-AzSqlInstancePoolUsage -ResourceId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/instancePools/instancePool0"
 
-```output
 Id             : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/instancePools/instancepool0/usages/vcore_utilization
 CurrentValue   : 2
 Limit          : 8
@@ -139,10 +133,8 @@ Gets the usage for the Azure SQL Instance pool instancepool0 using an instance p
 
 ### Example 3: Gets the usage of an Azure SQL Instance pool with a breakdown of the managed instance usages within the pool.
 ```powershell
-Get-AzSqlInstancePoolUsage -ResourceGroupName resourcegroup01 -Name instancepool0 -ExpandChildren
-```
+PS C:\> Get-AzSqlInstancePoolUsage -ResourceGroupName resourcegroup01 -Name instancepool0 -ExpandChildren
 
-```output
 Id             : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/instancePools/instancepool0/usages/vcore_utilization
 CurrentValue   : 2
 Limit          : 8

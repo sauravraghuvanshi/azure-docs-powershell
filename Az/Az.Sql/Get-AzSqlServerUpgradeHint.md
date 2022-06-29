@@ -30,11 +30,8 @@ This cmdlet returns hints for all databases hosted on the specified server.
 ## EXAMPLES
 
 ### Example 1: Get combined recommendations
-```powershell
-Get-AzSqlServerUpgradeHint -ResourceGroupName "ResourceGroup01" -ServerName "Server01"
 ```
-
-```output
+PS C:\>Get-AzSqlServerUpgradeHint -ResourceGroupName "ResourceGroup01" -ServerName "Server01"
 ElasticPools Databases           
 ------------ ---------           
 {}           {database01, database02}

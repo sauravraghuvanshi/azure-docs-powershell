@@ -32,22 +32,22 @@ The **Get-AzActionGroup** cmdlet gets one or more action groups.
 ## EXAMPLES
 
 ### Example 1: Get an action group by subscription ID
-```powershell
-Get-AzActionGroup
+```
+PS C:\>Get-AzActionGroup
 ```
 
 This command lists all the action group for the current subscription.
 
 ### Example 2: Get action groups for the given resource group
-```powershell
-Get-AzActionGroup -ResourceGroupName "Default-activityLogAlerts"
+```
+PS C:\>Get-AzActionGroup -ResourceGroup "Default-activityLogAlerts"
 ```
 
 This command lists action groups for the given resource group.
 
 ### Example 3: Get an action group.
-```powershell
-Get-AzActionGroup -ResourceGroupName "Default-activityLogAlerts" -Name "actionGroup1"
+```
+PS C:\>Get-AzActionGroup -ResourceGroup "Default-activityLogAlerts" -Name "actionGroup1"
 ```
 
 This command lists one (a list with a single element) action group.

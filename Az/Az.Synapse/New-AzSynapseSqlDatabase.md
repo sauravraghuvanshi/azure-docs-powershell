@@ -35,7 +35,7 @@ The **Get-AzSynapseSqlDatabase** cmdlet gets information about an Azure Synapse 
 
 ### Example 1
 ```powershell
-New-AzSynapseSqlDatabase -WorkspaceName ContosoWorkspace -Name ContosoSqlDatabase
+PS C:\> New-AzSynapseSqlDatabase -WorkspaceName ContosoWorkspace -Name ContosoSqlDatabase
 ```
 
 This command creates an Azure Synapse Analytics SQL database.

@@ -24,8 +24,8 @@ The **Get-AzApplicationGatewayAvailableWafRuleSet** cmdlet gets all available we
 ## EXAMPLES
 
 ### Example 1
-```powershell
-$availableRuleSets = Get-AzApplicationGatewayAvailableWafRuleSet
+```
+PS C:\>$availableRuleSets = Get-AzApplicationGatewayAvailableWafRuleSet
 ```
 
 This commands returns all the available web application firewall rule sets.

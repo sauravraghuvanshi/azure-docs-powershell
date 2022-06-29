@@ -32,15 +32,15 @@ The **Get-AzManagedApplicationDefinition** cmdlet gets managed application defin
 ## EXAMPLES
 
 ### Example 1: Get all managed application definitions under a resource group
-```powershell
-Get-AzManagedApplicationDefinition -ResourceGroupName "MyRG"
+```
+PS C:\>Get-AzManagedApplicationDefinition -ResourceGroupName "MyRG"
 ```
 
 This command gets the managed application definitions under resource group "MyRG"
 
 ### Example 2: Get a managed application definition
-```powershell
-Get-AzManagedApplicationDefinition -ResourceGroupName "MyRG" -Name "myManagedAppDef"
+```
+PS C:\>Get-AzManagedApplicationDefinition -ResourceGroupName "MyRG" -Name "myManagedAppDef"
 ```
 
 This command gets the managed application definition "myManagedAppDef" under resource group "MyRG"

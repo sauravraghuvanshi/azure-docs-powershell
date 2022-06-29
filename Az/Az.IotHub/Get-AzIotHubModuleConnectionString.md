@@ -39,10 +39,8 @@ List connection string of all modules or a specified module of a target IoT devi
 
 ### Example 1
 ```powershell
-Get-AzIotHubModuleConnectionString -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -Deviceid "myDevice1"
-```
+PS C:\> Get-AzIotHubModuleConnectionString -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -Deviceid "myDevice1"
 
-```output
 Module Id Connection String
 --------- -----------------
 module1   HostName=myiothub.azure-devices.net;DeviceId=myDevice1;ModuleId=module1;SharedAccessKey=/X4yj******     
@@ -53,10 +51,8 @@ Show all modules connection string of a target IoT device in an Iot Hub.
 
 ### Example 2
 ```powershell
-Get-AzIotHubModuleConnectionString -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -ModuleId "module1" -KeyType secondary
-```
+PS C:\> Get-AzIotHubMCS -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -ModuleId "module1" -KeyType secondary
 
-```output
 Module Id Connection String
 --------- -----------------
 module1   HostName=myiothub.azure-devices.net;DeviceId=myDevice1;ModuleId=module1;SharedAccessKey=/X4yj******

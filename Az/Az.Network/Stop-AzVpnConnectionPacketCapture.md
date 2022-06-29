@@ -40,19 +40,16 @@ Stops Packet Capture Operation on a Vpn connection and will upload the result on
 
 ### Example 1
 ```powershell
-$rgname = "testRg"
-$storeName = "teststorage"
-$containerName = "packetcaptureresults"
-$key = Get-AzStorageAccountKey -ResourceGroupName $rgname -Name $storeName
-$context = New-AzStorageContext -StorageAccountName $storeName -StorageAccountKey $key[0].Value
-New-AzStorageContainer -Name $containerName -Context $context
-$container = Get-AzStorageContainer -Name $containerName -Context $context
-$now = Get-Date
-$sasurl = New-AzStorageContainerSASToken -Name $containerName -Context $context -Permission "rwd" -StartTime $now.AddHours(-1) -ExpiryTime $now.AddDays(1) -FullUri
-Stop-AzVpnConnectionPacketCapture -ResourceGroupName $rgname -Name "testconn" -ParentResourceName "VpnGw1" -LinkConnectionName "SiteLink1,SiteLink2" -SasUrl $sasurl
-```
-
-```output
+PS C:\> $rgname = "testRg"
+ $storeName = "teststorage"
+ $containerName = "packetcaptureresults"
+ $key = Get-AzStorageAccountKey -ResourceGroupName $rgname -Name $storeName
+ $context = New-AzStorageContext -StorageAccountName $storeName -StorageAccountKey $key[0].Value
+ New-AzStorageContainer -Name $containerName -Context $context
+ $container = Get-AzStorageContainer -Name $containerName -Context $context
+ $now=get-date
+ $sasurl = New-AzureStorageContainerSASToken -Name $containerName -Context $context -Permission "rwd" -StartTime $now.AddHours(-1) -ExpiryTime $now.AddDays(1) -FullUri
+PS C:\> Stop-AzVpnConnectionPacketCapture -ResourceGroupName $rgname -Name "testconn" -ParentResourceName "VpnGw1" -LinkConnectionName "SiteLink1,SiteLink2" -SasUrl $sasurl
 Code              : Succeeded
 EndTime           : 10/1/2019 12:54:51 AM
 StartTime         : 10/1/2019 12:53:40 AM
@@ -71,19 +68,16 @@ Id                :
 
 ### Example 2
 ```powershell
-$rgname = "testRg"
-$storeName = "teststorage"
-$containerName = "packetcaptureresults"
-$key = Get-AzStorageAccountKey -ResourceGroupName $rgname -Name $storeName
-$context = New-AzStorageContext -StorageAccountName $storeName -StorageAccountKey $key[0].Value
-$container = Get-AzStorageContainer -Name $containerName -Context $context
-$now = Get-Date
-$sasurl = New-AzStorageContainerSASToken -Name $containerName -Context $context -Permission "rwd" -StartTime $now.AddHours(-1) -ExpiryTime $now.AddDays(1) -FullUri
-$conn = Get-AzVpnConnection -name "testconn" -ResourceGroupName $rgname
-Stop-AzVpnConnectionPacketCapture -InputObject $conn -SasUrl $sasurl -LinkConnectionName "SiteLink1,SiteLink2"
-```
-
-```output
+PS C:\> $rgname = "testRg"
+ $storeName = "teststorage"
+ $containerName = "packetcaptureresults"
+ $key = Get-AzStorageAccountKey -ResourceGroupName $rgname -Name $storeName
+ $context = New-AzStorageContext -StorageAccountName $storeName -StorageAccountKey $key[0].Value
+ $container = Get-AzStorageContainer -Name $containerName -Context $context
+ $now=get-date
+ $sasurl = New-AzureStorageContainerSASToken -Name $containerName -Context $context -Permission "rwd" -StartTime $now.AddHours(-1) -ExpiryTime $now.AddDays(1) -FullUri
+ $conn = Get-AzVpnConnection -name "testconn" -ResourceGroupName $rgname
+PS C:\> Stop-AzVpnConnectionPacketCapture -InputObject $conn -SasUrl $sasurl -LinkConnectionName "SiteLink1,SiteLink2"
 Code              : Succeeded
 EndTime           : 10/1/2019 12:54:51 AM
 StartTime         : 10/1/2019 12:53:40 AM

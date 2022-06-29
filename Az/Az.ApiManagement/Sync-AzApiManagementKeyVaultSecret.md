@@ -35,7 +35,7 @@ Refreshes NamedValue or Certificate created by KeyVault.
 ### Example 1
 ```powershell
 $apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-Get-AzApiManagementCertificate -ResourceId $kvcert.Id | Sync-AzApiManagementKeyVaultSecret
+Get-AzApiManagementCertificate -ResourceId $kvcert.Id | Sync-AzApiManagementKeyVaultObject
 ```
 
 This command refreshes NamedValue or Certificate created by KeyVault.

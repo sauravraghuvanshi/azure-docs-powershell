@@ -29,11 +29,9 @@ The **New-AzServiceBusSubscription** cmdlet creates a new subscription to the sp
 ## EXAMPLES
 
 ### Example 1
-```powershell
-New-AzServiceBusSubscription -ResourceGroup Default-ServiceBus-WestUS -NamespaceName SB-Example1 -TopicName SB-Topic_exampl1 -SubscriptionName SB-TopicSubscription-Example1
 ```
+PS C:\> New-AzServiceBusSubscription -ResourceGroup Default-ServiceBus-WestUS -NamespaceName SB-Example1 -TopicName SB-Topic_exampl1 -SubscriptionName SB-TopicSubscription-Example1
 
-```output
 Name                                      : SB-TopicSubscription-Example1
 AccessedAt                                : 1/20/2017 3:18:54 AM
 AutoDeleteOnIdle                          : 10675199.02:48:05.4775807

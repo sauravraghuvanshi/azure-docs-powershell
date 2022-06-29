@@ -25,11 +25,11 @@ The **Get-AzVirtualNetworkUsageList** cmdlet gets per subnet usage for the speci
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzVirtualNetworkUsageList -ResourceGroupName test -Name usagetest
 ```
+PS C:\> Get-AzVirtualNetworkUsageList -ResourceGroupName test -Name usagetest
 
-```output
+Get-AzVirtualNetworkUsageList -ResourceGroupName test -Name usagetest
+
 Name         : Subnet size and usage
 Id           : /subscriptions/sub1/resourceGroups/test/providers/Microsoft.Network/virtualNetworks/usagetest/subnets/subnet
 CurrentValue : 1

@@ -26,9 +26,8 @@ Retrieves the subscription's current quota information in a particular region.
 
 ### Example 1: Get information about the Streaming Unit quota for a region
 ```powershell
-Get-AzStreamAnalyticsQuota -Location 'WestCentralUS'
-```
-```output
+PS C:\> Get-AzStreamAnalyticsQuota -Location 'WestCentralUS'
+
 Name              Type
 ----              ----
 StreamingUnits    Microsoft.StreamAnalytics/quotas

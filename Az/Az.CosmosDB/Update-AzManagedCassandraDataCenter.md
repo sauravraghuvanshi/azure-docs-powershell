@@ -7,39 +7,54 @@ content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CosmosD
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CosmosDB/CosmosDB/help/Update-AzManagedCassandraDataCenter.md
 ---
 
-# Update-AzManagedCassandraDatacenter
+# Update-AzManagedCassandraDataCenter
 
 ## SYNOPSIS
 Update an existing Azure Managed Instances for Apache Cassandra data center.
 
 ## SYNTAX
 
-### ByNameParameterSet (Default)
+### NameParameterSet (Default)
 ```
-Update-AzManagedCassandraDatacenter -ResourceGroupName <String> -ClusterName <String> -DatacenterName <String>
- [-NodeCount <Int32>] [-Base64EncodedCassandraYamlFragment <String>] [-BackupStorageCustomerKeyUri <String>]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### ByResourceIdParameterSet
-```
-Update-AzManagedCassandraDatacenter -ResourceId <String> [-NodeCount <Int32>]
- [-Base64EncodedCassandraYamlFragment <String>] [-BackupStorageCustomerKeyUri <String>]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-AzManagedCassandraDataCenter 
+ -ResourceGroupName <String> 
+ -ClusterName <String>
+ -DataCenterName <String>
+ [-NodeCount <int>]
+ [-Tag <Hashtable>]
+ [-Base64EncodedCassandraYamlFragment <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### ByObjectParameterSet
+### ResourceIdParameterSet
 ```
-Update-AzManagedCassandraDatacenter -InputObject <PSDataCenterResource> [-NodeCount <Int32>]
- [-Base64EncodedCassandraYamlFragment <String>] [-BackupStorageCustomerKeyUri <String>]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-AzManagedCassandraDataCenter 
+ -ResourceId <String> 
+ [-NodeCount <int>]
+ [-Tag <Hashtable>]
+ [-Base64EncodedCassandraYamlFragment <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### ByParentObjectParameterSet
+### ObjectParameterSet
 ```
-Update-AzManagedCassandraDatacenter -ParentObject <PSClusterResource> [-NodeCount <Int32>]
- [-Base64EncodedCassandraYamlFragment <String>] [-BackupStorageCustomerKeyUri <String>]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-AzManagedCassandraDataCenter 
+ -InputObject <PSDataCenterResource> 
+ [-NodeCount <int>]
+ [-Tag <Hashtable>]
+ [-Base64EncodedCassandraYamlFragment <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ParentObjectParameterSet
+```
+Update-AzManagedCassandraDataCenter 
+ -ParentObject <PSClusterResource>
+ -DataCenterName <String>
+ [-NodeCount <int>]
+ [-Tag <Hashtable>]
+ [-Base64EncodedCassandraYamlFragment <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,29 +64,14 @@ The **Update-AzManagedCassandraDataCenter** cmdlet updates an existing managed C
 
 ### Example 1
 ```powershell
-Update-AzManagedCassandraDataCenter `
- -ResourceGroupName "resourceGroupName" `
- -ClusterName "clusterName" `
- -DataCenterName "dataCenterName" `
- -NodeCount 3
+PS C:\> Update-AzManagedCassandraDataCenter `
+ -ResourceGroupName {resourceGroupName} `
+ -ClusterName {clusterName} `
+ -DataCenterName {dataCenterName} `
+ -NodeCount {N}
 ```
 
 ## PARAMETERS
-
-### -BackupStorageCustomerKeyUri
-URI to KeyVault key that is used to encrypt Cassandra backups. If not set, will use Azure's own keys. Ensure the system assigned identity of the cluster has been assigned appropriate permissions (key get/wrap/unwrap permissions) on the key.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Base64EncodedCassandraYamlFragment
 Fragment of configuration to include in `cassandra.yaml` on nodes of this data center, Base64 encoded.
@@ -93,22 +93,7 @@ Name of the managed Cassandra cluster.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByNameParameterSet
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DatacenterName
-Managed Cassandra Datacenter Name.
-
-```yaml
-Type: System.String
-Parameter Sets: ByNameParameterSet
+Parameter Sets: NameParameterSet
 Aliases:
 
 Required: True
@@ -133,30 +118,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Managed Cassandra Datacenter object
-
-```yaml
-Type: Microsoft.Azure.Commands.CosmosDB.Models.PSDataCenterResource
-Parameter Sets: ByObjectParameterSet
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -NodeCount
 The number of nodes to create in this data center.
 
 ```yaml
-Type: System.Nullable`1[System.Int32]
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: 3
 Accept pipeline input: False
@@ -168,7 +138,7 @@ Cassandra cluster object to create a data center in.
 
 ```yaml
 Type: Microsoft.Azure.Commands.CosmosDB.Models.PSClusterResource
-Parameter Sets: ByParentObjectParameterSet
+Parameter Sets: ParentObjectParameterSet
 Aliases:
 
 Required: True
@@ -183,7 +153,7 @@ Name of resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByNameParameterSet
+Parameter Sets: NameParameterSet
 Aliases:
 
 Required: True
@@ -193,43 +163,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResourceId
-ResourceId of the resource.
+### -Tag
+Hashtable of tags to set on the data center resource.
 
 ```yaml
-Type: System.String
-Parameter Sets: ByResourceIdParameterSet
+Type: System.Hashtable
+Parameter Sets: (All)
 Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
 
 Required: False
 Position: Named

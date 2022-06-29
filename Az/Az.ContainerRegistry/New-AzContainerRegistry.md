@@ -27,10 +27,8 @@ The New-AzContainerRegistry cmdlet creates a container registry.
 
 ### Example 1: Create a container registry with a new storage account.
 ```powershell
-New-AzContainerRegistry -ResourceGroupName "MyResourceGroup" -Name "MyRegistry" -Sku "Basic"
-```
+PS C:\>New-AzContainerRegistry -ResourceGroupName "MyResourceGroup" -Name "MyRegistry" -Sku "Basic"
 
-```output
    Container registry location: eastus
 
 Registry Name     Sku        LoginServer               CreationDate               Provisioni AdminUserE StorageAccountN
@@ -43,10 +41,8 @@ This command creates a container registry with a new storage account in the reso
 
 ### Example 2: Create a container registry with admin user enabled.
 ```powershell
-New-AzContainerRegistry -ResourceGroupName "MyResourceGroup" -Name "MyRegistry" -Sku "Basic" -EnableAdminUser
-```
+PS C:\>New-AzContainerRegistry -ResourceGroupName "MyResourceGroup" -Name "MyRegistry" -Sku "Basic" -EnableAdminUser
 
-```output
   Container registry location: eastus
 
 Registry Name     Sku        LoginServer               CreationDate               Provisioni AdminUserE StorageAccountN

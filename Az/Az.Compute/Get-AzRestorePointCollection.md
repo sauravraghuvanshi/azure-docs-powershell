@@ -26,7 +26,8 @@ Get a Restore Point Collection
 
 ### Example 1
 ```powershell
-Get-AzRestorePointCollection -ResourceGroupName <String> -Name <String>
+Get-AzRestorePointCollection -ResourceGroupName <String> -Name <String> [-Expand] <String>
+
 ```
 
 Used to get Restore Point Collection

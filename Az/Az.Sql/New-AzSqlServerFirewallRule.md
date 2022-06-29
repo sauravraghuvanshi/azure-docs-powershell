@@ -34,11 +34,8 @@ The **New-AzSqlServerFirewallRule** cmdlet creates a firewall rule for the speci
 ## EXAMPLES
 
 ### Example 1: Create a firewall rule
-```powershell
-New-AzSqlServerFirewallRule -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -FirewallRuleName "Rule01" -StartIpAddress "192.168.0.198" -EndIpAddress "192.168.0.199"
 ```
-
-```output
+PS C:\>New-AzSqlServerFirewallRule -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -FirewallRuleName "Rule01" -StartIpAddress "192.168.0.198" -EndIpAddress "192.168.0.199"
 ResourceGroupName : ResourceGroup01
 ServerName        : Server01
 StartIpAddress    : 192.168.0.198
@@ -50,8 +47,8 @@ This command creates a firewall rule named Rule01 on the server named Server01.
 The rule includes the specified start and end IP addresses.
 
 ### Example 2: Create a firewall rule that allows all Azure IP addresses to access the server
-```powershell
-New-AzSqlServerFirewallRule -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -AllowAllAzureIPs
+```
+PS C:\>New-AzSqlServerFirewallRule -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -AllowAllAzureIPs
 ```
 
 This command creates a firewall rule on the server named Server01 that belongs to the resource group named ResourceGroup01.

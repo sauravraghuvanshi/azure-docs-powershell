@@ -18,11 +18,9 @@ Creates a SQL Database server.
 ```
 New-AzSqlServer -ServerName <String> [-SqlAdministratorCredentials <PSCredential>] -Location <String>
  [-Tags <Hashtable>] [-ServerVersion <String>] [-AssignIdentity] [-PublicNetworkAccess <String>]
- [-RestrictOutboundNetworkAccess <String>] [-MinimalTlsVersion <String>]
- [-PrimaryUserAssignedIdentityId <String>] [-KeyId <String>]
- [-UserAssignedIdentityId <System.Collections.Generic.List`1[System.String]>] [-IdentityType <String>] [-AsJob]
- [-EnableActiveDirectoryOnlyAuthentication] [-ExternalAdminName <String>] [-ExternalAdminSID <Guid>]
- [-FederatedClientId <Guid>] [-ResourceGroupName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-MinimalTlsVersion <String>] [-RestrictOutboundNetworkAccess <String>] [-AsJob] 
+ [-EnableActiveDirectoryOnlyAuthentication] [-ExternalAdminName <String>] [-ExternalAdminSID <Guid>] 
+ [-ResourceGroupName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] 
  [-Confirm] [<CommonParameters>]
 ```
 
@@ -32,11 +30,8 @@ The **New-AzSqlServer** cmdlet creates an Azure SQL Database server.
 ## EXAMPLES
 
 ### Example 1: Create a new Azure SQL Database server
-```powershell
-New-AzSqlServer -ResourceGroupName "ResourceGroup01" -Location "Central US" -ServerName "server01" -ServerVersion "12.0" -SqlAdministratorCredentials (Get-Credential)
 ```
-
-```output
+PS C:\>New-AzSqlServer -ResourceGroupName "ResourceGroup01" -Location "Central US" -ServerName "server01" -ServerVersion "12.0" -SqlAdministratorCredentials (Get-Credential)
 ResourceGroupName        : resourcegroup01
 ServerName               : server01
 Location                 : Central US
@@ -49,8 +44,8 @@ Tags                     :
 This command creates a version 12 Azure SQL Database server.
 
 ### Example 2: Create a new Azure SQL Database server with External(Azure Active Directory) Administrator, Azure Active Directory Only Authentication and no SqlAdministratorCredentials
-```powershell
-New-AzSqlServer -ResourceGroupName "ResourceGroup01" -Location "Central US" -ServerName "server01" -ServerVersion "12.0" -ExternalAdminName DummyLogin -EnableActiveDirectoryOnlyAuthentication
+```
+PS C:\>New-AzSqlServer -ResourceGroupName "ResourceGroup01" -Location "Central US" -ServerName "server01" -ServerVersion "12.0" -ExternalAdminName DummyLogin -EnableActiveDirectoryOnlyAuthentication
 ResourceGroupName        : resourcegroup01
 ServerName               : server01
 Location                 : Central US
@@ -60,7 +55,7 @@ ServerVersion            : 12.0
 Tags                     :
 Administrators           :
 
-$val = Get-AzSqlServer -ResourceGroupName "ResourceGroup01" -ServerName "server01" -ExpandActiveDirectoryAdministrator
+PS C:\>$val = Get-AzSqlServer -ResourceGroupName "ResourceGroup01" -ServerName "server01" -ExpandActiveDirectoryAdministrator
 ResourceGroupName        : resourcegroup01
 ServerName               : server01
 Location                 : Central US
@@ -70,7 +65,7 @@ ServerVersion            : 12.0
 Tags                     :
 Administrators           : Microsoft.Azure.Management.Sql.Models.ServerExternalAdministrator
 
-$val.Administrators
+PS C:\>$val.Administrators
 AdministratorType         : ActiveDirectory
 PrincipalType             : Group
 Login                     : DummyLogin
@@ -80,26 +75,6 @@ AzureADOnlyAuthentication : True
 ```
 
 This command creates a version 12 Azure SQL Database server with external administrator properties and azure active directory only authentication enabled.
-
-### Example 3: Create a new Azure SQL Database server with TDE CMK
-```powershell
-New-AzSqlServer -ResourceGroupName "ResourceGroup01" -Location "East US" -ServerName "server01" -ServerVersion "12.0" -SqlAdministratorCredentials (Get-Credential) -AssignIdentity -IdentityType "UserAssigned" -PrimaryUserAssignedIdentityId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.ManagedIdentity/userAssignedIdentities/identity01" -UserAssignedIdentityId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.ManagedIdentity/userAssignedIdentities/identity01" -KeyId "https://contoso.vault.azure.net/keys/contosokey/01234567890123456789012345678901"
-```
-
-```output
-ResourceGroupName        : resourcegroup01
-ServerName               : server01
-Location                 : East US
-SqlAdministratorLogin    : adminLogin
-SqlAdministratorPassword :
-ServerVersion            : 12.0
-Tags                     :
-Identity                 : Microsoft.Azure.Management.Sql.Models.ResourceIdentity
-KeyId                    : https://contoso.vault.azure.net/keys/contosokey/01234567890123456789012345678901
-PrimaryUserAssignedIdentityId : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.ManagedIdentity/userAssignedIdentities/identity01
-```
-
-This command creates a version 12 Azure SQL Database server with TDE CMK enabled.
 
 ## PARAMETERS
 
@@ -193,51 +168,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -FederatedClientId
-Specifies the Federated client ID of the server when using Cross-Tenant CMK, Do not set this value if you do not intent to use Cross-Tenant CMK
-
-```yaml
-Type: System.Nullable`1[System.Guid]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IdentityType
-Type of identity to be assigned to the server. Possible values are SystemAsssigned, UserAssigned, 'SystemAssigned,UserAssigned' and None.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -KeyId
-The Azure Key Vault URI that is used for encryption.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Location
 Specifies the location of the data center where this cmdlet creates the server.
 
@@ -269,8 +199,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PrimaryUserAssignedIdentityId
-The primary User Managed Identity(UMI) id.
+### -PublicNetworkAccess
+Takes a flag, enabled/disabled, to specify whether public network access to server is allowed or not.
+When disabled, only connections made through Private Links can reach this server.
 
 ```yaml
 Type: System.String
@@ -284,9 +215,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PublicNetworkAccess
-Takes a flag, enabled/disabled, to specify whether public network access to server is allowed or not.
-When disabled, only connections made through Private Links can reach this server.
+### -RestrictOutboundNetworkAccess
+When enabled, only outbound connections allowed by the outbound firewall rules will succeed.
 
 ```yaml
 Type: System.String
@@ -312,21 +242,6 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -RestrictOutboundNetworkAccess
-When enabled, only outbound connections allowed by the outbound firewall rules will succeed.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -378,14 +293,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Tags
-Key-value pairs in the form of a hash table. For example:
-@{key0="value0";key1=$null;key2="value2"}
+### -PrimaryUserAssignedIdentityId
+The primary User Managed Identity(UMI) id.
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: System.String
 Parameter Sets: (All)
-Aliases: Tag
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -KeyId
+The Azure Key Vault URI that is used for encryption.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
@@ -398,9 +327,40 @@ Accept wildcard characters: False
 The list of user assigned identities.
 
 ```yaml
-Type: System.Collections.Generic.List`1[System.String]
+Type: System.Collections.Generic.List
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IdentityType
+Type of identity to be assigned to the server. Possible values are SystemAsssigned, UserAssigned, 'SystemAssigned,UserAssigned' and None.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+Key-value pairs in the form of a hash table. For example:
+@{key0="value0";key1=$null;key2="value2"}
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases: Tag
 
 Required: False
 Position: Named

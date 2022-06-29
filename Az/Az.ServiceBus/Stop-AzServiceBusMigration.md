@@ -39,7 +39,7 @@ The **Stop-AzServiceBusMigration** cmdlets terminates the Migration between Stan
 
 ### Example 1
 ```powershell
-Stop-AzServiceBusMigration -ResourceGroupName ResourceGroup -Name TestingNamespaceStandardMigration
+PS C:\> Stop-AzServiceBusMigration -ResourceGroupName ResourceGroup -Name TestingNamespaceStandardMigration
 ```
 
 Cmdlet terminates the migration between Standard namespace and Premium namespace provided while creating the migration configuration.

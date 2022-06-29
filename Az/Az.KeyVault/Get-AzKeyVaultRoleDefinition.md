@@ -39,10 +39,8 @@ List role definitions of a given managed HSM at a given scope.
 
 ### Example 1
 ```powershell
-Get-AzKeyVaultRoleDefinition -HsmName myHsm -Scope "/keys"
-```
+PS C:\> Get-AzKeyVaultRoleDefinition -HsmName myHsm -Scope "/keys"
 
-```output
 RoleName                              Description Permissions
 --------                              ----------- -----------
 Managed HSM Administrator                         1 permission(s)
@@ -58,15 +56,15 @@ The example lists all the roles at "/keys" scope.
 
 ### Example 2
 ```powershell
-$backupRole = Get-AzKeyVaultRoleDefinition -HsmName myHsm -RoleDefinitionName "Managed HSM Backup User"
+PS C:\> $backupRole = Get-AzKeyVaultRoleDefinition -HsmName myHsm -RoleDefinitionName "Managed HSM Backup User"
 
-$backupRole.Permissions
+PS C:\> $backupRole.Permissions
 
 Actions     NotActions  DataActions NotDataActions
 -------     ----------  ----------- --------------
 0 action(s) 0 action(s) 3 action(s) 0 action(s)
 
-$backupRole.Permissions.DataActions
+PS C:\> $backupRole.Permissions.DataActions
 
 Microsoft.KeyVault/managedHsm/backup/start/action
 Microsoft.KeyVault/managedHsm/backup/status/action

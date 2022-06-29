@@ -41,32 +41,32 @@ Updates or replaces a device twin. See https://docs.microsoft.com/azure/iot-hub/
 
 ### Example 1
 ```powershell
-Update-AzIotHubDeviceTwin -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -Tag $updatedTag -Desired $updatedDesired -Partial
+PS C:\> Update-AzIotHubDeviceTwin -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -Tag $updatedTag -Desired $updatedDesired -Partial
 ```
 
 Returns the updated device twin object.
 
 ### Example 2
 ```powershell
-Update-AzIotHubDeviceTwin -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -Desired $updatedDesired -Partial
+PS C:\> Update-AzIotHubDeviceTwin -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -Desired $updatedDesired -Partial
 ```
 
 Returns the device twin object with updated desired properties.
 
 ### Example 3
 ```powershell
-Update-AzIotHubDeviceTwin -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -Tag $updatedTag -Partial
+PS C:\> Update-AzIotHubDeviceTwin -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -Tag $updatedTag -Partial
 ```
 
 Returns the device twin object with updated tags property.
 
 ### Example 4
 ```powershell
-$updatedTag = @{}
-$updatedTag.add("key0","value0")
-$updatedDesired =@{}
-$updatedDesired.add("desiredkey","desiredvalue")
-Update-AzIotHubDeviceTwin -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -Tag $updatedTag -Desired $updatedDesired
+PS C:\> $updatedTag = @{}
+PS C:\> $updatedTag.add("key0","value0")
+PS C:\> $updatedDesired =@{}
+PS C:\> $updatedDesired.add("desiredkey","desiredvalue")
+PS C:\> Update-AzIotHubDeviceTwin -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -Tag $updatedTag -Desired $updatedDesired
 ```
 
 Returns the replaced device twin object.

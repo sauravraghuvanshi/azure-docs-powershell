@@ -33,10 +33,8 @@ Create or update a resource.
 
 ### Example 1: Create a Web PubSub resource with minimal required parameters.
 ```powershell
-New-AzWebPubSub -ResourceGroupName psdemo -Name psdemo-wps -Location eastus -SkuName Standard_S1
-```
+PS C:\> New-AzWebPubSub -ResourceGroupName psdemo -Name psdemo-wps -Location eastus -SkuName Standard_S1
 
-```output
 Name                Location      SkuName
 ----                --------      -------
 psdemo-wps          eastus        Standard_S1
@@ -46,7 +44,7 @@ psdemo-wps          eastus        Standard_S1
 
 ### Example 2: Create a Web PubSub resource with more parameters and show the result
 ```powershell
-$wps = New-AzWebPubSub -ResourceGroupName psdemo -Name psdemo-wps `
+PS C:\> $wps = New-AzWebPubSub -ResourceGroupName psdemo -Name psdemo-wps `
 -Location eastus -SkuName Standard_S1 -IdentityType SystemAssigned -LiveTraceEnabled true `
 -LiveTraceCategory @{ Name='ConnectivityLogs' ; Enabled = 'true' }, @{ Name='MessageLogs' ; Enabled = 'true' }
 
@@ -54,7 +52,7 @@ Name                Location      SkuName
 ----                --------      -------
 psdemo-wps          eastus        Standard_S1
 
-$wps | Format-List
+PS C:\> $wps | format-list
 
 DisableAadAuth               : False
 DisableLocalAuth             : False

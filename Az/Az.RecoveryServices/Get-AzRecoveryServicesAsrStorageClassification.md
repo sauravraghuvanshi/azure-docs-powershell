@@ -38,8 +38,8 @@ The **Get-AzRecoveryServicesAsrStorageClassification** cmdlet gets details of th
 ## EXAMPLES
 
 ### Example 1
-```powershell
-$StorageClassifications = Get-AzRecoveryServicesAsrStorageClassification -Fabric $Fabric
+```
+PS C:\> $StorageClassifications = Get-AzRecoveryServicesAsrStorageClassification -Fabric $Fabric
 ```
 
 List the discovered storage classifications corresponding to the specified ASR fabric. 

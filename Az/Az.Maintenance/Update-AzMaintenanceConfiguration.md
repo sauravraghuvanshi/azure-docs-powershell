@@ -27,10 +27,9 @@ Patch maintenance configuration record
 
 ### Example 1
 ```powershell
-Update-AzMaintenanceConfiguration -ResourceGroupName smdtest -Name workervmscentralus -Configuration $configuration
-```
+PS C:\> Update-AzMaintenanceConfiguration -ResourceGroupName smdtest -Name workervmscentralus -Configuration $configuration
 
-```output
+
 Location            : centralus
 Tags                : {}
 ExtensionProperties : {}

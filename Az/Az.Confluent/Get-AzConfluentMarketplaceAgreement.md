@@ -26,10 +26,8 @@ List Confluent marketplace agreements in the subscription.
 
 ### Example 1: List all confluent marketplace agreement under a subscription
 ```powershell
-Get-AzConfluentMarketplaceAgreement
-```
+PS C:\> Get-AzConfluentMarketplaceAgreement
 
-```output
 Name        Type
 ----        ----
 marketplace Microsoft.Confluent/agreements

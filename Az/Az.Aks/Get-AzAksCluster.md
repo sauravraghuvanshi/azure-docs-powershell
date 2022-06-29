@@ -39,7 +39,7 @@ List Kubernetes managed clusters.
 
 ### List all Kubernetes clusters
 ```powershell
-Get-AzAksCluster
+PS C:\> Get-AzAksCluster
 ```
 
 ## PARAMETERS

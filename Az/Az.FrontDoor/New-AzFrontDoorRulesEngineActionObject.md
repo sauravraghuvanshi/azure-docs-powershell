@@ -52,15 +52,15 @@ Use cmdlet "New-AzFrontDoorHeaderActionObject" to create PSHeaderObjects to pass
 
 ### Example 1
 ```powershell
-$headerActions = New-AzFrontDoorHeaderActionObject -HeaderActionType "Append" -HeaderName "X-Content-Type-Options" -Value "nosniff"
-$headerActions
+PS C:\> $headerActions = New-AzFrontDoorHeaderActionObject -HeaderActionType "Append" -HeaderName "X-Content-Type-Options" -Value "nosniff"
+PS C:\> $headerActions
 
 HeaderName             HeaderActionType Value
 ----------             ---------------- -----
 X-Content-Type-Options           Append nosniff
 
-$rulesEngineAction = New-AzFrontDoorRulesEngineActionObject -ResponseHeaderAction $headerActions
-$rulesEngineAction
+PS C:\> $rulesEngineAction = New-AzFrontDoorRulesEngineActionObject -ResponseHeaderAction $headerActions
+PS C:\> $rulesEngineAction
 
 RequestHeaderActions ResponseHeaderActions    RouteConfigurationOverride
 -------------------- ---------------------    --------------------------
@@ -72,22 +72,22 @@ Create a rules engine action that append response header value and show how to v
 
 ### Example 2
 ```powershell
-$rulesEngineAction = New-AzFrontDoorRulesEngineActionObject -RequestHeaderAction $headerActions -ForwardingProtocol HttpsOnly -BackendPoolName mybackendpool -ResourceGroupName Jessicl-Test-RG -FrontDoorName jessicl-test-myappfrontend -QueryParameterStripDirective StripNone -DynamicCompression Disabled -EnableCaching $true
-$rulesEngineAction
+PS C:\> $rulesEngineAction = New-AzFrontDoorRulesEngineActionObject -RequestHeaderAction $headerActions -ForwardingProtocol HttpsOnly -BackendPoolName mybackendpool -ResourceGroupName Jessicl-Test-RG -FrontDoorName jessicl-test-myappfrontend -QueryParameterStripDirective StripNone -DynamicCompression Disabled -EnableCaching $true
+PS C:\> $rulesEngineAction
 
 RequestHeaderAction            ResponseHeaderAction RouteConfigurationOverride
 -------------------            -------------------- --------------------------
 {headeraction1, headeraction2} {}                   Microsoft.Azure.Commands.FrontDoor.Models.PSForwardingConfiguration
 
-$rulesEngineAction.RequestHeaderAction
+PS C:\> $rulesEngineAction.RequestHeaderAction
 
 HeaderName    HeaderActionType Value
 ----------    ---------------- -----
 headeraction1        Overwrite
 headeraction2           Append
 
-$rulesEngineAction.ResponseHeaderAction
-$rulesEngineAction.RouteConfigurationOverride
+PS C:\> $rulesEngineAction.ResponseHeaderAction
+PS C:\> $rulesEngineAction.RouteConfigurationOverride
 
 CustomForwardingPath         :
 ForwardingProtocol           : HttpsOnly
@@ -102,14 +102,14 @@ Create a rules engine action that forwards the requests to a speicific backend p
 
 ### Example 3
 ```powershell
-$rulesEngineAction = New-AzFrontDoorRulesEngineActionObject -RedirectType Moved -RedirectProtocol MatchRequest -CustomHost www.contoso.com
-$rulesEngineAction
+PS C:\> $rulesEngineAction = New-AzFrontDoorRulesEngineActionObject -RedirectType Moved -RedirectProtocol MatchRequest -CustomHost www.contoso.com
+PS C:\> $rulesEngineAction
 
 RequestHeaderActions ResponseHeaderActions RouteConfigurationOverride
 -------------------- --------------------- --------------------------
 {}                   {}                    Microsoft.Azure.Commands.FrontDoor.Models.PSRedirectConfiguration
 
-$rulesEngineAction.RouteConfigurationOverride
+PS C:\> $rulesEngineAction.RouteConfigurationOverride
 
 RedirectType      : Moved
 RedirectProtocol  : MatchRequest

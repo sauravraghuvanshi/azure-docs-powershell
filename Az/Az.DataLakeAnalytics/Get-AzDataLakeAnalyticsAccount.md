@@ -38,8 +38,8 @@ The **Get-AzDataLakeAnalyticsAccount** cmdlet gets information about an Azure Da
 ## EXAMPLES
 
 ### Example 1: Get information about a Data Lake Analytics account
-```powershell
-Get-AzDataLakeAnalyticsAccount -Name "ContosoAdlAccount"
+```
+PS C:\>Get-AzDataLakeAnalyticsAccount -Name "ContosoAdlAccount"
 ```
 
 This command gets information about the account named ContosoAdlAccount.

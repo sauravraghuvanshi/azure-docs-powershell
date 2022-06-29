@@ -40,23 +40,23 @@ Get-AzLoadBalancerBackendAddressPool retrieves one or more backend address pools
 ### Example 1
 ```powershell
 ## Get single backend under loadbalancer
-$lb = Get-AzLoadBalancer -ResourceGroupName $resourceGroup -Name $loadBalancerName
+PS C:\> $lb = Get-AzLoadBalancer -ResourceGroupName $resourceGroup -Name $loadBalancerName
 ```
 
 ```powershell
 ## Get all backends under loadbalancer
-$lb | Get-AzLoadBalancerBackendAddressPool
+PS C:\> $lb | Get-AzLoadBalancerBackendAddressPool
 ```
 ### Example 2
 ```powershell
 #Get specific backend from loadbalancer
-$lb | Get-AzLoadBalancerBackendAddressPool -Name $backendPool1
+PS C:\> $lb | Get-AzLoadBalancerBackendAddressPool -Name $backendPool1
 ```
 
 ### Example 3
 ```powershell
 #Get a backend by resource Id
-Get-AzLoadBalancerBackendAddressPool -ResourceId $backendPool1.Id
+PS C:\> Get-AzLoadBalancerBackendAddressPool -ResourceId $backendPool1.Id
 ```
 
 ## PARAMETERS

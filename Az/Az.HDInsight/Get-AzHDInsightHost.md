@@ -38,19 +38,19 @@ The **Get-AzHDInsightHost** cmdlet lists the hosts of the HDInsight cluster.
 
 ### Example 1
 ```powershell
-# Cluster info
-$clusterName = "your-hadoop-001"
-Get-AzHDInsightHost -ClusterName $clusterName
+PS C:\># Cluster info
+PS C:\> $clusterName = "your-hadoop-001"
+PS C:\> Get-AzHDInsightHost -ClusterName $clusterName
 ```
 
 This command lists of cluster' hosts with cluster name.
 
 ### Example 2
 ```powershell
-# Cluster info
-$clusterName = "your-hadoop-001"
-$cluster=Get-AzHDInsightCluster -ClusterName $clusterName
-$cluster | Get-AzHDInsightHost
+PS C:\># Cluster info
+PS C:\> $clusterName = "your-hadoop-001"
+PS C:\> $cluster=Get-AzHDInsightCluster -ClusterName $clusterName
+PS C:\> $cluster | Get-AzHDInsightHost
 ```
 
 This command lists of cluster' hosts with pipeline.

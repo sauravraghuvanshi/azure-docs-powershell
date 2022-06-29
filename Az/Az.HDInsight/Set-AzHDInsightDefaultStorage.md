@@ -27,31 +27,31 @@ The **Set-AzHDInsightDefaultStorage** cmdlet sets the default Storage account se
 ## EXAMPLES
 
 ### Example 1: Set the default storage account for the cluster configuration object
-```powershell
-# Primary storage account info
-$storageAccountResourceGroupName = "Group"
-$storageAccountResourceId = "yourstorageaccountresourceid"
-$storageAccountName = "yourstorageaccountname"
-$storageAccountKey = (Get-AzStorageAccountKey -ResourceGroupName $storageAccountResourceGroupName -Name $storageAccountName)[0].value
+```
+PS C:\># Primary storage account info
+PS C:\> $storageAccountResourceGroupName = "Group"
+PS C:\> $storageAccountResourceId = "yourstorageaccountresourceid"
+PS C:\> $storageAccountName = "yourstorageaccountname"
+PS C:\> $storageAccountKey = (Get-AzStorageAccountKey -ResourceGroupName $storageAccountResourceGroupName -Name $storageAccountName)[0].value
 
 
-$storageType = "AzureStorage"
+PS C:\>$storageContainer = "container002"
 
 # Cluster configuration info
-$location = "East US 2"
-$clusterResourceGroupName = "Group"
-$clusterName = "your-hadoop-002"
-$clusterCreds = Get-Credential
+PS C:\> $location = "East US 2"
+PS C:\> $clusterResourceGroupName = "Group"
+PS C:\> $clusterName = "your-hadoop-002"
+PS C:\> $clusterCreds = Get-Credential
 
 # If the cluster's resource group doesn't exist yet, run:
 #   New-AzResourceGroup -Name $clusterResourceGroupName -Location $location
 
 # Create the cluster
-New-AzHDInsightClusterConfig `
+PS C:\> New-AzHDInsightClusterConfig `
             | Set-AzHDInsightDefaultStorage `
                 -StorageAccountResourceId $storageAccountResourceId `
                 -StorageAccountKey $key2 `
-                -StorageAccountType $storageType `
+                -StorageContainer $storageContainer `
             | New-AzHDInsightCluster `
                 -ClusterType Hadoop `
                 -OSType Windows `

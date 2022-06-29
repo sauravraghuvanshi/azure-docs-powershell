@@ -27,8 +27,8 @@ The Failover Group's primary server should be used to execute the command.
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Remove-AzSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName primaryserver -FailoverGroupName fg
+```
+PS C:\> Remove-AzSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName primaryserver -FailoverGroupName fg
 ```
 
 Remove a Failover Group.

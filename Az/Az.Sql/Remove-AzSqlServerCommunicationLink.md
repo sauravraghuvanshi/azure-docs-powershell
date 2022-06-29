@@ -27,8 +27,8 @@ The **Remove-AzSqlServerCommunicationLink** cmdlet deletes a server-to-server co
 ## EXAMPLES
 
 ### Example 1: Delete a communication link
-```powershell
-Remove-AzSqlServerCommunicationLink -ResourceGroupName "ResourceGroup01" -ServerName "ContosoServer17" -LinkName "Link01"
+```
+PS C:\>Remove-AzSqlServerCommunicationLink -ResourceGroupName "ResourceGroup01" -ServerName "ContosoServer17" -LinkName "Link01"
 ```
 
 This command deletes a server-to-server communication link named Link01 on ContosoServer17.

@@ -26,9 +26,8 @@ Tests whether an output’s datasource is reachable and usable by the Azure Stre
 
 ### Example 1: Test the connection status of an output
 ```powershell
-Test-AzStreamAnalyticsOutput -ResourceGroupName lucas-rg-test -JobName sajob-01-pwsh -Name output-01
-```
-```output
+PS C:\> Test-AzStreamAnalyticsOutput -ResourceGroupName lucas-rg-test -JobName sajob-01-pwsh -Name output-01
+
 Status
 ------
 TestSucceeded

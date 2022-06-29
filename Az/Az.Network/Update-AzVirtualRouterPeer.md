@@ -58,7 +58,7 @@ Update-AzVirtualRouterPeer -ResourceId $virtualRouterPeerId  -VirtualRouterName 
 
 ### Example 3
 ```powershell
-$virtualRouterPeer = Get-AzVirtualRouterPeer -ResourceGroupName testVirtualRouter -VirtualRouterName virtualRouter -PeerName csr
+$virtualRouterPeer = Get-AzVirtualRouterPeer -ResourceGroupName testVirtualRouter -RouterName virtualRouter -PeerName csr
 Update-AzVirtualRouterPeer -ResourceGroupName virtualRouterRG -InputObject $virtualRouterPeer  -VirtualRouterName virtualRouter
 ```
 

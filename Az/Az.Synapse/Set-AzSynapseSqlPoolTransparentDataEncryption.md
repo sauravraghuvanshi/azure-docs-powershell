@@ -48,7 +48,7 @@ The **Set-AzSynapseSqlPoolTransparentDataEncryption** cmdlet modifies the Transp
 
 ### Example 1
 ```powershell
-Set-AzSynapseSqlPoolTransparentDataEncryption -WorkspaceName ContosoWorkspace -Name ContosoSqlPool -State Enabled
+PS C:\> Set-AzSynapseSqlPoolTransparentDataEncryption -WorkspaceName ContosoWorkspace -Name ContosoSqlPool -State Enabled
 ```
 
 This command enables TDE for the SQL pool named ContosoSqlPool under the workspace named ContosoWorkspace.

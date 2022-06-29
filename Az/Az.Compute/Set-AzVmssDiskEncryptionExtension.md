@@ -32,7 +32,7 @@ For Linux virtual machines, the *VolumeType* parameter must be present and must 
 ## EXAMPLES
 
 ### Example 1
-```powershell
+```
 $RGName = "MyResourceGroup"
 $VmssName = "MyTestVmss"
 $VaultName= "MyKeyVault"
@@ -40,13 +40,13 @@ $KeyVault = Get-AzKeyVault -VaultName $VaultName -ResourceGroupName $RGName
 $DiskEncryptionKeyVaultUrl = $KeyVault.VaultUri
 $KeyVaultResourceId = $KeyVault.ResourceId
 
-Set-AzVmssDiskEncryptionExtension -ResourceGroupName $RGName -VMScaleSetName $VmssName -DiskEncryptionKeyVaultUrl $DiskEncryptionKeyVaultUrl -DiskEncryptionKeyVaultId $KeyVaultResourceId
+PS C:\> Set-AzVmssDiskEncryptionExtension -ResourceGroupName $RGName -VMScaleSetName $VmssName -DiskEncryptionKeyVaultUrl $DiskEncryptionKeyVaultUrl -DiskEncryptionKeyVaultId $KeyVaultResourceId
 ```
 
 This command enables encryption on all disks of all Windows VMs in a VM scale set.
 
 ### Example 2
-```powershell
+```
 $RGName = "MyResourceGroup"
 $VmssName = "MyTestVmss"
 $VaultName= "MyKeyVault"
@@ -55,7 +55,7 @@ $DiskEncryptionKeyVaultUrl = $KeyVault.VaultUri
 $KeyVaultResourceId = $KeyVault.ResourceId
 $VolumeType = "Data"
 
-Set-AzVmssDiskEncryptionExtension -ResourceGroupName $RGName -VMScaleSetName $VmssName -DiskEncryptionKeyVaultUrl $DiskEncryptionKeyVaultUrl -DiskEncryptionKeyVaultId $KeyVaultResourceId `
+PS C:\> Set-AzVmssDiskEncryptionExtension -ResourceGroupName $RGName -VMScaleSetName $VmssName -DiskEncryptionKeyVaultUrl $DiskEncryptionKeyVaultUrl -DiskEncryptionKeyVaultId $KeyVaultResourceId `
  -VolumeType $volumeType
 ```
 

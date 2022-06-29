@@ -35,15 +35,15 @@ Specify the name of a certificate to get a specific certificate.
 ## EXAMPLES
 
 ### Example 1: Get all certificates
-```powershell
-Get-AzAutomationCertificate -ResourceGroupName "ResourceGroup07" -AutomationAccountName "Contoso17"
+```
+PS C:\>Get-AzAutomationCertificate -ResourceGroupName "ResourceGroup07" -AutomationAccountName "Contoso17"
 ```
 
 This command gets metadata for all certificates in the Automation account named Contoso17.
 
 ### Example 2: Get a certificate
-```powershell
-Get-AzAutomationCertificate -ResourceGroupName "ResourceGroup07" -AutomationAccountName "Contoso17" -Name "ContosoCertificate"
+```
+PS C:\>Get-AzAutomationCertificate -ResourceGroupName "ResourceGroup07" -AutomationAccountName "Contoso17" -Name "ContosoCertificate"
 ```
 
 This command gets metadata for the certificate named ContosoCertificate.

@@ -46,22 +46,22 @@ If you do not specify a role name or a role Id, this cmdlet gets all role defini
 
 ### Example 1
 ```powershell
-Get-AzSynapseRoleDefinition -WorkspaceName ContosoWorkspace
+PS C:\> Get-AzSynapseRoleDefinition -WorkspaceName ContosoWorkspace
 ```
 
 This command gets all role definitions under a workspace.
 
 ### Example 2
 ```powershell
-Get-AzSynapseRoleDefinition -WorkspaceName ContosoWorkspace -Name ContosoRole
+PS C:\> Get-AzSynapseRoleDefinition -WorkspaceName ContosoWorkspace -Name ContosoRole
 ```
 
 This command gets the role definition under workspace ContosoWorkspace with name ContosoRole.
 
 ### Example 3
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Get-AzSynapseRoleDefinition
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Get-AzSynapseRoleDefinition
 ```
 
 This command gets all role definitions under a workspace through pipeline.

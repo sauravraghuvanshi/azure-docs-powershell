@@ -39,10 +39,8 @@ Returns the properties for a lab virtual machine.
 
 ### Example 1: Gets all the Virtual machines in the lab.
 ```powershell
-Get-AzLabServicesVM -LabName "Lab Name" -ResourceGroupName "Group Name"
-```
+PS C:\> Get-AzLabServicesVM -LabName "Lab Name" -ResourceGroupName "Group Name"
 
-```output
 Name
 ----
 0
@@ -54,10 +52,8 @@ Returns all the VMs.
 
 ### Example 2: Gets the specific VM in the lab.
 ```powershell
-Get-AzLabServicesVM -LabName "Lab Name" -ResourceGroupName "Group Name" -Name 2
-```
+PS C:\> Get-AzLabServicesVM -LabName "Lab Name" -ResourceGroupName "Group Name" -Name 2
 
-```output
 Name
 ----
 2

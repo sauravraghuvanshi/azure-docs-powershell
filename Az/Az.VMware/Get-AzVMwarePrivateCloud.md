@@ -43,9 +43,8 @@ Get a private cloud
 
 ### Example 1: List private cloud under subscription
 ```powershell
-Get-AzVMwarePrivateCloud
-```
-```output
+PS C:\> Get-AzVMwarePrivateCloud
+
 Location      Name            Type
 --------      ----            ----
 australiaeast azps_test_cloud Microsoft.AVS/privateClouds
@@ -55,9 +54,8 @@ List private cloud under subscription
 
 ### Example 2: List private cloud under resource group
 ```powershell
-Get-AzVMwarePrivateCloud -ResourceGroupName azps_test_group
-```
-```output
+PS C:\> Get-AzVMwarePrivateCloud -ResourceGroupName azps_test_group
+
 Location      Name            Type                        ResourceGroupName
 --------      ----            ----                        -----------------
 australiaeast azps_test_cloud Microsoft.AVS/privateClouds azps_test_group
@@ -67,9 +65,8 @@ List private cloud under resource group
 
 ### Example 3: Get a private cloud by name
 ```powershell
-Get-AzVMwarePrivateCloud -ResourceGroupName azps_test_group -Name azps_test_cloud
-```
-```output
+PS C:\> Get-AzVMwarePrivateCloud -ResourceGroupName azps_test_group -Name azps_test_cloud
+
 Location      Name            Type                        ResourceGroupName
 --------      ----            ----                        -----------------
 australiaeast azps_test_cloud Microsoft.AVS/privateClouds azps_test_group
@@ -165,7 +162,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.Api20211201.IPrivateCloud
+### Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.Api20210601.IPrivateCloud
 
 ## NOTES
 
@@ -190,7 +187,6 @@ INPUTOBJECT <IVMwareIdentity>: Identity Parameter
   - `[HcxEnterpriseSiteName <String>]`: Name of the HCX Enterprise Site in the private cloud
   - `[Id <String>]`: Resource identity path
   - `[Location <String>]`: Azure region
-  - `[PlacementPolicyName <String>]`: Name of the VMware vSphere Distributed Resource Scheduler (DRS) placement policy
   - `[PortMirroringId <String>]`: NSX Port Mirroring identifier. Generally the same as the Port Mirroring display name
   - `[PrivateCloudName <String>]`: Name of the private cloud
   - `[PublicIPId <String>]`: NSX Public IP Block identifier. Generally the same as the Public IP Block's display name

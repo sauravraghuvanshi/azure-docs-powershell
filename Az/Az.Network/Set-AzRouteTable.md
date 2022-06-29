@@ -26,11 +26,8 @@ The **Set-AzRouteTable** cmdlet updates a route table.
 ## EXAMPLES
 
 ### Example 1: Update a route table by adding route configuration to it
-```powershell
-Get-AzRouteTable -ResourceGroupName "ResourceGroup11" -Name "RouteTable01" | Add-AzRouteConfig -Name "Route07" -AddressPrefix 10.2.0.0/16 -NextHopType "VnetLocal" | Set-AzRouteTable
 ```
-
-```output
+PS C:\>Get-AzRouteTable -ResourceGroupName "ResourceGroup11" -Name "RouteTable01" | Add-AzRouteConfig -Name "Route07" -AddressPrefix 10.2.0.0/16 -NextHopType "VnetLocal" | Set-AzRouteTable
 Name              : RouteTable01
 ResourceGroupName : ResourceGroup11
 Location          : eastus
@@ -79,17 +76,14 @@ The command passes that table to the Add-AzRouteConfig cmdlet by using the pipel
 
 ### Example 2: Modify route table
 
-```powershell
-$rt = Get-AzRouteTable -ResourceGroupName "rgName" -Name "rtName"
-$rt.DisableBgpRoutePropagation
-False
-$rt.DisableBgpRoutePropagation = $true
-Set-AzRouteTable -RouteTable $rt
-$rt = Get-AzRouteTable -ResourceGroupName "rgName" -Name "rtName"
-$rt.DisableBgpRoutePropagation
 ```
-
-```output
+PS C:\> $rt = Get-AzRouteTable -ResourceGroupName "rgName" -Name "rtName"
+PS C:\> $rt.DisableBgpRoutePropagation
+False
+PS C:\> $rt.DisableBgpRoutePropagation = $true
+PS C:\> Set-AzRouteTable -RouteTable $rt
+PS C:\> $rt = Get-AzRouteTable -ResourceGroupName "rgName" -Name "rtName"
+PS C:\> $rt.DisableBgpRoutePropagation
 True
 ```
 

@@ -33,22 +33,22 @@ The **Get-AzSynapsePipeline** cmdlet gets information about pipelines in workspa
 
 ### Example 1
 ```powershell
-Get-AzSynapsePipeline -WorkspaceName ContosoWorkspace
+PS C:\> Get-AzSynapsePipeline -WorkspaceName ContosoWorkspace
 ```
 
 This command gets information about all pipelines in the workspace named ContosoWorkspace.
 
 ### Example 2
 ```powershell
-Get-AzSynapsePipeline -WorkspaceName ContosoWorkspace -Name ContosoPipeline
+PS C:\> Get-AzSynapsePipeline -WorkspaceName ContosoWorkspace -Name ContosoPipeline
 ```
 
 This command gets information about the pipeline named ContosoPipeline in the workspace named ContosoWorkspace.
 
 ### Example 3
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Get-AzSynapsePipeline -Name ContosoPipeline
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Get-AzSynapsePipeline -Name ContosoPipeline
 ```
 
 This command gets information about the pipeline named ContosoPipeline in the workspace named ContosoWorkspace through pipeline.

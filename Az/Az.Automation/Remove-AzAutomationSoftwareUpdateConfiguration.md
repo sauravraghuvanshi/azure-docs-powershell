@@ -37,7 +37,7 @@ This cmdlet removed an azure automation software update configuration.
 This example shows how to remove 'MyUpdateConfiguration' from automation account
 
 ```powershell
-Remove-AzAutomationSoftwareUpdateConfiguration -ResourceGroupName "mygroup" -AutomationAccountName "myaccount" -Name "MyUpdateConfiguration"
+PS C:\> Remove-AzAutomationSoftwareUpdateConfiguration -ResourceGroupName "mygroup" -AutomationAccountName "myaccount" -Name "MyUpdateConfiguration"
 ```
 
 ## PARAMETERS

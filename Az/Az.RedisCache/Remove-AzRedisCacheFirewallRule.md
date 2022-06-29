@@ -32,11 +32,8 @@ Remove a firewall rule from a Redis Cache.
 ## EXAMPLES
 
 ### Example 1: Remove a single firewall rule
-```powershell
-Remove-AzRedisCacheFirewallRule -Name "mycache" -RuleName "ruleone" -PassThru
 ```
-
-```output
+PS C:\>Remove-AzRedisCacheFirewallRule -Name "mycache" -RuleName "ruleone" -PassThru
 True
 ```
 

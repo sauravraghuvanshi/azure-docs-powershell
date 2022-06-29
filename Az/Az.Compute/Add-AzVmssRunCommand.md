@@ -41,7 +41,8 @@ Adding Run Command to All VMSS Instances
 
 ### Example 1
 ```powershell
-Add-AzVmssRunCommand -ResourceGroupName $rgname -VMScaleSetName $vmssname -Location eastus -Name myruncommand -Script "Write-Host Hello World" -TimeOutInSeconds 3600 -RunAsUser "admin01" 
+PS C:\> Add-AzVmssRunCommand -ResourceGroupName $rgname -VMScaleSetName $vmssname -Location eastus -Name myruncommand -Script "Write-Host Hello World" -TimeOutInSeconds 3600 -RunAsUser "admin01" 
+
 ```
 
 Adding 'myruncommand' to VMSS

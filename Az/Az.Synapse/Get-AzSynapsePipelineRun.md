@@ -47,22 +47,22 @@ The **Get-AzSynapsePipelineRun** command returns information about runs for the 
 
 ### Example 1: Get pipeline run by ID
 ```powershell
-Get-AzSynapsePipelineRun -WorkspaceName ContosoWorkspace -PipelineRunId "61eb095a-fe23-4591-8a97-fade6c65ca72"
+PS C:\> Get-AzSynapsePipelineRun -WorkspaceName ContosoWorkspace -PipelineRunId "61eb095a-fe23-4591-8a97-fade6c65ca72"
 ```
 
 This command gets details about the pipeline run with ID "61eb095a-fe23-4591-8a97-fade6c65ca72".
 
 ### Example 2: Get pipelines runs between the dates
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Get-AzSynapsePipelineRun -RunStartedAfter "4/2/2007 7:23:57 PM" -RunStartedBefore "4/2/2027 7:23:57 PM"
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Get-AzSynapsePipelineRun -RunStartedAfter "4/2/2007 7:23:57 PM" -RunStartedBefore "4/2/2027 7:23:57 PM"
 ```
 
 This command gets details about the runs of all pipelines in the workspace ContosoWorkspace that started between "4/2/2007 7:23:57 PM" and "4/2/2027 7:23:57 PM"
 
 ### Example 3: Get a single pipeline runs between the dates
 ```powershell
-Get-AzSynapsePipelineRun -WorkspaceName ContosoWorkspace -PipelineName ContosoPipeline -RunStartedAfter "4/2/2007 7:23:57 PM" -RunStartedBefore "4/2/2027 7:23:57 PM"
+PS C:\> Get-AzSynapsePipelineRun -WorkspaceName ContosoWorkspace -Name ContosoPipeline -RunStartedAfter "4/2/2007 7:23:57 PM" -RunStartedBefore "4/2/2027 7:23:57 PM"
 ```
 
 This command gets details about the runs of ContosoPipeline pipeline in the workspace ContosoWorkspace that started between "4/2/2007 7:23:57 PM" and "4/2/2027 7:23:57 PM"

@@ -34,33 +34,33 @@ The **Remove-AzServiceBusRule** cmdlet removes the rule of a subscription of giv
 
 ### Example 1
 ```powershell
-Remove-AzServiceBusRule -ResourceGroup Default-ServiceBus-WestUS -Namespace SBExample1 -Topic SBTopic -Subscription SBSubscription -Name SBRule
+PS C:\> Remove-AzServiceBusRule -ResourceGroup Default-ServiceBus-WestUS -Namespace SBExample1 -Topic SBTopic -Subscription SBSubscription -Name SBRule
 ```
 
 Removes the rule `SBRule` of subscription `SBSubscription` of specified topic `SBTopic`.
 
 ### Example 2: InputObject - Using Variable:
 ```powershell
-$inputobject = Get-AzServiceBusRule <params>
-Remove-AzServiceBusRule -InputObject $inputobject
+PS C:\> $inputobject = Get-AzServiceBusRule <params>
+PS C:\> Remove-AzServiceBusRule -InputObject $inputobject
 ```
 
 Removes the rule provided through $inputobject for -InputObject parameter
 
 ### Example 3: InputObject - Using Piping:
 ```powershell
-Get-AzServiceBusRule <params> | Remove-AzServiceBusRule
+PS C:\> Get-AzServiceBusRule <params> | Remove-AzServiceBusRule
 ```
 
 ### Example 4: ResourceId - Using Variable
 ```powershell
-$resourceid = Get-AzServiceBusRule <params>
-Remove-AzServiceBusRule -ResourceId $resourceid.Id
+PS C:\> $resourceid = Get-AzServiceBusRule <params>
+PS C:\> Remove-AzServiceBusRule -ResourceId $resourceid.Id
 ```
 
 ### Example 5: ResourceId - Using string value
 ```powershell
-Remove-AzServiceBusRule -ResourceId "/subscriptions/xxx-xxxxx-xxxxxx-xxxxxx/resourceGroups/ResourceGroupName/providers/Microsoft.ServiceBus/namespaces/NamespaceName/topics/TopicName/subscriptions/SubscriptionName/rules/RuleName"
+PS C:\> Remove-AzServiceBusRule -ResourceId "/subscriptions/xxx-xxxxx-xxxxxx-xxxxxx/resourceGroups/ResourceGroupName/providers/Microsoft.ServiceBus/namespaces/NamespaceName/topics/TopicName/subscriptions/SubscriptionName/rules/RuleName"
 ```
 
 Removes the rule provided through ARM Id in $resourceid/string for -ResourceId parameter 

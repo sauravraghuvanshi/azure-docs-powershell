@@ -39,7 +39,7 @@ This command will delete the specified storage sync service. A storage sync serv
 
 ### Example 1
 ```powershell
-Remove-AzStorageSyncService -Force -ResourceGroupName "myResourceGroup" -Name "myStorageSyncServiceName"
+PS C:\> Remove-AzStorageSyncService -Force -ResourceGroupName "myResourceGroup" -Name "myStorageSyncServiceName"
 ```
 
 This command will remove the storage sync service.

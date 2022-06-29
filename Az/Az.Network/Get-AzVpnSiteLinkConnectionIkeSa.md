@@ -41,10 +41,7 @@ If the **Get-AzVpnSiteLinkConnectionIkeSa** cmdlet is issued without specifying 
 
 ### Example 1
 ```powershell
-Get-AzVpnSiteLinkConnectionIkeSa -ResourceGroupName test-rg -VpnGatewayName test-gateway -VpnConnectionName test-connection -ResourceName test-linkConnection
-```
-
-```output
+PS C:\> Get-AzVpnSiteLinkConnectionIkeSa -ResourceGroupName test-rg -VpnGatewayName test-gateway -VpnConnectionName test-connection -ResourceName test-linkConnection
 LocalEndpoint              : 52.148.27.69
 RemoteEndpoint             : 13.78.223.113
 InitiatorCookie            : 10994953846917485010

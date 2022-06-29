@@ -51,10 +51,8 @@ The cmdlet may call below Microsoft Graph API according to input parameters:
 
 ### Example 1: Get all key vaults in your current subscription
 ```powershell
-Get-AzKeyVault
-```
+PS C:\> Get-AzKeyVault
 
-```output
 Vault Name          : myvault1
 Resource Group Name : myrg
 Location            : westus
@@ -82,10 +80,8 @@ This command gets all the key vaults in your current subscription.
 
 ### Example 2: Get a specific key vault
 ```powershell
-Get-AzKeyVault -VaultName 'myvault'
-```
+PS C:\> Get-AzKeyVault -VaultName 'myvault'
 
-```output
 Vault Name                       : myvault
 Resource Group Name              : myrg
 Location                         : westus
@@ -120,10 +116,8 @@ This command gets the key vault named myvault in your current subscription.
 
 ### Example 3: Get key vaults in a resource group
 ```powershell
-Get-AzKeyVault -ResourceGroupName 'myrg1'
-```
+PS C:\> Get-AzKeyVault -ResourceGroupName 'myrg1'
 
-```output
 Vault Name          : myvault2
 Resource Group Name : myrg1
 Location            : westus
@@ -143,10 +137,8 @@ This command gets all the key vaults in the resource group named ContosoPayRollR
 
 ### Example 4: Get all deleted key vaults in your current subscription
 ```powershell
-Get-AzKeyVault -InRemovedState
-```
+PS C:\> Get-AzKeyVault -InRemovedState
 
-```output
 Vault Name           : myvault4
 Location             : westus
 Id                   : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx/providers/Microsoft.KeyVault/locations/westu
@@ -162,10 +154,8 @@ This command gets all the deleted key vaults in your current subscription.
 
 ### Example 5: Get a deleted key vault
 ```powershell
-Get-AzKeyVault -VaultName 'myvault4'  -Location 'westus' -InRemovedState
-```
+PS C:\> Get-AzKeyVault -VaultName 'myvault4'  -Location 'westus' -InRemovedState
 
-```output
 Vault Name           : myvault4
 Location             : westus
 Id                   : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx/providers/Microsoft.KeyVault/locations/westu
@@ -182,10 +172,8 @@ subscription and in westus region.
 
 ### Example 6: Get key vaults using filtering
 ```powershell
-Get-AzKeyVault -VaultName 'myvault*'
-```
+PS C:\> Get-AzKeyVault -VaultName 'myvault*'
 
-```output
 Vault Name          : myvault2
 Resource Group Name : myrg1
 Location            : westus

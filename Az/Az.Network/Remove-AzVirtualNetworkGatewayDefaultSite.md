@@ -30,9 +30,9 @@ If you do this you will need to use Set-AzVirtualNetworkGatewayDefaultSite to as
 ## EXAMPLES
 
 ### Example 1: Remove the default site assigned to a virtual network gateway
-```powershell
-$Gateway = Get-AzVirtualNetworkGateway -Name "ContosoVirtualGateway"
-Remove-AzVirtualNetworkGatewayDefaultSite -VirtualNetworkGateway $Gateway
+```
+PS C:\>$Gateway = Get-AzVirtualNetworkGateway -Name "ContosoVirtualGateway"
+PS C:\> Remove-AzVirtualNetworkGatewayDefaultSite -VirtualNetworkGateway $Gateway
 ```
 
 This example removes the default site currently assigned to a virtual network gateway named ContosoVirtualGateway.

@@ -28,9 +28,7 @@ The **Get-AzFirewall** cmdlet gets one or more Firewalls in a resource group.
 ### Example 1: Retrieve all Firewalls in a resource group
 ```powershell
 Get-AzFirewall -ResourceGroupName rgName
-```
 
-```output
 Name                       : azFw
 ResourceGroupName          : rgName
 Location                   : westcentralus
@@ -101,9 +99,7 @@ This example retrieves all Firewalls in resource group "rgName".
 ### Example 2: Retrieve a Firewall by name
 ```powershell
 Get-AzFirewall -ResourceGroupName rgName -Name azFw
-```
 
-```output
 Name                       : azFw
 ResourceGroupName          : rgName
 Location                   : westcentralus
@@ -142,9 +138,7 @@ This example retrieves Firewall named "azFw" in resource group "rgName".
 ### Example 3: Retrieve all Firewalls with filtering
 ```powershell
 Get-AzFirewall -Name azFw*
-```
 
-```output
 Name                       : azFw
 ResourceGroupName          : rgName
 Location                   : westcentralus

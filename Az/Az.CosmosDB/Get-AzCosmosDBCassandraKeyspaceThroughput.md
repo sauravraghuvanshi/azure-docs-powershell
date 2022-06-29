@@ -33,7 +33,7 @@ The **Get-AzCosmosDBCassandraKeyspaceThroughput** cmdlet gets the throughput obj
 
 ### Example 1
 ```powershell
-Get-AzCosmosDBCassandraKeyspaceThroughput -ResourceGroupName "resourceGroupName" -AccountName "accountName" -Name "name"
+PS C:\> Get-AzCosmosDBCassandraKeyspaceThroughput -ResourceGroupName {resourceGroupName} -AccountName {accountName} -Name {name}
 ```
 
 ## PARAMETERS

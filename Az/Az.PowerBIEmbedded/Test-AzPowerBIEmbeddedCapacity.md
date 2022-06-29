@@ -25,11 +25,8 @@ The Test-AzPowerBIEmbeddedCapacity cmdlet tests the existence of an instance of 
 ## EXAMPLES
 
 ### Example 1
-```powershell
- Test-AzPowerBIEmbeddedCapacity -Name "testcapacity"
- ```
-
-```output
+```
+PS C:\> Test-AzPowerBIEmbeddedCapacity -Name "testcapacity"
 True
 ```
 

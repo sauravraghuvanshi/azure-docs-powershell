@@ -26,8 +26,8 @@ The **Remove-AzAutomationCertificate** cmdlet removes a certificate from Azure A
 ## EXAMPLES
 
 ### Example 1: Remove a certificate
-```powershell
-Remove-AzAutomationCertificate -AutomationAccountName "Contoso17" -Name "Cert01" -ResourceGroupName "ResourceGroup01"
+```
+PS C:\>Remove-AzAutomationCertificate -AutomationAccountName "Contoso17" -Name "Cert01" -ResourceGroupName "ResourceGroup01"
 ```
 
 This command removes a certificate named Cert01 in the Automation account named Contoso17.

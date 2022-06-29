@@ -36,41 +36,41 @@ For more information about Azure resources and Azure resource groups, see the Ne
 ## EXAMPLES
 
 ### Example 1: Get a resource group by name
-```powershell
-Get-AzResourceGroup -Name "EngineerBlog"
+```
+PS C:\> Get-AzResourceGroup -Name "EngineerBlog"
 ```
 
 This command gets the Azure resource group in your subscription named EngineerBlog.
 
 ### Example 2: Get all tags of a resource group
-```powershell
-(Get-AzResourceGroup -Name "ContosoRG").Tags
+```
+PS C:\> (Get-AzResourceGroup -Name "ContosoRG").Tags
 ```
 
 This command gets the resource group named ContosoRG, and displays the tags associated with that group.
 
 ### Example 3: Get resource groups based on tag
-```powershell
-Get-AzResourceGroup -Tag @{'environment'='prod'}
+```
+PS C:\> Get-AzResourceGroup -Tag @{'environment'='prod'}
 ```
 
 ### Example 4: Show the Resource groups by location
-```powershell
-Get-AzResourceGroup |
-  Sort-Object Location,ResourceGroupName |
-    Format-Table -GroupBy Location ResourceGroupName,ProvisioningState,Tags
+```
+PS C:\> Get-AzResourceGroup |
+  Sort Location,ResourceGroupName |
+  Format-Table -GroupBy Location ResourceGroupName,ProvisioningState,Tags
 ```
 
 ### Example 5: Show the names of all the Resource groups in a particular location
-```powershell
-Get-AzResourceGroup -Location westus2 |
-  Sort-Object ResourceGroupName |
-    Format-Wide ResourceGroupName -Column 4
+```
+PS C:\> Get-AzResourceGroup -Location westus2 |
+   Sort ResourceGroupName | 
+   Format-Wide ResourceGroupName -Column 4
 ```
 
 ### Example 6: Show the Resource groups whose names begin with WebServer
-```powershell
-Get-AzResourceGroup -Name WebServer*
+```
+PS C:\> Get-AzResourceGroup -Name WebServer*
 ```
 
 ## PARAMETERS

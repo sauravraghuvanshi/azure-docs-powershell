@@ -39,31 +39,31 @@ The **Remove-AzServiceBusTopic** cmdlet removes the topic from the specified Ser
 
 ### Example 1
 ```powershell
-Remove-AzServiceBusTopic -ResourceGroup Default-ServiceBus-WestUS -NamespaceName SB-Example1 -TopicName SB-Topic_exampl1
+PS C:\> Remove-AzServiceBusTopic -ResourceGroup Default-ServiceBus-WestUS -NamespaceName SB-Example1 -TopicName SB-Topic_exampl1
 ```
 
 Removes the topic `SB-Topic_exampl1` from the namespace `SB-Example1`.
 
 ### Example 2: InputObject - Using Variable:
 ```powershell
-$inputobject = Get-AzServiceBusTopic <parmas>
-Remove-AzServiceBusTopic -InputObject $inputobject
+PS C:\> $inputobject = Get-AzServiceBusTopic <parmas>
+PS C:\> Remove-AzServiceBusTopic -InputObject $inputobject
 ```
 
 ### Example 3: InputObject - Using Piping:
 ```powershell
-Get-AzServiceBusTopic <parmas> | Remove-AzServiceBusTopic
+PS C:\> Get-AzServiceBusTopic <parmas> | Remove-AzServiceBusTopic
 ```
 
 ### Example 4: ResourceId Using Variable:
 ```powershell
-$resourceid = Get-AzServiceBusTopic <params>
-Remove-AzServiceBusTopic -ResourceId $resourceid.Id
+PS C:\> $resourceid = Get-AzServiceBusTopic <params>
+PS C:\> Remove-AzServiceBusTopic -ResourceId $resourceid.Id
 ```
 
 ### Example 5: ResourceId Using String value
 ```powershell
-Remove-AzServiceBusTopic -ResourceId "/subscriptions/xxxx-xxxxx-xxxxxx-xxxxx/resourceGroups/ResourceGroupName/providers/Microsoft.ServiceBus/namespaces/NamespaceName/topics/TopicName"
+PS C:\> Remove-AzServiceBusTopic -ResourceId "/subscriptions/xxxx-xxxxx-xxxxxx-xxxxx/resourceGroups/ResourceGroupName/providers/Microsoft.ServiceBus/namespaces/NamespaceName/topics/TopicName"
 ```
 
 ## PARAMETERS

@@ -34,12 +34,9 @@ If you omit a required template parameter, the cmdlet prompts you for the value.
 ## EXAMPLES
 
 ### Example 1: Create an integration account partner
-```powershell
-$BusinessIdentities = @("ZZ","AA"),@("XX","GG")
-New-AzIntegrationAccountPartner -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31" -PartnerName "IntegrationAccountPartner22" -PartnerType "B2B" -BusinessIdentities $BusinessIdentities
 ```
-
-```output
+PS C:\>$BusinessIdentities = @("ZZ","AA"),@("XX","GG")
+PS C:\>New-AzIntegrationAccountPartner -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31" -PartnerName "IntegrationAccountPartner22" -PartnerType "B2B" -BusinessIdentities $BusinessIdentities
 Id                 : /subscriptions/<SubscriptionId>/resourceGroups/ResourceGroup11/providers/Microsoft.Logic/integrationAccounts/IntegrationAccount31/partners/IntegrationAccountPartner22
 Name               : IntegrationAccountPartner22
 Type               : Microsoft.Logic/integrationAccounts/partners

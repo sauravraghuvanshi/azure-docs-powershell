@@ -41,14 +41,14 @@ Delete an enrollment group in an Azure IoT Hub Device Provisioning Service.
 
 ### Example 1
 ```powershell
-Remove-AzIoTDeviceProvisioningServiceEnrollmentGroup -ResourceGroupName "myresourcegroup" -DpsName "mydps" -Name "enroll1" -Passthru
+PS C:\> Remove-AzIoTDeviceProvisioningServiceEnrollmentGroup -ResourceGroupName "myresourcegroup" -DpsName "mydps" -Name "enroll1" -Passthru
 ```
 
 Delete a specified enrollment group.
 
 ### Example 2
 ```powershell
-Remove-AzIoTDeviceProvisioningServiceEnrollmentGroup -ResourceGroupName "myresourcegroup" -DpsName "mydps" -Passthru
+PS C:\> Remove-AzIoTDeviceProvisioningServiceEnrollmentGroup -ResourceGroupName "myresourcegroup" -DpsName "mydps" -Passthru
 ```
 
 Delete all enrollment groups.

@@ -44,11 +44,9 @@ When specifying the zone using a **PSPrivateDnsVirtualNetworkLink** object (pass
 ## EXAMPLES
 
 ### Example 1: Set a link
-```powershell
-Set-AzPrivateDnsVirtualNetworkLink -ZoneName "myzone.com" -ResourceGroupName "MyResourceGroup" -Name "mylink" -Tag @{} -IsRegistrationEnabled $true
 ```
+PS C:\>Set-AzPrivateDnsVirtualNetworkLink -ZoneName "myzone.com" -ResourceGroupName "MyResourceGroup" -Name "mylink" -Tag @{} -IsRegistrationEnabled $true
 
-```output
 Name                    : mylink
 ResourceId              : /subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/MyResourceGroup/providers/Microsoft.N
                           etwork/privateDnsZones/myzone.com/virtualNetworkLinks/mylink

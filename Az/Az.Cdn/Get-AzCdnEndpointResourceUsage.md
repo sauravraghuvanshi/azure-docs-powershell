@@ -1,60 +1,80 @@
 ---
-external help file: 
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Cdn.dll-Help.xml
 Module Name: Az.Cdn
 online version: https://docs.microsoft.com/powershell/module/az.cdn/get-azcdnendpointresourceusage
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/Get-AzCdnEndpointResourceUsage.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/Get-AzCdnEndpointResourceUsage.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzCdnEndpointResourceUsage.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzCdnEndpointResourceUsage.md
 ---
 
 # Get-AzCdnEndpointResourceUsage
 
 ## SYNOPSIS
-Checks the quota and usage of geo filters and custom domains under the given endpoint.
+Gets the resource usage of a CDN endpoint.
 
 ## SYNTAX
 
+### ByFieldsParameterSet (Default)
 ```
 Get-AzCdnEndpointResourceUsage -EndpointName <String> -ProfileName <String> -ResourceGroupName <String>
- [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ByObjectParameterSet
+```
+Get-AzCdnEndpointResourceUsage [-EndpointName <String>] -CdnEndpoint <PSEndpoint>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Checks the quota and usage of geo filters and custom domains under the given endpoint.
+The **Get-AzCdnEndpointResourceUsage** cmdlet gets resource limits and current usage for a CDN endpoint.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1
 ```powershell
-{{ Add code here }}
+Get-AzCdnEndpointResourceUsage -ProfileName profile1 -ResourceGroupName rg -EndpointName endpoint1
 ```
 
 ```output
-{{ Add output here }}
+ResourceType          Unit  CurrentValue Limit
+------------          ----  ------------ -----
+customdomain          count            2    20
+geofilter             count            1    25
+deliveryrule          count            2    25
+deliveryrulecondition count            2    10
+deliveryruleaction    count            1     5
+origin                count            2    10
+origingroup           count            2    10
+originsPerOriginGroup count            2    10
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example shows the resource limits and current usage of the endpoint with name 'endpoint1' under profile 'profile1'.
 
 ## PARAMETERS
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.
+### -CdnEndpoint
+The CDN endpoint object.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Cdn.Models.Endpoint.PSEndpoint
+Parameter Sets: ByObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -64,11 +84,11 @@ Accept wildcard characters: False
 ```
 
 ### -EndpointName
-Name of the endpoint under the profile which is unique globally.
+Azure CDN endpoint name.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: ByFieldsParameterSet
 Aliases:
 
 Required: True
@@ -78,12 +98,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+```yaml
+Type: System.String
+Parameter Sets: ByObjectParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ProfileName
-Name of the CDN profile which is unique within the resource group.
+Azure CDN profile name.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: ByFieldsParameterSet
 Aliases:
 
 Required: True
@@ -94,60 +126,14 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Name of the Resource group within the Azure subscription.
+The resource group of the Azure CDN Profile.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: ByFieldsParameterSet
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubscriptionId
-Azure Subscription ID.
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -159,13 +145,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Azure.Commands.Cdn.Models.Endpoint.PSEndpoint
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.Api20210601.IResourceUsage
+### Microsoft.Azure.Commands.Cdn.Models.PSResourceUsage
 
 ## NOTES
 
-ALIASES
-
 ## RELATED LINKS
-

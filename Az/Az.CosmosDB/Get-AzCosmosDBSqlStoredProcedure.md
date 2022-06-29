@@ -33,10 +33,8 @@ The **Get-AzCosmosDBSqlStoredProcedure** cmdlet gets the list of all existing Co
 
 ### Example 1
 ```powershell
-Get-AzCosmosDBSqlStoredProcedure -AccountName "accountName" -ResourceGroupName "resourceGroupName" -DatabaseName "databaseName" -Name "storedProcedureName" -ContainerName "containerName"
-```
+PS C:\> Get-AzCosmosDBSqlStoredProcedure -AccountName {accountName} -ResourceGroupName {resourceGroupName} -DatabaseName {databaseName} -Name {storedProcedureName} -ContainerName {containerName}
 
-```output
 Name                           : {storedProcedureName}
 Id                             : {storedProcedureId}
 Resource                       : Microsoft.Azure.Commands.CosmosDB.Models.PSSqlStoredProcedureGetPropertiesResource

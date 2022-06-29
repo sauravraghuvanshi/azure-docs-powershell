@@ -51,11 +51,8 @@ The **Set-AzSqlDatabase** cmdlet sets properties for a database in Azure SQL Dat
 ## EXAMPLES
 
 ### Example 1: Update a database to a Standard S0 database
-```powershell
-Set-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -DatabaseName "Database01" -ServerName "Server01" -Edition "Standard" -RequestedServiceObjectiveName "S0"
 ```
-
-```output
+PS C:\>Set-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -DatabaseName "Database01" -ServerName "Server01" -Edition "Standard" -RequestedServiceObjectiveName "S0"
 ResourceGroupName             : ResourceGroup01
 ServerName                    : Server01
 DatabaseName                  : Database01
@@ -79,11 +76,8 @@ Tags                          :
 This command updates a database named Database01 to a Standard S0 database on a server named Server01.
 
 ### Example 2: Add a database to an elastic pool
-```powershell
-Set-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -DatabaseName "Database01" -ServerName "Server01" -ElasticPoolName "ElasticPool01"
 ```
-
-```output
+PS C:\>Set-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -DatabaseName "Database01" -ServerName "Server01" -ElasticPoolName "ElasticPool01"
 ResourceGroupName             : ResourceGroup01
 ServerName                    : Server01
 DatabaseName                  : Database01
@@ -107,11 +101,8 @@ Tags                          :
 This command adds a database named Database01 to the elastic pool named ElasticPool01 hosted on the server named Server01.
 
 ### Example 3: Modify the storage max size of a database
-```powershell
-Set-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -DatabaseName "Database01" -ServerName "Server01" -MaxSizeBytes 1099511627776
 ```
-
-```output
+PS C:\>Set-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -DatabaseName "Database01" -ServerName "Server01" -MaxSizeBytes 1099511627776
 ResourceGroupName             : ResourceGroup01
 ServerName                    : Server01
 DatabaseName                  : Database01
@@ -135,11 +126,8 @@ Tags                          :
 This command updates a database named Database01 to set its max size to 1 TB.
 
 ### Example 4: Update a existing General Purpose database to Hyperscale service tier
-```powershell
-Set-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -DatabaseName "Database01" -ServerName "Server01" -Edition "Hyperscale" -RequestedServiceObjectiveName "HS_Gen5_2"
 ```
-
-```output
+PS C:\>Set-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -DatabaseName "Database01" -ServerName "Server01" -Edition "Hyperscale" -RequestedServiceObjectiveName "HS_Gen5_2"
 ResourceGroupName             : ResourceGroup01
 ServerName                    : Server01
 DatabaseName                  : Database01

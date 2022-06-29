@@ -35,14 +35,14 @@ The **New-AzSynapseSqlPool** cmdlet creates an Azure Synapse Analytics SQL pool.
 
 ### Example 1
 ```powershell
-New-AzSynapseSqlPool -WorkspaceName ContosoWorkspace -Name ContosoSqlPool -PerformanceLevel DW200c
+PS C:\> New-AzSynapseSqlPool -WorkspaceName ContosoWorkspace -Name ContosoSqlPool -PerformanceLevel DW200c
 ```
 
 This command creates an Azure Synapse Analytics SQL pool.
 
 ### Example 2
 ```powershell
-New-AzSynapseSqlPool -WorkspaceName ContosoWorkspace -Name ContosoSqlPool -PerformanceLevel DW200c -StorageAccountType LRS
+PS C:\> New-AzSynapseSqlPool -WorkspaceName ContosoWorkspace -Name ContosoSqlPool -PerformanceLevel DW200c -StorageAccountType LRS
 ```
 
 This command creates an Azure Synapse Analytics SQL pool with specified storage account type.

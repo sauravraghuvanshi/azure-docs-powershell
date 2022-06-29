@@ -28,10 +28,7 @@ The **Set-AzRouteConfig** cmdlet updates a route configuration for a route table
 
 ### Example 1: Modify a route
 ```powershell
-Get-AzRouteTable -ResourceGroupName "ResourceGroup11" -Name "RouteTable01" | Set-AzRouteConfig -Name "Route02" -AddressPrefix 10.4.0.0/16 -NextHopType VnetLocal | Set-AzRouteTable
-```
-
-```output
+PS C:\>Get-AzRouteTable -ResourceGroupName "ResourceGroup11" -Name "RouteTable01" | Set-AzRouteConfig -Name "Route02" -AddressPrefix 10.4.0.0/16 -NextHopType VnetLocal | Set-AzRouteTable
 Name              : Routetable01
 ResourceGroupName : ResourceGroup11
 Location          : eastus

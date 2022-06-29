@@ -39,7 +39,7 @@ Removes an existing VpnServerConfiguration.
 
 ### Example 1
 ```powershell
-Remove-AzVpnServerConfiguration -Name "test1config" -ResourceGroupName "P2SCortexGATesting" -Force -PassThru
+PS C:\> Remove-AzVpnServerConfiguration -Name "test1config" -ResourceGroupName "P2SCortexGATesting" -Force -PassThru
 ```
 
 The above command will remove an existing VpnServerConfiguration.

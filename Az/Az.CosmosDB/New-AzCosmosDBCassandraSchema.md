@@ -26,10 +26,8 @@ The **New-AzCosmosDBCassandraSchema** creates a new CosmosDB Cassandra Schema.
 
 ### Example 1
 ```powershell
-New-AzCosmosDBCassandraSchema -Column $column1 -PartitionKey "a" -ClusterKey $clusterkey1
-```
+PS C:\> New-AzCosmosDBCassandraSchema -Column {PSColumn[]} -PartitionKey <String[]> -ClusterKey {PSClusterKey[]}
 
-```output
 Columns PartitionKeys ClusterKeys
 ------- ------------- -----------
 {column1}     {a}     {clusterkey1}

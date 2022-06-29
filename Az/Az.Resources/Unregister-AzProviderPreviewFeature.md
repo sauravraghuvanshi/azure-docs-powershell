@@ -25,8 +25,8 @@ The **Unregister-AzProviderPreviewFeature** cmdlet removes a feature registratio
 ## EXAMPLES
 
 ### Example 1: Removes a feature registration
-```powershell
-Unregister-AzProviderPreviewFeature -FeatureName AllowApplicationSecurityGroups -ProviderNamespace Microsoft.Network
+```
+PS C:\>Unregister-AzProviderPreviewFeature -FeatureName AllowApplicationSecurityGroups -ProviderNamespace Microsoft.Network
 ```
 
 This removes the AllowApplicationSecurityGroups feature for Microsoft.Network from your account.

@@ -57,32 +57,32 @@ Create a device enrollment in an Azure IoT Hub Device Provisioning Service.
 
 ### Example 1
 ```powershell
-Add-AzIoTDeviceProvisioningServiceEnrollment -ResourceGroupName "myresourcegroup" -DpsName "mydps" -RegistrationId "enroll1" -AttestationType SymmetricKey
+PS C:\> Add-AzIoTDeviceProvisioningServiceEnrollment -ResourceGroupName "myresourcegroup" -DpsName "mydps" -RegistrationId "enroll1" -AttestationType SymmetricKey
 ```
 
 Create an enrollment with attestation type SymmetricKey
 
 ### Example 2
 ```powershell
-Add-AzIoTDeviceProvisioningServiceEnrollment -ResourceGroupName "myresourcegroup" -DpsName "mydps" -RegistrationId "enroll1" -AttestationType Tpm -EndorsementKey "endorementkey"
+PS C:\> Add-AzIoTDeviceProvisioningServiceEnrollment -ResourceGroupName "myresourcegroup" -DpsName "mydps" -RegistrationId "enroll1" -AttestationType Tpm -EndorsementKey "endorementkey"
 ```
 
 Create an enrollment with TPM attestation.
 
 ### Example 3
 ```powershell
-Add-AzIoTDeviceProvisioningServiceEnrollment -ResourceGroupName "myresourcegroup" -DpsName "mydps" -RegistrationId "enroll1" -AttestationType X509 -PrimaryCertificate "D:/primary.cer"
+PS C:\> Add-AzIoTDeviceProvisioningServiceEnrollment -ResourceGroupName "myresourcegroup" -DpsName "mydps" -RegistrationId "enroll1" -AttestationType X509 -PrimaryCertificate "D:/primary.cer"
 ```
 
 Create an enrollment with attestation type X509
 
 ### Example 4
 ```powershell
-$tag = @{}
-$tag.Add("environment","test")
-$desired = @{}
-$desired.add("version_dps", "dps1")
-Add-AzIoTDeviceProvisioningServiceEnrollment -ResourceGroupName "myresourcegroup" -DpsName "mydps" -RegistrationId "enroll1" -AttestationType SymmetricKey -tag $tag -Desired $desired
+PS C:\> $tag = @{}
+PS C:\> $tag.Add("environment","test")
+PS C:\> $desired = @{}
+PS C:\> $desired.add("version_dps", "dps1")
+PS C:\> Add-AzIoTDeviceProvisioningServiceEnrollment -ResourceGroupName "myresourcegroup" -DpsName "mydps" -RegistrationId "enroll1" -AttestationType SymmetricKey -tag $tag -Desired $desired
 ```
 
 Create an enrollment with attestation type SymmetricKey and initial twin state.

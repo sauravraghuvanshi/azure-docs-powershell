@@ -33,15 +33,15 @@ You can either list all Keys or filter the list by a specific Key Name.
 ## EXAMPLES
 
 ### Example 1 Get all Keys
-```powershell
-Get-AzIotHubKey -ResourceGroupName "myresourcegroup" -Name "myiothub"
+```
+PS C:\> Get-AzIotHubKey -ResourceGroupName "myresourcegroup" -Name "myiothub"
 ```
 
 Gets all the Keys for the IotHub named "myiothub"
 
 ### Example 2 Get information for a specific Key
-```powershell
-Get-AzIotHubKey -ResourceGroupName "myresourcegroup" -Name "myiothub" -KeyName "iothubowner"
+```
+PS C:\> Get-AzIotHubKey -ResourceGroupName "myresourcegroup" -Name "myiothub" -KeyName "iothubowner"
 ```
 
 Gets the information for a key named "iothubowner" for the IotHub named "myiothub"

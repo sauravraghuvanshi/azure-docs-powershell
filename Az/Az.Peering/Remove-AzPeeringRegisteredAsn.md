@@ -39,7 +39,7 @@ Allows the removal of registered ASN from parent peering resource.
 
 ### Example 1
 ```powershell
-Remove-AzPeeringRegisteredAsn -ResourceId $resourceId
+PS C:\> Remove-AzPeeringRegisteredAsn -ResourceId $resourceId
 ```
 
 Remove a registerd ASN by resource id.

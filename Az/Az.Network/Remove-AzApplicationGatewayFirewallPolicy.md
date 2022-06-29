@@ -40,7 +40,7 @@ The **Remove-AzApplicationGatewayFirewallPolicy** cmdlet removes an application 
 
 ### Example 1
 ```powershell
-Remove-AzApplicationGatewayFirewallPolicy -Name "ApplicationGatewayFirewallPolicy01" -ResourceGroupName "ResourceGroup01"
+PS C:\> Remove-AzApplicationGatewayFirewallPolicy -Name "ApplicationGatewayFirewallPolicy01" -ResourceGroupName "ResourceGroup01"
 ```
 
 This command removes the application gateway firewall policy named ApplicationGatewayFirewallPolicy01 in the resource group named ResourceGroup01.

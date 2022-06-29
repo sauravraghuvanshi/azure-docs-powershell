@@ -34,14 +34,16 @@ Update a list of configurations in a given server.
 
 ### Example 1: Update MySQL configurations list by name
 ```powershell
-Update-AzMySqlServerConfigurationsList -ResourceGroupName PowershellMySqlTest -ServerName mysql-test
+PS C:\> Update-AzMySqlServerConfigurationsList -ResourceGroupName PowershellMySqlTest -ServerName mysql-test
+
 ```
 
 Update MySQL configurations list by name.
 
 ### Example 2: Update MySQL configurations list by identity
 ```powershell
-Get-AzMySqlServer -ResourceGroupName PowershellMySqlTest -ServerName mysql-test | Update-AzMySqlServerConfigurationsList
+PS C:\> Get-AzMySqlServer -ResourceGroupName PowershellMySqlTest -ServerName mysql-test | Update-AzMySqlServerConfigurationsList
+
 ```
 
 Update MySQL configurations list by ID.

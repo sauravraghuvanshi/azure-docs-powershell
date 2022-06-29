@@ -46,7 +46,7 @@ Update a host pool.
 
 ### Example 1: Update a Windows Virtual Desktop HostPool by name
 ```powershell
-Update-AzWvdHostPool -ResourceGroupName ResourceGroupName `
+PS C:\> Update-AzWvdHostPool -ResourceGroupName ResourceGroupName `
                             -Name HostPoolName `
                             -LoadBalancerType 'BreadthFirst' `
                             -Description 'Description' `
@@ -55,9 +55,7 @@ Update-AzWvdHostPool -ResourceGroupName ResourceGroupName `
                             -CustomRdpProperty $null `
                             -Ring $null `
                             -ValidationEnvironment:$false
-```
 
-```output
 Location   Name                 Type
 --------   ----                 ----
 eastus     HostPoolName Microsoft.DesktopVirtualization/hostpools

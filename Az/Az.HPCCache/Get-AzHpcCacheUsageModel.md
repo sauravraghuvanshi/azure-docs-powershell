@@ -25,7 +25,7 @@ The **Get-AzHpcCacheUsageModel** cmdlet returns a list of usage models for NFS S
 
 ### Example 1
 ```powershell
-Get-AzHpcCacheUsageModel
+PS C:\> Get-AzHpcCacheUsageModel
 ```
 
 ## PARAMETERS

@@ -39,17 +39,15 @@ Delete all devices or a specific device from an Iot Hub.
 
 ### Example 1
 ```powershell
-Remove-AzIotHubDevice -ResourceGroupName "myresourcegroup" -IotHubName "myiothub"
+PS C:\> Remove-AzIotHubDevice -ResourceGroupName "myresourcegroup" -IotHubName "myiothub"
 ```
 
 Delete all Iot Hub devices.
 
 ### Example 2
 ```powershell
-Remove-AzIotHubDevice -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -PassThru
-```
+PS C:\> Remove-AzIotHubDevice -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -PassThru
 
-```output
 True
 ```
 

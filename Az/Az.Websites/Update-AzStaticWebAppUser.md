@@ -1,5 +1,5 @@
 ---
-external help file: Az.Websites-help.xml
+external help file: 
 Module Name: Az.Websites
 online version: https://docs.microsoft.com/powershell/module/az.websites/update-azstaticwebappuser
 schema: 2.0.0
@@ -16,15 +16,15 @@ Description for Updates a user entry with the listed roles
 
 ### UpdateExpanded (Default)
 ```
-Update-AzStaticWebAppUser -AuthProvider <String> -Name <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] -UserId <String> [-Kind <String>] [-Role <String>] [-DefaultProfile <PSObject>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-AzStaticWebAppUser -AuthProvider <String> -Name <String> -ResourceGroupName <String> -UserId <String>
+ [-SubscriptionId <String>] [-Kind <String>] [-Role <String>] [-DefaultProfile <PSObject>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-AzStaticWebAppUser -InputObject <IWebsitesIdentity> [-Kind <String>] [-Role <String>]
- [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,10 +34,8 @@ Description for Updates a user entry with the listed roles
 
 ### Example 1: Update a user entry with the listed roles
 ```powershell
-Update-AzStaticWebAppUser -ResourceGroupName azure-rg-test -Name staticweb-portal01 -Authprovider 'github' -Userid 'fa4eba85fa9f4a42b5300dc4c7bb45aa' -Role 'contributor'
-```
+PS C:\> Update-AzStaticWebAppUser -ResourceGroupName azure-rg-test -Name staticweb-portal01 -Authprovider 'github' -Userid 'fa4eba85fa9f4a42b5300dc4c7bb45aa' -Role 'contributor'
 
-```output
 Kind Name                             Type
 ---- ----                             ----
      fa4eba85fa9f4a42b5300dc4c7bb45aa Microsoft.Web/staticSites/users
@@ -47,10 +45,8 @@ This command updates a user entry with the listed roles.
 
 ### Example 2: Update a user entry with the listed roles by pipeline
 ```powershell
-Get-AzStaticWebAppUser -ResourceGroupName azure-rg-test -Name staticweb-portal01 -Authprovider 'all'  | Update-AzStaticWebAppUser -Role 'contributor'
-```
+PS C:\> Get-AzStaticWebAppUser -ResourceGroupName azure-rg-test -Name staticweb-portal01 -Authprovider 'all'  | Update-AzStaticWebAppUser -Role 'contributor'
 
-```output
 Kind Name                             Type
 ---- ----                             ----
      fa4eba85fa9f4a42b5300dc4c7bb45aa Microsoft.Web/staticSites/users
@@ -256,14 +252,12 @@ INPUTOBJECT <IWebsitesIdentity>: Identity Parameter
   - `[EnvironmentName <String>]`: The stage site identifier.
   - `[FunctionAppName <String>]`: Name of the function app registered with the static site build.
   - `[Id <String>]`: Resource identity path
-  - `[JobHistoryId <String>]`: History ID.
   - `[Location <String>]`: Location where you plan to create the static site.
   - `[Name <String>]`: Name of the static site.
   - `[PrivateEndpointConnectionName <String>]`: Name of the private endpoint connection.
   - `[ResourceGroupName <String>]`: Name of the resource group to which the resource belongs.
-  - `[Slot <String>]`: Name of the deployment slot. If a slot is not specified, the API deletes a deployment for the production slot.
   - `[SubscriptionId <String>]`: Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
   - `[Userid <String>]`: The user id of the user.
-  - `[WebJobName <String>]`: Name of Web Job.
 
 ## RELATED LINKS
+

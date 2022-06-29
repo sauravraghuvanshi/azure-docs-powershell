@@ -27,7 +27,7 @@ The cmdlet returns the updated service object.
 
 ### Example 1
 ```powershell
-Set-AzDeploymentManagerService -InputObject $serviceObject
+PS C:\> Set-AzDeploymentManagerService -InputObject $serviceObject
 ```
 
 This command updates a service whose name, service topology name and ResourceGroup match the Name, ServiceTopologyName and ResourceGroupName properties of the $serviceObject, respectively.

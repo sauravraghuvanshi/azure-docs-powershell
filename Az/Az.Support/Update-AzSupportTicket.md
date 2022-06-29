@@ -52,9 +52,8 @@ Use this cmdlet to update a support ticket's severity level, status or customer 
 
 ### Example 1: Update severity of support ticket.
 ```powershell
-Update-AzSupportTicket -Name "test1" -Severity "moderate"
-```
-```output
+PS C:\> Update-AzSupportTicket -Name "test1" -Severity "moderate"
+
 Name  Title                        SupportTicketId Severity ServiceDisplayName            Status CreatedDate
 ----  -----                        --------------- -------- ------------------            ------ -----------
 test1 test title1                  150010521000317 Moderate Virtual Machine running Linux Open   2/5/2020 1:33:53 AM
@@ -62,9 +61,8 @@ test1 test title1                  150010521000317 Moderate Virtual Machine runn
 
 ### Example 2: Update status of support ticket.
 ```powershell
-Update-AzSupportTicket -Name "test1" -Status "Closed"
-```
-```output
+PS C:\> Update-AzSupportTicket -Name "test1" -Status "Closed"
+
 Name  Title                        SupportTicketId Severity ServiceDisplayName            Status CreatedDate
 ----  -----                        --------------- -------- ------------------            ------ -----------
 test1 test title1                  150010521000317 Moderate Virtual Machine running Linux Closed   2/5/2020 1:33:53 AM
@@ -72,12 +70,11 @@ test1 test title1                  150010521000317 Moderate Virtual Machine runn
 
 ### Example 3: Update contact details of support ticket by specify contact object.
 ```powershell
-$contactDetail = New-Object Microsoft.Azure.Commands.Support.Models.PSContactProfile
-$contactDetail.FirstName = "first name updated"
-$contactDetail.LastName = "last name updated"
-Update-AzSupportTicket -Name "test1" -CustomerContactDetail $contactDetail 
-```
-```output
+PS C:\> $contactDetail = new-object Microsoft.Azure.Commands.Support.Models.PSContactProfile
+PS C:\> $contactDetail.FirstName = "first name updated"
+PS C:\> $contactDetail.LastName = "last name updated"
+PS C:\> Update-AzSupportTicket -Name "test1" -CustomerContactDetail $contactDetail 
+
 Name  Title                        SupportTicketId Severity ServiceDisplayName            Status CreatedDate
 ----  -----                        --------------- -------- ------------------            ------ -----------
 test1 test title1                  150010521000317 Moderate Virtual Machine running Linux Open   2/5/2020 1:33:53 AM
@@ -85,9 +82,8 @@ test1 test title1                  150010521000317 Moderate Virtual Machine runn
 
 ### Example 4: Update severity of support ticket by piping support ticket object.
 ```powershell
-Get-AzSupportTicket -Name "test1" | Update-AzSupportTicket -Severity "moderate"
-```
-```output
+PS C:\> Get-AzSupportTicket -Name "test1" | Update-AzSupportTicket -Severity "moderate"
+
 Name  Title                        SupportTicketId Severity ServiceDisplayName            Status CreatedDate
 ----  -----                        --------------- -------- ------------------            ------ -----------
 test1 test title1                  150010521000317 Moderate Virtual Machine running Linux Open   2/5/2020 1:33:53 AM
@@ -95,9 +91,8 @@ test1 test title1                  150010521000317 Moderate Virtual Machine runn
 
 ### Example 5: Update contact details of support ticket by specifying individual contact parameters.
 ```powershell
-Update-AzSupportTicket -Name "test1" -CustomerFirstName "first name updated" -CustomerLastName "last name updated" -AdditionalEmailAddress @("user2@contoso.com") 
-```
-```output
+PS C:\> Update-AzSupportTicket -Name "test1" -CustomerFirstName "first name updated" -CustomerLastName "last name updated" -AdditionalEmailAddress @("user2@contoso.com") 
+
 Name  Title                        SupportTicketId Severity ServiceDisplayName            Status CreatedDate
 ----  -----                        --------------- -------- ------------------            ------ -----------
 test1 test title1                  150010521000317 Moderate Virtual Machine running Linux Open   2/5/2020 1:33:53 AM
@@ -105,9 +100,8 @@ test1 test title1                  150010521000317 Moderate Virtual Machine runn
 
 ### Example 6: Update status of support ticket by piping support ticket object.
 ```powershell
-Get-AzSupportTicket -Name "test1" | Update-AzSupportTicket -Status "Closed"
-```
-```output
+PS C:\> Get-AzSupportTicket -Name "test1" | Update-AzSupportTicket -Status "Closed"
+
 Name  Title                        SupportTicketId Severity ServiceDisplayName            Status CreatedDate
 ----  -----                        --------------- -------- ------------------            ------ -----------
 test1 test title1                  150010521000317 Moderate Virtual Machine running Linux Closed   2/5/2020 1:33:53 AM

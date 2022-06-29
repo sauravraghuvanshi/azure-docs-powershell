@@ -27,7 +27,7 @@ This object is to be passed to the command that creates Log Alert Rule.
 
 ### Example 1
 ```powershell
-$schedule = New-AzScheduledQueryRuleSchedule -FrequencyInMinutes 15 -TimeWindowInMinutes 15
+PS C:\>  $schedule = New-AzScheduledQueryRuleSchedule -FrequencyInMinutes 15 -TimeWindowInMinutes 15
 ```
 
 ## PARAMETERS

@@ -39,11 +39,9 @@ The operation to create or update the extension.
 
 ### Example 1: Set an extension on a machine
 ```powershell
-$Settings = @{ "commandToExecute" = "powershell.exe -c Get-Process" }
-Set-AzConnectedMachineExtension -Name custom -ResourceGroupName ContosoTest -MachineName win-eastus1 -Location eastus -Publisher "Microsoft.Compute" -TypeHandlerVersion 1.10 -Settings $Settings -ExtensionType CustomScriptExtension
-```
+PS C:\> $Settings = @{ "commandToExecute" = "powershell.exe -c Get-Process" }
+PS C:\> Set-AzConnectedMachineExtension -Name custom -ResourceGroupName ContosoTest -MachineName win-eastus1 -Location eastus -Publisher "Microsoft.Compute" -TypeHandlerVersion 1.10 -Settings $Settings -ExtensionType CustomScriptExtension
 
-```output
 Name   Location ProvisioningState
 ----   -------- -----------------
 custom eastus   Succeeded
@@ -53,11 +51,9 @@ Sets an extension on a machine.
 
 ### Example 2: Set an extension with extension parameters specified via the pipeline
 ```powershell
-$otherExtension = Get-AzConnectedMachineExtension -Name custom -ResourceGroupName ContosoTest -MachineName other
-$otherExtension | Set-AzConnectedMachineExtension -Name custom -ResourceGroupName ContosoTest -MachineName important
-```
+PS C:\> $otherExtension = Get-AzConnectedMachineExtension -Name custom -ResourceGroupName ContosoTest -MachineName other
+PS C:\> $otherExtension | Set-AzConnectedMachineExtension -Name custom -ResourceGroupName ContosoTest -MachineName important
 
-```output
 Name   Location ProvisioningState
 ----   -------- -----------------
 custom eastus   Succeeded

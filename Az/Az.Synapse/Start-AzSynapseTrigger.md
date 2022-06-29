@@ -39,23 +39,23 @@ The **Start-AzSynapseTrigger** cmdlet starts a trigger in a workspace. If the tr
 
 ### Example 1
 ```powershell
-Start-AzSynapseTrigger -WorkspaceName ContosoWorkspace -Name ContosoTrigger
+PS C:\> Start-AzSynapseTrigger -WorkspaceName ContosoWorkspace -Name ContosoTrigger
 ```
 
 Starts a trigger called ContosoTrigger in the workspace ContosoWorkspace.
 
 ### Example 2
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Start-AzSynapseTrigger -Name ContosoTrigger
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Start-AzSynapseTrigger -Name ContosoTrigger
 ```
 
 Starts a trigger called ContosoTrigger in the workspace ContosoWorkspace through pipeline.
 
 ### Example 3
 ```powershell
-$trigger = Get-AzSynapseTrigger -WorkspaceName ContosoWorkspace -Name ContosoTrigger
-$trigger | Start-AzSynapseTrigger
+PS C:\> $trigger = Get-AzSynapseTrigger -WorkspaceName ContosoWorkspace -Name ContosoTrigger
+PS C:\> $trigger | Start-AzSynapseTrigger
 ```
 
 Starts a trigger called ContosoTrigger in the workspace ContosoWorkspace through pipeline.

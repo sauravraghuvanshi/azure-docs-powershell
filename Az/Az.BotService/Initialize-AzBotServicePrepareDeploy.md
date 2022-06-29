@@ -26,7 +26,7 @@ Returns a BotService specified by the parameters.
 
 ### Example 1: Initialize the Project FileFolder
 ```powershell
-Initialize-AzBotServicePrepareDeploy -CodeDir D:\zips\MyEchoBot -ProjFileName MyEchoBot.csproj
+PS C:\> Initialize-AzBotServicePrepareDeploy -CodeDir D:\zips\MyEchoBot -ProjFileName MyEchoBot.csproj
 
 ```
 

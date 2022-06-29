@@ -39,8 +39,8 @@ For a detailed explanation of CA certificates in Azure IoT Hub, see https://docs
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Remove-AzIotHubCertificate -ResourceGroupName "myresourcegroup" -Name "myiothub" -CertificateName "mycertificate" -Etag "AAAAAAFPazE="
+```
+PS C:\> Remove-AzIotHubCertificate -ResourceGroupName "myresourcegroup" -Name "myiothub" -CertificateName "mycertificate" -Etag "AAAAAAFPazE="
 ```
 
 Deletes MyCertificate

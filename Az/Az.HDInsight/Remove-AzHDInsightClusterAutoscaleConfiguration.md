@@ -40,9 +40,9 @@ The **Remove-AzHDInsightClusterAutoscaleConfiguration** cmdlet removes the autos
 
 ### Example 1: Remove the autoscale configuration of the HDInsight cluster.
 ```powershell
-$clusterResourceGroup="group"
-$clusterName="MyCluster"
-Remove-AzHDInsightClusterAutoscaleConfiguration -ResourceGroupName $clusterResourceGroup -ClusterName $clusterName
+PS C:\> $clusterResourceGroup="group"
+PS C:\> $clusterName="MyCluster"
+PS C:\> Remove-AzHDInsightClusterAutoscaleConfiguration -ResourceGroupName $clusterResourceGroup -ClusterName $clusterName
 ```
 
 This command removes the autoscale configuration of the HDInsight cluster.

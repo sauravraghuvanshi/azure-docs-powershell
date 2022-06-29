@@ -40,10 +40,8 @@ Typical reasons to use this cmdlet are:
 
 ### Example 1: Back up a secret with an automatically generated file name
 ```powershell
-Backup-AzKeyVaultSecret -VaultName 'MyKeyVault' -Name 'MySecret'
-```
+PS C:\Users\username\> Backup-AzKeyVaultSecret -VaultName 'MyKeyVault' -Name 'MySecret'
 
-```output
 C:\Users\username\mykeyvault-mysecret-1527029447.01191
 ```
 
@@ -51,10 +49,8 @@ This command retrieves the secret named MySecret from the key vault named MyKeyV
 
 ### Example 2: Back up a secret to a specified file name, overwriting the existing file without prompting
 ```powershell
-Backup-AzKeyVaultSecret -VaultName 'MyKeyVault' -Name 'MySecret' -OutputFile 'C:\Backup.blob' -Force
-```
+PS C:\> Backup-AzKeyVaultSecret -VaultName 'MyKeyVault' -Name 'MySecret' -OutputFile 'C:\Backup.blob' -Force
 
-```output
 C:\Backup.blob
 ```
 
@@ -62,11 +58,9 @@ This command retrieves the secret named MySecret from the key vaultnamed MyKeyVa
 
 ### Example 3: Back up a secret previously retrieved to a specified file name
 ```powershell
-$secret = Get-AzKeyVaultSecret -VaultName 'MyKeyVault' -Name 'MySecret'
-Backup-AzKeyVaultSecret -Secret $secret -OutputFile 'C:\Backup.blob'
-```
+PS C:\> $secret = Get-AzKeyVaultSecret -VaultName 'MyKeyVault' -Name 'MySecret'
+PS C:\> Backup-AzKeyVaultSecret -Secret $secret -OutputFile 'C:\Backup.blob'
 
-```output
 C:\Backup.blob
 ```
 

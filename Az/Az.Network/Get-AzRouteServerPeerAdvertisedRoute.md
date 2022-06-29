@@ -33,13 +33,13 @@ Given A route server peer either by name or by object, enumerate routes being ad
 
 ### Example 1
 ```powershell
-Get-AzRouteServerPeerAdvertisedRoute -ResourceGroupName $resourceGroupName -RouteServerName $routeServerName -PeerName $peerName
+Get-AzRouteServerPeerAdvertisedRouter -ResourceGroupName $resourceGroupName -RouteServerName $routeServerName -PeerName $peerName
 ```
 
 ### Example 2
 ```powershell
 $routeServerPeer = Get-AzRouteServerPeer -ResourceGroupName $resourceGroupName -RouteServerName $routeServerName -PeerName $peerName
-Get-AzRouteServerPeerAdvertisedRoute -InputObject $routeServerPeer
+Get-AzRouteServerPeerAdvertisedRouter -InputObject $routeServerPeer
 ```
 
 ## PARAMETERS

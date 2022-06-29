@@ -27,10 +27,8 @@ Returns a list of language extensions that can run within KQL queries.
 
 ### Example 1: List all language extensions set for a workspace
 ```powershell
-Get-AzSynapseKustoPoolLanguageExtension -ResourceGroupName testrg -WorkspaceName testws -KustoPoolName testpool
-```
+PS C:\> Get-AzSynapseKustoPoolLanguageExtension -ResourceGroupName testrg -WorkspaceName testws -KustoPoolName testpool
 
-```output
 Name
 ----
 PYTHON

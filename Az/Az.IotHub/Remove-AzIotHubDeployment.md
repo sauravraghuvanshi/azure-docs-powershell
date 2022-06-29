@@ -39,7 +39,7 @@ See https://docs.microsoft.com/azure/iot-edge/module-deployment-monitoring for m
 
 ### Example 1
 ```powershell
-Remove-AzIotHubDeployment -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -Name "deploy1"
+PS C:\> Remove-AzIotHubDeployment -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -Name "deploy1"
 ```
 
 Delete an IoT Edge deployment.

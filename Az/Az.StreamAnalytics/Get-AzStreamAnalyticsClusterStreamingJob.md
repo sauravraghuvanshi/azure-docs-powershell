@@ -26,9 +26,8 @@ Lists all of the streaming jobs in the given cluster.
 
 ### Example 1: Get all jobs under the stream analytics cluster
 ```powershell
-Get-AzStreamAnalyticsClusterStreamingJob -ResourceGroupName pwshaz-rg-test -ClusterName sac-m-test01
-```
-```output
+PS C:\> Get-AzStreamAnalyticsClusterStreamingJob -ResourceGroupName pwshaz-rg-test -ClusterName sac-m-test01
+
 JobState StreamingUnit
 -------- -------------
 Created  3

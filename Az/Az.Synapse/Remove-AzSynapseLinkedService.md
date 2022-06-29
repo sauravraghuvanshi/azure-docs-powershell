@@ -39,23 +39,23 @@ The **Remove-AzSynapseLinkedService** cmdlet removes a linked service from works
 
 ### Example 1
 ```powershell
-Remove-AzSynapseLinkedService -WorkspaceName ContosoWorkspace -Name ContosoLinkedService
+PS C:\> Remove-AzSynapseLinkedService -WorkspaceName ContosoWorkspace -Name ContosoLinkedService
 ```
 
 This command removes the linked service named ContosoLinkedService from the workspace named ContosoWorkspace.
 
 ### Example 2
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Remove-AzSynapseLinkedService -Name ContosoLinkedService
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Remove-AzSynapseLinkedService -Name ContosoLinkedService
 ```
 
 This command removes the linked service named ContosoLinkedService from the workspace named ContosoWorkspace through pipeline.
 
 ### Example 3
 ```powershell
-$linkedService = Get-AzSynapseLinkedService -WorkspaceName ContosoWorkspace -Name ContosoLinkedService
-$linkedService | Remove-AzSynapseLinkedService
+PS C:\> $linkedService = Get-AzSynapseLinkedService -WorkspaceName ContosoWorkspace -Name ContosoLinkedService
+PS C:\> $linkedService | Remove-AzSynapseLinkedService
 ```
 
 This command removes the linked service named ContosoLinkedService from the workspace named ContosoWorkspace through pipeline.

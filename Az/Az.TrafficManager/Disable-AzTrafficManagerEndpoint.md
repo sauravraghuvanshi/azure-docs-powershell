@@ -38,16 +38,16 @@ Alternatively, you can specify the endpoint name and type by using the *Name* an
 ## EXAMPLES
 
 ### Example 1: Disable an endpoint by name
-```powershell
-Disable-AzTrafficManagerEndpoint -Name "contoso" -ProfileName "ContosoProfile" -ResourceGroupName ResourceGroup11 -Type ExternalEndpoints
+```
+PS C:\> Disable-AzTrafficManagerEndpoint -Name "contoso" -ProfileName "ContosoProfile" -ResourceGroupName ResourceGroup11 -Type ExternalEndpoints
 ```
 
 This command disables the external endpoint named contoso in the profile named ContosoProfile in resource group ResourceGroup11.
 The command prompts you for confirmation.
 
 ### Example 2: Disable an endpoint by using the pipeline
-```powershell
-Get-AzTrafficManagerEndpoint -Name "contoso" -Type ExternalEndpoints -ProfileName "ContosoProfile" -ResourceGroupName "ResourceGroup11" | Disable-AzTrafficManagerEndpoint -Force
+```
+PS C:\>Get-AzTrafficManagerEndpoint -Name "contoso" -Type ExternalEndpoints -ProfileName "ContosoProfile" -ResourceGroupName "ResourceGroup11" | Disable-AzTrafficManagerEndpoint -Force
 ```
 
 This command gets the external endpoint named Contoso from the profile named ContosoProfile in ResourceGroup11.

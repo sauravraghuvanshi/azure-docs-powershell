@@ -44,10 +44,7 @@ The **Get-AzDataBoxEdgeShare** cmdlet gets the available shares for a Data Box E
 
 ### Example 1
 ```powershell
-Get-AzDataBoxEdgeShare -ResourceGroupName resourceGroupName -DeviceName deviceName
-```
-
-```output
+PS C:\> Get-AzDataBoxEdgeShare -ResourceGroupName resourceGroupName -DeviceName deviceName
 Name       Type       DataPolicy       DataFormat       ResourceGroupName     StorageAccountName
 ---------- ---------- ---------------- ---------------- --------------------- -------------------
 share-1    SMB        Cloud            PageBlob         resourceGroupName     storageAccountName

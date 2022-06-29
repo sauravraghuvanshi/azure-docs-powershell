@@ -40,10 +40,8 @@ The Update-AzContainerRegistryCredential cmdlet regenerates a login credential f
 
 ### Example 1: Regenerate a login credential for a container registry
 ```powershell
-Update-AzContainerRegistryCredential -ResourceGroupName "MyResourceGroup" -Name "MyRegistry" -PasswordName "Password"
-```
+PS C:\>Update-AzContainerRegistryCredential -ResourceGroupName "MyResourceGroup" -Name "MyRegistry" -PasswordName "Password"
 
-```output
 Username   Password                         Password2
 --------   --------                         ---------
 MyRegistry ++q/=K9+RH/+hwg2+3A=N+/w=J/12Ph9 //JRPkgxx+r+z/ztU=R//E==vum=pRKL

@@ -36,10 +36,8 @@ recovered vault will be active after recovery
 
 ### Example 1
 ```powershell
-Undo-AzKeyVaultRemoval -VaultName 'MyKeyVault' -ResourceGroupName 'MyResourceGroup' -Location 'eastus2' -Tag @{"x"= "y"}
-```
+PS C:\> Undo-AzKeyVaultRemoval -VaultName 'MyKeyVault' -ResourceGroupName 'MyResourceGroup' -Location 'eastus2' -Tag @{"x"= "y"}
 
-```output
 Vault Name                       : MyKeyVault
 Resource Group Name              : MyResourceGroup
 Location                         : eastus2

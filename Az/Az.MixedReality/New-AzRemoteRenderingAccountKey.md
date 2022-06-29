@@ -57,10 +57,8 @@ Regenerate primary key or secondary key of Remote Rendering Account.
 
 ### Example 1
 ```powershell
-New-AzRemoteRenderingAccountKey -ResourceGroupName rg1 -Name example -Secondary
-```
+PS C:\> New-AzRemoteRenderingAccountKey -ResourceGroupName rg1 -Name example -Secondary
 
-```output
 PrimaryKey                                   SecondaryKey
 ----------                                   ------------
 QTwT6LpnD6NuUfgfkCKFBmf89xWJ7tDC0Yx0yxxaejs= mF8lsBeEbs51H/jLe4COW4zUiEyg9lDM1XHQ03jtxZU=
@@ -70,10 +68,8 @@ Regenerate secondary key of Remote Rendering Account "example" in Resource Group
 
 ### Example 2
 ```powershell
-Get-AzRemoteRenderingAccount -ResourceGroup rg1 -Name example | New-AzRemoteRenderingAccountKey -Secondary
-```
+PS C:\> Get-AzRemoteRenderingAccount -ResourceGroup rg1 -Name example | New-AzRemoteRenderingAccountKey -Secondary
 
-```output
 PrimaryKey                                   SecondaryKey
 ----------                                   ------------
 QTwT6LpnD6NuUfgfkCKFBmf89xWJ7tDC0Yx0yxxaejs= BGOP2NZN5ThHbDFKzW+FISSgxnnBqCPKpTsixAxkvXk=

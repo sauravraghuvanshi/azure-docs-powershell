@@ -38,8 +38,8 @@ The **Remove-AzEventHubGeoDRConfiguration** cmdlet deletes an Alias(Disaster Rec
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Remove-AzEventHubGeoDRConfiguration -ResourceGroupName "SampleResourceGroup" -Namespace "SampleNamespace_Secondary" -Name "SampleDRConfigName"
+```
+PS C:\>Remove-AzEventHubGeoDRConfiguration -ResourceGroupName "SampleResourceGroup" -Namespace "SampleNamespace_Secondary" -Name "SampleDRConfigName"
 ```
 
 Deletes an Alias (Disaster Recovery configuration)

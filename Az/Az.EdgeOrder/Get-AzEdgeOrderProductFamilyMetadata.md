@@ -26,11 +26,9 @@ This method provides the list of product families metadata for the given subscri
 
 ### Example 1: Gets available product families on procured subscription
 ```powershell
-$productFamilyMeta = Get-AzEdgeOrderProductFamilyMetadata -SubscriptionId SubscriptionId
-$productFamilyMeta.HierarchyInformation
-```
+PS C:\> $productFamilyMeta = Get-AzEdgeOrderProductFamilyMetadata -SubscriptionId SubscriptionId
+PS C:\> $productFamilyMeta.HierarchyInformation
 
-```output
 ConfigurationName ProductFamilyName ProductLineName ProductName
 ----------------- ----------------- --------------- -----------
                   azurestackedge

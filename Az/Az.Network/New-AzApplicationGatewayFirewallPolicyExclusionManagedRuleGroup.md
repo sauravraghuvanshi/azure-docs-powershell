@@ -27,14 +27,14 @@ The **New-AzApplicationGatewayFirewallPolicyExclusionManagedRuleGroup** creates 
 
 ### Example 1
 ```powershell
-$ruleGroupEntry = New-AzApplicationGatewayFirewallPolicyExclusionManagedRuleGroup -RuleGroupName $ruleName -Rule $rule1,$rule2
+PS C:\> $ruleGroupEntry = New-AzApplicationGatewayFirewallPolicyExclusionManagedRuleGroup -RuleGroupName $ruleName -Rules $rule1,$rule2
 ```
 
 Creates an ExclusionManagedRuleGroup entry with group name as $ruleName and Rules as $rule1, $rule2. Assigns the same to $ruleGroupEntry
 
 ### Example 2
 ```powershell
-$ruleGroupEntry = New-AzApplicationGatewayFirewallPolicyExclusionManagedRuleGroup -RuleGroupName $ruleName
+PS C:\> $ruleGroupEntry = New-AzApplicationGatewayFirewallPolicyExclusionManagedRuleGroup -RuleGroupName $ruleName
 ```
 
 Creates an ExclusionManagedRuleGroup entry with group name as $ruleName. Assigns the same to $ruleGroupEntry

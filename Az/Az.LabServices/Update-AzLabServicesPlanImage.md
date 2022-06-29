@@ -40,10 +40,8 @@ Updates an image resource.
 
 ### Example 1: Update a lab plan image.
 ```powershell
-Update-AzLabServicesPlanImage -ResourceGroupName "Group Name" -LabPlanName "LabPlan Name" -Name "Image Name" -EnabledState "Enabled"
-```
+PS C:\> Update-AzLabServicesPlanImage -ResourceGroupName "Group Name" -LabPlanName "LabPlan Name" -Name "Image Name" -EnabledState "Enabled"
 
-```output
 Name
 ----
 Image Name

@@ -33,7 +33,7 @@ The **Test-AzSynapseSqlPool** cmdlet checks for the existence of a Synapse Analy
 
 ### Example 1
 ```powershell
-Test-AzSynapseSqlPool -WorkspaceName ContosoWorkspace -Name ContosoSqlPool
+PS C:\> Test-AzSynapseSqlPool -WorkspaceName ContosoWorkspace -Name ContosoSqlPool
 ```
 
 This command checks the existence of the specified SQL pool.

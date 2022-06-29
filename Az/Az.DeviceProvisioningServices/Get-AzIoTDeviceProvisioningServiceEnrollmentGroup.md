@@ -39,14 +39,14 @@ Get the details of an enrollment group or list all enrollment groups in an Azure
 
 ### Example 1
 ```powershell
-Get-AzIoTDeviceProvisioningServiceEnrollmentGroup -ResourceGroupName "myresourcegroup" -DpsName "mydps" -Name "enroll1"
+PS C:\> Get-AzIoTDeviceProvisioningServiceEnrollmentGroup -ResourceGroupName "myresourcegroup" -DpsName "mydps" -Name "enroll1"
 ```
 
 Get device enrollment group in an Azure IoT Hub Device Provisioning Service.
 
 ### Example 2
 ```powershell
-Get-AzIoTDeviceProvisioningServiceEnrollmentGroup -ResourceGroupName "myresourcegroup" -DpsName "mydps"
+PS C:\> Get-AzIoTDeviceProvisioningServiceEnrollmentGroup -ResourceGroupName "myresourcegroup" -DpsName "mydps"
 ```
 
 List all device enrollment groups in an Azure IoT Hub Device Provisioning Service.

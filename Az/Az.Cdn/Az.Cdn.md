@@ -1,451 +1,237 @@
 ---
 Module Name: Az.Cdn
-Module Guid: f9fae843-9c26-4513-9442-17f4379802bf
+Module Guid: 91832aaa-dc11-4583-8239-bce5fd531604
 Download Help Link: https://docs.microsoft.com/powershell/module/az.cdn
-Help Version: 1.0.0.0
+Help Version: 4.2.4.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/Az.Cdn.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/Az.Cdn.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Az.Cdn.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Az.Cdn.md
 ---
 
 # Az.Cdn Module
 ## Description
-Microsoft Azure PowerShell: Cdn cmdlets
+The topics in this section document the Azure PowerShell cmdlets for Azure Content Delivery Network (CDN) in the Azure Resource Manager (ARM) framework. The cmdlets exist in the Microsoft.Azure.Commands.Cdn namespace.
 
 ## Az.Cdn Cmdlets
-### [Clear-AzCdnEndpointContent](Clear-AzCdnEndpointContent.md)
-Removes a content from CDN.
+### [Confirm-AzCdnEndpointProbeURL](Confirm-AzCdnEndpointProbeURL.md)
+Validates a probe URL.
 
-### [Clear-AzFrontDoorCdnEndpointContent](Clear-AzFrontDoorCdnEndpointContent.md)
-Removes a content from AzureFrontDoor.
+### [Disable-AzCdnCustomDomain](Disable-AzCdnCustomDomain.md)
+Disables Custom Domain HTTPS (Deprecated).
 
-### [Disable-AzCdnCustomDomainCustomHttps](Disable-AzCdnCustomDomainCustomHttps.md)
-Disable https delivery of the custom domain.
+### [Disable-AzCdnCustomDomainHttps](Disable-AzCdnCustomDomainHttps.md)
+Disables Custom Domain HTTPS.
 
-### [Enable-AzCdnCustomDomainCustomHttps](Enable-AzCdnCustomDomainCustomHttps.md)
-Enable https delivery of the custom domain.
+### [Enable-AzCdnCustomDomain](Enable-AzCdnCustomDomain.md)
+Enables Custom Domain HTTPS (Deprecated).
+
+### [Enable-AzCdnCustomDomainHttps](Enable-AzCdnCustomDomainHttps.md)
+Enables custom HTTPS.
+
+### [Get-AzAfdCustomDomain](Get-AzAfdCustomDomain.md)
+Gets the AFD custom domain.
+
+### [Get-AzAfdEndpoint](Get-AzAfdEndpoint.md)
+Gets the AFD endpoint.
+
+### [Get-AzAfdOrigin](Get-AzAfdOrigin.md)
+Gets the AFD origin.
+
+### [Get-AzAfdOriginGroup](Get-AzAfdOriginGroup.md)
+Gets the AFD origin group.
+
+### [Get-AzAfdProfile](Get-AzAfdProfile.md)
+Gets the AFD profile.
+
+### [Get-AzAfdRoute](Get-AzAfdRoute.md)
+Gets the AFD route.
+
+### [Get-AzAfdRule](Get-AzAfdRule.md)
+Gets the AFD rule.
+
+### [Get-AzAfdRuleSet](Get-AzAfdRuleSet.md)
+Gets the AFD rule set.
+
+### [Get-AzAfdSecurityPolicy](Get-AzAfdSecurityPolicy.md)
+Gets the AFD security policy.
 
 ### [Get-AzCdnCustomDomain](Get-AzCdnCustomDomain.md)
-Gets an existing custom domain within an endpoint.
+Gets a CDN custom domain.
 
 ### [Get-AzCdnEdgeNode](Get-AzCdnEdgeNode.md)
-Edgenodes are the global Point of Presence (POP) locations used to deliver CDN content to end users.
+Gets Azure CDN edgenodes.
 
 ### [Get-AzCdnEndpoint](Get-AzCdnEndpoint.md)
-Gets an existing CDN endpoint with the specified endpoint name under the specified subscription, resource group and profile.
+Gets a CDN endpoint.
+
+### [Get-AzCdnEndpointNameAvailability](Get-AzCdnEndpointNameAvailability.md)
+Gets availability status of the CDN endpoint.
 
 ### [Get-AzCdnEndpointResourceUsage](Get-AzCdnEndpointResourceUsage.md)
-Checks the quota and usage of geo filters and custom domains under the given endpoint.
+Gets the resource usage of a CDN endpoint.
 
 ### [Get-AzCdnOrigin](Get-AzCdnOrigin.md)
-Gets an existing origin within an endpoint.
+Gets a CDN origin server.
 
 ### [Get-AzCdnOriginGroup](Get-AzCdnOriginGroup.md)
-Gets an existing origin group within an endpoint.
+Gets a CDN origin group
 
 ### [Get-AzCdnProfile](Get-AzCdnProfile.md)
-
+Gets a CDN profile.
 
 ### [Get-AzCdnProfileResourceUsage](Get-AzCdnProfileResourceUsage.md)
-Checks the quota and actual usage of endpoints under the given Azure Front Door Standard or Azure Front Door Premium or CDN profile.
+Gets the resource usage of a CDN profile.
+
+### [Get-AzCdnProfileSsoUrl](Get-AzCdnProfileSsoUrl.md)
+Gets the single sign-on URL of a CDN profile.
 
 ### [Get-AzCdnProfileSupportedOptimizationType](Get-AzCdnProfileSupportedOptimizationType.md)
-Gets the supported optimization types for the current profile.
-A user can create an endpoint with an optimization type from the listed values.
+Gets the supported optimization types for a CDN profile.
 
 ### [Get-AzCdnSubscriptionResourceUsage](Get-AzCdnSubscriptionResourceUsage.md)
-Check the quota and actual usage of the CDN profiles under the given subscription.
+Gets the resource usage for a subscription.
 
-### [Get-AzFrontDoorCdnCustomDomain](Get-AzFrontDoorCdnCustomDomain.md)
-Gets an existing AzureFrontDoor domain with the specified domain name under the specified subscription, resource group and profile.
+### [New-AzAfdCustomDomain](New-AzAfdCustomDomain.md)
+Creates an AFD custom domain.
 
-### [Get-AzFrontDoorCdnEndpoint](Get-AzFrontDoorCdnEndpoint.md)
-Gets an existing AzureFrontDoor endpoint with the specified endpoint name under the specified subscription, resource group and profile.
+### [New-AzAfdEndpoint](New-AzAfdEndpoint.md)
+Creates an AFD endpoint.
 
-### [Get-AzFrontDoorCdnEndpointResourceUsage](Get-AzFrontDoorCdnEndpointResourceUsage.md)
-Checks the quota and actual usage of the given AzureFrontDoor endpoint under the given CDN profile.
+### [New-AzAfdOrigin](New-AzAfdOrigin.md)
+Creates an AFD origin.
 
-### [Get-AzFrontDoorCdnOrigin](Get-AzFrontDoorCdnOrigin.md)
-Gets an existing origin within an origin group.
+### [New-AzAfdOriginGroup](New-AzAfdOriginGroup.md)
+Creates an AFD origin group.
 
-### [Get-AzFrontDoorCdnOriginGroup](Get-AzFrontDoorCdnOriginGroup.md)
-Gets an existing origin group within a profile.
+### [New-AzAfdProfile](New-AzAfdProfile.md)
+Creates an AFD profile.
 
-### [Get-AzFrontDoorCdnOriginGroupResourceUsage](Get-AzFrontDoorCdnOriginGroupResourceUsage.md)
-Checks the quota and actual usage of the given AzureFrontDoor origin group under the given CDN profile.
+### [New-AzAfdRoute](New-AzAfdRoute.md)
+Creates an AFD route.
 
-### [Get-AzFrontDoorCdnProfile](Get-AzFrontDoorCdnProfile.md)
+### [New-AzAfdRule](New-AzAfdRule.md)
+Creates an AFD rule.
 
+### [New-AzAfdRuleCacheExpirationAction](New-AzAfdRuleCacheExpirationAction.md)
+Creates an AFD cache expiration rule action. 
 
-### [Get-AzFrontDoorCdnProfileResourceUsage](Get-AzFrontDoorCdnProfileResourceUsage.md)
-Checks the quota and actual usage of AzureFrontDoor endpoints under the given CDN profile.
+### [New-AzAfdRuleSet](New-AzAfdRuleSet.md)
+Creates an AFD rule set.
 
-### [Get-AzFrontDoorCdnRoute](Get-AzFrontDoorCdnRoute.md)
-Gets an existing route with the specified route name under the specified subscription, resource group, profile, and AzureFrontDoor endpoint.
-
-### [Get-AzFrontDoorCdnRule](Get-AzFrontDoorCdnRule.md)
-Gets an existing delivery rule within a rule set.
-
-### [Get-AzFrontDoorCdnRuleSet](Get-AzFrontDoorCdnRuleSet.md)
-Gets an existing AzureFrontDoor rule set with the specified rule set name under the specified subscription, resource group and profile.
-
-### [Get-AzFrontDoorCdnRuleSetResourceUsage](Get-AzFrontDoorCdnRuleSetResourceUsage.md)
-Checks the quota and actual usage of the given AzureFrontDoor rule set under the given CDN profile.
-
-### [Get-AzFrontDoorCdnSecret](Get-AzFrontDoorCdnSecret.md)
-Gets an existing Secret within a profile.
-
-### [Get-AzFrontDoorCdnSecurityPolicy](Get-AzFrontDoorCdnSecurityPolicy.md)
-Gets an existing security policy within a profile.
-
-### [Import-AzCdnEndpointContent](Import-AzCdnEndpointContent.md)
-Pre-loads a content to CDN.
-Available for Verizon Profiles.
+### [New-AzAfdSecurityPolicy](New-AzAfdSecurityPolicy.md)
+Creates the AFD security policy.
 
 ### [New-AzCdnCustomDomain](New-AzCdnCustomDomain.md)
-Creates a new custom domain within an endpoint.
+Creates a custom domain for a CDN endpoint.
 
-### [New-AzCdnDeliveryRuleCookiesConditionObject](New-AzCdnDeliveryRuleCookiesConditionObject.md)
-Create an in-memory object for DeliveryRuleCookiesCondition.
+### [New-AzCdnDeliveryPolicy](New-AzCdnDeliveryPolicy.md)
+Creates a delivery policy.
 
-### [New-AzCdnDeliveryRuleHttpVersionConditionObject](New-AzCdnDeliveryRuleHttpVersionConditionObject.md)
-Create an in-memory object for DeliveryRuleHttpVersionCondition.
+### [New-AzCdnDeliveryRule](New-AzCdnDeliveryRule.md)
+Creates a delivery rule.
 
-### [New-AzCdnDeliveryRuleIsDeviceConditionObject](New-AzCdnDeliveryRuleIsDeviceConditionObject.md)
-Create an in-memory object for DeliveryRuleIsDeviceCondition.
+### [New-AzCdnDeliveryRuleAction](New-AzCdnDeliveryRuleAction.md)
+Creates a delivery action.
 
-### [New-AzCdnDeliveryRuleObject](New-AzCdnDeliveryRuleObject.md)
-Create an in-memory object for DeliveryRule.
-
-### [New-AzCdnDeliveryRulePostArgsConditionObject](New-AzCdnDeliveryRulePostArgsConditionObject.md)
-Create an in-memory object for DeliveryRulePostArgsCondition.
-
-### [New-AzCdnDeliveryRuleQueryStringConditionObject](New-AzCdnDeliveryRuleQueryStringConditionObject.md)
-Create an in-memory object for DeliveryRuleQueryStringCondition.
-
-### [New-AzCdnDeliveryRuleRemoteAddressConditionObject](New-AzCdnDeliveryRuleRemoteAddressConditionObject.md)
-Create an in-memory object for DeliveryRuleRemoteAddressCondition.
-
-### [New-AzCdnDeliveryRuleRequestBodyConditionObject](New-AzCdnDeliveryRuleRequestBodyConditionObject.md)
-Create an in-memory object for DeliveryRuleRequestBodyCondition.
-
-### [New-AzCdnDeliveryRuleRequestHeaderActionObject](New-AzCdnDeliveryRuleRequestHeaderActionObject.md)
-Create an in-memory object for DeliveryRuleRequestHeaderAction.
-
-### [New-AzCdnDeliveryRuleRequestHeaderConditionObject](New-AzCdnDeliveryRuleRequestHeaderConditionObject.md)
-Create an in-memory object for DeliveryRuleRequestHeaderCondition.
-
-### [New-AzCdnDeliveryRuleRequestMethodConditionObject](New-AzCdnDeliveryRuleRequestMethodConditionObject.md)
-Create an in-memory object for DeliveryRuleRequestMethodCondition.
-
-### [New-AzCdnDeliveryRuleRequestSchemeConditionObject](New-AzCdnDeliveryRuleRequestSchemeConditionObject.md)
-Create an in-memory object for DeliveryRuleRequestSchemeCondition.
-
-### [New-AzCdnDeliveryRuleRequestUriConditionObject](New-AzCdnDeliveryRuleRequestUriConditionObject.md)
-Create an in-memory object for DeliveryRuleRequestUriCondition.
-
-### [New-AzCdnDeliveryRuleResponseHeaderActionObject](New-AzCdnDeliveryRuleResponseHeaderActionObject.md)
-Create an in-memory object for DeliveryRuleResponseHeaderAction.
-
-### [New-AzCdnDeliveryRuleUrlFileExtensionConditionObject](New-AzCdnDeliveryRuleUrlFileExtensionConditionObject.md)
-Create an in-memory object for DeliveryRuleUrlFileExtensionCondition.
-
-### [New-AzCdnDeliveryRuleUrlFileNameConditionObject](New-AzCdnDeliveryRuleUrlFileNameConditionObject.md)
-Create an in-memory object for DeliveryRuleUrlFileNameCondition.
-
-### [New-AzCdnDeliveryRuleUrlPathConditionObject](New-AzCdnDeliveryRuleUrlPathConditionObject.md)
-Create an in-memory object for DeliveryRuleUrlPathCondition.
+### [New-AzCdnDeliveryRuleCondition](New-AzCdnDeliveryRuleCondition.md)
+Creates a delivery rule condition.
 
 ### [New-AzCdnEndpoint](New-AzCdnEndpoint.md)
-Creates a new CDN endpoint with the specified endpoint name under the specified subscription, resource group and profile.
-
-### [New-AzCdnHealthProbeParametersObject](New-AzCdnHealthProbeParametersObject.md)
-Create an in-memory object for HealthProbeParameters.
-
-### [New-AzCdnManagedHttpsParametersObject](New-AzCdnManagedHttpsParametersObject.md)
-Create an in-memory object for CdnManagedHttpsParameters.
+Creates a CDN endpoint.
 
 ### [New-AzCdnOrigin](New-AzCdnOrigin.md)
-Creates a new origin within the specified endpoint.
+Creates a new CDN origin
 
 ### [New-AzCdnOriginGroup](New-AzCdnOriginGroup.md)
-Creates a new origin group within the specified endpoint.
+Creates a new CDN origin group
 
 ### [New-AzCdnProfile](New-AzCdnProfile.md)
-Creates a new Azure Front Door Standard or Azure Front Door Premium or CDN profile with a profile name under the specified subscription and resource group.
+Creates a CDN profile.
 
-### [New-AzCdnResourceReferenceObject](New-AzCdnResourceReferenceObject.md)
-Create an in-memory object for ResourceReference.
+### [Publish-AzCdnEndpointContent](Publish-AzCdnEndpointContent.md)
+Loads content to an endpoint.
 
-### [New-AzCdnResponseBasedOriginErrorDetectionParametersObject](New-AzCdnResponseBasedOriginErrorDetectionParametersObject.md)
-Create an in-memory object for ResponseBasedOriginErrorDetectionParameters.
+### [Remove-AzAfdCustomDomain](Remove-AzAfdCustomDomain.md)
+Removes an AFD custom domain.
 
-### [New-AzCdnUrlRedirectActionObject](New-AzCdnUrlRedirectActionObject.md)
-Create an in-memory object for UrlRedirectAction.
+### [Remove-AzAfdEndpoint](Remove-AzAfdEndpoint.md)
+Removes an AFD endpoint.
 
-### [New-AzCdnUrlRewriteActionObject](New-AzCdnUrlRewriteActionObject.md)
-Create an in-memory object for UrlRewriteAction.
+### [Remove-AzAfdOrigin](Remove-AzAfdOrigin.md)
+Removes an AFD origin.
 
-### [New-AzCdnUrlSigningActionObject](New-AzCdnUrlSigningActionObject.md)
-Create an in-memory object for UrlSigningAction.
+### [Remove-AzAfdOriginGroup](Remove-AzAfdOriginGroup.md)
+Removes an AFD origin group.
 
-### [New-AzCdnUserManagedHttpsParametersObject](New-AzCdnUserManagedHttpsParametersObject.md)
-Create an in-memory object for UserManagedHttpsParameters.
+### [Remove-AzAfdProfile](Remove-AzAfdProfile.md)
+Removes an AFD profile.
 
-### [New-AzFrontDoorCdnCustomDomain](New-AzFrontDoorCdnCustomDomain.md)
-Creates a new domain within the specified profile.
+### [Remove-AzAfdRoute](Remove-AzAfdRoute.md)
+Removes an AFD route.
 
-### [New-AzFrontDoorCdnCustomDomainTlsSettingParametersObject](New-AzFrontDoorCdnCustomDomainTlsSettingParametersObject.md)
-Create an in-memory object for AFDDomainHttpsParameters.
+### [Remove-AzAfdRule](Remove-AzAfdRule.md)
+Removes an AFD rule.
 
-### [New-AzFrontDoorCdnEndpoint](New-AzFrontDoorCdnEndpoint.md)
-Creates a new AzureFrontDoor endpoint with the specified endpoint name under the specified subscription, resource group and profile.
+### [Remove-AzAfdRuleSet](Remove-AzAfdRuleSet.md)
+Removes an AFD rule set.
 
-### [New-AzFrontDoorCdnOrigin](New-AzFrontDoorCdnOrigin.md)
-Creates a new origin within the specified origin group.
-
-### [New-AzFrontDoorCdnOriginGroup](New-AzFrontDoorCdnOriginGroup.md)
-Creates a new origin group within the specified profile.
-
-### [New-AzFrontDoorCdnOriginGroupHealthProbeSettingObject](New-AzFrontDoorCdnOriginGroupHealthProbeSettingObject.md)
-Create an in-memory object for HealthProbeParameters.
-
-### [New-AzFrontDoorCdnOriginGroupLoadBalancingSettingObject](New-AzFrontDoorCdnOriginGroupLoadBalancingSettingObject.md)
-Create an in-memory object for LoadBalancingSettingsParameters.
-
-### [New-AzFrontDoorCdnProfile](New-AzFrontDoorCdnProfile.md)
-Creates a new Azure Front Door Standard or Azure Front Door Premium or CDN profile with a profile name under the specified subscription and resource group.
-
-### [New-AzFrontDoorCdnResourceReferenceObject](New-AzFrontDoorCdnResourceReferenceObject.md)
-Create an in-memory object for ResourceReference.
-
-### [New-AzFrontDoorCdnRoute](New-AzFrontDoorCdnRoute.md)
-Creates a new route with the specified route name under the specified subscription, resource group, profile, and AzureFrontDoor endpoint.
-
-### [New-AzFrontDoorCdnRule](New-AzFrontDoorCdnRule.md)
-Creates a new delivery rule within the specified rule set.
-
-### [New-AzFrontDoorCdnRuleClientPortConditionObject](New-AzFrontDoorCdnRuleClientPortConditionObject.md)
-Create an in-memory object for DeliveryRuleClientPortCondition.
-
-### [New-AzFrontDoorCdnRuleCookiesConditionObject](New-AzFrontDoorCdnRuleCookiesConditionObject.md)
-Create an in-memory object for DeliveryRuleCookiesCondition.
-
-### [New-AzFrontDoorCdnRuleHostNameConditionObject](New-AzFrontDoorCdnRuleHostNameConditionObject.md)
-Create an in-memory object for DeliveryRuleHostNameCondition.
-
-### [New-AzFrontDoorCdnRuleHttpVersionConditionObject](New-AzFrontDoorCdnRuleHttpVersionConditionObject.md)
-Create an in-memory object for DeliveryRuleHttpVersionCondition.
-
-### [New-AzFrontDoorCdnRuleIsDeviceConditionObject](New-AzFrontDoorCdnRuleIsDeviceConditionObject.md)
-Create an in-memory object for DeliveryRuleIsDeviceCondition.
-
-### [New-AzFrontDoorCdnRulePostArgsConditionObject](New-AzFrontDoorCdnRulePostArgsConditionObject.md)
-Create an in-memory object for DeliveryRulePostArgsCondition.
-
-### [New-AzFrontDoorCdnRuleQueryStringConditionObject](New-AzFrontDoorCdnRuleQueryStringConditionObject.md)
-Create an in-memory object for DeliveryRuleQueryStringCondition.
-
-### [New-AzFrontDoorCdnRuleRemoteAddressConditionObject](New-AzFrontDoorCdnRuleRemoteAddressConditionObject.md)
-Create an in-memory object for DeliveryRuleRemoteAddressCondition.
-
-### [New-AzFrontDoorCdnRuleRequestBodyConditionObject](New-AzFrontDoorCdnRuleRequestBodyConditionObject.md)
-Create an in-memory object for DeliveryRuleRequestBodyCondition.
-
-### [New-AzFrontDoorCdnRuleRequestHeaderActionObject](New-AzFrontDoorCdnRuleRequestHeaderActionObject.md)
-Create an in-memory object for DeliveryRuleRequestHeaderAction.
-
-### [New-AzFrontDoorCdnRuleRequestHeaderConditionObject](New-AzFrontDoorCdnRuleRequestHeaderConditionObject.md)
-Create an in-memory object for DeliveryRuleRequestHeaderCondition.
-
-### [New-AzFrontDoorCdnRuleRequestMethodConditionObject](New-AzFrontDoorCdnRuleRequestMethodConditionObject.md)
-Create an in-memory object for DeliveryRuleRequestMethodCondition.
-
-### [New-AzFrontDoorCdnRuleRequestSchemeConditionObject](New-AzFrontDoorCdnRuleRequestSchemeConditionObject.md)
-Create an in-memory object for DeliveryRuleRequestSchemeCondition.
-
-### [New-AzFrontDoorCdnRuleRequestUriConditionObject](New-AzFrontDoorCdnRuleRequestUriConditionObject.md)
-Create an in-memory object for DeliveryRuleRequestUriCondition.
-
-### [New-AzFrontDoorCdnRuleResponseHeaderActionObject](New-AzFrontDoorCdnRuleResponseHeaderActionObject.md)
-Create an in-memory object for DeliveryRuleResponseHeaderAction.
-
-### [New-AzFrontDoorCdnRuleRouteConfigurationOverrideActionObject](New-AzFrontDoorCdnRuleRouteConfigurationOverrideActionObject.md)
-Create an in-memory object for DeliveryRuleRouteConfigurationOverrideAction.
-
-### [New-AzFrontDoorCdnRuleServerPortConditionObject](New-AzFrontDoorCdnRuleServerPortConditionObject.md)
-Create an in-memory object for DeliveryRuleServerPortCondition.
-
-### [New-AzFrontDoorCdnRuleSet](New-AzFrontDoorCdnRuleSet.md)
-Creates a new rule set within the specified profile.
-
-### [New-AzFrontDoorCdnRuleSocketAddrConditionObject](New-AzFrontDoorCdnRuleSocketAddrConditionObject.md)
-Create an in-memory object for DeliveryRuleSocketAddrCondition.
-
-### [New-AzFrontDoorCdnRuleSslProtocolConditionObject](New-AzFrontDoorCdnRuleSslProtocolConditionObject.md)
-Create an in-memory object for DeliveryRuleSslProtocolCondition.
-
-### [New-AzFrontDoorCdnRuleUrlFileExtensionConditionObject](New-AzFrontDoorCdnRuleUrlFileExtensionConditionObject.md)
-Create an in-memory object for DeliveryRuleUrlFileExtensionCondition.
-
-### [New-AzFrontDoorCdnRuleUrlFileNameConditionObject](New-AzFrontDoorCdnRuleUrlFileNameConditionObject.md)
-Create an in-memory object for DeliveryRuleUrlFileNameCondition.
-
-### [New-AzFrontDoorCdnRuleUrlPathConditionObject](New-AzFrontDoorCdnRuleUrlPathConditionObject.md)
-Create an in-memory object for DeliveryRuleUrlPathCondition.
-
-### [New-AzFrontDoorCdnRuleUrlRedirectActionObject](New-AzFrontDoorCdnRuleUrlRedirectActionObject.md)
-Create an in-memory object for UrlRedirectAction.
-
-### [New-AzFrontDoorCdnRuleUrlRewriteActionObject](New-AzFrontDoorCdnRuleUrlRewriteActionObject.md)
-Create an in-memory object for UrlRewriteAction.
-
-### [New-AzFrontDoorCdnRuleUrlSigningActionObject](New-AzFrontDoorCdnRuleUrlSigningActionObject.md)
-Create an in-memory object for UrlSigningAction.
-
-### [New-AzFrontDoorCdnSecret](New-AzFrontDoorCdnSecret.md)
-Creates a new Secret within the specified profile.
-
-### [New-AzFrontDoorCdnSecretCustomerCertificateParametersObject](New-AzFrontDoorCdnSecretCustomerCertificateParametersObject.md)
-Create an in-memory object for CustomerCertificateParameters.
-
-### [New-AzFrontDoorCdnSecretFirstPartyManagedCertificateParametersObject](New-AzFrontDoorCdnSecretFirstPartyManagedCertificateParametersObject.md)
-Create an in-memory object for AzureFirstPartyManagedCertificateParameters.
-
-### [New-AzFrontDoorCdnSecretManagedCertificateParametersObject](New-AzFrontDoorCdnSecretManagedCertificateParametersObject.md)
-Create an in-memory object for ManagedCertificateParameters.
-
-### [New-AzFrontDoorCdnSecretUrlSigningKeyParametersObject](New-AzFrontDoorCdnSecretUrlSigningKeyParametersObject.md)
-Create an in-memory object for UrlSigningKeyParameters.
-
-### [New-AzFrontDoorCdnSecurityPolicy](New-AzFrontDoorCdnSecurityPolicy.md)
-Creates a new security policy within the specified profile.
-
-### [New-AzFrontDoorCdnSecurityPolicyWebApplicationFirewallAssociationObject](New-AzFrontDoorCdnSecurityPolicyWebApplicationFirewallAssociationObject.md)
-Create an in-memory object for SecurityPolicyWebApplicationFirewallAssociation.
-
-### [New-AzFrontDoorCdnSecurityPolicyWebApplicationFirewallParametersObject](New-AzFrontDoorCdnSecurityPolicyWebApplicationFirewallParametersObject.md)
-Create an in-memory object for SecurityPolicyWebApplicationFirewallParameters.
+### [Remove-AzAfdSecurityPolicy](Remove-AzAfdSecurityPolicy.md)
+Removes the AFD security policy.
 
 ### [Remove-AzCdnCustomDomain](Remove-AzCdnCustomDomain.md)
-Deletes an existing custom domain within an endpoint.
+Removes a custom domain.
 
 ### [Remove-AzCdnEndpoint](Remove-AzCdnEndpoint.md)
-Deletes an existing CDN endpoint with the specified endpoint name under the specified subscription, resource group and profile.
+Removes a CDN endpoint.
 
 ### [Remove-AzCdnOrigin](Remove-AzCdnOrigin.md)
-Deletes an existing origin within an endpoint.
+Removes a CDN origin
 
 ### [Remove-AzCdnOriginGroup](Remove-AzCdnOriginGroup.md)
-Deletes an existing origin group within an endpoint.
+Removes a CDN origin group
 
 ### [Remove-AzCdnProfile](Remove-AzCdnProfile.md)
-Deletes an existing  Azure Front Door Standard or Azure Front Door Premium or CDN profile with the specified parameters.
-Deleting a profile will result in the deletion of all of the sub-resources including endpoints, origins and custom domains.
+Removes a CDN profile.
 
-### [Remove-AzFrontDoorCdnCustomDomain](Remove-AzFrontDoorCdnCustomDomain.md)
-Deletes an existing AzureFrontDoor domain with the specified domain name under the specified subscription, resource group and profile.
+### [Set-AzAfdEndpoint](Set-AzAfdEndpoint.md)
+Removes an AFD endpoint.
 
-### [Remove-AzFrontDoorCdnEndpoint](Remove-AzFrontDoorCdnEndpoint.md)
-Deletes an existing AzureFrontDoor endpoint with the specified endpoint name under the specified subscription, resource group and profile.
+### [Set-AzAfdOrigin](Set-AzAfdOrigin.md)
+Removes an AFD origin.
 
-### [Remove-AzFrontDoorCdnOrigin](Remove-AzFrontDoorCdnOrigin.md)
-Deletes an existing origin within an origin group.
+### [Set-AzAfdOriginGroup](Set-AzAfdOriginGroup.md)
+Removes an AFD origin group.
 
-### [Remove-AzFrontDoorCdnOriginGroup](Remove-AzFrontDoorCdnOriginGroup.md)
-Deletes an existing origin group within a profile.
+### [Set-AzAfdProfile](Set-AzAfdProfile.md)
+Removes an AFD profile.
 
-### [Remove-AzFrontDoorCdnProfile](Remove-AzFrontDoorCdnProfile.md)
-Deletes an existing  Azure Front Door Standard or Azure Front Door Premium or CDN profile with the specified parameters.
-Deleting a profile will result in the deletion of all of the sub-resources including endpoints, origins and custom domains.
+### [Set-AzAfdRoute](Set-AzAfdRoute.md)
+Removes an AFD route.
 
-### [Remove-AzFrontDoorCdnRoute](Remove-AzFrontDoorCdnRoute.md)
-Deletes an existing route with the specified route name under the specified subscription, resource group, profile, and AzureFrontDoor endpoint.
+### [Set-AzAfdSecurityPolicy](Set-AzAfdSecurityPolicy.md)
+Sets the AFD security policy.
 
-### [Remove-AzFrontDoorCdnRule](Remove-AzFrontDoorCdnRule.md)
-Deletes an existing delivery rule within a rule set.
+### [Set-AzCdnEndpoint](Set-AzCdnEndpoint.md)
+Updates a CDN endpoint.
 
-### [Remove-AzFrontDoorCdnRuleSet](Remove-AzFrontDoorCdnRuleSet.md)
-Deletes an existing AzureFrontDoor rule set with the specified rule set name under the specified subscription, resource group and profile.
+### [Set-AzCdnOrigin](Set-AzCdnOrigin.md)
+Updates a CDN origin server.
 
-### [Remove-AzFrontDoorCdnSecret](Remove-AzFrontDoorCdnSecret.md)
-Deletes an existing Secret within profile.
+### [Set-AzCdnOriginGroup](Set-AzCdnOriginGroup.md)
+Updates the CDN origin group
 
-### [Remove-AzFrontDoorCdnSecurityPolicy](Remove-AzFrontDoorCdnSecurityPolicy.md)
-Deletes an existing security policy within profile.
+### [Set-AzCdnProfile](Set-AzCdnProfile.md)
+Updates a CDN profile.
 
 ### [Start-AzCdnEndpoint](Start-AzCdnEndpoint.md)
-Starts an existing CDN endpoint that is on a stopped state.
+Starts a CDN endpoint.
 
 ### [Stop-AzCdnEndpoint](Stop-AzCdnEndpoint.md)
-Stops an existing running CDN endpoint.
+Stops the CDN endpoint.
 
-### [Test-AzCdnEndpointCustomDomain](Test-AzCdnEndpointCustomDomain.md)
-Validates the custom domain mapping to ensure it maps to the correct CDN endpoint in DNS.
+### [Test-AzCdnCustomDomain](Test-AzCdnCustomDomain.md)
+Checks whether a custom domain can be added to an endpoint.
 
-### [Test-AzCdnNameAvailability](Test-AzCdnNameAvailability.md)
-Check the availability of a resource name.
-This is needed for resources where name is globally unique, such as a CDN endpoint.
-
-### [Test-AzCdnProbe](Test-AzCdnProbe.md)
-Check if the probe path is a valid path and the file can be accessed.
-Probe path is the path to a file hosted on the origin server to help accelerate the delivery of dynamic content via the CDN endpoint.
-This path is relative to the origin path specified in the endpoint configuration.
-
-### [Test-AzFrontDoorCdnEndpointCustomDomain](Test-AzFrontDoorCdnEndpointCustomDomain.md)
-Validates the custom domain mapping to ensure it maps to the correct CDN endpoint in DNS.This api isn't work for apex domain.
-
-### [Test-AzFrontDoorCdnEndpointNameAvailability](Test-AzFrontDoorCdnEndpointNameAvailability.md)
-Check the availability of a resource name.
-This is needed for resources where name is globally unique, such as a afdx endpoint.
-
-### [Test-AzFrontDoorCdnProfileHostNameAvailability](Test-AzFrontDoorCdnProfileHostNameAvailability.md)
-Check the name availability of a host name.
-
-### [Update-AzCdnEndpoint](Update-AzCdnEndpoint.md)
-Updates an existing CDN endpoint with the specified endpoint name under the specified subscription, resource group and profile.
-Only tags can be updated after creating an endpoint.
-To update origins, use the Update Origin operation.
-To update origin groups, use the Update Origin group operation.
-To update custom domains, use the Update Custom Domain operation.
-
-### [Update-AzCdnOrigin](Update-AzCdnOrigin.md)
-Updates an existing origin within an endpoint.
-
-### [Update-AzCdnOriginGroup](Update-AzCdnOriginGroup.md)
-Updates an existing origin group within an endpoint.
-
-### [Update-AzCdnProfile](Update-AzCdnProfile.md)
-Updates an existing Azure Front Door Standard or Azure Front Door Premium or CDN profile with the specified profile name under the specified subscription and resource group.
-
-### [Update-AzFrontDoorCdnCustomDomain](Update-AzFrontDoorCdnCustomDomain.md)
-Updates an existing domain within a profile.
-
-### [Update-AzFrontDoorCdnCustomDomainValidationToken](Update-AzFrontDoorCdnCustomDomainValidationToken.md)
-Updates the domain validation token.
-
-### [Update-AzFrontDoorCdnEndpoint](Update-AzFrontDoorCdnEndpoint.md)
-Updates an existing AzureFrontDoor endpoint with the specified endpoint name under the specified subscription, resource group and profile.
-Only tags can be updated after creating an endpoint.
-To update origins, use the Update Origin operation.
-To update origin groups, use the Update Origin group operation.
-To update domains, use the Update Custom Domain operation.
-
-### [Update-AzFrontDoorCdnOrigin](Update-AzFrontDoorCdnOrigin.md)
-Updates an existing origin within an origin group.
-
-### [Update-AzFrontDoorCdnOriginGroup](Update-AzFrontDoorCdnOriginGroup.md)
-Updates an existing origin group within a profile.
-
-### [Update-AzFrontDoorCdnProfile](Update-AzFrontDoorCdnProfile.md)
-Updates an existing Azure Front Door Standard or Azure Front Door Premium or CDN profile with the specified profile name under the specified subscription and resource group.
-
-### [Update-AzFrontDoorCdnRoute](Update-AzFrontDoorCdnRoute.md)
-Updates an existing route with the specified route name under the specified subscription, resource group, profile, and AzureFrontDoor endpoint.
-
-### [Update-AzFrontDoorCdnRule](Update-AzFrontDoorCdnRule.md)
-Updates an existing delivery rule within a rule set.
-
-### [Update-AzFrontDoorCdnSecurityPolicy](Update-AzFrontDoorCdnSecurityPolicy.md)
-Updates an existing security policy within a profile.
+### [Unpublish-AzCdnEndpointContent](Unpublish-AzCdnEndpointContent.md)
+Purges a CDN endpoint.
 

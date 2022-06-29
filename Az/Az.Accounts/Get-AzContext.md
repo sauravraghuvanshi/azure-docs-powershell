@@ -28,7 +28,7 @@ Get-AzContext [-ListAvailable] [-RefreshContextFromTokenCache] [-DefaultProfile 
 ## DESCRIPTION
 The Get-AzContext cmdlet gets the current metadata used to authenticate Azure Resource Manager requests.
 This cmdlet gets the Active Directory account, Active Directory tenant, Azure subscription, and the targeted Azure environment.
-Azure Resource Manager cmdlets use these settings by default when making Azure Resource Manager requests. When the available amount of subscription exceeds the default limit of 25, some subscriptions may not show up in the results of `Get-AzContext -ListAvailable`. Please run `Connect-AzAccount -MaxContextPopulation <int>` to get more contexts.
+Azure Resource Manager cmdlets use these settings by default when making Azure Resource Manager requests.
 
 ## EXAMPLES
 
@@ -140,4 +140,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Set-AzContext](./Set-AzContext.md)
 
-[Connect-AzAccount](./Connect-AzAccount.md)

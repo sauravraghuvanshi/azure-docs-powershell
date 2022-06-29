@@ -27,7 +27,7 @@ The **New-AzHDInsightClusterAutoscaleScheduleCondition** cmdlet creates Schedule
 
 ### Example 1
 ```powershell
-New-AzHDInsightClusterAutoscaleScheduleCondition -Time 09:00 -WorkerNodeCount 5 -Day Monday,Wednesday
+PS C:\> New-AzHDInsightClusterAutoscaleScheduleCondition -Time 09:00 -WorkerNodeCount 5 -Day Monday,Wednesday
 ```
 
 This command creates a condition where cluster autoscale to 5 worker nodes at 09:00 every Monday, Wednesday.
@@ -35,12 +35,12 @@ This command creates a condition where cluster autoscale to 5 worker nodes at 09
 ### Example 2: Enable Schedule-based autoscale of a cluster with autoscale condition.
 ```powershell
 # create a autoscale condition
-$condition=New-AzHDInsightClusterAutoscaleScheduleCondition -Time 09:00 -WorkerNodeCount 5 -Day Monday,Wednesday
+PS C:\> $condition=New-AzHDInsightClusterAutoscaleScheduleCondition -Time 09:00 -WorkerNodeCount 5 -Day Monday,Wednesday
 
 # Set the cluster autoscale configuration
-$clusterResourceGroup="group"
-$clusterName="MyCluster"
-Set-AzHDInsightClusterAutoscaleConfiguration -ResourceGroupName $clusterResourceGroup -ClusterName $clusterName -Schedule -TimeZone "Pacific Standard Time" -Condition $condition
+PS C:\> $clusterResourceGroup="group"
+PS C:\> $clusterName="MyCluster"
+PS C:\> Set-AzHDInsightClusterAutoscaleConfiguration -ResourceGroupName $clusterResourceGroup -ClusterName $clusterName -Schedule -TimeZone "Pacific Standard Time" -Condition $condition
 ```
 
 This command creates a condition where cluster autoscale to 5 worker nodes at 09:00 every Monday, Wednesday.

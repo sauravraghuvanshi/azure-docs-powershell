@@ -48,14 +48,13 @@ The Update-AzAvailabilityGroupListener cmdlet updates an Availability Group List
 
 ### Example 1
 ```powershell
-Update-AzAvailabilityGroupListener -ResourceGroupName ResourceGroup01 -SqlVMGroupName SqlVmGroup01 -Name AgListener01 -SqlVirtualMachineId $VmResourceId01,$VmResourceId02
+PS C:\> Update-AzAvailabilityGroupListener -ResourceGroupName ResourceGroup01 -SqlVMGroupName SqlVmGroup01 -Name AgListener01 -SqlVirtualMachineId $VmResourceId01,$VmResourceId02
 ```
 
-```output
 Name         ResourceGroupName GroupName    AvailabilityGroupName
 ----         ----------------- ---------    ---------------------
 AgListener01 ResourceGroup01   SqlVmGroup01 AvailabilityGroup01
-```
+
 Updates the list SQL Virtual Machines for the Availability Group Listener.
 
 ## PARAMETERS

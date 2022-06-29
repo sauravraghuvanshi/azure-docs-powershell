@@ -39,10 +39,8 @@ Get an application.
 
 ### Example 1: Get a Windows Virtual Desktop Application by name
 ```powershell
-Get-AzWvdApplication -ResourceGroupName ResourceGroupName -ApplicationGroupName ApplicationGroupName -Name ApplicationName
-```
+PS C:\> Get-AzWvdApplication -ResourceGroupName ResourceGroupName -ApplicationGroupName ApplicationGroupName -Name ApplicationName
 
-```output
 Name                                 Type
 ----                                 ----
 ApplicationGroupName/ApplicationName Microsoft.DesktopVirtualization/applicationgroups/applications
@@ -52,10 +50,8 @@ This command gets a Windows Virtual Desktop Application in an applicaton Group.
 
 ### Example 2: List Windows Virtual Desktop Applications
 ```powershell
-Get-AzWvdApplication -ResourceGroupName ResourceGroupName -ApplicationGroupName ApplicationGroupName
-```
+PS C:\> Get-AzWvdApplication -ResourceGroupName ResourceGroupName -ApplicationGroupName ApplicationGroupName
 
-```output
 Name                                 Type
 ----                                 ----
 ApplicationGroupName/ApplicationName1 Microsoft.DesktopVirtualization/applicationgroups/applications

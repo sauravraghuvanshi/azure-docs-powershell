@@ -35,17 +35,16 @@ The **Start-AzAutomationDscNodeConfigurationDeployment** cmdlet deploys a Desire
 ## EXAMPLES
 
 ### Example 1: Deploy an Azure DSC node configuration in Automation
-```powershell
-$pilot = @("WebServerPilot1", "WebServerPilot2")
-$prod = @("WebServerProd1", "WebServerProd2")
-$nodes = @($pilot, $prod)
-Start-AzAutomationDscNodeConfigurationDeployment `
+```
+PS C:\> $pilot = @("WebServerPilot1", "WebServerPilot2")
+PS C:\> $prod = @("WebServerProd1", "WebServerProd2")
+PS C:\> $nodes = @($pilot, $prod)
+PS C:\> Start-AzAutomationDscNodeConfigurationDeployment `
             -NodeConfigurationName "Config01.Node1" `
             -AutomationAccountName "Contoso01"  `
             -ResourceGroupName "ResourceGroup01" `
-            -NodeName $nodes
-```
-```output
+            -NodeName $nodes `
+
 Starting a node configuration deployment.
 Starting a node configuration deployment. It will override any existing node configurations assigned to the node.
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Yes
@@ -64,23 +63,22 @@ JobScheduleId         : 00000000-0000-0000-0000-000000000000
 The above command deploys the DSC node configuration named "Config01.Node1" to the given two-dimensional array of Node Names. The deployment happens in a staged manner.
 
 ### Example 2: Schedule an Azure DSC node configuration deployment in Automation
-```powershell
-$sched = New-AzAutomationSchedule -AutomationAccountName "Contoso01" `
+```
+PS C:\> $sched = New-AzAutomationSchedule -AutomationAccountName "Contoso01" `
             -ResourceGroupName "ResourceGroup01" `
             -Name "TestSchedule" `
             -StartTime "23:00" `
             -OneTime
-$pilot = @("WebServerPilot1", "WebServerPilot2")
-$prod = @("WebServerProd1", "WebServerProd2")
-$nodes = @($pilot, $prod)
-Start-AzAutomationDscNodeConfigurationDeployment `
+PS C:\> $pilot = @("WebServerPilot1", "WebServerPilot2")
+PS C:\> $prod = @("WebServerProd1", "WebServerProd2")
+PS C:\> $nodes = @($pilot, $prod)
+PS C:\> Start-AzAutomationDscNodeConfigurationDeployment `
             -NodeConfigurationName "Config01.Node1" `
             -AutomationAccountName "Contoso01"  `
             -ResourceGroupName "ResourceGroup01" `
             -NodeName $nodes `
             -Schedule $sched
-```
-```output
+
 Starting a node configuration deployment.
 Starting a node configuration deployment. It will override any existing node configurations assigned to the node.
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y

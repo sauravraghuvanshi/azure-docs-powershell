@@ -27,16 +27,16 @@ The **New-AzHDInsightHiveJobDefinition** cmdlet defines a Hive job object for us
 ## EXAMPLES
 
 ### Example 1: Create a Hive job definition
-```powershell
-# Cluster info
-$clusterName = "your-hadoop-001"
-$clusterCreds = Get-Credential
+```
+PS C:\># Cluster info
+PS C:\>$clusterName = "your-hadoop-001"
+PS C:\>$clusterCreds = Get-Credential
 
 # Hive job details
-$statusFolder = "<status folder>"        
-$query = "SHOW TABLES"
+PS C:\>$statusFolder = "<status folder>"        
+PS C:\>$query = "SHOW TABLES"
 
-New-AzHDInsightHiveJobDefinition -StatusFolder $statusFolder `
+PS C:\>New-AzHDInsightHiveJobDefinition -StatusFolder $statusFolder `
             -Query $query `
         | Start-AzHDInsightJob `
             -ClusterName $clusterName `

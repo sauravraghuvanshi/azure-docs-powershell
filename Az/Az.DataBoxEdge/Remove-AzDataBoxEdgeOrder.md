@@ -39,7 +39,7 @@ The **Remove-AzDataBoxEdgeOrder** cmdlet deletes an existing order for a Data Bo
 
 ### Example 1
 ```powershell
-Remove-AzDataBoxEdgeOrder -ResourceGroupName resourceGroupName -DeviceName deviceName
+PS C:\> Remove-AzDataBoxEdgeOrder -ResourceGroupName resourceGroupName -DeviceName deviceName
 ```
 
 ## PARAMETERS

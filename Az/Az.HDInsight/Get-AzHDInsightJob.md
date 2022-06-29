@@ -28,16 +28,16 @@ Get a specific job by providing the *JobId* parameter.
 ## EXAMPLES
 
 ### Example 1: Get recent jobs for a specified Azure HDInsight cluster
-```powershell
-# Cluster info
-$clusterName = "your-hadoop-001"
-$clusterCreds = Get-Credential
+```
+PS C:\># Cluster info
+PS C:\> $clusterName = "your-hadoop-001"
+PS C:\> $clusterCreds = Get-Credential
 
 # Hive job details
-$statusFolder = "tempStatusFolder/"
-$query = "SHOW TABLES"
+PS C:\> $statusFolder = "tempStatusFolder/"
+PS C:\> $query = "SHOW TABLES"
 
-New-AzHDInsightHiveJobDefinition -StatusFolder $statusFolder `
+PS C:\> New-AzHDInsightHiveJobDefinition -StatusFolder $statusFolder `
             -Query $query `
         | Start-AzHDInsightJob -ClusterName $clusterName `
             -ClusterCredential $clusterCreds `

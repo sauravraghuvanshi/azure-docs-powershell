@@ -38,11 +38,9 @@ cmdlet creates a new version of that secret.
 
 ### Example 1: Modify the value of a secret using default attributes
 ```powershell
-$Secret = ConvertTo-SecureString -String 'Password' -AsPlainText -Force
-Set-AzKeyVaultSecret -VaultName 'Contoso' -Name 'ITSecret' -SecretValue $Secret
-```
+PS C:\> $Secret = ConvertTo-SecureString -String 'Password' -AsPlainText -Force
+PS C:\> Set-AzKeyVaultSecret -VaultName 'Contoso' -Name 'ITSecret' -SecretValue $Secret
 
-```output
 Vault Name   : Contoso
 Name         : ITSecret
 Version      : 8b5c0cb0326e4350bd78200fac932b51
@@ -64,15 +62,13 @@ secret value becomes the value stored in $Secret.
 
 ### Example 2: Modify the value of a secret using custom attributes
 ```powershell
-$Secret = ConvertTo-SecureString -String 'Password' -AsPlainText -Force
-$Expires = (Get-Date).AddYears(2).ToUniversalTime()
-$NBF =(Get-Date).ToUniversalTime()
-$Tags = @{ 'Severity' = 'medium'; 'IT' = 'true'}
-$ContentType = 'txt'
-Set-AzKeyVaultSecret -VaultName 'Contoso' -Name 'ITSecret' -SecretValue $Secret -Expires $Expires -NotBefore $NBF -ContentType $ContentType -Disable -Tags $Tags
-```
+PS C:\> $Secret = ConvertTo-SecureString -String 'Password' -AsPlainText -Force
+PS C:\> $Expires = (Get-Date).AddYears(2).ToUniversalTime()
+PS C:\> $NBF =(Get-Date).ToUniversalTime()
+PS C:\> $Tags = @{ 'Severity' = 'medium'; 'IT' = 'true'}
+PS C:\> $ContentType = 'txt'
+PS C:\> Set-AzKeyVaultSecret -VaultName 'Contoso' -Name 'ITSecret' -SecretValue $Secret -Expires $Expires -NotBefore $NBF -ContentType $ContentType -Disable -Tags $Tags
 
-```output
 Vault Name   : Contoso
 Name         : ITSecret
 Version      : a2c150be3ea24dd6b8286986e6364851

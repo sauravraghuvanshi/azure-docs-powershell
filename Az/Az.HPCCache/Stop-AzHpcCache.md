@@ -39,7 +39,7 @@ The **Stop-AzHpcCache** cmdlet stops a Azure HPC Cache.
 
 ### Example 1
 ```powershell
-Stop-AzHpcCache -ResourceGroupName testRG -CacheName testCache
+PS C:\> Stop-AzHpcCache -ResourceGroupName testRG -CacheName testCache
 ```
 
 ## PARAMETERS

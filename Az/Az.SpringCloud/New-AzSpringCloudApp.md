@@ -29,10 +29,7 @@ Create a new App or update an exiting App.
 
 ### Example 1: Create a spring cloud app.
 ```powershell
-New-AzSpringCloudApp -ResourceGroupName spring-cloud-rg -ServiceName spring-cloud-service -AppName gateway
-```
-
-```output
+PS C:\> New-AzSpringCloudApp -ResourceGroupName spring-cloud-rg -ServiceName spring-cloud-service -AppName gateway
 ActiveDeploymentName    :
 CreatedTime             : 2020-08-08 15:37:43
 Fqdn                    : spring-cloud-service.azuremicroservices.io

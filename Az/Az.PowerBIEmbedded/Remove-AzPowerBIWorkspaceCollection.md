@@ -26,8 +26,8 @@ The **Remove-AzPowerBIWorkspaceCollection** cmdlet removes a Power BI workspace 
 ## EXAMPLES
 
 ### Example 1: Remove a workspace collection
-```powershell
-Remove-AzPowerBIWorkspaceCollection -ResourceGroupName "ResourceGroup17" -WorkspaceCollectionName "WCN11"
+```
+PS C:\>Remove-AzPowerBIWorkspaceCollection -ResourceGroupName "ResourceGroup17" -WorkspaceCollectionName "WCN11"
 ```
 
 This command removes the workspace collection named WCN11 in the specified resource group.

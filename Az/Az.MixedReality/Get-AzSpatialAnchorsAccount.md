@@ -39,10 +39,8 @@ Get or list Spatial Anchors Account(s) in certain Subscription and Resource Grou
 
 ### Example 1
 ```powershell
-Get-AzSpatialAnchorsAccount -ResourceGroup rg1
-```
+PS C:\> Get-AzSpatialAnchorsAccount -ResourceGroup rg1
 
-```output
 ResourceGroupName   : rg1
 AccountId           : 5f70bc31-a5da-4dd7-b5ec-ccdf806ff0ef
 AccountEndpoint     : https://mrc-anchor-prod.trafficmanager.net/Accounts/5f70bc31-a5da-4dd7-b5ec-ccdf806ff0ef/
@@ -78,10 +76,8 @@ List all Spatial Anchors Account in Resource Group "rg1".
 
 ### Example 2
 ```powershell
-Get-AzSpatialAnchorsAccount -ResourceGroup rg1 -Name example
-```
+PS C:\> Get-AzSpatialAnchorsAccount -ResourceGroup rg1 -Name example
 
-```output
 ResourceGroupName   : rg1
 AccountId           : 5f70bc31-a5da-4dd7-b5ec-ccdf806ff0ef
 AccountEndpoint     : https://mrc-anchor-prod.trafficmanager.net/Accounts/5f70bc31-a5da-4dd7-b5ec-ccdf806ff0ef/

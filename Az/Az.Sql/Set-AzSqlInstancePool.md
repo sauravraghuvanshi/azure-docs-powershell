@@ -39,10 +39,7 @@ The **Set-AzSqlInstancePool** cmdlet modifies properties of an Azure SQL Instanc
 
 ### Example 1 : Set an instance pool license type
 ```powershell
-Set-AzSqlInstancePool -ResourceGroupName resourcegroup01 -Name instancePool0 -LicenseType LicenseIncluded
-```
-
-```output
+PS C:\> Set-AzSqlInstancePool -ResourceGroupName resourcegroup01 -Name instancePool0 -LicenseType LicenseIncluded
 ResourceGroupName : resourcegroup01
 Type              : Microsoft.Sql/instancePools
 Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/instancePools/instancePool0
@@ -61,11 +58,8 @@ This command sets the license type and/or tags for an instance pool named instan
 
 ### Example 2 : Set an instance pool license type using an instance pool object
 ```powershell
-$instancePool = Get-AzSqlInstancePool -ResourceGroupName resourcegroup01 -Name instancePool0
-Set-AzSqlInstancePool -InputObject $instancePool -LicenseType LicenseIncluded
-```
-
-```output
+PS C:\> $instancePool = Get-AzSqlInstancePool -ResourceGroupName resourcegroup01 -Name instancePool0
+PS C:\> Set-AzSqlInstancePool -InputObject $instancePool -LicenseType LicenseIncluded
 ResourceGroupName : resourcegroup01
 Type              : Microsoft.Sql/instancePools
 Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/instancePools/instancePool0
@@ -84,10 +78,7 @@ This command sets the license type and/or tags for an instance pool using an ins
 
 ### Example 3 : Set an instance pool license type using an instance pool resource id
 ```powershell
-Set-AzSqlInstancePool -ResourceId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/instancePools/instancePool0" -LicenseType LicenseIncluded
-```
-
-```output
+PS C:\> Set-AzSqlInstancePool -ResourceId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/instancePools/instancePool0" -LicenseType LicenseIncluded
 ResourceGroupName : resourcegroup01
 Type              : Microsoft.Sql/instancePools
 Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/instancePools/instancePool0

@@ -39,7 +39,7 @@ The Remove-AzContainerRegistryWebhook cmdlet removes a container registry webhoo
 
 ### Example 1: Remove a container registry webhook.
 ```powershell
-Remove-AzContainerRegistryWebhook -ResourceGroupName "MyResourceGroup" -RegistryName "MyRegistry" -Name "webhook001"
+PS C:\> Remove-AzContainerRegistryWebhook -ResourceGroupName "MyResourceGroup" -RegistryName "MyRegistry" -Name "webhook001"
 ```
 
 Removes a container registry webhook.

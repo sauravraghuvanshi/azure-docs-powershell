@@ -40,7 +40,7 @@ Delete a gallery image version.
 
 ### Example 1
 ```powershell
-Remove-AzGalleryImageVersion -ResourceGroupName $rgname -GalleryName $gallery -GalleryImageDefinitionName $image -Name $version
+PS C:\> Remove-AzGalleryImageVersion -ResourceGroupName $rgname -GalleryName $gallery -GalleryImageDefinitionName $image -Name $version
 ```
 
 Delete the given gallery image version.

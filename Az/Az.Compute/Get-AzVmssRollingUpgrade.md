@@ -25,8 +25,8 @@ Shows the status of the latest virtual machine scale set rolling upgrade.
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzVmssRollingUpgrade -ResourceGroupName "Group001" -VMScaleSetName "VMSS001"
+```
+PS C:\> Get-AzVmssRollingUpgrade -ResourceGroupName "Group001" -VMScaleSetName "VMSS001"
 ```
 
 This command shows  the status of the latest rolling upgrade of the VMSS named VMSS001 that belongs to the resource group named Group001.

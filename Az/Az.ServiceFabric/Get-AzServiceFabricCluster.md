@@ -38,7 +38,7 @@ The **Get-AzServiceFabricCluster** will get the cluster resource details.
 
 ### Example 1
 ```powershell
-Get-AzServiceFabricCluster -ResourceGroupName 'Group1' -ClusterName 'Contoso01SFCluster'
+PS C:\> Get-AzServiceFabricCluster -ResourceGroupName 'Group1' -ClusterName 'Contoso01SFCluster'
 ```
 
 This command will get the cluster resource details for cluster 'myCluster'.

@@ -34,14 +34,14 @@ of an ExpressRoutePort.
 
 ### Example 1
 ```powershell
-Get-AzExpressRoutePortLinkConfig -ExpressRoutePort $erport -Name Link1
+PS C:\> Get-AzExpressRoutePortLinkConfig -ExpressRoutePort $erport -Name Link1
 ```
 
 Gets the Link1 configuration of ExpressRoutePort $erport
 
 ### Example 2
 ```powershell
-Get-AzExpressRoutePortLinkConfig -ExpressRoutePort $erport -ResourceId $id
+PS C:\> Get-AzExpressRoutePortLinkConfig -ExpressRoutePort $erport -ResourceId $id
 ```
 
 Gets the configuration of link with ResourceId $id in ExpressRoutePort $erport

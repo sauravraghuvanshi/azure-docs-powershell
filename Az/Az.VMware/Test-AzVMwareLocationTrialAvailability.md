@@ -26,9 +26,8 @@ Return trial status for subscription by region
 
 ### Example 1: Check trial availability
 ```powershell
-Test-AzVMwareLocationTrialAvailability -Location westcentralus
-```
-```output
+PS C:\> Test-AzVMwareLocationTrialAvailability -Location westcentralus
+
 AvailableHost Status
 ------------- ------
 0             TrialDisabled
@@ -121,7 +120,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.Api20211201.ITrial
+### Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.Api20210601.ITrial
 
 ## NOTES
 

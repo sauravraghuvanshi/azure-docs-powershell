@@ -24,8 +24,8 @@ List all compute resource Skus
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzComputeResourceSku "westus";
+```
+PS C:\> Get-AzComputeResourceSku "westus";
 ```
 
 List all compute resource skus in West US region

@@ -39,10 +39,8 @@ Get-AzVirtualNetworkGatewayNatRule -ParentResourceId <String> [-Name <String>]
 
 ### Example 1
 ```powershell
-Get-AzVirtualNetworkGatewayNatRule -ResourceGroupName "rg1" -Name "natRule1" -ParentResourceName gw1
-```
+PS C:\Users> get-azVirtualNetworkGatewayNatRule -ResourceGroupName "rg1" -Name "natRule1" -ParentResourceName gw1
 
-```output
 Name              : natRule1
 ProvisioningState : Succeeded
 Type              : Static
@@ -64,10 +62,8 @@ Etag              : W/"5150d788-e165-42ba-99c4-8138a545fce9"
 
 ### Example 2: 
 ```powershell
-Get-AzVirtualNetworkGatewayNatRule -ResourceGroupName "rg1" -ParentResourceName "gw1"
-```
+PS C:\Users\khbaheti> get-azVirtualNetworkGatewayNatRule -ResourceGroupName "rg1" -ParentResourceName "gw1"
 
-```output
 Name              : natRule1
 ProvisioningState : Succeeded
 Type              : Static

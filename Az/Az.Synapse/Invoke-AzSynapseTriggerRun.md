@@ -39,23 +39,23 @@ The Invoke-AzSynapseTriggerRun command starts another instance of a trigger run 
 
 ### Example 1
 ```powershell
-Invoke-AzSynapseTriggerRun -WorkspaceName ContosoWorkspace -Name ContosoTrigger -TriggerRunId 000111222333abc
+PS C:\> Invoke-AzSynapseTriggerRun -WorkspaceName ContosoWorkspace -Name ContosoTrigger -TriggerRunId 000111222333abc
 ```
 
 Starts another instance of a trigger run with a new trigger run id, keeping the same windowStartTime and windowEndTime as the original trigger run.
 
 ### Example 2
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Invoke-AzSynapseTriggerRun -Name ContosoTrigger -TriggerRunId 000111222333abc
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Invoke-AzSynapseTriggerRun -Name ContosoTrigger -TriggerRunId 000111222333abc
 ```
 
 Starts another instance of a trigger run with a new trigger run id in the Synapse workspace ContosoWorkspace through pipeline.
 
 ### Example 3
 ```powershell
-$triggerun = Get-AzSynapseTriggerRun -WorkspaceName ContosoWorkspace -Name ContosoTrigger -RunStartedAfter "2018-09-01T21:00" -RunStartedBefore "2019-09-01T21:00"
-$triggerun | Invoke-AzSynapseTriggerRun
+PS C:\> $triggerun = Get-AzSynapseTriggerRun -WorkspaceName ContosoWorkspace -Name ContosoTrigger -RunStartedAfter "2018-09-01T21:00" -RunStartedBefore "2019-09-01T21:00"
+PS C:\> $triggerun | Invoke-AzSynapseTriggerRun
 ```
 
 Starts another instance of a trigger run with a new trigger run id in the Synapse workspace ContosoWorkspace through pipeline.

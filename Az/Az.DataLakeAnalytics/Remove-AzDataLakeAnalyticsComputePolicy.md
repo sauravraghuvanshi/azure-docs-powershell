@@ -25,8 +25,8 @@ The **Remove-AzDataLakeAnalyticsComputePolicy** removes a specified Azure Data L
 ## EXAMPLES
 
 ### Example 1: Remove a compute policy
-```powershell
-Remove-AzDataLakeAnalyticsComputePolicy -Account "contosoadla" -Name myPolicy
+```
+PS C:\>Remove-AzDataLakeAnalyticsComputePolicy -Account "contosoadla" -Name myPolicy
 ```
 
 This command removes the specified compute policy with name 'myPolicy' in account 'contosoadla'.

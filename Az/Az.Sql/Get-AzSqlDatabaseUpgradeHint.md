@@ -29,29 +29,29 @@ This cmdlet is also supported by the SQL Server Stretch Database service on Azur
 ## EXAMPLES
 
 ### Example 1: Get recommendations for all databases on a server
-```powershell
-Get-AzSqlDatabaseUpgradeHint -ResourceGroupName "ResourceGroup01" -ServerName "Server01"
+```
+PS C:\> Get-AzSqlDatabaseUpgradeHint -ResourceGroupName "ResourceGroup01" -ServerName "Server01"
 ```
 
 This command returns upgrade hints for all databases on the server named Server01.
 
 ### Example 2: Get recommendations for specific database
-```powershell
-Get-AzSqlDatabaseUpgradeHint -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01"
+```
+PS C:\> Get-AzSqlDatabaseUpgradeHint -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01"
 ```
 
 This command returns upgrade hints for a specific database.
 
 ### Example 3: Get recommendation for all databases that are not in an elastic database pool
-```powershell
-Get-AzSqlDatabaseUpgradeHint -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -ExcludeElasticPoolCandidates $True
+```
+PS C:\> Get-AzSqlDatabaseUpgradeHint -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -ExcludeElasticPoolCandidates $True
 ```
 
 This command returns upgrade hints for all databases that are not in an elastic database pool.
 
 ### Example 4: Get recommendations for all databases on a server using filtering
-```powershell
-Get-AzSqlDatabaseUpgradeHint -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database*"
+```
+PS C:\> Get-AzSqlDatabaseUpgradeHint -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database*"
 ```
 
 This command returns upgrade hints for all databases on the server named Server01 that start with "Database".

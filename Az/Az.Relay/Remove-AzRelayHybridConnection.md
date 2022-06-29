@@ -25,8 +25,8 @@ The **Remove-AzRelayHybridConnection** cmdlet removes the HybridConnection from 
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Remove-AzRelayHybridConnection -ResourceGroupName Default-ServiceBus-WestUS -Namespace TestNameSpace-Relay1 -Name TestHybridConnection
+```
+PS C:\> Remove-AzRelayHybridConnection -ResourceGroupName Default-ServiceBus-WestUS -Namespace TestNameSpace-Relay1 -Name TestHybridConnection
 ```
 
 Removes the HybridConnection `TestHybridConnection` from the namespace `TestNameSpace-Relay1`.

@@ -25,15 +25,15 @@ Get or list tables for a workspace, list tables under workspace when "-TableName
 ## EXAMPLES
 
 ### Example 1: Get all tables for a workspace
-```powershell
-Get-AzOperationalInsightsTable -ResourceGroupName "ContosoResourceGroup" -WorkspaceName "ContosoWorkspace"
+```
+PS C:\>Get-AzOperationalInsightsTable -ResourceGroupName "ContosoResourceGroup" -WorkspaceName "ContosoWorkspace"
 ```
 
 This command gets all of the tables associated with a workspace.
 
 ### Example 2: Get a specific table by name
-```powershell
-Get-AzOperationalInsightsTable -ResourceGroupName "ContosoResourceGroup" -WorkspaceName "ContosoWorkspace" -tableName "ContosoSavedTableName"
+```
+PS C:\>Get-AzOperationalInsightsTable -ResourceGroupName "ContosoResourceGroup" -WorkspaceName "ContosoWorkspace" -tableName "ContosoSavedTableName"
 ```
 
 This command gets a specific table by its name.

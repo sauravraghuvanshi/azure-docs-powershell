@@ -38,11 +38,8 @@ The **Set-AzDataShare** cmdlet updates a data share that exists within a specifi
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Set-AzDataShare -ResourceGroupName "ADS" -AccountName "WikiAdsAccount" -Name "AdsShare" -Description "Updated description" -TermsOfUse "Updated terms"
 ```
-
-```output
+PS C:\> Set-AzDataShare -ResourceGroupName "ADS" -AccountName "WikiAdsAccount" -Name "AdsShare" -Description "Updated description" -TermsOfUse "Updated terms"
 Name                : AdsShare
 Id                  : /subscriptions/f3ead1ff-d0ab-4cf4-9a5a-86f1661d4685/resourceGroups/ADS/providers/Microsoft.DataShare/accounts/WikiAdsAccount/shares/AdsShare
 Type                : Microsoft.DataShare/shares

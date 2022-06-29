@@ -39,7 +39,7 @@ The Remove-AzNetworkVirtualAppliance command removes a Network Virtual Appliance
 
 ### Example 1
 ```powershell
-Remove-AzNetworkVirtualAppliance -ResourceGroupName testrg -Name nva
+PS C:\> Remove-AzNetworkVirtualAppliance -ResourceGroupName testrg -Name nva
 ```
 
 Delete a Network Virtual Appliance resource.

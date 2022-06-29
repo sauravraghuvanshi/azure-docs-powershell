@@ -39,10 +39,7 @@ The **Enable-AzSqlServerActiveDirectoryOnlyAuthentication** cmdlet enables Azure
 
 ### Example 1
 ```powershell
-Enable-AzSqlServerActiveDirectoryOnlyAuthentication -ResourceGroupName "ResourceGroup01" -ServerName "Server01"
-```
-
-```output
+PS C:\>Enable-AzSqlServerActiveDirectoryOnlyAuthentication -ResourceGroupName "ResourceGroup01" -ServerName "Server01"
 ResourceGroupName ServerName AzureADOnlyAuthentication
 ----------------- ---------- ----------- -------- -----------
 ResourceGroup01   Server01   True

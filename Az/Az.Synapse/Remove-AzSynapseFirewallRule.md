@@ -33,15 +33,15 @@ The **Remove-AzSynapseFirewallRule** cmdlet permanently deletes an Azure Synapse
 
 ### Example 1
 ```powershell
-Remove-AzSynapseFirewallRule -ResourceGroupName ContosoResourceGroup -WorkspaceName ContosoWorkspace -Name ContosoFirewallRule
+PS C:\> Remove-AzSynapseFirewallRule -ResourceGroupName ContosoResourceGroup -WorkspaceName ContosoWorkspace -Name ContosoFirewallRule
 ```
 
 This command deletes firewall rule named ContosoFirewallRule under workspace ContosoWorkspace with name ContosoFirewallRule.
 
 ### Example 2
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Remove-AzSynapseFirewallRule -Name ContosoFirewallRule
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Remove-AzSynapseFirewallRule -Name ContosoFirewallRule
 ```
 
 This command deletes firewall rule named ContosoFirewallRule under a workspace through pipeline.

@@ -26,10 +26,8 @@ The **New-AzCosmosDBCassandraColumn** creates a new CosmosDB Cassandra Column.
 
 ### Example 1
 ```powershell
-New-AzCosmosDBCassandraColumn -Name "name" -Type int
-```
+PS C:\> New-AzCosmosDBCassandraColumn -Name "name" -Type int
 
-```output
 Name Type
 ---- ----
 name int

@@ -48,21 +48,21 @@ are provided (eg: you are requesting a specific template spec/version).
 
 ### Example 1: List Template Specs in current subscription
 ```powershell
-Get-AzTemplateSpec
+PS C:\> Get-AzTemplateSpec
 ```
 
 Lists all Template Specs in the current subscription.
 
 ### Example 2: List Template Specs in a resource group
 ```powershell
-Get-AzTemplateSpec -ResourceGroupName 'myRG'
+PS C:\> Get-AzTemplateSpec -ResourceGroupName 'myRG'
 ```
 
 Lists all Template Specs in the resource group 'myRG' of the current subscription.
 
 ### Example 3: Get Template Spec (with all versions) by name
 ```powershell
-Get-AzTemplateSpec -ResourceGroupName 'myRG' -Name 'MyTemplateSpec'
+PS C:\> Get-AzTemplateSpec -ResourceGroupName 'myRG' -Name 'MyTemplateSpec'
 ```
 
 Gets information about the Template Spec named 'MyTemplateSpec' within the resource group 'myRG'.
@@ -72,7 +72,7 @@ of the return object.
 
 ### Example 4: Get Template Spec (specific version) by name
 ```powershell
-Get-AzTemplateSpec -ResourceGroupName 'myRG' -Name 'MyTemplateSpec' -Version 'v1.0'
+PS C:\> Get-AzTemplateSpec -ResourceGroupName 'myRG' -Name 'MyTemplateSpec' -Version 'v1.0'
 ```
 
 Gets information about version 'v1.0' of the Template Spec named 'MyTemplateSpec' within the resource group 'myRG'.
@@ -81,7 +81,7 @@ Gets information about version 'v1.0' of the Template Spec named 'MyTemplateSpec
 
 ### Example 5: Get Template Spec (with all versions) by resource id
 ```powershell
-Get-AzTemplateSpec -ResourceId '/subscriptions/{subId}/resourceGroups/myRG/providers/Microsoft.Resources/templateSpecs/MyTemplateSpec'
+PS C:\> Get-AzTemplateSpec -ResourceId '/subscriptions/{subId}/resourceGroups/myRG/providers/Microsoft.Resources/templateSpecs/MyTemplateSpec'
 ```
 
 Gets information about the Template Spec named 'MyTemplateSpec' within the resource group 'myRG' of subscription \{subId\}.
@@ -91,7 +91,7 @@ of the return object.
 
 ### Example 6: Get Template Spec (specific version) by resource id
 ```powershell
-Get-AzTemplateSpec -ResourceId '/subscriptions/{subId}/resourceGroups/myRG/providers/Microsoft.Resources/templateSpecs/MyTemplateSpec' -Version 'v1.0'
+PS C:\> Get-AzTemplateSpec -ResourceId '/subscriptions/{subId}/resourceGroups/myRG/providers/Microsoft.Resources/templateSpecs/MyTemplateSpec' -Version 'v1.0'
 ```
 
 Gets information about version 'v1.0' of the Template Spec named 'MyTemplateSpec' within the resource group 'myRG' of subscription \{subId\}.

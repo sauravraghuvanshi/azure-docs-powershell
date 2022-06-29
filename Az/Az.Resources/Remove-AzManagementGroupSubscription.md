@@ -26,7 +26,7 @@ The **Remove-AzManagementGroupSubscription** cmdlet removes a Subscription from 
 
 ### Example 1: Remove Subscription from a Management Group
 ```powershell
-Remove-AzManagementGroupSubscription -GroupName "TestGroup" -SubscriptionId 2120692d-35c3-44c8-81f5-631fa7351726
+PS C:\> Remove-AzManagementGroupSubscription -GroupName "TestGroup" -SubscriptionId 2120692d-35c3-44c8-81f5-631fa7351726
 ```
 
 ## PARAMETERS

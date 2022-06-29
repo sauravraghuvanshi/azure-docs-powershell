@@ -26,8 +26,8 @@ This provides information about the number of total, enabled and disabled device
 ## EXAMPLES
 
 ### Example 1 Get the RegistryStatistics
-```powershell
-Get-AzIotHubRegistryStatistic -ResourceGroupName "myresourcegroup" -Name "myiothub"
+```
+PS C:\> Get-AzIotHubRegistryStatistic -ResourceGroupName "myresourcegroup" -Name "myiothub"
 ```
 
 Gets the RegistryStatistics for the IotHub named "myiothub"

@@ -33,10 +33,8 @@ The Get-AzNetworkVirtualAppliance commands gets or lists Network Virtual Applian
 
 ### Example 1
 ```powershell
-Get-AzNetworkVirtualAppliance -ResourceGroupName testrg -Name nva                                                                                                                      
-```
+PS C:\> Get-AzNetworkVirtualAppliance -ResourceGroupName testrg -Name nva                                                                                                                      
 
-```output
 BootStrapConfigurationBlobs : {}
 VirtualHub                  : Microsoft.Azure.Commands.Network.Models.PSResourceId
 CloudInitConfigurationBlobs : {}

@@ -25,13 +25,11 @@ You can update the tags properties of an IotHub.
 ## EXAMPLES
 
 ### Example 1
-```powershell
-$updatedTag = @{}
-$updatedTag.add("key0","value0")
-Update-AzIotHub -ResourceGroupName "myresourcegroup" -Name "myiothub" -Tag $updatedTag
 ```
+PS C:\> $updatedTag = @{}
+PS C:\> $updatedTag.add("key0","value0")
+PS C:\> Update-AzIotHub -ResourceGroupName "myresourcegroup" -Name "myiothub" -Tag $updatedTag
 
-```output
 Id             : /subscriptions/91d1xxxx-xxxx-xxxx-xxxx-xxxxxxxxddc0/resourceGroups/myresourcegroup/providers/Microsoft.De
                  vices/IotHubs/myiothub
 Name           : myiothub

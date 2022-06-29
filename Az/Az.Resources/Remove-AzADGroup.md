@@ -39,14 +39,14 @@ Deletes entity from groups.
 
 ### Example 1: Remove group by display name
 ```powershell
-Remove-AzADGroup -DisplayName $name
+PS C:\> Remove-AzADGroup -DisplayName $name
 ```
 
 Remove group by display name
 
 ### Example 2: Remove group by pipeline input
 ```powershell
-Get-AzADGroup -ObjectId $id | Remove-AzADGroup
+PS C:\> Get-AzADGroup -ObjectId $id | Remove-AzADGroup
 ```
 
 Remove group by pipeline input

@@ -38,12 +38,10 @@ The New-AzSqlElasticJobTargetGroup cmdlet creates a new target group
 ## EXAMPLES
 
 ### Example 1
-```powershell
-$agent = Get-AzSqlElasticJobAgent -ResourceGroupName rg -ServerName elasticjobserver -Name agent
-$agent | New-AzSqlElasticJobTargetGroup -Name tg1
 ```
+PS C:\> $agent = Get-AzSqlElasticJobAgent -ResourceGroupName rg -ServerName elasticjobserver -Name agent
+$agent | New-AzSqlElasticJobTargetGroup -Name tg1
 
-```output
 TargetGroupName Targets
 --------------- -------
 tg1

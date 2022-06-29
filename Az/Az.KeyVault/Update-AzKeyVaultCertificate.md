@@ -35,11 +35,9 @@ The **Update-AzKeyVaultCertificate** cmdlet modifies the editable attributes of 
 
 ### Example 1: Modify the tags associated with a certificate
 ```powershell
-$Tags = @{ "Team" = "Azure" ; "Role" = "Engg" }
-Update-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01" -Tag $Tags -PassThru
-```
+PS C:\> $Tags = @{ "Team" = "Azure" ; "Role" = "Engg" }
+PS C:\> Update-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01" -Tag $Tags -PassThru
 
-```output
 Name        : TestCert01
 Certificate : [Subject]
                 CN=AZURE

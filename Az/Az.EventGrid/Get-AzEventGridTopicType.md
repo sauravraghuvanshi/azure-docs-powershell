@@ -29,21 +29,21 @@ If IncludeEventTypes is specified, information about event types supported by ea
 
 ### Example 1
 ```powershell
-Get-AzEventGridTopicType
+PS C:\> Get-AzEventGridTopicType
 ```
 
 Gets a list of the topic types.
 
 ### Example 2
 ```powershell
-Get-AzEventGridTopicType -Name "Microsoft.Storage.StorageAccounts"
+PS C:\> Get-AzEventGridTopicType -Name "Microsoft.Storage.StorageAccounts"
 ```
 
 Gets information about the StorageAccounts topic type.
 
 ### Example 3
 ```powershell
-Get-AzEventGridTopicType -Name "Microsoft.Storage.StorageAccounts" -IncludeEventTypeData
+PS C:\> Get-AzEventGridTopicType -Name "Microsoft.Storage.StorageAccounts" -IncludeEventTypeData
 ```
 
 Gets information about the StorageAccounts topic type, including the event types supported by StorageAccounts.

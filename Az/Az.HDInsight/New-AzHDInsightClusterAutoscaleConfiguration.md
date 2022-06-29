@@ -35,7 +35,7 @@ The cmdlet **New-AzHDInsightClusterAutoscaleConfiguration** creates a non-persis
 
 ### Example 1: Create an object which describes Load-based autoscale configuration
 ```powershell
-New-AzHDInsightClusterAutoscaleConfiguration -MinWorkerNodeCount 3 -MaxWorkerNodeCount 5
+PS C:\> New-AzHDInsightClusterAutoscaleConfiguration -MinWorkerNodeCount 3 -MaxWorkerNodeCount 5
 ```
 
 This command creates an object which describes Load-based autoscale configuration.
@@ -43,8 +43,8 @@ This command creates an object which describes Load-based autoscale configuratio
 ### Example 2: Create an object which describes Schedule-based autoscale configuration
 ```powershell
 # Create an autoscale condition firstly
-$condition=New-AzHDInsightClusterAutoscaleScheduleCondition -Day Monday -Time 09:00 -WorkerNodeCount 5
-New-AzHDInsightClusterAutoscaleConfiguration -TimeZone ([System.TimeZoneInfo]::Local).Id `
+PS C:\> $condition=New-AzHDInsightClusterAutoscaleScheduleCondition -Day Monday -Time 09:00 -WorkerNodeCount 5
+PS C:\> New-AzHDInsightClusterAutoscaleConfiguration -TimeZone ([System.TimeZoneInfo]::Local).Id `
         -Condition $condition
 ```
 

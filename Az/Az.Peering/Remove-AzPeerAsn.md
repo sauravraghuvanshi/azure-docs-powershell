@@ -39,7 +39,7 @@ Remove a PeerAsn from the subscription.
 
 ### Example 1
 ```powershell
-Remove-AzPeerAsn -Name Contoso -Force
+PS C:> Remove-AzPeerAsn -PeerName Contoso -Force
 ```
 
 Removes the Peer Asn

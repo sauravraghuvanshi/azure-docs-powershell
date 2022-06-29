@@ -40,13 +40,12 @@ The Remove-AzDataFactoryV2DataFlow cmdlet removes a data flow from Azure Data Fa
 
 ### Example 1
 ```powershell
-Remove-AzDataFactoryV2DataFlow -ResourceGroupName adf -DataFactoryName WikiADF -DataFlowName "dataflow5"
-```
+PS C:\WINDOWS\system32> Remove-AzDataFactoryV2DataFlow -ResourceGroupName adf -DataFactoryName WikiADF -DataFlowName "dataflow5"
 
-```output
 Confirm
 Are you sure you want to remove data flow 'dataflow5' in data factory 'WikiADF'?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
+PS C:\WINDOWS\system32>
 ```
 
 This command removes the data flow named dataflow5 from the data factory named WikiADF.

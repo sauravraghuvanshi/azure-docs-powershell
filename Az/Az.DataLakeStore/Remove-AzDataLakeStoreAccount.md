@@ -26,8 +26,8 @@ The **Remove-AzDataLakeStoreAccount** cmdlet deletes a Data Lake Store account p
 ## EXAMPLES
 
 ### Example 1: Remove a Data Lake Store account
-```powershell
-Remove-AzDataLakeStoreAccount -Name "ContosoADL"
+```
+PS C:\>Remove-AzDataLakeStoreAccount -Name "ContosoADL"
 ```
 
 This command removes the account named ContosoADL from the Data Lake Store.

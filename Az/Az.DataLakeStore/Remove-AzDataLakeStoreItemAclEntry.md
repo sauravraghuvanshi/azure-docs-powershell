@@ -35,22 +35,22 @@ The **Remove-AzDataLakeStoreItemAclEntry** cmdlet removes an entry (ACE) from th
 ## EXAMPLES
 
 ### Example 1: Remove a user entry
-```powershell
-Remove-AzDataLakeStoreItemAclEntry -AccountName "ContosoADL" -Path / -AceType User -Id (Get-AzADUser -Mail "PattiFuller@contoso.com").ObjectId
+```
+PS C:\>Remove-AzDataLakeStoreItemAclEntry -AccountName "ContosoADL" -Path / -AceType User -Id (Get-AzADUser -Mail "PattiFuller@contoso.com").ObjectId
 ```
 
 This command removes the user ACE for Patti Fuller from the ContosoADL account.
 
 ### Example 2: Remove a user entry recursively
-```powershell
-Remove-AzDataLakeStoreItemAclEntry -AccountName "ContosoADL" -Path / -AceType User -Id (Get-AzADUser -Mail "PattiFuller@contoso.com").ObjectId -Recurse -Concurrency 128
+```
+PS C:\>Remove-AzDataLakeStoreItemAclEntry -AccountName "ContosoADL" -Path / -AceType User -Id (Get-AzADUser -Mail "PattiFuller@contoso.com").ObjectId -Recurse -Concurrency 128
 ```
 
 ### Example 3: Remove permissions for an ACE recursively using Acl object
-```powershell
-$fullAcl="user:enterpriseObjectID:rwx,default:user:enterpriseObjectID:rwx"
-$newFullAcl = $fullAcl.Split(",")
-Remove-AzDataLakeStoreItemAclEntry -AccountName "ContosoADL" -Path / -Acl $newFullAcl -Recurse -Concurrency 128 -ShowProgress -Verbose
+```
+PS C:\>$fullAcl="user:enterpriseObjectID:rwx,default:user:enterpriseObjectID:rwx"
+PS C:\>$newFullAcl = $fullAcl.Split(",")
+PS C:\>Remove-AzDataLakeStoreItemAclEntry -AccountName "ContosoADL" -Path / -Acl $newFullAcl -Recurse -Concurrency 128 -ShowProgress -Verbose
 ```
 
 This command removes the user ACE for Patti Fuller from the root and recursively from all it's subdirectories and files for account ContosoADL.

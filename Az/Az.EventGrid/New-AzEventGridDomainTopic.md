@@ -29,10 +29,8 @@ Creates a new Azure Event Grid Domain Topic.
 Creates an Event Grid Domain Topic \`Topic1\` in Domain \`Domain1\` under resource group \`MyResourceGroupName\`.
 
 ```powershell
-New-AzEventGridDomainTopic -ResourceGroupName MyResourceGroupName -DomainName Domain1 -Name Topic1
-```
+PS C:\> New-AzEventGridDomainTopic -ResourceGroupName MyResourceGroupName -DomainName Domain1 -Name Topic1
 
-```output
 ResourceGroupName : MyResourceGroupName
 DomainName        : Domain1
 DomainTopicName   : topic1

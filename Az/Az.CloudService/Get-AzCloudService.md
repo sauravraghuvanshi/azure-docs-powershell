@@ -46,7 +46,7 @@ Display information about a cloud service.
 Get-AzCloudService -ResourceGroupName "ContosOrg"
 ```
 
-```output
+```Output
 ResourceGroupName Name              Location    ProvisioningState
 ----------------- ----              --------    -----------------
 ContosOrg         ContosoCS         eastus2euap Succeeded
@@ -58,33 +58,12 @@ This command gets all cloud services in resource group named ContosOrg
 ### Example 2: Get cloud service
 ```powershell
 Get-AzCloudService -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS"
+```
 
+```Output
 ResourceGroupName Name              Location    ProvisioningState
 ----------------- ----              --------    -----------------
 ContosOrg         ContosoCS         eastus2euap Succeeded
-
-$cloudService = Get-AzCloudService -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS"
-$cloudService | Format-List
-ResourceGroupName : ContosOrg
-Configuration     : xxxxxxxx
-ConfigurationUrl  :
-ExtensionProfile  : xxxxxxxx
-Id                : xxxxxxxx
-Location          : East US
-Name              : ContosoCS
-NetworkProfile    : xxxxxxxx
-OSProfile         : xxxxxxxx
-PackageUrl        : xxxxxxxx
-ProvisioningState : Succeeded
-RoleProfile       : xxxxxxxx
-StartCloudService :
-Tag               : {
-                      "Owner": "Contos"
-                    }
-Type              : Microsoft.Compute/cloudServices
-UniqueId          : xxxxxxxx
-UpgradeMode       : Auto
-
 ```
 
 This command gets cloud service named ContosoCS that belongs to the resource group named ContosOrg.
@@ -190,13 +169,10 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <ICloudServiceIdentity>: Identity Parameter
   - `[CloudServiceName <String>]`: 
-  - `[IPConfigurationName <String>]`: The IP configuration name.
   - `[Id <String>]`: Resource identity path
   - `[Location <String>]`: Name of the location that the OS version pertains to.
-  - `[NetworkInterfaceName <String>]`: The name of the network interface.
   - `[OSFamilyName <String>]`: Name of the OS family.
   - `[OSVersionName <String>]`: Name of the OS version.
-  - `[PublicIPAddressName <String>]`: The name of the public IP Address.
   - `[ResourceGroupName <String>]`: 
   - `[RoleInstanceName <String>]`: Name of the role instance.
   - `[RoleName <String>]`: Name of the role.

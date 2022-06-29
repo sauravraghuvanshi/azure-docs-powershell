@@ -36,14 +36,14 @@ Add-AzStackHCIVMAttestation configures guests for AzureStack HCI IMDS Attestatio
 
 ### EXAMPLE 1
 ```powershell
-Add-AzStackHCIVMAttestation -AddAll
+C:\PS\>Add-AzStackHCIVMAttestation -AddAll
 ```
 
 Adding all guests on current node
 
 ### EXAMPLE 2
 ```powershell
-Invoke-Command -ScriptBlock {Add-AzStackHCIVMAttestation -VMName "guest1", "guest2"} -ComputerName "node1"
+C:\PS\>Invoke-Command -ScriptBlock {Add-AzStackHCIVMAttestation -VMName "guest1", "guest2"} -ComputerName "node1"
 ```
 
 Invoking from the management node/WAC

@@ -36,8 +36,8 @@ The **Export-AzDataLakeStoreItem** cmdlet downloads a file from Data Lake Store.
 ## EXAMPLES
 
 ### Example 1: Download an item from the Data Lake Store
-```powershell
-Export-AzDataLakeStoreItem -AccountName "ContosoADL" -Path /myFiles/TestSource.csv -Destination "C:\Test.csv" -Concurrency 4
+```
+PS C:\>Export-AzDataLakeStoreItem -AccountName "ContosoADL" -Path /myFiles/TestSource.csv -Destination "C:\Test.csv" -Concurrency 4
 ```
 
 This command downloads the file TestSource.csv from the Data Lake Store to C:\Test.csv with a concurrency of 4.

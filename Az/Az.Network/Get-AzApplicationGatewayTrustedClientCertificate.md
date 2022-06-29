@@ -26,8 +26,8 @@ The Get-AzApplicationGatewayTrustedClientCertificate cmdlet gets the trusted cli
 
 ### Example 1
 ```powershell
-$gw = Get-AzApplicationGateway -Name $appgwName -ResourceGroupName $resgpName
-$trustedClientCert = Get-AzApplicationGatewayTrustedClientCertificate -ApplicationGateway $gw -Name $certName
+PS C:\> $gw = Get-AzApplicationGateway -Name $appgwName -ResourceGroupName $resgpName
+PS C:\> $trustedClientCert = Get-AzApplicationGatewayTrustedClientCertificate -ApplicationGateway $gw -Name $certName
 ```
 
 The first command gets the Application Gateway and stores it in $gw variable. The second command gets the trusted client CA certificate chain with a specified name from the Application Gateway.

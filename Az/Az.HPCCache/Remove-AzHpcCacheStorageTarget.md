@@ -26,7 +26,7 @@ The **Remove-AzHpcCacheStorageTarget** cmdlet removes a Storage Target from Azur
 
 ### Example 1
 ```powershell
-Remove-AzHpcCacheStorageTarget -ResourceGroupName testRG -CacheName testCache -StorageTargetName testST
+PS C:\> Remove-AzHpcCacheStorageTarget -ResourceGroupName testRG -CacheName testCache -StorageTargetName testST
 ```
 
 ## PARAMETERS

@@ -87,48 +87,45 @@ The **Get-AzIntegrationAccountBatchConfiguration** cmdlet creates a new batch co
 
 ### Example 1: Create new batch configuration using local file
 ```powershell
-New-AzIntegrationAccountBatchConfiguration -ResourceGroupName "sampleResourceGroup" -IntegrationAccountName "sampleIntegrationAccount" -BatchConfigurationName "sampleBatchConfig" -BatchConfigurationFilePath $batchConfigurationFilePath
-```
+PS C:\> New-AzIntegrationAccountBatchConfiguration -ResourceGroupName "sampleResourceGroup" -IntegrationAccountName "sampleIntegrationAccount" -BatchConfigurationName "sampleBatchConfig" -BatchConfigurationFilePath $batchConfigurationFilePath
 
-```output
 Properties : Microsoft.Azure.Management.Logic.Models.BatchConfigurationProperties
 Id         : /subscriptions/{SubscriptionId}/resourceGroups/sampleResourceGroup/providers/Microsoft.Logic/integrationAccounts/sampleIntegrationAccount/batchConfigurations/sampleBatchConfig
 Name       : sampleBatchConfig
 Type       : Microsoft.Logic/integrationAccounts/batchConfigurations
 Location   :
 Tags       :
+
 ```
 
 Creates a new batch configuration using the local file located at the file path contained in "$batchConfigurationFilePath".
 
 ### Example 2: Create new batch configuration using a JSON string
 ```powershell
-New-AzIntegrationAccountBatchConfiguration -ResourceGroupName "sampleResourceGroup" -IntegrationAccountName "sampleIntegrationAccount" -BatchConfigurationName "sampleBatchConfig" -BatchConfigurationDefinition $batchConfigurationContent
-```
+PS C:\> New-AzIntegrationAccountBatchConfiguration -ResourceGroupName "sampleResourceGroup" -IntegrationAccountName "sampleIntegrationAccount" -BatchConfigurationName "sampleBatchConfig" -BatchConfigurationDefinition $batchConfigurationContent
 
-```output
 Properties : Microsoft.Azure.Management.Logic.Models.BatchConfigurationProperties
 Id         : /subscriptions/{SubscriptionId}/resourceGroups/sampleResourceGroup/providers/Microsoft.Logic/integrationAccounts/sampleIntegrationAccount/batchConfigurations/sampleBatchConfig
 Name       : sampleBatchConfig
 Type       : Microsoft.Logic/integrationAccounts/batchConfigurations
 Location   :
 Tags       :
+
 ```
 
 Creates a new batch configuration using the a JSON string contained in "$batchConfigurationContent".
 
 ### Example 3: Create new batch configuration using parameters
 ```powershell
-New-AzIntegrationAccountBatchConfiguration -ResourceGroupName "sampleResourceGroup" -IntegrationAccountName "sampleIntegrationAccount" -BatchConfigurationName "sampleBatchConfig" -MessageCount 199 -BatchSize 5 -ScheduleInterval 1 -ScheduleFrequency "Month"
-```
+PS C:\> New-AzIntegrationAccountBatchConfiguration -ResourceGroupName "sampleResourceGroup" -IntegrationAccountName "sampleIntegrationAccount" -BatchConfigurationName "sampleBatchConfig" -MessageCount 199 -BatchSize 5 -ScheduleInterval 1 -ScheduleFrequency "Month"
 
-```output
 Properties : Microsoft.Azure.Management.Logic.Models.BatchConfigurationProperties
 Id         : /subscriptions/{SubscriptionId}/resourceGroups/sampleResourceGroup/providers/Microsoft.Logic/integrationAccounts/sampleIntegrationAccount/batchConfigurations/sampleBatchConfig
 Name       : sampleBatchConfig
 Type       : Microsoft.Logic/integrationAccounts/batchConfigurations
 Location   :
 Tags       :
+
 ```
 
 Creates a new batch configuration by manually providing all of the necessary parameters.

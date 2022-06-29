@@ -36,10 +36,7 @@ Operation to update an exiting Service.
 
 ### Example 1: Update Spring Cloud Service by name.
 ```powershell
-Update-AzSpringCloud -ResourceGroupName spring-cloud-rg -ServiceName spring-cloud-service
-```
-
-```output
+PS C:\> Update-AzSpringCloud -ResourceGroupName spring-cloud-rg -ServiceName spring-cloud-service
 ConfigServerPropertiesErrorCode                  :
 ConfigServerPropertiesErrorMessage               :
 ConfigServerPropertyState                        : Succeeded
@@ -89,10 +86,7 @@ Update Spring Cloud Service by name.
 
 ### Example 2: Update Spring Cloud Service from pipe.
 ```powershell
-Get-AzSpringCloud -ResourceGroupName spring-cloud-rg -ServiceName spring-cloud-service | Update-AzSpringCloud
-```
-
-```output
+PS C:\> Get-AzSpringCloud -ResourceGroupName spring-cloud-rg -ServiceName spring-cloud-service | Update-AzSpringCloud
 ConfigServerPropertiesErrorCode                  :
 ConfigServerPropertiesErrorMessage               :
 ConfigServerPropertyState                        : Succeeded

@@ -39,23 +39,23 @@ The **Stop-AzSynapseSparkJob** cmdlet cancels a Synapse Analytics Spark job.
 
 ### Example 1
 ```powershell
-Stop-AzSynapseSparkJob -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -LivyId 130
+PS C:\> Stop-AzSynapseSparkJob -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -LivyId 130
 ```
 
 This command cancels a Synapse Analytics Spark job.
 
 ### Example 2
 ```powershell
-$pool = Get-AzSynapseSparkPool -WorkspaceName ContosoWorkspace -Name ContosoSparkPool
-$pool | Stop-AzSynapseSparkJob -LivyId 130
+PS C:\> $pool = Get-AzSynapseSparkPool -WorkspaceName ContosoWorkspace -Name ContosoSparkPool
+PS C:\> $pool | Stop-AzSynapseSparkJob -LivyId 130
 ```
 
 This command cancels a Synapse Analytics Spark job through pipeline.
 
 ### Example 3
 ```powershell
-$job = Get-AzSynapseSparkJob -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -LivyId 130
-$job | Stop-AzSynapseSparkJob
+PS C:\> $job = Get-AzSynapseSparkJob -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -LivyId 130
+PS C:\> $job | Stop-AzSynapseSparkJob
 ```
 
 This command cancels a Synapse Analytics Spark job through pipeline.

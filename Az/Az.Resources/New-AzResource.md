@@ -47,15 +47,15 @@ The **New-AzResource** cmdlet creates an Azure resource, such as a website, Azur
 ## EXAMPLES
 
 ### Example 1: Create a resource
-```powershell
-New-AzResource -Location "West US" -Properties @{test="test"} -ResourceName TestSite06 -ResourceType microsoft.web/sites -ResourceGroupName ResourceGroup11 -Force
+```
+PS> New-AzResource -Location "West US" -Properties @{test="test"} -ResourceName TestSite06 -ResourceType microsoft.web/sites -ResourceGroupName ResourceGroup11 -Force
 ```
 
 This command creates a resource that is a website in ResourceGroup11.
 
 ### Example 2: Create a resource using splatting
-```powershell
-$prop = @{
+```
+PS> $prop = @{
     Location          = "West US"
     Properties        = @{test = "test"}
     ResourceName      = "TestSite06"
@@ -64,7 +64,7 @@ $prop = @{
     Force             = $true
 }
 
-New-AzResource @prop
+PS> New-AzResource @prop
 ```
 
 This command creates a resource that is a website in ResourceGroup11.

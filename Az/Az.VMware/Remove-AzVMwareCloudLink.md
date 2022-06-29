@@ -34,7 +34,7 @@ Delete a cloud link in a private cloud
 
 ### Example 1: Delete a cloud link
 ```powershell
-Remove-AzVMwareCloudLink -Name azps_test_cloudlink -PrivateCloudName azps_test_cloud -ResourceGroupName azps_test_group
+PS C:\> Remove-AzVMwareCloudLink -Name azps_test_cloudlink -PrivateCloudName azps_test_cloud -ResourceGroupName azps_test_group
 
 ```
 
@@ -42,7 +42,7 @@ Delete a cloud link
 
 ### Example 2: Delete a cloud link
 ```powershell
-Get-AzVMwareCloudLink -PrivateCloudName azps_test_cloud -ResourceGroupName azps_test_group -Name azps_test_cloudlink | Remove-AzVMwareCloudLink
+PS C:\> Get-AzVMwareCloudLink -PrivateCloudName azps_test_cloud -ResourceGroupName azps_test_group -Name azps_test_cloudlink | Remove-AzVMwareCloudLink
 
 ```
 
@@ -252,7 +252,6 @@ INPUTOBJECT <IVMwareIdentity>: Identity Parameter
   - `[HcxEnterpriseSiteName <String>]`: Name of the HCX Enterprise Site in the private cloud
   - `[Id <String>]`: Resource identity path
   - `[Location <String>]`: Azure region
-  - `[PlacementPolicyName <String>]`: Name of the VMware vSphere Distributed Resource Scheduler (DRS) placement policy
   - `[PortMirroringId <String>]`: NSX Port Mirroring identifier. Generally the same as the Port Mirroring display name
   - `[PrivateCloudName <String>]`: Name of the private cloud
   - `[PublicIPId <String>]`: NSX Public IP Block identifier. Generally the same as the Public IP Block's display name

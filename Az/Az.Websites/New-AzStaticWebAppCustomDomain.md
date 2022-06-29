@@ -1,5 +1,5 @@
 ---
-external help file: Az.Websites-help.xml
+external help file: 
 Module Name: Az.Websites
 online version: https://docs.microsoft.com/powershell/module/az.websites/new-azstaticwebappcustomdomain
 schema: 2.0.0
@@ -16,8 +16,8 @@ Description for Creates a new static site custom domain in an existing resource 
 
 ```
 New-AzStaticWebAppCustomDomain -DomainName <String> -Name <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] [-Kind <String>] [-ValidationMethod <String>] [-DefaultProfile <PSObject>] [-AsJob]
- [-NoWait] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-SubscriptionId <String>] [-Kind <String>] [-ValidationMethod <String>] [-DefaultProfile <PSObject>]
+ [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -27,10 +27,8 @@ Description for Creates a new static site custom domain in an existing resource 
 
 ### Example 1: Create a new static site custom domain in an existing resource group and static site
 ```powershell
-New-AzStaticWebAppCustomDomain -ResourceGroupName resourceGroup -Name staticweb00 -DomainName 'www01.azpstest.net'
-```
+PS C:\> New-AzStaticWebAppCustomDomain -ResourceGroupName resourceGroup -Name staticweb00 -DomainName 'www01.azpstest.net'
 
-```output
 Kind Name               Type
 ---- ----               ----
      www01.azpstest.net Microsoft.Web/staticSites/customDomains
@@ -223,3 +221,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
+

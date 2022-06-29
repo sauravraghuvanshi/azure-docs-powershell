@@ -39,30 +39,30 @@ The **Export-AzSynapseSqlScript** cmdlet exports an Azure Synapse sql script to 
 
 ### Example 1
 ```powershell
-Export-AzSynapseSqlScript -WorkspaceName ContosoWorkspace -OutputFolder "C:\sqlscript"
+PS C:\> Export-AzSynapseSqlScript -WorkspaceName ContosoWorkspace -OutputFolder "C:\sqlscript"
 ```
 
 Exports all sql scripts in the workspace ContosoWorkspace to the folder "C:\sqlscript".
 
 ### Example 2
 ```powershell
-Export-AzSynapseSqlScript -WorkspaceName ContosoWorkspace -OutputFolder "C:\sqlscript" -Name "ContosoSqlScript"
+PS C:\> Export-AzSynapseSqlScript -WorkspaceName ContosoWorkspace -OutputFolder "C:\sqlscript" -Name "ContosoSqlScript"
 ```
 
 Exports a single sql script named ContosoSqlScript in the workspace ContosoWorkspace to the folder "C:\sqlscript".
 
 ### Example 3
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Export-AzSynapseSqlScript -Name ContosoSqlScript -OutputFolder "C:\sqlscript"
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Export-AzSynapseSqlScript -Name ContosoSqlScript -OutputFolder "C:\sqlscript"
 ```
 
 Exports a single sql script called ContosoSqlScript in the workspace ContosoWorkspace to the folder "C:\sqlscript" through pipeline.
 
 ### Example 4
 ```powershell
-$sqlscript = Get-AzSynapseSqlScript  -WorkspaceName ContosoWorkspace -Name ContosoSqlScript
-$sqlscript | Export-AzSynapseSqlScript -OutputFolder "C:\sqlscript"
+PS C:\> $sqlscript = Get-AzSynapseSqlScript  -WorkspaceName ContosoWorkspace -Name ContosoSqlScript
+PS C:\> $sqlscript | Export-AzSynapseSqlScript -OutputFolder "C:\sqlscript"
 ```
 
 Exports a single sql script called ContosoSqlScript in the workspace ContosoWorkspace to the folder "C:\sqlscript" through pipeline.

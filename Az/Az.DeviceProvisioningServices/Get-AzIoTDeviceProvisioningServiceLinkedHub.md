@@ -38,11 +38,9 @@ For an introduction to Azure IoT Hub Device Provisioning Service, see https://do
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzIoTDeviceProvisioningServiceLinkedHub -ResourceGroupName "myresourcegroup" -Name "myiotdps"
 ```
+PS C:\> Get-AzIoTDeviceProvisioningServiceLinkedHub -ResourceGroupName "myresourcegroup" -Name "myiotdps"
 
-```output
 LinkedHubName					Location	AllocationWeight	ApplyAllocationPolicy
 -------------					--------	----------------	---------------------
 myiothub1.azure-devices.net		eastus		2
@@ -52,11 +50,9 @@ myiothub2.azure-devices.net		westus2							true
 List all linked IoT hubs in "myiotdps".
 
 ### Example 2
-```powershell
-Get-AzIoTDeviceProvisioningServiceLinkedHub -ResourceGroupName "myresourcegroup" -Name "myiotdps" -LinkedHubName "myiothub1"
 ```
+PS C:\> Get-AzIoTDpsHub -ResourceGroupName "myresourcegroup" -Name "myiotdps" -LinkedHubName "myiothub1"
 
-```output
 ResourceGroupName	  : myresourcegroup
 Name				  : myiotdps
 LinkedHubName         : myiothub1.azure-devices.net

@@ -16,8 +16,7 @@ Create or Update a dedicated HSM in the specified subscription.
 
 ```
 New-AzDedicatedHsm -Name <String> -ResourceGroupName <String> -Location <String> [-SubscriptionId <String>]
- [-ManagementNetworkInterface <INetworkInterface[]>] [-ManagementSubnetId <String>]
- [-NetworkInterface <INetworkInterface[]>] [-Sku <SkuName>] [-StampId <String>] [-SubnetId <String>]
+ [-NetworkInterface <INetworkInterface[]>] [-Sku <String>] [-StampId <String>] [-SubnetId <String>]
  [-Tag <Hashtable>] [-Zone <String[]>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -29,7 +28,7 @@ Create or Update a dedicated HSM in the specified subscription.
 
 ### Example 1: Create a Dedicated HSM into an existing virtual network
 ```powershell
-New-AzDedicatedHsm -Name hsm-n7wfxi -ResourceGroupName dedicatedhsm-rg-n359cz -Location eastus -Sku "SafeNet Luna Network HSM A790" -StampId stamp1 -SubnetId "/subscriptions/xxxx-xxxx-xxx-xxx/resourceGroups/dedicatedhsm-rg-n359cz/providers/Microsoft.Network/virtualNetworks/vnetq30la9/subnets/hsmsubnet" -NetworkInterface @{PrivateIPAddress = '10.2.1.120' }
+New-AzDedicatedHsm -Name  hsm-n7wfxi -ResourceGroupName dedicatedhsm-rg-n359cz -Location eastus -Sku "SafeNet Luna Network HSM A790" -StampId stamp1 -SubnetId "/subscriptions/xxxx-xxxx-xxx-xxx/resourceGroups/dedicatedhsm-rg-n359cz/providers/Microsoft.Network/virtualNetworks/vnetq30la9/subnets/hsmsubnet" -NetworkInterface @{PrivateIPAddress = '10.2.1.120' }
 ```
 
 ```output
@@ -38,7 +37,7 @@ Name       Provisioning State SKU                           Location
 hsm-n7wfxi Succeeded          SafeNet Luna Network HSM A790 eastus
 ```
 
-This command creates a Dedicated HSM into an existing virtual network.
+This command creates a Dedicated HSM into an existing virtual network. Defalut value `SafteNet Luna Network HSM 790` is the only `sku` for the existing service. More details reference Azure Dedicated HSM documents.
 
 **NOTE:** Currently `New-AzDedicatedHsm` has a limitation that it returns before the HSM is fully provisioned on Azure.
 Therefore after creating a new HSM, please query its state by `Get-AzDedicatedHsm` and make sure its `Provisioning State` is `Succeeded` before using it.
@@ -90,37 +89,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ManagementNetworkInterface
-Specifies the list of resource Ids for the network interfaces associated with the dedicated HSM.
-To construct, see NOTES section for MANAGEMENTNETWORKINTERFACE properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.DedicatedHsm.Models.Api20211130.INetworkInterface[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ManagementSubnetId
-The ARM resource id in the form of /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/...
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Name
 Name of the dedicated Hsm
 
@@ -141,7 +109,7 @@ Specifies the list of resource Ids for the network interfaces associated with th
 To construct, see NOTES section for NETWORKINTERFACE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.DedicatedHsm.Models.Api20211130.INetworkInterface[]
+Type: Microsoft.Azure.PowerShell.Cmdlets.DedicatedHsm.Models.Api20181031.INetworkInterface[]
 Parameter Sets: (All)
 Aliases:
 
@@ -186,7 +154,7 @@ Accept wildcard characters: False
 SKU of the dedicated HSM
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.DedicatedHsm.Support.SkuName
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -311,7 +279,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DedicatedHsm.Models.Api20211130.IDedicatedHsm
+### Microsoft.Azure.PowerShell.Cmdlets.DedicatedHsm.Models.Api20181031.IDedicatedHsm
 
 ## NOTES
 
@@ -321,9 +289,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-MANAGEMENTNETWORKINTERFACE <INetworkInterface[]>: Specifies the list of resource Ids for the network interfaces associated with the dedicated HSM.
-  - `[PrivateIPAddress <String>]`: Private Ip address of the interface
 
 NETWORKINTERFACE <INetworkInterface[]>: Specifies the list of resource Ids for the network interfaces associated with the dedicated HSM.
   - `[PrivateIPAddress <String>]`: Private Ip address of the interface

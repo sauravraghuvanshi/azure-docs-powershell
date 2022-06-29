@@ -24,8 +24,8 @@ The **Get-AzServiceBusOperation** cmdlet Lists the ServiceBus supported Operatio
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzServiceBusOperation
+```
+PS C:\> Get-AzServiceBusOperation
 ```
 
 Lists ServiceBus supported operations

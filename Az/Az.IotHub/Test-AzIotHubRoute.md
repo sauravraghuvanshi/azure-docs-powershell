@@ -66,11 +66,9 @@ Test a specific route.
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Test-AzIotHubRoute -ResourceGroupName "myresourcegroup" -Name "myiothub" -Source DeviceMessages
 ```
+PS C:\> Test-AzIotHubRoute -ResourceGroupName "myresourcegroup" -Name "myiothub" -Source DeviceMessages
 
-```output
 RouteName DataSource     EndpointNames IsEnabled
 --------- ----------     ------------- ---------
 R1        DeviceMessages events        True
@@ -80,22 +78,18 @@ R5        DeviceMessages E1            True
 Test all route with source "DeviceMessages".
 
 ### Example 2
-```powershell
-Test-AzIotHubRoute -ResourceGroupName "myresourcegroup" -Name "myiothub" -RouteName R1
 ```
+PS C:\> Test-AzIotHubRoute -ResourceGroupName "myresourcegroup" -Name "myiothub" -RouteName R1
 
-```output
 Result : true
 ```
 
 Test a specific route.
 
 ### Example 3
-```powershell
-Test-AzIotHubRoute -ResourceGroupName "myresourcegroup" -Name "myiothub" -RouteName R1 -ShowError
 ```
+PS C:\> Test-AzIotHubRoute -ResourceGroupName "myresourcegroup" -Name "myiothub" -RouteName R1 -ShowError
 
-```output
 ErrorMessage  Severity LocationStartLine LocationStartColumn LocationEndLine LocationEndColumn
 ------------  -------- ----------------- ------------------- --------------- -----------------
 Syntax error. error    1                 29                  1               30
@@ -104,15 +98,13 @@ Syntax error. error    1                 29                  1               30
 Test a specific route and showing the reason of failure.
 
 ### Example 4
-```powershell
-$ap = @{}
-$ap.add("key0","value0")
-$sp = @{}
-$sp.add("key1", "value1")
-Test-AzIotHubRoute -ResourceGroupName "myresourcegroup" -Name "myiothub" -RouteName R1 -AppProperty $ap -SystemProperty $sp
 ```
+PS C:\> $ap = @{}
+PS C:\> $ap.add("key0","value0")
+PS C:\> $sp = @{}
+PS C:\> $sp.add("key1", "value1")
+PS C:\> Test-AzIotHubRoute -ResourceGroupName "myresourcegroup" -Name "myiothub" -RouteName R1 -AppProperty $ap -SystemProperty $sp
 
-```output
 Result : true
 ```
 

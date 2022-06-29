@@ -63,10 +63,8 @@ The Update-AzContainerRegistry cmdlet updates a container registry.
 
 ### Example 1: Enable admin user for a specified container registry
 ```powershell
-Update-AzContainerRegistry -ResourceGroupName "MyResourceGroup" -Name "MyRegistry" -EnableAdminUser
-```
+PS C:\>Update-AzContainerRegistry -ResourceGroupName "MyResourceGroup" -Name "MyRegistry" -EnableAdminUser
 
-```output
   Container registry location: eastus
 
 Registry Name        Sku        LoginServer                    CreationDate         Provisioni AdminUserE StorageAccountName
@@ -79,10 +77,8 @@ This command enables admin user for the specified container registry.
 
 ### Example 2: Set the storage account used by a specified container registry
 ```powershell
-Update-AzContainerRegistry -ResourceGroupName "MyResourceGroup" -Name "MyRegistry" -StorageAccountName "mystorageaccount"
-```
+PS C:\>Update-AzContainerRegistry -ResourceGroupName "MyResourceGroup" -Name "MyRegistry" -StorageAccountName "mystorageaccount"
 
-```output
   Container registry location: eastus
 
 Registry Name        Sku        LoginServer                    CreationDate         Provisioni AdminUserE StorageAccountName

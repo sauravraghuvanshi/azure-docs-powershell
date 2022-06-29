@@ -33,10 +33,8 @@ The **Get-AzCosmosDBSqlContainerThroughput** cmdlet gets the throughput settings
 
 ### Example 1
 ```powershell
-Get-AzCosmosDBSqlContainerThroughput  -AccountName "accountName" -ResourceGroupName "resourceGroupName" -DatabaseName "databaseName" -Name "containerName"
-```
+PS C:\> Get-AzCosmosDBSqlContainerThroughput  -AccountName {accountName} -ResourceGroupName {resourceGroupName} -DatabaseName {databaseName} -Name {containerName}
 
-```output
 Throughput          : {throughputValue}
 MinimumThroughput   :
 OfferReplacePending :

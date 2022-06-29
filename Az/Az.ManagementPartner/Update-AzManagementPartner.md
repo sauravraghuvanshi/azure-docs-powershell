@@ -26,10 +26,7 @@ Updates the Microsoft Partner Network(MPN) ID of the current authenticated user 
 
 ### Example 1
 ```powershell
-Update-AzManagementPartner -PartnerId 4977985
-```
-
-```output
+PS C:\> Update-AzManagementPartner -PartnerId 4977985
 PartnerId   : 4977985
 PartnerName : Test_Test_DPORTest
 TenantId    : 1b1121dd-6900-412a-af73-e8d44f81e1c1

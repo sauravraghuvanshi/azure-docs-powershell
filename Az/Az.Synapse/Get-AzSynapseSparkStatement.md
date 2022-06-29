@@ -33,22 +33,22 @@ The **Get-AzSynapseSparkStatement** cmdlet gets information about an Azure Synap
 
 ### Example 1
 ```powershell
-Get-AzSynapseSparkStatement -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -SessionId 120
+PS C:\> Get-AzSynapseSparkStatement -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -SessionId 120
 ```
 
 This command gets all the Spark statements under a Spark session.
 
 ### Example 2
 ```powershell
-Get-AzSynapseSparkStatement -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -SessionId 120 -LivyId 0
+PS C:\> Get-AzSynapseSparkStatement -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -SessionId 120 -LivyId 0
 ```
 
 This command gets the Spark statement with the specified livy ID.
 
 ### Example 3
 ```powershell
-$session = Get-AzSynapseSparkSession -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -LivyId 107
-$session | Get-AzSynapseSparkStatement
+PS C:\> $session = Get-AzSynapseSparkSession -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -LivyId 107
+PS C:\> $session | Get-AzSynapseSparkStatement
 ```
 
 This command gets all the Spark statements under a Spark session through pipeline.

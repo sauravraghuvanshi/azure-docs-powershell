@@ -47,7 +47,8 @@ If you do not specify the *ResourceGroupName* parameter, this cmdlet gets all Co
 
 ### Example 1
 ```powershell
-New-AzCognitiveServicesAccount -ResourceGroupName cognitive-services-resource-group -name myluis -Type LUIS -SkuName S0 -Location 'WestUS'
+New-AzCognitiveServicesAccount -ResourceGroupName cognitive-services-resource-group -name myluis -Type LUIS -SkuName S0 -Locati
+on 'WestUS'
 ```
 
 ```output

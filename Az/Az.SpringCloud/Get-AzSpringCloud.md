@@ -43,10 +43,7 @@ Get a Service and its properties.
 
 ### Example 1: Get Spring Cloud Service by name
 ```powershell
-Get-AzSpringCloud -ResourceGroupName spring-cloud-rg -ServiceName spring-cloud-service
-```
-
-```output
+PS C:\> Get-AzSpringCloud -ResourceGroupName spring-cloud-rg -ServiceName spring-cloud-service
 ConfigServerPropertiesErrorCode                  :
 ConfigServerPropertiesErrorMessage               :
 ConfigServerPropertyState                        : Succeeded
@@ -96,10 +93,7 @@ Get Spring Cloud Service by name
 
 ### Example 2: List all the spring cloud service under the resource group.
 ```powershell
-Get-AzSpringCloud -ResourceGroupName spring-cloud-rg
-```
-
-```output
+PS C:\> Get-AzSpringCloud -ResourceGroupName spring-cloud-rg
 Location Name                Type
 -------- ----                ----
 eastus   spring-cloud-rg Microsoft.AppPlatform/Spring

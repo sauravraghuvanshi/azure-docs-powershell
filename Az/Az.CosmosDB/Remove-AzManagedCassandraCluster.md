@@ -14,22 +14,32 @@ Deletes a Azure Managed Instances for Apache Cassandra cluster.
 
 ## SYNTAX
 
-### ByNameParameterSet (Default)
+### NameParameterSet (Default)
 ```
-Remove-AzManagedCassandraCluster -ResourceGroupName <String> -ClusterName <String> [-AsJob] [-PassThru]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### ByResourceIdParameterSet
-```
-Remove-AzManagedCassandraCluster -ResourceId <String> [-AsJob] [-PassThru]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzManagedCassandraCluster 
+ -ResourceGroupName <String> 
+ -ClusterName <String>
+ [-AsJob]
+ [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### ByObjectParameterSet
+### ResourceIdParameterSet
 ```
-Remove-AzManagedCassandraCluster -InputObject <PSClusterResource> [-AsJob] [-PassThru]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzManagedCassandraCluster 
+ -ResourceId <String> 
+ [-AsJob]
+ [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ObjectParameterSet
+```
+Remove-AzManagedCassandraCluster 
+ -InputObject <PSClusterResource> 
+ [-AsJob]
+ [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -39,44 +49,29 @@ The **Remove-AzManagedCassandraCluster** cmdlet deletes a managed Cassandra clus
 
 ### Example 1
 ```powershell
-Remove-AzManagedCassandraCluster `
- -ResourceGroupName "resourceGroupName" `
- -ClusterName "clusterName"
+PS C:\> Remove-AzManagedCassandraCluster `
+ -ResourceGroupName {resourceGroupName} `
+ -ClusterName {clusterName}
 ```
 
 ### Example 2
 ```powershell
-Remove-AzManagedCassandraCluster -ResourceId "clusterResourceId"
+PS C:\> Remove-AzManagedCassandraCluster -ResourceId {clusterResourceId}
 ```
 
 ### Example 3
 ```powershell
-$clusterResource | Remove-AzManagedCassandraCluster
+PS C:\> $clusterResource | Remove-AzManagedCassandraCluster
 ```
 
 ## PARAMETERS
-
-### -AsJob
-Run cmdlet in the background
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -ClusterName
 Name of the managed Cassandra cluster.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByNameParameterSet
+Parameter Sets: NameParameterSet
 Aliases:
 
 Required: True
@@ -106,7 +101,7 @@ A cluster object to remove.
 
 ```yaml
 Type: Microsoft.Azure.Commands.CosmosDB.Models.PSClusterResource
-Parameter Sets: ByObjectParameterSet
+Parameter Sets: ParentObjectParameterSet
 Aliases:
 
 Required: True
@@ -116,27 +111,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PassThru
-To be set to true if the user wants to receive an output. The output is true if the operation was successful and an error is thrown if not.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ResourceGroupName
 Name of resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByNameParameterSet
+Parameter Sets: NameParameterSet
 Aliases:
 
 Required: True
@@ -151,40 +131,10 @@ Resource id of the managed Cassandra cluster.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByResourceIdParameterSet
+Parameter Sets: ResourceIdParameterSet
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

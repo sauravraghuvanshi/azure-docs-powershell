@@ -44,10 +44,8 @@ Please note, we only support Addition of Regions. Please provide either Location
 
 ### Example 1
 ```powershell
-Update-AzCosmosDBAccountRegion -ResourceGroupName rg -Name dbname -Location "location1", "location2"
-```
+PS C:\> Update-AzCosmosDBAccountRegion -ResourceGroupName rg -Name dbname -Location "location1", "location2"
 
-```output
 Id                            : /subscriptions/{subscriptionid}/resourceGroups/rg/providers/Microsoft.DocumentDB/databaseAccounts/dbname
 Name                          : dbname
 Location                      : location1

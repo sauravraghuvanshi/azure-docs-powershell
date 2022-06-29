@@ -25,9 +25,9 @@ The Remove-AzRecoveryServicesAsrProtectionContainer cmdlet deletes the specified
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzRecoveryServicesAsrProtectionContainer -Name xxxxx  -Fabric $fabric
-Remove-AzRecoveryServicesAsrProtectionContainer -InputObject $protectionContainer
+```
+PS C:\> Get-AzRecoveryServicesAsrProtectionContainer -Name xxxxx  -Fabric $fabric
+PS C:\> Remove-AzRecoveryServicesAsrProtectionContainer -InputObject $protectionContainer
 ```
 
 Starts the deletion of specified protection container and returns the ASR job used to track the remove operation.

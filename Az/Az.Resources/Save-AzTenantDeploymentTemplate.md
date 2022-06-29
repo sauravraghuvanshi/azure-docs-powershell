@@ -33,14 +33,14 @@ The **Save-AzTenantDeploymentTemplate**  cmdlet saves a deployment template to a
 
 ### Example 1
 ```powershell
-Save-AzTenantDeploymentTemplate -DeploymentName "TestDeployment"
+PS C:\> Save-AzTenantDeploymentTemplate -DeploymentName "TestDeployment"
 ```
 
 This command gets the deployment template from TestDeployment and saves it as a JSON file in the current directory.
 
 ### Example 2: Get a deployment and save its template
-```powershell
-Get-AzTenantDeployment -Name "RolesDeployment" | Save-AzTenantDeploymentTemplate
+```
+PS C:\>Get-AzTenantDeploymentTemplate -Name "RolesDeployment" | Save-AzTenantDeploymentTemplate
 ```
 
 This command gets the deployment "RolesDeployment" at the current tenant scope and saves its template.

@@ -47,7 +47,7 @@ The **Remove-AzSynapseIntegrationRuntimeNode** cmdlet removes a node in an integ
 
 ### Example 1
 ```powershell
-Remove-AzSynapseIntegrationRuntimeNode -WorkspaceName ContosoWorkspace -IntegrationRuntimeName 'test-selfhost-ir' -NodeName 'Node_1'
+PS C:\> Remove-AzSynapseIntegrationRuntimeNode -WorkspaceName ContosoWorkspace -IntegrationRuntimeName 'test-selfhost-ir' -NodeName 'Node_1'
 ```
 
 Remove a node with the given name on an integration runtime.

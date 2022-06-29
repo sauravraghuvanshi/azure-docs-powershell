@@ -37,17 +37,17 @@ For more information about Automation accounts, see the New-AzAutomationAccount 
 ## EXAMPLES
 
 ### Example 1: Set the tags for an Automation account
-```powershell
-$Tags = @{"tag01"="value01";"tag02"="value02"}
-Set-AzAutomationAccount -Name "AutomationAccount01" -ResourceGroupName "ResourceGroup01" -Tags $Tags
+```
+PS C:\>$Tags = @{"tag01"="value01";"tag02"="value02"}
+PS C:\> Set-AzAutomationAccount -Name "AutomationAccount01" -ResourceGroupName "ResourceGroup01" -Tags $Tags
 ```
 
 The first command assigns two key/value pairs to the $Tags variable.
 The second command sets tags in $Tags for the Automation account named AutomationAccount01.
 
 ### Example 2: Change the plan for an Automation account
-```powershell
-Set-AzAutomationAccount -Name "AutomationAccount01" -ResourceGroupName "ResourceGroup01" -Plan Basic
+```
+PS C:\>Set-AzAutomationAccount -Name "AutomationAccount01" -ResourceGroupName "ResourceGroup01" -Plan Basic
 ```
 
 This command changes the plan to Basic for the Automation account named AutomationAccount01.

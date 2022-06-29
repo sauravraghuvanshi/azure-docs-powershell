@@ -39,7 +39,7 @@ The **Remove-AzDataBoxEdgeTrigger** cmdlet removes an existing trigger on the Da
 
 ### Example 1
 ```powershell
-Remove-AzDataBoxEdgeTrigger -ResourceGroupName resourceGroupName -DeviceName deviceName -Name triggerName
+PS C:\> Remove-AzDataBoxEdgeTrigger -ResourceGroupName resourceGroupName -DeviceName deviceName -Name triggerName
 ```
 
 ## PARAMETERS

@@ -26,9 +26,8 @@ Create a in-memory object for ScriptSecureStringExecutionParameter
 
 ### Example 1: Create a local Script Secure String Execution object
 ```powershell
-New-AzVMwareScriptSecureStringExecutionParameterObject -Name azps_test_securevalue -SecureValue "passwordValue"
-```
-```output
+PS C:\> New-AzVMwareScriptSecureStringExecutionParameterObject -Name azps_test_securevalue -SecureValue "passwordValue"
+
 Name                  Type        SecureValue
 ----                  ----        -----------
 azps_test_securevalue SecureValue passwordValue
@@ -75,7 +74,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.Api20211201.ScriptSecureStringExecutionParameter
+### Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.Api20210601.ScriptSecureStringExecutionParameter
 
 ## NOTES
 

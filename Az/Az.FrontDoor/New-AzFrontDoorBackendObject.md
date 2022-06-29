@@ -28,10 +28,9 @@ Create a PSBackend object for Front Door creation
 
 ### Example 1
 ```powershell
-New-AzFrontDoorBackendObject -Address "contoso1.azurewebsites.net"
-```
+PS C:\>New-AzFrontDoorBackendObject -Address "contoso1.azurewebsites.net"
 
-```output
+
 Address           : contoso1.azurewebsites.net
 HttpPort          : 80
 HttpsPort         : 443

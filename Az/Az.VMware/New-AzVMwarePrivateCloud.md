@@ -1,7 +1,7 @@
 ---
 external help file: 
 Module Name: Az.VMware
-online version: https://docs.microsoft.com/powershell/module/az.vmware/new-azvmwareprivatecloud
+online version: https://docs.microsoft.com/powershell/module/az.VMware/new-azVMwareprivatecloud
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/VMware/help/New-AzVMwarePrivateCloud.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/VMware/help/New-AzVMwarePrivateCloud.md
@@ -28,9 +28,8 @@ Create or update a private cloud
 
 ### Example 1: Create a private cloud
 ```powershell
-New-AzVMwarePrivateCloud -Name azps_test_cloud -ResourceGroupName azps_test_group -NetworkBlock 192.168.48.0/22 -Sku av36 -ManagementClusterSize 3 -Location australiaeast
-```
-```output
+PS C:\> New-AzVMwarePrivateCloud -Name azps_test_cloud -ResourceGroupName azps_test_group -NetworkBlock 192.168.48.0/22 -Sku av36 -ManagementClusterSize 3 -Location australiaeast
+
 Location      Name            Type                        ResourceGroupName
 --------      ----            ----                        -----------------
 australiaeast azps_test_cloud Microsoft.AVS/privateClouds azps_test_group
@@ -305,7 +304,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.Api20211201.IPrivateCloud
+### Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.Api20210601.IPrivateCloud
 
 ## NOTES
 

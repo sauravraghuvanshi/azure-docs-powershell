@@ -26,7 +26,7 @@ The **New-AzApplicationGatewayFirewallPolicyManagedRuleOverride** creates a rule
 
 ### Example 1
 ```powershell
-$ruleOverrideEntry = New-AzApplicationGatewayFirewallPolicyManagedRuleOverride -RuleId $ruleId -State Disabled
+PS C:\> $ruleOverrideEntry = New-AzApplicationGatewayFirewallPolicyManagedRuleOverride -RuleId $ruleId -State Disabled
 ```
 
 Creates a ruleOverride Entry with RuleId as $ruleId and State as Disabled.

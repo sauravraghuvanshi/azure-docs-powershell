@@ -20,16 +20,14 @@ Get-AzFrontDoor [-ResourceGroupName <String>] [-Name <String>] [-DefaultProfile 
 ```
 
 ## DESCRIPTION
-The **Get-AzFrontDoor** cmdletGet gets all existing Front Doors (Classic Tier only) in the current subscription that matches provided information.
+The **Get-AzFrontDoor** cmdletGet gets all existing Front Doors in the current subscription that matches provided information.
 
 ## EXAMPLES
 
 ### Example 1: Get all FrontDoors in the current subscription.
 ```powershell
-Get-AzFrontDoor
-```
+PS C:\> Get-AzFrontDoor
 
-```output
 FriendlyName          : frontdoor1
 FrontDoorId           : {guid}
 RoutingRules          : {routingrule1}
@@ -69,10 +67,8 @@ Get all FrontDoors in the current subscription.
 
 ### Example 2: Get all FrontDoors in resource group "rg1" in the current subscription.
 ```powershell
-Get-AzFrontDoor -ResourceGroupName "rg1"
-```
+PS C:\> Get-AzFrontDoor -ResourceGroupName "rg1"
 
-```output
 FriendlyName          : frontdoor1
 FrontDoorId           : {guid}
 RoutingRules          : {routingrule1}
@@ -112,10 +108,8 @@ Get all FrontDoors in resource group "rg1" in the current subscription.
 
 ### Example 3: Get the FrontDoors in resource group "rg1" with name "frontDoor1" in the current subscription.
 ```powershell
-Get-AzFrontDoor -ResourceGroupName "rg1" -Name "frontDoor1"
-```
+PS C:\> Get-AzFrontDoor -ResourceGroupName "rg1" -Name "frontDoor1"
 
-```output
 FriendlyName          : frontdoor1
 FrontDoorId           : {guid}
 RoutingRules          : {routingrule1}

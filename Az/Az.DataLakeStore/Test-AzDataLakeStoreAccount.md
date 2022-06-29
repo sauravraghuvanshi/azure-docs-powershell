@@ -26,8 +26,8 @@ The **Test-AzDataLakeStoreAccount** cmdlet tests the existence of a Data Lake St
 ## EXAMPLES
 
 ### Example 1: Test an account
-```powershell
-Test-AzDataLakeStoreAccount -Name "ContosoADL"
+```
+PS C:\>Test-AzDataLakeStoreAccount -Name "ContosoADL"
 ```
 
 This command tests whether the account named ContosoADL exists.

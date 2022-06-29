@@ -39,9 +39,8 @@ The **Get-AzSearchSharedPrivateLinkResource** cmdlet gets shared private link re
 
 ### Example 1
 ```powershell
-Get-AzSearchSharedPrivateLinkResource -ResourceGroupName arjagann -ServiceName arjagann-test-cuseuap
-```
-```output
+PS C:\> Get-AzSearchSharedPrivateLinkResource -ResourceGroupName arjagann -ServiceName arjagann-test-cuseuap
+
 Id                    : /subscriptions/a4337210-c6b0-4de4-907a-688f1c120d9a/resourceGroups/arjagann/providers/Microsoft.Search/searchServices/arjagann-test-cuseuap/sharedPrivateLinkResources/table-pe
 Type                  : Microsoft.Search/searchServices/sharedPrivateLinkResources
 Status                : Pending
@@ -77,9 +76,8 @@ This example lists all the shared private link resources of the Azure Cognitive 
 
 ### Example 2
 ```powershell
-Get-AzSearchSharedPrivateLinkResource -ResourceGroupName arjagann -ServiceName arjagann-test-cuseuap -Name table-pe
-```
-```output
+PS C:\> Get-AzSearchSharedPrivateLinkResource -ResourceGroupName arjagann -ServiceName arjagann-test-cuseuap -Name table-pe
+
 Id                    : /subscriptions/a4337210-c6b0-4de4-907a-688f1c120d9a/resourceGroups/arjagann/providers/Microsoft.Search/searchServices/arjagann-test-cuseuap/sharedPrivateLinkResources/table-pe
 Type                  : Microsoft.Search/searchServices/sharedPrivateLinkResources
 Status                : Pending

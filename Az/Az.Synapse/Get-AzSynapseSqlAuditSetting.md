@@ -39,14 +39,14 @@ The **Get-AzSynapseSqlAuditSetting** cmdlet gets the auditing settings of an Azu
 
 ### Example 1
 ```powershell
-Get-AzSynapseSqlAuditSetting -WorkspaceName ContosoWorkspace
+PS C:\> Get-AzSynapseSqlAuditSetting -WorkspaceName ContosoWorkspace
 ```
 
 Gets the auditing settings of a workspace named ContosoWorkspace.
 
 ### Example 2
 ```powershell
-Get-AzSynapseWorkspace -Name ContosoWorkspace | Get-AzSynapseSqlAuditSetting
+PS C:\> Get-AzSynapseWorkspace -Name ContosoWorkspace | Get-AzSynapseSqlAuditSetting
 ```
 
 Gets the auditing settings of a workspace named ContosoWorkspace through pipeline.

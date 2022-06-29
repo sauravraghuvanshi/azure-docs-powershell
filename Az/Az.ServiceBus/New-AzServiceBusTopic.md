@@ -30,10 +30,8 @@ The **New-AzServiceBusTopic** cmdlet creates a new Service Bus topic in the spec
 
 ### Example 1
 ```powershell
-New-AzServiceBusTopic -ResourceGroup Default-ServiceBus-WestUS -NamespaceName SB-Example1 -TopicName SB-Topic_exampl1 -EnablePartitioning $True
-```
+PS C:\> New-AzServiceBusTopic -ResourceGroup Default-ServiceBus-WestUS -NamespaceName SB-Example1 -TopicName SB-Topic_exampl1 -EnablePartitioning $True
 
-```output
 Name                                : SB-Topic_example1
 Id                                  : /subscriptions/{subscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.ServiceBus/namespaces/SB-Example1/topics/SB-Topic_example1
 Type                                : Microsoft.ServiceBus/Namespaces/Topics

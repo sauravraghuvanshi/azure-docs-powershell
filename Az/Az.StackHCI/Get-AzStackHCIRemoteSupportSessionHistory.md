@@ -25,8 +25,8 @@ Session history represents all remote accesses made by Microsoft Support for eit
 ## EXAMPLES
 
 ### EXAMPLE 1
-```powershell
-Get-AzStackHCIRemoteSupportSessionHistory -SessionId 467e3234-13f4-42f2-9422-81db248930fa -IncludeSessionTranscript $true
+```poweshell
+PS C:\> Get-AzStackHCIRemoteSupportSessionHistory -SessionId 467e3234-13f4-42f2-9422-81db248930fa -IncludeSessionTranscript $true
 ```
 
 ## PARAMETERS

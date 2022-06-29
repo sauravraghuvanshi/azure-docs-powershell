@@ -28,15 +28,15 @@ You can specify the name of an elastic database in Azure SQL Database to see the
 ## EXAMPLES
 
 ### Example 1: Get all databases in an elastic pool
-```powershell
-Get-AzSqlElasticPoolDatabase -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -ElasticPoolName "ElasticPool01"
+```
+PS C:\> Get-AzSqlElasticPoolDatabase -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -ElasticPoolName "ElasticPool01"
 ```
 
 This command gets all databases in an elastic pool named ElasticPool01.
 
 ### Example 2: Get all databases in an elastic pool using filtering
-```powershell
-Get-AzSqlElasticPoolDatabase -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -ElasticPoolName "ElasticPool01" -DatabaseName "Database*"
+```
+PS C:\> Get-AzSqlElasticPoolDatabase -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -ElasticPoolName "ElasticPool01" -DatabaseName "Database*"
 ```
 
 This command gets all databases in an elastic pool named ElasticPool01 that start with "Database".

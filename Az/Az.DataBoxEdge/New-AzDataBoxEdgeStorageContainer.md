@@ -27,10 +27,7 @@ The **New-AzDataBoxEdgeStorageContainer** cmdlet creates a new storage container
 
 ### Example 1
 ```powershell
-New-AzDataBoxEdgeStorageContainer -ResourceGroupName resourceGroupName -DeviceName db-edge -EdgeStorageAccountName edgestorageaccount1 -Name edgecontainer1 -DataFormat BlockBlob
-```
-
-```output
+PS C:\> New-AzDataBoxEdgeStorageContainer -ResourceGroupName resourceGroupName -DeviceName db-edge -EdgeStorageAccountName edgestorageaccount1 -Name edgecontainer1 -DataFormat BlockBlob
 Name       DataFormat EdgeStorageAccountName DeviceName ResourceGroupName
 ----       ---------- ---------------------- ---------- -----------------
 container1 BlockBlob  edgestorageaccount1    db-edge    resourceGroupName

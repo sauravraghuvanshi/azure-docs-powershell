@@ -27,12 +27,10 @@ Unregister the Windows virtual desktop application group.
 
 ### Example 1: Unregister a Windows Virtual Desktop Application Group
 ```powershell
-Unregister-AzWvdApplicationGroup -ResourceGroupName ResourceGroupName `
+PS C:\> Unregister-AzWvdApplicationGroup -ResourceGroupName ResourceGroupName `
                                     -WorkspaceName WorkspaceName `
                                     -ApplicationGroupPath '/subscriptions/SubscriptionId/resourceGroups/ResourceGroupName/providers/Microsoft.DesktopVirtualization/applicationGroups/ApplicationGroupName'
-```
 
-```output
 Location   Name                 Type
 --------   ----                 ----
 eastus     WorkspaceName Microsoft.DesktopVirtualization/workspaces

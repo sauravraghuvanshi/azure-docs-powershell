@@ -45,7 +45,7 @@ The **Get-AzSynapseSqlPoolAdvancedThreatProtectionSetting** cmdlet gets the adva
 
 ### Example 1
 ```powershell
-Get-AzSynapseSqlPoolAdvancedThreatProtectionSetting -WorkspaceName ContosoWorkspace -Name ContosoSqlPool
+PS C:\> Get-AzSynapseSqlPoolAdvancedThreatProtectionSetting -WorkspaceName ContosoWorkspace -Name ContosoSqlPool
 ```
 
 This command gets the advanced threat protection settings for a SQL pool named ContosoSqlPool under the workspace named ContosoWorkspace.

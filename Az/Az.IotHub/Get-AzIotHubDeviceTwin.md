@@ -39,7 +39,7 @@ Gets a device twin. See https://docs.microsoft.com/azure/iot-hub/iot-hub-devguid
 
 ### Example 1
 ```powershell
-Get-AzIotHubDeviceTwin -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1"
+PS C:\> Get-AzIotHubDeviceTwin -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1"
 ```
 
 Returns the device twin object.

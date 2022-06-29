@@ -1,5 +1,5 @@
 ---
-external help file: Az.Websites-help.xml
+external help file: 
 Module Name: Az.Websites
 online version: https://docs.microsoft.com/powershell/module/az.websites/get-azstaticwebappfunction
 schema: 2.0.0
@@ -26,7 +26,8 @@ Description for Gets the functions of a static site.
 
 ### Example 1: Get the functions of a static site
 ```powershell
-Get-AzStaticWebAppFunction -ResourceGroupName azure-rg-test -Name staticweb-portal04
+PS C:\>  Get-AzStaticWebAppFunction -ResourceGroupName azure-rg-test -Name staticweb-portal04
+
 ```
 
 This command get the functions of a static site.
@@ -109,3 +110,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
+

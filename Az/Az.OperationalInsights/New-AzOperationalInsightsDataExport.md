@@ -27,14 +27,12 @@ Creates data export for a workspace.
 
 ### Example 1
 ```powershell
-New-AzOperationalInsightsDataExport -ResourceGroupName "rg-name" -WorkspaceName "workspace-name" -DataExportName "dataExportName" -TableName "table_name" -ResourceId "resource_id"
-```
+PS C:\> New-AzOperationalInsightsDataExport  -ResourceGroupName {rg-name} -WorkspaceName {workspace-name} -DataExportName {dataExportName} -TableNames {table_names} -ResourceId {resource}
 
-```output
 Name             : {dataExportName}
 Id               : /subscriptions/{subscription}/resourcegroups/{rg-name}/providers/microsoft.operationalinsights/workspaces/{workspace-name}/dataexports/{dataExportName}
 DataExportId     : {GUID}
-TableNames       : {table_name}
+TableNames       : {table_names}
 ResourceId       : /subscriptions/{subscription}/resourceGroups/{rg-name}/providers/Microsoft.EventHub/namespaces/{eventHub_namespace}
 DataExportType   : EventHub
 EventHubName     :

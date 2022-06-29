@@ -26,10 +26,8 @@ Retrieves all access keys for a Redis Enterprise database.
 
 ### Example 1: Get database access keys
 ```powershell
-Get-AzRedisEnterpriseCacheKey -Name "MyCache" -ResourceGroupName "MyGroup"
-```
+PS C:\> Get-AzRedisEnterpriseCacheKey -Name "MyCache" -ResourceGroupName "MyGroup"
 
-```output
 PrimaryKey                                   SecondaryKey
 ----------                                   ------------
 primary-key                                  secondary-key

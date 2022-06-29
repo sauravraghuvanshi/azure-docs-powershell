@@ -30,10 +30,8 @@ The operation to create or update the run command.
 
 ### Example 1: Simple Example
 ```powershell
-Set-AzVMRunCommand -ResourceGroupName $rgname -VMName $vmname -RunCommandName 'firstruncommand' 
-```
+PS C:\> Set-AzVMRunCommand -ResourceGroupName $rgname -VMName $vmname -RunCommandName 'firstruncommand' 
 
-```output
 Location Name             Type
 -------- ----             ----
 eastus   firstruncommand2 Microsoft.Compute/virtualMachines/runCommands

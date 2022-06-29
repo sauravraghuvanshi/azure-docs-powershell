@@ -33,15 +33,15 @@ The **Set-AzSynapseLinkedService** cmdlet links a data store or a cloud service 
 
 ### Example 1
 ```powershell
-Set-AzSynapseLinkedService -WorkspaceName ContosoWorkspace -Name ContosoLinkedService -DefinitionFile "C:\\samples\\LinkedService.json"
+PS C:\> Set-AzSynapseLinkedService -WorkspaceName ContosoWorkspace -Name ContosoLinkedService -DefinitionFile "C:\\samples\\LinkedService.json"
 ```
 
 This command creates a linked service named ContosoLinkedService in the workspace named ContosoWorkspace.
 
 ### Example 2
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Set-AzSynapseLinkedService -Name ContosoLinkedService -DefinitionFile "C:\\samples\\LinkedService.json"
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Set-AzSynapseLinkedService -Name ContosoLinkedService -DefinitionFile "C:\\samples\\LinkedService.json"
 ```
 
 This command creates a linked service named ContosoLinkedService in the workspace named ContosoWorkspace through pipeline.

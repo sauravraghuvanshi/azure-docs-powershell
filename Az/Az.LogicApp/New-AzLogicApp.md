@@ -46,11 +46,8 @@ Template parameter file values that you specify at the command line take precede
 ## EXAMPLES
 
 ### Example 1: Create a logic app by using definition and parameter file paths
-```powershell
-New-AzLogicApp -ResourceGroupName "ResourceGroup11" -Name "LogicApp03" -Location "westus" -State "Enabled" -DefinitionFilePath "d:\workflows\Definition03.json" -ParameterFilePath "d:\workflows\Parameters03.json"
 ```
-
-```output
+PS C:\>New-AzLogicApp -ResourceGroupName "ResourceGroup11" -Name "LogicApp03" -State "Enabled" -AppServicePlan "ServicePlan01" -DefinitionFilePath "d:\workflows\Definition03.json" -ParameterFilePath "d:\workflows\Parameters03.json"
 Id                           : /subscriptions/57b7034d-72d4-433d-ace2-a7460aed6a99/resourceGroups/LogicAppCmdletTest/providers/Microsoft.Logic/workflows/LogicApp03
 Name                         : LogicApp03
 Type                         : Microsoft.Logic/workflows
@@ -76,11 +73,8 @@ This command creates a logic app in the specified resource group.
 The logic app includes the definition and parameters specified by file paths.
 
 ### Example 2: Create a logic app by using definition and parameter objects
-```powershell
-New-AzLogicApp -ResourceGroupName "ResourceGroup11" -Name "LogicApp05" -Location "westus" -State "Enabled" -Definition [IO.File]::ReadAllText("d:\Workflows\Definition.json") -Parameters @{name1="value1";name2="value2"}
 ```
-
-```output
+PS C:\>New-AzLogicApp -ResourceGroupName "ResourceGroup11" -Name "LogicApp05" -Location "westus" -State "Enabled" -AppServicePlan "ServicePlan01" -Definition [IO.File]::ReadAllText("d:\Workflows\Definition.json") -Parameters @{name1="value1", name2="value2"}
 Id                           : /subscriptions/57b7034d-72d4-433d-ace2-a7460aed6a99/resourceGroups/LogicAppCmdletTest/providers/Microsoft.Logic/workflows/LogicApp05
 Name                         : LogicApp05
 Type                         : Microsoft.Logic/workflows
@@ -105,11 +99,8 @@ Version                      : 08587489107859952120
 This command creates a logic app in the specified resource group resource group.
 
 ### Example 3: Create a logic app by using the pipeline to specify the resource group
-```powershell
-Get-AzResourceGroup -ResourceGroupName "ResourceGroup11" | New-AzLogicApp -Name "LogicApp11" -Location "westus" -State "Enabled" -DefinitionFilePath "d:\Workflow\Definition.json" -ParameterFilePath "d:\Workflow\Parameters.json"
 ```
-
-```output
+PS C:\>Get-AzResourceGroup -ResourceGroupName "ResourceGroup11" | New-AzLogicApp -Name "LogicApp11" -State "Enabled" -AppServicePlan "ServicePlan01" -DefinitionFilePath "d:\Workflow\Definition.json" -ParameterFilePath "d:\Workflow\Parameters.json"
 Id                           : /subscriptions/57b7034d-72d4-433d-ace2-a7460aed6a99/resourceGroups/LogicAppCmdletTest/providers/Microsoft.Logic/workflows/LogicApp11
 Name                         : LogicApp11
 Type                         : Microsoft.Logic/workflows
@@ -137,12 +128,9 @@ The current cmdlet creates a logic app in that resource group.
 The logic app includes the definition and parameters specified by file paths.
 
 ### Example 4: Create a logic app based on an existing logic app
-```powershell
-$Workflow = Get-AzLogicApp -ResourceGroupName "ResourceGroup11" -Name "LogicApp03"
-New-AzLogicApp -ResourceGroupName "ResourceGroup11" -Name "LogicApp13" -Location "westus" -State "Enabled" -Definition $Workflow.Definition -Parameters $Workflow.Parameters
 ```
-
-```output
+PS C:\>$Workflow = Get-AzLogicApp -ResourceGroupName "ResourceGroup11" -Name "LogicApp03"
+PS C:\> New-AzLogicApp -ResourceGroupName "ResourceGroup11" -Name "LogicApp13" -State "Enabled" -AppServicePlan "ServicePlan01" -Definition $Workflow.Definition -Parameters $Workflow.Parameters
 Id                           : /subscriptions/57b7034d-72d4-433d-ace2-a7460aed6a99/resourceGroups/LogicAppCmdletTest/providers/Microsoft.Logic/workflows/LogicApp13
 Name                         : LogicApp13
 Type                         : Microsoft.Logic/workflows

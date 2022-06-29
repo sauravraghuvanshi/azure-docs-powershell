@@ -33,10 +33,8 @@ The **Get-AzCosmosDBSqlUserDefinedFunction** cmdlet gets the list of all existin
 
 ### Example 1
 ```powershell
-Get-AzCosmosDBSqlUserDefinedFunction -AccountName "accountName" -ResourceGroupName "resourceGroupName" -DatabaseName "databaseName" -Name "userDefinedFunctionName" -ContainerName "containerName"
-```
+PS C:\> Get-AzCosmosDBSqlUserDefinedFunction -AccountName {accountName} -ResourceGroupName {resourceGroupName} -DatabaseName {databaseName} -Name {userDefinedFunctionName} -ContainerName {containerName} 
 
-```output
 Name                               : {userDefinedFunctionName}
 Id                                 : {userDefinedFunctionId}
 Resource                           : Microsoft.Azure.Commands.CosmosDB.Models.PSSqlUserDefinedFunctionGetPropertiesResource

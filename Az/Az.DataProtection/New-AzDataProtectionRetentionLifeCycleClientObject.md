@@ -27,10 +27,8 @@ Creates new Lifecycle object
 
 ### Example 1: Create a daily retention lifecycle
 ```powershell
-New-AzDataProtectionRetentionLifeCycleClientObject -SourceDataStore OperationalStore -SourceRetentionDurationType Days -SourceRetentionDurationCount 30
-```
+PS C:\> New-AzDataProtectionRetentionLifeCycleClientObject -SourceDataStore OperationalStore -SourceRetentionDurationType Days -SourceRetentionDurationCount 30
 
-```output
 DeleteAfterDuration        : P30D
 DeleteAfterObjectType      : AbsoluteDeleteOption
 SourceDataStoreObjectType  : DataStoreInfoBase
@@ -42,10 +40,8 @@ This command creates a lifecycle object which stores the backup data in operatio
 
 ### Example 2: Create a weekly retention lifecycle.
 ```powershell
-New-AzDataProtectionRetentionLifeCycleClientObject -SourceDataStore OperationalStore -SourceRetentionDurationType Weeks -SourceRetentionDurationCount 20
-```
+PS C:\> New-AzDataProtectionRetentionLifeCycleClientObject -SourceDataStore OperationalStore -SourceRetentionDurationType Weeks -SourceRetentionDurationCount 20
 
-```output
 DeleteAfterDuration        : P20W
 DeleteAfterObjectType      : AbsoluteDeleteOption
 SourceDataStoreObjectType  : DataStoreInfoBase

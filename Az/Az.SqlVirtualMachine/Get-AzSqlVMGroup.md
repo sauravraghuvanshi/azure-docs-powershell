@@ -38,10 +38,8 @@ The Get-AzSqlVMGroup cmdlet gets one or more sql virtual machine groups.
 
 ### Example 1
 ```powershell
-Get-AzSqlVMGroup
-```
+PS C:\> Get-AzSqlVMGroup
 
-```output
 Name       ResourceGroupName  Sku       Offer
 ----       -----------------  ---       -----
 test-group ResourceGroup01	  Developer SQL2017-WS2016
@@ -52,10 +50,7 @@ This command gets information about all the Azure SQL virtual machine groups in 
 
 ### Example 2
 ```powershell
-Get-AzSqlVMGroup -ResourceGroupName "ResourceGroup01"
-```
-
-```output
+PS C:\> Get-AzSqlVMGroup -ResourceGroupName "ResourceGroup01"
 Name       ResourceGroupName  Sku       Offer
 ----       -----------------  ---       -----
 test-group ResourceGroup01	  Developer SQL2017-WS2016
@@ -65,10 +60,7 @@ This command gets information about all the Azure SQL virtual machine groups in 
 
 ### Example 3
 ```powershell
-Get-AzSqlVMGroup -ResourceGroupName "ResourceGroup01" -Name "test-group"
-```
-
-```output
+PS C:\> Get-AzSqlVMGroup -ResourceGroupName "ResourceGroup01" -Name "test-group"
 Name       ResourceGroupName  Sku       Offer
 ----       -----------------  ---       -----
 test-group ResourceGroup01	  Developer SQL2017-WS2016

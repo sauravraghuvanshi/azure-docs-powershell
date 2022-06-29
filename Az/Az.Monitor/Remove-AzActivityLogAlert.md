@@ -41,11 +41,8 @@ This cmdlet implements the ShouldProcess pattern, i.e. it might request confirma
 ## EXAMPLES
 
 ### Example 1: Remove an activity log alert
-```powershell
-Remove-AzActivityLogAlert -ResourceGroupName "Default-Web-CentralUS" -Name "myalert"
 ```
-
-```output
+PS C:\>Remove-AzActivityLogAlert -ResourceGroup "Default-Web-CentralUS" -Name "myalert"
 RequestId                                                                                                    StatusCode
 ---------                                                                                                    ----------
 2c6c159b-0e73-4a01-a67b-c32c1a0008a3                                                                                 OK
@@ -54,11 +51,8 @@ RequestId                                                                       
 Removes an activity log alert using name and resource group name as inputs.
 
 ### Example 2: Remove an activity log alert using a PSActivityLogAlertResource as input
-```powershell
-Get-AzActivityLogAlert -ResourceGroupName "Default-activityLogAlerts" -Name "alert1" | Remove-AzActivityLogAlert 
 ```
-
-```output
+PS C:\>Get-AzActivityLogAlert -ResourceGroup "Default-activityLogAlerts" -Name "alert1" | Remove-AzActivityLogAlert 
 RequestId                                                                                                    StatusCode
 ---------                                                                                                    ----------
 5c371547-80b0-4185-9b95-700b129de9d4                                                                                 OK
@@ -67,8 +61,8 @@ RequestId                                                                       
 Removes an activity log alert using a PSActivityLogAlertResource as input.
 
 ### Example 3: Remove the ActivityLogAlert using the ResourceId parameter
-```powershell
-Get-AzResource -ResourceGroupName "myResourceGroup" -Name "myLogAlert" | Remove-AzActivityLogAlert
+```
+PS C:\>Get-AzResource -ResourceGroupName "myResourceGroup" -Name "myLogAlert" | Remove-AzActivityLogAlert
 ```
 
 This command removes the ActivityLogAlert using the ResourceId parameter from the pipe.

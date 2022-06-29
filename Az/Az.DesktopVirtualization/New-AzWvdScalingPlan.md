@@ -32,7 +32,7 @@ Create or update a scaling plan.
 
 ### Example 1: Create a Windows Virtual Desktop Scaling Plan
 ```powershell
-New-AzWvdScalingPlan `
+PS C:\> New-AzWvdScalingPlan `
             -ResourceGroupName ResourceGroupName `
             -Name 'scalingPlan1' `
             -Location 'westcentralus' `
@@ -68,9 +68,7 @@ New-AzWvdScalingPlan `
                     'scalingPlanEnabled' = $false;
                 }
             )
-```
 
-```output
 Location      Name         Type
 --------      ----         ----
 westcentralus scalingPlan1 Microsoft.DesktopVirtualization/scalingplans 

@@ -27,10 +27,8 @@ Create a PSRulesEngineMatchCondition object for creating a rules engine rule.
 
 ### Example 1
 ```powershell
-New-AzFrontDoorRulesEngineMatchConditionObject -MatchVariable RequestHeader -Operator Equal -MatchValue allowoverride -Transform "LowerCase", "UpperCase"-Selector Rules-Engine-Route-Forward -NegateCondition $false
-```
+PS C:\> New-AzFrontDoorRulesEngineMatchConditionObject -MatchVariable RequestHeader -Operator Equal -MatchValue allowoverride -Transform "LowerCase", "UpperCase"-Selector Rules-Engine-Route-Forward -NegateCondition $false
 
-```output
 RulesEngineMatchVariable : RequestHeader
 RulesEngineMatchValue    : {allowoverride}
 Selector                 : Rules-Engine-Route-Forward

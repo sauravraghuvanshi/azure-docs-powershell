@@ -44,7 +44,7 @@ Operation to create a lab resource.
 
 ### Example 1: Create a new lab.
 ```powershell
-New-AzLabServicesLab `
+PS C:\>  New-AzLabServicesLab `
         -Name "NewLab" `
         -ResourceGroupName $ENV:ResourceGroupName `
         -Location $ENV:Location `
@@ -69,9 +69,7 @@ New-AzLabServicesLab `
         -Title $ENV:NewLabName `
         -VirtualMachineProfileCreateOption "TemplateVM" `
         -VirtualMachineProfileUseSharedPassword Enabled
-```
 
-```output
 Location Name
 -------- ----
 westus2  NewLab

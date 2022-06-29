@@ -27,8 +27,8 @@ The **Set-AzAutomationSchedule** cmdlet modifies a schedule in Azure Automation.
 ## EXAMPLES
 
 ### Example 1: Modify a schedule
-```powershell
-Set-AzAutomationSchedule -AutomationAccountName "Contoso17" -Name "Schedule01" -Description "Automation Schedule" -ResourceGroupName "ResourceGroup01"
+```
+PS C:\>Set-AzAutomationSchedule -AutomationAccountName "Contoso17" -Name "Schedule01" -Description "Automation Schedule" -ResourceGroupName "ResourceGroup01"
 ```
 
 This command modifies the description of the schedule named Schedule01.

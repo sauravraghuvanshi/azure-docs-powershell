@@ -19,8 +19,8 @@ Display information about a cloud service.
 ### [Get-AzCloudServiceInstanceView](Get-AzCloudServiceInstanceView.md)
 Gets the status of a cloud service.
 
-### [Get-AzCloudServiceNetworkInterface](Get-AzCloudServiceNetworkInterface.md)
-Get the specified network interface in a cloud service.
+### [Get-AzCloudServiceNetworkInterfaces](Get-AzCloudServiceNetworkInterfaces.md)
+Get the network interfaces of a cloud service.
 
 ### [Get-AzCloudServiceOSFamily](Get-AzCloudServiceOSFamily.md)
 Gets properties of a guest operating system family that can be specified in the XML service configuration (.cscfg) for a cloud service.
@@ -29,7 +29,7 @@ Gets properties of a guest operating system family that can be specified in the 
 Gets properties of a guest operating system version that can be specified in the XML service configuration (.cscfg) for a cloud service.
 
 ### [Get-AzCloudServicePublicIPAddress](Get-AzCloudServicePublicIPAddress.md)
-Get the specified public IP address in a cloud service.
+Get the public IP address of a cloud service.
 
 ### [Get-AzCloudServiceRoleInstance](Get-AzCloudServiceRoleInstance.md)
 Gets a role instance from a cloud service.
@@ -77,7 +77,7 @@ Create a in-memory object for Remote Desktop Extension
 Create a in-memory object for CloudServiceRoleProfileProperties
 
 ### [New-AzCloudServiceVaultSecretGroupObject](New-AzCloudServiceVaultSecretGroupObject.md)
-Create a in-memory object for Vault Secret Group
+Create a in-memory object for Secret Group
 
 ### [Remove-AzCloudService](Remove-AzCloudService.md)
 Deletes a cloud service.

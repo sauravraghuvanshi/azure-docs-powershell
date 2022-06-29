@@ -35,14 +35,14 @@ Rollout must be in terminal state.
 
 ### Example 1: Delete a default rollout by name.
 ```powershell
-Remove-AzProviderHubDefaultRollout -ProviderNamespace "Microsoft.Contoso" -RolloutName "defaultRollout2021w10"
+PS C:\> Remove-AzProviderHubDefaultRollout -ProviderNamespace "Microsoft.Contoso" -RolloutName "defaultRollout2021w10"
 ```
 
 Delete a default rollout by name.
 
 ### Example 2: Delete a default rollout by name.
 ```powershell
-Remove-AzProviderHubDefaultRollout -ProviderNamespace "Microsoft.Contoso" -RolloutName "defaultRollout2021w10"
+PS C:\> Remove-AzProviderHubDefaultRollout -ProviderNamespace "Microsoft.Contoso" -RolloutName "defaultRollout2021w10"
 ```
 
 Delete a default rollout by name.

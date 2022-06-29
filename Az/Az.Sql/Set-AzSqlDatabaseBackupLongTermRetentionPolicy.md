@@ -51,10 +51,9 @@ The policy is an Azure Backup resource used to define backup storage policy.
 
 ### Example 1: Set the weekly retention for the current version of long term retention policy
 ```powershell
-Set-AzSqlDatabaseBackupLongTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 -WeeklyRetention P2W
-```
+PS C:\> Set-AzSqlDatabaseBackupLongTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 -WeeklyRetention P2W
 
-```output
+
 ResourceGroupName                      : resourcegroup01
 ServerName                             : server01
 DatabaseName                           : database01
@@ -69,10 +68,9 @@ This sets the long term retention policy of database01 to save every weekly full
 
 ### Example 2: Set the monthly retention for the current version of long term retention policy
 ```powershell
-Set-AzSqlDatabaseBackupLongTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 -MonthlyRetention P5Y
-```
+PS C:\> Set-AzSqlDatabaseBackupLongTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 -MonthlyRetention P5Y
 
-```output
+
 ResourceGroupName                      : resourcegroup01
 ServerName                             : server01
 DatabaseName                           : database01
@@ -87,10 +85,9 @@ This sets the long term retention policy of database01 to save the first full ba
 
 ### Example 3: Set the yearly retention for the current version of long term retention policy
 ```powershell
-Set-AzSqlDatabaseBackupLongTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 -YearlyRetention P10Y -WeekOfYear 26
-```
+PS C:\> Set-AzSqlDatabaseBackupLongTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 -YearlyRetention P10Y -WeekOfYear 26
 
-```output
+
 ResourceGroupName                      : resourcegroup01
 ServerName                             : server01
 DatabaseName                           : database01
@@ -105,10 +102,9 @@ This sets the long term retention policy of database01 to save the full backup t
 
 ### Example 4: Set each retention for the current version of long term retention policy
 ```powershell
-Set-AzSqlDatabaseBackupLongTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 -WeeklyRetention 14 -MonthlyRetention P24W -YearlyRetention P10Y -WeekOfYear 26
-```
+PS C:\> Set-AzSqlDatabaseBackupLongTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 -WeeklyRetention 14 -MonthlyRetention P24W -YearlyRetention P10Y -WeekOfYear 26
 
-```output
+
 ResourceGroupName                      : resourcegroup01
 ServerName                             : server01
 DatabaseName                           : database01
@@ -123,10 +119,9 @@ This sets the long term retention policy of database01 to save each full backup 
 
 ### Example 5: Remove the long term retention policy
 ```powershell
-Set-AzSqlDatabaseBackupLongTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 -RemovePolicy
-```
+PS C:\> Set-AzSqlDatabaseBackupLongTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 -RemovePolicy
 
-```output
+
 ResourceGroupName                      : resourcegroup01
 ServerName                             : server01
 DatabaseName                           : database01
@@ -142,10 +137,9 @@ This will not affect backups that have already been taken
 
 ### Example 6: Remove the long term retention policy
 ```powershell
-Set-AzSqlDatabaseBackupLongTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 -WeeklyRetention P0D
-```
+PS C:\> Set-AzSqlDatabaseBackupLongTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 -WeeklyRetention P0D
 
-```output
+
 ResourceGroupName                      : resourcegroup01
 ServerName                             : server01
 DatabaseName                           : database01

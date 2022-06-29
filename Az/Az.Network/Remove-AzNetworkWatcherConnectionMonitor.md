@@ -52,7 +52,7 @@ The remove-AzNetworkWatcherConnectionMonitor cmdlet removes the specified connec
 
 ### Example 1: Remove the specified connection monitor
 ```powershell
-Remove-AzNetworkWatcherConnectionMonitor -Location centraluseuap -Name cm
+PS C:\> Remove-AzNetworkWatcherConnectionMonitor -Location centraluseuap -Name cm
 ```
 
 In this example we delete the connection monitor specified by location and name.

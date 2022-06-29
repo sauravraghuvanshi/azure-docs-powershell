@@ -38,29 +38,29 @@ The **Get-AzSynapseSparkPool** cmdlet gets information about an Apache Spark poo
 
 ### Example 1
 ```powershell
-Get-AzSynapseSparkPool -WorkspaceName ContosoWorkspace
+PS C:\> Get-AzSynapseSparkPool -WorkspaceName ContosoWorkspace
 ```
 
 This command gets all Spark pools under a workspace.
 
 ### Example 2
 ```powershell
-Get-AzSynapseSparkPool -WorkspaceName ContosoWorkspace -Name ContosoSparkPool
+PS C:\> Get-AzSynapseSparkPool -WorkspaceName ContosoWorkspace -Name ContosoSparkPool
 ```
 
 This command gets the Spark pool under workspace ContosoWorkspace with name ContosoSparkPool.
 
 ### Example 3
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Get-AzSynapseSparkPool
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Get-AzSynapseSparkPool
 ```
 
 This command gets all Spark pools under a workspace through pipeline.
 
 ### Example 4
 ```powershell
-Get-AzSynapseSparkPool -ResourceId "/subscriptions/21686af7-58ec-4f4d-9c68-f431f4db4edd/resourceGroups/ContosoResourceGroup/providers/Microsoft.Synapse/workspaces/ContosoWorkspace/bigDataPools/ContosoSparkPool"
+PS C:\> Get-AzSynapseSparkPool -ResourceId "/subscriptions/21686af7-58ec-4f4d-9c68-f431f4db4edd/resourceGroups/ContosoResourceGroup/providers/Microsoft.Synapse/workspaces/ContosoWorkspace/bigDataPools/ContosoSparkPool"
 ```
 
 This command gets the Spark pool with the specified resource ID.

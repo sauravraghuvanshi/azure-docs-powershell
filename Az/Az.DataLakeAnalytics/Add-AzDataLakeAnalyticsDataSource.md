@@ -34,7 +34,7 @@ The **Add-AzDataLakeAnalyticsDataSource** cmdlet adds a data source to an Azure 
 
 ### Example 1: Add a data source to an account
 ```powershell
-Add-AzDataLakeAnalyticsDataSource -Account "ContosoAdlA" -DataLakeStore "ContosoAdlS"
+PS C:\>Add-AzDataLakeAnalyticsDataSource -Account "ContosoAdlA" -DataLakeStore "ContosoAdlS"
 ```
 
 This command adds a Data Lake Store data source to a Data Lake Analytics account.

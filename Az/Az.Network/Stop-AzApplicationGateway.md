@@ -26,8 +26,8 @@ The **Stop-AzApplicationGateway** cmdlet stops an application gateway.
 ## EXAMPLES
 
 ### Example 1: Stop an application gateway
-```powershell
-Stop-AzApplicationGateway -ApplicationGateway $AppGw
+```
+PS C:\>Stop-AzApplicationGateway -ApplicationGateway $AppGw
 ```
 
 This command stops the application gateway stored in the $AppGw variable.

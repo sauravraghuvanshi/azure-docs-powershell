@@ -43,10 +43,8 @@ To search resource groups for a specific tag name or name and value, use the *Ta
 
 ### Example 1: Get all predefined tags
 ```powershell
-Get-AzTag
-```
+PS C:\>Get-AzTag
 
-```output
 Name      Count
 ========  =====
 
@@ -60,10 +58,8 @@ The Count property shows how many times the tag has been applied to resources an
 
 ### Example 2: Get a tag by name
 ```powershell
-Get-AzTag -Name "Department"
-```
+PS C:\>Get-AzTag -Name "Department"
 
-```output
 Name:   Department
 Count:  5
 Values: 
@@ -80,10 +76,8 @@ The Count property shows how many times the tag and each of its values has been 
 
 ### Example 3: Get values of all tags
 ```powershell
-Get-AzTag -Detailed
-```
+PS C:\>Get-AzTag -Detailed
 
-```output
 Name:   Department
 Count:  5
 Values: 
@@ -117,10 +111,8 @@ Using the *Detailed* parameter is the equivalent of using the *Name* parameter f
 ### Example 4: Get the entire set of tags on a subscription
 
 ```powershell
-Get-AzTag -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-```
+PS C:\>Get-AzTag -ResourceId /subscriptions/{subId}
 
-```output
 Id         : {Id}
 Name       : {Name}
 Type       : {Type}
@@ -136,10 +128,8 @@ This command gets the entire set of tags on the subscription with {subId}.
 ### Example 5: Get the entire set of tags on a resource
 
 ```powershell
-Get-AzTag -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/testrg/providers/Microsoft.Sql/servers/Server1
-```
+PS C:\>Get-AzTag -ResourceId /subscriptions/{subId}/resourcegroups/{rg}/providers/Microsoft.Sql/servers/Server1
 
-```output
 Id         : {Id}
 Name       : {Name}
 Type       : {Type}

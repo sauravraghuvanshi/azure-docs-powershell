@@ -39,7 +39,7 @@ List node pools in specified cluster.
 
 ### Get all node pools within specified cluster
 ```powershell
-Get-AzAksNodePool -ResourceGroupName myResourceGroup -ClusterName myCluster
+PS C:\> Get-AzAksNodePool -ResourceGroupName myResourceGroup -ClusterName myCluster
 ```
 
 ## PARAMETERS

@@ -33,11 +33,8 @@ The **Get-AzSqlServerServiceObjective** cmdlet gets the available service object
 ## EXAMPLES
 
 ### Example 1: Get service objectives
-```powershell
-Get-AzSqlServerServiceObjective -ResourceGroupName "ResourceGroup01" -ServerName "Server01"
 ```
-
-```output
+PS C:\>Get-AzSqlServerServiceObjective -ResourceGroupName "ResourceGroup01" -ServerName "Server01"
 serviceObjectiveName SkuName       Edition          Family Capacity CapacityUnit Enabled
 -------------------- -------       -------          ------ -------- ------------ -------
 System               System        System                  0        DTU          False
@@ -57,11 +54,8 @@ BC_Gen5_4            BC_Gen5       BusinessCritical Gen5   4        VCores      
 This command gets the service objectives for the server named Server01.
 
 ### Example 2: Get service objectives using filtering
-```powershell
-Get-AzSqlServerServiceObjective -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -ServiceObjectiveName "P*"
 ```
-
-```output
+PS C:\>Get-AzSqlServerServiceObjective -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -ServiceObjectiveName "P*"
 ServiceObjectiveName SkuName       Edition          Family Capacity CapacityUnit Enabled
 -------------------- -------       -------          ------ -------- ------------ -------
 P1                   Premium       Premium                 125      DTU          True
@@ -71,11 +65,8 @@ P2                   Premium       Premium                 250      DTU         
 This command gets the service objectives for the server named Server01 that start with "System".
 
 ### Example 3: Get service objectives for a location
-```powershell
-Get-AzSqlServerServiceObjective -Location "west us"
 ```
-
-```output
+PS C:\>Get-AzSqlServerServiceObjective -Location "west us"
 serviceObjectiveName SkuName       Edition          Family Capacity CapacityUnit Enabled
 -------------------- -------       -------          ------ -------- ------------ -------
 System               System        System                  0        DTU          False

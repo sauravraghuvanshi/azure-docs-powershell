@@ -132,10 +132,8 @@ backup of it that you can restore.
 
 ### Example 1: Create a key
 ```powershell
-Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITSoftware' -Destination 'Software'
-```
+PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITSoftware' -Destination 'Software'
 
-```output
 Vault/HSM Name : contoso
 Name           : ITSoftware
 Key Type       : RSA
@@ -156,10 +154,8 @@ This command creates a software-protected key named ITSoftware in the key vault 
 
 ### Example 2: Create an EC key
 ```powershell
-Add-AzKeyVaultKey -VaultName test-kv -Name test-key -Destination Software -KeyType EC
-```
+PS C:\> Add-AzKeyVaultKey -VaultName test-kv -Name test-key -Destination Software -KeyType EC
 
-```output
 Vault/HSM Name : test-kv
 Name           : test-key
 Key Type       : EC
@@ -180,10 +176,8 @@ This command creates a software-protected EC key named test-key in the key vault
 
 ### Example 3: Create an HSM-protected key
 ```powershell
-Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITHsm' -Destination 'HSM'
-```
+PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITHsm' -Destination 'HSM'
 
-```output
 Vault Name     : contoso
 Name           : ITHsm
 Version        : 67da57e9cadf48a2ad8d366b115843ab
@@ -201,14 +195,12 @@ This command creates an HSM-protected key in the key vault named Contoso.
 
 ### Example 4: Create a key with non-default values
 ```powershell
-$KeyOperations = 'decrypt', 'verify'
-$Expires = (Get-Date).AddYears(2).ToUniversalTime()
-$NotBefore = (Get-Date).ToUniversalTime()
-$Tags = @{'Severity' = 'high'; 'Accounting' = "true"}
-Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITHsmNonDefault' -Destination 'HSM' -Expires $Expires -NotBefore $NotBefore -KeyOps $KeyOperations -Disable -Tag $Tags
-```
+PS C:\> $KeyOperations = 'decrypt', 'verify'
+PS C:\> $Expires = (Get-Date).AddYears(2).ToUniversalTime()
+PS C:\> $NotBefore = (Get-Date).ToUniversalTime()
+PS C:\> $Tags = @{'Severity' = 'high'; 'Accounting' = "true"}
+PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITHsmNonDefault' -Destination 'HSM' -Expires $Expires -NotBefore $NotBefore -KeyOps $KeyOperations -Disable -Tag $Tags
 
-```output
 Vault/HSM Name : contoso
 Name           : ITHsmNonDefault
 Key Type       : RSA
@@ -240,10 +232,8 @@ cmdlet.
 
 ### Example 5: Import an HSM-protected key
 ```powershell
-Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITByok' -KeyFilePath 'C:\Contoso\ITByok.byok' -Destination 'HSM'
-```
+PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITByok' -KeyFilePath 'C:\Contoso\ITByok.byok' -Destination 'HSM'
 
-```output
 Vault Name     : contoso
 Name           : ITByok
 Version        : 67da57e9cadf48a2ad8d366b115843ab
@@ -265,11 +255,9 @@ For more information, see
 
 ### Example 6: Import a software-protected key
 ```powershell
-$Password = ConvertTo-SecureString -String 'Password' -AsPlainText -Force
-Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITPfx' -KeyFilePath 'C:\Contoso\ITPfx.pfx' -KeyFilePassword $Password
-```
+PS C:\> $Password = ConvertTo-SecureString -String 'Password' -AsPlainText -Force
+PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITPfx' -KeyFilePath 'C:\Contoso\ITPfx.pfx' -KeyFilePassword $Password
 
-```output
 Vault Name     : contoso
 Name           : ITPfx
 Version        : 67da57e9cadf48a2ad8d366b115843ab
@@ -291,13 +279,11 @@ location for the key and the password stored in $Password.
 
 ### Example 7: Import a key and assign attributes
 ```powershell
-$Password = ConvertTo-SecureString -String 'password' -AsPlainText -Force
-$Expires = (Get-Date).AddYears(2).ToUniversalTime()
-$Tags = @{ 'Severity' = 'high'; 'Accounting' = "true" }
-Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITPfxToHSM' -Destination 'HSM' -KeyFilePath 'C:\Contoso\ITPfx.pfx' -KeyFilePassword $Password -Expires $Expires -Tag $Tags
-```
+PS C:\> $Password = ConvertTo-SecureString -String 'password' -AsPlainText -Force
+PS C:\> $Expires = (Get-Date).AddYears(2).ToUniversalTime()
+PS C:\> $Tags = @{ 'Severity' = 'high'; 'Accounting' = "true" }
+PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITPfxToHSM' -Destination 'HSM' -KeyFilePath 'C:\Contoso\ITPfx.pfx' -KeyFilePassword $Password -Expires $Expires -Tag $Tags
 
-```output
 Vault Name     : contoso
 Name           : ITPfxToHSM
 Version        : 929bfc14db84439b823ffd1bedadaf5f
@@ -325,7 +311,7 @@ stored in $tags.
 ### Example 8: Generate a Key Exchange Key (KEK) for "bring your own key" (BYOK) feature
 
 ```powershell
-$key = Add-AzKeyVaultKey -VaultName $vaultName -Name $keyName -Destination HSM -Size 2048 -KeyOps "import"
+PS C:\> $key = Add-AzKeyVaultKey -VaultName $vaultName -Name $keyName -Destination HSM -Size 2048 -KeyOps "import"
 ```
 
 Generates a key (referred to as a Key Exchange Key (KEK)). The KEK must be an RSA-HSM key that has only the import key operation. Only Key Vault Premium SKU supports RSA-HSM keys.

@@ -39,14 +39,14 @@ The **Disable-AzSynapseSqlAdvancedDataSecurity** cmdlet disables Advanced Data S
 
 ### Example 1
 ```powershell
-Disable-AzSynapseSqlAdvancedDataSecurity -WorkspaceName ContosoWorkspace
+PS C:\> Disable-AzSynapseSqlAdvancedDataSecurity -WorkspaceName ContosoWorkspace
 ```
 
 This command disables Advanced Data Security on the workspace named ContosoWorkspace.
 
 ### Example 1
 ```powershell
-Get-AzSynapseWorkspace -Name ContosoWorkspace | Disable-AzSynapseSqlAdvancedDataSecurity
+PS C:\> Get-AzSynapseWorkspace -Name ContosoWorkspace | Disable-AzSynapseSqlAdvancedDataSecurity
 ```
 
 This command disables Advanced Data Security on the workspace named ContosoWorkspace through pipeline.

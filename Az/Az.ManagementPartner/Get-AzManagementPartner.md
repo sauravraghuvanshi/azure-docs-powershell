@@ -25,10 +25,7 @@ Gets the Microsoft Partner Network(MPN) ID of the current authenticated user or 
 
 ### Example 1
 ```powershell
-Get-AzManagementPartner
-```
-
-```output
+PS C:\> Get-AzManagementPartner
 PartnerId   : 4977985
 PartnerName : Test_Test_DPORTest
 TenantId    : 1b1121dd-6900-412a-af73-e8d44f81e1c1
@@ -40,10 +37,7 @@ Get the current management partner id
 
 ### Example 2
 ```powershell
-Get-AzManagementPartner -PartnerId 4977985
-```
-
-```output
+PS C:\> Get-AzManagementPartner -PartnerId 4977985
 PartnerId   : 4977985
 PartnerName : Test_Test_DPORTest
 TenantId    : 1b1121dd-6900-412a-af73-e8d44f81e1c1

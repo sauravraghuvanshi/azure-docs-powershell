@@ -41,14 +41,14 @@ The **Save-AzDeploymentScriptLog** saves the log of a deployment script executio
 
 ### Example 1
 ```powershell
-Save-AzDeploymentScriptLog -Name MyDeploymentScript -ResourceGroupName DS-TestRg -OutputPath C:\Workspace
+PS C:\> Save-AzDeploymentScriptLog -Name MyDeploymentScript -ResourceGroupName DS-TestRg -OutputPath C:\Workspace
 ```
 
 Saves the log of a deployment script with the given name and resource group.
 
 ### Example 2
 ```powershell
-Save-AzDeploymentScriptLog -Name MyDeploymentScript -ResourceGroupName DS-TestRg -OutputPath C:\Workspace -Tail 3
+PS C:\> Save-AzDeploymentScriptLog -Name MyDeploymentScript -ResourceGroupName DS-TestRg -OutputPath C:\Workspace -Tail 3
 ```
 
 Saves the last 3 lines of the log of a deployment script with the given name and resource group.

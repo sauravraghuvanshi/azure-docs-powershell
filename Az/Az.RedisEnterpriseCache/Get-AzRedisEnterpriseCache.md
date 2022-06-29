@@ -38,10 +38,8 @@ Gets information about a Redis Enterprise cluster and its associated databases.
 
 ### Example 1: Get a Redis Enterprise cache by name
 ```powershell
-Get-AzRedisEnterpriseCache -ResourceGroupName "MyGroup" -Name "MyCache"
-```
+PS C:\> Get-AzRedisEnterpriseCache -ResourceGroupName "MyGroup" -Name "MyCache"
 
-```output
 Location Name    Type                            Zone Database
 -------- ----    ----                            ---- --------
 West US  MyCache Microsoft.Cache/redisEnterprise      {default}
@@ -52,10 +50,8 @@ This command gets information about the Redis Enterprise cache named MyCache.
 
 ### Example 2: List every Redis Enterprise cache in a resource group
 ```powershell
-Get-AzRedisEnterpriseCache -ResourceGroupName "MyGroup"
-```
+PS C:\> Get-AzRedisEnterpriseCache -ResourceGroupName "MyGroup"
 
-```output
 Location Name     Type                            Zone      Database
 -------- ----     ----                            ----      --------
 East US  MyCache1 Microsoft.Cache/redisEnterprise           {default}
@@ -67,10 +63,8 @@ This command gets information about every Redis Enterprise cache in the specifie
 
 ### Example 3: List every Redis Enterprise cache in a subscription
 ```powershell
-Get-AzRedisEnterpriseCache
-```
+PS C:\> Get-AzRedisEnterpriseCache
 
-```output
 Location    Name     Type                            Zone      Database
 --------    ----     ----                            ----      --------
 East US     MyCache1 Microsoft.Cache/redisEnterprise           {default}

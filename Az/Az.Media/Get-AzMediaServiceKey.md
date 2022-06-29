@@ -26,8 +26,8 @@ The **Get-AzMediaServiceKey** cmdlet gets key information for accessing the Repr
 ## EXAMPLES
 
 ### Example 1: Get the key information for accessing the media service
-```powershell
-Get-AzMediaServiceKey -ResourceGroupName "ResourceGroup001" -AccountName "MediaService001"
+```
+PS C:\>Get-AzMediaServiceKey -ResourceGroupName "ResourceGroup001" -AccountName "MediaService001"
 ```
 
 This command gets the key information for accessing the media service named MediaService001 that belongs to the resource group named ResourceGroup001.

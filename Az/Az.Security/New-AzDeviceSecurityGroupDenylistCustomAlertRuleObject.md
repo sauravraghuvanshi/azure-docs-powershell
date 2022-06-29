@@ -26,10 +26,8 @@ The New-AzDeviceSecurityGroupDenylistCustomAlertRuleObject cmdlet creates a new 
 
 ### Example 1
 ```powershell
-New-AzDeviceSecurityGroupDenylistCustomAlertRuleObject -Enabled $false -Type "SomeRuleType" -DenylistValue @()
-```
+PS C:\> New-AzDeviceSecurityGroupDenylistCustomAlertRuleObject -Enabled $false -Type "SomeRuleType" -DenylistValue @()
 
-```output
 RuleType: "SomeRuleType"
 DisplayName: "Display name for some rule type"
 Description: "Description for some rule type"

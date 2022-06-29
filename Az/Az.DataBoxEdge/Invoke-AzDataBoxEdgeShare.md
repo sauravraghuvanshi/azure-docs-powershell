@@ -40,16 +40,13 @@ The **Invoke-AzDataBoxEdgeShare** cmdlet invokes action to refresh data on a sha
 
 ### Example 1
 ```powershell
-Invoke-AzDataBoxEdgeShare -ResourceGroupName resourceGroupName -DeviceName deviceName -Name share1 -PassThru
-```
-
-```output
-true
+PS C:\> Invoke-AzDataBoxEdgeShare -ResourceGroupName resourceGroupName -DeviceName deviceName -Name share1 -PassThru
+PS C:\> true
 ```
 
 ### Example 2
 ```powershell
-Invoke-AzDataBoxEdgeShare -ResourceGroupName resourceGroupName -DeviceName deviceName -Name share1 | Invoke-AzDataBoxEdgeShare
+PS C:\> Invoke-AzDataBoxEdgeShare -ResourceGroupName resourceGroupName -DeviceName deviceName -Name share1 | Invoke-AzDataBoxEdgeShare
 ```
 
 ## PARAMETERS

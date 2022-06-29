@@ -33,12 +33,11 @@ The **Get-AzAutomationDscNodeConfigurationDeployment** cmdlet deploys an APS Des
 ## EXAMPLES
 
 ### Example 1: Get all the deployment schedules
-```powershell
-Get-AzAutomationDscNodeConfigurationDeploymentSchedule `
+```
+PS C:\> Get-AzAutomationDscNodeConfigurationDeploymentSchedule `
             -AutomationAccountName "Contoso01"  `
             -ResourceGroupName "ResourceGroup01"
-```
-```output
+
 ResourceGroupName     : ResourceGroup01
 AutomationAccountName : Contoso01
 JobScheduleId         : 2b1d7738-093d-4ff7-b87b-e4b2321319e5
@@ -53,12 +52,13 @@ RunbookName           : Deploy-NodeConfigurationToAutomationDscNodesV1
 ```
 
 ### Example 2: Get a deployment schedule
-```powershell
-$js = Get-AzAutomationDscNodeConfigurationDeploymentSchedule `
+```
+PS C:\> $js= Get-AzAutomationDscNodeConfigurationDeploymentSchedule `
                  -AutomationAccountName "Contoso01" `
                  -ResourceGroupName "ResourceGroup01" `
                  -JobScheduleId 2b1d7738-093d-4ff7-b87b-e4b2321319e5
-$js
+
+PS C:\> $js
 
 ResourceGroupName     : ResourceGroup01
 AutomationAccountName : Contoso01
@@ -66,7 +66,7 @@ JobScheduleId         : 2b1d7738-093d-4ff7-b87b-e4b2321319e5
 JobSchedule           : Microsoft.Azure.Commands.Automation.Model.JobSche
 RunbookName           : Deploy-NodeConfigurationToAutomationDscNodesV1
 
-$js.JobSchedule
+PS C:\> $js.JobSchedule
 
 ResourceGroupName     : ResourceGroup01
 RunOn                 :

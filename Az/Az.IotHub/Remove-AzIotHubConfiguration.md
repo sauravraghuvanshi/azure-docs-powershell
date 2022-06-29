@@ -39,7 +39,7 @@ See https://docs.microsoft.com/azure/iot-hub/iot-hub-automatic-device-management
 
 ### Example 1
 ```powershell
-Remove-AzIotHubConfiguration -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -Name "config1"
+PS C:\> Remove-AzIotHubConfiguration -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -Name "config1"
 ```
 
 Delete an IoT device configuration.

@@ -26,9 +26,8 @@ List the admin credentials for the private cloud
 
 ### Example 1: Get the admin credentials for the private cloud
 ```powershell
-Get-AzVMwarePrivateCloudAdminCredential -PrivateCloudName azps_test_cloud -ResourceGroupName azps_test_group
-```
-```output
+PS C:\> Get-AzVMwarePrivateCloudAdminCredential -PrivateCloudName azps_test_cloud -ResourceGroupName azps_test_group
+
 NsxtUsername VcenterUsername
 ------------ ---------------
 admin        cloudadmin@vsphere.local
@@ -137,7 +136,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.Api20211201.IAdminCredentials
+### Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.Api20210601.IAdminCredentials
 
 ## NOTES
 

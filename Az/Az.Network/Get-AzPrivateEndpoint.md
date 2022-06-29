@@ -34,9 +34,7 @@ The **Get-AzPrivateEndpoint** cmdlet gets one or more private endpoints.
 ### Example 1: Retrieve a private endpoint
 ```powershell
 Get-AzPrivateEndpoint -Name MyPrivateEndpoint1 -ResourceGroupName TestResourceGroup
-```
 
-```output
 Name                                : MyPrivateEndpoint1
 ResourceGroupName                   : TestResourceGroup
 Location                            : eastus2euap
@@ -75,9 +73,7 @@ This command gets the private endpoint named MyPrivateEndpoint1 in the resource 
 ### Example 2: List all private endpoints in ResourceGroup
 ```powershell
 Get-AzPrivateEndpoint -ResourceGroupName TestResourceGroup
-```
 
-```output
 Name                                : MyPrivateEndpoint1
 ResourceGroupName                   : TestResourceGroup
 Location                            : eastus2euap

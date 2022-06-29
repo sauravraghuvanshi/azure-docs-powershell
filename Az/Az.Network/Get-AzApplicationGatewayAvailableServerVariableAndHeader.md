@@ -25,36 +25,36 @@ The **Get-AzApplicationGatewayAvailableServerVariableAndHeader** cmdlet gets the
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzApplicationGatewayAvailableServerVariableAndHeader -ServerVariable
+```
+PS C:\>Get-AzApplicationGatewayAvailableServerVariableAndHeader -ServerVariable
 ```
 
 This commands returns all the available server variables.
 
 ### Example 2
-```powershell
-Get-AzApplicationGatewayAvailableServerVariableAndHeader -RequestHeader
+```
+PS C:\>Get-AzApplicationGatewayAvailableServerVariableAndHeader -RequestHeader
 ```
 
 This commands returns all the available request headers.
 
 ### Example 3
-```powershell
-Get-AzApplicationGatewayAvailableServerVariableAndHeader -ResponseHeader
+```
+PS C:\>Get-AzApplicationGatewayAvailableServerVariableAndHeader -ResponseHeader
 ```
 
 This commands returns all the available response headers.
 
 ### Example 4
-```powershell
-Get-AzApplicationGatewayAvailableServerVariableAndHeader -ServerVariable -RequestHeader -ResponseHeader
+```
+PS C:\>Get-AzApplicationGatewayAvailableServerVariableAndHeader - ServerVariable -RequestHeader -ResponseHeader
 ```
 
 This commands returns all the available server variables, request and response headers.
 
 ### Example 5
-```powershell
-Get-AzApplicationGatewayAvailableServerVariableAndHeader
+```
+PS C:\>Get-AzApplicationGatewayAvailableServerVariableAndHeader
 ```
 
 This commands returns all the available server variables, request and response headers.

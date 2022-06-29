@@ -26,11 +26,9 @@ Updates Backup schedule of an existing backup policy.
 
 ### Example 1: Add Daily schedule to Azure Backup rule.
 ```powershell
-$schedule = New-AzDataProtectionPolicyTriggerScheduleClientObject -ScheduleDays (Get-Date) -IntervalType Daily -IntervalCount 1
-Edit-AzDataProtectionPolicyTriggerClientObject -Policy $pol -Schedule $schedule
-```
+PS C:\> $schedule = New-AzDataProtectionPolicyTriggerScheduleClientObject -ScheduleDays (get-date) -IntervalType Daily -IntervalCount 1
+PS C:\> Edit-AzDataProtectionPolicyTriggerClientObject -Policy $pol -Schedule $schedule
 
-```output
 DatasourceType            ObjectType
 --------------            ----------
 {Microsoft.Compute/disks} BackupPolicy

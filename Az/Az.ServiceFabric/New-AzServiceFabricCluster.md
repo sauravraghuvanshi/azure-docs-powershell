@@ -324,7 +324,7 @@ The Operating System of the VMs that make up the cluster.
 Type: Microsoft.Azure.Commands.ServiceFabric.Models.OperatingSystem
 Parameter Sets: ByDefaultArmTemplate
 Aliases: VmImage
-Accepted values: WindowsServer2012R2Datacenter, WindowsServer2016Datacenter, WindowsServer2016DatacenterwithContainers, UbuntuServer1604, UbuntuServer1804, UbuntuServer2004
+Accepted values: WindowsServer2012R2Datacenter, WindowsServer2016Datacenter, WindowsServer2016DatacenterwithContainers, UbuntuServer1604, UbuntuServer1804
 
 Required: False
 Position: Named

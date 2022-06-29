@@ -33,7 +33,7 @@ The **Approve-AzPrivateEndpointConnection** cmdlet approves a private endpoint c
 ## EXAMPLES
 
 ### Example 1
-```powershell
+```
 Approve-AzPrivateEndpointConnection -Name TestPrivateEndpointConnection -ResourceGroupName TestResourceGroup -ServiceName TestPrivateLinkService
 ```
 

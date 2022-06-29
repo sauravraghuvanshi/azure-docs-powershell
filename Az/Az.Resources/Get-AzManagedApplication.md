@@ -38,15 +38,15 @@ The **Get-AzManagedApplication** cmdlet gets managed applications
 ## EXAMPLES
 
 ### Example 1: Get all managed applications under a resource group
-```powershell
-Get-AzManagedApplication -ResourceGroupName "MyRG"
+```
+PS C:\>Get-AzManagedApplication -ResourceGroupName "MyRG"
 ```
 
 This command gets managed applications under resource group "MyRG"
 
 ### Example 2: Get all managed applications
-```powershell
-Get-AzManagedApplication
+```
+PS C:\>Get-AzManagedApplication
 ```
 
 This command get all managed applications under the current subscription

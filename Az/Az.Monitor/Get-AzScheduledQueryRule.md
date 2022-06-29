@@ -38,10 +38,8 @@ Gets Scheduled Query Resources
 
 ### Example 1: List by subscription or resource group
 ```powershell
-Get-AzScheduledQueryRule -ResourceGroupName "MyResourceGroup"
-```
+PS C:\> Get-AzScheduledQueryRule -ResourceGroupName "MyResourceGroup"
 
-```output
 Description       : description 1
 Enabled           : true
 LastUpdatedTime   : 19-Apr-19 12:29:39 PM
@@ -71,10 +69,8 @@ Tags              : {[hidden-link:/subscriptions/ad825170-845c-47db-8f00-1197894
 
 ### Example 2: Get by rule name
 ```powershell
-Get-AzScheduledQueryRule -ResourceGroupName "MyResourceGroup" -Name "LogAlertRule1"
-```
+PS C:\> Get-AzScheduledQueryRule -ResourceGroupName "MyResourceGroup" -Name "LogAlertRule1"
 
-```output
 Description       : desc 1
 Enabled           : true
 LastUpdatedTime   : 19-Apr-19 12:29:39 PM
@@ -91,10 +87,8 @@ Tags              : {[hidden-link:/subscriptions/ad825170-845c-47db-8f00-1197894
 
 ### Example 3: Get by resource Id
 ```powershell
-Get-AzScheduledQueryRule -ResourceId "/subscriptions/ad825170-845c-47db-8f00-11978947b089/resourceGroups/MyResourceGroup/providers/Microsoft.Insights/scheduledqueryrules/LogAlertRule1"
-```
+PS C:\> Get-AzScheduledQueryRule -ResourceId "/subscriptions/ad825170-845c-47db-8f00-11978947b089/resourceGroups/MyResourceGroup/providers/Microsoft.Insights/scheduledqueryrules/LogAlertRule1"
 
-```output
 Description       : desc 1
 Enabled           : true
 LastUpdatedTime   : 19-Apr-19 12:29:39 PM

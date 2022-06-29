@@ -33,7 +33,7 @@ The **Set-AzSynapseDataset** cmdlet creates a dataset or updates an existing dat
 
 ### Example 1
 ```powershell
-Set-AzSynapseDataset -WorkspaceName ContosoWorkspace -Name ContosoDataset -DefinitionFile "C:\\samples\\Dataset.json"
+PS C:\> Set-AzSynapseDataset -WorkspaceName ContosoWorkspace -Name ContosoDataset -DefinitionFile "C:\\samples\\Dataset.json"
 ```
 
 This command creates a dataset named ContosoDataset in the workspace named ContosoWorkspace.

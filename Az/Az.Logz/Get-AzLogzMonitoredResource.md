@@ -33,10 +33,8 @@ List the resources currently being monitored by the Logz monitor resource.
 
 ### Example 1: List the resources currently being monitored by the Logz monitor resource
 ```powershell
-Get-AzLogzMonitoredResource -ResourceGroupName LPTrials -MonitorName lpatlogz
-```
+PS C:\> Get-AzLogzMonitoredResource -ResourceGroupName LPTrials -MonitorName lpatlogz
 
-```output
 ReasonForLogsStatus            ReasonForMetricsStatus SendingLog SendingMetric
 -------------------            ---------------------- ---------- -------------
 CapturedByRules                                       True
@@ -50,10 +48,8 @@ This command lists the resources currently being monitored by the Logz monitor r
 
 ### Example 2: List the resources currently being monitored by the Logz sub account
 ```powershell
-Get-AzLogzMonitoredResource -ResourceGroupName LPTrials -MonitorName lpatlogz -SubAccountName lpslogzsubaccount
-```
+PS C:\> Get-AzLogzMonitoredResource -ResourceGroupName LPTrials -MonitorName lpatlogz -SubAccountName lpslogzsubaccount
 
-```output
 ReasonForLogsStatus ReasonForMetricsStatus SendingLog SendingMetric
 ------------------- ---------------------- ---------- -------------
 Other                                      False

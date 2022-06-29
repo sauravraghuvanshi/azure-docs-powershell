@@ -26,10 +26,8 @@ Lists available Disk Pool Skus in an Azure location.
 
 ### Example 1: List availability zones for a location
 ```powershell
-Get-AzDiskPoolZone -Location eastus
-```
+PS C:\> Get-AzDiskPoolZone -Location eastus
 
-```output
 SkuName  SkuTier  AvailabilityZone AdditionalCapability
 -------  -------  ---------------- --------------------
 Basic    Basic    {3, 1, 2}

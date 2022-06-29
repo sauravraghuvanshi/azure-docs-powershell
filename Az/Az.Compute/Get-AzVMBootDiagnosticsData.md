@@ -33,8 +33,8 @@ The **Get-AzVMBootDiagnosticsData** cmdlet gets boot diagnostics data for a virt
 ## EXAMPLES
 
 ### Example 1: Get boot diagnostics data
-```powershell
-Get-AzVMBootDiagnosticsData -ResourceGroupName "ResourceGroup11" -Name "ContosoVM07" -Windows -LocalPath "C:\Contoso\BootDiagnostics"
+```
+PS C:\> Get-AzVMBootDiagnosticsData -ResourceGroupName "ResourceGroup11" -Name "ContosoVM07" -Windows -LocalPath "C:\Contoso\BootDiagnostics"
 ```
 
 This command gets boot diagnostics data for the virtual machine named ContosoVM07.

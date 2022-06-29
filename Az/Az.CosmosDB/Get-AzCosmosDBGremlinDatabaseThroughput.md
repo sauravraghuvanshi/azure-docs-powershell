@@ -33,10 +33,7 @@ The **Get-AzCosmosDBGremlinDatabaseThroughput** cmdlet gets the throughput of a 
 
 ### Example 1
 ```powershell
-Get-AzCosmosDBGremlinDatabaseThroughput -ResourceGroupName "rgName" -AccountName "accountName" -Name "databaseName"
-```
-
-```output
+PS C:\> Get-AzCosmosDBGremlinDatabaseThroughput -ResourceGroupName {rgName} -AccountName {accountName} -Name {databaseName}
 Name: {throughputName}
 Id: {Id}
 Throughput: {value} 

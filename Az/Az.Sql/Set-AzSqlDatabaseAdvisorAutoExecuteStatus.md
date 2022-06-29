@@ -28,11 +28,8 @@ Currently, this cmdlet supports the values Enabled, Disabled, and Default.
 ## EXAMPLES
 
 ### Example 1: Enable auto execute for an advisor
-```powershell
-Set-AzSqlDatabaseAdvisorAutoExecuteStatus -ResourceGroupName "ContosoRunnersProd" -ServerName "runner-australia-east" -DatabaseName "ContosoRunner" -AdvisorName "CreateIndex" -AutoExecuteStatus Enabled
 ```
-
-```output
+PS C:\>Set-AzSqlDatabaseAdvisorAutoExecuteStatus -ResourceGroupName "ContosoRunnersProd" -ServerName "runner-australia-east" -DatabaseName "ContosoRunner" -AdvisorName "CreateIndex" -AutoExecuteStatus Enabled
 DatabaseName                   : ContosoRunner
 ResourceGroupName              : ContosoRunnersProd
 ServerName                     : runner-australia-east

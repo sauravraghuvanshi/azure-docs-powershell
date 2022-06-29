@@ -39,11 +39,8 @@ The Suspend-AzPowerBIEmbeddedCapacity cmdlet suspends an instance of PowerBI Emb
 ## EXAMPLES
 
 ### Example 1
-```powershell
- Suspend-AzPowerBIEmbeddedCapacity -Name "testcapacity" -ResourceGroupName "testRG" -PassThru
- ```
-
-```output
+```
+PS C:\> Suspend-AzPowerBIEmbeddedCapacity -Name "testcapacity" -ResourceGroupName "testRG" -PassThru
 Type                   : Microsoft.PowerBIDedicated/capacities
 Id                     : /subscriptions/78e47976-.../resourceGroups/testRG/providers/Microsoft.PowerBIDedicated/capacities/testcapacity
 ResourceGroup          : testRG

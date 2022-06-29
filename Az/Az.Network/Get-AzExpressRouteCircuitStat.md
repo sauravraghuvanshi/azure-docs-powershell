@@ -28,7 +28,7 @@ secondary routes.
 ## EXAMPLES
 
 ### Example 1: Display the traffic statistics for an ExpressRoute peer
-```powershell
+```
 Get-AzExpressRouteCircuitStat -ResourceGroupName $RG -ExpressRouteCircuitName $CircuitName -PeeringType 'AzurePrivatePeering'
 ```
 

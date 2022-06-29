@@ -33,14 +33,14 @@ Updates Virtual Router to enable or disable branch to branch traffic.
 
 ### Example 1
 ```powershell
-Update-AzVirtualRouter -ResourceGroupName $rgname -RouterName $virtualRouterName -AllowBranchToBranchTraffic
+PS C:\> Update-AzVirtualRouter -ResourceGroupName $rgname -RouterName $virtualRouterName -AllowBranchToBranchTraffic
 ```
 
 Updates the Virtual Router to allow branch to branch traffic
 
 ### Example 2
 ```powershell
-Update-AzVirtualRouter -ResourceGroupName $rgname -RouterName $virtualRouterName
+PS C:\> Update-AzVirtualRouter -ResourceGroupName $rgname -RouterName $virtualRouterName
 ```
 
 Updates the Virtual Router to block branch to branch traffic

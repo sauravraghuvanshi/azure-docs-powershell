@@ -25,11 +25,8 @@ The **New-AzSqlSyncAgentKey** cmdlet creates an Azure SQL Sync Agent key.
 ## EXAMPLES
 
 ### Example 1: Create a sync agent key for an Azure SQL sync agent.
-```powershell
-New-AzSqlSyncAgentKey -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -SyncAgentName "SyncAgent01"
 ```
-
-```output
+PS C:\> New-AzSqlSyncAgentKey -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -SyncAgentName "SyncAgent01"
 SyncAgentKey                  : Key
 ```
 

@@ -40,7 +40,7 @@ The **Remove-AzDataBoxEdgeStorageAccountCredential** cmdlet removes the storage 
 
 ### Example 1
 ```powershell
-Remove-AzDataBoxEdgeStorageAccountCredential -ResourceGroupName resourceGroupName -DeviceName deviceName -Name storageAccountName
+PS C:\> Remove-AzDataBoxEdgeStorageAccountCredential ResourceGroupName resourceGroupName -DeviceName deviceName -Name storageAccountCredentialName
 ```
 
 ## PARAMETERS

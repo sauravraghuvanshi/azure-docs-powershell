@@ -42,10 +42,8 @@ Updates the CosmosDB Gremlin Database. Performs a client side patch operation by
 
 ### Example 1
 ```powershell
-Update-AzCosmosDBGremlinDatabase -AccountName "myAccountName" -Name "myDatabaseName" -ResourceGroupName "myResourcegroupName" -Throughput 700
-```
+PS C:\> Update-AzCosmosDBGremlinDatabase -AccountName myAccountName -Name myDatabaseName -ResourceGroupName myResourcegroupName -throughput updatedThroughputValueAsInteger
 
-```output
 Name     : myDatabaseName
 Id       : /subscriptions/mySubscriptionId/resourceGroups/myResourcegroupName/providers/Microsoft.DocumentDB/databaseAccounts/myAccountName/gremlinDatabases/myDatabaseName
 Location :

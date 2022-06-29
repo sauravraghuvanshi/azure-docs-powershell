@@ -46,12 +46,9 @@ The Update-AzSqlVMGroup cmdlet updates a sql virtual machine group.
 
 ### Example 1
 ```powershell
-$tags = @{'key'='value'}
-$group = Update-AzSqlVMGroup -InputObject $group -Tag $tags
-$group.Tags
-```
-
-```output
+PS C:\> $tags = @{'key'='value'}
+PS C:\> $group = Update-AzSqlVMGroup -InputObject $group -Tags $tags
+PS C:\>	$group.Tags
 Name                           Value
 ----                           -----
 key                            value

@@ -26,11 +26,8 @@ The **New-AzDataShareSubscription** cmdlet creates a share subscription in speci
 ## EXAMPLES
 
 ### Example 1
-```powershell
-New-AzDataShareSubscription -ResourceGroupName "ADS" -AccountName "WikiAds" -Name "AdsShareSubscription" -InvitationId "167e06ff-567f-4bc7-be0c-645a6de710f3"
 ```
-
-```output
+PS C:\> New-AzDataShareSubscription -ResourceGroupName "ADS" -AccountName "WikiAds" -Name "AdsShareSubscription" -InvitationId "167e06ff-567f-4bc7-be0c-645a6de710f3"
 CreatedAt               : 6/30/2019 12:42:12 AM
 CreatedBy               : adstest@microsoft.com
 InvitationId            : 167e06ff-567f-4bc7-be0c-645a6de710f3

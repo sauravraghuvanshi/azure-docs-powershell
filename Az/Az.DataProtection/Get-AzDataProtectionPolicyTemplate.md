@@ -25,10 +25,8 @@ Gets default policy template for a selected datasource type.
 
 ### Example 1: Get Azure Disk default policy template
 ```powershell
-Get-AzDataProtectionPolicyTemplate -DatasourceType AzureDisk
-```
+PS C:\> Get-AzDataProtectionPolicyTemplate -DatasourceType AzureDisk
 
-```output
 DatasourceType            ObjectType
 --------------            ----------
 {Microsoft.Compute/disks} BackupPolicy

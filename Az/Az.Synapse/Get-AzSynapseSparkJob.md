@@ -34,29 +34,29 @@ If you do not specify a job, this cmdlet gets all jobs.
 
 ### Example 1
 ```powershell
-Get-AzSynapseSparkJob -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool
+PS C:\> Get-AzSynapseSparkJob -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool
 ```
 
 This command gets all jobs under a Spark pool.
 
 ### Example 2
 ```powershell
-Get-AzSynapseSparkJob -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -LivyId 119
+PS C:\> Get-AzSynapseSparkJob -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -LivyId 119
 ```
 
 This command gets the job with the specified ID.
 
 ### Example 3
 ```powershell
-Get-AzSynapseSparkJob -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -ApplicationId application_1585023543211_0004
+PS C:\> Get-AzSynapseSparkJob -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -ApplicationId application_1585023543211_0004
 ```
 
 This command gets the job with the specified application ID.
 
 ### Example 4
 ```powershell
-$pool = Get-AzSynapseSparkPool -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool
-$pool | Get-AzSynapseSparkJob
+PS C:\> $pool = Get-AzSynapseSparkPool -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool
+PS C:\> $pool | Get-AzSynapseSparkJob
 ```
 
 This command gets all jobs under a Spark pool through pipeline.

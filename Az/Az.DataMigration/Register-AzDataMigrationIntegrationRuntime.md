@@ -1,5 +1,5 @@
 ---
-external help file: Az.DataMigration-help.xml
+external help file: 
 Module Name: Az.DataMigration
 online version: https://docs.microsoft.com/powershell/module/az.datamigration/register-azdatamigrationintegrationruntime
 schema: 2.0.0
@@ -16,7 +16,7 @@ Registers Sql Migration Service on Integration Runtime
 
 ```
 Register-AzDataMigrationIntegrationRuntime -AuthKey <String> [-IntegrationRuntimePath <String>] [-PassThru]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -26,11 +26,9 @@ Registers Sql Migration Service on Integration Runtime
 
 ### Example 1: Register Sql Migration Service on Self Hosted Integration Runtime
 ```powershell
-$authKeys = Get-AzDataMigrationSqlMigrationServiceAuthKey -ResourceGroupName "MyResourceGroup" -SqlMigrationServiceName "MySqlMigrationService"
-Register-AzDataMigrationIntegrationRuntime -AuthKey $authKeys.AuthKey1
-```
+PS C:\> $authKeys = Get-AzDataMigrationSqlMigrationServiceAuthKey -ResourceGroupName "MyResourceGroup" -SqlMigrationServiceName "MySqlMigrationService"
+PS C:\> Register-AzDataMigrationIntegrationRuntime -AuthKey $authKeys.AuthKey1
 
-```output
 Start to register IR with key: IR@abcd1-efgh2-jklmn3-opqr4@mysqlms@eastus@stuv5/wxyz6=
 Integration Runtime registration is successful!
 ```
@@ -39,11 +37,9 @@ This command registers Sql Migration Service on Self Hosted Integration Runtime.
 
 ### Example 2: Install Integration Runtime and register a Sql Migration Service on it
 ```powershell
-$authKeys = Get-AzDataMigrationSqlMigrationServiceAuthKey -ResourceGroupName "MyResourceGroup" -SqlMigrationServiceName "MySqlMigrationService"
-Register-AzDataMigrationIntegrationRuntime -AuthKey $authKeys.AuthKey1 -IntegrationRuntimePath "C:\Users\user\Downloads\IntegrationRuntime.msi"
-```
+PS C:\> $authKeys = Get-AzDataMigrationSqlMigrationServiceAuthKey -ResourceGroupName "MyResourceGroup" -SqlMigrationServiceName "MySqlMigrationService"
+PS C:\> Register-AzDataMigrationIntegrationRuntime -AuthKey $authKeys.AuthKey1 -IntegrationRuntimePath "C:\Users\user\Downloads\IntegrationRuntime.msi"
 
-```output
 Start Gateway installation
 Succeed to install gateway
 Start to register IR with key: IR@abcd1-efgh2-jklmn3-opqr4@mysqlms@eastus@stuv5/wxyz6=
@@ -85,6 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -143,3 +140,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
+

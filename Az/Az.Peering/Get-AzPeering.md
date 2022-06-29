@@ -37,10 +37,8 @@ Gets the Peerings from a subscription, resource group, or by name.
 
 ### Example 1
 ```powershell
-Get-AzPeering
-```
+PS C:> Get-AzPeering
 
-```output
 Name              : myExchangePeering1
 Sku.Name          : Basic_Exchange_Free
 Kind              : Exchange
@@ -71,10 +69,8 @@ Gets all the resources for the subscription.
 
 ### Example 2
 ```powershell
-Get-AzPeering -ResourceGroupName test -Name myExchangePeering1
-```
+PS C:> Get-AzPeering -ResourceGroupName test -Name myExchangePeering1
 
-```output
 Name              : myExchangePeering1
 Sku.Name          : Basic_Exchange_Free
 Kind              : Exchange
@@ -90,12 +86,10 @@ Tags              : {}
 
 Gets the Exchange peering named `myExchangePeering1`
 
-### Example 3
+### Example 2
 ```powershell
-Get-AzPeering -ResourceId $resourceId
-```
+PS C:> Get-AzPeering -ResourceId $resourceId
 
-```output
 Name              : myExchangePeering1
 Sku.Name          : Basic_Exchange_Free
 Kind              : Exchange

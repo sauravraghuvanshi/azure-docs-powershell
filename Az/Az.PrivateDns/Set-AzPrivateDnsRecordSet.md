@@ -26,17 +26,15 @@ The Set-AzPrivateDnsRecordSet cmdlet updates a record set in the Azure Private D
 
 ### Example 1: Update a record set
 ```powershell
-$RecordSet = Get-AzPrivateDnsRecordSet -ResourceGroupName MyResourceGroup -ZoneName myzone.com -Name www -RecordType A
-Add-AzPrivateDnsRecordConfig -RecordSet $RecordSet -Ipv4Address 172.16.0.0
-Add-AzPrivateDnsRecordConfig -RecordSet $RecordSet -Ipv4Address 172.31.255.255
-Set-AzPrivateDnsRecordSet -RecordSet $RecordSet
+PS C:\> $RecordSet = Get-AzPrivateDnsRecordSet -ResourceGroupName MyResourceGroup -ZoneName myzone.com -Name www -RecordType A
+PS C:\> Add-AzPrivateDnsRecordConfig -RecordSet $RecordSet -Ipv4Address 172.16.0.0
+PS C:\> Add-AzPrivateDnsRecordConfig -RecordSet $RecordSet -Ipv4Address 172.31.255.255
+PS C:\> Set-AzPrivateDnsRecordSet -RecordSet $RecordSet
 
 # These cmdlets can also be piped:
 
-Get-AzPrivateDnsRecordSet -ResourceGroupName MyResourceGroup -ZoneName myzone.com -Name www -RecordType A | Add-AzPrivateDnsRecordConfig -Ipv4Address 172.16.0.0 | Add-AzPrivateDnsRecordConfig -Ipv4Address 172.31.255.255 | Set-AzPrivateDnsRecordSet
-```
+PS C:\> Get-AzPrivateDnsRecordSet -ResourceGroupName MyResourceGroup -ZoneName myzone.com -Name www -RecordType A | Add-AzPrivateDnsRecordConfig -Ipv4Address 172.16.0.0 | Add-AzPrivateDnsRecordConfig -Ipv4Address 172.31.255.255 | Set-AzPrivateDnsRecordSet
 
-```output
 Id                : /subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/MyResourceGroup/providers/Microsoft.Netwo
                     rk/privateDnsZones/myzone.com/A/www
 Name              : www
@@ -54,12 +52,10 @@ The first command uses the Get-AzPrivateDnsRecordSet cmdlet to get the specified
 
 ### Example 2: Update an SOA record
 ```powershell
-$RecordSet = Get-AzPrivateDnsRecordSet -Name "@" -RecordType SOA -Zone $Zone
-$RecordSet.Records[0].Email = "admin.myzone.com"
-Set-AzPrivateDnsRecordSet -RecordSet $RecordSet
-```
+PS C:\> $RecordSet = Get-AzPrivateDnsRecordSet -Name "@" -RecordType SOA -Zone $Zone
+PS C:\> $RecordSet.Records[0].Email = "admin.myzone.com"
+PS C:\> Set-AzPrivateDnsRecordSet -RecordSet $RecordSet
 
-```output
 Id                : /subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myresourcegroup/providers/Micros
                     oft.Network/privateDnsZones/myzone.com/SOA/@
 Name              : @

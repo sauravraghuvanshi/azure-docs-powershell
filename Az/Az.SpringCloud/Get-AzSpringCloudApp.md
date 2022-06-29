@@ -39,10 +39,7 @@ Get an App and its properties.
 
 ### Example 1: Get Spring Cloud App by name.
 ```powershell
-Get-AzSpringCloudApp -ResourceGroupName spring-cloud-rg -ServiceName spring-cloud-service -AppName gateway
-```
-
-```output
+PS C:\> Get-AzSpringCloudApp -ResourceGroupName spring-cloud-rg -ServiceName spring-cloud-service -AppName gateway
 ActiveDeploymentName    : default
 CreatedTime             : 2020-08-08 15:37:43
 Fqdn                    : spring-cloud-service.azuremicroservices.io
@@ -72,10 +69,7 @@ Get Spring Cloud App by name.
 
 ### Example 2: List all the app under a given spring cloud service.
 ```powershell
-Get-AzSpringCloudApp -ResourceGroupName spring-cloud-rg -ServiceName spring-cloud-service
-```
-
-```output
+PS C:\> Get-AzSpringCloudApp -ResourceGroupName spring-cloud-rg -ServiceName spring-cloud-service
 Name            Type                              Location
 ----            ----                              --------
 account-service Microsoft.AppPlatform/Spring/apps eastus

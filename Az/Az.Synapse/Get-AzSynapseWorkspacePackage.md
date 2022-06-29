@@ -33,22 +33,22 @@ The **Get-AzSynapseWorkspacePackage** cmdlet gets a workspace package.
 
 ### Example 1
 ```powershell
-Get-AzSynapseWorkspacePackage -WorkspaceName ContosoWorkspace
+PS C:\> Get-AzSynapseWorkspacePackage -WorkspaceName ContosoWorkspace
 ```
 
 This command gets information about all workspace packages in the workspace named ContosoWorkspace.
 
 ### Example 2
 ```powershell
-Get-AzSynapseWorkspacePackage -WorkspaceName ContosoWorkspace -Name ContosoWorkspacePackage
+PS C:\> Get-AzSynapseWorkspacePackage -WorkspaceName ContosoWorkspace -Name ContosoWorkspacePackage
 ```
 
 This command gets information about the workspace package named ContosoWorkspacePackage in the workspace named ContosoWorkspace.
 
 ### Example 3
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Get-AzSynapseWorkspacePackage -Name ContosoWorkspacePackage
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Get-AzSynapseWorkspacePackage -Name ContosoWorkspacePackage
 ```
 
 This command gets information about the workspace package named ContosoWorkspacePackage in the workspace named ContosoWorkspace through pipeline.

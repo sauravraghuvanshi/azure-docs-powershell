@@ -42,10 +42,7 @@ Updates the throughput value of a CosmosDB Cassandra Keyspace.
 
 ### Example 1
 ```powershell
-Update-AzCosmosDBCassandraKeyspaceThroughput -AccountName "myAccountName" -ResourceGroupName "myResourceGroupName" -Name "myKeyspaceName" -Throughput $updatedThroughputValue
-```
-
-```output
+PS C:\> Update-AzCosmosDBCassandraKeyspaceThroughput -AccountName {myAccountName} -ResourceGroupName {myResourceGroupName} -Name {myKeyspaceName} -Throughput {updatedThroughputValue}
 Name                : mxGp
 Id                  : /subscriptions/{mySubscriptionId}/resourceGroups/{myResourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{myAccountName}/cassandraKeyspace/{myKeyspaceName}/throughputSettings/default
 Throughput          : {updatedThroughputValue}

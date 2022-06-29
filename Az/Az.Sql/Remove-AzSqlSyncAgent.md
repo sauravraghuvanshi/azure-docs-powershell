@@ -26,8 +26,8 @@ The **Remove-AzSqlSyncAgent** cmdlet removes an Azure SQL Sync Agent.
 ## EXAMPLES
 
 ### Example 1: Remove a sync agent
-```powershell
-Remove-AzSqlSyncAgent -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -Name "syncAgent01"
+```
+PS C:\>Remove-AzSqlSyncAgent -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -Name "syncAgent01"
 ```
 
 This command removes the Azure SQL Sync Agent named syncAgent01.

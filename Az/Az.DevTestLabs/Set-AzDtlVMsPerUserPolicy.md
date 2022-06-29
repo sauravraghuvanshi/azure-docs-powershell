@@ -35,10 +35,8 @@ The cmdlet uses the specified resource group and name of the lab to set the poli
 
 ### Example 1
 ```powershell
-Set-AzDtlVMsPerUserPolicy -LabName debtestlab -ResourceGroupName yuzhi-rg
-```
+PS C:\> Set-AzDtlVMsPerUserPolicy -LabName debtestlab -ResourceGroupName yuzhi-rg
 
-```output
 Name               : MaxVmsAllowedPerUser
 Type               : Microsoft.DevTestLab/labs/policySets/policies
 Tags               : 

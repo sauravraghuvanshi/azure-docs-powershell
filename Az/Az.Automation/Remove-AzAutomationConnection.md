@@ -27,8 +27,8 @@ The **Remove-AzAutomationConnection** cmdlet removes a connection from Azure Aut
 ## EXAMPLES
 
 ### Example 1: Remove a connection
-```powershell
-Remove-AzAutomationConnection -AutomationAccountName "Contoso17" -Name "ContosoConnection" -ResourceGroupName "ResourceGroup01"
+```
+PS C:\>Remove-AzAutomationConnection -AutomationAccountName "Contoso17" -Name "ContosoConnection" -ResourceGroupName "ResourceGroup01"
 ```
 
 This command removes a certificate named ContosoConnection in the Automation account named Contoso17.

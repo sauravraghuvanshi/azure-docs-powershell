@@ -33,12 +33,12 @@ The **Remove-AzManagementGroup** cmdlet deletes a Management Group.
 
 ### Example 1: Remove a Management Group
 ```powershell
-Remove-AzManagementGroup -GroupName "TestGroup"
+PS C:\> Remove-AzManagementGroup -GroupName "TestGroup"
 ```
 
 ### Example 2: Remove a Management Group by piping PSManagementGroup Object
 ```powershell
-Get-AzManagementGroup -GroupName "TestGroup" | Remove-AzManagementGroup
+PS C:\> Get-AzManagementGroup -GroupName "TestGroup" | Remove-AzManagementGroup
 ```
 
 ## PARAMETERS

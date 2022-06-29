@@ -26,10 +26,8 @@ The **Set-AzDataLakeStoreVirtualNetworkRule** cmdlet modifies the specified virt
 
 ### Example 1
 ```powershell
-Set-AzDataLakeStoreVirtualNetworkRule -Account "dls" -Name "myVNET" -SubnetId "updatedId"
-```
+PS C:\> Set-AzDataLakeStoreVirtualNetworkRule -Account "dls" -Name "myVNET" -SubnetId "updatedId"
 
-```output
 ResourceGroupName                :
 AccountName                      :
 VirtualNetworkRuleName           : myVNET

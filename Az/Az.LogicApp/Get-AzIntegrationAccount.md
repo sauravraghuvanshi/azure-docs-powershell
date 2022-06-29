@@ -31,11 +31,8 @@ If you omit a required template parameter, the cmdlet prompts you for the value.
 ## EXAMPLES
 
 ### Example 1: Get an integration account by name
-```powershell
-Get-AzIntegrationAccount -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31"
 ```
-
-```output
+PS C:\>Get-AzIntegrationAccount -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31"
 Id          : /subscriptions/<SubscriptionId>/resourceGroups/ResourceGroup11/providers/Microsoft.Logic/integrationAccounts/IntegrationAccount31
 Name        : IntegrationAccount31
 Type        : Microsoft.Logic/integrationAccounts
@@ -48,11 +45,8 @@ ChangedTime : 3/26/2016 4:26:07 PM
 This command gets an integration account named IntegrationAccount31 from the specified resource group.
 
 ### Example 2: Get integration accounts in a resource group
-```powershell
-Get-AzIntegrationAccount -ResourceGroupName "ResourceGroup11"
 ```
-
-```output
+PS C:\>Get-AzIntegrationAccount -ResourceGroupName "ResourceGroup11"
 Id          : /subscriptions/<SubscriptionId>/resourceGroups/ResourceGroup1/providers/Microsoft.Logic/integrationAccounts/IntegrationAccount31
 Name        : IntegrationAccount31
 Type        : Microsoft.Logic/integrationAccounts
@@ -65,11 +59,8 @@ ChangedTime : 3/26/2016 4:26:07 PM
 This command gets integration accounts from a resource group named ResourceGroup11.
 
 ### Example 3: Get all integration accounts
-```powershell
-Get-AzIntegrationAccount
 ```
-
-```output
+PS C:\>Get-AzIntegrationAccount
 Id          : /subscriptions/<SubscriptionId>/resourceGroups/ResourceGroup11/providers/Microsoft.Logic/integrationAccounts/IntegrationAccount31
 Name        : IntegrationAccount31
 Type        : Microsoft.Logic/integrationAccounts

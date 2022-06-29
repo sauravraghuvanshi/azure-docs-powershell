@@ -34,7 +34,7 @@ Starts a Kusto pool.
 
 ### Example 1: Start a Kusto pool
 ```powershell
-Start-AzSynapseKustoPool -ResourceGroupName testrg -WorkspaceName testws -Name testnewkustopool
+PS C:\> Start-AzSynapseKustoPool -ResourceGroupName testrg -WorkspaceName testws -Name testnewkustopool
 ```
 
 The above command starts a Kusto pool.

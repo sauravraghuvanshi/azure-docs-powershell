@@ -39,7 +39,7 @@ Allows the updating of a registered prefix from parent peering resource.
 
 ### Example 1
 ```powershell
-Set-AzPeeringRegisteredPrefix -ResourceId $resourceId -Prefix $newPrefix
+PS C:\> Set-AzPeeringRegisteredPrefix -ResourceId $resourceId -Prefix $newPrefix
 ```
 
 Updates the prefix by resource id.

@@ -34,13 +34,13 @@ Specify the *ResourceGroupName* and *ServerName* parameters to identify the serv
 ## EXAMPLES
 
 ### Example 1: Remove the auditing settings of an Azure SQL server
-```powershell
-Remove-AzSqlServerAudit -ResourceGroupName "resourcegroup01" -ServerName "server01"
+```
+PS C:\>Remove-AzSqlServerAudit -ResourceGroupName "resourcegroup01" -ServerName "server01"
 ```
 
 ### Example 2: Remove, through pipeline, the auditing settings of an Azure SQL server
-```powershell
-Get-AzSqlServer -ResourceGroupName "ResourceGroup01" -ServerName "Server01" | Remove-AzSqlServerAudit
+```
+PS C:\> Get-AzSqlServer -ResourceGroupName "ResourceGroup01" -ServerName "Server01" | Remove-AzSqlServerAudit
 ```
 
 ## PARAMETERS

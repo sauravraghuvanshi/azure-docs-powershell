@@ -40,7 +40,7 @@ The **Remove-AzDataBoxEdgeStorageContainer** cmdlet removes an associated storag
 
 ### Example 1
 ```powershell
-Remove-AzDataBoxEdgeStorageContainer -ResourceGroupName resourceGroupName -DeviceName deviceName -EdgeStorageAccountName edgestorageaccountname -Name container1
+PS C:\> Remove-AzDataBoxEdgeStorageContainer -ResourceGroupName resourceGroupName -DeviceName deviceName -EdgeStorageAccountName edgestorageaccountname -Name container1
 ```
 
 ## PARAMETERS

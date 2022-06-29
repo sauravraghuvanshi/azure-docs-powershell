@@ -45,10 +45,8 @@ API to get the assigned vm for the user.
 
 ### Example 1: Get the Virtual machine assigned to a specific user.
 ```powershell
-Get-AzLabServicesUserVM -ResourceGroupName "Group Name" -LabName "Lab Name" -Email 'user@contoso.com'
-```
+PS C:\> Get-AzLabServicesUserVM -ResourceGroupName "Group Name" -LabName "Lab Name" -Email 'user@contoso.com'
 
-```output
 Name
 ----
 0

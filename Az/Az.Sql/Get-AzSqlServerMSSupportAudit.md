@@ -34,11 +34,8 @@ Specify the *ResourceGroupName* and *ServerName* parameters to identify the serv
 ## EXAMPLES
 
 ### Example 1: Get the Microsoft support operations auditing settings of an Azure SQL server
-```powershell
-Get-AzSqlServerMSSupportAudit -ResourceGroupName "resourcegroup01" -ServerName "server01"
 ```
-
-```output
+PS C:\>Get-AzSqlServerMSSupportAudit -ResourceGroupName "resourcegroup01" -ServerName "server01"
 ServerName                          : server01
 ResourceGroupName                   : resourcegroup01
 BlobStorageTargetState              : Enabled
@@ -51,11 +48,8 @@ WorkspaceResourceId                 : "/subscriptions/4b9e8510-67ab-4e9a-95a9-e2
 ```
 
 ### Example 2: Get, through pipeline, the Microsoft support operations auditing settings of an Azure SQL server
-```powershell
-Get-AzSqlServer -ResourceGroupName "ResourceGroup01" -ServerName "Server01" | Get-AzSqlServerMSSupportAudit
 ```
-
-```output
+PS C:\> Get-AzSqlServer -ResourceGroupName "ResourceGroup01" -ServerName "Server01" | Get-AzSqlServerMSSupportAudit
 ServerName                          : server01
 ResourceGroupName                   : resourcegroup01
 BlobStorageTargetState              : Enabled
@@ -68,11 +62,8 @@ WorkspaceResourceId                 : "/subscriptions/4b9e8510-67ab-4e9a-95a9-e2
 ```
 
 ### Example 3: Get the Microsoft support operations auditing settings of an Azure SQL server
-```powershell
-Get-AzSqlServerMSSupportAudit -ResourceGroupName "resourcegroup01" -ServerName "server01"
 ```
-
-```output
+PS C:\>Get-AzSqlServerMSSupportAudit -ResourceGroupName "resourcegroup01" -ServerName "server01"
 ServerName                          : server01
 ResourceGroupName                   : resourcegroup01
 BlobStorageTargetState              : Enabled

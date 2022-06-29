@@ -47,10 +47,8 @@ The Get-AzSynapseSqlPoolSensitivityClassification cmdlet returns the current inf
 
 ### Example 1: Get current information types and sensitivity labels of an Azure Synapse SQL pool.
 ```powershell
-Get-AzSynapseSqlPoolSensitivityClassification -ResourceGroupName ContosoResourceGroup -WorkspaceName ContosoWorkspace -SqlPoolName ContosoSqlPool
-```
+PS C:\> Get-AzSynapseSqlPoolSensitivityClassification -ResourceGroupName ContosoResourceGroup -WorkspaceName ContosoWorkspace -SqlPoolName ContosoSqlPool
 
-```output
 ResourceGroupName : ContosoResourceGroup
 WorkspaceName        : ContosoWorkspace
 SqlPoolName      : ContosoSqlPool
@@ -77,10 +75,8 @@ SensitivityLabels : {{
 
 ### Example 2: Get current information types and sensitivity labels of an Azure Synapse SQL pool with Piping.
 ```powershell
-Get-AzSynapseSqlPool -ResourceGroupName ContosoResourceGroup -WorkspaceName ContosoWorkspace -SqlPoolName ContosoSqlPool | Get-AzSynapseSqlPoolSensitivityClassification
-```
+PS C:\> Get-AzSynapseSqlPool -ResourceGroupName ContosoResourceGroup -WorkspaceName ContosoWorkspace -SqlPoolName ContosoSqlPool | Get-AzSynapseSqlPoolSensitivityClassification
 
-```output
 ResourceGroupName : ContosoResourceGroup
 WorkspaceName        : ContosoWorkspace
 SqlPoolName      : ContosoSqlPool
@@ -107,10 +103,8 @@ SensitivityLabels : {{
 
 ### Example 3: Get current information type and sensitivity label of a specific column of an Azure Synapse SQL pool.
 ```powershell
-Get-AzSynapseSqlPoolSensitivityClassification -ResourceGroupName ContosoResourceGroup -WorkspaceName ContosoWorkspace -SqlPoolName ContosoSqlPool -SchemaName dbo -TableName EMailLog -ColumnName BounceEmailSubject
-```
+PS C:\> Get-AzSynapseSqlPoolSensitivityClassification -ResourceGroupName ContosoResourceGroup -WorkspaceName ContosoWorkspace -SqlPoolName ContosoSqlPool -SchemaName dbo -TableName EMailLog -ColumnName BounceEmailSubject
 
-```output
 ResourceGroupName : ContosoResourceGroup
 WorkspaceName        : ContosoWorkspace
 SqlPoolName      : ContosoSqlPool
@@ -126,10 +120,8 @@ SensitivityLabels : {{
 
 ### Example 4: Get current information type and sensitivity label of a specific column of an Azure Synapse SQL pool using Piping.
 ```powershell
-Get-AzSynapseSqlPool -ResourceGroupName ContosoResourceGroup -WorkspaceName ContosoWorkspace -Name ContosoSqlPool | Get-AzSynapseSqlPoolSensitivityClassification -SchemaName dbo -TableName EMailLog -ColumnName BounceEmailSubject
-```
+PS C:\> Get-AzSynapseSqlPool -ResourceGroupName ContosoResourceGroup -WorkspaceName ContosoWorkspace -Name ContosoSqlPool | Get-AzSynapseSqlPoolSensitivityClassification -SchemaName dbo -TableName EMailLog -ColumnName BounceEmailSubject
 
-```output
 ResourceGroupName : ContosoResourceGroup
 WorkspaceName        : ContosoWorkspace
 SqlPoolName      : ContosoSqlPool

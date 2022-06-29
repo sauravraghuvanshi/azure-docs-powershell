@@ -39,8 +39,8 @@ For example, a client given the Listen permission will be directed to the URI fo
 ## EXAMPLES
 
 ### Example 1: Create a notification hub authorization rule
-```powershell
-New-AzNotificationHubAuthorizationRule -Namespace "ContosoNamespace" -NotificationHub "ContosoInternalHub" -ResourceGroup "ContosoNotificationsGroup" -InputFile "C:\Configuration\ExternalAccessRule.json"
+```
+PS C:\>New-AzNotificationHubAuthorizationRule -Namespace "ContosoNamespace" -NotificationHub "ContosoInternalHub" -ResourceGroup "ContosoNotificationsGroup" -InputFile "C:\Configuration\ExternalAccessRule.json"
 ```
 
 This command creates a new authorization rule and assigns it to the notification hub named ContosoInternalHub.

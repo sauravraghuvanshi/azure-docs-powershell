@@ -25,11 +25,9 @@ Get-AzVirtualNetworkAvailableEndpointService lists endpoint services available i
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzVirtualNetworkAvailableEndpointService -Location westus
 ```
+PS C:\> Get-AzVirtualNetworkAvailableEndpointService -Location westus
 
-```output
 -Name              Id                                                                                             Type
 -----              --                                                                                             ----
 -Microsoft.Storage /subscriptions/id/providers/Microsoft.Network/virtualNetworkEndpointServices/Microsoft.Storage Microsoft.Network/virtualNetworkEndpointServices

@@ -35,8 +35,8 @@ If you do not specify a name, this cmdlet gets information about all the pipelin
 ## EXAMPLES
 
 ### Example 1: Get information about all pipelines
-```powershell
-Get-AzDataFactoryPipeline -ResourceGroupName "ADF" -DataFactoryName "WikiADF"
+```
+PS C:\>Get-AzDataFactoryPipeline -ResourceGroupName "ADF" -DataFactoryName "WikiADF"
 ```
 
 This command gets information about all pipelines in the data factory named WikiADF.
@@ -44,11 +44,8 @@ You can either one of the following example commands.
 The second one uses a **DataFactory** object as a parameter.
 
 ### Example 2: Get information about a specific pipeline
-```powershell
-Get-AzDataFactoryPipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF" | Format-List
 ```
-
-```output
+PS C:\>Get-AzDataFactoryPipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF" | Format-List
 PipelineName      : DPWikisample
 ResourceGroupName : ADF
 DataFactoryName   : WikiADF
@@ -61,11 +58,8 @@ That cmdlet formats the results.
 For more information, type `Get-Help Format-List`.
 
 ### Example 3: Get the properties for a specific pipeline
-```powershell
-(Get-AzDataFactoryPipeline -ResourceGroupName "ADF" -Name DPWikisample -DataFactoryName "WikiADF").Properties
 ```
-
-```output
+PS C:\> (Get-AzDataFactoryPipeline -ResourceGroupName "ADF" -Name DPWikisample -DataFactoryName "WikiADF").Properties
 Activities  : {WikiHiveActivity, BlobToSqlCopyActivity}
 Description : DP Wikipedia Sample Pipelines
 End         : 6/6/2014 8:00:00 AM
@@ -77,11 +71,8 @@ Start       : 6/5/2014 8:00:00 PM
 This command gets information for the pipeline named DPWikisample in the data factory named WikiADF, and then uses standard dot notation to view the **Properties** property associated with that pipeline.
 
 ### Example 4: Get the activities for a specific pipeline
-```powershell
-(Get-AzDataFactoryPipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF").Properties.Activities
 ```
-
-```output
+PS C:\>(Get-AzDataFactoryPipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF").Properties.Activities
 Transformation    : Microsoft.DataFactories.HDInsightActivityProperties
 Description       : 
 Inputs            : {DAWikipediaClickEvents}
@@ -102,11 +93,8 @@ Policy            : Microsoft.DataFactories.ActivityPolicy
 This command gets information for the pipeline named DPWikisample in the data factory named WikiADF, and then uses standard dot notation to view the **Activities** property associated with that pipeline.
 
 ### Example 5: Get the runtime information for a specific pipeline
-```powershell
-(Get-AzDataFactoryPipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF").Properties.RuntimeInfo
 ```
-
-```output
+PS C:\>(Get-AzDataFactoryPipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF").Properties.RuntimeInfo
 DeploymentTime
 --------------
 6/5/2014 10:36:46 PM
@@ -115,11 +103,8 @@ DeploymentTime
 This command gets information for the pipeline named DPWikisample in the data factory named WikiADF, and then uses standard dot notation to view the **RuntimeInfo** property associated with that pipeline.
 
 ### Example 6: Get information about inputs for the first activity
-```powershell
-(Get-AzDataFactoryPipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF11").Properties.Activities[0].Inputs | Format-List
 ```
-
-```output
+PS C:\>(Get-AzDataFactoryPipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF11").Properties.Activities[0].Inputs | Format-List
 EndTime   : 
 Length    : 
 Name      : DAWikipediaClickEvents

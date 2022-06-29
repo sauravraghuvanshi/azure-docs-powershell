@@ -24,8 +24,8 @@ Remove-AzStackHCIRemoteSupport uninstalls Remote Support Deployment module.
 ## EXAMPLES
 
 ### EXAMPLE 1
-```powershell
-Remove-AzStackHCIRemoteSupport
+```poweshell
+C:\PS\>Remove-AzStackHCIRemoteSupport
 ```
 
 ## PARAMETERS

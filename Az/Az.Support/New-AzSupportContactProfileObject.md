@@ -36,9 +36,8 @@ This is a helper cmdlet that you can use to create a support contact profile obj
 
 ### Example 1: Create a contact object
 ```powershell
-New-AzSupportContactProfileObject -FirstName "First" -LastName "Last" -PreferredContactMethod "Email" -PrimaryEmailAddress "user@contoso.com" -PreferredTimeZone "Pacific Standard Time" -PreferredSupportLanguage "en-US" -Country "USA"             
-```
-```output
+PS C:\> New-AzSupportContactProfileObject -FirstName "First" -LastName "Last" -PreferredContactMethod "Email" -PrimaryEmailAddress "user@contoso.com" -PreferredTimeZone "Pacific Standard Time" -PreferredSupportLanguage "en-US" -Country "USA"             
+
 FirstName LastName PreferredContactMethod PrimaryEmailAddress  PhoneNumber PreferredTimeZone     Country PreferredSupportLanguage
 --------- -------- ---------------------- -------------------  ----------- -----------------     ------- ------------------------
 First     Last     Email                  user@contoso.com                 Pacific Standard Time USA     en-US

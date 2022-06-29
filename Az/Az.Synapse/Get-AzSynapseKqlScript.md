@@ -33,22 +33,22 @@ The **Get-AzSynapseKqlScript** cmdlet gets information about KQL scripts in a wo
 
 ### Example 1
 ```powershell
-Get-AzSynapseKqlScript -WorkspaceName ContosoWorkspace
+PS C:\> Get-AzSynapseKqlScript -WorkspaceName ContosoWorkspace
 ```
 
 Gets a list of all KQL scripts in the workspace ContosoWorkspace.
 
 ### Example 2
 ```powershell
-Get-AzSynapseKqlScript -WorkspaceName ContosoWorkspace -Name ContosoKqlScript
+PS C:\> Get-AzSynapseKqlScript -WorkspaceName ContosoWorkspace -Name ContosoKqlScript
 ```
 
 Gets a single KQL script called ContosoKqlScript in the workspace ContosoWorkspace.
 
 ### Example 3
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Get-AzSynapseKqlScript -Name ContosoKqlScript
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Get-AzSynapseKqlScript -Name ContosoKqlScript
 ```
 
 Gets a single KQL script called ContosoKqlScript in the workspace ContosoWorkspace through pipeline.

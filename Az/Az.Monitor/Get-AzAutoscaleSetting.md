@@ -26,11 +26,8 @@ The **Get-AzAutoscaleSetting** cmdlet gets all Autoscale settings associated wit
 ## EXAMPLES
 
 ### Example 1: Get Autoscale settings
-```powershell
-Get-AzAutoscaleSetting -ResourceGroup "Default-Web-EastUS" -DetailedOutput
 ```
-
-```output
+PS C:\>Get-AzAutoscaleSetting -ResourceGroup "Default-Web-EastUS" -DetailedOutput
 resourceId : /subscriptions/b93fb07a-6f93-30be-bf3e-4f0deca15f4f/resourceGroups/Default-Web-EastUS/providers/microsoft. 
              insights/autoscalesettings/DefaultServerFarm-Default-Web-EastUS
 Location   : East US
@@ -118,11 +115,8 @@ Tags       : {[$type, Microsoft.WindowsAzure.Management.Common.Storage.CasePrese
 This command gets the Autoscale settings assigned to the resource group Default-Web-EastUS.
 
 ### Example 2: Get an Autoscale setting by name
-```powershell
-Get-AzAutoscaleSetting -ResourceGroupName "Default-Web-EastUS" -Name "DefaultServerFarm-Default-Web-EastUS" -DetailedOutput
 ```
-
-```output
+PS C:\>Get-AzAutoscaleSetting -ResourceGroupName "Default-Web-EastUS" -Name "DefaultServerFarm-Default-Web-EastUS" -DetailedOutput
 resourceId : /subscriptions/b93fb07a-6f93-30be-bf3e-4f0deca15f4f/resourceGroups/Default-Web-EastUS/providers/microsoft. 
              insights/autoscalesettings/DefaultServerFarm-Default-Web-EastUS
 Location   : East US

@@ -32,21 +32,21 @@ Gets the properties of SSH Public Key resources.
 
 ### Example 1
 ```powershell
-Get-AzSshKey -ResourceGroupName "testRG" -Name "SshKey1"
+PS C:\> Get-AzSshKey -ResourceGroupName "testRG" -Name "SshKey1"
 ```
 
 This example retrieves a specific Ssh Public Key resource.
 
 ### Example 2
 ```powershell
-Get-AzSshKey -ResourceGroupName "testRG"
+PS C:\> Get-AzSshKey -ResourceGroupName "testRG"
 ```
 
 This example retrieves a list of Ssh Public Key resources that are in Resource Group: "testRG"
 
 ### Example 3
 ```powershell
-Get-AzSshKey 
+PS C:\> Get-AzSshKey 
 ```
 
 This example retrieves all the Ssh Public Key resources in the subscription. 

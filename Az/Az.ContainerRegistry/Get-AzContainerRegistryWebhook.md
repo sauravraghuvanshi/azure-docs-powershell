@@ -51,10 +51,8 @@ The Get-AzContainerRegistryWebhook cmdlet gets a specified webhook of container 
 
 ### Example 1: Get a specified webhook of a container registry
 ```powershell
-Get-AzContainerRegistryWebhook -ResourceGroupName "MyResourceGroup" -RegistryName "MyRegistry" -Name "webhook001"
-```
+PS C:\>Get-AzContainerRegistryWebhook -ResourceGroupName "MyResourceGroup" -RegistryName "MyRegistry" -Name "webhook001"
 
-```output
 Name            Location   Status     Scope           Actions         Provisioni ServiceUri
                                                                       ngState
 ----            --------   ------     -----           -------         ---------- ----------
@@ -65,10 +63,8 @@ Get a specified webhook of a container registry
 
 ### Example 2: Get all the webhooks of a container registry
 ```powershell
-Get-AzContainerRegistryWebhook -ResourceGroupName "MyResourceGroup" -RegistryName "MyRegistry"
-```
+PS C:\>Get-AzContainerRegistryWebhook -ResourceGroupName "MyResourceGroup" -RegistryName "MyRegistry"
 
-```output
 Name            Location   Status     Scope           Actions         Provisioni ServiceUri
                                                                       ngState
 ----            --------   ------     -----           -------         ---------- ----------
@@ -81,10 +77,8 @@ Get all the webhooks of a container registry
 
 ### Example 3: Get a specified webhook of a container registry with configuration details
 ```powershell
-Get-AzContainerRegistryWebhook -ResourceGroupName "MyResourceGroup" -RegistryName "MyRegistry" -Name "webhook001" -IncludeConfiguration
-```
+PS C:\>Get-AzContainerRegistryWebhook -ResourceGroupName "MyResourceGroup" -RegistryName "MyRegistry" -Name "webhook001" -IncludeConfiguration
 
-```output
 Name            Location   Status     Scope           Actions         Provisioni ServiceUri
                                                                       ngState
 ----            --------   ------     -----           -------         ---------- ----------

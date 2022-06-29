@@ -39,23 +39,23 @@ The **Remove-AzSynapseKqlScript** cmdlet removes a KQL script from a workspace.
 
 ### Example 1
 ```powershell
-Remove-AzSynapseKqlScript -WorkspaceName ContosoWorkspace -Name ContosoKqlScript
+PS C:\> Remove-AzSynapseKqlScript -WorkspaceName ContosoWorkspace -Name ContosoKqlScript
 ```
 
 Removes a KQL script called ContosoKqlScript from the workspace ContosoWorkspace.
 
 ### Example 2
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Remove-AzSynapseKqlScript -Name ContosoKqlScript
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Remove-AzSynapseKqlScript -Name ContosoKqlScript
 ```
 
 Removes a KQL script called ContosoKqlScript from the workspace ContosoWorkspace through pipeline.
 
 ### Example 3
 ```powershell
-$kqlScript = Get-AzSynapseKqlScript -WorkspaceName ContosoWorkspace -Name ContosoKqlScript
-$kqlScript | Remove-AzSynapseKqlScript
+PS C:\> $kqlScript = Get-AzSynapseKqlScript -WorkspaceName ContosoWorkspace -Name ContosoKqlScript
+PS C:\> $kqlScript | Remove-AzSynapseKqlScript
 ```
 
 Removes a KQL script called ContosoKqlScript from the workspace ContosoWorkspace through pipeline.

@@ -33,22 +33,22 @@ The **Get-AzSynapseSqlScript** cmdlet gets information about sql scripts in a wo
 
 ### Example 1
 ```powershell
-Get-AzSynapseSqlScript -workspaceName ContosoWorkspace
+PS C:\> Get-AzSynapseSqlScript -workspaceName ContosoWorkspace
 ```
 
 Gets a list of all sql scripts in the workspace ContosoWorkspace.
 
 ### Example 2
 ```powershell
-Get-AzSynapseSqlScript -workspaceName ContosoWorkspace -Name "ContosoSqlScript"
+PS C:\> Get-AzSynapseSqlScript -workspaceName ContosoWorkspace -Name "ContosoSqlScript"
 ```
 
 Gets a single sql script called ContosoSqlScript in the workspace ContosoWorkspace.
 
 ### Example 3
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Get-AzSynapseSqlScript -Name ContosoSqlScript
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Get-AzSynapseSqlScript -Name ContosoSqlScript
 ```
 
 Gets a single sql script called ContosoSqlScript in the workspace ContosoWorkspace through pipeline.

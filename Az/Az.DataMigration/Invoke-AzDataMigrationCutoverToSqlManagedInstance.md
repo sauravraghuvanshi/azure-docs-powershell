@@ -1,5 +1,5 @@
 ---
-external help file: Az.DataMigration-help.xml
+external help file: 
 Module Name: Az.DataMigration
 online version: https://docs.microsoft.com/powershell/module/az.datamigration/invoke-azdatamigrationcutovertosqlmanagedinstance
 schema: 2.0.0
@@ -16,8 +16,8 @@ Initiate cutover for in-progress online database migration to SQL Managed Instan
 
 ```
 Invoke-AzDataMigrationCutoverToSqlManagedInstance -ManagedInstanceName <String> -ResourceGroupName <String>
- -TargetDbName <String> [-SubscriptionId <String>] -MigrationOperationId <String> [-DefaultProfile <PSObject>]
- [-AsJob] [-NoWait] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+ -TargetDbName <String> [-SubscriptionId <String>] [-MigrationOperationId <String>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -27,12 +27,10 @@ Initiate cutover for in-progress online database migration to SQL Managed Instan
 
 ### Example 1: Initiate cutover for the specified in-progress online migration to SQL Managed Instance
 ```powershell
-$miMigration = Get-AzDataMigrationToSqlManagedInstance -ResourceGroupName "MyResourceGroup" -ManagedInstanceName "MyManagedInstance" -TargetDbName "MyDatabase"
-Invoke-AzDataMigrationCutoverToSqlManagedInstance -ResourceGroupName "MyResourceGroup" -ManagedInstanceName "MyManagedInstance" -TargetDbName "MyDatabase" -MigrationOperationId $miMigration.MigrationOperationId
-Get-AzDataMigrationToSqlManagedInstance -InputObject $miMigration
-```
+PS C:\> $miMigration = Get-AzDataMigrationToSqlManagedInstance -ResourceGroupName "MyResourceGroup" -ManagedInstanceName "MyManagedInstance" -TargetDbName "MyDatabase"
+PS C:\> Invoke-AzDataMigrationCutoverToSqlManagedInstance -ResourceGroupName "MyResourceGroup" -ManagedInstanceName "MyManagedInstance" -TargetDbName "MyDatabase" -MigrationOperationId $miMigration.MigrationOperationId
+PS C:\> Get-AzDataMigrationToSqlManagedInstance -InputObject $miMigration 
 
-```output
 Name               Type                                       Kind  ProvisioningState MigrationStatus
 ----               ----                                       ----  ----------------- ---------------
 MyDatabase         Microsoft.DataMigration/databaseMigrations SqlMi Completing        Completing
@@ -95,7 +93,7 @@ Type: System.String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -223,3 +221,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
+

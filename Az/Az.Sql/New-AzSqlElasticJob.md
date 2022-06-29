@@ -83,11 +83,9 @@ The New-AzSqlElasticJob cmdlet creates a new job
 
 ### Example 1: Creates a new job
 ```powershell
-$agent = Get-AzSqlElasticJobAgent -ResourceGroupName rg -ServerName elasticjobserver -Name agent
+PS C:\> $agent = Get-AzSqlElasticJobAgent -ResourceGroupName rg -ServerName elasticjobserver -Name agent
 $agent | New-AzSqlElasticJob -Name job1
-```
 
-```output
 JobName Version Description StartTime           EndTime                ScheduleType Interval Enabled
 ------- ------- ----------- ---------           -------                ------------ -------- -------
 job1    0                   6/1/2018 9:46:29 PM 12/31/9999 11:59:59 AM Once                  False

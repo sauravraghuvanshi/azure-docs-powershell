@@ -28,8 +28,8 @@ You can see the status of both pool creation and configuration updates.
 ## EXAMPLES
 
 ### Example 1: Get the status of operations for an elastic pool
-```powershell
-Get-AzSqlElasticPoolActivity -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -ElasticPoolName "ElasticPool01"
+```
+PS C:\>Get-AzSqlElasticPoolActivity -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -ElasticPoolName "ElasticPool01"
 ```
 
 This command gets the status of the operations for the elastic pool named ElasticPool01.

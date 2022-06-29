@@ -40,7 +40,7 @@ Deletes a data export for a given worksace
 
 ### Example 1
 ```powershell
-Remove-AzOperationalInsightsDataExport -ResourceGroupName "rg-name" -WorkspaceName "workspace-name" -DataExportName "dataExportName"
+PS C:\> Remove-AzOperationalInsightsDataExport -ResourceGroupName {rg-name} -WorkspaceName {workspace-name} -DataExportName {dataExportName}
 ```
 
 removed data export

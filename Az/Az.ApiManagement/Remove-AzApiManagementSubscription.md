@@ -43,7 +43,7 @@ The **Remove-AzApiManagementSubscription** cmdlet deletes an existing subscripti
 ### Example 1: Delete a subscription
 ```powershell
 $apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-Remove-AzApiManagementSubscription -Context $apimContext -SubscriptionId "0123456789"
+Remove-AzApiManagementSubscription -Context $apimContext -SubscriptionId "0123456789" -Force
 ```
 
 This command deletes an existing subscription.

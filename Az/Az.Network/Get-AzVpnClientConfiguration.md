@@ -25,10 +25,10 @@ The Get-AzVpnClientConfiguration returns the URL where the VPN client can be dow
 ## EXAMPLES
 
 ### Example 1
-```powershell
-New-AzVpnClientConfiguration -Name "ContosoVirtualNetworkGateway" -ResourceGroupName "ContosoResourceGroup" -AuthenticationMethod "EAPTLS" -RadiusRootCertificateFile "C:\Users\Test\Desktop\VpnProfileRadiusCert.cer"
+```
+PS C:\> New-AzVpnClientConfiguration -VirtualNetworkGatewayName "ContosoVirtualNetworkGateway" -ResourceGroupName "ContosoResourceGroup" -AuthenticationMethod "EAPTLS" -RadiusRootCert "C:\Users\Test\Desktop\VpnProfileRadiusCert.cer"
 
-Get-AzVpnClientConfiguration -Name "ContosoVirtualNetworkGateway" -ResourceGroupName "ContosoResourceGroup"
+PS C:\> Get-AzVpnClientConfiguration -VirtualNetworkGatewayName "ContosoVirtualNetworkGateway" -ResourceGroupName "ContosoResourceGroup"
 ```
 
 Gets the URL to download a VpnClient profile that has been previously generated using the New-AzVpnClientConfiguration command.

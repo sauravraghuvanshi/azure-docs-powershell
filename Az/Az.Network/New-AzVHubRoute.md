@@ -27,13 +27,11 @@ Creates a VHubRoute object.
 ### Example 1
 
 ```powershell
-$rgName = "testRg"
-$firewallName = "testFirewall"
-$firewall = Get-AzFirewall -Name $firewallName -ResourceGroupName $rgName
-New-AzVHubRoute -Name "private-traffic" -Destination @("10.30.0.0/16", "10.40.0.0/16") -DestinationType "CIDR" -NextHop $firewall.Id -NextHopType "ResourceId"
-```
+PS C:\> $rgName = "testRg"
+PS C:\> $firewallName = "testFirewall"
+PS C:\> $firewall = Get-AzFirewall -Name $firewallName -ResourceGroupName $rgName
+PS C:\> New-AzVHubRoute -Name "private-traffic" -Destination @("10.30.0.0/16", "10.40.0.0/16") -DestinationType "CIDR" -NextHop $firewall.Id -NextHopType "ResourceId"
 
-```output
 Name            : private-traffic
 DestinationType : CIDR
 Destinations    : {10.30.0.0/16, 10.40.0.0/16}
@@ -46,14 +44,12 @@ The above command will create a VHubRoute object with nextHop as the specified F
 ### Example 2
 
 ```powershell
-$rgName = "testRg"
-$hubName = "testHub"
-$hubVnetConnName = "testHubVnetConn"
-$hubVnetConnection = Get-AzVirtualHubVnetConnection -Name $hubVnetConnName -ParentResourceName $hubName -ResourceGroupName $rgName
-New-AzVHubRoute -Name "nva-traffic" -Destination @("10.20.0.0/16", "10.50.0.0/16") -DestinationType "CIDR" -NextHop $hubVnetConnection.Id -NextHopType "ResourceId"
-```
+PS C:\> $rgName = "testRg"
+PS C:\> $hubName = "testHub"
+PS C:\> $hubVnetConnName = "testHubVnetConn"
+PS C:\> $hubVnetConnection = Get-AzVirtualHubVnetConnection -Name $hubVnetConnName -ParentResourceName $hubName -ResourceGroupName $rgName
+PS C:\> New-AzVHubRoute -Name "nva-traffic" -Destination @("10.20.0.0/16", "10.50.0.0/16") -DestinationType "CIDR" -NextHop $hubVnetConnection.Id -NextHopType "ResourceId"
 
-```output
 Name            : private-traffic
 DestinationType : CIDR
 Destinations    : {10.30.0.0/16, 10.40.0.0/16}
@@ -66,10 +62,9 @@ The above command will create a VHubRoute object with nextHop as the specified h
 
 ### Example 3
 ```powershell
-$hub = Get-AzVirtualHub -ResourceGroupName "rgname" -Name "virtual-hub-name"
-$hubVnetConn = Get-AzVirtualHubVnetConnection -ParentObject $hub -Name "connection-name"
-$hubVnetConn
-
+PS C:\> $hub = Get-AzVirtualHub -ResourceGroupName {rgname} -Name {virtual-hub-name}
+PS C:\> $hubVnetConn = Get-AzVirtualHubVnetConnection -ParentObject $hub -Name {connection-name}
+PS C:\> $hubVnetConn
 Name                   : conn_2
 Id                     : /subscriptions/{subscriptionID}/resourceGroups/{rgname}/providers/Microsoft.Network/virtualHubs/{virtual-hub-name}/hubVirtualNetworkConnections/conn_2
 RemoteVirtualNetwork   : /subscriptions/{subscriptionID}/resourceGroups/{rgname}/providers/Microsoft.Network/virtualNetworks/rVnet_2
@@ -95,10 +90,10 @@ RoutingConfiguration   : {
                            }
                          }
                          
-$staticRoute1 = New-AzStaticRoute -Name "static_route1" -AddressPrefix @("10.2.1.0/24", "10.2.3.0/24") -NextHopIpAddress "10.2.0.5"
-$routingConfig = $hubVnetConn.RoutingConfiguration
-$routingConfig.VnetRoutes.StaticRoutes = @($staticRoute1)
-$routingConfig
+PS C:\> $staticRoute1 = New-AzStaticRoute -Name "static_route1" -AddressPrefix @("10.2.1.0/24", "10.2.3.0/24") -NextHopIpAddress "10.2.0.5"
+PS C:\> $routingConfig = $hubVnetConn.RoutingConfiguration
+PS C:\> $routingConfig.VnetRoutes.StaticRoutes = @($staticRoute1)
+PS C:\> $routingConfig
 AssociatedRouteTable  : Microsoft.Azure.Commands.Network.Models.PSResourceId
 PropagatedRouteTables : {
                           "Labels": [
@@ -124,7 +119,7 @@ VnetRoutes            : {
                           ]
                         }
 
-Update-AzVirtualHubVnetConnection -InputObject $hubVnetConn -RoutingConfiguration $routingConfig
+PS C:\> Update-AzVirtualHubVnetConnection -InputObject $hubVnetConn -RoutingConfiguration $routingConfig
 ```
 The above commands will get the RoutingConfiguration of an already existing AzVHubRoute and then add a static route on the connection. Alternatively, if you hope to create a new connection with the static route within it, please see Example 1 [here.](New-AzRoutingConfiguration.md)
 ## PARAMETERS

@@ -31,22 +31,22 @@ The **Test-AzServiceBusName** Cmdlet Check Availability of the NameSpace Name or
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Test-AzServiceBusName -Namespace MyNameSpaceName
+```
+PS C:\> Test-AzServiceBusName -Namespace MyNameSpaceName
 ```
 
 Returns the status on availability of the namespace name 'MyNameSpaceName' as True
 
 ### Example 2
-```powershell
-Test-AzServiceBusName -Namespace MyNameSpaceName
+```
+PS C:\> Test-AzServiceBusName -Namespace MyNameSpaceName
 ```
 
 Returns the status on availability of the namespace name 'MyNameSpaceName' as False with Reason
 
 ### Example 3
-```powershell
-Test-AzServiceBusName -ResourceGroupName MyResourceGroup -Namespace Test123 -AliasName myAliasName
+```
+PS C:\> Test-AzServiceBusName -ResourceGroupName MyResourceGroup -Namespace Test123 -AliasName myAliasName
 ```
 
 ## PARAMETERS

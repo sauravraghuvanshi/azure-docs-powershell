@@ -26,10 +26,8 @@ Create an in-memory object for EligibleApprover.
 
 ### Example 1: Creates Azure Lighthouse eligible authorization approver object
 ```powershell
-New-AzManagedServicesEligibleApproverObject -PrincipalId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" -PrincipalIdDisplayName "Approvers group"
-```
+PS C:\>  New-AzManagedServicesEligibleApproverObject -PrincipalId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" -PrincipalIdDisplayName "Approvers group"
 
-```output
 PrincipalId                          PrincipalIdDisplayName
 -----------                          ----------------------
 xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Approvers group

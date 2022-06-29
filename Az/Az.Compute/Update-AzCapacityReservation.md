@@ -46,14 +46,14 @@ Update the Capacity Reservation.
 
 ### Example 1
 ```powershell
-Update-AzCapacityReservation -ResourceGroupName $rgname -ReservationGroupName $capResGroup -Name $capRes -CapacityToReserve 4
+PS C:\> Update-AzCapacityReservation -ResourceGroupName $rgname -ReservationGroupName $capResGroup -Name $capRes -CapacityToReserve 4
 ```
 
 Updating the capacity reservation.
 
 ### Example 2
 ```powershell
-Get-AzCapacityReservation -ResourceGroupName $rgname -ReservationGroupName $capResGroup -Name $capRes | Update-AzCapacityReservation -CapacityToReserve 4
+PS C:\> Get-AzCapacityReservation -ResourceGroupName $rgname -ReservationGroupName $capResGroup -Name $capRes | Update-AzCapacityReservation -CapacityToReserve 4
 ```
 
 Updating the capacity reservation using the InputObject parameter set. 

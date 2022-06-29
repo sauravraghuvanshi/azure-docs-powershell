@@ -33,13 +33,13 @@ The **Update-AzRouteServer** cmdlet switches the branch-to-branch traffic to an 
 
 ### Example 1
 ```powershell
-Update-AzRouteServer -ResourceGroupName $rgname -RouteServerName $routeServerName -AllowBranchToBranchTraffic
+PS C:\>  Update-AzRouteServer -ResourceGroupName $rgname -RouteServerName $routeServerName -AllowBranchToBranchTraffic
 ```
 To enable branch to branch traffic for route server.
 
 ### Example 1
 ```powershell
-Update-AzRouteServer -ResourceGroupName $rgname -RouteServerName $routeServerName
+PS C:\>  Update-AzRouteServer -ResourceGroupName $rgname -RouteServerName $routeServerName
 ```
 To disable branch to branch traffic for route server.
 

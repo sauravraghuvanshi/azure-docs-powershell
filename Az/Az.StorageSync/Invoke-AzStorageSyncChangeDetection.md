@@ -22,14 +22,7 @@ This command can be used to manually initiate the detection of namespace changes
 
 ## SYNTAX
 
-### FullShareStringParameterSet (Default)
-```
-Invoke-AzStorageSyncChangeDetection [-ResourceGroupName] <String> [-StorageSyncServiceName] <String>
- [-SyncGroupName] <String> -Name <String> [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### StringAndDirectoryParameterSet
+### StringAndDirectoryParameterSet (Default)
 ```
 Invoke-AzStorageSyncChangeDetection [-ResourceGroupName] <String> [-StorageSyncServiceName] <String>
  [-SyncGroupName] <String> -Name <String> -DirectoryPath <String> [-Recursive] [-PassThru] [-AsJob]
@@ -41,6 +34,13 @@ Invoke-AzStorageSyncChangeDetection [-ResourceGroupName] <String> [-StorageSyncS
 Invoke-AzStorageSyncChangeDetection [-ResourceGroupName] <String> [-StorageSyncServiceName] <String>
  [-SyncGroupName] <String> -Name <String> -Path <String[]> [-PassThru] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### FullShareStringParameterSet
+```
+Invoke-AzStorageSyncChangeDetection [-ResourceGroupName] <String> [-StorageSyncServiceName] <String>
+ [-SyncGroupName] <String> -Name <String> [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ResourceIdAndDirectoryParameterSet
@@ -86,21 +86,21 @@ Periodically, Azure File Sync checks the namespace inside a syncing Azure file s
 
 ### Example 1
 ```powershell
-Invoke-AzStorageSyncChangeDetection -ResourceGroupName "myResourceGroup" -StorageSyncServiceName "myStorageSyncServiceName" -SyncGroupName "mySyncGroupName" -CloudEndpointName "b38fc242-8100-4807-89d0-399cef5863bf" -Path "Data","Reporting\Templates"
+PS C:\> Invoke-AzStorageSyncChangeDetection -ResourceGroupName "myResourceGroup" -StorageSyncServiceName "myStorageSyncServiceName" -SyncGroupName "mySyncGroupName" -CloudEndpointName "b38fc242-8100-4807-89d0-399cef5863bf" -Path "Data","Reporting\Templates"
 ```
 
 In this example, change detection is run in the "Data" and "Reporting\Templates" directories of a syncing Azure file share. All paths are relative to the root of the Azure file share namespace.
 
 ### Example 2
 ```powershell
-Invoke-AzStorageSyncChangeDetection -ResourceGroupName "myResourceGroup" -StorageSyncServiceName "myStorageSyncServiceName" -SyncGroupName "mySyncGroupName" -CloudEndpointName "b38fc242-8100-4807-89d0-399cef5863bf" -Path "Data\results.xslx","Reporting\Templates\generated.pptx"
+PS C:\> Invoke-AzStorageSyncChangeDetection -ResourceGroupName "myResourceGroup" -StorageSyncServiceName "myStorageSyncServiceName" -SyncGroupName "mySyncGroupName" -CloudEndpointName "b38fc242-8100-4807-89d0-399cef5863bf" -Path "Data\results.xslx","Reporting\Templates\generated.pptx"
 ```
 
 In this example, change detection is run for a set of files that are known to the command caller to have changed. The goal is to have Azure file sync detect and sync these changes as well.
 
 ### Example 3
 ```powershell
-Invoke-AzStorageSyncChangeDetection -ResourceGroupName "myResourceGroup" -StorageSyncServiceName "myStorageSyncServiceName" -SyncGroupName "mySyncGroupName" -CloudEndpointName "b38fc242-8100-4807-89d0-399cef5863bf" -DirectoryPath "Examples" -Recursive
+PS C:\> Invoke-AzStorageSyncChangeDetection -ResourceGroupName "myResourceGroup" -StorageSyncServiceName "myStorageSyncServiceName" -SyncGroupName "mySyncGroupName" -CloudEndpointName "b38fc242-8100-4807-89d0-399cef5863bf" -DirectoryPath "Examples" -Recursive
 ```
 
 In this example, change detection is run for the "Examples" directory and will recursively detect changes in subdirectories. 
@@ -108,7 +108,7 @@ Keep in mind the cmdlet will fail if the path contains more than 10,000 items. I
 
 ### Example 4
 ```powershell
-Invoke-AzStorageSyncChangeDetection -ResourceGroupName "myResourceGroup" -StorageSyncServiceName "myStorageSyncServiceName" -SyncGroupName "mySyncGroupName" -CloudEndpointName "b38fc242-8100-4807-89d0-399cef5863bf"
+PS C:\> Invoke-AzStorageSyncChangeDetection -ResourceGroupName "myResourceGroup" -StorageSyncServiceName "myStorageSyncServiceName" -SyncGroupName "mySyncGroupName" -CloudEndpointName "b38fc242-8100-4807-89d0-399cef5863bf"
 ```
 
 In this example, neither -DirectoryPath nor -Path has been passed to the command. This will invoke change detection on the entire file share.
@@ -180,7 +180,7 @@ Name of the CloudEndpoint. The name is a GUID, not the friendly name that's disp
 
 ```yaml
 Type: System.String
-Parameter Sets: FullShareStringParameterSet, StringAndDirectoryParameterSet, StringAndPathParameterSet
+Parameter Sets: StringAndDirectoryParameterSet, StringAndPathParameterSet, FullShareStringParameterSet
 Aliases: CloudEndpointName
 
 Required: True
@@ -240,7 +240,7 @@ Resource Group Name.
 
 ```yaml
 Type: System.String
-Parameter Sets: FullShareStringParameterSet, StringAndDirectoryParameterSet, StringAndPathParameterSet
+Parameter Sets: StringAndDirectoryParameterSet, StringAndPathParameterSet, FullShareStringParameterSet
 Aliases:
 
 Required: True
@@ -270,7 +270,7 @@ Name of the StorageSyncService.
 
 ```yaml
 Type: System.String
-Parameter Sets: FullShareStringParameterSet, StringAndDirectoryParameterSet, StringAndPathParameterSet
+Parameter Sets: StringAndDirectoryParameterSet, StringAndPathParameterSet, FullShareStringParameterSet
 Aliases: ParentName
 
 Required: True
@@ -285,7 +285,7 @@ Name of the SyncGroup.
 
 ```yaml
 Type: System.String
-Parameter Sets: FullShareStringParameterSet, StringAndDirectoryParameterSet, StringAndPathParameterSet
+Parameter Sets: StringAndDirectoryParameterSet, StringAndPathParameterSet, FullShareStringParameterSet
 Aliases:
 
 Required: True

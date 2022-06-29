@@ -95,43 +95,43 @@ The cmdlet may call below Microsoft Graph API according to input parameters:
 
 ### Example 1
 ```powershell
-Get-AzSynapseRoleAssignment -WorkspaceName ContosoWorkspace
+PS C:\> Get-AzSynapseRoleAssignment -WorkspaceName ContosoWorkspace
 ```
 
 This command gets all role assignments under a workspace.
 
 ### Example 2
 ```powershell
-Get-AzSynapseRoleAssignment -WorkspaceName ContosoWorkspace -RoleDefinitionName ContosoRole
+PS C:\> Get-AzSynapseRoleAssignment -WorkspaceName ContosoWorkspace -RoleDefinitionName ContosoRole
 ```
 
 This command gets all role assignments under workspace ContosoWorkspace with role name ContosoRole.
 
 ### Example 3
 ```powershell
-Get-AzSynapseRoleAssignment -WorkspaceName ContosoWorkspace -RoleDefinitionName ContosoRole -SignInName ContosoName
+PS C:\> Get-AzSynapseRoleAssignment -WorkspaceName ContosoWorkspace -RoleDefinitionName ContosoRole -SignInName ContosoName
 ```
 
 This command gets a role assignment under workspace ContosoWorkspace with role name ContosoRole and user principal name ContosoName.
 
 ### Example 4
 ```powershell
-Get-AzSynapseRoleAssignment -WorkspaceName ContosoWorkspace -RoleDefinitionName ContosoRole -SignInName ContosoName -ItemType ContosoItemType
+PS C:\> Get-AzSynapseRoleAssignment -WorkspaceName ContosoWorkspace -RoleDefinitionName ContosoRole -SignInName ContosoName -ItemType ContosoItemType
 ```
 
 This command gets role assignments under workspace ContosoWorkspace with role name ContosoRole, user principal name ContosoName and under itemtype ContosoItemtype.
 
 ### Example 5
 ```powershell
-Get-AzSynapseRoleAssignment -WorkspaceName ContosoWorkspace -RoleDefinitionName ContosoRole -SignInName ContosoName -ItemType ContosoItemType -Item ContosoItem
+PS C:\> Get-AzSynapseRoleAssignment -WorkspaceName ContosoWorkspace -RoleDefinitionName ContosoRole -SignInName ContosoName -ItemType ContosoItemType -Item ContosoItem
 ```
 
 This command gets a role assignment under workspace ContosoWorkspace with role name ContosoRole, user principal name ContosoName, ContosoItemType and ContosoItem.
 
 ### Example 6
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Get-AzSynapseRoleAssignment
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Get-AzSynapseRoleAssignment
 ```
 
 This command gets all role assignments under a workspace through pipeline.

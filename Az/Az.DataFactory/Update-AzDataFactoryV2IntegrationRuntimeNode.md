@@ -40,8 +40,8 @@ The **Update-AzDataFactoryV2IntegrationRuntimeNode** cmdlet updates properties o
 ## EXAMPLES
 
 ### Example 1: Updates self-hosted integration runtime node
-```powershell
-Update-AzDataFactoryV2IntegrationRuntimeNode `
+```
+PS C:\> Update-AzDataFactoryV2IntegrationRuntimeNode `
     -ResourceGroupName 'rg-test-dfv2' `
     -DataFactoryName 'test-df-eu2' `
     -IntegrationRuntimeName 'test-selfhost-ir' `

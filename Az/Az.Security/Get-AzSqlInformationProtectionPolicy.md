@@ -25,7 +25,7 @@ Retrieves the effective tenant SQL information protection policy.
 
 ### Example
 ```powershell
-Get-AzSqlInformationProtectionPolicy
+PS C:\> Get-AzSqlInformationProtectionPolicy
 ```
 
 ## PARAMETERS

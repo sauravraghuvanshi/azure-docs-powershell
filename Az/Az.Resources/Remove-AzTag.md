@@ -43,7 +43,7 @@ You can define and apply tags in a single step, but predefined tags let you esta
 
 ### Example 1: Delete a predefined tag
 ```powershell
-Remove-AzTag -Name "Department"
+PS C:\>Remove-AzTag -Name "Department"
 ```
 
 This command deletes the predefined tag named Department and all of its values.
@@ -51,10 +51,7 @@ If the tag has been applied to any resources or resource groups, the command fai
 
 ### Example 2: Delete a value from a predefined tag
 ```powershell
-Remove-AzTag -Name "Department" -Value "HumanResources" -PassThru
-```
-
-```output
+PS C:\>Remove-AzTag -Name "Department" -Value "HumanResources" -PassThru
 Name:   Department
 Count:  14
 Values: 
@@ -73,7 +70,7 @@ If the value has been applied to any resources or resource groups, the command f
 ### Example 3: Deletes the entire set of tags on a subscription
 
 ```powershell
-Remove-AzTag -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+PS C:\>Remove-AzTag -ResourceId /subscriptions/{subId}
 ```
 
 This command deletes the entire set of tags on the subscription with {subId}. It will not return the object deleted if not passing in "-PassThru".
@@ -81,10 +78,8 @@ This command deletes the entire set of tags on the subscription with {subId}. It
 ### Example 4: Deletes the entire set of tags on a resource
 
 ```powershell
-Remove-AzTag -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/testrg/providers/Microsoft.Sql/servers/Server1 -PassThru
-```
+PS C:\>Remove-AzTag -ResourceId /subscriptions/{subId}/resourcegroups/{rg}/providers/Microsoft.Sql/servers/Server1 -PassThru
 
-```output
 Id         : {Id}
 Name       : {Name}
 Type       : {Type}

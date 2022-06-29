@@ -40,19 +40,17 @@ For an introduction to Azure IoT Hub Device Provisioning Service, see https://do
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Remove-AzIoTDeviceProvisioningServiceAccessPolicy -ResourceGroupName "myresourcegroup" -Name "myiotdps" -KeyName "mypolicy" -PassThru
 ```
+PS C:\> Remove-AzIoTDeviceProvisioningServiceAccessPolicy -ResourceGroupName "myresourcegroup" -Name "myiotdps" -KeyName "mypolicy" -PassThru
 
-```output
 True
 ```
 
 Delete shared access policy "mypolicy" in an Azure IoT Hub device provisioning service.
 
 ### Example 2
-```powershell
-Get-AzIoTDeviceProvisioningServiceAccessPolicy -ResourceGroupName "myresourcegroup" -Name "myiotdps" -KeyName "mypolicy" | Remove-AzIoTDeviceProvisioningServiceAccessPolicy
+```
+PS C:\> Get-AzIoTDpsAccessPolicy -ResourceGroupName "myresourcegroup" -Name "myiotdps" -KeyName "mypolicy" | Remove-AzIoTDpsAccessPolicy
 ```
 
 Delete shared access policy "mypolicy" in an Azure IoT Hub device provisioning service using pipeline.

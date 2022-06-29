@@ -39,7 +39,7 @@ The Removes-AzEventHubSchemaGroup cmdlet removes a schema group from a namespace
 
 ### Example 1
 ```powershell
-Remove-AzEventHubSchemaGroup -ResourceGroupName myresourcegroup -Namespace mynamespace -Name myschemagroup
+PS C:\>  Remove-AzEventHubSchemaGroup -ResourceGroupName myresourcegroup -Namespace mynamespace -Name myschemagroup
 ```
 Remove a schema group \`myschemagroup\` in the namespace \`mynamespace\` in resource group \`myresourcegroup\`
 

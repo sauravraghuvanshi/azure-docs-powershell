@@ -28,10 +28,8 @@ The operation returns properties of each orchestrator including version, availab
 
 ### Example 1: List available version for creating managed Kubernetes cluster.
 ```powershell
-Get-AzAksVersion -location eastus
-```
+PS C:\> Get-AzAksVersion -location eastus
 
-```output
 Default IsPreview OrchestratorType OrchestratorVersion
 ------- --------- ---------------- -------------------
                   Kubernetes       1.19.11

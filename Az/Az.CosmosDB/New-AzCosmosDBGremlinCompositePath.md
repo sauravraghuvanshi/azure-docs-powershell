@@ -26,10 +26,8 @@ Object corresponding to Gremlin API's CompositePath.
 
 ### Example 1
 ```powershell
-New-AzCosmosDBGremlinCompositePath -Path "/abc" -Order Ascending
-```
+PS C:\> New-AzCosmosDBGremlinCompositePath -Path "/abc" -Order Ascending
 
-```output
 Path Order
 ---- -----
 /abc Ascending

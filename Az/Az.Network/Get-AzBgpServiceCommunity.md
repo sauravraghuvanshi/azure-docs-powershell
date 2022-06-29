@@ -24,11 +24,9 @@ This cmdlet provides a list of all services / regions, BGP communities, and asso
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzBgpServiceCommunity
 ```
+Get-AzBgpServiceCommunity
 
-```output
 ...
 
 Name           : AzureCentralIndia

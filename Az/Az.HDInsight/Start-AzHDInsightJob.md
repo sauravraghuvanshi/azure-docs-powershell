@@ -28,16 +28,16 @@ This can be a MapReduce job, a Streaming MapReduce job, a Hive job, or a Pig job
 ## EXAMPLES
 
 ### Example 1: Start a job on the specified cluster
-```powershell
-# Cluster info
-$clusterName = "your-hadoop-001"
-$clusterCreds = Get-Credential
+```
+PS C:\># Cluster info
+PS C:\> $clusterName = "your-hadoop-001"
+PS C:\> $clusterCreds = Get-Credential
 
 # Hive job details
-$statusFolder = "tempStatusFolder/"
-$query = "SHOW TABLES"
+PS C:\> $statusFolder = "tempStatusFolder/"
+PS C:\> $query = "SHOW TABLES"
 
-New-AzHDInsightHiveJobDefinition -StatusFolder $statusFolder `
+PS C:\> New-AzHDInsightHiveJobDefinition -StatusFolder $statusFolder `
             -Query $query `
         | Start-AzHDInsightJob `
             -ClusterName $clusterName `

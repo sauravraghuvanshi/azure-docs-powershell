@@ -14,22 +14,16 @@ Gets a Azure Managed Instances for Apache Cassandra cluster.
 
 ## SYNTAX
 
-### ByNameParameterSet (Default)
+### NameParameterSet (Default)
 ```
-Get-AzManagedCassandraCluster [-ResourceGroupName <String>] [-ClusterName <String>]
+Get-AzManagedCassandraCluster -ResourceGroupName <String> -ClusterName <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### ByResourceIdParameterSet
+### ResourceIdParameterSet
 ```
-Get-AzManagedCassandraCluster -ResourceId <String> [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
-```
-
-### ByObjectParameterSet
-```
-Get-AzManagedCassandraCluster -InputObject <PSClusterResource> [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+Get-AzManagedCassandraCluster -ResourceId <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -39,17 +33,17 @@ The **Get-AzManagedCassandraCluster** cmdlet fetches the properties of an existi
 
 ### Example 1
 ```powershell
-Get-AzManagedCassandraCluster -ResourceGroupName "resourceGroupName" -ClusterName "clusterName"
+PS C:\> Get-AzManagedCassandraCluster -ResourceGroupName {resourceGroupName} -ClusterName {clusterName}
 ```
 
 ### Example 2
 ```powershell
-Get-AzManagedCassandraCluster -ResourceId "resourceId"
+PS C:\> Get-AzManagedCassandraCluster -ResourceId {resourceId}
 ```
 
 ### Example 3
 ```powershell
-$clusterResource | Get-AzManagedCassandraCluster
+PS C:\> $clusterResource | Get-AzManagedCassandraCluster
 ```
 
 ## PARAMETERS
@@ -59,10 +53,10 @@ Name of the managed Cassandra cluster.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByNameParameterSet
+Parameter Sets: NameParameterSet
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -84,30 +78,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Managed Cassandra Cluster object
-
-```yaml
-Type: Microsoft.Azure.Commands.CosmosDB.Models.PSClusterResource
-Parameter Sets: ByObjectParameterSet
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -ResourceGroupName
 Name of resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByNameParameterSet
+Parameter Sets: NameParameterSet
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -119,7 +98,7 @@ Resource id of the managed Cassandra cluster.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByResourceIdParameterSet
+Parameter Sets: ResourceIdParameterSet
 Aliases:
 
 Required: True

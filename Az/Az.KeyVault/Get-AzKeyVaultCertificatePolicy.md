@@ -34,10 +34,8 @@ The **Get-AzKeyVaultCertificatePolicy** cmdlet gets the policy for a certificate
 
 ### Example 1: Get a certificate policy
 ```powershell
-Get-AzKeyVaultCertificatePolicy -VaultName "ContosoKV01" -Name "TestCert01"
-```
+PS C:\ >Get-AzKeyVaultCertificatePolicy -VaultName "ContosoKV01" -Name "TestCert01"
 
-```output
 SecretContentType               : application/x-pkcs12
 Kty                             : RSA
 KeySize                         : 2048

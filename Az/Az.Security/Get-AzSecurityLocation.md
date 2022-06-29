@@ -37,10 +37,7 @@ Use this cmdlet to discover that location.
 
 ### Example 1
 ```powershell
-Get-AzSecurityLocation
-```
-
-```output
+PS C:\> Get-AzSecurityLocation
 Id                                                                                                   Name
 --                                                                                                   ----
 /subscriptions/487bb485-b5b0-471e-9c0d-10717612f869/providers/Microsoft.Security/locations/centralus centralus

@@ -33,15 +33,15 @@ The **Stop-AzSynapseSparkStatement** cmdlet cancels a Synapse Analytics Spark st
 
 ### Example 1
 ```powershell
-Stop-AzSynapseSparkStatement -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -SessionId 130 -LivyId 1
+PS C:\> Stop-AzSynapseStatement -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -SessionId 130 -LivyId 1
 ```
 
 This command cancels the Spark statement with the specified livy ID.
 
 ### Example 2
 ```powershell
-$session = Get-AzSynapseSparkSession -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -LivyId 130
-$session | Stop-AzSynapseSparkStatement -LivyId 3
+PS C:\> $session = Get-AzSynapseSparkSession -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -LivyId 130
+PS C:\> $session | Stop-AzSynapseStatement -LivyId 3
 ```
 
 This command cancels the Spark statement with the specified livy ID through pipeline.

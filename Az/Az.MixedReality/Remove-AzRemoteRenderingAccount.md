@@ -39,7 +39,7 @@ Delete specified Remote Rendering Account from certain Subscription and Resource
 
 ### Example 1
 ```powershell
-Remove-AzRemoteRenderingAccount -ResourceGroup rg1 -Name example
+PS C:\> Remove-AzRemoteRenderingAccount -ResourceGroup rg1 -Name example
 ```
 
 Delete Remote Rendering Account "example" from current Subscription and Resource Group "rg1".

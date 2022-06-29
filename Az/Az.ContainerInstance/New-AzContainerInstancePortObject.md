@@ -25,10 +25,8 @@ Create a in-memory object for ContainerPort
 
 ### Example 1: Specify port 8000 exposed on a container instance with TCP protocol
 ```powershell
-New-AzContainerInstancePortObject -Port 8000 -Protocol TCP
-```
+PS C:\> New-AzContainerInstancePortObject -Port 8000 -Protocol TCP
 
-```output
 Port Protocol
 ----- --------
 8000  TCP

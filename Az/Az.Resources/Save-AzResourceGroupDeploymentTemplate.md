@@ -27,7 +27,7 @@ The **Save-AzResourceGroupDeploymentTemplate**  cmdlet saves a resource group de
 
 ### Example 1: Save a deployment template
 ```powershell
-Save-AzResourceGroupDeploymentTemplate -DeploymentName "TestDeployment" -ResourceGroupName "TestGroup"
+PS C:\>Save-AzResourceGroupDeploymentTemplate -DeploymentName "TestDeployment" -ResourceGroupName "TestGroup"
 ```
 
 This command gets the deployment template from TestDeployment and saves it as a JSON file in the current directory.

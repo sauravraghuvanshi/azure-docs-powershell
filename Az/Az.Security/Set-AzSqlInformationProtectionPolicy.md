@@ -33,7 +33,7 @@ Sets the effective tenant SQL information protection policy.
 
 ### Example
 ```powershell
-Set-AzSqlInformationProtectionPolicy -FilePath "C:\Users\myUser\Desktop\policy.json"
+PS C:\> Set-AzSqlInformationProtectionPolicy -FilePath "C:\Users\myUser\Desktop\policy.json"
 ```
 
 ## PARAMETERS

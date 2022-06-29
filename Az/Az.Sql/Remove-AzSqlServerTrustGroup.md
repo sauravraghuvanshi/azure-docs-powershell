@@ -26,7 +26,7 @@ Deletes a Server Trust Group with specified name, location and resource group.
 
 ### Example 1
 ```powershell
-Remove-AzSqlServerTrustGroup -ResourceGroupName "ResourceGroup01" -Location "West Europe" -Name "ServerTrustGroup01"
+PS C:\> Remove-AzSqlServerTrustGroup -ResourceGroupName "ResourceGroup01" -Location "West Europe" -Name "ServerTrustGroup01"
 ```
 
 Deletes a Server Trust Group in location West Europe with name ServerTrustGroup01 in resource group ResourceGroup01.

@@ -46,7 +46,7 @@ When used in conjunction with the **Set-AzNotificationHub** cmdlet, the precedin
 
 ### Example 1: Modify the property values for a notification hub
 ```powershell
-Set-AzNotificationHub -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup" -InputFile "C:\Configuration\Hubs.json"
+PS C:\>Set-AzNotificationHub -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup" -InputFile "C:\Configuration\Hubs.json"
 ```
 
 This command modifies the property values for a notification hub found in the ContosoNamespace namespace and assigned it to the resource group ContosoNotificationsGroup.

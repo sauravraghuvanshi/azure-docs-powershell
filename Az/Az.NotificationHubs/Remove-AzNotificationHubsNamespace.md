@@ -29,8 +29,8 @@ When you run this cmdlet, the specified namespace will be deleted along with all
 ## EXAMPLES
 
 ### Example 1: Remove a notification hub namespace
-```powershell
-Remove-AzNotificationHubsNamespace -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup"
+```
+PS C:\>Remove-AzNotificationHubsNamespace -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup"
 ```
 
 This command removes the namespace named ContosoNamespace.

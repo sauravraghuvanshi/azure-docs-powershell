@@ -29,8 +29,8 @@ In addition, the summary has a maximum length, which the full value that this cm
 ## EXAMPLES
 
 ### Example 1: Get the full output of an Automation job
-```powershell
-Get-AzAutomationJobOutput -AutomationAccountName "Contoso17" -Id 2989b069-24fe-40b9-b3bd-cb7e5eac4b64 -ResourceGroupName "ResourceGroup01" -Stream "Any" | Get-AzAutomationJobOutputRecord
+```
+PS C:\>Get-AzAutomationJobOutput -AutomationAccountName "Contoso17" -Id 2989b069-24fe-40b9-b3bd-cb7e5eac4b64 -ResourceGroupName "ResourceGroup01" -Stream "Any" | Get-AzAutomationJobOutputRecord
 ```
 
 This command gets the full output of the job that has the specified job ID.

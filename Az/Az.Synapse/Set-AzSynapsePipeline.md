@@ -33,7 +33,7 @@ The **Set-AzSynapsePipeline** cmdlet creates a pipeline in workspace.
 
 ### Example 1
 ```powershell
-Set-AzSynapsePipeline -WorkspaceName ContosoWorkspace -Name ContosoPipeline -DefinitionFile "C:\pipeline.json"
+PS C:\> Set-AzSynapsePipeline -WorkspaceName ContosoWorkspace -Name ContosoPipeline -DefinitionFile "C:\pipeline.json"
 ```
 
 This command creates a pipeline named ContosoPipeline in the workspace named ContosoWorkspace.
@@ -42,8 +42,8 @@ This file includes information about activities.
 
 ### Example 2
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Set-AzSynapsePipeline -Name ContosoPipeline -DefinitionFile "C:\pipeline.json"
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Set-AzSynapsePipeline -Name ContosoPipeline -DefinitionFile "C:\pipeline.json"
 ```
 
 This command creates a pipeline named ContosoPipeline in the workspace named ContosoWorkspace through pipeline.

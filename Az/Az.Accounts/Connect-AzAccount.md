@@ -167,7 +167,6 @@ you sign into Azure from a virtual machine that has an assigned MSI.
 
 ```powershell
 Connect-AzAccount -Identity
-Set-AzContext -Subscription Subscription1
 ```
 
 ```Output

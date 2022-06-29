@@ -47,14 +47,14 @@ The **Remove-AzDataLakeAnalyticsCatalogItemAclEntry** cmdlet removes an entry (A
 
 ### Example 1: Remove the user ACL for a catalog
 ```powershell
-Remove-AzDataLakeAnalyticsCatalogItemAclEntry -Account "contosoadla" -User -ObjectId (Get-AzADUser -Mail "PattiFuller@contoso.com").Id
+PS C:\> Remove-AzDataLakeAnalyticsCatalogItemAclEntry -Account "contosoadla" -User -ObjectId (Get-AzADUser -Mail "PattiFuller@contoso.com").Id
 ```
 
 This command removes the catalog ACL for Patti Fuller of the contosoadla account.
 
 ### Example 2: Remove the user ACL for a database
 ```powershell
-Remove-AzDataLakeAnalyticsCatalogItemAclEntry -Account "contosoadla" -User -ObjectId (Get-AzADUser -Mail "PattiFuller@contoso.com").Id -ItemType Database -Path "databaseName"
+PS C:\> Remove-AzDataLakeAnalyticsCatalogItemAclEntry -Account "contosoadla" -User -ObjectId (Get-AzADUser -Mail "PattiFuller@contoso.com").Id -ItemType Database -Path "databaseName"
 ```
 
 This command removes the database ACL for Patti Fuller of the contosoadla account.

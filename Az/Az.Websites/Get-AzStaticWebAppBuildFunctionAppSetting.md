@@ -1,5 +1,5 @@
 ---
-external help file: Az.Websites-help.xml
+external help file: 
 Module Name: Az.Websites
 online version: https://docs.microsoft.com/powershell/module/az.websites/get-azstaticwebappbuildfunctionappsetting
 schema: 2.0.0
@@ -16,7 +16,7 @@ Description for Gets the application settings of a static site build.
 
 ```
 Get-AzStaticWebAppBuildFunctionAppSetting -EnvironmentName <String> -Name <String> -ResourceGroupName <String>
- [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -26,10 +26,8 @@ Description for Gets the application settings of a static site build.
 
 ### Example 1: List all application settings of a static site build
 ```powershell
-Get-AzStaticWebAppBuildFunctionAppSetting -ResourceGroupName azure-rg-test -Name staticweb-portal04 -EnvironmentName 'default'
-```
+PS C:\> Get-AzStaticWebAppBuildFunctionAppSetting -ResourceGroupName azure-rg-test -Name staticweb-portal04 -EnvironmentName 'default'
 
-```output
 Kind Name        Type
 ---- ----        ----
      appsettings Microsoft.Web/staticSites/builds/config/functionappsettings
@@ -161,3 +159,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
+

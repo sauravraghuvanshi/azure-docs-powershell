@@ -26,14 +26,14 @@ The **Get-AzApplicationGatewayCustomError** cmdlet gets custom error(s) from an 
 
 ### Example 1: Gets a custom error in an application gateway
 ```powershell
-$ce = Get-AzApplicationGatewayCustomError -ApplicationGateway $appgw -StatusCode HttpStatus502
+PS C:\> $ce = Get-AzApplicationGatewayCustomError -ApplicationGateway $appgw -StatusCode HttpStatus502
 ```
 
 This command gets and returns the custom error of http status code 502 from the application gateway $appgw.
 
 ### Example 2: Gets the list of all custom errors in an application gateway
 ```powershell
-$ces = Get-AzApplicationGatewayCustomError -ApplicationGateway $appgw
+PS C:\> $ces = Get-AzApplicationGatewayCustomError -ApplicationGateway $appgw
 ```
 
 This command gets and returns the list of all custom errors from the application gateway $appgw.

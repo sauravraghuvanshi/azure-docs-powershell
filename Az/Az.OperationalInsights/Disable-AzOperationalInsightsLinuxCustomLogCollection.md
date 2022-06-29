@@ -34,14 +34,12 @@ The **Disable-AzOperationalInsightsLinuxCustomLogCollection** cmdlet stops colle
 
 ### Example 1
 ```powershell
-Disable-AzOperationalInsightsLinuxCustomLogCollection -ResourceGroupName test-rg -WorkspaceName OperationalInsight
-```
+PS C:\> Disable-AzOperationalInsightsLinuxCustomLogCollection -ResourceGroupName yuzhi-rg -WorkspaceName OperationalInsight
 
-```output
 Name              : DataSource_CustomLogCollection
-ResourceGroupName : test-rg
+ResourceGroupName : yuzhi-rg
 WorkspaceName     : OperationalInsight
-ResourceId        : /subscriptions/xxxx-xxxx-xxxx-xxxx-xxxx/resourceGroups/test-rg/providers/Microsoft.OperationalInsights/wo
+ResourceId        : /subscriptions/0b1f6471-1bf0-4dda-aec3-cb9272f09590/resourceGroups/yuzhi-rg/providers/Microsoft.OperationalInsights/wo
                     rkspaces/OperationalInsight/datasources/DataSource_CustomLogCollection
 Kind              : CustomLogCollection
 Properties        : {"state":"LinuxLogsDisabled"}

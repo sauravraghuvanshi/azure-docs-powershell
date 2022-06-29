@@ -39,9 +39,9 @@ Remove Nat Gateway Resource
 
 ### Example 1
 ```powershell
-$nat = Get-AzNatGateway -ResourceGroupName "natgateway_test" -Name "nat_gateway"
-Remove-AzNatGateway -InputObject $nat
-Remove-AzNatGateway -ResourceId "/subscriptions/<subid>/resourceGroups/natgateway_test/providers/Microsoft.Network/natGateways/natgateway"
+PS C:> $nat = Get-AzNatGateway -ResourceGroupName "natgateway_test" -Name "nat_gateway"
+PS C:> Remove-AzNatGateway -InputObject $nat
+PS C:> Remove-AzNatGateway -ResourceId "/subscriptions/<subid>/resourceGroups/natgateway_test/providers/Microsoft.Network/natGateways/natgateway"
 ```
 
 ## PARAMETERS

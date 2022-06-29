@@ -27,12 +27,10 @@ The **Disable-AzSqlServerAdvancedDataSecurity** cmdlet disables Advanced Data Se
 
 ### Example 1: Disable server Advanced Data Security
 ```powershell
-Disable-AzSqlServerAdvancedDataSecurity `
+PS C:\>  Disable-AzSqlServerAdvancedDataSecurity `
             -ResourceGroupName "ResourceGroup01" `
-            -ServerName "Server01"
-```
+            -ServerName "Server01" 
 
-```output
 ResourceGroupName	         : ResourceGroup01
 ServerName		             : Server01
 IsEnabled		             : False
@@ -40,13 +38,11 @@ IsEnabled		             : False
 
 ### Example 2: Disable server Advanced Data Security from server resource
 ```powershell
-Get-AzSqlServer `
+PS C:\>  Get-AzSqlServer `
            -ResourceGroupName "ResourceGroup01" `
            -ServerName "Server01" `
            | Disable-AzSqlServerAdvancedDataSecurity
-```
 
-```output
 ResourceGroupName	         : ResourceGroup01
 ServerName		             : Server01
 IsEnabled		             : False

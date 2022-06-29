@@ -26,8 +26,8 @@ The **Set-AzVMUefi** cmdlet modifies UEFI properties of a virtual machine.
 
 ### Example 1
 ```powershell
-$VM = Get-AzVM -ResourceGroupName "ResourceGroup11" -VMName "ContosoVM07"
-Set-AzVMUefi -VM $VM -EnableVtpm $true -EnableSecureBoot $true
+PS C:\> $VM = Get-AzVM -ResourceGroupName "ResourceGroup11" -VMName "ContosoVM07"
+PS C:\> Set-AzVMUefi -VM $VM -EnableVtpm $true -EnableSecureBoot $true
 ```
 
 The first command gets the virtual machine named ContosoVM07 by using **Get-AzVM**.

@@ -28,16 +28,16 @@ The **Get-AzHDInsightJobOutput** cmdlet gets the log output for a job from the S
 ## EXAMPLES
 
 ### Example 1: Get the log output for a job
-```powershell
-# Cluster info
-$clusterName = "your-hadoop-001"
-$clusterCreds = Get-Credential
+```
+PS C:\># Cluster info
+PS C:\> $clusterName = "your-hadoop-001"
+PS C:\> $clusterCreds = Get-Credential
 
 # Hive job details
-$statusFolder = "<status folder>"
-$query = "<query here>"
+PS C:\> $statusFolder = "<status folder>"
+PS C:\> $query = "<query here>"
 
-New-AzHDInsightHiveJobDefinition -StatusFolder $statusFolder `
+PS C:\> New-AzHDInsightHiveJobDefinition -StatusFolder $statusFolder `
             -Query $query `
         | Start-AzHDInsightJob `
             -ClusterName $clusterName `

@@ -34,10 +34,8 @@ Disassociates an Azure Storage Account from Key Vault. This does not remove an A
 
 ### Example 1: Remove a Key Vault managed Azure Storage Account and all associated SAS definitions.
 ```powershell
-Remove-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -PassThru
-```
+PS C:\> Remove-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -PassThru
 
-```output
 Id                  : https://myvault.vault.azure.net:443/storage/mystorageaccount
 Vault Name          : myvault
 AccountName         : mystorageaccount
@@ -53,10 +51,8 @@ Disassociates Azure Storage Account 'mystorageaccount' from Key Vault 'myvault' 
 
 ### Example 2: Remove a Key Vault managed Azure Storage Account and all associated SAS definitions without user confirmation.
 ```powershell
-Remove-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -PassThru -Force
-```
+PS C:\> Remove-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -PassThru -Force
 
-```output
 Id                  : https://myvault.vault.azure.net:443/storage/mystorageaccount
 Vault Name          : myvault
 AccountName         : mystorageaccount
@@ -72,9 +68,9 @@ Disassociates Azure Storage Account 'mystorageaccount' from Key Vault 'myvault' 
 
 ### Example 3: Permanently delete (purge) a Key Vault managed Azure Storage Account and all associated SAS definitions from a soft-delete-enabled vault.
 ```powershell
-Remove-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount'
-Get-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -InRemovedState
-Remove-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -InRemovedState
+PS C:\> Remove-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount'
+PS C:\> Get-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -InRemovedState
+PS C:\> Remove-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -InRemovedState
 ```
 
 The example assumes that soft-delete is enabled for this vault. Verify whether that is the case by examining the vault properties, or the RecoveryLevel attribute of an entity in the vault.

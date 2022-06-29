@@ -36,18 +36,16 @@ The **Get-AzRecoveryServicesAsrFabric** cmdlet gets the properties of a specifie
 ## EXAMPLES
 
 ### Example 1
-```powershell
-$fabrics = Get-AzRecoveryServicesAsrFabric
+```
+PS C:\> $fabrics = Get-AzRecoveryServicesAsrFabric
 ```
 
 Returns all the Azure Site Recovery fabrics in the vault.
 
 ### Example 2
-```powershell
-$fabric = Get-AzRecoveryServicesAsrFabric -Name xxxx
 ```
+PS C:\> $fabric = Get-AzRecoveryServicesAsrFabric -Name xxxx
 
-```output
 Name                  : xxxx
 FriendlyName          : XXXXXXXXXX
 ID                    : /Subscriptions/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/resourceGroups/canaryexproute/providers/Microsoft.RecoveryServices/vaults/XXXXXXXXXXXXX/replicationFabrics/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -59,11 +57,9 @@ FabricSpecificDetails : Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.A
 Return azure site recovery fabric with name xxxx.
 
 ### Example 3
-```powershell
-$fabric = Get-AzRecoveryServicesAsrFabric -FriendlyName XXXXXXXXXX
 ```
+PS C:\> $fabric = Get-AzRecoveryServicesAsrFabric -FriendlyName XXXXXXXXXX
 
-```output
 Name                  : xxxx
 FriendlyName          : XXXXXXXXXX
 ID                    : /Subscriptions/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/resourceGroups/canaryexproute/providers/Microsoft.RecoveryServices/vaults/XXXXXXXXXXXXX/replicationFabrics/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

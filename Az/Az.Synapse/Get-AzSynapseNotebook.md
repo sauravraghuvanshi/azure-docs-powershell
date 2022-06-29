@@ -33,10 +33,8 @@ The **Get-AzSynapseNotebook** cmdlet gets information about notebooks in a works
 
 ### Example 1
 ```powershell
-Get-AzSynapseNotebook -WorkspaceName ContosoWorkspace | Format-Table
-```
+PS C:\> Get-AzSynapseNotebook -WorkspaceName ContosoWorkspace | Format-Table
 
-```output
 WorkspaceName    Properties                                         Name
 -------------    ----------                                         --
 ContosoWorkspace Microsoft.Azure.Commands.Synapse.Models.PSNotebook ContosoNotebook1
@@ -47,15 +45,15 @@ Gets a list of all notebooks in the workspace ContosoWorkspace.
 
 ### Example 2
 ```powershell
-Get-AzSynapseNotebook -WorkspaceName ContosoWorkspace -Name ContosoNotebook
+PS C:\> Get-AzSynapseNotebook -WorkspaceName ContosoWorkspace -Name ContosoNotebook
 ```
 
 Gets a single notebook called ContosoNotebook in the workspace ContosoWorkspace.
 
 ### Example 3
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Get-AzSynapseNotebook -Name ContosoNotebook
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Get-AzSynapseNotebook -Name ContosoNotebook
 ```
 
 Gets a single notebook called ContosoNotebook in the workspace ContosoWorkspace through pipeline.

@@ -26,10 +26,8 @@ The **Add-AzDataLakeStoreVirtualNetworkRule** cmdlet adds a virtual network rule
 
 ### Example 1
 ```powershell
-Add-AzDataLakeStoreVirtualNetworkRule -Account "dls" -Name "myVNET" -SubnetId "testId"
-```
+PS C:\> Add-AzDataLakeStoreVirtualNetworkRule -Account "dls" -Name "myVNET" -SubnetId "testId"
 
-```output
 ResourceGroupName                :
 AccountName                      :
 VirtualNetworkRuleName           : myVNET

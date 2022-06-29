@@ -28,11 +28,9 @@ operate on ExpressRoute circuits.
 ## EXAMPLES
 
 ### Example 1: Get the ExpressRoute circuit
-```powershell
-Get-AzExpressRouteCircuit -ResourceGroupName testrg -Name test
 ```
+Get-AzExpressRouteCircuit -ResourceGroupName testrg -Name test
 
-```output
 Name                             : test
 ResourceGroupName                : testrg
 Location                         : southcentralus
@@ -66,11 +64,9 @@ GatewayManagerEtag               :
 Get a specific ExpressRoute circuit with Name "testrg" and ResourceGroupName "test"
 
 ### Example 2: List the ExpressRoute circuits using filtering
-```powershell
-Get-AzExpressRouteCircuit -Name test*
 ```
+Get-AzExpressRouteCircuit -Name test*
 
-```output
 Name                             : test1
 ResourceGroupName                : testrg
 Location                         : southcentralus

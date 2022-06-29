@@ -40,11 +40,9 @@ If you do not specify a name, this cmdlet gets information about all the linked 
 ## EXAMPLES
 
 ### Example 1: Get information about all linked services
-```powershell
-Get-AzDataFactoryV2LinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" | Format-List
 ```
+PS C:\> Get-AzDataFactoryV2LinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" | Format-List
 
-```output
     LinkedServiceName : LinkedServiceCuratedWikiData
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF
@@ -67,11 +65,9 @@ For more information, type Get-Help Format-List.
 You can use either one of the following ways:
 
 ### Example 2: Get information about a specific linked service
-```powershell
-Get-AzDataFactoryV2LinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "LinkedServiceCuratedWikiData"
 ```
+PS C:\> Get-AzDataFactoryV2LinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "LinkedServiceCuratedWikiData"
 
-```output
     LinkedServiceName : LinkedServiceCuratedWikiData
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF
@@ -81,12 +77,10 @@ Get-AzDataFactoryV2LinkedService -ResourceGroupName "ADF" -DataFactoryName "Wiki
 This command gets information about the linked service named LinkedServiceCuratedWikiData in the data factory named WikiADF.
 
 ### Example 3: Get information about a specific linked service by specifying the DataFactory parameter
-```powershell
-$DataFactory = Get-AzDataFactoryV2 -ResourceGroupName "ADF" -Name "ContosoFactory"
-Get-AzDataFactoryV2LinkedService -DataFactory $DataFactory | Format-Table -Property Name, DataFactoryName, ResourceGroupName
 ```
+PS C:\> $DataFactory = Get-AzDataFactoryV2 -ResourceGroupName "ADF" -Name "ContosoFactory"
+PS C:\> Get-AzDataFactoryV2LinkedService -DataFactory $DataFactory | Format-Table -Property Name, DataFactoryName, ResourceGroupName
 
-```output
      Name                          DataFactoryName ResourceGroupName
      ----                          --------------- -----------------
      LinkedServiceCuratedWikiData  ContosoFactory  ADF

@@ -31,10 +31,8 @@ The Get-AzSecuritySetting cmdlet get security settings in Azure Security Center.
 
 ### Example 1
 ```powershell
-Get-AzSecuritySetting -SettingName "MCAS"
-```
+PS C:\> Get-AzSecuritySetting -SettingName "MCAS"
 
-```output
 Id: "/subscriptions/487bb485-b5b0-471e-9c0d-10717612f869/providers/Microsoft.Security/settings/MCAS"
 Name: "MCAS"
 Type: "Microsoft.Security/settings"
@@ -49,7 +47,7 @@ Gets an MCAS data export setting
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -64,7 +62,7 @@ Accept wildcard characters: False
 Setting name. (MCAS/WDATP/Sentinel)
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: SubscriptionLevelResource
 Aliases:
 

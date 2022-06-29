@@ -36,11 +36,8 @@ If you want to add an on-premises Microsoft SQL Server as a linked service to a 
 ## EXAMPLES
 
 ### Example 1: Get all logical gateways in a data factory
-```powershell
-Get-AzDataFactoryGateway -ResourceGroupName "ADF" -DataFactoryName "WikiADF"
 ```
-
-```output
+PS C:\>Get-AzDataFactoryGateway -ResourceGroupName "ADF" -DataFactoryName "WikiADF"
 Name            : gateway1
 Description     : 
 Version         : 1.3.5338.1
@@ -64,11 +61,8 @@ ExpiryTime      :
 This command gets information about all logical gateways for the data factory named WikiADF in the resource group named ADF.
 
 ### Example 2: Get a specific logical gateway in a data factory
-```powershell
-Get-AzDataFactoryGateway -ResourceGroupName "ADF" -Name "Gateway01" -DataFactoryName "WikiADF"
 ```
-
-```output
+PS C:\>Get-AzDataFactoryGateway -ResourceGroupName "ADF" -Name "Gateway01" -DataFactoryName "WikiADF"
 Name            : Gateway01
 Description     : 
 Version         : 1.3.5338.1

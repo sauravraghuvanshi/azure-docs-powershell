@@ -26,8 +26,8 @@ The **Remove-AzSqlSyncMember** cmdlet removes an Azure SQL Database Sync Member.
 ## EXAMPLES
 
 ### Example 1: Remove a sync member
-```powershell
-Remove-AzSqlSyncMember -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "database01" -SyncGroupName "syncGroup01" -Name "syncMember01"
+```
+PS C:\>Remove-AzSqlSyncMember -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "database01" -SyncGroupName "syncGroup01" -Name "syncMember01"
 ```
 
 This command removes the Azure SQL Database Sync Member named syncMember01.

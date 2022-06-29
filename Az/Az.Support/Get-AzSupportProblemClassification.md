@@ -35,9 +35,8 @@ Always use the service and problem classification GUIDs obtained programmaticall
 
 ### Example 1: Get all problem classificaitons for a service using service id parameter.
 ```powershell
-Get-AzSupportProblemClassification -ServiceId "{vm_running_windows_service_guid}"
-```
-```output
+PS C:\> Get-AzSupportProblemClassification -ServiceId "{vm_running_windows_service_guid}"
+
 Name                                 DisplayName
 ----                                 -----------
 4d78b174-3203-a3ac-9e08-41fb35de6354 Compute-VM (cores-vCPUs) subscription limit increases
@@ -56,9 +55,8 @@ f47d6b99-6f4b-d21a-feee-1800ad391e10 Cannot start or stop my VM / I received an 
 
 ### Example 2: Get all problem classificaitons for a service using parent service object
 ```powershell
-Get-AzSupportService -Id "{vm_running_windows_service_guid}" | Get-AzSupportProblemClassification 
-```
-```output
+PS C:\> Get-AzSupportService -Id "{vm_running_windows_service_guid}" | Get-AzSupportProblemClassification 
+
 Name                                 DisplayName
 ----                                 -----------
 4d78b174-3203-a3ac-9e08-41fb35de6354 Compute-VM (cores-vCPUs) subscription limit increases
@@ -77,9 +75,8 @@ f47d6b99-6f4b-d21a-feee-1800ad391e10 Cannot start or stop my VM / I received an 
 
 ### Example 3: Get details of a single problem classificaiton by id by piping service object
 ```powershell
-Get-AzSupportService -Id "{vm_running_windows_service_guid}" | Get-AzSupportProblemClassification -Id 923d6b56-d573-f943-b65d-d69ba79ea21a
-```
-```output
+PS C:\> Get-AzSupportService -Id "{vm_running_windows_service_guid}" | Get-AzSupportProblemClassification -Id 923d6b56-d573-f943-b65d-d69ba79ea21a
+
 Name                                 DisplayName
 ----                                 -----------
 923d6b56-d573-f943-b65d-d69ba79ea21a Cannot connect to my VM / My configuration change impacted connectivity

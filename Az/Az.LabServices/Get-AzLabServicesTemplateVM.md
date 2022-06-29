@@ -33,13 +33,12 @@ API to get the template vm for the lab.
 
 ### Example 1: Get the template for the lab.
 ```powershell
-Get-AzLabTemplateVM  -ResourceGroupName "group name" -LabName "lab name"
-```
+PS C:\> Get-AzLabTemplateVM  -ResourceGroupName "group name" -LabName "lab name"
 
-```output
 Name Type
 ---- ----
 0    Microsoft.LabServices/labs/virtualMachines
+
 ```
 
 Returns the template VM for the lab.

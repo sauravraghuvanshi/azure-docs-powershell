@@ -40,10 +40,7 @@ A location is an Azure region.
 
 ### Example 1: Get all Azure region location details with default context
 ```powershell
-Get-AzImportExportLocation
-```
-
-```output
+PS C:\> Get-AzImportExportLocation
 Name                 Type
 ----                 ----
 Australia East       Microsoft.ImportExport/locations
@@ -63,10 +60,7 @@ This cmdlet gets all Azure region location details with default context.
 
 ### Example 2: Get Azure region location details by location name
 ```powershell
-Get-AzImportExportLocation -Name eastus
-```
-
-```output
+PS C:\> Get-AzImportExportLocation -Name eastus
 Name    Type
 ----    ----
 East US Microsoft.ImportExport/locations
@@ -76,11 +70,8 @@ This cmdlet gets Azure region location details by location name.
 
 ### Example 3: Get Azure region location details by identity
 ```powershell
-$Id = "/providers/Microsoft.ImportExport/locations/eastus"
-Get-AzImportExportLocation -InputObject $Id
-```
-
-```output
+PS C:\> $Id = "/providers/Microsoft.ImportExport/locations/eastus"
+PS C:\> Get-AzImportExportLocation -InputObject $Id
 Name    Type
 ----    ----
 East US Microsoft.ImportExport/locations

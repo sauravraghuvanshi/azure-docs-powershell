@@ -26,11 +26,9 @@ Removes an IP Configuration from a Virtual Network Gateway
 ## EXAMPLES
 
 ### Example 1:
-```powershell
-Remove-AzVirtualNetworkGatewayIpConfig -VirtualNetworkGateway $gateway -Name ActiveActive
 ```
+Remove-AzVirtualNetworkGatewayIpConfig -VirtualNetworkGateway $gateway -Name ActiveActive
 
-```output
 Name                   : myGateway
 ResourceGroupName      : myRG
 Location               : eastus

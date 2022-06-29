@@ -28,9 +28,9 @@ The **Start-AzAutomationDscCompilationJob** cmdlet compiles an APS Desired State
 ## EXAMPLES
 
 ### Example 1: Compile an Azure DSC configuration in Automation
-```powershell
-$Params = @{"StringParam"="Hello World";"IntegerParam"=32}
-Start-AzAutomationDscCompilationJob -ConfigurationName "Config01" -Parameters $Params -ResourceGroupName "ResourceGroup01"
+```
+PS C:\>$Params = @{"StringParam"="Hello World";"IntegerParam"=32}
+PS C:\> Start-AzAutomationDscCompilationJob -ConfigurationName "Config01" -Parameters $Params -ResourceGroupName "ResourceGroup01"
 ```
 
 The first command creates a dictionary of parameters, and stores them in the $Params variable.
@@ -38,9 +38,9 @@ The second command compiles the DSC configuration named Config01.
 The command includes the values in $Params for DSC configuration parameters.
 
 ### Example 2: Compile an Azure DSC configuration in Automation with a new Node Configuration build version.
-```powershell
-$Params = @{"StringParam"="Hello World";"IntegerParam"=32}
-Start-AzAutomationDscCompilationJob -ConfigurationName "Config01" -Parameters $Params -ResourceGroupName "ResourceGroup01" -IncrementNodeConfigurationBuild
+```
+PS C:\>$Params = @{"StringParam"="Hello World";"IntegerParam"=32}
+PS C:\> Start-AzAutomationDscCompilationJob -ConfigurationName "Config01" -Parameters $Params -ResourceGroupName "ResourceGroup01" -IncrementNodeConfigurationBuild
 ```
 
 Similar to the first example, the first command creates a dictionary of parameters, and stores them in the $Params variable.

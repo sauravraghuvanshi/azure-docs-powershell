@@ -29,10 +29,11 @@ Retrieves information about the run-time state of a role instance in a cloud ser
 Get-AzCloudServiceRoleInstanceView -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS" -RoleInstanceName "ContosoFrontEnd_IN_0"
 ```
 
-```output
+```Output
 Statuses           PlatformFaultDomain PlatformUpdateDomain
 --------           ------------------- --------------------
 {RoleStateStarted} 0                   0
+
 ```
 
 This cmdlet gets the instance view of the role instance named ContosoFrontEnd_IN_0 of cloud service named ContosoCS that belongs to the resource group named ContosOrg.

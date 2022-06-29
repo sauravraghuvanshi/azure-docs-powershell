@@ -43,10 +43,8 @@ Gets information about a server.
 
 ### Example 1: List all MariaDB under a subscriptions
 ```powershell
-Get-AzMariaDbServer
-```
+PS C:\> Get-AzMariaDbServer
 
-```output
 Name                       Location AdministratorLogin Version StorageProfileStorageMb SkuName    SkuTier        SslEnforcement
 ----                       -------- ------------------ ------- ----------------------- -------    -------        --------------
 mrdb01                     eastus   dolauli            10.2    5120                    B_Gen5_1   Basic          Enabled
@@ -69,10 +67,8 @@ This command lists all MariaDB under a subscriptions.
 
 ### Example 2: List all MariaDB under a resource group
 ```powershell
-Get-AzMariaDbServer -ResourceGroupName mariadb-test-qu5ov0
-```
+PS C:\> Get-AzMariaDbServer -ResourceGroupName mariadb-test-qu5ov0
 
-```output
 Name                       Location AdministratorLogin Version StorageProfileStorageMb SkuName    SkuTier        SslEnforcement
 ----                       -------- ------------------ ------- ----------------------- -------    -------        --------------
 mariadb-test-h3pame        eastus   qiszomtkpf         10.2    5120                    B_Gen5_1   Basic          Enabled
@@ -91,10 +87,8 @@ This command lists all MariaDB under a resource group.
 
 ### Example 3: Get a MariaDB
 ```powershell
-Get-AzMariaDbServer -ResourceGroupName mariadb-test-qu5ov0 -Name mariadb-test-h3pame
-```
+PS C:\> Get-AzMariaDbServer -ResourceGroupName mariadb-test-qu5ov0 -Name mariadb-test-h3pame
 
-```output
 Name                Location AdministratorLogin Version StorageProfileStorageMb SkuName  SkuTier SslEnforcement
 ----                -------- ------------------ ------- ----------------------- -------  ------- --------------
 mariadb-test-h3pame eastus   qiszomtkpf         10.2    5120                    B_Gen5_1 Basic   Enabled

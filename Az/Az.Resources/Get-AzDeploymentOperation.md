@@ -39,14 +39,14 @@ For more on this setting and how to enable it, see New-AzDeployment and Debuggin
 
 ### Example 1: Get deployment operations given a deployment name
 ```powershell
-Get-AzDeploymentOperation -DeploymentName test
+PS C:\>Get-AzDeploymentOperation -DeploymentName test
 ```
 
 Gets deployment operation with name "test" at the current subscription scope.
 
 ### Example 2: Get a deployment and get its deployment operations
 ```powershell
-Get-AzDeployment -Name "test" | Get-AzDeploymentOperation
+PS C:\>Get-AzDeployment -Name "test" | Get-AzDeploymentOperation
 ```
 
 This command gets the deployment "test" at the current subscription scope and get its deployment operations.

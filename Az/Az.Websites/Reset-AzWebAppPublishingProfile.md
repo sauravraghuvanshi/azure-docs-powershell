@@ -35,8 +35,7 @@ The **Reset-AzWebAppPublishingProfile** cmdlet resets the publishing profile for
 
 The following example resets the publishing profile for the Web App IpRule associated with the resource group MyResourceGroup.
 
-```powershell
-<!-- Aladdin Generated Example --> 
+```powershell <!-- Aladdin Generated Example --> 
 Reset-AzWebAppPublishingProfile -Name IpRule -ResourceGroupName MyResourceGroup
 ```
 
@@ -103,7 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

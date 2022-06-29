@@ -35,26 +35,26 @@ The New-AzEventHubKey cmdlet regenerates the primary or secondary SAS key for th
 
 ### Example 1: Namespace - AuthorizationRule PrimaryKey
 ```powershell
-New-AzEventHubKey -ResourceGroup MyResourceGroupName -Namespace MyNamespaceName -Name MyAuthRuleName -RegenerateKey PrimaryKey
+PS C:\> New-AzEventHubKey -ResourceGroup MyResourceGroupName -Namespace MyNamespaceName -Name MyAuthRuleName -RegenerateKey PrimaryKey
 ```
 
 Regenerates the primary key for the authorization rule \`MyAuthRuleName\`.
 
 ### Example 2: EventHub - AuthorizationRule PrimaryKey
 ```powershell
-New-AzEventHubKey -ResourceGroup MyResourceGroupName -Namespace MyNamespaceName -EventHub MyEventHubName -Name MyAuthRuleName -RegenerateKey PrimaryKey
+PS C:\> New-AzEventHubKey -ResourceGroup MyResourceGroupName -Namespace MyNamespaceName -EventHub MyEventHubName -Name MyAuthRuleName -RegenerateKey PrimaryKey
 ```
 
 Regenerates the primary key for the authorization rule \`MyAuthRuleName\`.
 
 ### Example 3: - Namespace - AuthorizationRule SecondaryKey
 ```powershell
-New-AzEventHubKey -ResourceGroup MyResourceGroupName -Namespace MyNamespaceName -Name MyAuthRuleName -RegenerateKey SecondaryKey
+PS C:\> New-AzEventHubKey -ResourceGroup MyResourceGroupName -Namespace MyNamespaceName -Name MyAuthRuleName -RegenerateKey SecondaryKey
 ```
 
 ### Example 4: EventHub - AuthorizationRule SecondaryKey
 ```powershell
-New-AzEventHubKey -ResourceGroup MyResourceGroupName -Namespace MyNamespaceName -EventHub MyEventHubName -Name MyAuthRuleName -RegenerateKey SecondaryKey
+PS C:\> New-AzEventHubKey -ResourceGroup MyResourceGroupName -Namespace MyNamespaceName -EventHub MyEventHubName -Name MyAuthRuleName -RegenerateKey SecondaryKey
 ```
 
 Regenerates the secondary key for the authorization rule \`MyAuthRuleName\`.

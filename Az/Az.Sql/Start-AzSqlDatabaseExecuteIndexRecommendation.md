@@ -27,8 +27,8 @@ The **Start-AzSqlDatabaseExecuteIndexRecommendation** cmdlet starts the workflow
 ## EXAMPLES
 
 ### Example 1: Run an index recommendation
-```powershell
-Start-AzSqlDatabaseExecuteIndexRecommendation -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -IndexRecommendationName "INDEX_NAME"
+```
+PS C:\>Start-AzSqlDatabaseExecuteIndexRecommendation -ResourceGroup "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -IndexRecommendationName "INDEX_NAME"
 ```
 
 This command runs an index recommendation.

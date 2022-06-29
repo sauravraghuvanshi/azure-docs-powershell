@@ -27,8 +27,8 @@ The **Join-AzDataLakeStoreItem** cmdlet joins one or more files to create one fi
 ## EXAMPLES
 
 ### Example 1: Join two items
-```powershell
-Join-AzDataLakeStoreItem -AccountName "ContosoADL" -Paths "/MyFiles/File01.txt","/MyFiles/File02.txt" -Destination "/MyFiles/CombinedFile.txt"
+```
+PS C:\>Join-AzDataLakeStoreItem -AccountName "ContosoADL" -Paths "/MyFiles/File01.txt","/MyFiles/File02.txt" -Destination "/MyFiles/CombinedFile.txt"
 ```
 
 This command joins File01.txt and File02.txt to create the file CombinedFile.txt.

@@ -45,7 +45,7 @@ Set cluster resource properties.
 ```powershell
 $rgName = "testRG"
 $clusterName = "testCluster"
-Set-AzServiceFabricManagedCluster -ResourceGroupName $rgName -Name $clusterName -DnsName testnewdns -ClientConnectionPort 50000 -Verbose
+Update-AzServiceFabricManagedCluster -ResourceGroupName $rgName -Name $clusterName -DnsName testnewdns -ClientConnectionPort 50000 -Verbose
 ```
 
 Update dns name and client connection port for the cluster.

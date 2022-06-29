@@ -35,8 +35,8 @@ Removing an authorization rule also removes the corresponding user permission.
 ## EXAMPLES
 
 ### Example 1: Remove an authorization rule from a notification hub
-```powershell
-Remove-AzNotificationHubAuthorizationRule -Namespace "ContosoNamespace" -NotificationHub "ContosoExternalHub" -ResourceGroup "ContosoNotificationsGroup" -AuthorizationRule "ListenRule"
+```
+PS C:\>Remove-AzNotificationHubAuthorizationRule -Namespace "ContosoNamespace" -NotificationHub "ContosoExternalHub" -ResourceGroup "ContosoNotificationsGroup" -AuthorizationRule "ListenRule"
 ```
 
 This command removes the authorization rule named ListenRule from the notification hub named ContosoExternalHub.

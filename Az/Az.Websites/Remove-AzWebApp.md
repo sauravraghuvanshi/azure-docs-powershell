@@ -23,8 +23,8 @@ Remove-AzWebApp [-DeleteAppServicePlan] [-Force] [-AsJob] [-ResourceGroupName] <
 
 ### S2
 ```
-Remove-AzWebApp [-DeleteAppServicePlan] [-Force] [-AsJob] [-WebApp] <PSSite>
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzWebApp [-DeleteAppServicePlan] [-Force] [-AsJob] [-WebApp] <PSSite> [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,8 +34,8 @@ This cmdlet, by default, also removes all slots and metrics.
 ## EXAMPLES
 
 ### Example 1: Remove a Web App
-```powershell
-Remove-AzWebApp -ResourceGroupName "Default-Web-WestUS" -Name "ContosoSite"
+```
+PS C:\>Remove-AzWebApp -ResourceGroupName "Default-Web-WestUS" -Name "ContosoSite"
 ```
 
 This command removes the Azure Web App named ContosoSite that belongs to the resource group named Default-Web-WestUS.
@@ -72,7 +72,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DeleteAppServicePlan
+###-DeleteAppServicePlan
 If this is the last app in the App Service plan. Delete this App Service plan to prevent unexpected charges.
 
 ```yaml
@@ -180,7 +180,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -38,15 +38,15 @@ The Get-AzDataMigrationProject cmdlet retrieves the properties of an Azure Datab
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzDataMigrationProject -ServiceName testService -Name testProject -ResourceGroupName testResourceGroup
+```
+PS C:\> Get-AzDataMigrationProject -ServiceName testService -Name testProject -ResourceGroup testResourceGroup
 ```
 
 The above example retrieves  Azure Database Migration project named TestProject in the resource group called testResourceGroup and under service called testService
 
 ### Example 2
-```powershell
-Get-AzDataMigrationProject -InputObject $myService
+```
+PS C:\> Get-AzDataMigrationProject -InputObject $myService
 ```
 
 The above example retrieves the  Azure Database Migration project based on PSProject object input parameter passed in. 
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

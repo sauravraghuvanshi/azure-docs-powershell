@@ -26,11 +26,8 @@ The **Get-AzRedisCacheKey** cmdlet gets the access keys for an Azure Redis Cache
 ## EXAMPLES
 
 ### Example 1: Get the access keys for a Redis Cache
-```powershell
-Get-AzRedisCacheKey -ResourceGroupName "MyResourceGroup" -Name "MyCacheKey"
 ```
-
-```output
+PS C:\>Get-AzRedisCacheKey -ResourceGroupName "MyResourceGroup" -Name "MyCacheKey"
 PrimaryKey        : pJ+jruGKPHDKsEC8kmoybobH3TZx2njBR3ipEsquZFo=
 SecondaryKey      : sJ+jruGKPHDKsEC8kmoybobH3TZx2njBR3ipEsquZFo=
 ```

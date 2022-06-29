@@ -25,8 +25,8 @@ The **Get-AzHDInsightProperty** cmdlet gets properties specific to Azure HDInsig
 ## EXAMPLES
 
 ### Example 1: Get the properties of an Azure HDInsight cluster
-```powershell
-Get-AzHDInsightProperty -Location "East US 2"
+```
+PS C:\>Get-AzHDInsightProperty -Location "East US 2"
 ```
 
 This command gets properties from an HDInsight service from location East US 2.

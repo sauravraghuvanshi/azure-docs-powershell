@@ -24,16 +24,18 @@ List Azure Cosmos DB locations with their location properties. It includes Locat
 
 ## EXAMPLES
 
-### Example 1: Get Azure Cosmos DB Account Location Properties for Given Location
+### Example 1
 ```powershell
-Get-AzCosmosDBLocation -Location "Central US"
+Get Azure Cosmos DB Account Location Properties for Given Location
+
+PS C:\> Get-AzCosmosDBLocation -Location "Central US"
 
 Id                                                                                                      Name       Type                           Properties
 --                                                                                                      ----       ----                           ----------
 subscriptionId/subscriptionId/providers/Microsoft.DocumentDB/locations/centralus/ Central US Microsoft.DocumentDB/locations Microsoft.Azure.Commands.CosmosDB.Models.PSLocationP...
 
 
-Get-AzCosmosDBLocation -Location "Central US" | ConvertTo-Json
+PS C:\> Get-AzCosmosDBLocation -Location "Central US" | ConvertTo-Json
 {
     "Id":  "subscriptionId/<subscriptionId>/providers/Microsoft.DocumentDB/locations/centralus/",
     "Name":  "Central US",
@@ -50,9 +52,11 @@ Get-AzCosmosDBLocation -Location "Central US" | ConvertTo-Json
 }
 ```
 
-### Example 2: List Azure Cosmos DB Account Locations and their properties
+### Example 2
 ```powershell
-Get-AzCosmosDBLocation
+List Azure Cosmos DB Account Locations and their properties
+
+PS C:\> Get-AzCosmosDBLocation
 
 Id                                                                                                               Name                 Type                           Properties
 --                                                                                                               ----                 ----                           ----------
@@ -61,7 +65,7 @@ subscriptionId/<subscriptionId>/providers/Microsoft.DocumentDB/locations/central
 ....
 
 
-Get-AzCosmosDBLocation | ConvertTo-Json
+PS C:\> Get-AzCosmosDBLocation | ConvertTo-Json
 [
     {
         "Id":  "subscriptionId/<subscriptionId>/providers/Microsoft.DocumentDB/locations/brazilsoutheast/",

@@ -28,16 +28,17 @@ The **New-AzHDInsightStreamingMapReduceJobDefinition** cmdlet defines a Streamin
 ## EXAMPLES
 
 ### Example 1: Create a Streaming MapReduce job definition
-```powershell
-# Cluster info
-$clusterName = "your-hadoop-001"
-$clusterCreds = Get-Credential
+```
+PS C:\># Cluster info
+PS C:\>$clusterName = "your-hadoop-001"
+PS C:\>$clusterCreds = Get-Credential
 
 # Streaming MapReduce job details
-$statusFolder = "tempStatusFolder/"
-$query = "SHOW TABLES"
+PS C:\>$statusFolder = "tempStatusFolder/"
+PS C:\>$query = "SHOW TABLES"
 
-New-AzHDInsightStreamingMapReduceJobDefinition -StatusFolder $statusFolder -File $query `
+PS C:\>New-AzHDInsightStreamingMapReduceJobDefinition -StatusFolder $statusFolder `
+            -Query $query `
         | Start-AzHDInsightJob `
             -ClusterName $clusterName `
             -ClusterCredential $clusterCreds

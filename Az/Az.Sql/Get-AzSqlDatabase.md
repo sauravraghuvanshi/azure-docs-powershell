@@ -27,11 +27,8 @@ This cmdlet is also supported by the SQL Server Stretch Database service on Azur
 ## EXAMPLES
 
 ### Example 1: Get all databases on a server
-```powershell
-Get-AzSqlDatabase -ResourceGroupName "resourcegroup01" -ServerName "server01"
 ```
-
-```output
+PS C:\>Get-AzSqlDatabase -ResourceGroupName "resourcegroup01" -ServerName "server01"
 ResourceGroupName				         : resourcegroup01
 ServerName						           : server01
 DatabaseName					           : master
@@ -78,11 +75,8 @@ RequestedBackupStorageRedundancy : Geo
 This command gets all databases on the server named server01.
 
 ### Example 2: Get a database by name on a server
-```powershell
-Get-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database02"
 ```
-
-```output
+PS C:\>Get-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database02"
 ResourceGroupName				         : resourcegroup01
 ServerName						           : server01
 DatabaseName					           : database02
@@ -108,11 +102,8 @@ RequestedBackupStorageRedundancy : Geo
 This command gets a database named Database02 from a server named Server01.
 
 ### Example 3: Get all databases on a server using filtering
-```powershell
-Get-AzSqlDatabase -ResourceGroupName "resourcegroup01" -ServerName "server01" -DatabaseName "database*"
 ```
-
-```output
+PS C:\> Get-AzSqlDatabase -ResourceGroupName "resourcegroup01" -ServerName "server01" -DatabaseName "database*"
 ResourceGroupName				         : resourcegroup01
 ServerName						           : server01
 DatabaseName					           : database01

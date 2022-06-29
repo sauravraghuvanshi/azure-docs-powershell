@@ -33,15 +33,15 @@ The **Get-AzAutomationDscConfiguration** cmdlet gets APS Desired State Configura
 ## EXAMPLES
 
 ### Example 1: Get all DSC configurations
-```powershell
-Get-AzAutomationDscConfiguration -ResourceGroupName "ResourceGroup03" -AutomationAccountName "Contoso17"
+```
+PS C:\>Get-AzAutomationDscConfiguration -ResourceGroupName "ResourceGroup03" -AutomationAccountName "Contoso17"
 ```
 
 This command gets metadata for all DSC configurations in the Automation account named Contoso17.
 
 ### Example 2: Get a DSC configuration by name
-```powershell
-Get-AzAutomationDscConfiguration -ResourceGroupName "ResourceGroup03" -AutomationAccountName "Contoso17" -Name "ContosoConfiguration"
+```
+PS C:\>Get-AzAutomationDscConfiguration -ResourceGroupName "ResourceGroup03" -AutomationAccountName "Contoso17" -Name "ContosoConfiguration"
 ```
 
 This command gets metadata for a DSC configuration named MyConfiguration in the Automation account named Contoso17.

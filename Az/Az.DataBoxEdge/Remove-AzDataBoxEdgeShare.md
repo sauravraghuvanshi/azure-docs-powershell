@@ -39,7 +39,7 @@ The **Remove-AzDataBoxEdgeEdgeShare** cmdlet removes the associated edge shares 
 
 ### Example 1
 ```powershell
-Remove-AzDataBoxEdgeShare -ResourceGroupName resourceGroupName -DeviceName deviceName -Name shareName
+PS C:\> Remove-AzDataBoxEdgeShare -ResourceGroupName resourceGroupName -DeviceName deviceName -Name shareName
 ```
 
 ## PARAMETERS

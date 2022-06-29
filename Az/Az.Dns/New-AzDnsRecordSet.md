@@ -56,22 +56,22 @@ If a matching **RecordSet** already exists (same name and record type), you must
 ## EXAMPLES
 
 ### Example 1: Create a RecordSet of type A
-```powershell
-$Records = @()
-$Records += New-AzDnsRecordConfig -IPv4Address 1.2.3.4
-$RecordSet = New-AzDnsRecordSet -Name "www" -RecordType A -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
+```
+PS C:\> $Records = @()
+PS C:\> $Records += New-AzDnsRecordConfig -IPv4Address 1.2.3.4
+PS C:\> $RecordSet = New-AzDnsRecordSet -Name "www" -RecordType A -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
 
 # When creating a RecordSet containing a single record, the above sequence can also be condensed into a single line:
 
-$RecordSet = New-AzDnsRecordSet -Name "www" -RecordType A -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords (New-AzDnsRecordConfig -IPv4Address 1.2.3.4)
+PS C:\> $RecordSet = New-AzDnsRecordSet -Name "www" -RecordType A -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords (New-AzDnsRecordConfig -IPv4Address 1.2.3.4)
 
 # To create a record set containing multiple records, use New-AzDnsRecordConfig to add each record to the $Records array,
 # then call New-AzDnsRecordSet, as follows:
 
-$Records = @()
-$Records += New-AzDnsRecordConfig -IPv4Address 1.2.3.4
-$Records += New-AzDnsRecordConfig -IPv4Address 5.6.7.8
-$RecordSet = New-AzDnsRecordSet -Name "www" -RecordType A -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
+PS C:\> $Records = @()
+PS C:\> $Records += New-AzDnsRecordConfig -IPv4Address 1.2.3.4
+PS C:\> $Records += New-AzDnsRecordConfig -IPv4Address 5.6.7.8
+PS C:\> $RecordSet = New-AzDnsRecordSet -Name "www" -RecordType A -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
 ```
 
 This example creates a **RecordSet** named www in the zone myzone.com.
@@ -79,10 +79,10 @@ The record set is of type A and has a TTL of 1 hour (3600 seconds).
 It contains a single DNS record.
 
 ### Example 2: Create a RecordSet of type AAAA
-```powershell
-$Records = @()
-$Records += New-AzDnsRecordConfig -Ipv6Address 2001:db8::1
-$RecordSet = New-AzDnsRecordSet -Name "www" -RecordType AAAA -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
+```
+PS C:\> $Records = @()
+PS C:\> $Records += New-AzDnsRecordConfig -Ipv6Address 2001:db8::1
+PS C:\> $RecordSet = New-AzDnsRecordSet -Name "www" -RecordType AAAA -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
 ```
 
 This example creates a **RecordSet** named www in the zone myzone.com.
@@ -91,10 +91,10 @@ It contains a single DNS record.
 To create a **RecordSet** using only one line of pn_PowerShell_short, or to create a record set with multiple records, see Example 1.
 
 ### Example 3: Create a RecordSet of type CNAME
-```powershell
-$Records = @()
-$Records += New-AzDnsRecordConfig -Cname www.contoso.com
-$RecordSet = New-AzDnsRecordSet -Name "www" -RecordType CNAME -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
+```
+PS C:\> $Records = @()
+PS C:\> $Records += New-AzDnsRecordConfig -Cname www.contoso.com
+PS C:\> $RecordSet = New-AzDnsRecordSet -Name "www" -RecordType CNAME -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
 ```
 
 This example creates a **RecordSet** named www in the zone myzone.com.
@@ -103,10 +103,10 @@ It contains a single DNS record.
 To create a **RecordSet** using only one line of pn_PowerShell_short, or to create a record set with multiple records, see Example 1.
 
 ### Example 4: Create a RecordSet of type MX
-```powershell
-$Records = @()
-$Records += New-AzDnsRecordConfig -Exchange "mail.microsoft.com" -Preference 5
-$RecordSet = New-AzDnsRecordSet -Name "mail" -RecordType MX -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
+```
+PS C:\> $Records = @()
+PS C:\> $Records += New-AzDnsRecordConfig -Exchange "mail.microsoft.com" -Preference 5
+PS C:\> $RecordSet = New-AzDnsRecordSet -Name "mail" -RecordType MX -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
 ```
 
 This command creates a **RecordSet** named www in the zone myzone.com.
@@ -115,10 +115,10 @@ It contains a single DNS record.
 To create a **RecordSet** using only one line of pn_PowerShell_short, or to create a record set with multiple records, see Example 1.
 
 ### Example 5: Create a RecordSet of type NS
-```powershell
-$Records = @()
-$Records += New-AzDnsRecordConfig -Nsdname ns1-01.azure-dns.com
-$RecordSet = New-AzDnsRecordSet -Name "ns1" -RecordType NS -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
+```
+PS C:\> $Records = @()
+PS C:\> $Records += New-AzDnsRecordConfig -Nsdname ns1-01.azure-dns.com
+PS C:\> $RecordSet = New-AzDnsRecordSet -Name "ns1" -RecordType NS -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
 ```
 
 This command creates a **RecordSet** named ns1 in the zone myzone.com.
@@ -127,10 +127,10 @@ It contains a single DNS record.
 To create a **RecordSet** using only one line of pn_PowerShell_short, or to create a record set with multiple records, see Example 1.
 
 ### Example 6: Create a RecordSet of type PTR
-```powershell
-$Records = @()
-$Records += New-AzDnsRecordConfig -Ptrdname www.contoso.com
-$RecordSet = New-AzDnsRecordSet -Name "4" -RecordType PTR -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "3.2.1.in-addr.arpa" -DnsRecords $Records
+```
+PS C:\> $Records = @()
+PS C:\> $Records += New-AzDnsRecordConfig -Ptrdname www.contoso.com
+PS C:\> $RecordSet = New-AzDnsRecordSet -Name "4" -RecordType PTR -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "3.2.1.in-addr.arpa" -DnsRecords $Records
 ```
 
 This command creates a **RecordSet** named 4 in the zone 3.2.1.in-addr.arpa.
@@ -139,10 +139,10 @@ It contains a single DNS record.
 To create a **RecordSet** using only one line of pn_PowerShell_short, or to create a record set with multiple records, see Example 1.
 
 ### Example 7: Create a RecordSet of type SRV
-```powershell
-$Records = @()
-$Records += New-AzDnsRecordConfig -Priority 0 -Weight 5 -Port 8080 -Target sipservice.contoso.com
-$RecordSet = New-AzDnsRecordSet -Name "_sip._tcp" -RecordType SRV -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
+```
+PS C:\> $Records = @()
+PS C:\> $Records += New-AzDnsRecordConfig -Priority 0 -Weight 5 -Port 8080 -Target sipservice.contoso.com
+PS C:\> $RecordSet = New-AzDnsRecordSet -Name "_sip._tcp" -RecordType SRV -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
 ```
 
 This command creates a **RecordSet** named _sip._tcp in the zone myzone.com.
@@ -152,10 +152,10 @@ The service (sip) and the protocol (tcp) are specified as part of the record set
 To create a **RecordSet** using only one line of pn_PowerShell_short, or to create a record set with multiple records, see Example 1.
 
 ### Example 8: Create a RecordSet of type TXT
-```powershell
-$Records = @()
-$Records += New-AzDnsRecordConfig -Value "This is a TXT Record"
-$RecordSet = New-AzDnsRecordSet -Name "text" -RecordType TXT -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
+```
+PS C:\> $Records = @()
+PS C:\> $Records += New-AzDnsRecordConfig -Value "This is a TXT Record"
+PS C:\> $RecordSet = New-AzDnsRecordSet -Name "text" -RecordType TXT -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
 ```
 
 This command creates a **RecordSet** named text in the zone myzone.com.
@@ -164,10 +164,10 @@ It contains a single DNS record.
 To create a **RecordSet** using only one line of pn_PowerShell_short, or to create a record set with multiple records, see Example 1.
 
 ### Example 9: Create a RecordSet at the zone apex
-```powershell
-$Records = @()
-$Records += New-AzDnsRecordConfig -Ipv4Address 1.2.3.4
-$RecordSet = New-AzDnsRecordSet -Name "@" -RecordType A -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
+```
+PS C:\> $Records = @()
+PS C:\> $Records += New-AzDnsRecordConfig -Ipv4Address 1.2.3.4
+PS C:\> $RecordSet = New-AzDnsRecordSet -Name "@" -RecordType A -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
 ```
 
 This command creates a **RecordSet** at the apex (or root) of the zone myzone.com.
@@ -177,10 +177,10 @@ This is a constraint of the DNS standards; it is not a limitation of Azure DNS.
 To create a **RecordSet** using only one line of pn_PowerShell_short, or to create a record set with multiple records, see Example 1.
 
 ### Example 10: Create a wildcard Record Set
-```powershell
-$Records = @()
-$Records += New-AzDnsRecordConfig -Ipv4Address 1.2.3.4
-$RecordSet = New-AzDnsRecordSet -Name "*" -RecordType A -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
+```
+PS C:\> $Records = @()
+PS C:\> $Records += New-AzDnsRecordConfig -Ipv4Address 1.2.3.4
+PS C:\> $RecordSet = New-AzDnsRecordSet -Name "*" -RecordType A -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
 ```
 
 This command creates a **RecordSet** named * in the zone myzone.com.
@@ -188,8 +188,8 @@ This is a wildcard record set.
 To create a **RecordSet** using only one line of pn_PowerShell_short, or to create a record set with multiple records, see Example 1.
 
 ### Example 11: Create an empty record set
-```powershell
-$RecordSet = New-AzDnsRecordSet -Name "www" -RecordType A -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords @()
+```
+PS C:\>$RecordSet = New-AzDnsRecordSet -Name "www" -RecordType A -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords @()
 ```
 
 This command creates a **RecordSet** named www in the zone myzone.com.
@@ -197,8 +197,8 @@ The record set is of type A and has a TTL of 1 hour (3600 seconds).
 This is an empty record set, which acts as a placeholder to which you can later add records.
 
 ### Example 12: Create a record set and suppress all confirmation
-```powershell
-$RecordSet = New-AzDnsRecordSet -Name "www" -RecordType A -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords (New-AzDnsRecordConfig -Ipv4Address 1.2.3.4) -Confirm:$False -Overwrite
+```
+PS C:\>$RecordSet = New-AzDnsRecordSet -Name "www" -RecordType A -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords (New-AzDnsRecordConfig -Ipv4Address 1.2.3.4) -Confirm:$False -Overwrite
 ```
 
 This command creates a **RecordSet**.

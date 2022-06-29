@@ -17,25 +17,24 @@ Deletes an Azure NetApp Files (ANF) volume.
 ### ByFieldsParameterSet (Default)
 ```
 Remove-AzNetAppFilesVolume -ResourceGroupName <String> -AccountName <String> -PoolName <String> -Name <String>
- [-ForceDelete] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByParentObjectParameterSet
 ```
-Remove-AzNetAppFilesVolume -Name <String> [-ForceDelete] -PoolObject <PSNetAppFilesPool> [-PassThru]
+Remove-AzNetAppFilesVolume -Name <String> -PoolObject <PSNetAppFilesPool> [-PassThru]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByResourceIdParameterSet
 ```
-Remove-AzNetAppFilesVolume [-ForceDelete] -ResourceId <String> [-PassThru]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzNetAppFilesVolume -ResourceId <String> [-PassThru] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByObjectParameterSet
 ```
-Remove-AzNetAppFilesVolume [-ForceDelete] -InputObject <PSNetAppFilesVolume> [-PassThru]
+Remove-AzNetAppFilesVolume -InputObject <PSNetAppFilesVolume> [-PassThru]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -45,8 +44,8 @@ The **Remove-AzNetAppFilesVolume** cmdlet deletes an ANF volume.
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Remove-AzNetAppFilesVolume -ResourceGroupName "MyRG" -AccountName "MyAnfAccount" -PoolName "MyAnfPool" -Name "MyAnfVolume"
+```
+PS C:\>Remove-AzNetAppFilesVolume -ResourceGroupName "MyRG" -AccountName "MyAnfAccount" -PoolName "MyAnfPool" -Name "MyAnfVolume"
 ```
 
 This command deletes the ANF volume "MyAnfVolume".
@@ -75,21 +74,6 @@ The credentials, account, tenant, and subscription used for communication with A
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ForceDelete
-An option to force delete the volume. Will cleanup resources connected to the particular volume
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
 
 Required: False
 Position: Named
@@ -252,15 +236,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
-[New-AzNetAppFilesVolume](./New-AzNetAppFilesVolume.md)
-[Get-AzNetAppFilesVolume](./Get-AzNetAppFilesVolume.md)
-[Update-AzNetAppFilesVolume](./Update-AzNetAppFilesVolume.md)
-[Restore-AzNetAppFilesVolume](./Restore-AzNetAppFilesVolume.md)
-[Set-AzNetAppFilesVolumePool](./Set-AzNetAppFilesVolumePool.md)
-[Get-AzNetAppFilesVolumeBackupStatus](./Get-AzNetAppFilesVolumeBackupStatus.md)
-[Get-AzNetAppFilesVolumeRestoreStatus](./Get-AzNetAppFilesVolumeRestoreStatus.md)
-[Approve-AzNetAppFilesReplication](./Approve-AzNetAppFilesReplication.md)
-[Inititialize-AzNetAppFilesReplication](./Inititialize-AzNetAppFilesReplication.md)
-[Resume-AzNetAppFilesReplication](./Resume-AzNetAppFilesReplication.md)
-[Remove-AzNetAppFilesReplication](./Remove-AzNetAppFilesReplication.md)

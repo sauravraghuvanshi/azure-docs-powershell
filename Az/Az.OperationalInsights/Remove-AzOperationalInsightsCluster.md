@@ -39,7 +39,9 @@ Delete cluster, only apply to clusters with provisioning state "Succeeded"
 
 ### Example 1
 ```powershell
-Remove-AzOperationalInsightsCluster -ResourceGroupName "rg-name" -ClusterName "cluster-name"
+Remove-AzOperationalInsightsCluster -ResourceGroupName {rg-name} -ClusterName {cluster-name}
+
+true
 ```
 
 Delete cluster

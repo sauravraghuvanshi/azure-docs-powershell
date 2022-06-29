@@ -38,15 +38,15 @@ The **Remove-AzTenantDeployment** cmdlet removes an Azure deployment at the curr
 ## EXAMPLES
 
 ### Example 1: Remove a deployment with a given name
-```powershell
-Remove-AzTenantDeployment -Name "RolesDeployment"
+```
+PS C:\>Remove-AzTenantDeployment -Name "RolesDeployment"
 ```
 
 This command removes the deployment "RolesDeployment" at the current tenant scope.
 
 ### Example 2: Get a deployment and remove it
-```powershell
-Get-AzTenantDeployment -Name "RolesDeployment" | Remove-AzTenantDeployment
+```
+PS C:\>Get-AzTenantDeployment -Name "RolesDeployment" | Remove-AzTenantDeployment
 ```
 
 This command gets the deployment "RolesDeployment" at the current tenant scope and removes it.

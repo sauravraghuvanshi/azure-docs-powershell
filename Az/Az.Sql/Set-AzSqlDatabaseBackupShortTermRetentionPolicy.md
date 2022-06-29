@@ -42,10 +42,7 @@ The policy is the retention period, in days, for point-in-time restore backups a
 
 ### Example 1
 ```powershell
-Set-AzSqlDatabaseBackupShortTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 -RetentionDays 6 -DiffBackupIntervalInHours 24
-```
-
-```output
+PS C:\> Set-AzSqlDatabaseBackupShortTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 -RetentionDays 6 -DiffBackupIntervalInHours 24
 ResourceGroupName ServerName DatabaseName RetentionDays DiffBackupIntervalInHours
 ----------------- ---------- ------------ ------------- -------------------------
 resourcegroup01   server01   database01   6             24
@@ -55,10 +52,7 @@ This command sets the short term retention policy for database01 to 6 retention 
 
 ### Example 2
 ```powershell
-Get-AzSqlDatabase -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 | Set-AzSqlDatabaseBackupShortTermRetentionPolicy -RetentionDays 5 -DiffBackupIntervalInHours 12
-```
-
-```output
+PS C:\> Get-AzSqlDatabase -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 | Set-AzSqlDatabaseBackupShortTermRetentionPolicy -RetentionDays 5 -DiffBackupIntervalInHours 12
 ResourceGroupName ServerName DatabaseName RetentionDays DiffBackupIntervalInHours
 ----------------- ---------- ------------ ------------- ------------------------
 resourcegroup01   server01   database01   5             12
@@ -68,10 +62,7 @@ This command sets the short term retention policy for database01 to 5 retention 
 
 ### Example 3
 ```powershell
-Set-AzSqlDatabaseBackupShortTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 -RetentionDays 7
-```
-
-```output
+PS C:\> Set-AzSqlDatabaseBackupShortTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 -RetentionDays 7
 ResourceGroupName ServerName DatabaseName RetentionDays DiffBackupIntervalInHours
 ----------------- ---------- ------------ ------------- -------------------------
 resourcegroup01   server01   database01   7             12

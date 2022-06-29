@@ -40,15 +40,13 @@ Updates a data export.
 
 ### Example 1
 ```powershell
-Update-AzOperationalInsightsDataExport -ResourceGroupName "rg-name" -WorkspaceName "workspace-name" -DataExportName "dataExportName" -TableName "table_name" -Enable $true
-```
+PS C:\> Update-AzOperationalInsightsDataExport -ResourceGroupName {rg-name} -WorkspaceName {workspace-name} -DataExportName {dataExportName} -TableNames {table_names} -Enable $true
 
-```output
 Name             : {dataExportName}
 Id               : /subscriptions/{subscription}/resourcegroups/{rg-name}/providers/microsoft.operationalinsights/workspaces/{workspace-name}/dataexports/{dataExportName}
 Type             : Microsoft.OperationalInsights/workspaces/export
 DataExportId     : {GUID}
-TableNames       : {table_name}
+TableNames       : {table_names}
 ResourceId       : /subscriptions/{resource_subscription}/resourceGroups/{resource_rg}/providers/Microsoft.Storage/storageAc
                    counts/{storage_name}
 DataExportType   : StorageAccount

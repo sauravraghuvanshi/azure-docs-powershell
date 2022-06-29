@@ -35,9 +35,9 @@ The **Copy-AzRecoveryServicesVault** cmdlet copies data from a vault in one regi
 ### Example 1: Copy data from vault1 to vault2
 
 ```powershell
-$sourceVault = Get-AzRecoveryServicesVault -ResourceGroupName "rgName1" -Name "vault1"
-$targetVault = Get-AzRecoveryServicesVault -ResourceGroupName "rgName2" -Name "vault2"
-Copy-AzRecoveryServicesVault -SourceVault $sourceVault -TargetVault $targetVault
+PS C:\> $sourceVault = Get-AzRecoveryServicesVault -ResourceGroupName "rgName1" -Name "vault1"
+PS C:\> $targetVault = Get-AzRecoveryServicesVault -ResourceGroupName "rgName2" -Name "vault2"
+PS C:\> Copy-AzRecoveryServicesVault -SourceVault $sourceVault -TargetVault $targetVault
 ```
 
 The first two cmdlets fetch Recovery Services Vault - vault1 and vault2 respectively. The second command triggers a complete data move from vault1 to vault2. 
@@ -46,9 +46,9 @@ $sourceVault and $targetVault can also belong to different subscription within s
 ### Example 2: Copy data from vault1 to vault2 with only failed items
 
 ```powershell
-$sourceVault = Get-AzRecoveryServicesVault -ResourceGroupName "rgName1" -Name "vault1"
-$targetVault = Get-AzRecoveryServicesVault -ResourceGroupName "rgName2" -Name "vault2"
-Copy-AzRecoveryServicesVault -SourceVault $sourceVault -TargetVault $targetVault -RetryOnlyFailed
+PS C:\> $sourceVault = Get-AzRecoveryServicesVault -ResourceGroupName "rgName1" -Name "vault1"
+PS C:\> $targetVault = Get-AzRecoveryServicesVault -ResourceGroupName "rgName2" -Name "vault2"
+PS C:\> Copy-AzRecoveryServicesVault -SourceVault $sourceVault -TargetVault $targetVault -RetryOnlyFailed
 ```
 
 The first two cmdlets fetch Recovery Services Vault - vault1 and vault2 respectively.

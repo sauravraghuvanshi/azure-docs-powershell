@@ -46,7 +46,7 @@ Restore/Revert a volume to the snapshot specified in the SnapshotId paramter
 
 ### Example 1
 ```powershell
-Restore-AzNetAppFilesVolume -ResourceGroupName "MyRG" -AccountName "MyAccount" -PoolName "MyPool" -VolumeName "MyVolume" -SnapshotId "7d6e4069-6c78-6c61-7bf6-c60968e45fbf"
+PS C:\> Restore-AzNetAppFilesVolume -ResourceGroupName "MyRG" -Location "westus2" -AccountName "MyAccount" -PoolName "MyPool" -VolumeName "MyVolume" -SnapshotId 7d6e4069-6c78-6c61-7bf6-c60968e45fbf
 ```
 
 This command Restores/Reverts the volume MyVolume to one of its snapshots with the snapshotId of 7d6e4069-6c78-6c61-7bf6-c60968e45fbf
@@ -253,16 +253,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
-[New-AzNetAppFilesVolume](./New-AzNetAppFilesVolume.md)
-[Get-AzNetAppFilesVolume](./Get-AzNetAppFilesVolume.md)
-[Update-AzNetAppFilesVolume](./Update-AzNetAppFilesVolume.md)
-[Remove-AzNetAppFilesVolume](./Remove-AzNetAppFilesVolume.md)
-[Set-AzNetAppFilesVolumePool](./Set-AzNetAppFilesVolumePool.md)
-[Get-AzNetAppFilesVolumeBackupStatus](./Get-AzNetAppFilesVolumeBackupStatus.md)
-[Get-AzNetAppFilesVolumeRestoreStatus](./Get-AzNetAppFilesVolumeRestoreStatus.md)
-[New-AzNetAppFilesVolumeRestoreStatus](./New-AzNetAppFilesVolumeRestoreStatus.md)
-[Approve-AzNetAppFilesReplication](./Approve-AzNetAppFilesReplication.md)
-[Inititialize-AzNetAppFilesReplication](./Inititialize-AzNetAppFilesReplication.md)
-[Resume-AzNetAppFilesReplication](./Resume-AzNetAppFilesReplication.md)
-[Remove-AzNetAppFilesReplication](./Remove-AzNetAppFilesReplication.md)

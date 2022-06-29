@@ -27,10 +27,8 @@ Computes, resolves and validate the dependencies of the moveResources in the mov
 
 ### Example 1: Compute, resolve and validate the dependencies of the Move Resources in the Move collection.
 ```powershell
-Resolve-AzResourceMoverMoveCollectionDependency -ResourceGroupName "RG-MoveCollection-demoRMS" -MoveCollectionName "PS-centralus-westcentralus-demoRMS" 
-```
+PS C:\> Resolve-AzResourceMoverMoveCollectionDependency -ResourceGroupName "RG-MoveCollection-demoRMS" -MoveCollectionName "PS-centralus-westcentralus-demoRMS" 
 
-```output
 AdditionalInfo : 
 Code           : MoveCollectionResolveDependenciesOperationFailed
 Detail         : {}

@@ -34,15 +34,15 @@ The **New-AzServiceBusRule** cmdlet Creates a new rule for given subscription.
 ## EXAMPLES
 
 ### Example 1
-```powershell
-New-AzServiceBusRule -ResourceGroup Default-ServiceBus-WestUS -Namespace SBExample1 -Topic SBTopic -Subscription SBSubscription -Name SBRule -SqlExpression "mysqlexpression='test'"
+```
+PS C:\> New-AzServiceBusRule -ResourceGroup Default-ServiceBus-WestUS -Namespace SBExample1 -Topic SBTopic -Subscription SBSubscription -Name SBRule -SqlExpression "mysqlexpression='test'"
 ```
 
 The New-AzServiceBusRule cmdlet creates a new rule for the specified Subscription.
 
 ### Example 2
-```powershell
-New-AzServiceBusRule -ResourceGroup Default-ServiceBus-WestUS -Namespace SBExample1 -Topic SBTopic -Subscription SBSubscription -Name SBRule -SqlExpression "mysqlexpression='test'" -ActionSqlExpression "SET myAction='test'" -RequiresPreprocessing
+```
+PS C:\> New-AzServiceBusRule -ResourceGroup Default-ServiceBus-WestUS -Namespace SBExample1 -Topic SBTopic -Subscription SBSubscription -Name SBRule -SqlExpression "mysqlexpression='test'" -ActionSqlExpression "SET myAction='test'" -RequiresPreprocessing
 ```
 
 The New-AzServiceBusRule cmdlet creates a new rule for the specified Subscription with ActionFilter.

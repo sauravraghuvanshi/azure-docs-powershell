@@ -36,10 +36,8 @@ Update the editable attributes of a Key Vault managed Azure Storage Account.
 
 ### Example 1: Update the active key to 'key2' on a Key Vault managed Azure Storage Account.
 ```powershell
-Update-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -ActiveKeyName 'key2'
-```
+PS C:\> Update-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -ActiveKeyName 'key2'
 
-```output
 Id                  : https://myvault.vault.azure.net:443/storage/mystorageaccount
 Vault Name          : myvault
 AccountName         : mystorageaccount

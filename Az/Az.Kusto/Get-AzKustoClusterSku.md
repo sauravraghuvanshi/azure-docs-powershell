@@ -32,10 +32,8 @@ Lists eligible SKUs for Kusto resource provider.
 
 ### Example 1: Lists eligible SKUs
 ```powershell
-Get-AzKustoClusterSku
-```
+PS C:\> Get-AzKustoClusterSku
 
-```output
 Location             Name                        ResourceType Tier
 --------             ----                        ------------ ----
 {eastus2}            D13_v2                      clusters     Standard
@@ -76,10 +74,8 @@ The above command lists eligible SKUs.
 
 ### Example 2: Lists eligible SKUs for specific cluster
 ```powershell
- Get-AzKustoClusterSku -ResourceGroupName testrg -ClusterName testnewkustocluster
-```
+PS C:\>  Get-AzKustoClusterSku -ResourceGroupName testrg -ClusterName testnewkustocluster
 
-```output
 ResourceType
 ------------
 Microsoft.Kusto/clusters
@@ -163,9 +159,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Kusto.Models.Api20220201.IAzureResourceSku
+### Microsoft.Azure.PowerShell.Cmdlets.Kusto.Models.Api202101.IAzureResourceSku
 
-### Microsoft.Azure.PowerShell.Cmdlets.Kusto.Models.Api20220201.ISkuDescription
+### Microsoft.Azure.PowerShell.Cmdlets.Kusto.Models.Api202101.ISkuDescription
 
 ## NOTES
 

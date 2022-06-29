@@ -26,10 +26,10 @@ The **Set-AzApplicationGateway** cmdlet updates an Azure application gateway.
 ## EXAMPLES
 
 ### Example 1: Update an application gateway
-```powershell
-$AppGw = Get-AzApplicationGateway -Name Test -ResourceGroupName Appgwtest
-$AppGw.Tag = @{"key"="value"}
-$UpdatedAppGw = Set-AzApplicationGateway -ApplicationGateway $AppGw
+```
+PS C:\>$AppGw = Get-AzApplicationGateway -Name Test -ResourceGroupName Appgwtest
+PS C:\>$AppGw.Tag = @{"key"="value"}
+PS C:\>$UpdatedAppGw = Set-AzApplicationGateway -ApplicationGateway $AppGw
 ```
 
 These commands update the application gateway with settings in the $AppGw variable and stores the updated gateway in the $UpdatedAppGw variable.

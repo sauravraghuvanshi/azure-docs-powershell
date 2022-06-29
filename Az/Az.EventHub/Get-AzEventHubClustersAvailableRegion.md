@@ -25,10 +25,8 @@ The Get-AzEventHubClustersAvailableRegion cmdlet list of regions where dedicated
 
 ### Example 1
 ```powershell
-Get-AzEventHubClustersAvailableRegion
-```
+PS C:\> Get-AzEventHubClustersAvailableRegion
 
-```output
 Location
 --------
 northcentralus

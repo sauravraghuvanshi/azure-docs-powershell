@@ -84,11 +84,9 @@ The Add-AzSqlElasticJobTarget cmdlet adds a target resource to a target group
 
 ### Example 1: Add a server target
 ```powershell
-$tg = Get-AzSqlElasticJobTargetGroup -ResourceGroupName rg -ServerName elasticjobserver -Name tg1
+PS C:\> $tg = Get-AzSqlElasticJobTargetGroup -ResourceGroupName rg -ServerName elasticjobserver -Name tg1
 $tg | Add-AzSqlElasticJobTarget -ServerName s1 -RefreshCredentialName cred1
-```
 
-```output
 TargetGroupName TargetType TargetServerName TargetDatabaseName TargetElasticPoolName TargetShardMapName RefreshCredentialName MembershipType
 --------------- ---------- ---------------- ------------------ --------------------- ------------------ --------------------- --------------
 tg1             SqlServer  s1                                                                           cred1                 Include
@@ -96,11 +94,9 @@ tg1             SqlServer  s1                                                   
 
 ### Example 2: Add a database target
 ```powershell
-$tg = Get-AzSqlElasticJobTargetGroup -ResourceGroupName rg -ServerName elasticjobserver -Name tg1
+PS C:\> $tg = Get-AzSqlElasticJobTargetGroup -ResourceGroupName rg -ServerName elasticjobserver -Name tg1
 $tg | Add-AzSqlElasticJobTarget -ServerName s1 -DatabaseName db2
-```
 
-```output
 TargetGroupName TargetType  TargetServerName TargetDatabaseName TargetElasticPoolName TargetShardMapName RefreshCredentialName MembershipType
 --------------- ----------  ---------------- ------------------ --------------------- ------------------ --------------------- --------------
 tg1             SqlDatabase s1               db2                                                                               Include
@@ -108,10 +104,8 @@ tg1             SqlDatabase s1               db2                                
 
 ### Example 3: Add an elastic pool target
 ```powershell
-$tg | Add-AzSqlElasticJobTarget -ServerName s1 -ElasticPoolName ep1 -RefreshCredentialName cred1
-```
+PS C:\> $tg | Add-AzSqlElasticJobTarget -ServerName s1 -ElasticPoolName ep1 -RefreshCredentialName cred1
 
-```output
 TargetGroupName TargetType     TargetServerName TargetDatabaseName TargetElasticPoolName TargetShardMapName RefreshCredentialName MembershipType
 --------------- ----------     ---------------- ------------------ --------------------- ------------------ --------------------- --------------
 tg1             SqlElasticPool s1                                  ep1                                      cred1                 Include
@@ -119,11 +113,9 @@ tg1             SqlElasticPool s1                                  ep1          
 
 ### Example 4: Add a shard map target
 ```powershell
-$tg = Get-AzSqlElasticJobTargetGroup -ResourceGroupName rg -ServerName elasticjobserver -Name tg1
+PS C:\> $tg = Get-AzSqlElasticJobTargetGroup -ResourceGroupName rg -ServerName elasticjobserver -Name tg1
 $tg | Add-AzSqlElasticJobTarget -ServerName s1 -ShardMapName sm1 -DatabaseName db1 -RefreshCredentialName cred1
-```
 
-```output
 TargetGroupName TargetType  TargetServerName TargetDatabaseName TargetElasticPoolName TargetShardMapName RefreshCredentialName MembershipType
 --------------- ----------  ---------------- ------------------ --------------------- ------------------ --------------------- --------------
 tg1             SqlShardMap s1               db1                                      sm1                cred1                 Include

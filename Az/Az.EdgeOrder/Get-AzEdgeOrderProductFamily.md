@@ -26,11 +26,9 @@ This method provides the list of product families for the given subscription.
 
 ### Example 1: Get details of specific productFamilies
 ```powershell
-$familyDetails = Get-AzEdgeOrderProductFamily -SubscriptionId SubscriptionId -FilterableProperty  @{"azurestackedge"=@($filterableProperty)} -Expand "configurations"
-$familyDetails.ProductLine.Product.Configuration.HierarchyInformation
-```
+PS C:\>  $familyDetails = Get-AzEdgeOrderProductFamily -SubscriptionId SubscriptionId -FilterableProperty  @{"azurestackedge"=@($filterableProperty)} -Expand "configurations"
+PS C:\> $familyDetails.ProductLine.Product.Configuration.HierarchyInformation
 
-```output
 ConfigurationName ProductFamilyName ProductLineName ProductName
 ----------------- ----------------- --------------- -----------
 edgep_high        azurestackedge    azurestackedge  azurestackedgegpu

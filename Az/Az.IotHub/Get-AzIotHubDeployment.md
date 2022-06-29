@@ -40,14 +40,14 @@ See https://docs.microsoft.com/azure/iot-edge/module-deployment-monitoring for m
 
 ### Example 1
 ```powershell
-Get-AzIotHubDeployment -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -Name "deploy1"
+PS C:\> Get-AzIotHubDeployment -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -Name "deploy1"
 ```
 
 Get the details of an IoT Edge deployment.
 
 ### Example 2
 ```powershell
-Get-AzIotHubDeployment -ResourceGroupName "myresourcegroup" -IotHubName "myiothub"
+PS C:\> Get-AzIotHubDeployment -ResourceGroupName "myresourcegroup" -IotHubName "myiothub"
 ```
 
 List all IoT Edge deployments in an IoT Hub.

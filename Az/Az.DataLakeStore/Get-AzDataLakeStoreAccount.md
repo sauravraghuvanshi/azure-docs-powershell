@@ -38,8 +38,8 @@ The **Get-AzDataLakeStoreAccount** cmdlet gets details of a Data Lake Store acco
 ## EXAMPLES
 
 ### Example 1: Get a Data Lake Store account
-```powershell
-Get-AzDataLakeStoreAccount -Name "ContosoADL"
+```
+PS C:\>Get-AzDataLakeStoreAccount -Name "ContosoADL"
 ```
 
 This command gets the account named ContosoADL.

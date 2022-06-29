@@ -26,11 +26,9 @@ Create a in-memory object for VolumeMount
 
 ### Example 1: Specify a volume mount available to a container instance
 ```powershell
-New-AzContainerInstanceVolumeMountObject -Name 
+PS C:\> New-AzContainerInstanceVolumeMountObject -Name 
 "mnt" -MountPath "/mnt/azfile" -ReadOnly $true
-```
 
-```output
 MountPath   Name ReadOnly
 ---------   ---- --------
 /mnt/azfile mnt  True

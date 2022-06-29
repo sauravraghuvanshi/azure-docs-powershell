@@ -26,7 +26,7 @@ The **Remove-AzDataLakeStoreVirtualNetworkRule** cmdlet removes the specified vi
 
 ### Example 1
 ```powershell
-Remove-AzDataLakeStoreVirtualNetworkRule -Account "dls" -Name "myVNET"
+PS C:\> Remove-AzDataLakeStoreVirtualNetworkRule -Account "dls" -Name "myVNET"
 ```
 
 Removes virtual network rule "myVNET" from account "dls"

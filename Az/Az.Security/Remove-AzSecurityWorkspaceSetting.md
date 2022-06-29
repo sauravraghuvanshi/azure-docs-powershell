@@ -40,7 +40,7 @@ This action will make the newly installed security agents to report to the defau
 
 ### Example 1
 ```powershell
-Remove-AzSecurityWorkspaceSetting -Name "default"
+PS C:\> Remove-AzSecurityWorkspaceSetting -Name "default"
 ```
 
 Deletes the security workspace setting for this subscription.

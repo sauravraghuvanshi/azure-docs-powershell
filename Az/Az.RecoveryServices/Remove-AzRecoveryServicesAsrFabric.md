@@ -25,8 +25,8 @@ The **Remove-AzRecoveryServicesAsrFabric** cmdlet removes the specified Azure Si
 ## EXAMPLES
 
 ### Example 1
-```powershell
-$currentJob = Remove-AzRecoveryServicesAsrFabric -Fabric $Fabric
+```
+PS C:\> $currentJob = Remove-AzRecoveryServicesAsrFabric -Fabric $Fabric
 ```
 
 Starts the deletion of specified fabric and returns the ASR job used to track the operation.

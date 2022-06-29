@@ -77,35 +77,35 @@ Removes an Azure Event Grid event subscription for an Azure Event Grid topic, a 
 
 ### Example 1
 ```powershell
-Remove-AzEventGridSubscription -ResourceGroup MyResourceGroup -TopicName Topic1 -EventSubscriptionName EventSubscription1
+PS C:\> Remove-AzEventGridSubscription -ResourceGroup MyResourceGroup -TopicName Topic1 -EventSubscriptionName EventSubscription1
 ```
 
 Removes the event subscription \`EventSubscription1\` to an Azure Event Grid topic \`Topic1\` in resource group \`MyResourceGroupName\`.
 
 ### Example 2
 ```powershell
-Remove-AzEventGridSubscription -ResourceGroupName MyResourceGroupName -EventSubscriptionName EventSubscription1
+PS C:\> Remove-AzEventGridSubscription -ResourceGroupName MyResourceGroupName -EventSubscriptionName EventSubscription1
 ```
 
 Removes the event subscription \`EventSubscription1\` to a resource group \`MyResourceGroupName\`.
 
 ### Example 3
 ```powershell
-Remove-AzEventGridSubscription -EventSubscriptionName EventSubscription1
+PS C:\> Remove-AzEventGridSubscription -EventSubscriptionName EventSubscription1
 ```
 
 Removes the event subscription \`EventSubscription1\` to the default Azure subscription.
 
 ### Example 4
 ```powershell
-Get-AzResource -ResourceId "/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.EventHub/namespaces/$namespaceName" | Remove-AzEventGridSubscription -EventSubscriptionName EventSubscription1
+PS C:\> Get-AzResource -ResourceId "/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.EventHub/namespaces/$namespaceName" | Remove-AzEventGridSubscription -EventSubscriptionName EventSubscription1
 ```
 
 Removes the event subscription \`EventSubscription1\` to an Event Hub namespace.
 
 ### Example 5
 ```powershell
-Get-AzEventGridTopic -ResourceGroup MyResourceGroup -TopicName Topic1 | Remove-AzEventGridSubscription -EventSubscriptionName EventSubscription1
+PS C:\> Get-AzEventGridTopic -ResourceGroup MyResourceGroup -TopicName Topic1 | Remove-AzEventGridSubscription -EventSubscriptionName EventSubscription1
 ```
 
 Removes the event subscription \`EventSubscription1\` to an Event Grid Topic.

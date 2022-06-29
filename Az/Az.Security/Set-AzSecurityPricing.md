@@ -16,13 +16,15 @@ Enables or disables Azure Defender plans for a subscription in Azure Security Ce
 ## SYNTAX
 
 ### SubscriptionLevelResource (Default)
-```
+
+```powershell
 Set-AzSecurityPricing -Name <String> -PricingTier <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
-```
+
+```powershell
 Set-AzSecurityPricing -InputObject <PSSecurityPricing> [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
@@ -38,12 +40,13 @@ For details about Azure Defender and the available plans, see [Introduction to A
 ### Example 1
 
 ```powershell
-Set-AzSecurityPricing -Name "virtualmachines" -PricingTier "Standard"
+PS C:\> Set-AzSecurityPricing -Name "virtualmachines" -PricingTier "Standard"
 ```
 
 Enables **Azure Defender for servers** for the subscription.
 
 "Standard" refers to the "On" state for an Azure Defender plan as shown in Azure Security Center's pricing and settings area of the Azure portal.
+
 
 ## PARAMETERS
 
@@ -144,6 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

@@ -42,14 +42,14 @@ The returned rollout object contains the services, service units and steps that 
 
 ### Example 1 Get the rollout
 ```powershell
-Get-AzDeploymentManagerRollout -ResourceGroupName ContosoResourceGroup -Name ContosoRollout
+PS C:\> Get-AzDeploymentManagerRollout -ResourceGroupName ContosoResourceGroup -Name ContosoRollout
 ```
 
 This command gets a rollout named ContosoRollout in the ContosoResourceGroup. 
 
 ### Example 2 Get and display the rollout details
 ```powershell
-Get-AzDeploymentManagerRollout -ResourceGroupName ContosoResourceGroup -Name ContosoRollout -Verbose
+PS C:\> Get-AzDeploymentManagerRollout -ResourceGroupName ContosoResourceGroup -Name ContosoRollout -Verbose
 ```
 
 This command gets a rollout named ContosoRollout in the ContosoResourceGroup. 
@@ -57,14 +57,14 @@ The -Verbose switch displays all the rollout details hierarchically; showing the
 
 ### Example 3: Get a rollout using the resource identifier
 ```powershell
-Get-AzDeploymentManagerRollout -ResourceId "/subscriptions/subscriptionId/resourcegroups/ContosoResourceGroup/providers/Microsoft.DeploymentManager/rollouts/ContosoRollout"
+PS C:\> Get-AzDeploymentManagerRollout -ResourceId "/subscriptions/subscriptionId/resourcegroups/ContosoResourceGroup/providers/Microsoft.DeploymentManager/rollouts/ContosoRollout"
 ```
 
 This command gets a rollout named ContosoRollout in the ContosoResourceGroup.
 
 ### Example 4: Get a rollout using the rollout object.
 ```powershell
-Get-AzDeploymentManagerRollout -InputObject $rolloutObject
+PS C:\> Get-AzDeploymentManagerRollout -InputObject $rolloutObject
 ```
 
 This command gets a rollout whose name and ResourceGroup match the Name and ResourceGroupName properties of the $rolloutObject, respectively.

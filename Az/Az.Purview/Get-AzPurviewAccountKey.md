@@ -1,10 +1,10 @@
 ---
-external help file: Az.Purview-help.xml
+external help file: 
 Module Name: Az.Purview
 online version: https://docs.microsoft.com/powershell/module/az.purview/get-azpurviewaccountkey
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/Purview/help/Get-AzPurviewAccountKey.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/Purview/help/Get-AzPurviewAccountKey.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/help/Get-AzPurviewAccountKey.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/help/Get-AzPurviewAccountKey.md
 ---
 
 # Get-AzPurviewAccountKey
@@ -16,7 +16,7 @@ List the authorization keys associated with this account.
 
 ```
 Get-AzPurviewAccountKey -AccountName <String> -ResourceGroupName <String> [-SubscriptionId <String[]>]
- [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -26,13 +26,11 @@ List the authorization keys associated with this account.
 
 ### Example 1: List the authorization keys associated with a specified account.
 ```powershell
-Get-AzPurviewAccountKey -AccountName test-pa -ResourceGroupName test-rg
-```
+PS C:\> Get-AzPurviewAccountKey -AccountName test-pa -ResourceGroupName test-rg
 
-```output
 AtlasKafkaPrimaryEndpoint
 -------------------------
-Endpoint=sb://atlas-xxxxxxxx-5348-4811-a336-759242a25d37.servicebus.windows.net/;SharedAccessKeyName=AlternateSharedAccessKey;SharedAcces…
+Endpoint=sb://atlas-xxxxxxxx-5348-4811-a336-759242a25d37.servicebus.windows.net/;SharedAccessKeyName=AlternateSharedAccessKey;SharedAcces… 
 ```
 
 List the authorization keys associated with account 'test-pa'.
@@ -144,3 +142,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
+

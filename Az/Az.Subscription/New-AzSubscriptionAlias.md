@@ -27,14 +27,14 @@ The **New-AzSubscriptionAlias** cmdlet creates new alias and subscription
 
 ### Example 1
 ```powershell
-New-AzSubscriptionAlias -AliasName "NewAlias1" -SubscriptionName "Subscription1" -BillingScope $BillingScope -Workload Production
+PS C:\> New-AzSubscriptionAlias -AliasName "NewAlias1" -SubscriptionName "Subscription1" -BillingScope $BillingScope -Workload Production
 ```
 
 Creates new alias and EA subscription
 
 ### Example 2
 ```powershell
-New-AzSubscriptionAlias -AliasName "NewAlias2" -SubscriptionName "Subscription2" -BillingScope $BillingScope -Workload DevTest
+PS C:\> New-AzSubscriptionAlias -AliasName "NewAlias2" -SubscriptionName "Subscription2" -BillingScope $BillingScope -Workload DevTest
 ```
 
 Creates new alias and Dev/Test EA subscription

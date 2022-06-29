@@ -25,15 +25,15 @@ List of all the `ReservationOrder`s that the user has access to in the current t
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzReservationOrder
+```
+PS C:\> Get-AzReservationOrder
 ```
 
 List all `ReservationOrder` that the user has access to in the current tenant
 
 ### Example 2
-```powershell
-Get-AzReservationOrder -ReservationOrderId "00000000-ffff-ffff-0000-00000fffff"
+```
+PS C:\> Get-AzReservationOrder -ReservationOrderId "00000000-ffff-ffff-0000-00000fffff"
 ```
 
 Get `ReservationOrder` with the specified ReservationOrderId

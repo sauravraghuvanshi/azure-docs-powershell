@@ -35,10 +35,7 @@ If you omit a required template parameter, the cmdlet prompts you for the value.
 
 ### Example 1: Modify an integration account map
 ```powershell
-Set-AzIntegrationAccountMap -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31" -MapName "IntegrationAccountMap47" -MapDefinition $MapContent
-```
-
-```output
+PS C:\>Set-AzIntegrationAccountMap -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31" -MapName "IntegrationAccountMap47" -MapDefinition $MapContent
 Id          : /subscriptions/<SubscriptionId>/resourceGroups/ResourceGroup11/providers/Microsoft.Logic/integrationAccounts/IntegrationAccount31/maps/IntegrationAccountMap47
 Name        : IntegrationAccountMap47
 Type        : Microsoft.Logic/integrationAccounts/maps

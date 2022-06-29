@@ -39,14 +39,14 @@ The **Reset-AzSynapseSqlAuditSetting** cmdlet removes the auditing settings of a
 
 ### Example 1
 ```powershell
-Reset-AzSynapseSqlAuditSetting -WorkspaceName ContosoWorkspace
+PS C:\> Reset-AzSynapseSqlAuditSetting -WorkspaceName ContosoWorkspace
 ```
 
 This command removes the auditing settings of an Azure Synapse Analytics Workspace named ContosoWorkspace.
 
 ### Example 2
 ```powershell
-Get-AzSynapseWorkspace -Name ContosoWorkspace | Reset-AzSynapseSqlAuditSetting
+PS C:\> Get-AzSynapseWorkspace -Name ContosoWorkspace | Reset-AzSynapseSqlAuditSetting
 ```
 
 This command removes the auditing settings of an Azure Synapse Analytics Workspace named ContosoWorkspace through pipeline.

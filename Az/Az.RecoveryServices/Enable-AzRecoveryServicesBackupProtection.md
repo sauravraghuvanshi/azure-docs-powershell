@@ -47,8 +47,8 @@ Enable-AzRecoveryServicesBackupProtection [[-Policy] <PolicyBase>] [-Protectable
 ```
 Enable-AzRecoveryServicesBackupProtection [[-Policy] <PolicyBase>] [-Item] <ItemBase>
  [-InclusionDisksList <String[]>] [-ExclusionDisksList <String[]>] [-ResetExclusionSettings]
- [-ExcludeAllDataDisks] [-VaultId <String>] [-DefaultProfile <IAzureContextContainer>] [-Token <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-ExcludeAllDataDisks] [-VaultId <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,12 +60,9 @@ Set the vault context by using the Set-AzRecoveryServicesVaultContext cmdlet bef
 
 ### Example 1: Enable Backup protection for an item
 ```powershell
-$Pol = Get-AzRecoveryServicesBackupProtectionPolicy -Name "DefaultPolicy"
-$inclusionDiskLUNS = ("1", "2")
-Enable-AzRecoveryServicesBackupProtection -Policy $Pol -Name "V2VM" -ResourceGroupName "RGName1" -InclusionDisksList $inclusionDiskLUNS
-```
-
-```output
+PS C:\> $Pol = Get-AzRecoveryServicesBackupProtectionPolicy -Name "DefaultPolicy"
+PS C:\> $inclusionDiskLUNS = ("1", "2")
+PS C:\> Enable-AzRecoveryServicesBackupProtection -Policy $Pol -Name "V2VM" -ResourceGroupName "RGName1" -InclusionDisksList $inclusionDiskLUNS
 WorkloadName    Operation        Status          StartTime                  EndTime
 ------------    ---------        ------          ---------                  -------
 co03-vm         ConfigureBackup  Completed       11-Apr-16 12:19:49 PM      11-Apr-16 12:19:54 PM
@@ -266,21 +263,6 @@ Required: True
 Position: 3
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Token
-Auxiliary access token for authenticating critical operation to resource guard subscription
-
-```yaml
-Type: System.String
-Parameter Sets: ModifyProtection
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

@@ -39,8 +39,8 @@ Update a SSH Public Key resource.
 
 ### Example 1
 ```powershell
-$SshKey1 = Get-AzSshKey -ResourceGroupName "testRG" -Name "sshKey1"
-Update-AzSshKey -ResourceGroupName "testRG" -Name "sshKey2" -PublicKey $SshKey1.publickey
+PS C:\> $SshKey1 = Get-AzSshKey -ResourceGroupName "testRG" -Name "sshKey1"
+PS C:\> Update-AzSshKey -ResourceGroupName "testRG" -Name "sshKey2" -PublicKey $SshKey1.publickey
 
 ```
 

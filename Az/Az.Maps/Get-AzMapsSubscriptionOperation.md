@@ -25,10 +25,8 @@ List operations available for the Maps Resource Provider
 
 ### Example 1: List operations available for the Maps Resource Provider
 ```powershell
-Get-AzMapsSubscriptionOperation
-```
+PS C:\> Get-AzMapsSubscriptionOperation
 
-```output
 IsDataAction Name                                                                          Origin
 ------------ ----                                                                          ------
              Microsoft.Maps/resourceTypes/read

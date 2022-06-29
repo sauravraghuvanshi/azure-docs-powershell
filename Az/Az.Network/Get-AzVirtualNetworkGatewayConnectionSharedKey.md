@@ -26,11 +26,8 @@ Displays the shared key used for the connection.
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzVirtualNetworkGatewayConnectionSharedKey -Name 1 -ResourceGroupName P2SVPNGateway
 ```
-
-```output
+Get-AzVirtualNetworkGatewayConnectionSharedKey -Name 1 -ResourceGroupName P2SVPNGateway
 xxxxxx
 ```
 

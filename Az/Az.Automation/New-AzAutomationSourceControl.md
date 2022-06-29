@@ -30,18 +30,17 @@ The New-AzAutomationSourceControl cmdlet creates a configuration to link an Azur
 Create a source control configuration to link an Azure Automation account with a VSTS TFVC project. TFVC projects do not have branches, and therefore, the Branch parameter is not specified.
 
 ```powershell
-# VSTS Personal access token
-$token = "vppmrabbs65axamofglyo66rjg6reddaa7xxgvaddd5555aaaaddxzbmma"
-$accessToken = ConvertTo-SecureString -String $token -AsPlainText -Force 
-New-AzAutomationSourceControl -ResourceGroupName "rg1" `
+PS C:\> # VSTS Personal access token
+PS C:\> $token = "vppmrabbs65axamofglyo66rjg6reddaa7xxgvaddd5555aaaaddxzbmma"
+PS C:\> $accessToken = ConvertTo-SecureString -String $token -AsPlainText -Force 
+PS C:\> New-AzAutomationSourceControl -ResourceGroupName "rg1" `
                                            -AutomationAccountName "devAccount" `
                                            -Name  "VSTSNative" `
                                            -RepoUrl "https://dev.azure.com/<accountname>/<adoprojectname>/_git/<repositoryname>" `
                                            -SourceType "VsoTfvc" `
                                            -FolderPath "/Runbooks" `
                                            -AccessToken $accessToken
-```
-```output
+
 Name        SourceType Branch FolderPath AutoSync PublishRunbook RepoUrl
 ----        ---------- ------ ---------- -------- -------------- -------
 VSTSNative  VsoTfvc            /Runbooks True     True           https://dev.azure.com/<accountname>/<adopro...
@@ -52,10 +51,10 @@ Create a source control configuration to link an Azure Automation account with a
 
 
 ```powershell
-# VSTS Personal access token
-$token = "vppmrabbs65axamofglyo66rjg6reddaa7xxgvaddd5555aaaaddxzbmma"
-$accessToken = ConvertTo-SecureString -String $token -AsPlainText -Force 
-New-AzAutomationSourceControl -ResourceGroupName "rg1" `
+PS C:\> # VSTS Personal access token
+PS C:\> $token = "vppmrabbs65axamofglyo66rjg6reddaa7xxgvaddd5555aaaaddxzbmma"
+PS C:\> $accessToken = ConvertTo-SecureString -String $token -AsPlainText -Force 
+PS C:\> New-AzAutomationSourceControl -ResourceGroupName "rg1" `
                                            -AutomationAccountName "devAccount" `
                                            -Name  "VSTSGit" `
                                            -RepoUrl "https://dev.azure.com/<accountname>/<adoprojectname>/_git/<repositoryname>" `
@@ -63,8 +62,7 @@ New-AzAutomationSourceControl -ResourceGroupName "rg1" `
                                            -Branch "Development" `
                                            -FolderPath "/" `
                                            -AccessToken $accessToken
-```
-```output
+
 Name    SourceType Branch      FolderPath AutoSync PublishRunbook RepoUrl
 ----    ---------- ------      ---------- -------- -------------- -------
 VSTSGit VsoGit     Development /          True     True           https://dev.azure.com/<accountname>/<adopro...
@@ -75,10 +73,10 @@ Create a source control configuration to link an Azure Automation account with a
 
 
 ```powershell
-# GitHub access token
-$token = "68b08011223aac8bdd3388913a44rrsaa84fdf"
-$accessToken = ConvertTo-SecureString -String $token -AsPlainText -Force 
- New-AzAutomationSourceControl -ResourceGroupName "rg1" `
+PS C:\> # GitHub access token
+PS C:\> $token = "68b08011223aac8bdd3388913a44rrsaa84fdf"
+PS C:\> $accessToken = ConvertTo-SecureString -String $token -AsPlainText -Force 
+PS C:\> New-AzAutomationSourceControl -ResourceGroupName "rg1" `
                                            -AutomationAccountName "devAccount" `
                                            -Name  "GitHub1" `
                                            -RepoUrl "https://github.com/Contoso/TestSourceControl.git" `
@@ -86,8 +84,7 @@ $accessToken = ConvertTo-SecureString -String $token -AsPlainText -Force
                                            -Branch "master" `
                                            -FolderPath "/Runbooks" `
                                            -AccessToken $accessToken
-```
-```output
+
 Name    SourceType Branch FolderPath AutoSync PublishRunbook RepoUrl
 ----    ---------- ------ ---------- -------- -------------- -------
 GitHub1 GitHub     master /Runbooks  True     True           https://github.com/Contoso/TestSourceControl...

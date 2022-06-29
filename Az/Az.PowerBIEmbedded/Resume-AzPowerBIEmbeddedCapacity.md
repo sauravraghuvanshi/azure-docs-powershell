@@ -39,11 +39,8 @@ The Resume-AzPowerBIEmbeddedCapacity cmdlet resumes an instance of PowerBI Embed
 ## EXAMPLES
 
 ### Example 1
-```powershell
- Resume-AzPowerBIEmbeddedCapacity -Name "testcapacity" -ResourceGroupName "testRG" -PassThru
- ```
-
-```output
+```
+PS C:\> Resume-AzPowerBIEmbeddedCapacity -Name "testcapacity" -ResourceGroupName "testRG" -PassThru
 Type                   : Microsoft.PowerBIDedicated/capacities
 Id                     : /subscriptions/78e47976-.../resourceGroups/testRG/providers/Microsoft.PowerBIDedicated/capacities/testcapacity
 ResourceGroup          : testRG

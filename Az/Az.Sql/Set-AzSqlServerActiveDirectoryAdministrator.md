@@ -36,11 +36,8 @@ We recommend that you provision a dedicated Azure AD group as an administrator.
 ## EXAMPLES
 
 ### Example 1: Provision an administrator group for a server
-```powershell
-Set-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DisplayName "DBAs"
 ```
-
-```output
+PS C:\>Set-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DisplayName "DBAs" 
 ResourceGroupName ServerName DisplayName ObjectId IsAzureADOnlyAuthentication
 ----------------- ---------- ----------- -------- ---------------------------
 ResourceGroup01   Server01   DBAs        40b79501-b343-44ed-9ce7-da4c8cc7353b False
@@ -50,11 +47,8 @@ This command provisions an Azure AD administrator group named DBAs for the serve
 This server is associated with resource group ResourceGroup01.
 
 ### Example 2: Provision an administrator user for a server
-```powershell
-Set-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DisplayName "David Chew"
 ```
-
-```output
+PS C:\>Set-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DisplayName "David Chew"
 ResourceGroupName ServerName DisplayName ObjectId IsAzureADOnlyAuthentication
 ----------------- ---------- ----------- -------- 
 resourcegroup01   server01   David Chew  11E95548-B179-4FE1-9AF4-ACA49D13ABB9 False
@@ -63,11 +57,8 @@ resourcegroup01   server01   David Chew  11E95548-B179-4FE1-9AF4-ACA49D13ABB9 Fa
 This command provisions an Azure AD user as an administrator for the server named Server01.
 
 ### Example 3: Provision an administrator group by specifying its ID
-```powershell
-Set-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DisplayName "DBAs" -ObjectId "40b79501-b343-44ed-9ce7-da4c8cc7353b"
 ```
-
-```output
+PS C:\>Set-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DisplayName "DBAs" -ObjectId "40b79501-b343-44ed-9ce7-da4c8cc7353b"
 ResourceGroupName ServerName DisplayName ObjectId IsAzureADOnlyAuthentication 
 ----------------- ---------- ----------- -------- 
 ResourceGroup01   Server01   DBAs        40b79501-b343-44ed-9ce7-da4c8cc7353b False

@@ -27,12 +27,10 @@ Set linked storage account for workspace
 
 ### Example 1
 ```powershell
-$account = Get-AzStorageAccount -ResourceGroupName "rg-name" -Name "storage-account"
+$account = Get-AzStorageAccount -ResourceGroupName {rg-name} -Name {account-name}
 
-Set-AzOperationalInsightsLinkedStorageAccount -ResourceGroupName "rg-name" -WorkspaceName "workspace-name" -DataSourceType CustomLogs -StorageAccountId $account.Id
-```
+Set-AzOperationalInsightsLinkedStorageAccount -ResourceGroupName {rg-name} -WorkspaceName {workspace-name} -DataSourceType CustomLogs -StorageAccountIds $account.Id
 
-```output
 Id                : /subscriptions/{subscription}/resourceGroups/{rg-name}/providers/Microsoft.OperationalInsights/workspaces/{workspace-name}/linkedStorageAccounts/CustomLogs
 Name              : customlogs
 Type              : Microsoft.OperationalInsights/workspaces/linkedStorageAccounts

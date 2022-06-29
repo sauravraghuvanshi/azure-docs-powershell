@@ -41,22 +41,22 @@ The **Get-AzAutomationDscCompilationJob** cmdlet gets APS Desired State Configur
 ## EXAMPLES
 
 ### Example 1: Get all DSC compilation jobs
-```powershell
-Get-AzAutomationDscCompilationJob -ResourceGroupName "ResourceGroup03" -AutomationAccountName "Contoso17"
+```
+PS C:\>Get-AzAutomationDscCompilationJob -ResourceGroupName "ResourceGroup03" -AutomationAccountName "Contoso17"
 ```
 
 This command gets all compilation jobs in the Automation account named Contoso17.
 
 ### Example 2: Get DSC compilation jobs for a configuration
-```powershell
-Get-AzAutomationDscCompilationJob -ResourceGroupName "ResourceGroup03" -AutomationAccountName "Contoso17" -ConfigurationName "ContosoConfiguration"
+```
+PS C:\>Get-AzAutomationDscCompilationJob -ResourceGroupName "ResourceGroup03" -AutomationAccountName "Contoso17" -ConfigurationName "ContosoConfiguration"
 ```
 
 This command gets all compilation jobs for the DSC configuration named ContosoConfiguration in the Automation account named Contoso17.
 
 ### Example 3: Get a specific DSC compilation job
-```powershell
-Get-AzAutomationDscCompilationJob -ResourceGroupName "ResourceGroup03" -AutomationAccountName "Contoso17" -Id c0a1718e-d8be-4fa3-91b6-82e1d3a36298
+```
+PS C:\>Get-AzAutomationDscCompilationJob -ResourceGroupName "ResourceGroup03" -AutomationAccountName "Contoso17" -Id c0a1718e-d8be-4fa3-91b6-82e1d3a36298
 ```
 
 This command gets the compilation job with the specified ID in the Automation account named Contoso17.

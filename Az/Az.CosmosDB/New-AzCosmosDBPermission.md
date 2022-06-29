@@ -25,11 +25,8 @@ Creates a new CosmosDB Permission object to be used to create or update a Role D
 ## EXAMPLES
 
 ### Example 1
-```powershell
-New-AzCosmosDBPermission -DataAction "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/items/create"
 ```
-
-```output
+PS C:\> New-AzCosmosDBPermission -DataAction "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/items/create"
 DataActions
 -----------
 {Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/items/create}

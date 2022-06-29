@@ -28,15 +28,15 @@ If no provider is specified, then lists all providers for the account.
 ## EXAMPLES
 
 ### Example 1: Get a specific trusted identity provider
-```powershell
-Get-AzDataLakeStoreTrustedIdProvider -AccountName "ContosoADL" -Name MyProvider
+```
+PS C:\> Get-AzDataLakeStoreTrustedIdProvider -AccountName "ContosoADL" -Name MyProvider
 ```
 
 Returns the provider named "MyProvider" from account "ContosoADL"
 
 ### Example 2: List all providers in an account
-```powershell
-Get-AzDataLakeStoreTrustedIdProvider -AccountName "ContosoADL"
+```
+PS C:\> Get-AzDataLakeStoreTrustedIdProvider -AccountName "ContosoADL"
 ```
 
 Lists all providers under the account "ContosoADL"

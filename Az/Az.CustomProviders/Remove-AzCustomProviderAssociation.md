@@ -33,17 +33,15 @@ Delete an association.
 
 ### Example 1: Remove a custom provider association.
 ```powershell
-Remove-AzCustomProviderAssociation -Scope $id -Name Namespace.Type
+PS C:\> PS C:\> Remove-AzCustomProviderAssociation -Scope $id -Name Namespace.Type
 ```
 
 Remove a custom provider association.
 
 ### Example 2: Remove a custom provider association with Piping
 ```powershell
-Get-AzCustomProviderAssociation | Remove-AzCustomProviderAssociation -PassThru
-```
+PS C:\> PS C:\> Get-AzCustomProviderAssociation | Remove-AzCustomProviderAssociation -PassThru
 
-```output
 True
 ```
 

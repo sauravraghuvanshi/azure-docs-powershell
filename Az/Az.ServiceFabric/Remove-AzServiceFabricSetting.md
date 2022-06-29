@@ -33,8 +33,8 @@ Use **Remove-AzServiceFabricSetting** to remove Service Fabric settings from the
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Remove-AzServiceFabricSetting -ResourceGroupName 'Group1' -Name 'Contoso01SFCluster' -Section 'EseStore' -Parameter 'MaxCursors'
+```
+PS c:> Remove-AzServiceFabricSetting -ResourceGroupName 'Group1' -Name 'Contoso01SFCluster' -Section 'EseStore' -Parameter 'MaxCursors'
 ```
 
 This command will remove settings 'MaxCursors' under 'EseStore' section.

@@ -26,10 +26,8 @@ API to return the lab for a specific VM.
 
 ### Example 1: Get the lab for a Virtual machine.
 ```powershell
-Get-AzLabServicesLabForVm -ResourceId '/subscriptions/<SubscriptionID>/resourceGroups/<GroupName>/providers/Microsoft.LabServices/labs/<labName>/virtualMachines/<VMName>'
-```
+PS C:\> Get-AzLabServicesLabForVm -ResourceId '/subscriptions/<SubscriptionID>/resourceGroups/<GroupName>/providers/Microsoft.LabServices/labs/<labName>/virtualMachines/<VMName>'
 
-```output
 Location Name                Type
 -------- ----                ----
 westus2  labName             Microsoft.LabServices/labs

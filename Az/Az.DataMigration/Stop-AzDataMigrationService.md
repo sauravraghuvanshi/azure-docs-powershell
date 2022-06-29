@@ -38,15 +38,15 @@ The Stop-AzDataMigrationService cmdlet stops an instance of the Azure Database M
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Stop-AzDataMigrationService -ResourceGroupName MyResourceGroup -ServiceName TestService
+```
+PS C:\> Stop-AzDataMigrationService -ResourceGroupName MyResourceGroup -ServiceName TestService
 ```
 
 The above example stops an instance of the Azure Database Migration Service called TestService based on service name passed in as input parameter
 
 ### Example 2
-```powershell
-Stop-AzDataMigrationService -InputObject $TestService
+```
+PS C:\> Stop-AzDataMigrationService -InputObject $TestService
 ```
 
 The above example stops an instance of the Azure Database Migration Service based on PSDataMigrationService object passed as input parameter.
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -1,189 +1,70 @@
 ---
-external help file: 
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ApplicationInsights.dll-Help.xml
 Module Name: Az.ApplicationInsights
 online version: https://docs.microsoft.com/powershell/module/az.applicationinsights/new-azapplicationinsights
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/help/New-AzApplicationInsights.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/help/New-AzApplicationInsights.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/ApplicationInsights/help/New-AzApplicationInsights.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/ApplicationInsights/help/New-AzApplicationInsights.md
 ---
 
 # New-AzApplicationInsights
 
 ## SYNOPSIS
-Creates (or updates) an Application Insights component.
-Note: You cannot specify a different value for InstrumentationKey nor AppId in the Put operation.
+Create a new application insights resource
 
 ## SYNTAX
 
 ```
-New-AzApplicationInsights -Name <String> -ResourceGroupName <String> -Location <String>
- [-SubscriptionId <String>] [-ApplicationType <ApplicationType>] [-DisableIPMasking] [-DisableLocalAuth]
- [-Etag <String>] [-FlowType <FlowType>] [-ForceCustomerStorageForProfiler] [-HockeyAppId <String>]
- [-ImmediatePurgeDataOn30Day] [-IngestionMode <IngestionMode>] [-Kind <String>]
- [-PublicNetworkAccessForIngestion <PublicNetworkAccessType>]
- [-PublicNetworkAccessForQuery <PublicNetworkAccessType>] [-RequestSource <RequestSource>]
- [-RetentionInDays <Int32>] [-SamplingPercentage <Double>] [-Tag <Hashtable>] [-WorkspaceResourceId <String>]
- [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-AzApplicationInsights [-ResourceGroupName] <String> [-Name] <String> [-Location] <String> [-Kind <String>]
+ [-Tag <Hashtable>] [-DefaultProfile <IAzureContextContainer>] [[-RetentionInDays] <Int32>]
+ [[-PublicNetworkAccessForIngestion] <String>] [[-PublicNetworkAccessForQuery] <String>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Creates (or updates) an Application Insights component.
-Note: You cannot specify a different value for InstrumentationKey nor AppId in the Put operation.
+Create a new application insights resource
 
 ## EXAMPLES
 
-### Example 1: Create a new application insights resource
+### Example 1 Create a new application insights resource
 ```powershell
 New-AzApplicationInsights -Kind java -ResourceGroupName testgroup -Name test1027 -location eastus
+```
+```output
+Id                 : /subscriptions/{subid}/resourceGroups/testgroup/providers/microsoft.insights/components/test1027
+ResourceGroupName  : testgroup
+Name               : test1027
+Kind               : web
+Location           : eastus
+Type               : microsoft.insights/components
+AppId              : 8323fb13-32aa-46af-b467-8355cf4f8f98
+ApplicationType    : web
+Tags               : {}
+CreationDate       : 10/27/2017 4:56:40 PM
+FlowType           :
+HockeyAppId        :
+HockeyAppToken     :
+InstrumentationKey : 083112ed-ed9b-464e-a9b0-8cf126fbfced
+ProvisioningState  : Succeeded
+RequestSource      : AzurePowerShell
+SamplingPercentage :
+TenantId           : {subid}
+PublicNetworkAccessForIngestion : Enabled
+PublicNetworkAccessForQuery     : Enabled
+PrivateLinkScopedResources      :
 ```
 
 Add a new application insights resource named as "test" in resource group "testgroup" with kind "java"
 
 ## PARAMETERS
 
-### -ApplicationType
-Type of application being monitored.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ApplicationInsights.Support.ApplicationType
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.
+The credentials, account, tenant, and subscription used for communication with azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DisableIPMasking
-Disable IP masking.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DisableLocalAuth
-Disable Non-AAD based Auth.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Etag
-Resource etag
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -FlowType
-Used by the Application Insights system to determine what kind of flow this component was created by.
-This is to be set to 'Bluefield' when creating/updating a component via the REST API.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ApplicationInsights.Support.FlowType
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ForceCustomerStorageForProfiler
-Force users to create their own storage account for profiler and debugger.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -HockeyAppId
-The unique application ID created when a new application is added to HockeyApp, used for communications with HockeyApp.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ImmediatePurgeDataOn30Day
-Purge data immediately after 30 days.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IngestionMode
-Indicates the flow of the ingestion.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ApplicationInsights.Support.IngestionMode
-Parameter Sets: (All)
-Aliases:
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -193,23 +74,23 @@ Accept wildcard characters: False
 ```
 
 ### -Kind
-The kind of application that this component refers to, used to customize UI.
-This value is a freeform string, values should typically be one of the following: web, ios, other, store, java, phone.
+Application kind.
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
 Aliases: ApplicationKind
+Accepted values: web, other, Node.js, java
 
 Required: False
 Position: Named
-Default value: None
+Default value: web
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Location
-Resource location
+Application Insights Resource Location.
 
 ```yaml
 Type: System.String
@@ -217,14 +98,14 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Name
-The name of the Application Insights component resource.
+Application Insights Resource Name.
 
 ```yaml
 Type: System.String
@@ -232,61 +113,44 @@ Parameter Sets: (All)
 Aliases: ApplicationInsightsComponentName, ComponentName
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -PublicNetworkAccessForIngestion
-The network access type for accessing Application Insights ingestion.
+The network access type for accessing Application Insights ingestion. Value should be 'Enabled' or 'Disabled'
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ApplicationInsights.Support.PublicNetworkAccessType
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -PublicNetworkAccessForQuery
-The network access type for accessing Application Insights query.
+The network access type for accessing Application Insights query. Value should be 'Enabled' or 'Disabled'
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ApplicationInsights.Support.PublicNetworkAccessType
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RequestSource
-Describes what tool created this Application Insights component.
-Customers using this API should set this to the default 'rest'.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ApplicationInsights.Support.RequestSource
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The name of the resource group.
-The name is case insensitive.
+Resource Group Name.
 
 ```yaml
 Type: System.String
@@ -294,81 +158,34 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -RetentionInDays
-Retention period in days.
+Retention In Days, 90 by default.
 
 ```yaml
-Type: System.Int32
+Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
+Position: 3
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SamplingPercentage
-Percentage of the data produced by the application being monitored that is being sampled for Application Insights telemetry.
-
-```yaml
-Type: System.Double
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubscriptionId
-The ID of the target subscription.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Tag
-Resource tags
+Component Tags.
 
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases: Tags
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WorkspaceResourceId
-Resource Id of the log analytics workspace which the data will be ingested to.
-This property is required to create an application with this API version.
-Applications from older versions will not have this property.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
 
 Required: False
 Position: Named
@@ -393,8 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -413,13 +229,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### None
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ApplicationInsights.Models.Api202002.IApplicationInsightsComponent
+### Microsoft.Azure.Commands.ApplicationInsights.Models.PSApplicationInsightsComponent
 
 ## NOTES
 
-ALIASES
-
 ## RELATED LINKS
-

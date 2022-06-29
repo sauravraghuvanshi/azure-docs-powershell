@@ -39,7 +39,7 @@ The **Remove-AzDeploymentScript** cmdlet removes a deployment script and its ass
 
 ### Example 1
 ```powershell
-Remove-AzDeploymentScript -Name MyDeploymentScript -ResourceGroupName DS-TestRg
+PS C:\> Remove-AzDeploymentScript -Name MyDeploymentScript -ResourceGroupName DS-TestRg
 ```
 
 Deletes a deployment script with the name MyDeploymentScript in resource group DS-TestRG.

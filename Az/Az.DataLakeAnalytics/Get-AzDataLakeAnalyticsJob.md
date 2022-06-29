@@ -36,15 +36,15 @@ If you do not specify a job, this cmdlet gets all jobs.
 ## EXAMPLES
 
 ### Example 1: Get a specified job
-```powershell
-Get-AzDataLakeAnalyticsJob -Account "contosoadla" -JobId $JobID01
+```
+PS C:\>Get-AzDataLakeAnalyticsJob -Account "contosoadla" -JobId $JobID01
 ```
 
 This command gets the job with the specified ID.
 
 ### Example 2: Get jobs submitted in the past week
-```powershell
-Get-AzDataLakeAnalyticsJob -Account "contosoadla" -SubmittedAfter (Get-Date).AddDays(-7)
+```
+PS C:\>Get-AzDataLakeAnalyticsJob -Account "contosoadla" -SubmittedAfter (Get-Date).AddDays(-7)
 ```
 
 This command gets jobs submitted in the past week.

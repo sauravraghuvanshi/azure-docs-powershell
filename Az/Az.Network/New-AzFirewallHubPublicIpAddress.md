@@ -15,7 +15,7 @@ Public Ip assoicated to the firewall on virtual hub
 ## SYNTAX
 
 ```
-New-AzFirewallHubPublicIpAddress [-Count <Int32>] [-Address <PSAzureFirewallPublicIpAddress[]>]
+New-AzFirewallHubPublicIpAddress [-Count <Int32>] [-Addresses <PSAzureFirewallPublicIpAddress[]>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -26,27 +26,27 @@ Public Ip assoicated to the firewall on virtual hub
 
 ### Example 1
 ```powershell
-New-AzFirewallHubPublicIpAddress -Count 2
+PS C:\> New-AzFirewallHubPublicIpAddress -Count 2
 ```
 
 This will create 2 public ips on the firewall attached to the virtual hub. This will create the ip address in the backend.We cannot provide the ipaddresses explicitly for a new firewall.
 
 ### Example 2
 ```powershell
-$publicIp1 = New-AzFirewallPublicIpAddress -Address 10.2.3.4
-$publicIp2 = New-AzFirewallPublicIpAddress -Address 20.56.37.46
-New-AzFirewallHubPublicIpAddress -Count 3 -Address $publicIp1, $publicIp2
+PS C:\> $publicIp1 = New-AzFirewallPublicIpAddress -Address 10.2.3.4
+PS C:\> $publicIp2 = New-AzFirewallPublicIpAddress -Address 20.56.37.46
+PS C:\> New-AzFirewallHubPublicIpAddress -Count 3 -Addresses $publicIp1, $publicIp2
 ```
 
 This will create 1 new public ip on the firewall by retain $publicIp1, $publicIp2 which are already exist on the firewall.
 
 ## PARAMETERS
 
-### -Address
+### -Addresses
 The Public IP Addresses of the Firewall attached to a hub
 
 ```yaml
-Type: Microsoft.Azure.Commands.Network.Models.PSAzureFirewallPublicIpAddress[]
+Type: PSAzureFirewallPublicIpAddress[]
 Parameter Sets: (All)
 Aliases:
 
@@ -61,7 +61,7 @@ Accept wildcard characters: False
 The count of public Ip addresses
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -76,7 +76,7 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 

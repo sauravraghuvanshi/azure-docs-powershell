@@ -16,7 +16,7 @@ Create or update a security assessment result on a resource
 
 ### SubscriptionLevelResource (Default)
 ```
-Set-AzSecurityAssessment -Name <String> -StatusCode <String> [-StatusCause <String>]
+Set-AzSecurityAssessment -Name <String> [-StatusCode <String>] [-StatusCause <String>]
  [-StatusDescription <String>]
  [-AdditionalData <System.Collections.Generic.Dictionary`2[System.String,System.String]>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -38,7 +38,7 @@ can only be used for "CustomerManaged" assessment types and only after the match
 
 ### Example 1
 ```powershell
-Set-AzSecurityAssessment -Name 4FB6C0A0-1137-42C7-A1C7-4BD37C91DE8D -StatusCode "Unhealthy"
+PS C:\> Set-AzSecurityAssessment -Name 4FB6C0A0-1137-42C7-A1C7-4BD37C91DE8D -StatusCode "Unhealthy"
 ```
 
 Marks the subscription result as "Unhealthy" for assessment of type "4FB6C0A0-1137-42C7-A1C7-4BD37C91DE8D" - more details about the assessment type will be found under the assessmentMetadata type
@@ -64,7 +64,7 @@ Accept wildcard characters: False
 Full resource ID of the resource that the assessment is calculated on.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ResourceIdLevelResource
 Aliases:
 
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 Resource name.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 Progremmatic code for the cause of the assessment's result.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -125,8 +125,20 @@ Progremmatic code for the result of the assessment.
 can be "Healthy", "Unhealthy" or "NotApplicable"
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: String
+Parameter Sets: SubscriptionLevelResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+```yaml
+Type: String
+Parameter Sets: ResourceIdLevelResource
 Aliases:
 
 Required: True
@@ -140,7 +152,7 @@ Accept wildcard characters: False
 Human readable description of the cause of the assessment's result.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -155,7 +167,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -171,7 +183,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

@@ -33,10 +33,8 @@ The **Get-AzRouteFilter** cmdlet gets a route filter.
 
 ### Example 1
 ```powershell
-Get-AzRouteFilter -Name "RouteFilter01" -ResourceGroupName "ResourceGroup01"
-```
+PS C:\> Get-AzRouteFilter -Name "RouteFilter01" -ResourceGroupName "ResourceGroup01"
 
-```output
 Name              : RouteFilter01
 ResourceGroupName : ResourceGroup01
 Location          : westus
@@ -53,10 +51,8 @@ This command gets the route filter named RouteFilter01 that belongs to the resou
 
 ### Example 2
 ```powershell
-Get-AzRouteFilter -Name "RouteFilter*"
-```
+PS C:\> Get-AzRouteFilter -Name "RouteFilter*"
 
-```output
 Name              : RouteFilter01
 ResourceGroupName : ResourceGroup01
 Location          : westus

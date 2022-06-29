@@ -26,8 +26,8 @@ The **New-AzRecoveryServicesVault** cmdlet creates a new Recovery Services vault
 ## EXAMPLES
 
 ### Example 1
-```powershell
-New-AzRecoveryServicesVault -Name "vaultName" -ResourceGroupName "rg" -Location "eastasia"
+```
+PS C:\> New-AzRecoveryServicesVault -Name "vaultName" -ResourceGroupName "rg" -Location "eastasia"
 ```
 
 Create recovery service vault in resource group and given location.

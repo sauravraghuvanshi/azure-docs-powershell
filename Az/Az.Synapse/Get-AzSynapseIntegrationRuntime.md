@@ -47,21 +47,21 @@ If you do not specify a name, this cmdlet gets information about all of the inte
 
 ### Example 1
 ```powershell
-Get-AzSynapseIntegrationRuntime -WorkspaceName ContosoWorkspace
+PS C:\> Get-AzSynapseIntegrationRuntime -WorkspaceName ContosoWorkspace
 ```
 
 List all integration runtimes in the workspace named ContosoWorkspace.
 
 ### Example 2
 ```powershell
-Get-AzSynapseIntegrationRuntime -WorkspaceName ContosoWorkspace -Name 'test-selfhost-ir'
+PS C:\> Get-AzSynapseIntegrationRuntime -WorkspaceName ContosoWorkspace -Name 'test-selfhost-ir'
 ```
 
 This command displays information about the integration runtime named 'test-selfhost-ir' in the workspace named ContosoWorkspace.
 
 ### Example 3
 ```powershell
-Get-AzSynapseIntegrationRuntime -WorkspaceName ContosoWorkspace -Name 'test-selfhost-ir' -Status
+PS C:\> Get-AzSynapseIntegrationRuntime -WorkspaceName ContosoWorkspace -Name 'test-selfhost-ir' -Status
 ```
 
 This command displays detail status about the integration runtime named 'test-selfhost-ir' in the workspace named ContosoWorkspace.

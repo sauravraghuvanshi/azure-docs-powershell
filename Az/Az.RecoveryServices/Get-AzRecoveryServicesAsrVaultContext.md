@@ -24,8 +24,8 @@ The **Get-AzRecoveryServicesAsrVaultContext** cmdlet gets ASR vault settings inf
 ## EXAMPLES
 
 ### Example 1
-```powershell
-$VaultSettings = Get-AzRecoveryServicesAsrVaultContext
+```
+PS C:\> $VaultSettings = Get-AzRecoveryServicesAsrVaultContext
 ```
 
 Gets the ASR vault settings for the currently active(in the PowerShell session) Recovery Services vault.

@@ -27,15 +27,15 @@ You can either list all the jobs or filter the jobs by the Job Identifier.
 ## EXAMPLES
 
 ### Example 1 List all Jobs
-```powershell
-Get-AzIotHubJob -ResourceGroupName "myresourcegroup" -Name "myiothub"
+```
+PS C:\> Get-AzIotHubJob -ResourceGroupName "myresourcegroup" -Name "myiothub"
 ```
 
 Gets all the jobs for the IotHub named "myiothub"
 
 ### Example 2 Get a specific Job
-```powershell
-Get-AzIotHubJob -ResourceGroupName "myresourcegroup" -Name "myiothub" -JobId 3630fc31-4caa-43e8-a232-ea0577221cb2
+```
+PS C:\> Get-AzIotHubJob -ResourceGroupName "myresourcegroup" -Name "myiothub" -JobId 3630fc31-4caa-43e8-a232-ea0577221cb2
 ```
 
 Gets information about the job with the identifier "3630fc31-4caa-43e8-a232-ea0577221cb2" for the IotHub named "myiothub"

@@ -26,11 +26,9 @@ The **Get-AzDelegation** cmdlet gets the named delegation from a subnet. If no d
 
 ### 1: Retrieving a specific delegation
 ```powershell
-$subnet = Get-AzVirtualNetwork -Name "myVNet" -ResourceGroupName "myResourceGroup" | Get-AzVirtualNetworkSubnetConfig -Name "mySubnet"
-Get-AzDelegation -Name "myDelegation" -Subnet $subnet
-```
+PS C:\> $subnet = Get-AzVirtualNetwork -Name "myVNet" -ResourceGroupName "myResourceGroup" | Get-AzVirtualNetworkSubnetConfig -Name "mySubnet"
+PS C:\> Get-AzDelegation -Name "myDelegation" -Subnet $subnet
 
-```output
 ProvisioningState : Succeeded
 ServiceName       : Microsoft.Sql/servers
 Actions           : {}
@@ -43,8 +41,8 @@ The first line retrieves the subnet of interest. The second line shows the deleg
 
 ### 2: Retrieving all subnet delegations
 ```powershell
-$subnet = Get-AzVirtualNetwork -Name "myVNet" -ResourceGroupName "myResourceGroup" | Get-AzVirtualNetworkSubnetConfig -Name "mySubnet"
-$delegations = Get-AzDelegation -Subnet $subnet
+PS C:\> $subnet = Get-AzVirtualNetwork -Name "myVNet" -ResourceGroupName "myResourceGroup" | Get-AzVirtualNetworkSubnetConfig -Name "mySubnet"
+PS C:\> $delegations = Get-AzDelegation -Subnet $subnet
 ```
 
 The first line retrieves the subnet of interest. The second line stores a list of all of the delegations on _mySubnet_ in the $delegations variable.

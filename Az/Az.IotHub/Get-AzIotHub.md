@@ -32,22 +32,22 @@ You can view all IotHub instances in a subscription, or filter your results by a
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzIotHub
+```
+PS C:\> Get-AzIotHub
 ```
 
 Gets all the IotHubs in the subscription.
 
 ### Example 2
-```powershell
-Get-AzIotHub -ResourceGroupName "myresourcegroup"
+```
+PS C:\> Get-AzIotHub -ResourceGroupName "myresourcegroup"
 ```
 
 Gets all the IotHubs in the subscription belonging to the resourcegroup named "myresourcegroup".
 
 ### Example 3
-```powershell
-Get-AzIotHub -ResourceGroupName "myresourcegroup" -Name "myiothub"
+```
+PS C:\> Get-AzIotHub -ResourceGroupName "myresourcegroup" -Name "myiothub"
 ```
 
 Gets information about the IotHub named "myiothub".

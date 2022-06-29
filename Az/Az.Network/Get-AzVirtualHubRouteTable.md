@@ -39,10 +39,8 @@ Gets a Virtual Hub Route Table in a virtual hub or lists all route tables in a v
 
 ### Example 1
 ```powershell
-Get-AzVirtualHubRouteTable -ResourceGroupName "testRg" -HubName "westushub" -Name "routeTable1"
-```
+PS C:\> Get-AzVirtualHubRouteTable -ResourceGroupName "testRg" -HubName "westushub" -Name "routeTable1"
 
-```output
 Name                : routeTable1
 Id                  : /subscriptions/{subscriptionId}/resourceGroups/testRg/providers/Microsoft.Network/virtualHubs/westushub/routeTables/routeTable1
 Routes              : {Microsoft.Azure.Commands.Network.Models.PSVirtualHubRoute}
@@ -54,10 +52,8 @@ This cmdlet retrieves a route table resource using resource group name, hub name
 
 ### Example 2
 ```powershell
-Get-AzVirtualHubRouteTable -ResourceGroupName "testRg" -HubName "westushub"
-```
+PS C:\> Get-AzVirtualHubRouteTable -ResourceGroupName "testRg" -HubName "westushub"
 
-```output
 Name                : routeTable1
 Id                  : /subscriptions/{subscriptionId}/resourceGroups/testRg/providers/Microsoft.Network/virtualHubs/westushub/routeTables/routeTable1
 Routes              : {Microsoft.Azure.Commands.Network.Models.PSVirtualHubRoute}

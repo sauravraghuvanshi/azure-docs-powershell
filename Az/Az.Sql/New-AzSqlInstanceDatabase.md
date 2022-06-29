@@ -41,11 +41,8 @@ The **New-AzSqlInstanceDatabase** cmdlet creates an Azure SQL Managed instance d
 ## EXAMPLES
 
 ### Example 1: Create a database on a specified instance
-```powershell
-New-AzSqlInstanceDatabase -Name "Database01" -InstanceName "managedInstance1" -ResourceGroupName "ResourceGroup01"
 ```
-
-```output
+PS C:\>New-AzSqlInstanceDatabase -Name "Database01" -InstanceName "managedInstance1" -ResourceGroupName "ResourceGroup01"
 ResourceGroupName        : resourcegroup01
 ManagedInstanceName      : managedInstance1
 Location                 : westcentralus

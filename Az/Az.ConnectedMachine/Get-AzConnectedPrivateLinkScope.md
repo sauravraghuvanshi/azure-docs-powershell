@@ -38,10 +38,8 @@ Returns a Azure Arc PrivateLinkScope.
 
 ### Example 1: List all private link scopes in a resource group
 ```powershell
-Get-AzConnectedPrivateLinkScope -ResourceGroupName $resourceGroupName
-```
+PS C:\> Get-AzConnectedPrivateLinkScope -ResourceGroupName $resourceGroupName
 
-```output
 Name              Location    PublicNetworkAccess ProvisioningState Tag
 ----              --------    ------------------- ----------------- ---
 name1 		eastus2euap Enabled             Succeeded 	  Microsoft.Azure.PowerShell.Cmdlets.ConnectedMachine.Models.Api20210520.PrivateLinkScopesResourceTags
@@ -53,10 +51,8 @@ Lists all private link scopes in a specified resource group
 
 ### Example 2: Get a private link scope in a resource group by name
 ```powershell
-Get-AzConnectedPrivateLinkScope -ResourceGroupName $resourceGroupName -ScopeName $scopeName
-```
+PS C:\> Get-AzConnectedPrivateLinkScope -ResourceGroupName $resourceGroupName -ScopeName $scopeName
 
-```output
 Name         Location    PublicNetworkAccess ProvisioningState Tag
 ----         --------    ------------------- ----------------- ---
 name1	     eastus2euap Enabled             Succeeded         Microsoft.Azure.PowerShell.Cmdlets.ConnectedMachine.Models.Api20210520.PrivateLinkScopesRes…

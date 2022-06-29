@@ -51,7 +51,7 @@ The Stop-AzNetworkWatcherConnectionMonitor cmdlet stops the specified connection
 
 ### Example 1: Stop a connection monitor
 ```powershell
-Stop-AzNetworkWatcherConnectionMonitor -NetworkWatcher $nw -Name cm
+PS C:\> Stop-AzNetworkWatcherConnectionMonitor -NetworkWatcher $nw -Name cm
 ```
 
 In this example we stop connection monitor specified by name and network watcher

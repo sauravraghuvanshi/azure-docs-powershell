@@ -46,7 +46,7 @@ Operation to update an exiting resource.
 
 ### Example 1: Update a Web PubSub resource
 ```powershell
-$wps = Update-AzWebPubSub -ResourceGroupName psdemo -Name psdemo-wps `
+PS C:\> $wps = Update-AzWebPubSub -ResourceGroupName psdemo -Name psdemo-wps `
 -IdentityType SystemAssigned -LiveTraceEnabled true `
 -LiveTraceCategory @{ Name='ConnectivityLogs' ; Enabled = 'true' }, @{ Name='MessageLogs' ; Enabled = 'true' }
 
@@ -54,7 +54,7 @@ Name       Location SkuName
 ----       -------- -------
 psdemo-wps eastus   Standard_S1
 
-$wps | Format-List
+PS C:\> $wps | format-list
 
 DisableAadAuth               : False
 DisableLocalAuth             : False
@@ -69,15 +69,13 @@ Version                      : 1.0
 
 ### Example 2: Update a Web PubSub resource via identity
 ```powershell
-$identity = @{ ResourceGroupName = 'psdemo'
+PS C:\> $identity = @{ ResourceGroupName = 'psdemo'
 ResourceName = 'psdemo-wps'
 SubscriptionId = $(Get-AzContext).Subscription.Id }
-$identity | Update-AzWebPubSub -EnableTlsClientCert
+PS C:\> $identity | Update-AzWebPubSub -EnableTlsClientCert
 
-$wps | Format-List
-```
+PS C:\> $wps | format-list
 
-```output
 DisableAadAuth               : False
 DisableLocalAuth             : False
 EnableTlsClientCert          : True

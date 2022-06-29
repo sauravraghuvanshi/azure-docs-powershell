@@ -39,10 +39,8 @@ Remove-AzVirtualNetworkGatewayNatRule -InputObject <PSVirtualNetworkGatewayNatRu
 
 ### Example 1
 ```powershell
-Remove-AzVirtualNetworkGatewayNatRule -ResourceGroupName rg1 -ParentResourceName gw1 -Name natRule3
-```
+PS C:\> Remove-AzVirtualNetworkGatewayNatRule -ResourceGroupName rg1 -ParentResourceName gw1 -Name natRule3
 
-```output
 Confirm
 Are you sure you want to remove resource 'natRule3'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y

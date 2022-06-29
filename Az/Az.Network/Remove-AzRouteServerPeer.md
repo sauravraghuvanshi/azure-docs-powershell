@@ -39,18 +39,18 @@ The **Remove-AzRouteServerPeer** cmdlet removes a RouteServer Peer from an Azure
 
 ### Example 1
 ```powershell
-Remove-AzRouteServerPeer -PeerName peer -RouteServerName routeServer -ResourceGroupName routeServerRG
+PS C:\> Remove-AzRouteServerPeer -PeerName peer -RouteServerName routeServer -ResourceGroupName routeServerRG
 ```
 
 ### Example 2
 ```powershell
-$routeServerPeerId = '/subscriptions/8c992d64-fce9-426d-b278-85642dfeab03/resourceGroups/routeServerRG/providers/Microsoft.Network/virtualHubs/routeServer/bgpConnections/peer'
+PS C:\> $routeServerPeerId = '/subscriptions/8c992d64-fce9-426d-b278-85642dfeab03/resourceGroups/routeServerRG/providers/Microsoft.Network/virtualHubs/routeServer/bgpConnections/peer'
 Remove-AzRouteServerPeer -ResourceId $RouteServerPeerId
 ```
 
 ### Example 3
 ```powershell
-$routeServerPeer = Get-AzRouteServerPeer -ResourceGroupName routeServerRG -RouteServerName routeServer -PeerName peer
+PS C:\> $routeServerPeer = Get-AzRouteServerPeer -ResourceGroupName routeServerRG -RouteServerName routeServer -PeerName peer
 Remove-AzRouteServerPeer -InputObject $RouteServerPeer
 ```
 ## PARAMETERS

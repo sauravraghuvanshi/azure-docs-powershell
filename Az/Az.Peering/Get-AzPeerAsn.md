@@ -31,10 +31,8 @@ Gets the PeerAsn for a subscription.
 
 ### Example 1
 ```powershell
-Get-AzPeerAsn -Name Contoso
-```
+PS C:> Get-AzPeerAsn -Name Contoso
 
-```output
 PeerContactInfo : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSContactInfo
 PeerName        : Contoso
 ValidationState : None

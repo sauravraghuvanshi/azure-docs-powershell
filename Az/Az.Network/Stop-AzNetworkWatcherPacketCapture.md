@@ -39,7 +39,7 @@ The Stop-AzNetworkWatcherPacketCapture stops a running packet capture session. A
 ## EXAMPLES
 
 ### Example 1: Stop a packet capture session
-```powershell
+```
 Stop-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -PacketCaptureName "PacketCaptureTest"
 ```
 

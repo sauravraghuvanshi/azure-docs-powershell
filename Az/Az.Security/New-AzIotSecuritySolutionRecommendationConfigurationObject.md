@@ -27,10 +27,8 @@ This way the status of a recommendation is configured, whether it is enabled or 
 
 ### Example 1
 ```powershell
-New-AzIotSecuritySolutionRecommendationConfigurationObject -RecommendationType "IoT_ACRAuthentication" -Enabled $false
-```
+PS C:\> New-AzIotSecuritySolutionRecommendationConfigurationObject -RecommendationType "IoT_ACRAuthentication" -Enabled $false
 
-```output
 RecommendationType: "IoT_ACRAuthentication"
 Name: "Service prinicpal not used with ACR repository"
 Status: "Disabled"

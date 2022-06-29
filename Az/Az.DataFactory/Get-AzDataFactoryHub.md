@@ -35,15 +35,15 @@ If you do not specify a name, this cmdlet gets information about all of the hubs
 ## EXAMPLES
 
 ### Example 1: Get all data hubs
-```powershell
-Get-AzDataFactoryHub -ResourceGroupName "ADFResourceGroup" -DataFactoryName "ADFDataFactory"
+```
+PS C:\>Get-AzDataFactoryHub -ResourceGroupName "ADFResourceGroup" -DataFactoryName "ADFDataFactory"
 ```
 
 This command gets all data hubs in the Azure resource group named ADFResourceGroup and the data factory named ADFDataFactory.
 
 ### Example 2: Get a specific data hub
-```powershell
-Get-AzDataFactoryHub -ResourceGroupName "ADFResourceGroup" -DataFactoryName "ADFDataFactory" -Name "MyDataHub"
+```
+PS C:\>Get-AzDataFactoryHub -ResourceGroupName "ADFResourceGroup" -DataFactoryName "ADFDataFactory" -Name "MyDataHub"
 ```
 
 This command gets information about the hub named MyDataHub in the Azure resource group named ADFResourceGroup and the data factory named ADFDataFactory.

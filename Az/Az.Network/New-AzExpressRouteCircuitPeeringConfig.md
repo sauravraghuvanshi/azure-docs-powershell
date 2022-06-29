@@ -53,6 +53,7 @@ by using a connectivity provider instead of the public Internet.
 ```powershell
 $parameters = @{
     Name = 'AzurePrivatePeering'
+    Circuit = $circuit
     PeeringType = 'AzurePrivatePeering'
     PeerASN = 100
     PrimaryPeerAddressPrefix = '10.6.1.0/30'

@@ -39,11 +39,8 @@ The **Remove-AzDataShareDataSetMapping** cmdlet removes a dataset mappings.
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Remove-AzDataShareDataSetMapping -ResourceGroupName "ADS" -AccountName "WikiAds" -ShareSubscriptionName "AdsShareSubscription" -Name "DSM"
 ```
-
-```output
+PS C:\> Remove-AzDataShareDataSetMapping -ResourceGroupName "ADS" -AccountName "WikiAds" -ShareSubscriptionName "AdsShareSubscription" -Name "DSM"
 Are you sure you want to remove dataset mapping "DSM"? 
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```

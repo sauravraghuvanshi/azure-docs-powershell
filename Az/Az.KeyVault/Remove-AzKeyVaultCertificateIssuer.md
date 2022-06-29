@@ -34,10 +34,8 @@ The **Remove-AzKeyVaultCertificateIssuer** cmdlet deletes a certificate issuer f
 
 ### Example 1: Remove a certificate issuer
 ```powershell
-Remove-AzKeyVaultCertificateIssuer -VaultName "ContosoKV01" -Name "TestIssuer01" -Force
-```
+PS C:\> Remove-AzKeyVaultCertificateIssuer -VaultName "ContosoKV01" -Name "TestIssuer01" -Force
 
-```output
 AccountId           :
 ApiKey              :
 OrganizationDetails :

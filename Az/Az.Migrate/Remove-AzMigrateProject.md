@@ -28,10 +28,8 @@ Deleting non-existent project is a no-operation.
 
 ### Example 1: Delete (Default)
 ```powershell
-Remove-AzMigrateProject -SubscriptionId xxx-xxx-xxx -ResourceGroupName BugBashAVSVMware -Name BugBashAVSVMware
-```
+PS C:\> Remove-AzMigrateProject -SubscriptionId xxx-xxx-xxx -ResourceGroupName BugBashAVSVMware -Name BugBashAVSVMware
 
-```output
 --No output--
 ```
 

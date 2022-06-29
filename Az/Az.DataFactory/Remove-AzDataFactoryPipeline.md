@@ -34,11 +34,8 @@ The **Remove-AzDataFactoryPipeline** cmdlet removes a pipeline from Azure Data F
 ## EXAMPLES
 
 ### Example 1: Remove a pipeline
-```powershell
-Remove-AzDataFactoryPipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF"
 ```
-
-```output
+PS C:\>Remove-AzDataFactoryPipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF"
 Confirm
 Are you sure you want to remove pipeline 'DPWikisample' in data factory 'WikiADF'? 
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y

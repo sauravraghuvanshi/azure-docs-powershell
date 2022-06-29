@@ -30,32 +30,32 @@ You can provide each cluster with a list of script actions to run in a specified
 ## EXAMPLES
 
 ### Example 1: Add a script action to the cluster configuration object
-```powershell
-# Primary storage account info
-$storageAccountResourceGroupName = "Group"
-$storageAccountResourceId = "yourstorageaccountresourceid"
-$storageAccountName = "yourstorageacct001"
-$storageAccountKey = (Get-AzStorageAccountKey -ResourceGroupName $storageAccountResourceGroupName -Name $storageAccountName)[0].value
+```
+PS C:\># Primary storage account info
+PS C:\> $storageAccountResourceGroupName = "Group"
+PS C:\> $storageAccountResourceId = "yourstorageaccountresourceid"
+PS C:\> $storageAccountName = "yourstorageacct001"
+PS C:\> $storageAccountKey = (Get-AzStorageAccountKey -ResourceGroupName $storageAccountResourceGroupName -Name $storageAccountName)[0].value
 
 
-$storageContainer = "container001"
+PS C:\> $storageContainer = "container001"
 
 # Script action info
-$scriptActionName = "<script action name>"
-$scriptActionURI = "<script action URI>"
-$scriptActionParameters = "<script action parameters>" 
+PS C:\> $scriptActionName = "<script action name>"
+PS C:\> $scriptActionURI = "<script action URI>"
+PS C:\> $scriptActionParameters = "<script action parameters>" 
 
 # Cluster configuration info
-$location = "East US 2"
-$clusterResourceGroupName = "Group"
-$clusterName = "your-hadoop-001"
-$clusterCreds = Get-Credential
+PS C:\> $location = "East US 2"
+PS C:\> $clusterResourceGroupName = "Group"
+PS C:\> $clusterName = "your-hadoop-001"
+PS C:\> $clusterCreds = Get-Credential
 
 # If the cluster's resource group doesn't exist yet, run:
 #   New-AzResourceGroup -Name $clusterResourceGroupName -Location $location
 
 # Create the cluster
-New-AzHDInsightClusterConfig  `
+PS C:\> New-AzHDInsightClusterConfig  `
             | Add-AzHDInsightScriptAction `
                 -Name $scriptActionName `
                 -Uri $scriptActionURI `

@@ -92,12 +92,10 @@ The Set-AzNetworkWatcherConnectionMonitor cmdlet updates connection monitor reso
 ## EXAMPLES
 
 ### Example 1: Update a connection monitor
-```powershell
-Set-AzNetworkWatcherConnectionMonitor -Location centraluseuap -Name cm -SourceResourceId /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/RgCentralUSEUAP/providers/Microsoft.Compute/virtualMachines/vm
--DestinationAddress google.com -DestinationPort 80 -Tag @{"key1" = "value1"}
 ```
+PS C:\> Set-AzNetworkWatcherConnectionMonitor -Location centraluseuap -Name cm -SourceResourceId /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/RgCentralUSEUAP/providers/Microsoft.Compute/virtualMachines/vm
+-DestinationAddress google.com -DestinationPort 80 -Tag @{"key1" = "value1"}
 
-```output
 Name                        : cm
 Id                          : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGro
                               ups/NetworkWatcherRG/providers/Microsoft.Network/networkWatcher

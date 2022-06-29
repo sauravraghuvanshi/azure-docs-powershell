@@ -39,10 +39,8 @@ Regenerate an access key for a SignalR service.
 
 ### Regenerate the primary key
 ```powershell
-New-AzSignalRKey -ResourceGroupName myResourceGroup -Name mysignalr1 -KeyType Primary -PassThru
-```
+PS C:\> New-AzSignalRKey -ResourceGroupName myResourceGroup -Name mysignalr1 -KeyType Primary -PassThru
 
-```output
 True
 ```
 

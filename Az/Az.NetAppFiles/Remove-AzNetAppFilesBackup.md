@@ -52,14 +52,14 @@ The **Remove-AzNetAppFilesBackup** cmdlet deletes an ANF account.
 
 ### Example 1
 ```powershell
-Remove-AzNetAppFilesBackup -ResourceGroupName "MyRG" -AccountName "MyAccount" -PoolName "MyPool" -VolumeName "MyVolume" -Name "MyBackup"
+PS C:\> Remove-AzNetAppFilesBackup -ResourceGroupName "MyRG" -AccountName "MyAccount" -PoolName "MyPool" -VolumeName "MyVolume" -Name "MyBackup"
 ```
 
 This command deletes the new ANF backup with a the name "MyBackup" for volume "MyVolume".
 
 ### Example 2
 ```powershell
-Remove-AzNetAppFilesBackup -ResourceGroupName "MyRG" -AccountName "MyAccount" -AccountBackupName "MyBackup"
+PS C:\> Remove-AzNetAppFilesBackup -ResourceGroupName "MyRG" -AccountName "MyAccount" -AccountBackupName "MyBackup"
 ```
 
 This command deletes the new ANF backup with a the name "MyBackup" for account "MyAccount".
@@ -292,15 +292,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
-[New-AzNetAppFilesBackup](./New-AzNetAppFilesBackup.md)
-[Get-AzNetAppFilesBackup](./Get-AzNetAppFilesBackup.md)
-[Update-AzNetAppFilesBackup](./Update-AzNetAppFilesBackup.md)
-[Get-AzNetAppFilesBackupPolicy](./Get-AzNetAppFilesBackupPolicy.md)
-[New-AzNetAppFilesBackupPolicy](./New-AzNetAppFilesBackupPolicy.md)
-[Update-AzNetAppFilesBackupPolicy](./Update-AzNetAppFilesBackupPolicy.md)
-[Remove-AzNetAppFilesBackupPolicy](./Remove-AzNetAppFilesBackupPolicy.md)
-[Get-AzNetAppFilesVolume](./Get-AzNetAppFilessVolume.md)
-[New-AzNetAppFilesVolume](./New-AzNetAppFilessVolume.md)
-[Update-AzNetAppFilesVolume](./Update-AzNetAppFilessVolume.md)
-[Remove-AzNetAppFilesVolume](./Remove-AzNetAppFilessVolume.md)

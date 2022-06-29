@@ -26,15 +26,15 @@ The **Get-AzDataLakeAnalyticsCatalogItem** gets a specified Azure Data Lake Anal
 ## EXAMPLES
 
 ### Example 1: Get a specified database
-```powershell
-Get-AzDataLakeAnalyticsCatalogItem -Account "contosoadla" -ItemType Database -Path "databaseName"
+```
+PS C:\>Get-AzDataLakeAnalyticsCatalogItem -Account "contosoadla" -ItemType Database -Path "databaseName"
 ```
 
 This command gets the specified database.
 
 ### Example 2: Get tables in a specified database and schema
-```powershell
-Get-AzDataLakeAnalyticsCatalogItem -AccountName "contosoadla" -ItemType Table -Path "databaseName.schemaName"
+```
+PS C:\>Get-AzDataLakeAnalyticsDataSource -AccountName "contosoadla" -ItemType Table -Path "databaseName.schemaName"
 ```
 
 This command gets a list of tables in the specified database.

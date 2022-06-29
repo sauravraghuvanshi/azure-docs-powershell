@@ -47,7 +47,7 @@ The **Sync-AzSynapseIntegrationRuntimeCredential** cmdlet synchronizes on-premis
 
 ### Example 1
 ```powershell
-Sync-AzSynapseIntegrationRuntimeCredential -WorkspaceName ContosoWorkspace -IntegrationRuntimeName 'test-selfhost-ir'
+PS C:\> Sync-AzSynapseIntegrationRuntimeCredential -WorkspaceName ContosoWorkspace -IntegrationRuntimeName 'test-selfhost-ir'
 ```
 
 Synchronizes credentials among integration runtime nodes.

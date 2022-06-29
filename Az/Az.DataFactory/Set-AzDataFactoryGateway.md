@@ -33,11 +33,8 @@ The **Set-AzDataFactoryGateway** cmdlet sets the description for the specified g
 ## EXAMPLES
 
 ### Example 1: Set the description for a gateway
-```powershell
-Set-AzDataFactoryGateway -ResourceGroupName "ADF" -Name "ContosoGateway" -DataFactoryName "WikiADF" -Description "my gateway"
 ```
-
-```output
+PS C:\>Set-AzDataFactoryGateway -ResourceGroupName "ADF" -Name "ContosoGateway" -DataFactoryName "WikiADF" -Description "my gateway"
 Name            : ContosoGateway
 Description     : my gateway
 Version         : 1.3.5338.1

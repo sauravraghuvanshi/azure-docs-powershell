@@ -52,8 +52,8 @@ The **New-AzApplicationGatewayUrlPathMapConfig** cmdlet creates an array of URL 
 ## EXAMPLES
 
 ### Example 1: Create an array of URL path mappings to a backend server pool
-```powershell
-New-AzApplicationGatewayUrlPathMapConfig -Name $UrlPathMapName -PathRules $VideoPathRule, $ImagePathRule -DefaultBackendAddressPool $Pool -DefaultBackendHttpSettings $PoolSetting02
+```
+PS C:\>New-AzApplicationGatewayUrlPathMapConfig -Name $UrlPathMapName -PathRules $VideoPathRule, $ImagePathRule -DefaultBackendAddressPool $Pool -DefaultBackendHttpSettings $PoolSetting02
 ```
 
 This command creates an array of URL path mappings to a backend server pool.

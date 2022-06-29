@@ -25,9 +25,8 @@ Create a in-memory object for AddonVrProperties
 
 ### Example 1: Create a local VR object for the Addon Property parameter
 ```powershell
-New-AzVMwareAddonVrPropertiesObject -VrsCount 2
-```
-```output
+PS C:\> New-AzVMwareAddonVrPropertiesObject -VrsCount 2
+
 AddonType ProvisioningState VrsCount
 --------- ----------------- --------
 VR                          2
@@ -59,7 +58,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.Api20211201.AddonVrProperties
+### Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.Api20210601.AddonVrProperties
 
 ## NOTES
 

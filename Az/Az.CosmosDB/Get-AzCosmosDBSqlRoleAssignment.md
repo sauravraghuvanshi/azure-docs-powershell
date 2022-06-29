@@ -33,11 +33,9 @@ Id can be either fully qualified or just the Guid.
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzCosmosDBSqlRoleAssignment -AccountName accountName -ResourceGroupName resourceGroupName -Id roleAssignmentId
 ```
+PS C:\> Get-AzCosmosDBSqlRoleAssignment -AccountName accountName -ResourceGroupName resourceGroupName -Id roleAssignmentId
 
-```output
 Id               : /subscriptions/subId/resourceGroups/resourceGroupName/providers/Microsoft.DocumentDB/databaseAccounts/accountName/sqlRoleAssignments/roleAssignmentId
 Scope            : /subscriptions/subId/resourceGroups/resourceGroupName/providers/Microsoft.DocumentDB/databaseAccounts/accountName/
 RoleDefinitionId : /subscriptions/subId/resourceGroups/resourceGroupName/providers/Microsoft.DocumentDB/databaseAccounts/accountName/sqlRoleDefinitions/roleDefinitionId

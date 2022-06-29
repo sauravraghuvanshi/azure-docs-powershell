@@ -38,10 +38,8 @@ Get a specific regulatory compliance standard details or list all regulatory com
 
 ### Example 1
 ```powershell
-Get-AzRegulatoryComplianceStandard
-```
+PS C:\>Get-AzRegulatoryComplianceStandard
 
-```output
 Id                  : /subscriptions/487bb485-b5b0-471e-9c0d-10717612f869/providers/Microsoft.Security/regulatoryCompli
                       anceStandards/Azure-CIS-1.1.0
 Name                : Azure-CIS-1.1.0
@@ -87,10 +85,8 @@ Get all regulatory compliance standards under a subscription.
 
 ### Example 2
 ```powershell
-Get-AzRegulatoryComplianceStandard -Name "SOC-TSP"
-```
+PS C:\>Get-AzRegulatoryComplianceStandard -Name "SOC-TSP"
 
-```output
 Id                  : /subscriptions/487bb485-b5b0-471e-9c0d-10717612f869/providers/Microsoft.Security/regulatoryCompli
                       anceStandards/SOC-TSP
 Name                : SOC-TSP
@@ -106,10 +102,8 @@ Get details of specific regulatory compliance standard according standard name.
 
 ### Example 3
 ```powershell
-Get-AzRegulatoryComplianceStandard -ResourceId "/subscriptions/487bb485-b5b0-471e-9c0d-10717612f869/providers/Microsoft.Security/regulatoryComplianceStandards/SOC-TSP"
-```
+PS C:\>Get-AzRegulatoryComplianceStandard -ResourceId "/subscriptions/487bb485-b5b0-471e-9c0d-10717612f869/providers/Microsoft.Security/regulatoryComplianceStandards/SOC-TSP"
 
-```output
 Id                  : /subscriptions/487bb485-b5b0-471e-9c0d-10717612f869/providers/Microsoft.Security/regulatoryCompli
                       anceStandards/SOC-TSP
 Name                : SOC-TSP

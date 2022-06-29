@@ -42,11 +42,9 @@ If you confirm to overwrite the existing dataset, the dataset definition is also
 ## EXAMPLES
 
 ### Example 1: Create a dataset
-```powershell
-Set-AzDataFactoryV2Dataset -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "DAWikipediaClickEvents" -DefinitionFile "C:\\samples\\WikiSample\\DA_WikipediaClickEvents.json"
 ```
+PS C:\> Set-AzDataFactoryV2Dataset -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "DAWikipediaClickEvents" -DefinitionFile "C:\\samples\\WikiSample\\DA_WikipediaClickEvents.json"
 
-```output
     DatasetName       : DAWikipediaClickEvents
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF

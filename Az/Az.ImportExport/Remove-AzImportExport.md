@@ -35,14 +35,15 @@ Only jobs in the Creating or Completed states can be deleted.
 
 ### Example 1: Remove ImportExport job by resourceGroup and server name
 ```powershell
-Remove-AzImportExport -Name test-job -ResourceGroupName ImportTestRG
+PS C:\> Remove-AzImportExport -Name test-job -ResourceGroupName ImportTestRG
 ```
 
 This cmdlet removes ImportExport job by resourceGroup and server name.
 
 ### Example 2: Remove ImportExport job by identity
 ```powershell
-Get-AzImportExport -Name test-job -ResourceGroupName ImportTestRG | Remove-AzImportExport
+PS C:\> Get-AzImportExport -Name test-job -ResourceGroupName ImportTestRG | Remove-AzImportExport
+ 
 ```
 
 These cmdlet removes ImportExport job by identity.

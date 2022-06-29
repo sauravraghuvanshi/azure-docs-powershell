@@ -36,8 +36,8 @@ The **New-AzDataLakeStoreAccount** cmdlet creates a new Data Lake Store account.
 ## EXAMPLES
 
 ### Example 1: Create an account
-```powershell
-New-AzDataLakeStoreAccount -Name "ContosoADL" -ResourceGroupName "ContosoOrg" -Location "East US 2"
+```
+PS C:\>New-AzDataLakeStoreAccount -Name "ContosoADL" -ResourceGroupName "ContosoOrg" -Location "East US 2"
 ```
 
 This command creates a Data Lake Store account named ContosoADL for the East US 2 location.

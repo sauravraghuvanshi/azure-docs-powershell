@@ -27,16 +27,14 @@ New-AzManagementGroup [-GroupName] <String> [-DisplayName <String>] [-DefaultPro
 ```
 
 ## DESCRIPTION
-The **New-AzManagementGroup** cmdlet creates a management group with name **GroupName**. The **DisplayName** and **ParentId** can also be set when creating a new Management Group.
+The **New-AzManagementGroup** cmdlet creates a management group.
 
 ## EXAMPLES
 
 ### Example 1: Create a Management Group
-```powershell
-New-AzManagementGroup -GroupName "TestGroup"
 ```
+PS C:\> New-AzManagementGroup -GroupName "TestGroup"
 
-```output
 Id                : /providers/Microsoft.Management/managementGroups/TestGroup
 Type              : /providers/Microsoft.Management/managementGroups
 Name              : TestGroup
@@ -52,11 +50,9 @@ ParentDisplayName : 14307de0-5e6f-46cf-b2ba-64a062964d30
 Creation of a new group with `DisplayName` and `ParentId` set to `null`. The `DisplayName` will be same as the `GroupName` and the parent of the group will be the tenant.  
 
 ### Example 2: Create a Management Group with a display name
-```powershell
-New-AzManagementGroup -GroupName "TestGroup" -DisplayName "TestGroupDisplayName"
 ```
+PS C:\> New-AzManagementGroup -GroupName "TestGroup" -DisplayName "TestGroupDisplayName"
 
-```output
 Id                : /providers/Microsoft.Management/managementGroups/TestGroup
 Type              : /providers/Microsoft.Management/managementGroups
 Name              : TestGroup
@@ -72,11 +68,9 @@ ParentDisplayName : 14307de0-5e6f-46cf-b2ba-64a062964d30
 In this case, the parent of the group will be the tenant and the `DisplayName` will be set to the value given.
 
 ### Example 3: Create a Management Group with a parent and a display name
-```powershell
-New-AzManagementGroup -GroupName "TestGroup" -DisplayName "TestGroupDisplayName" -ParentId "/providers/Microsoft.Management/managementGroups/TestGroupParent"
 ```
+PS C:\> New-AzManagementGroup -GroupName "TestGroup" -DisplayName "TestGroupDisplayName" -ParentId "/providers/Microsoft.Management/managementGroups/TestGroupParent"
 
-```output
 Id                : /providers/Microsoft.Management/managementGroups/TestGroup
 Type              : /providers/Microsoft.Management/managementGroups
 Name              : TestGroup
@@ -90,12 +84,10 @@ ParentDisplayName : TestGroupParent
 ```
 
 ### Example 4: Create a Management Group with a parent (using a parent object)
-```powershell
-$parentObject = Get-AzManagementGroup -GroupName "TestGroupParent"
-New-AzManagementGroup -GroupName "TestGroup" -ParentObject $parentObject
 ```
+PS C:\> $parentObject = Get-AzManagementGroup -GroupName "TestGroupParent"
+PS C:\> New-AzManagementGroup -GroupName "TestGroup" -ParentObject $parentObject
 
-```output
 Id                : /providers/Microsoft.Management/managementGroups/TestGroup
 Type              : /providers/Microsoft.Management/managementGroups
 Name              : TestGroup

@@ -27,15 +27,15 @@ The **Get-AzSqlDatabaseActivity** cmdlet gets the status of database operations 
 ## EXAMPLES
 
 ### Example 1: Get status for all SQL Database instances
-```powershell
-Get-AzSqlDatabaseActivity -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -ElasticPoolName "ElasticPool01"
+```
+PS C:\>Get-AzSqlDatabaseActivity -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -ElasticPoolName "ElasticPool01"
 ```
 
 This command returns the operation status of all SQL Database instances in an elastic pool named ElasticPool01.
 
 ### Example 2: Get status for all SQL Database operations
-```powershell
-Get-AzSqlDatabaseActivity -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01"
+```
+PS C:\>Get-AzSqlDatabaseActivity -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01"
 ```
 
 This command returns the status of all SQL Database operations in a database.

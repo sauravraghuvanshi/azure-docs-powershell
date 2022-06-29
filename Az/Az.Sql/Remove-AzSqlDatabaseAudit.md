@@ -34,13 +34,13 @@ To use the cmdlet, use the *ResourceGroupName*, *ServerName*, and *DatabaseName*
 ## EXAMPLES
 
 ### Example 1: Remove the auditing settings of an Azure SQL database
-```powershell
-Remove-AzSqlDatabaseAudit -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01"
+```
+PS C:\>Remove-AzSqlDatabaseAudit -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01"
 ```
 
 ### Example 2: Remove, through pipeline, the auditing settings of an Azure SQL database
-```powershell
-Get-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" | Remove-AzSqlDatabaseAudit
+```
+PS C:\> Get-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" | Remove-AzSqlDatabaseAudit
 ```
 
 ## PARAMETERS

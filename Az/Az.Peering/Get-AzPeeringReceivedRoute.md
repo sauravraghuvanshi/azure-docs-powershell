@@ -35,28 +35,28 @@ Lists recieved routes from a Peering
 
 ### List top 100 received routes for a peering
 ```powershell
-Get-AzPeeringReceivedRoute -ResourceGroupName $resourceGroupName -Name $peeringName
+PS C:\> Get-AzPeeringReceivedRoute -ResourceGroupName $resourceGroupName -Name $peeringName
 ```
 
 Lists all of the received routes for a peering
 
 ### Filter by AS Path
 ```powershell
-Get-AzPeeringReceivedRoute -ResourceGroupName $resourceGroupName -Name $peeringName -AsPath "1234 5674 9834"
+PS C:\> Get-AzPeeringReceivedRoute -ResourceGroupName $resourceGroupName -Name $peeringName -AsPath "1234 5674 9834"
 ```
 
 Lists all of the received routes for a peering with a filter on AS 
 
 ### Filter by RPKIValidationState
 ```powershell
-Get-AzPeeringReceivedRoute -ResourceGroupName $resourceGroupName -Name $peeringName -RPKIValidationState "Valid"
+PS C:\> Get-AzPeeringReceivedRoute -ResourceGroupName $resourceGroupName -Name $peeringName -RPKIValidationState "Valid"
 ```
 
 Lists all of the received routes for a peering with a filter on RPKIValidationState
 
 ### Filter by OriginAsValidationState
 ```powershell
-Get-AzPeeringReceivedRoute -ResourceGroupName $resourceGroupName -Name $peeringName -OriginAsValidationState "Valid"
+PS C:\> Get-AzPeeringReceivedRoute -ResourceGroupName $resourceGroupName -Name $peeringName -OriginAsValidationState "Valid"
 ```
 
 Lists all of the received routes for a peering with a filter on OriginAsValidationState

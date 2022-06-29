@@ -38,10 +38,7 @@ The **Get-AzMetricAlertRuleV2** cmdlet gets a metric alert rule by its name or U
 
 ### Example 1: Get all metric alert rules in current subscription
 ```powershell
-Get-AzMetricAlertRuleV2
-```
-
-```output
+PS C:\>Get-AzMetricAlertRuleV2
 TargetResourceId     : /subscriptions/00000000-0000-0000-0000-0000000/resourceGroups/metricResourceGroup/providers/Microsoft.KeyVault/vaults/GenevaRPKeyVault
 Criteria             : {Metric1}
 Actions              : {/subscriptions/00000000-0000-0000-0000-0000000/resourcegroups/sampleresourcegroup/providers/Microsoft.Insights/actiongroups/scnewactiongroup}
@@ -87,10 +84,7 @@ This command gets all the metric alert rules in the current subscription.
 ### Example 2: Get all metric alert rules in a resource group
 
 ```powershell
-Get-AzMetricAlertRuleV2 -ResourceGroupName metricAlertsRG
-```
-
-```output
+PS C:\>Get-AzMetricAlertRuleV2 -ResourceGroupName metricAlertsRG
 Criteria             : {Metric1}
 Actions              : {/subscriptions/00000000-0000-0000-0000-0000000/resourcegroups/default-activitylogalerts/pr
                        oviders/Microsoft.Insights/actiongroups/emails}
@@ -119,10 +113,8 @@ This command gets all the metric alert rules in the resource group named metricA
 ### Example 3: Get a metric alert rule by name
 
 ```powershell
-Get-AzMetricAlertRuleV2 -ResourceGroupName metricAlertsRG -Name PS3182019
-```
+PS C:\> Get-AzMetricAlertRuleV2 -ResourceGroupName metricAlertsRG -Name PS3182019
 
-```output
 Criteria             : {metric1}
 Actions              : {/subscriptions/00000000-0000-0000-0000-0000000/resourcegroups/default-activitylogalerts/providers/Microsoft.Insights/actiongroups/demo}
 ResourceGroup        : metricAlertsRG
@@ -149,10 +141,7 @@ This command gets the metric alert rule named PS3182019 in the resource group na
 ### Example 4: Get a metric alert rule by ruleID
 
 ```powershell
-Get-AzMetricAlertRuleV2 -ResourceId /subscriptions/00000000-0000-0000-0000-0000000/resourceGroups/SampleResourceGroup/providers/Microsoft.Insights/metricAlerts/MyMetricAlertRule
-```
-
-```output
+PS C:\>Get-AzMetricAlertRuleV2 -ResourceId /subscriptions/00000000-0000-0000-0000-0000000/resourceGroups/SampleResourceGroup/providers/Microsoft.Insights/metricAlerts/MyMetricAlertRule
 TargetResourceId     : /subscriptions/00000000-0000-0000-0000-0000000/resourceGroups/SampleResourceGroup/providers/Microsoft.Insights/components/alertstestFunction
 Criteria             : {Metric1}
 Actions              : {/subscriptions/00000000-0000-0000-0000-0000000/resourcegroups/default-activitylogalerts/providers/Microsoft.Insights/actiongroups/emails}

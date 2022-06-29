@@ -39,23 +39,23 @@ The **Add-AzSynapseTriggerSubscription** cmdlet subscribes the event trigger to 
 
 ### Example 1
 ```powershell
-Add-AzSynapseTriggerSubscription -WorkspaceName ContosoWorkspace -Name ContosoTrigger
+PS C:\> Add-AzSynapseTriggerSubscription -WorkspaceName ContosoWorkspace -Name ContosoTrigger
 ```
 
 This command will subscribe trigger called ContosoTrigger to the specified events from the trigger defintion.
 
 ### Example 2
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Add-AzSynapseTriggerSubscription -Name ContosoTrigger
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Add-AzSynapseTriggerSubscription -Name ContosoTrigger
 ```
 
 This command will subscribe trigger called ContosoTrigger to the specified events from the trigger defintion through pipeline.
 
 ### Example 3
 ```powershell
-$trigger = Get-AzSynapseTrigger -WorkspaceName ContosoWorkspace -Name ContosoTrigger
-$trigger | Add-AzSynapseTriggerSubscription
+PS C:\> $trigger = Get-AzSynapseTrigger -WorkspaceName ContosoWorkspace -Name ContosoTrigger
+PS C:\> $trigger | Add-AzSynapseTriggerSubscription
 ```
 
 This command will subscribe trigger called ContosoTrigger to the specified events from the trigger defintion through pipeline.

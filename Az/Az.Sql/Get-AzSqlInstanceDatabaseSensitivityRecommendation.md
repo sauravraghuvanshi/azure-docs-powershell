@@ -34,10 +34,8 @@ The Get-AzSqlInstanceDatabaseSensitivityRecommendation cmdlet returns the recomm
 
 ### Example 1: Get recommended information types and sensitivity labels of an Azure SQL Managed Instance database.
 ```powershell
-Get-AzSqlInstanceDatabaseSensitivityRecommendation -ResourceGroupName resourceGroup -InstanceName managedInstance -DatabaseName database
-```
+PS C:\> Get-AzSqlInstanceDatabaseSensitivityRecommendation -ResourceGroupName resourceGroup -InstanceName managedInstance -DatabaseName database
 
-```output
 ResourceGroupName : resourceGroup
 InstanceName      : managedInstance
 DatabaseName      : database
@@ -64,10 +62,8 @@ SensitivityLabels : {{
 
 ### Example 2: Get recommended information types and sensitivity labels of an Azure SQL Managed Instance database using Piping.
 ```powershell
-Get-AzSqlInstanceDatabase -ResourceGroupName resourceGroup -InstanceName managedInstance -Name database | Get-AzSqlInstanceDatabaseSensitivityRecommendation
-```
+PS C:\> Get-AzSqlInstanceDatabase -ResourceGroupName resourceGroup -InstanceName managedInstance -Name database | Get-AzSqlInstanceDatabaseSensitivityRecommendation
 
-```output
 ResourceGroupName : resourceGroup
 InstanceName      : managedInstance
 DatabaseName      : database

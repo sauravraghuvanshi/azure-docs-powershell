@@ -33,10 +33,8 @@ The Get-AzSynapseSqlPoolSensitivityRecommendation cmdlet returns the recommended
 
 ### Example 1: Get recommended information types and sensitivity labels of an Azure Synapse SQL pool.
 ```powershell
-Get-AzSynapseSqlPoolSensitivityRecommendation -ResourceGroupName ContosoResourceGroup -WorkspaceName ContosoWorkspace -SqlPoolName ContosoSqlPool
-```
+PS C:\> Get-AzSynapseSqlPoolSensitivityRecommendation -ResourceGroupName ContosoResourceGroup -WorkspaceName ContosoWorkspace -SqlPoolName ContosoSqlPool
 
-```output
 ResourceGroupName : ContosoResourceGroup
 WorkspaceName        : ContosoWorkspace
 SqlPoolName      : ContosoSqlPool
@@ -63,10 +61,8 @@ SensitivityLabels : {{
 
 ### Example 2: Get recommended information types and sensitivity labels of an Azure Synapse SQL pool using Piping.
 ```powershell
-Get-AzSynapseSqlPool -ResourceGroupName ContosoResourceGroup -WorkspaceName ContosoWorkspace -Name ContosoSqlPool | Get-AzSynapseSqlPoolSensitivityRecommendation
-```
+PS C:\> Get-AzSynapseSqlPool -ResourceGroupName ContosoResourceGroup -WorkspaceName ContosoWorkspace -Name ContosoSqlPool | Get-AzSynapseSqlPoolSensitivityRecommendation
 
-```output
 ResourceGroupName : ContosoResourceGroup
 WorkspaceName        : ContosoWorkspace
 SqlPoolName      : ContosoSqlPool

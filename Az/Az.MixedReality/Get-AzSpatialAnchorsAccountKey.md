@@ -39,10 +39,8 @@ Get developer keys of Spatial Anchors Account.
 
 ### Example 1
 ```powershell
-Get-AzSpatialAnchorsAccountKey -ResourceGroup rg1 -Name example
-```
+PS C:\> Get-AzSpatialAnchorsAccountKey -ResourceGroup rg1 -Name example
 
-```output
 PrimaryKey                                   SecondaryKey
 ----------                                   ------------
 QTwT6LpnD6NuUfgfkCKFBmf89xWJ7tDC0Yx0yxxaejs= BGOP2NZN5ThHbDFKzW+FISSgxnnBqCPKpTsixAxkvXk=
@@ -52,10 +50,8 @@ Get developer keys of Spatial Anchors Account "example" from current Subscriptio
 
 ### Example 2
 ```powershell
-Get-AzSpatialAnchorsAccount -ResourceGroup rg1 -Name example | Get-AzSpatialAnchorsAccountKey 
-```
+PS C:\> Get-AzSpatialAnchorsAccount -ResourceGroup rg1 -Name example | Get-AzSpatialAnchorsAccountKey 
 
-```output
 PrimaryKey                                   SecondaryKey
 ----------                                   ------------
 QTwT6LpnD6NuUfgfkCKFBmf89xWJ7tDC0Yx0yxxaejs= BGOP2NZN5ThHbDFKzW+FISSgxnnBqCPKpTsixAxkvXk=

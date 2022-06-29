@@ -33,15 +33,15 @@ The Remove-AzEventHubAuthorizationRule cmdlet removes and deletes the specified 
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Remove-AzEventHubAuthorizationRule -ResourceGroupName MyResourceGroupName -Namespace MyNamespaceName -Name MyAuthRuleName
+```
+PS C:\> Remove-AzEventHubAuthorizationRule -ResourceGroupName MyResourceGroupName -Namespace MyNamespaceName -Name MyAuthRuleName
 ```
 
 Removes the authorization rule \`MyAuthRuleName\` from the Namespace \`MyNamespaceName\`.
 
 ### Example 2
-```powershell
-Remove-AzEventHubAuthorizationRule -ResourceGroupName MyResourceGroupName -Namespace MyNamespaceName -EventHub MyEventHubName -Name MyAuthRuleName
+```
+PS C:\> Remove-AzEventHubAuthorizationRule -ResourceGroupName MyResourceGroupName -Namespace MyNamespaceName -EventHub MyEventHubName -Name MyAuthRuleName
 ```
 
 Removes the authorization rule \`MyAuthRuleName\` from the Event Hub \`MyEventHubName\`.

@@ -50,22 +50,22 @@ The **Set-AzSynapseSqlScript** cmdlet creates or updates a SQL script in a works
 
 ### Example 1
 ```powershell
-Set-AzSynapseSqlScript -WorkspaceName ContosoWorkspace -DefinitionFile "C:\\samples\\sqlscript.sql"
+PS C:\> Set-AzSynapseSqlScript -WorkspaceName ContosoWorkspace -DefinitionFile "C:\\samples\\sqlscript.sql"
 ```
 
 This command creates or updates a SQL script from SQL script file sqlscript.sql in the workspace named ContosoWorkspace.
 
 ### Example 2
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Set-AzSynapseSqlScript -DefinitionFile "C:\\samples\\sqlscript.sql"
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Set-AzSynapseSqlScript -DefinitionFile "C:\\samples\\sqlscript.sql"
 ```
 
 This command creates or updates a SQL script from SQL script file sqlscript.sql in the workspace named ContosoWorkspace.
 
 ### Example 3
 ```powershell
-Set-AzSynapseSqlScript -WorkspaceName ContosoWorkspace -DefinitionFile "C:\\samples\\sqlscript.sql"  -SqlPoolName Contososqlpool -SqlDatabaseName Contosodatabase
+PS C:\> Set-AzSynapseSqlScript -WorkspaceName ContosoWorkspace -DefinitionFile "C:\\samples\\sqlscript.sql"  -SqlPoolName Contososqlpool -SqlDatabaseName Contosodatabase
 ```
 
 This command creates or updates a SQL script from SQL script file sqlscript.sql which connects to ContosoSqlPool and uses the database named Contosodatabase in the workspace named ContosoWorkspace.

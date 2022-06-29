@@ -57,17 +57,15 @@ In order to specify the Role Definition's Permissions, either use the DataAction
 ## EXAMPLES
 
 ### Example 1: Using DataAction
-```powershell
-New-AzCosmosDBSqlRoleDefinition `
-	-AccountName accountName `
-	-ResourceGroupName resourceGroupName `
-	-Type CustomRole `
-	-RoleName roleName `
-	-DataAction "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/items/create" `
-	-AssignableScope "/"
 ```
+PS C:\> New-AzCosmosDBSqlRoleDefinition
+	-AccountName accountName 
+	-ResourceGroupName resourceGroupName 
+	-Type CustomRole
+	-RoleName roleName
+	-DataAction "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/items/create"
+	-AssignableScope "/"
 
-```output
 RoleName         : roleName
 Id               : /subscriptions/subId/resourceGroups/resourceGroupName/providers/Microsoft.DocumentDB/databaseAccounts/accountName/sqlRoleDefinitions/id
 Type             : CustomRole
@@ -76,18 +74,16 @@ AssignableScopes : {/subscriptions/subId/resourceGroups/resourceGroupName/provid
 ```
 
 ### Example 2: Using Permission and ParentObject
-```powershell
-$DatabaseAccount = Get-AzCosmosDBAccount -Name accountName -ResourceGroupName resourceGroupName
-$Permission = New-AzCosmosDBPermission -DataAction "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/items/create"
-New-AzCosmosDBSqlRoleDefinition `
-	-Type CustomRole `
-	-RoleName roleName `
-	-Permission $Permission `
-	-AssignableScope "/" `
-	-ParentObject $DatabaseAccount
 ```
+PS C:\> $DatabaseAccount = Get-AzCosmosDBAccount -Name accountName -ResourceGroupName resourceGroupName
+PS C:\> $Permission = New-AzCosmosDBPermission -DataAction "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/items/create"
+PS C:\> New-AzCosmosDBSqlRoleDefinition
+	-Type CustomRole
+	-RoleName roleName
+	-Permission $Permission
+	-AssignableScope "/"
+	-ParentObject $DatabaseAccount
 
-```output
 RoleName         : roleName
 Id               : /subscriptions/subId/resourceGroups/resourceGroupName/providers/Microsoft.DocumentDB/databaseAccounts/accountName/sqlRoleDefinitions/id
 Type             : CustomRole

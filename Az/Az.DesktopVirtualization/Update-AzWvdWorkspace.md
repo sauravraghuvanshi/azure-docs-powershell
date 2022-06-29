@@ -35,14 +35,12 @@ Update a workspace.
 
 ### Example 1: Update a Windows Virtual Desktop Workspace by name
 ```powershell
-Update-AzWvdWorkspace -ResourceGroupName ResourceGroupName `
+PS C:\> Update-AzWvdWorkspace -ResourceGroupName ResourceGroupName `
                         -Name WorkspaceName `
                         -FriendlyName 'Friendly Name' `
                         -ApplicationGroupReference "/subscriptions/SubscriptionId/resourceGroups/ResourceGroupName/providers/Microsoft.DesktopVirtualization/applicationGroups/ApplicationGroupName1","/subscriptions/SubscriptionId/resourceGroups/ResourceGroupName/providers/Microsoft.DesktopVirtualization/applicationGroups/ApplicationGroupName2" `
                         -Description 'Description'
-```
 
-```output
 Location   Name                 Type
 --------   ----                 ----
 eastus     WorkspaceName Microsoft.DesktopVirtualization/workspaces

@@ -38,10 +38,8 @@ Gets information about a server firewall rule.
 
 ### Example 1: List all firewall rule under a MariaDB
 ```powershell
-Get-AzMariaDbFirewallRule -ResourceGroupName mariadb-test-qu5ov0 -ServerName mariadb-test-4rmtig
-```
+PS C:\> Get-AzMariaDbFirewallRule -ResourceGroupName mariadb-test-qu5ov0 -ServerName mariadb-test-4rmtig
 
-```output
 Name       Type
 ----       ----
 fr-cfgl3y  Microsoft.DBforMariaDB/servers/firewallRules
@@ -53,10 +51,8 @@ This command lists all girewall rule under a MariaDB.
 
 ### Example 2: Get a firewall rule under a MariaDB
 ```powershell
-Get-AzMariaDbFirewallRule -ResourceGroupName mariadb-test-qu5ov0 -ServerName mariadb-test-4rmtig -Name frname-001
-```
+PS C:\> Get-AzMariaDbFirewallRule -ResourceGroupName mariadb-test-qu5ov0 -ServerName mariadb-test-4rmtig -Name frname-001
 
-```output
 Name       Type
 ----       ----
 frname-001 Microsoft.DBforMariaDB/servers/firewallRules

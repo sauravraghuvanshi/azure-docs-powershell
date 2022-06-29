@@ -26,15 +26,14 @@ The New-AzNetworkWatcherConnectionMonitorOutputObject cmdlet creates connection 
 
 ### Example 1
 ```powershell
-New-AzNetworkWatcherConnectionMonitorOutputObject -OutputType "workspace" -WorkspaceResourceId MyWSResourceId
+PS C:\> New-AzNetworkWatcherConnectionMonitorOutputObject -OutputType "workspace" -WorkspaceResourceId MyWSResourceId
 ```
 
-```output
 Type              : "workspace"
 WorkspaceSettings : {
                       "WorkspaceResourceId": "MyWSResourceId"
                     }
-```
+
 ## PARAMETERS
 
 ### -DefaultProfile

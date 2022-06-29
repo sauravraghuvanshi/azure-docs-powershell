@@ -33,15 +33,15 @@ This is the same information provided in the deployment details on the portal.
 ## EXAMPLES
 
 ### Example 1: Get deployment operations given a deployment name
-```powershell
-Get-AzManagementGroupDeploymentOperation -ManagementGroupId myMG -DeploymentName Deploy01
+```
+PS C:\>Get-AzManagementGroupDeploymentOperation -ManagementGroupId myMG -DeploymentName Deploy01
 ```
 
 Gets deployment operations with name "Deploy01" at the management group "myMG".
 
 ### Example 2: Get a deployment and get its deployment operations
-```powershell
-Get-AzManagementGroupDeployment -ManagementGroupId myMG -Name Deploy01 | Get-AzManagementGroupDeploymentOperation
+```
+PS C:\>Get-AzManagementGroupDeployment -ManagementGroupId myMG -Name Deploy01 | Get-AzManagementGroupDeploymentOperation
 ```
 
 This command gets the deployment "Deploy01" at the management group "myMG" and get its deployment operations.

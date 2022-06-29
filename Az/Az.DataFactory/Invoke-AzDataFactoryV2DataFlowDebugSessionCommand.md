@@ -51,8 +51,8 @@ The PowerShell command sequence for data flow debug workflow should be:
 
 ### Example 1
 ```powershell
-$result = Invoke-AzDataFactoryV2DataFlowDebugSessionCommand -ResourceGroupName adf -DataFactoryName WiKiADF -Command executePreviewQuery -SessionId fd76cd0d-8b37-4dc0-a370-3f9d43ac686d -StreamName source1 -RowLimit 100 -AsJob
-$result
+PS C:\WINDOWS\system32> $result = Invoke-AzDataFactoryV2DataFlowDebugSessionCommand -ResourceGroupName adf -DataFactoryName WiKiADF -Command executePreviewQuery -SessionId fd76cd0d-8b37-4dc0-a370-3f9d43ac686d -StreamName source1 -RowLimit 100 -AsJob
+PS C:\WINDOWS\system32> $result
 
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
@@ -61,14 +61,14 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 
 (After 2 minutes)
 
-$result
+PS C:\WINDOWS\system32> $result
 
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 3      Long Running... AzureLongRun... Completed     True            localhost            Invoke-AzDataFactoryV2...
 
-$output = ConvertFrom-Json($result.Output.Data)
-$output.output
+PS C:\WINDOWS\system32> $output = ConvertFrom-Json($result.Output.Data)
+PS C:\WINDOWS\system32> $output.output
 
     {
       "schema": "output(ResourceAgencyNum as string, PublicName as string)" ,

@@ -27,10 +27,7 @@ The **Get-AzSqlSyncSchema** cmdlet returns information about the sync schema of 
 
 ### Example 1: Get the sync schema for a hub database
 ```powershell
-Get-AzSqlSyncSchema -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "database01" -SyncGroupName "syncGroup01"
-```
-
-```output
+PS C:\>Get-AzSqlSyncSchema -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "database01" -SyncGroupName "syncGroup01"
 Tables                     LastUpdateTime
 ------                     --------------
 {dbo.Table_1, dbo.Table_2} 6/13/2017 10:03:44 AM
@@ -40,10 +37,7 @@ This command gets the sync schema for the hub database in the sync group syncGro
 
 ### Example 2: Get the sync schema for a hub database, and expand Tables
 ```powershell
-Get-AzSqlSyncSchema -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "database01" -SyncGroupName "syncGroup01"  | Select-Object -ExpandProperty Tables
-```
-
-```output
+PS C:\>Get-AzSqlSyncSchema -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "database01" -SyncGroupName "syncGroup01"  | select -ExpandProperty Tables
 Columns    : {column1, column2}
 ErrorId    : Schema_TableHasNoPrimaryKey
 HasError   : True
@@ -61,10 +55,7 @@ This command gets the sync schema for the hub database in the sync group syncGro
 
 ### Example 3: Get the sync schema for a member database
 ```powershell
-Get-AzSqlSyncSchema -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "database01" -SyncGroupName "syncGroup01" -SyncMemberName "syncMember01"
-```
-
-```output
+PS C:\>Get-AzSqlSyncSchema -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "database01" -SyncGroupName "syncGroup01" -SyncMemberName "syncMember01"
 The schema payload is the same as Example 1.
 ```
 

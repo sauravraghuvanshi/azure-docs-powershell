@@ -34,11 +34,8 @@ Specify the *ResourceGroupName* and *ServerName* parameters to identify the serv
 ## EXAMPLES
 
 ### Example 1: Get the auditing settings of an Azure SQL server
-```powershell
-Get-AzSqlServerAudit -ResourceGroupName "resourcegroup01" -ServerName "server01"
 ```
-
-```output
+PS C:\>Get-AzSqlServerAudit -ResourceGroupName "resourcegroup01" -ServerName "server01"
 ServerName                          : server01
 ResourceGroupName                   : resourcegroup01
 AuditActionGroup                    : {SUCCESSFUL_DATABASE_AUTHENTICATION_GROUP, FAILED_DATABASE_AUTHENTICATION_GROUP,
@@ -56,11 +53,8 @@ WorkspaceResourceId                 : "/subscriptions/4b9e8510-67ab-4e9a-95a9-e2
 ```
 
 ### Example 2: Get, through pipeline, the auditing settings of an Azure SQL server
-```powershell
-Get-AzSqlServer -ResourceGroupName "ResourceGroup01" -ServerName "Server01" | Get-AzSqlServerAudit
 ```
-
-```output
+PS C:\> Get-AzSqlServer -ResourceGroupName "ResourceGroup01" -ServerName "Server01" | Get-AzSqlServerAudit
 ServerName                          : server01
 ResourceGroupName                   : resourcegroup01
 AuditActionGroup                    : {SUCCESSFUL_DATABASE_AUTHENTICATION_GROUP, FAILED_DATABASE_AUTHENTICATION_GROUP,
@@ -78,11 +72,8 @@ WorkspaceResourceId                 : "/subscriptions/4b9e8510-67ab-4e9a-95a9-e2
 ```
 
 ### Example 3: Get the auditing settings of an Azure SQL server
-```powershell
-Get-AzSqlServerAudit -ResourceGroupName "resourcegroup01" -ServerName "server01"
 ```
-
-```output
+PS C:\>Get-AzSqlServerAudit -ResourceGroupName "resourcegroup01" -ServerName "server01"
 ServerName                          : server01
 ResourceGroupName                   : resourcegroup01
 AuditActionGroup                    : {SUCCESSFUL_DATABASE_AUTHENTICATION_GROUP, FAILED_DATABASE_AUTHENTICATION_GROUP,

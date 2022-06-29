@@ -39,7 +39,7 @@ The **Remove-AzDataBoxEdgeBandwidthSchedule** cmdlet removes the Bandwidth sched
 
 ### Example 1
 ```powershell
-Remove-AzDataBoxEdgeBandwidthSchedule -ResourceGroupName resourceGroupName -DeviceName deviceName -Name bandwidthSchedule
+PS C:\> Remove-AzDataBoxEdgeBandwidthSchedule -ResourceGroupName resourceGroupName -DeviceName deviceName -Name bandwidthSchedule
 ```
 
 ## PARAMETERS

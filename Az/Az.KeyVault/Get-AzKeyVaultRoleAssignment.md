@@ -49,10 +49,8 @@ The cmdlet may call below Microsoft Graph API according to input parameters:
 
 ### Example 1
 ```powershell
-Get-AzKeyVaultRoleAssignment -HsmName myHsm
-```
+PS C:\> Get-AzKeyVaultRoleAssignment -HsmName myHsm
 
-```output
 RoleDefinitionName         DisplayName                      ObjectType Scope
 ------------------         -----------                      ---------- -----
 Managed HSM Administrator  User 1 (user1@microsoft.com)     User       /
@@ -65,10 +63,8 @@ This example lists all role assignments of "myHsm" on all the scope.
 
 ### Example 2
 ```powershell
-Get-AzKeyVaultRoleAssignment -HsmName myHsm -SignInName user1@microsoft.com -Scope "/keys"
-```
+PS C:\> Get-AzKeyVaultRoleAssignment -HsmName myHsm -SignInName user1@microsoft.com -Scope "/keys"
 
-```output
 RoleDefinitionName         DisplayName                      ObjectType Scope
 ------------------         -----------                      ---------- -----
 Managed HSM Crypto Auditor User 1 (user1@microsoft.com)     User       /keys

@@ -1,5 +1,5 @@
 ---
-external help file: Az.DataMigration-help.xml
+external help file: 
 Module Name: Az.DataMigration
 online version: https://docs.microsoft.com/powershell/module/az.datamigration/update-azdatamigrationsqlservice
 schema: 2.0.0
@@ -17,14 +17,14 @@ Update Database Migration Service.
 ### UpdateExpanded (Default)
 ```
 Update-AzDataMigrationSqlService -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-WhatIf] [-Confirm]
+ [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-AzDataMigrationSqlService -InputObject <IDataMigrationIdentity> [-Tag <Hashtable>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,10 +34,8 @@ Update Database Migration Service.
 
 ### Example 1: Update tag of SQL Migration Service
 ```powershell
-Update-AzDataMigrationSqlService -ResourceGroupName "MyResourceGroup" -SqlMigrationServiceName "MySqlMigrationService" -Tag @{Tag="Service"}
-```
+PS C:\> Update-AzDataMigrationSqlService -ResourceGroupName "MyResourceGroup" -SqlMigrationServiceName "MySqlMigrationService" -Tag @{Tag="Service"}
 
-```output
 Location  Name    Type                                         ProvisioningState IntegrationRuntimeState
 --------  ----    ----                                         ----------------- -----------------------
 eastus2   MySqlMS Microsoft.DataMigration/sqlMigrationServices Succeeded         Online
@@ -47,11 +45,9 @@ This command updates tag of SQL Migration Service.
 
 ### Example 2: Update tag of SQL Migration Service using InputObject
 ```powershell
-$mySqlMS = Get-AzDataMigrationSqlService -ResourceGroupName "MyResourceGroup" -SqlMigrationServiceName "MySqlMigrationService"
-Update-AzDataMigrationSqlService -InputObject $mySqlMS -Tag @{Tag="Service"}
-```
+PS C:\> $mySqlMS = Get-AzDataMigrationSqlService -ResourceGroupName "MyResourceGroup" -SqlMigrationServiceName "MySqlMigrationService"
+PS C:\> Update-AzDataMigrationSqlService -InputObject $mySqlMS -Tag @{Tag="Service"}
 
-```output
 Location  Name    Type                                         ProvisioningState IntegrationRuntimeState
 --------  ----    ----                                         ----------------- -----------------------
 eastus2   MySqlMS Microsoft.DataMigration/sqlMigrationServices Succeeded         Online
@@ -238,7 +234,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DataMigration.Models.Api20220330Preview.ISqlMigrationService
+### Microsoft.Azure.PowerShell.Cmdlets.DataMigration.Models.Api20211030Preview.ISqlMigrationService
 
 ## NOTES
 
@@ -253,10 +249,10 @@ INPUTOBJECT <IDataMigrationIdentity>: Identity Parameter
   - `[Id <String>]`: Resource identity path
   - `[ManagedInstanceName <String>]`: 
   - `[ResourceGroupName <String>]`: Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
-  - `[SqlDbInstanceName <String>]`: 
   - `[SqlMigrationServiceName <String>]`: Name of the SQL Migration Service.
   - `[SqlVirtualMachineName <String>]`: 
   - `[SubscriptionId <String>]`: Subscription ID that identifies an Azure subscription.
   - `[TargetDbName <String>]`: The name of the target database.
 
 ## RELATED LINKS
+

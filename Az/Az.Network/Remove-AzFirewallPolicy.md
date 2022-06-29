@@ -39,21 +39,21 @@ The **Remove-AzFirewallPolicy** cmdlet removes an Azure Firewall Policy.
 
 ### Example 1
 ```powershell
-Remove-AzFirewallPolicy -Name firewallpolicy -ResourceGroupName TestRg
+PS C:\> Remove-AzFirewallPolicy -Name firewallpolicy -ResourceGroupName TestRg
 ```
 
 This example removes the firewall policy named "firewallpolicy" in the resourcegroup "TestRg"
 
 ### Example 2
 ```powershell
-Remove-AzFirewallPolicy -Name firewallpolicy -ResourceId "/subscriptions/12345/resourceGroups/TestRg/providers/Microsoft.Network/firewallpolicies/firewallPolicy1"
+PS C:\> Remove-AzFirewallPolicy -Name firewallpolicy -ResourceId "/subscriptions/12345/resourceGroups/TestRg/providers/Microsoft.Network/firewallpolicies/firewallPolicy1"
 ```
 
 This example removes the firewall policy by the Id.
 
 ### Example 3
 ```powershell
-Remove-AzFirewallPolicy -InputObject $fp
+PS C:\> Remove-AzFirewallPolicy -InputObject $fp
 ```
 
 This example removes the firewall policy $fp

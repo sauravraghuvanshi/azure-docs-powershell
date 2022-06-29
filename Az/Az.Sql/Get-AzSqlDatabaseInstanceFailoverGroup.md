@@ -27,11 +27,9 @@ Either region in the Instance Failover Group may be used to execute the command.
 ## EXAMPLES
 
 ### Example 1
-```powershell
-$failoverGroups = Get-AzSqlDatabaseInstanceFailoverGroup -ResourceGroupName rg -Location location
 ```
-
-```output
+PS C:\> $failoverGroups = Get-AzSqlDatabaseInstanceFailoverGroup -ResourceGroupName rg -Location location
+Output:
 {
 	ResourceGroupName                     : rg
 	Location                              : East US
@@ -52,11 +50,9 @@ $failoverGroups = Get-AzSqlDatabaseInstanceFailoverGroup -ResourceGroupName rg -
 Lists all Failover Groups in the region
 
 ### Example 2
-```powershell
-$failoverGroup = Get-AzSqlDatabaseInstanceFailoverGroup -ResourceGroupName rg -Location location -Name fg
 ```
-
-```output
+PS C:\> $failoverGroup = Get-AzSqlDatabaseInstanceFailoverGroup -ResourceGroupName rg -Location location -Name fg
+Output:
 ResourceGroupName                     : rg
 Location                              : East US
 Name                                  : fg

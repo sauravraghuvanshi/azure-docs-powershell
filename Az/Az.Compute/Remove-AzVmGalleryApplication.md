@@ -26,8 +26,8 @@ Removes a VMGalleryApplication object from the PSVirtualMachine object.
 
 ### Example 1
 ```powershell
-$vm = Get-AzVm -ResourceGroupName $rgname -Name $vmName
-Remove-AzVmGalleryApplication -VM $vm -GalleryApplicationsReferenceId $refId
+PS C:\> $vm = Get-AzVm -ResourceGroupName $rgname -Name $vmName
+PS C:\> Remove-AzVmGalleryApplication -VM $vm -GalleryApplicationReferenceId $refId
 ```
 
 ## PARAMETERS

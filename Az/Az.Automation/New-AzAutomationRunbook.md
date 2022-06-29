@@ -29,7 +29,7 @@ Specify a name for the runbook.
 
 ### Example 1: Create a runbook
 ```powershell
-New-AzAutomationRunbook -AutomationAccountName "Contoso17" -Name "Runbook02" -ResourceGroupName "ResourceGroup01"
+PS C:\>New-AzAutomationRunbook -AutomationAccountName "Contoso17" -Name "Runbook02" -ResourceGroupName "ResourceGroup01"
 ```
 
 This command creates a runbook named Runbook02 in the Azure Automation account named Contoso17.

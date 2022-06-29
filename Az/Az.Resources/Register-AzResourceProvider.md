@@ -27,8 +27,8 @@ The **Register-AzResourceProvider** cmdlet registers an Azure resource provider.
 ## EXAMPLES
 
 ### Example 1: Register a provider
-```powershell
-Register-AzResourceProvider -ProviderNamespace Microsoft.Network
+```
+PS C:\>Register-AzResourceProvider -ProviderNamespace Microsoft.Network
 ```
 
 This registers the Microsoft.Network provider for your account.

@@ -33,10 +33,8 @@ Update a dedicated HSM in the specified subscription.
 
 ### Example 1: Update the parameter tag of the Dedicated HSM by name
 ```powershell
-Update-AzDedicatedHsm -Name hsm-n7wfxi -ResourceGroupName dedicatedhsm-rg-n359cz -Tag @{'key1' = '1'; 'key2' = 2; 'key3' = 3}
-```
+PS C:\> Update-AzDedicatedHsm -Name  hsm-n7wfxi -ResourceGroupName dedicatedhsm-rg-n359cz -Tag @{'key1' = '1'; 'key2' = 2; 'key3' = 3}
 
-```output
 Name       Provisioning State SKU                           Location
 ----       ------------------ ---                           --------
 hsm-n7wfxi Succeeded          SafeNet Luna Network HSM A790 eastus
@@ -46,11 +44,9 @@ This command updates the parameter tag of the Dedicated HSM by name
 
 ### Example 2: Update the parameter tag of the Dedicated HSM by object
 ```powershell
-$hsm = Get-AzDedicatedHsm -Name hsm-n7wfxi -ResourceGroupName dedicatedhsm-rg-n359cz 
-Update-AzDedicatedHsm -InputObject -Tag @{'key1' = '1'; 'key2' = 2; 'key3' = 3}
-```
+PS C:\> $hsm = Get-AzDedicatedHsm -Name  hsm-n7wfxi -ResourceGroupName dedicatedhsm-rg-n359cz 
+PS C:\> Update-AzDedicatedHsm -InputObject -Tag @{'key1' = '1'; 'key2' = 2; 'key3' = 3}
 
-```output
 Name       Provisioning State SKU                           Location
 ----       ------------------ ---                           --------
 hsm-n7wfxi Succeeded          SafeNet Luna Network HSM A790 eastus
@@ -222,7 +218,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DedicatedHsm.Models.Api20211130.IDedicatedHsm
+### Microsoft.Azure.PowerShell.Cmdlets.DedicatedHsm.Models.Api20181031.IDedicatedHsm
 
 ## NOTES
 

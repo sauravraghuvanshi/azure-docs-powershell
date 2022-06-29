@@ -45,7 +45,7 @@ Deletes a security assessment result from a subscription, usually used when a re
 
 ### Example 1
 ```powershell
-Remove-AzSecurityAssessment -Name 4FB6C0A0-1137-42C7-A1C7-4BD37C91DE8D
+PS C:\> Remove-AzSecurityAssessment -Name 4FB6C0A0-1137-42C7-A1C7-4BD37C91DE8D
 ```
 
 Deletes an assessment result on a subscription
@@ -56,7 +56,7 @@ Deletes an assessment result on a subscription
 Full resource ID of the resource that the assessment is calculated on.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ResourceIdLevelResource
 Aliases:
 
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 Input Object.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Security.Models.Assessments.PSSecurityAssessment
+Type: PSSecurityAssessment
 Parameter Sets: InputObject
 Aliases:
 
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 Resource name.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: SubscriptionLevelResource, ResourceIdLevelResource
 Aliases:
 
@@ -116,7 +116,7 @@ Accept wildcard characters: False
 Return whether the operation was successful.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -131,7 +131,7 @@ Accept wildcard characters: False
 ID of the security resource that you want to invoke the command on.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ResourceId
 Aliases:
 
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -162,7 +162,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 

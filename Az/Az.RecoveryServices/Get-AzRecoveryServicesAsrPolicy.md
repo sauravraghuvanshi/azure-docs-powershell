@@ -36,18 +36,16 @@ The **Get-AzRecoveryServicesAsrPolicy** cmdlet gets the list of configured Azure
 ## EXAMPLES
 
 ### Example 1
-```powershell
-$Policy = Get-AzRecoveryServicesAsrPolicy
+```
+PS C:\> $Policy = Get-AzRecoveryServicesAsrPolicy
 ```
 
 Returns the list of replication policies
 
 ### Example 2
-```powershell
-Get-AzRecoveryServicesAsrPolicy -Name abc
 ```
+PS C:\>  Get-AzRecoveryServicesAsrPolicy -Name abc
 
-```output
 FriendlyName                : abc
 Name                        : abc
 ID                          : /Subscriptions/xxxxxxxxxxxx/resourceGroups/xxxxxxxxxxxx/providers/Microsoft.RecoveryServices/vaults/xxxxxxxxxxxx/replicationPolicies/abc
@@ -59,11 +57,9 @@ ReplicationProviderSettings : Microsoft.Azure.Commands.RecoveryServices.SiteReco
 Returns replication policy with name.
 
 ### Example 3
-```powershell
-Get-AzRecoveryServicesAsrPolicy -FriendlyName abc
 ```
+PS C:\> Get-AzRecoveryServicesAsrPolicy -FriendlyName abc
 
-```output
 FriendlyName                : abc
 Name                        : abc
 ID                          : /Subscriptions/xxxxxxxxxxxx/resourceGroups/xxxxxxxxxxxx/providers/Microsoft.RecoveryServices/vaults/xxxxxxxxxxxx/replicationPolicies/abc

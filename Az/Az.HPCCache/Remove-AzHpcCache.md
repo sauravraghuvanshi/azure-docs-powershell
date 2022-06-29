@@ -26,7 +26,7 @@ The **Remove-AzHpcCache** cmdlet removes a Azure HPC Cache.
 
 ### Example 1
 ```powershell
-Remove-AzHpcCache -ResourceGroupName testRG -CacheName testCache
+PS C:\> Remove-AzHpcCache -ResourceGroupName testRG -CacheName testCache
 ```
 
 ## PARAMETERS

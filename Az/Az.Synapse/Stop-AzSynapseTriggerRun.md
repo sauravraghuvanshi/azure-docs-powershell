@@ -39,23 +39,23 @@ The Stop-AzSynapseTriggerRun cmdlet stops a trigger run in a synapse workspace s
 
 ### Example 1
 ```powershell
-Stop-AzSynapseTriggerRun -WorkspaceName ContosoWorkspace -Name ContosoTrigger -TriggerRunId 000111222333abc
+PS C:\> Stop-AzSynapseTriggerRun -WorkspaceName ContosoWorkspace -Name ContosoTrigger -TriggerRunId 000111222333abc
 ```
 
 This command stops the trigger run with id '000111222333abc' in the Synapse workspace ContosoWorkspace.
 
 ### Example 2
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Stop-AzSynapseTriggerRun -Name ContosoTrigger -TriggerRunId 000111222333abc
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Stop-AzSynapseTriggerRun -Name ContosoTrigger -TriggerRunId 000111222333abc
 ```
 
 Stops the trigger run with id '000111222333abc' in the Synapse workspace ContosoWorkspace through pipeline.
 
 ### Example 3
 ```powershell
-$triggerun = Get-AzSynapseTriggerRun -WorkspaceName ContosoWorkspace -Name ContosoTrigger -RunStartedAfter "2018-09-01T21:00" -RunStartedBefore "2019-09-01T21:00"
-$triggerun | Stop-AzSynapseTriggerRun
+PS C:\> $triggerun = Get-AzSynapseTriggerRun -WorkspaceName ContosoWorkspace -Name ContosoTrigger -RunStartedAfter "2018-09-01T21:00" -RunStartedBefore "2019-09-01T21:00"
+PS C:\> $triggerun | Stop-AzSynapseTriggerRun
 ```
 
 Stops the trigger run in the Synapse workspace ContosoWorkspace through pipeline.

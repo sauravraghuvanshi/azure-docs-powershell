@@ -34,7 +34,7 @@ Send a message to a user.
 
 ### Example 1: Send a message to UserSession
 ```powershell
-Send-AzWvdUserSessionMessage -ResourceGroupName ResourceGroupName `
+PS C:\> Send-AzWvdUserSessionMessage -ResourceGroupName ResourceGroupName `
                                      -HostPoolName HostPoolName `
                                      -SessionHostName SessionHostName `
                                      -UserSessionId 4 `

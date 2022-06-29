@@ -26,10 +26,8 @@ Gets information about a database in a Redis Enterprise cluster.
 
 ### Example 1: Get database information
 ```powershell
-Get-AzRedisEnterpriseCacheDatabase -Name "MyCache" -ResourceGroupName "MyGroup"
-```
+PS C:\> Get-AzRedisEnterpriseCacheDatabase -Name "MyCache" -ResourceGroupName "MyGroup"
 
-```output
 Name    Type
 ----    ----
 default Microsoft.Cache/redisEnterprise/databases

@@ -38,9 +38,8 @@ Get an addon by name in a private cloud
 
 ### Example 1: List addon under resource group
 ```powershell
-Get-AzVMwareAddon -PrivateCloudName azps_test_cloud -ResourceGroupName azps_test_group
-```
-```output
+PS C:\> Get-AzVMwareAddon -PrivateCloudName azps_test_cloud -ResourceGroupName azps_test_group
+
 Name Type                               ResourceGroupName
 ---- ----                               -----------------
 srm  Microsoft.AVS/privateClouds/addons azps_test_group
@@ -51,9 +50,8 @@ List addon under resource group
 
 ### Example 2: Get an addon by name in a private cloud
 ```powershell
-Get-AzVMwareAddon -AddonType vr -PrivateCloudName azps_test_cloud -ResourceGroupName azps_test_group
-```
-```output
+PS C:\> Get-AzVMwareAddon -AddonType vr -PrivateCloudName azps_test_cloud -ResourceGroupName azps_test_group
+
 Name Type                               ResourceGroupName
 ---- ----                               -----------------
 vr   Microsoft.AVS/privateClouds/addons azps_test_group
@@ -164,7 +162,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.Api20211201.IAddon
+### Microsoft.Azure.PowerShell.Cmdlets.VMware.Models.Api20210601.IAddon
 
 ## NOTES
 
@@ -189,7 +187,6 @@ INPUTOBJECT <IVMwareIdentity>: Identity Parameter
   - `[HcxEnterpriseSiteName <String>]`: Name of the HCX Enterprise Site in the private cloud
   - `[Id <String>]`: Resource identity path
   - `[Location <String>]`: Azure region
-  - `[PlacementPolicyName <String>]`: Name of the VMware vSphere Distributed Resource Scheduler (DRS) placement policy
   - `[PortMirroringId <String>]`: NSX Port Mirroring identifier. Generally the same as the Port Mirroring display name
   - `[PrivateCloudName <String>]`: Name of the private cloud
   - `[PublicIPId <String>]`: NSX Public IP Block identifier. Generally the same as the Public IP Block's display name

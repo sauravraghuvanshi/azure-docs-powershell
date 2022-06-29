@@ -26,9 +26,9 @@ The **Remove-AzApplicationGatewayTrustedRootCertificate** cmdlet removes a Trust
 
 ### Example 1
 ```powershell
-$gw = Get-AzApplicationGateway -Name $appgwName -ResourceGroupName $resgpName
-$gw = Remove-AzApplicationGatewayTrustedRootCertificate -ApplicationGateway $gw -Name "myRootCA"
-$gw = Set-AzApplicationGateway -ApplicationGateway $gw
+PS C:\> $gw = Get-AzApplicationGateway -Name $appgwName -ResourceGroupName $resgpName
+PS C:\> $gw = Remove-AzApplicationGatewayTrustedRootCertificate -ApplicationGateway $gw -Name "myRootCA"
+PS C:\> $gw = Set-AzApplicationGateway -ApplicationGateway $gw
 ```
 
 The first command gets an application gateway and stores it in the $gw variable.

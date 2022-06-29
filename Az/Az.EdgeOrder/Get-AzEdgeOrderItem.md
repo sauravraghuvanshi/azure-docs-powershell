@@ -39,11 +39,9 @@ Gets an order item.
 
 ### Example 1: Get orderItem details
 ```powershell
-$orderItem = Get-AzEdgeOrderItem -Name examplePowershell -SubscriptionId "SubscriptionId" -ResourceGroupName "resourceGroupName"   
-$ordderItem | Format-List
-```
+PS C:\> $orderItem = Get-AzEdgeOrderItem -Name examplePowershell -SubscriptionId "SubscriptionId" -ResourceGroupName "resourceGroupName"   
+PS C:\> $ordderItem | fl
 
-```output
 ForwardAddressContactDetail    : Microsoft.Azure.PowerShell.Cmdlets.EdgeOrder.Models.Api20211201.ContactDetails
 ForwardAddressShippingAddress  : Microsoft.Azure.PowerShell.Cmdlets.EdgeOrder.Models.Api20211201.ShippingAddress
 ForwardAddressValidationStatus : Valid

@@ -27,8 +27,8 @@ The **Stop-AzSqlDatabaseExecuteIndexRecommendation** cmdlet stops the workflow t
 ## EXAMPLES
 
 ### Example 1: Stop running an index recommendation
-```powershell
-Stop-AzSqlDatabaseExecuteIndexRecommendation -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -IndexRecommendationName "INDEX_NAME"
+```
+PS C:\>Stop-AzSqlDatabaseExecuteIndexRecommendation -ResourceGroup "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -IndexRecommendationName "INDEX_NAME"
 ```
 
 This command stops running an index recommendation.

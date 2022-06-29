@@ -40,7 +40,7 @@ The Remove-AzVirtualApplianceSite command removes a Virtual Appliance site from 
 
 ### Example 1
 ```powershell
-Remove-AzVirtualApplianceSite -Name testsite -ResourceGroupName testrg -NetworkVirtualApplianceId $nva.Id
+PS C:\> Remove-AzVirtualApplianceSite -Name testsite -ResourceGroupName testrg -NetworkVirtualApplianceId $nva.Id
 ```
 
 Delete a Virtual Appliance site resource. 

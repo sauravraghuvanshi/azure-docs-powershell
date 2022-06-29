@@ -26,7 +26,7 @@ New-AzApplicationGatewayRewriteRuleHeaderConfiguration -HeaderName <String> [-He
 
 ### Example 1
 ```powershell
-$hc = New-AzApplicationGatewayRewriteRuleHeaderConfiguration -HeaderName abc -HeaderValue def
+PS C:\> $hc = New-AzApplicationGatewayRewriteRuleHeaderConfiguration -HeaderName abc -HeaderValue def
 ```
 
 This command creates a rewrite rule header configuration and stores the result in the variable named $hc.

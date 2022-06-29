@@ -40,7 +40,7 @@ Resume/Resync the connection on the destination volume
 
 ### Example 1
 ```powershell
-Resume-AzNetAppFilesReplication -ResourceGroupName "MyRG" -AccountName "MyAnfAccount" -PoolName "MyAnfPool" -Name "MyDestinationAnfVolume"
+PS C:\> Resume-AzNetAppReplication -ResourceGroupName "MyRG" -AccountName "MyAnfAccount" -PoolName "MyAnfPool" -Name "MyDestinationAnfVolume"
 ```
 
 This command resumes the ANF Replication connection on volume "MyDestinationAnfVolume".
@@ -214,13 +214,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
-[Approve-AzNetAppFilesReplication](./Approve-AzNetAppFilesReplication.md)
-[Inititialize-AzNetAppFilesReplication](./Approve-AzNetAppFilesReplication.md)
-[Suspend-AzNetAppFilesReplication](./Suspend-AzNetAppFilesReplication.md)
-[Remove-AzNetAppFilesReplication](./Remove-AzNetAppFilesReplication.md)
-[Get-AzNetAppFilesReplicationStatus](./Get-AzNetAppFilesReplicationStatus.md)
-[Get-AzNetAppFilesVolume](./Get-AzNetAppFilesVolume.md)
-[New-AzNetAppFilesVolume](./New-AzNetAppFilesVolume.md)
-[Update-AzNetAppFilesVolume](./Update-AzNetAppFilesVolume.md)
-[Remove-AzNetAppFilesVolume](./Remove-AzNetAppFilesVolume.md)

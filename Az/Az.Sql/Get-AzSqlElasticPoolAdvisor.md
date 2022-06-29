@@ -27,11 +27,8 @@ The **Get-AzSqlElasticPoolAdvisor** cmdlet gets one or more Azure SQL Elastic Po
 ## EXAMPLES
 
 ### Example 1: List all the advisors for the specified elastic pool
-```powershell
-Get-AzSqlElasticPoolAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east" -ElasticPoolName "WIRunnerPool"
 ```
-
-```output
+PS C:\>Get-AzSqlElasticPoolAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east" -ElasticPoolName "WIRunnerPool"
 ElasticPoolName                : WIRunnerPool
 ResourceGroupName              : WIRunnersProd
 ServerName                     : wi-runner-australia-east
@@ -80,11 +77,8 @@ RecommendedActions             : {}
 The command gets lists all the advisors for the elastic pool named WIRunnerPool.
 
 ### Example 2: Get a single advisor for the specified elastic pool
-```powershell
-Get-AzSqlElasticPoolAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east" -ElasticPoolName "WIRunnerPool" -AdvisorName "CreateIndex"
 ```
-
-```output
+PS C:\>Get-AzSqlElasticPoolAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east" -ElasticPoolName "WIRunnerPool" -AdvisorName "CreateIndex"
 ElasticPoolName                : WIRunnerPool
 ResourceGroupName              : WIRunnersProd
 ServerName                     : wi-runner-australia-east
@@ -100,11 +94,8 @@ RecommendedActions             : {}
 This command gets the Advisor named CreateIndex for the elastic pool named WIRunnerPool.
 
 ### Example 3: List all the advisors with their recommended actions included in the response
-```powershell
-Get-AzSqlElasticPoolAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east" -ElasticPoolName "WIRunnerPool" -ExpandRecommendedActions
 ```
-
-```output
+PS C:\>Get-AzSqlElasticPoolAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east" -ElasticPoolName "WIRunnerPool" -ExpandRecommendedActions
 ElasticPoolName                : WIRunnerPool
 ResourceGroupName              : WIRunnersProd
 ServerName                     : wi-runner-australia-east
@@ -159,11 +150,8 @@ RecommendedActions             : {}
 This command gets all the advisors for the elastic pool with their recommended actions included in the response.
 
 ### Example 4: Get a single advisor with its recommended actions included in the response
-```powershell
-Get-AzSqlElasticPoolAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east" -ElasticPoolName "WIRunnerPool" -AdvisorName "CreateIndex" -ExpandRecommendedActions
 ```
-
-```output
+PS C:\>Get-AzSqlElasticPoolAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east" -ElasticPoolName "WIRunnerPool" -AdvisorName "CreateIndex" -ExpandRecommendedActions
 ElasticPoolName                : WIRunnerPool
 ResourceGroupName              : WIRunnersProd
 ServerName                     : wi-runner-australia-east
@@ -182,11 +170,8 @@ RecommendedActions             : {IR_[test_schema]_[test_table_0.0361551]_6C7AE8
 This command gets advisor named CreateIndex from the server named wi-runner-australia-east with its recommended actions included in the response.
 
 ### Example 5: List all the advisors for the specified elastic pool using filtering
-```powershell
-Get-AzSqlElasticPoolAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east" -ElasticPoolName "WIRunnerPool" -AdvisorName d*
 ```
-
-```output
+PS C:\>Get-AzSqlElasticPoolAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east" -ElasticPoolName "WIRunnerPool" -AdvisorName d*
 ElasticPoolName                : WIRunnerPool
 ResourceGroupName              : WIRunnersProd
 ServerName                     : wi-runner-australia-east

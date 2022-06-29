@@ -42,10 +42,8 @@ Update a module on a target IoT device in an IoT Hub.
 
 ### Example 1
 ```powershell
-Set-AzIotHubModule -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -ModuleId "myModule1" -AuthMethod "shared_private_key"
-```
+PS C:\> Set-AzIotHubModule -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -ModuleId "myModule1" -AuthMethod "shared_private_key"
 
-```output
 ModuleId                   : myModule1
 DeviceId                   : myDevice1
 GenerationId               : 637148941292917073

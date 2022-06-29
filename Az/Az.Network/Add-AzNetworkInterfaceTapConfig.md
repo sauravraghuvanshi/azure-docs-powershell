@@ -34,8 +34,8 @@ The **Add-AzNetworkInterfaceTapConfig** cmdlet creates a TapConfiguration resour
 ## EXAMPLES
 
 ### Example 1: Add TapConfiguration to a given NetworkInterface
-```powershell
-Add-AzNetworkInterfaceTapConfig -NetworkInterface $sourceNic -VirtualNetworkTap $vVirtualNetworkTap -Name 'myTapConfig'
+```
+PS C:\>Add-AzNetworkInterfaceTapConfig -NetworkInterface $sourceNic -VirtualNetworkTap $vVirtualNetworkTap -Name 'myTapConfig'
 ```
 
 Add the TapConfiguration to a sourceNic. The traffic from sourceNic VM will be mirrored to destination VM referred in vVirtualNetworkTap resource.

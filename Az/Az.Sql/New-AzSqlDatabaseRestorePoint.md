@@ -28,11 +28,8 @@ This cmdlet is currently supported for Azure SQL Data Warehouse.
 ## EXAMPLES
 
 ### Example 1: Create a restore point
-```powershell
-New-AzSqlDatabaseRestorePoint -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -RestorePointLabel "RestorePoint01"
 ```
-
-```output
+PS C:\>New-AzSqlDatabaseRestorePoint -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -RestorePointLabel "RestorePoint01"
 ResourceGroupName        : resourcegroup01
 ServerName               : server01
 DatabaseName             : database01

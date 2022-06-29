@@ -45,8 +45,8 @@ The **Stop-AzVM** cmdlet stops an Azure virtual machine.
 ## EXAMPLES
 
 ### Example 1: Stop a virtual machine
-```powershell
-Stop-AzVM -ResourceGroupName "ResourceGroup11" -Name "VirtualMachine07"
+```
+PS C:\> Stop-AzVM -ResourceGroupName "ResourceGroup11" -Name "VirtualMachine07"
 ```
 
 This command stops the virtual machine named VirtualMachine07 in ResourceGroup11.
@@ -189,8 +189,8 @@ Accept wildcard characters: False
 ```
 
 ### -StayProvisioned
-The cmdlet stops a virtual machine, but does not deallocate it. The account
-is charged for the stopped virtual machine.
+The cmdlet stops all the virtual machines within the VMSS but does not deallocate them. The account
+is charged for the stopped virtual machines.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

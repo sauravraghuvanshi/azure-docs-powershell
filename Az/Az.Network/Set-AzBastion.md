@@ -26,10 +26,7 @@ The **Set-AzBastion** cmdlet can be used to update the Sku, Scale Units or Tags 
 
 ### Example 1
 ```powershell
-Set-AzBastion -InputObject $bastionObj -Sku "Standard" -ScaleUnit 10 -Force
-```
-
-```output
+PS C:\> Set-AzBastion -InputObject $bastionObj -Sku "Standard" -ScaleUnit 10 -Force
 Name                 : MyBastion
 Id                   : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyRg/providers/Microsoft.Network/bastionHosts/MyBastion
 Etag                 : W/"000"
@@ -66,9 +63,8 @@ Updates BastionHost resource with Basic Sku and 2 Scale Units to Standard Sku an
 
 ### Example 2
 ```powershell
-$bastionObj = Get-AzBastion -ResourceGroupName "MyRg" -Name "MyBastion"
-$bastionObj
-
+PS C:\> $bastionObj = Get-AzBastion -ResourceGroupName "MyRg" -Name "MyBastion"
+PS C:\> $bastionObj
 Name                 : MyBastion
 Id                   : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyRg/providers/Microsoft.Network/bastionHosts/MyBastion
 Etag                 : W/"000"
@@ -100,9 +96,9 @@ Sku                  : {
                        }
 Scale Units          : 2
 
-$bastionObj.Sku.Name = "Standard"
-$bastionObj.ScaleUnit = 50
-Set-AzBastion -InputObject $bastionObj -Force
+PS C:\> $bastionObj.Sku.Name = "Standard"
+PS C:\> $bastionObj.ScaleUnit = 50
+PS C:\> Set-AzBastion -InputObject $bastionObj -Force
 Name                 : MyBastion
 Id                   : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyRg/providers/Microsoft.Network/bastionHosts/MyBastion
 Etag                 : W/"000"

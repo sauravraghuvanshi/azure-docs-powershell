@@ -42,23 +42,23 @@ Specify the connection type name to get all connections of a specific type.
 ## EXAMPLES
 
 ### Example 1: Get all connections
-```powershell
-Get-AzAutomationConnection -ResourceGroupName "ResourceGroup01" -AutomationAccountName "Contoso17"
+```
+PS C:\>Get-AzAutomationConnection -ResourceGroupName "ResourceGroup01" -AutomationAccountName "Contoso17"
 ```
 
 This command gets metadata for all connections in the Automation account named Contoso17.
 
 ### Example 2: Get all connections of a type
-```powershell
-Get-AzAutomationConnection -ResourceGroupName "ResourceGroup01" -AutomationAccountName "Contoso17" -ConnectionTypeName "SqlServer"
+```
+PS C:\>Get-AzAutomationConnection -ResourceGroupName "ResourceGroup01" -AutomationAccountName "Contoso17" -ConnectionTypeName "SqlServer"
 ```
 
 This command gets metadata for connections in the Automation account named Contoso17.
 This command gets connections of the type SqlServer.
 
 ### Example 3: Get a connection
-```powershell
-Get-AzAutomationConnection -ResourceGroupName "ResourceGroup01" -AutomationAccountName "Contoso17" -Name "ContosoConnection"
+```
+PS C:\>Get-AzAutomationConnection -ResourceGroupName "ResourceGroup01" -AutomationAccountName "Contoso17" -Name "ContosoConnection"
 ```
 
 This command gets metadata for the connection named ContosoConnection.

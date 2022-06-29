@@ -46,10 +46,8 @@ The **New-AzKeyVaultCertificatePolicy** cmdlet creates an in-memory certificate 
 
 ### Example 1: Create a certificate policy
 ```powershell
-New-AzKeyVaultCertificatePolicy -SecretContentType "application/x-pkcs12" -SubjectName "CN=contoso.com" -IssuerName "Self" -ValidityInMonths 6 -ReuseKeyOnRenewal
-```
+PS C:\> New-AzKeyVaultCertificatePolicy -SecretContentType "application/x-pkcs12" -SubjectName "CN=contoso.com" -IssuerName "Self" -ValidityInMonths 6 -ReuseKeyOnRenewal
 
-```output
 SecretContentType               : application/x-pkcs12
 Kty                             :
 KeySize                         : 2048
@@ -87,10 +85,8 @@ New-AzKeyVaultCertificatePolicy -IssuerName 'Self' -KeyType RSA -RenewAtNumberOf
 ### Example 3: Create a Subject Alternate Name (or SAN) certificate
 
 ```powershell
-New-AzKeyVaultCertificatePolicy -SecretContentType "application/x-pkcs12" -SubjectName "CN=contoso.com" -DnsName "contoso.com","support.contoso.com","docs.contoso.com" -IssuerName "Self"
-```
+PS C:\> New-AzKeyVaultCertificatePolicy -SecretContentType "application/x-pkcs12" -SubjectName "CN=contoso.com" -DnsName "contoso.com","support.contoso.com","docs.contoso.com" -IssuerName "Self"
 
-```output
 SecretContentType               : application/x-pkcs12
 Kty                             : RSA
 KeySize                         : 2048

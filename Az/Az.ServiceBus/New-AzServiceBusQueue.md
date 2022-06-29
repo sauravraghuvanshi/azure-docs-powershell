@@ -32,10 +32,8 @@ The **New-AzServiceBusQueue** cmdlet creates a Service Bus queue in the specifie
 
 ### Example 1
 ```powershell
-New-AzServiceBusQueue -ResourceGroup Default-ServiceBus-WestUS -NamespaceName SB-Example1 -QueueName SB-Queue_example1 -EnablePartitioning $True
-```
+PS C:\> New-AzServiceBusQueue -ResourceGroup Default-ServiceBus-WestUS -NamespaceName SB-Example1 -QueueName SB-Queue_example1 -EnablePartitioning $True
 
-```output
 Id                                  : /subscriptions/{subscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.ServiceBus/namespaces/SB-Example1/queues/SB-Queue_example1
 Name                                : SB-Queue_example1
 LockDuration                        : PT1M

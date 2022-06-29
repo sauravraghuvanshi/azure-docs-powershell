@@ -34,10 +34,8 @@ The New-AzEventHubCluster cmdlet creates the dedicated eventhub cluster in the g
 
 ### Example 1
 ```powershell
-New-AzEventHubCluster -ResourceGroupName RSG-Cluster27651 -Name Eventhub-Cluster-5557 -Location southcentralus -Capacity 1
-```
+PS C:\>  New-AzEventHubCluster -ResourceGroupName RSG-Cluster27651 -Name Eventhub-Cluster-5557 -Location southcentralus -Capacity 1
 
-```output
 Id        : /subscriptions/SubId/resourceGroups/RSG-Cluster27651/providers/Microsoft.EventHub/clusters/Eventhub-Cluster-5557
 Name      : Eventhub-Cluster-5557
 Location  : southcentralus

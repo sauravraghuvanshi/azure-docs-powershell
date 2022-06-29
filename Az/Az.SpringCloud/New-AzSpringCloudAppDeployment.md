@@ -30,10 +30,8 @@ Create a new Deployment or update an exiting Deployment.
 
 ### Example 1: Example 1: Create a spring cloud deployment.
 ```powershell
-New-AzSpringCloudAppDeployment -ResourceGroupName spring-cloud-rp -name spring-cloud-service -AppName gateway -DeploymentName default
-```
+PS C:\> New-AzSpringCloudAppDeployment -ResourceGroupName spring-cloud-rp -name spring-cloud-service -AppName gateway -DeploymentName default
 
-```output
 Active                               : False
 AppName                              : gateway
 CreatedTime                          :

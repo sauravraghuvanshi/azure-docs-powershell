@@ -26,10 +26,8 @@ Object corresponding to Gremlin API's IncludedPath's Indexes.
 
 ### Example 1
 ```powershell
-New-AzCosmosDBGremlinIncludedPathIndex -DataType String -Precision -1 -Kind Hash
-```
+PS C:\> New-AzCosmosDBGremlinIncludedPathIndex -DataType String -Precision -1 -Kind Hash
 
-```output
 DataType Precision Kind
 -------- --------- ----
 String          -1 Hash

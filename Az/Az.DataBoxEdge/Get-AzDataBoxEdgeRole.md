@@ -44,10 +44,8 @@ The **Get-AzDataBoxEdgeRole** cmdlet fetches the available IoT roles for a Data 
 
 ### Example 1
 ```powershell
-Get-AzDataBoxEdgeRole -ResourceGroupName resourceGroupName -DeviceName deviceName
-```
+PS C:\> Get-AzDataBoxEdgeRole -ResourceGroupName resourceGroupName -DeviceName deviceName
 
-```output
 Name    IoTHostHub             Platform Status  IotEdgeDeviceId   IotDeviceId  ResourceGroupName
 ----    ----------             -------- ------  ---------------   -----------  -----------------
 iotrole ehub.azure-devices.net Linux    Enabled iotEdgeDeviceUd   iotDevice    resourceGroupName

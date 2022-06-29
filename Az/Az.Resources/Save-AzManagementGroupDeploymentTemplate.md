@@ -33,14 +33,14 @@ The **Save-AzManagementGroupDeploymentTemplate**  cmdlet saves a deployment temp
 
 ### Example 1
 ```powershell
-Save-AzManagementGroupDeploymentTemplate -ManagementGroupId "myMG" -DeploymentName "TestDeployment"
+PS C:\> Save-AzManagementGroupDeploymentTemplate -ManagementGroupId "myMG" -DeploymentName "TestDeployment"
 ```
 
 This command gets the deployment template from TestDeployment and saves it as a JSON file in the current directory.
 
 ### Example 2: Get a deployment and save its template
-```powershell
-Get-AzManagementGroupDeployment -ManagementGroupId "myMG" -Name "RolesDeployment" | Save-AzManagementGroupDeploymentTemplate
+```
+PS C:\>Get-AzManagementGroupDeploymentTemplate -ManagementGroupId "myMG" -Name "RolesDeployment" | Save-AzManagementGroupDeploymentTemplate
 ```
 
 This command gets the deployment "RolesDeployment" at the management group "myMG" and saves its template.

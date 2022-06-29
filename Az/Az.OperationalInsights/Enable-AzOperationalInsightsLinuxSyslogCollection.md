@@ -34,14 +34,12 @@ The **Enable-AzOperationalInsightsLinuxSyslogCollection** cmdlet starts collecti
 
 ### Example 1
 ```powershell
-Enable-AzOperationalInsightsLinuxSyslogCollection -ResourceGroupName test-rg -WorkspaceName OperationalInsight
-```
+PS C:\> Enable-AzOperationalInsightsLinuxSyslogCollection -ResourceGroupName yuzhi-rg -WorkspaceName OperationalInsight
 
-```output
 Name              : DataSource_LinuxSyslogCollection
-ResourceGroupName : test-rg
+ResourceGroupName : yuzhi-rg
 WorkspaceName     : OperationalInsight
-ResourceId        : /subscriptions/xxxx-xxxx-xxxx-xxxx-xxxx/resourceGroups/test-rg/providers/Microsoft.OperationalInsights/wo
+ResourceId        : /subscriptions/0b1f6471-1bf0-4dda-aec3-cb9272f09590/resourceGroups/yuzhi-rg/providers/Microsoft.OperationalInsights/wo
                     rkspaces/OperationalInsight/datasources/DataSource_LinuxSyslogCollection
 Kind              : LinuxSyslogCollection
 Properties        : {"state":"Enabled"}

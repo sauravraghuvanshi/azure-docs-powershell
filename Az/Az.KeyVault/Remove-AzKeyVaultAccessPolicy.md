@@ -140,10 +140,8 @@ The cmdlet may call below Microsoft Graph API according to input parameters:
 
 ### Example 1: Remove permissions for a user
 ```powershell
-Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PassThru
-```
+PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PassThru
 
-```output
 Vault Name                       : Contoso03Vault
 Resource Group Name              : myrg
 Location                         : westus
@@ -180,7 +178,7 @@ This command removes all the permissions that a user PattiFuller@contoso.com has
 
 ### Example 2: Remove permissions for an application
 ```powershell
-Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ServicePrincipalName 'http://payroll.contoso.com'
+PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ServicePrincipalName 'http://payroll.contoso.com'
 ```
 
 This command removes all the permissions that an application has on the key vault named Contoso03Vault.
@@ -188,7 +186,7 @@ This example identifies the application by using the service principal name regi
 
 ### Example 3: Remove permissions for an application by using its object ID
 ```powershell
-Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ObjectID 34595082-9346-41b6-8d6b-295a2808b8db
+PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ObjectID 34595082-9346-41b6-8d6b-295a2808b8db
 ```
 
 This command removes all the permissions that an application has on the key vault named Contoso03Vault.
@@ -196,7 +194,7 @@ This example identifies the application by the object ID of the service principa
 
 ### Example 4: Remove permissions for the Microsoft.Compute resource provider
 ```powershell
-Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -EnabledForDeployment
+PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -EnabledForDeployment
 ```
 
 This command removes permission for the Microsoft.Compute resource provider to get secrets from the Contoso03Vault.

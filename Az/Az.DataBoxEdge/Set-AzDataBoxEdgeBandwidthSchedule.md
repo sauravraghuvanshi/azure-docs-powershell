@@ -84,10 +84,7 @@ The **Set-AzDataBoxEdgeBandwidthSchedule** cmdlet updates a Bandwidth schedule f
 
 ### Example 1
 ```powershell
-Set-AzDataBoxEdgeBandwidthSchedule  -ResourceGroupName resourceGroupName -DeviceName deviceName -Name bandwidthSchedule -UnlimitedBandwidth
-```
-
-```output
+PS C:\> Set-AzDataBoxEdgeBandwidthSchedule  -ResourceGroupName resourceGroupName -DeviceName deviceName -Name bandwidthSchedule -UnlimitedBandwidth
 Name                DaysOfWeek                    RateInMbps StartTime StopTime
 ----                ----------                    ---------- --------- --------
 bandwidthSchedule  Sunday, Tuesday, Saturday      Unlimited  11:00:00  12:00:00
@@ -95,10 +92,7 @@ bandwidthSchedule  Sunday, Tuesday, Saturday      Unlimited  11:00:00  12:00:00
 
 ### Example 2
 ```powershell
-New-AzDataBoxEdgeBandwidthSchedule -ResourceGroupName resourceGroupName -DeviceName deviceName -Name bandwidthSchedule -StopTime 21:00
-```
-
-```output
+PS C:\> New-AzDataBoxEdgeBandwidthSchedule -ResourceGroupName resourceGroupName -DeviceName deviceName -Name bandwidthSchedule -StopTime 21:00
 Name                DaysOfWeek                    RateInMbps StartTime StopTime
 ----                ----------                    ---------- --------- --------
 bandwidthSchedule  Sunday, Tuesday, Saturday      Unlimited  11:00:00  21:00:00

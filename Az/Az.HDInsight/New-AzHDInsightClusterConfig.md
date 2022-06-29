@@ -33,27 +33,27 @@ The **New-AzHDInsightClusterConfig** cmdlet creates a non-persisted object that 
 ## EXAMPLES
 
 ### Example 1: Create a cluster configuration object
-```powershell
-# Primary storage account info
-$storageAccountResourceGroupName = "Group"
-$storageAccountResourceId = "yourstorageaccountresourceid"
-$storageAccountName = "yourstorageaccountname"
-$storageAccountKey = (Get-AzStorageAccountKey -ResourceGroupName $storageAccountResourceGroupName -Name $storageAccountName)[0].value
+```
+PS C:\># Primary storage account info
+PS C:\> $storageAccountResourceGroupName = "Group"
+PS C:\> $storageAccountResourceId = "yourstorageaccountresourceid"
+PS C:\> $storageAccountName = "yourstorageaccountname"
+PS C:\> $storageAccountKey = (Get-AzStorageAccountKey -ResourceGroupName $storageAccountResourceGroupName -Name $storageAccountName)[0].value
 
 
-$storageContainer = "container002"
+PS C:\> $storageContainer = "container002"
 
 # Cluster configuration info
-$location = "East US 2"
-$clusterResourceGroupName = "Group"
-$clusterName = "your-hadoop-002"
-$clusterCreds = Get-Credential
+PS C:\> $location = "East US 2"
+PS C:\> $clusterResourceGroupName = "Group"
+PS C:\> $clusterName = "your-hadoop-002"
+PS C:\> $clusterCreds = Get-Credential
 
 # If the cluster's resource group doesn't exist yet, run:
 #   New-AzResourceGroup -Name $clusterResourceGroupName -Location $location
 
 # Create the cluster
-New-AzHDInsightClusterConfig `
+PS C:\> New-AzHDInsightClusterConfig `
             | Add-AzHDInsightStorage `
                 -StorageAccountName "$secondStorageAccountName.blob.core.contoso.net" `
                 -StorageAccountKey $key2 `

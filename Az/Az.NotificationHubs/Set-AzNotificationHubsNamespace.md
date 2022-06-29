@@ -36,15 +36,15 @@ To remove a critical namespace you must first remove the Critical tag.
 ## EXAMPLES
 
 ### Example 1: Disable a namespace
-```powershell
-Set-AzNotificationHubsNamespace -Namespace "ContosoPartners" -Location "West US" -ResourceGroup "ContosoNotificationsGroup" -State "Disabled" -SkuTier "Standard"
+```
+PS C:\>Set-AzNotificationHubsNamespace -Namespace "ContosoPartners" -Location "West US" -ResourceGroup "ContosoNotificationsGroup" -State "Disabled" -SkuTier "Standard"
 ```
 
 This command disables the Standard tier namespace named ContosoPartners located in the West US datacenter and assigned to the ContosoNotificationsGroup resource group.
 
 ### Example 2: Enable a namespace
-```powershell
-Set-AzNotificationHubsNamespace -Namespace "ContosoPartners" -Location "West US" -ResourceGroup "ContosoNotificationsGroup" -State "Active" -SkuTier "Standard"
+```
+PS C:\>Set-AzNotificationHubsNamespace -Namespace "ContosoPartners" -Location "West US" -ResourceGroup "ContosoNotificationsGroup" -State "Active" -SkuTier "Standard"
 ```
 
 This command enables the Standard tier namespace named ContosoPartners located in the West US datacenter and assigned to the ContosoNotificationsGroup resource group.

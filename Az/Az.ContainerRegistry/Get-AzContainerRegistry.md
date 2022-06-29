@@ -39,10 +39,8 @@ The Get-AzContainerRegistry cmdlet gets a specified container registry or all th
 
 ### Example 1: Get a specified container registry
 ```powershell
-Get-AzContainerRegistry -ResourceGroupName "MyResourceGroup" -Name "MyRegistry"
-```
+PS C:\>Get-AzContainerRegistry -ResourceGroupName "MyResourceGroup" -Name "MyRegistry"
 
-```output
    Container registry location: westus
 
 Registry Name     Sku        LoginServer               CreationDate               Provisioni AdminUserE StorageAccountN
@@ -55,10 +53,8 @@ This command gets the specified container registry.
 
 ### Example 2: Get all the container registries in a resource group
 ```powershell
-Get-AzContainerRegistry -ResourceGroupName "MyResourceGroup"
-```
+PS C:\>Get-AzContainerRegistry -ResourceGroupName "MyResourceGroup"
 
-```output
    Container registry location: westus
 
 Registry Name     Sku        LoginServer               CreationDate               Provisioni AdminUserE StorageAccountN
@@ -79,10 +75,8 @@ This command gets all the container registries in a resource group.
 
 ### Example 3:  Get all the container registries in the subscription
 ```powershell
-Get-AzContainerRegistry
-```
+PS C:\>Get-AzContainerRegistry
 
-```output
   Container registry location: westus
 
 Registry Name     Sku        LoginServer               CreationDate               Provisioni AdminUserE StorageAccountN

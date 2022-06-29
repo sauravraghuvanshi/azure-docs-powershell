@@ -38,10 +38,8 @@ Gets information about a configuration of server.
 
 ### Example 1: List all configurations in specified MySql server
 ```powershell
-Get-AzMySqlConfiguration -ResourceGroupName PowershellMySqlTest -ServerName mysql-test
-```
+PS C:\> Get-AzMySqlConfiguration -ResourceGroupName PowershellMySqlTest -ServerName mysql-test
 
-```output
 Name                                     Type
 ----                                     ----
 audit_log_enabled                        Microsoft.DBforMySQL/servers/configurations
@@ -59,10 +57,8 @@ This cmdlet lists all configurations in specified MySql server.
 
 ### Example 2: Get specified MySql configuration by name
 ```powershell
-Get-AzMySqlConfiguration -Name time_zone -ResourceGroupName PowershellMySqlTest -ServerName mysql-test
-```
+PS C:\> Get-AzMySqlConfiguration -Name time_zone -ResourceGroupName PowershellMySqlTest -ServerName mysql-test
 
-```output
 Name      Type
 ----      ----
 time_zone Microsoft.DBforMySQL/servers/configurations

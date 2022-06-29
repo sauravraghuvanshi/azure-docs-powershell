@@ -38,10 +38,7 @@ The **Get-AzDataBoxEdgeJob** cmdlet gets the active jobs on a Data Box Edge devi
 
 ### Example 1
 ```powershell
-Get-AzDataBoxEdgeJob -ResourceGroupName resourceGroupName -DeviceName deviceName -Name 1f2d8f1b-9104-49c3-b780-76db9abe7bd1
-```
-
-```output
+PS C:\> Get-AzDataBoxEdgeJob -ResourceGroupName resourceGroupName -DeviceName deviceName -Name 1f2d8f1b-9104-49c3-b780-76db9abe7bd1
 Name                                   Device-Name    status
 ------------------                     -------------  -------
 1f2d8f1b-9104-49c3-b780-76db9abe7bd1   deviceName    Scheduled

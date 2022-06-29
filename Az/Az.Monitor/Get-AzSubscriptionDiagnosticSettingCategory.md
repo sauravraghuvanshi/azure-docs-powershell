@@ -25,10 +25,8 @@ Get diagnostic setting categories for subscription.
 
 ### Example 1
 ```powershell
-Get-AzSubscriptionDiagnosticSettingCategory
-```
+PS D:\> Get-AzSubscriptionDiagnosticSettingCategory
 
-```output
 Name            CategoryType
 ----            ------------
 Administrative          Logs

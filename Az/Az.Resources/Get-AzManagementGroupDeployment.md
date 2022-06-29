@@ -34,15 +34,15 @@ By default, **Get-AzManagementGroupDeployment** gets all deployments at the mana
 ## EXAMPLES
 
 ### Example 1: Get all deployments at a management group
-```powershell
-Get-AzManagementGroupDeployment -ManagementGroupId "myMG"
+```
+PS C:\>Get-AzManagementGroupDeployment -ManagementGroupId "myMG"
 ```
 
 This command gets all deployments at the management group "myMG".
 
 ### Example 2: Get a deployment by name
-```powershell
-Get-AzManagementGroupDeployment -ManagementGroupId "myMG" -Name "Deploy01"
+```
+PS C:\>Get-AzDeployment -ManagementGroupId "myMG" -Name "Deploy01"
 ```
 
 This command gets the "Deploy01" deployment at the management group "myMG".
@@ -50,8 +50,8 @@ You can assign a name to a deployment when you create it by using the **New-AzMa
 If you do not assign a name, the cmdlets provide a default name based on the template that is used to create the deployment.
 
 ### Example 3: Get a deployment by ID
-```powershell
-Get-AzDeployment -Id "/providers/Microsoft.Management/managementGroups/myMG/providers/Microsoft.Resources/deployments/Deploy01"
+```
+PS C:\>Get-AzDeployment -Id "/providers/Microsoft.Management/managementGroups/myMG/providers/Microsoft.Resources/deployments/Deploy01"
 ```
 
 This command gets the "Deploy01" deployment at the management group "myMG".

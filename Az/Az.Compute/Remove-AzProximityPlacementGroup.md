@@ -39,7 +39,7 @@ This cmdlet will delete Proximity Placement Group resource.
 
 ### Example 1
 ```powershell
-Get-AzProximityPlacementGroup  -ResourceGroupName $resourceGroupName -Name $proximityPlacementGroupName  | Remove-AzProximityPlacementGroup
+PS C:\> Get-AzureRmProximityPlacementGroup  -ResourceGroupName $resourceGroupName -Name $proximityPlacementGroupName  | Remove-AzureRmProximityPlacementGroup
 ```
 
 This command removes the given proximity placement group.

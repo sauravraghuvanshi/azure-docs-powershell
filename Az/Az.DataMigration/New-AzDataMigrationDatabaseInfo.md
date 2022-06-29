@@ -25,8 +25,8 @@ The New-AzDataMigrationDatabaseInfo cmdlet creates the DatabaseInfo object that 
 ## EXAMPLES
 
 ### Example 1
-```powershell
-New-AzDataMigrationDatabaseInfo -SourceDatabaseName 'AdventureWorks2016'
+```
+PS C:\> New-AzDataMigrationDatabaseInfo -SourceDatabaseName 'AdventureWorks2016'
 ```
 
 The preceding example creates a new DatabaseInfo object for the source database **AdventureWorks2016**.
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

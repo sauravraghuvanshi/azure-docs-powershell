@@ -50,22 +50,23 @@ A recovery plan gathers virtual machines belonging to an application into a unit
 ## EXAMPLES
 
 ### Example 1
-```powershell
-$currentJob = New-AzRecoveryServicesAsrRecoveryPlan -Name $RPName -PrimaryFabric $PrimaryFabric -RecoveryFabric $RecoveryFabric -ReplicationProtectedItem $RPI
+```
+PS C:\> $currentJob = New-AzRecoveryServicesAsrRecoveryPlan -Name $RPName -PrimaryFabric $PrimaryFabric -RecoveryFabric $RecoveryFabric -ReplicationProtectedItem $RPI
 ```
 
 Starts the recovery plan creation operation with the specified parameters and returns the ASR job used to track the operation.
 
 ### Example 2
-```powershell
-$currentJob = New-AzRecoveryServicesAsrRecoveryPlan -Name $RPName -PrimaryFabric $PrimaryFabric -PrimaryZone $pZone -RecoveryZone $rZone -ReplicationProtectedItem $RPI
+```
+PS C:\> $currentJob = New-AzRecoveryServicesAsrRecoveryPlan -Name $RPName -PrimaryFabric $PrimaryFabric -PrimaryZone $pZone-RecoveryZone $rZone -ReplicationProtectedItem $RPI
 ```
 
 Starts the recovery plan creation operation for Azure zone to zone replicated items and returns the ASR job used to track the operation.
 
 ### Example 3
-```powershell
-$currentJob = New-AzRecoveryServicesAsrRecoveryPlan -Name $RPName -PrimaryFabric $PrimaryFabric -PrimaryEdgeZone $pEdgeZone -RecoveryZone $rZone -ReplicationProtectedItem $RPI
+```
+PS C:\> $currentJob = New-AzRecoveryServicesAsrRecoveryPlan -Name $RPName -PrimaryFabric $PrimaryFabric -PrimaryEdgeZone $pEdgeZone 
+-RecoveryZone $rZone -ReplicationProtectedItem $RPI
 ```
 
 Starts the recovery plan creation operation for Azure EdgeZone to Availability Zone replicated items and returns the ASR job used to track the operation.

@@ -38,7 +38,7 @@ Operation to create or update a Lab Plan resource.
 
 ### Example 1: Create a new Lab plan.
 ```powershell
-New-AzLabServicesLabPlan `
+PS C:\> New-AzLabServicesLabPlan `
 	-LabPlanName "testplan" `
 	-ResourceGroupName "Group Name" `
 	-Location "westus2" `
@@ -54,9 +54,7 @@ New-AzLabServicesLabPlan `
 	-SupportInfoUrl 'https:\\test.com' `
 	-DefaultConnectionProfileWebRdpAccess None `
 	-DefaultConnectionProfileWebSshAccess None
-```
 
-```output
 Location Name
 -------- ----
 westus2  testplan

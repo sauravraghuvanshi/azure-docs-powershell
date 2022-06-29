@@ -41,10 +41,8 @@ If you do not specify a name, this cmdlet gets information about all the pipelin
 
 ### Example 1: Get information about all pipelines
 ```powershell
-Get-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -DataFactoryName "WikiADF" 
-```
+PS C:\> Get-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -DataFactoryName "WikiADF" 
 
-```output
     PipelineName      : DPWikisample
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF
@@ -64,10 +62,8 @@ The second one uses a DataFactory object as a parameter.
 
 ### Example 2: Get information about a specific pipeline
 ```powershell
-Get-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF" | Format-List
-```
+PS C:\> Get-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF" | Format-List
 
-```output
     PipelineName      : DPWikisample
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF
@@ -82,10 +78,8 @@ For more information, type Get-Help Format-List.
 
 ### Example 3: Get the properties for a specific pipeline
 ```powershell
-(Get-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -Name DPWikisample -DataFactoryName "WikiADF").Activities
-```
+PS C:\> (Get-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -Name DPWikisample -DataFactoryName "WikiADF").Activities
 
-```output
     Source                          : Microsoft.Azure.Management.DataFactory.Models.BlobSource
     Sink                            : Microsoft.Azure.Management.DataFactory.Models.BlobSink
     Translator                      :
@@ -125,10 +119,8 @@ This command gets information for the pipeline named DPWikisample in the data fa
 
 ### Example 4: Get information about inputs for the first activity
 ```powershell
-(Get-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF11").Activities[0].Inputs | Format-List
-```
+PS C:\> (Get-AzDataFactoryV2Pipeline -ResourceGroupName "ADF" -Name "DPWikisample" -DataFactoryName "WikiADF11").Activities[0].Inputs | Format-List
 
-```output
     ReferenceName : dsIn
     Parameters    :
 ```

@@ -41,8 +41,8 @@ Note: Upon execution the command will output the collection of modules applied t
 
 ### Example 1
 ```powershell
-$content = Get-Content "C:/Edge/modules.json" | ConvertFrom-Json -AsHashtable
-Set-AzIotHubEdgeModule -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myEdgeDevice1" -ModulesContent $content
+PS C:\> $content = Get-Content "C:/Edge/modules.json" | ConvertFrom-Json -AsHashtable
+PS C:\> Set-AzIotHubEdgeModule -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myEdgeDevice1" -ModulesContent $content
 ```
 
 Test edge modules while in development by setting modules on a target device.

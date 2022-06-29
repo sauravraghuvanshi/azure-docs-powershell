@@ -26,8 +26,8 @@ This command deletes an Azure SQL Server Virtual Network Rule.
 ## EXAMPLES
 
 ### Example 1
-```powershell
-$virtualNetworkRule = Remove-AzSqlServerVirtualNetworkRule -ResourceGroupName rg -ServerName serverName -VirtualNetworkRuleName virtualNetworkRuleName
+```
+PS C:\> $virtualNetworkRule = Remove-AzSqlServerVirtualNetworkRule -ResourceGroupName rg -ServerName serverName -VirtualNetworkRuleName virtualNetworkRuleName
 ```
 
 Deletes an existing Azure SQL Server virtual network rule

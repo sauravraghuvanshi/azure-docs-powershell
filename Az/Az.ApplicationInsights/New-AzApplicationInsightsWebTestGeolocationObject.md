@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.ApplicationInsights
 online version: https://docs.microsoft.com/powershell/module/az.ApplicationInsights/new-AzApplicationInsightsWebTestGeolocationObject
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/help/New-AzApplicationInsightsWebTestGeolocationObject.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/help/New-AzApplicationInsightsWebTestGeolocationObject.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/ApplicationInsights/help/New-AzApplicationInsightsWebTestGeolocationObject.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/ApplicationInsights/help/New-AzApplicationInsightsWebTestGeolocationObject.md
 ---
 
 # New-AzApplicationInsightsWebTestGeolocationObject
@@ -27,7 +27,6 @@ Create an in-memory object for WebTestGeolocation.
 ```powershell
 New-AzApplicationInsightsWebTestGeolocationObject -Location "emea-nl-ams-azr"
 ```
-
 ```output
 Location
 --------

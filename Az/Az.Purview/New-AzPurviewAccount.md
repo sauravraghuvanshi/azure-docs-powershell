@@ -1,10 +1,10 @@
 ---
-external help file: Az.Purview-help.xml
+external help file: 
 Module Name: Az.Purview
 online version: https://docs.microsoft.com/powershell/module/az.purview/new-azpurviewaccount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/Purview/help/New-AzPurviewAccount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/Purview/help/New-AzPurviewAccount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/help/New-AzPurviewAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/help/New-AzPurviewAccount.md
 ---
 
 # New-AzPurviewAccount
@@ -15,10 +15,10 @@ Creates or updates an account
 ## SYNTAX
 
 ```
-New-AzPurviewAccount -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>] -IdentityType <Type>
- -Location <String> -SkuCapacity <Int32> -SkuName <Name> [-ManagedResourceGroupName <String>]
+New-AzPurviewAccount -Name <String> -ResourceGroupName <String> -IdentityType <Type> -Location <String>
+ -SkuCapacity <Int32> -SkuName <Name> [-SubscriptionId <String>] [-ManagedResourceGroupName <String>]
  [-PublicNetworkAccess <PublicNetworkAccess>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob]
- [-NoWait] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,10 +28,8 @@ Creates or updates an account
 
 ### Example 1: Create a purview account
 ```powershell
-New-AzPurviewAccount -Name test-pa -ResourceGroupName test-rg -Location eastus -IdentityType SystemAssigned -SkuCapacity 4 -SkuName Standard
-```
+PS C:\> New-AzPurviewAccount -Name test-pa -ResourceGroupName test-rg -Location eastus -IdentityType SystemAssigned -SkuCapacity 4 -SkuName Standard
 
-```output
 IdentityPrincipalId                  IdentityTenantId                     IdentityType   Location Name    SystemDataCreatedAt  SystemDataCreatedBy    
 -------------------                  ----------------                     ------------   -------- ----    -------------------  ----------- 
 xxxxxxxx-9e08-4873-8b0d-1442be9e5b14 54826b22-38d6-4fb2-bad9-b7b93a3e9c5a SystemAssigned eastus  test-pa 8/17/2021 7:47:10 AM xxx.xxx…
@@ -282,3 +280,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
+

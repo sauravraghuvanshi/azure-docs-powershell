@@ -32,7 +32,7 @@ For more on this setting and how to enable it, see New-AzResourceGroupDeployment
 
 ### Example 1: Get1
 ```powershell
-Get-AzResourceGroupDeploymentOperation -DeploymentName test -ResourceGroupName test
+PS C:\>Get-AzResourceGroupDeploymentOperation -DeploymentName test -ResourceGroupName test
 ```
 
 Gets deployment operation with name "test" under resource group "test"

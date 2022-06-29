@@ -28,15 +28,15 @@ If the AllowDataLoss parameter is not specified, this command waits until both r
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName secondaryserver -FailoverGroupName fg | Switch-AzSqlDatabaseFailoverGroup -AllowDataLoss
+```
+C:\> Get-AzSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName secondaryserver -FailoverGroupName fg | Switch-AzSqlDatabaseFailoverGroup -AllowDataLoss
 ```
 
 Issue a failover operation allowing data loss by piping in the Failover Group.
 
 ### Example 2
-```powershell
-Switch-AzSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName secondaryserver -FailoverGroupName fg
+```
+C:\> Switch-AzSqlDatabaseFailoverGroup -ResourceGroupName rg -ServerName secondaryserver -FailoverGroupName fg
 ```
 
 Issue a best effort failover operation that will either succeed without losing data or fail and roll back.

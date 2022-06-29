@@ -27,11 +27,10 @@ The Start-AzAutomationSourceControlSyncJob cmdlet starts a Azure Automation sour
 
 ### Example 1
 ```powershell
-Start-AzAutomationSourceControlSyncJob -ResourceGroupName "rg1" `
+PS C:\> Start-AzAutomationSourceControlSyncJob -ResourceGroupName "rg1" `
                                                     -AutomationAccountName "devAccount" `
                                                     -Name "VSTSNative"
-```
-```output
+
 SourceControlSyncJobId               SyncType Status  StartTime EndTime
 ----------------------               -------- ------  --------- -------
 b51aed78-bef6-40d4-a966-cd45fd5af576 FullSync Running

@@ -32,21 +32,21 @@ Login to an azure container registry.
 
 ### Example 1
 ```powershell
-Connect-AzContainerRegistry -Name $RegistryName
+PS C:\> Connect-AzContainerRegistry -Name $RegistryName
 ```
 
 Login to ACR with no credentials when already login to azure account.
 
 ### Example 2
 ```powershell
-Connect-AzContainerRegistry -Name $RegistryName -UserName $RegistryName -Password $AdminPassWord
+PS C:\> Connect-AzContainerRegistry -Name $RegistryName -UserName $RegistryName -Password $AdminPassWord
 ```
 
 Login to ACR with admin username/password when admin user was enabled.
 
 ### Example 3
 ```powershell
-Connect-AzContainerRegistry -Name $RegistryName -UserName $ServicePrincipal -Password $ServicePrincipalPassword
+PS C:\> Connect-AzContainerRegistry -Name $RegistryName -UserName $ServicePrincipal -Password $ServicePrincipalPassword
 ```
 
 Login to ACR with service principal application ID and password.

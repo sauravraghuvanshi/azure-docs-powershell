@@ -39,23 +39,23 @@ The **Remove-AzSynapseNotebook** cmdlet removes a notebook from a workspace.
 
 ### Example 1
 ```powershell
-Remove-AzSynapseNotebook -WorkspaceName ContosoWorkspace -Name ContosoNotebook
+PS C:\> Remove-AzSynapseNotebook -WorkspaceName ContosoWorkspace -Name ContosoNotebook
 ```
 
 Remove a notebook called ContosoNotebook from the workspace ContosoWorkspace.
 
 ### Example 2
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Remove-AzSynapseNotebook -Name ContosoNotebook
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Remove-AzSynapseNotebook -Name ContosoNotebook
 ```
 
 Remove a notebook called ContosoNotebook from the workspace ContosoWorkspace through pipeline.
 
 ### Example 3
 ```powershell
-$notebook = Get-AzSynapseNotebook -WorkspaceName ContosoWorkspace -Name ContosoNotebook
-$notebook | Remove-AzSynapseNotebook
+PS C:\> $notebook = Get-AzSynapseNotebook -WorkspaceName ContosoWorkspace -Name ContosoNotebook
+PS C:\> $notebook | Remove-AzSynapseNotebook
 ```
 
 Remove a notebook called ContosoNotebook from the workspace ContosoWorkspace through pipeline.

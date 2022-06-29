@@ -27,7 +27,7 @@ Download and install kubectl, the Kubernetes command-line tool.
 
 ### Download and install latest version of kubectl
 ```powershell
-Install-AzAksKubectl -Version latest
+PS C:\> Install-AzAksKubectl -Version latest
 ```
 
 ## PARAMETERS

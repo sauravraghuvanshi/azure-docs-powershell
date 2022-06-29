@@ -25,11 +25,9 @@ The **Get-AzRelayNamespace** cmdlet gets a description for the specified Relay n
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzRelayNamespace -ResourceGroupName Default-ServiceBus-WestUS -Name TestNameSpace-Relay1
 ```
+PS C:\> Get-AzRelayNamespace -ResourceGroupName Default-ServiceBus-WestUS -Name TestNameSpace-Relay1
 
-```output
 ProvisioningState  : Succeeded
 CreatedAt          : 4/12/2017 12:38:47 AM
 UpdatedAt          : 4/12/2017 12:39:10 AM

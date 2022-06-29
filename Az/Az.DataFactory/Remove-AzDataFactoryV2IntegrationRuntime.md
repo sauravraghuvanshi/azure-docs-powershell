@@ -40,8 +40,8 @@ The Remove-AzDataFactoryV2IntegrationRuntime cmdlet removes a integration runtim
 ## EXAMPLES
 
 ### Example 1: Remove a integration runtime
-```powershell
-Remove-AzDataFactoryV2IntegrationRuntime  -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df' -Name 'test-reserved-ir' -Confirm
+```
+PS C:\> Remove-AzDataFactoryV2IntegrationRuntime  -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df' -Name 'test-reserved-ir' -Confirm
 ```
 
 This command removes the integration runtime named 'test-reserved-ir' from the data factory named 'test-df'.

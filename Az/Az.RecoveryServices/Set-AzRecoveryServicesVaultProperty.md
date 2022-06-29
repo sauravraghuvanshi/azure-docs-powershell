@@ -17,9 +17,8 @@ Updates properties of a Vault.
 
 ### AzureRSVaultSoftDelteParameterSet (Default)
 ```
-Set-AzRecoveryServicesVaultProperty [-SoftDeleteFeatureState <String>]
- [-DisableHybridBackupSecurityFeature <Boolean>] [-VaultId <String>] [-DefaultProfile <IAzureContextContainer>]
- [-Token <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-AzRecoveryServicesVaultProperty -SoftDeleteFeatureState <String> [-VaultId <String>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### AzureRSVaultCMKParameterSet
@@ -37,9 +36,9 @@ The **Set-AzRecoveryServicesVaultProperty** cmdlet updates properties of a Recov
 ## EXAMPLES
 
 ### Example 1: Update SoftDeleteFeatureState of a vault
-```powershell
-$vault = Get-AzRecoveryServicesVault -ResourceGroupName "rgName" -Name "vaultName"
-$props = Set-AzRecoveryServicesVaultProperty -VaultId $vault.Id -SoftDeleteFeatureState Enable
+```
+PS C:\> $vault = Get-AzRecoveryServicesVault -ResourceGroupName "rgName" -Name "vaultName"
+PS C:\> $props = Set-AzRecoveryServicesVaultProperty -VaultId $vault.Id -SoftDeleteFeatureState Enable
 ```
 
 The first command gets a Vault object and then stores it in the $vault variable.
@@ -47,11 +46,11 @@ The second command Updates the SoftDeleteFeatureState property of the vault to "
 
 ### Example 2: Update CMK encryption of a vault to use SystemAssigned MSIdentity
 
-```powershell
-$vault = Get-AzRecoveryServicesVault -ResourceGroupName "rgName" -Name "vaultName"
-$keyVault = Get-AzKeyVault -VaultName "keyVaultName" -ResourceGroupName "RGName" 
-$key = Get-AzKeyVaultKey -VaultName "keyVaultName" -Name "keyName" 
-Set-AzRecoveryServicesVaultProperty -EncryptionKeyId $key.ID -InfrastructureEncryption -VaultId $vault.ID -UseSystemAssignedIdentity $true
+```
+PS C:\> $vault = Get-AzRecoveryServicesVault -ResourceGroupName "rgName" -Name "vaultName"
+PS C:\> $keyVault = Get-AzKeyVault -VaultName "keyVaultName" -ResourceGroupName "RGName" 
+PS C:\> $key = Get-AzKeyVaultKey -VaultName "keyVaultName" -Name "keyName" 
+PS C:\> Set-AzRecoveryServicesVaultProperty -EncryptionKeyId $key.ID -InfrastructureEncryption -VaultId $vault.ID -UseSystemAssignedIdentity $true
 ```
 
 First cmdlet gets the RSVault to update encryption properties. Second cmdlet gets the azure key vault. Third cmdlet gets the key from the key vault.
@@ -59,25 +58,15 @@ Fourth cmdlet updates the customer managed encryption key within the RSVault to 
 
 ### Example 3: Update CMK encryption of a vault to use userAssigned MSIdentity
 
-```powershell
-$vault = Get-AzRecoveryServicesVault -ResourceGroupName "rgName" -Name "vaultName"
-$keyVault = Get-AzKeyVault -VaultName "keyVaultName" -ResourceGroupName "RGName" 
-$key = Get-AzKeyVaultKey -VaultName "keyVaultName" -Name "keyName" 
-Set-AzRecoveryServicesVaultProperty -EncryptionKeyId $key.ID -VaultId $vault.ID -UseSystemAssignedIdentity $false -UserAssignedIdentity $vault.Identity.UserAssignedIdentities.Keys[0]
+```
+PS C:\> $vault = Get-AzRecoveryServicesVault -ResourceGroupName "rgName" -Name "vaultName"
+PS C:\> $keyVault = Get-AzKeyVault -VaultName "keyVaultName" -ResourceGroupName "RGName" 
+PS C:\> $key = Get-AzKeyVaultKey -VaultName "keyVaultName" -Name "keyName" 
+PS C:\> Set-AzRecoveryServicesVaultProperty -EncryptionKeyId $key.ID -VaultId $vault.ID -UseSystemAssignedIdentity $false -UserAssignedIdentity $vault.Identity.UserAssignedIdentities.Keys[0]
 ```
 
 First cmdlet gets the RSVault to update encryption properties. Second cmdlet gets the azure key vault. Third cmdlet gets the key from the key vault.
 Fourth cmdlet updates the customer managed encryption key within the RSVault to be accessed via UserAssigned identity.
-
-### Example 4: Update HybridBackupSecurityFeature of a vault
-
-```powershell
-$vault = Get-AzRecoveryServicesVault -ResourceGroupName "rgName" -Name "vaultName"
-$prop = Set-AzRecoveryServicesVaultProperty -VaultId $vault.Id -DisableHybridBackupSecurityFeature $false
-```
-
-The first command gets a Vault object and then stores it in the $vault variable.
-The second command disables the HybridBackupSecurityFeature of the vault, set $true to enable it again.
 
 ## PARAMETERS
 
@@ -88,21 +77,6 @@ The credentials, account, tenant, and subscription used for communication with a
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DisableHybridBackupSecurityFeature
-Optional flag ($true/$false) to disable/enable security setting for hybrid backups against accidental deletes and add additional layer of authentication for critical operations. Provide $false to enable the security.
-
-```yaml
-Type: System.Nullable`1[System.Boolean]
-Parameter Sets: AzureRSVaultSoftDelteParameterSet
-Aliases:
 
 Required: False
 Position: Named
@@ -165,22 +139,7 @@ Parameter Sets: AzureRSVaultSoftDelteParameterSet
 Aliases:
 Accepted values: Enable, Disable
 
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Token
-Auxiliary access token for authenticating critical operation to resource guard subscription
-
-```yaml
-Type: System.String
-Parameter Sets: AzureRSVaultSoftDelteParameterSet
-Aliases:
-
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

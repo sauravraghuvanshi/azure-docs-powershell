@@ -42,23 +42,23 @@ The **Invoke-AzSynapsePipeline** command starts a run on the specified pipeline 
 
 ### Example 1
 ```powershell
-Invoke-AzSynapsePipeline -WorkspaceName ContosoWorkspace -PipelineName ContosoPipeline
+PS C:\> Invoke-AzSynapsePipeline -WorkspaceName ContosoWorkspace -PipelineName ContosoPipeline
 ```
 
 This command starts a run for pipeline called ContosoPipeline in the workspace ContosoWorkspace.
 
 ### Example 2
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Invoke-AzSynapsePipeline -PipelineName ContosoPipeline
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Invoke-AzSynapsePipeline -PipelineName ContosoPipeline
 ```
 
 This command starts a run for pipeline called ContosoPipeline in the workspace ContosoWorkspace through pipeline.
 
 ### Example 3
 ```powershell
-$pipeline = Get-AzSynapsePipeline -WorkspaceName ContosoWorkspace -Name ContosoPipeline
-$pipeline | Invoke-AzSynapsePipeline
+PS C:\> $pipeline = Get-AzSynapsePipeline -WorkspaceName ContosoWorkspace -Name ContosoPipeline
+PS C:\> $pipeline | Invoke-AzSynapsePipeline
 ```
 
 This command starts a run for pipeline called ContosoPipeline in the workspace ContosoWorkspace through pipeline.

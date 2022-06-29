@@ -1,5 +1,5 @@
 ---
-external help file: Az.Websites-help.xml
+external help file: 
 Module Name: Az.Websites
 online version: https://docs.microsoft.com/powershell/module/az.websites/get-azstaticwebapp
 schema: 2.0.0
@@ -25,15 +25,15 @@ Get-AzStaticWebApp -Name <String> -ResourceGroupName <String> [-SubscriptionId <
  [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
+### GetViaIdentity
+```
+Get-AzStaticWebApp -InputObject <IWebsitesIdentity> [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
 ### List1
 ```
 Get-AzStaticWebApp -ResourceGroupName <String> [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>]
  [<CommonParameters>]
-```
-
-### GetViaIdentity
-```
-Get-AzStaticWebApp -InputObject <IWebsitesIdentity> [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -43,10 +43,8 @@ Description for Gets the details of a static site.
 
 ### Example 1: List all static web applications under a subscription
 ```powershell
-Get-AzStaticWebApp
-```
+PS C:\> Get-AzStaticWebApp
 
-```output
 Kind Location   Name               Type
 ---- --------   ----               ----
      Central US staticweb-portal04 Microsoft.Web/staticSites
@@ -57,10 +55,8 @@ This commands list all static web applications under a subscription.
 
 ### Example 2: List all static web applications under a resource group
 ```powershell
-Get-AzStaticWebApp -ResourceGroupName azure-rg-test
-```
+PS C:\> Get-AzStaticWebApp -ResourceGroupName azure-rg-test
 
-```output
 Kind Location   Name               Type
 ---- --------   ----               ----
      Central US staticweb-portal04 Microsoft.Web/staticSites
@@ -69,32 +65,27 @@ Kind Location   Name               Type
 
 This commands list all static web applications under a resource group.
 
-### Example 3: Get a static web application by name
+### Example 3: Get a satic web application by name
 ```powershell
-Get-AzStaticWebApp -ResourceGroupName azure-rg-test -Name staticweb-portal04
-```
+PS C:\> Get-AzStaticWebApp -ResourceGroupName azure-rg-test -Name staticweb-portal04
 
-```output
 Kind Location   Name               Type
 ---- --------   ----               ----
      Central US staticweb-portal04 Microsoft.Web/staticSites
 ```
 
-This commands gets a static web application by name.
+This commands gets a satic web application by name.
 
-### Example 4: Get a static web application by pipeline
-
+### Example 4: Get a satic web application by pipline
 ```powershell
-New-AzStaticWebApp -ResourceGroupName azure-rg-test -Name staticweb-pwsh01 -Location eastus2 -RepositoryUrl 'https://github.com/username/RepoName' -RepositoryToken 'repoToken123' -Branch 'master' -AppLocation 'Client' -ApiLocation 'Api' -OutputLocation 'wwwroot' -SkuName 'free' | Get-AzStaticWebApp -InputObject
-```
+PS C:\> New-AzStaticWebApp -ResourceGroupName azure-rg-test -Name staticweb-pwsh01 -Location eastus2 -RepositoryUrl 'https://github.com/username/RepoName' -RepositoryToken 'repoToken123' -Branch 'master' -AppLocation 'Client' -ApiLocation 'Api' -OutputLocation 'wwwroot' -SkuName 'free' -SkuTier 'free'  | Get-AzStaticWebApp -InputObejct 
 
-```output
 Kind Location   Name               Type
 ---- --------   ----               ----
      Central US staticweb-portal04 Microsoft.Web/staticSites
 ```
 
-This commands gets a static web application by pipeline.
+This commands gets a satic web application by pipline.
 
 ## PARAMETERS
 
@@ -166,7 +157,7 @@ This is a GUID-formatted string (e.g.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, Get, List1
+Parameter Sets: Get, List, List1
 Aliases:
 
 Required: False
@@ -202,14 +193,12 @@ INPUTOBJECT <IWebsitesIdentity>: Identity Parameter
   - `[EnvironmentName <String>]`: The stage site identifier.
   - `[FunctionAppName <String>]`: Name of the function app registered with the static site build.
   - `[Id <String>]`: Resource identity path
-  - `[JobHistoryId <String>]`: History ID.
   - `[Location <String>]`: Location where you plan to create the static site.
   - `[Name <String>]`: Name of the static site.
   - `[PrivateEndpointConnectionName <String>]`: Name of the private endpoint connection.
   - `[ResourceGroupName <String>]`: Name of the resource group to which the resource belongs.
-  - `[Slot <String>]`: Name of the deployment slot. If a slot is not specified, the API deletes a deployment for the production slot.
   - `[SubscriptionId <String>]`: Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
   - `[Userid <String>]`: The user id of the user.
-  - `[WebJobName <String>]`: Name of Web Job.
 
 ## RELATED LINKS
+

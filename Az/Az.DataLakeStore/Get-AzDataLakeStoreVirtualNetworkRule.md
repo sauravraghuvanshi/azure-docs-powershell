@@ -28,10 +28,8 @@ If no virtual network rule is specified, then lists all virtual network rules fo
 
 ### Example 1
 ```powershell
-Get-AzDataLakeStoreVirtualNetworkRule -Account "dls" -Name "myVNET"
-```
+PS C:\> Get-AzDataLakeStoreVirtualNetworkRule -Account "dls" -Name "myVNET"
 
-```output
 ResourceGroupName                :
 AccountName                      :
 VirtualNetworkRuleName           : myVNET

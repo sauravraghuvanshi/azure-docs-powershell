@@ -34,6 +34,8 @@ The Add-AzAttestationPolicySigner cmdlet adds a trusted policy signer for a tena
 ### Example 1
 ```powershell
 $trustedSigner = Get-Content -Path .\trusted.signer.txt
+```
+```powershell
 Add-AzAttestationPolicySigner -Name pshtest -ResourceGroupName psh-test-rg -Signer $trustedSigner
 ```
 

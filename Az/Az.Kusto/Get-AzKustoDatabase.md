@@ -38,10 +38,8 @@ Returns a database.
 
 ### Example 1: List all Kusto databases in a cluster by name
 ```powershell
-Get-AzKustoDatabase -ResourceGroupName testrg -ClusterName testnewkustocluster
-```
+PS C:\> Get-AzKustoDatabase -ResourceGroupName testrg -ClusterName testnewkustocluster
 
-```output
 Kind      Location Name                                 Type
 ----      -------- ----                                 ----
 ReadWrite East US  testnewkustocluster/mykustodatabase  Microsoft.Kusto/Clusters/Databases
@@ -52,10 +50,8 @@ The above command returns all Kusto databases in the cluster "testnewkustocluste
 
 ### Example 2: Get a specific Kusto database by name
 ```powershell
-Get-AzKustoDatabase -ResourceGroupName testrg -ClusterName testnewkustocluster -Name mykustodatabase
-```
+PS C:\> Get-AzKustoDatabase -ResourceGroupName testrg -ClusterName testnewkustocluster -Name mykustodatabase
 
-```output
 Kind      Location Name                                Type
 ----      -------- ----                                ----
 ReadWrite East US  testnewkustocluster/mykustodatabase Microsoft.Kusto/Clusters/Databases
@@ -166,7 +162,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Kusto.Models.Api20220201.IDatabase
+### Microsoft.Azure.PowerShell.Cmdlets.Kusto.Models.Api202101.IDatabase
 
 ## NOTES
 
@@ -184,11 +180,8 @@ INPUTOBJECT <IKustoIdentity>: Identity Parameter
   - `[DatabaseName <String>]`: The name of the database in the Kusto cluster.
   - `[Id <String>]`: Resource identity path
   - `[Location <String>]`: Azure location (region) name.
-  - `[ManagedPrivateEndpointName <String>]`: The name of the managed private endpoint.
   - `[OperationId <String>]`: The Guid of the operation ID
   - `[PrincipalAssignmentName <String>]`: The name of the Kusto principalAssignment.
-  - `[PrivateEndpointConnectionName <String>]`: The name of the private endpoint connection.
-  - `[PrivateLinkResourceName <String>]`: The name of the private link resource.
   - `[ResourceGroupName <String>]`: The name of the resource group containing the Kusto cluster.
   - `[ScriptName <String>]`: The name of the Kusto database script.
   - `[SubscriptionId <String>]`: Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.

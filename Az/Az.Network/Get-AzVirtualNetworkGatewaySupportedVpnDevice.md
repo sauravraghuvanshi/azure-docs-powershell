@@ -25,11 +25,8 @@ This commandlet returns a list of supported VPN device brands, models, and firmw
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzVirtualNetworkGatewaySupportedVpnDevice -ResourceGroupName TestRG -Name TestGateway 
 ```
-
-```output
+PS C:\> Get-AzVirtualNetworkGatewaySupportedVpnDevice -ResourceGroupName TestRG -Name TestGateway 
 <?xml version="1.0" encoding="utf-8"?>
 <RpVpnDeviceList version="1.0">
   <Vendor name="Cisco-Test">

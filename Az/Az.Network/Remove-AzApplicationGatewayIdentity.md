@@ -26,8 +26,8 @@ Remove-AzApplicationGatewayIdentity -ApplicationGateway <PSApplicationGateway>
 
 ### Example 1
 ```powershell
-$appgw = Remove-AzApplicationGatewayIdentity -ApplicationGateway $appgw
-$updatedgateway = Set-AzApplicationGateway -ApplicationGateway $appgw
+PS C:\> $appgw = Remove-AzApplicationGatewayIdentity -ApplicationGateway $appgw
+PS C:\> $updatedgateway = Set-AzApplicationGateway -ApplicationGateway $appgw
 ```
 
 In this example, we remove identity from an existing application gateway.

@@ -29,11 +29,8 @@ This cmdlet is also supported by the SQL Server Stretch Database service on Azur
 ## EXAMPLES
 
 ### Example 1: Enable TDE for a database
-```powershell
-Set-AzSqlDatabaseTransparentDataEncryption -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -State Enabled
 ```
-
-```output
+PS C:\>Set-AzSqlDatabaseTransparentDataEncryption -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -State Enabled
 ResourceGroupName             ServerName                    DatabaseName                                          State
 -----------------             ----------                    ------------                                          -----
 ResourceGroup01               Server01                      Database01                                            Enabled

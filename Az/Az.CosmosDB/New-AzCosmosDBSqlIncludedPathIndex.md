@@ -26,10 +26,7 @@ Object corresponding to Sql API's IncludedPath's Indexes.
 
 ### Example 1
 ```powershell
-New-AzCosmosDBSqlIncludedPathIndex -DataType String -Precision -1 -Kind Hash
-```
-
-```output
+PS C:\> New-AzCosmosDBSqlIncludedPathIndex -DataType String -Precision -1 -Kind Hash
 DataType Precision Kind
 -------- --------- ----
 String          -1 Hash

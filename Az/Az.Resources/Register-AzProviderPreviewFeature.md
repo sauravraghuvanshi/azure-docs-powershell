@@ -25,8 +25,8 @@ The **Register-AzProviderPreviewFeature** cmdlet creates a feature registration 
 ## EXAMPLES
 
 ### Example 1: Creates a feature registration
-```powershell
-Register-AzProviderPreviewFeature -FeatureName AllowApplicationSecurityGroups -ProviderNamespace Microsoft.Network
+```
+PS C:\>Register-AzProviderPreviewFeature -FeatureName AllowApplicationSecurityGroups -ProviderNamespace Microsoft.Network
 ```
 
 This adds the AllowApplicationSecurityGroups feature for Microsoft.Network to your account.

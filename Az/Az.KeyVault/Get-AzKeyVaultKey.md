@@ -131,10 +131,8 @@ This cmdlet gets a specific **Microsoft.Azure.Commands.KeyVault.Models.KeyBundle
 
 ### Example 1: Get all the keys in a key vault
 ```powershell
-Get-AzKeyVaultKey -VaultName 'contoso'
-```
+PS C:\> Get-AzKeyVaultKey -VaultName 'contoso'
 
-```output
 Vault/HSM Name : contoso
 Name           : test1
 Version        :
@@ -164,10 +162,8 @@ This command gets all the keys in the key vault named Contoso.
 
 ### Example 2: Get the current version of a key
 ```powershell
-Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1'
-```
+PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1'
 
-```output
 Vault/HSM Name : contoso
 Name           : test1
 Key Type       : RSA
@@ -187,10 +183,8 @@ This command gets the current version of the key named test1 in the key vault na
 
 ### Example 3: Get all versions of a key
 ```powershell
-Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -IncludeVersions
-```
+PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -IncludeVersions
 
-```output
 Vault/HSM Name : contoso
 Name           : test1
 Version        : 7fe415d5518240c1a6fce89986b8d334
@@ -220,10 +214,8 @@ This command gets all versions the key named ITPfx in the key vault named Contos
 
 ### Example 4: Get a specific version of a key
 ```powershell
-Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -Version 'e4e95940e669407fbdb4298bc21a3e1d'
-```
+PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -Version 'e4e95940e669407fbdb4298bc21a3e1d'
 
-```output
 Vault/HSM Name : contoso
 Name           : test1
 Key Type       : RSA
@@ -244,10 +236,7 @@ After running this command, you can inspect various properties of the key by nav
 
 ### Example 5: Get all the keys that have been deleted but not purged for this key vault
 ```powershell
-Get-AzKeyVaultKey -VaultName 'contoso' -InRemovedState
-```
-
-```output
+PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -InRemovedState
 Vault/HSM Name       : contoso
 Name                 : test3
 Id                   : https://contoso.vault.azure.net:443/keys/test3
@@ -266,10 +255,8 @@ This command gets all the keys that have been previously deleted, but not purged
 
 ### Example 6: Gets the key ITPfx that has been deleted but not purged for this key vault.
 ```powershell
-Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test3' -InRemovedState
-```
+PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test3' -InRemovedState
 
-```output
 Vault/HSM Name       : contoso
 Name                 : test3
 Id                   : https://contoso.vault.azure.net:443/keys/test3/1af807cc331a49d0b52b7c75e1b2366e
@@ -289,10 +276,8 @@ This command will return metadata such as the deletion date, and the scheduled p
 
 ### Example 7: Get all the keys in a key vault using filtering
 ```powershell
-Get-AzKeyVaultKey -VaultName 'contoso' -KeyName "test*"
-```
+PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName "test*"
 
-```output
 Vault/HSM Name : contoso
 Name           : test1
 Version        :
@@ -323,8 +308,8 @@ This command gets all the keys in the key vault named Contoso that start with "t
 ### Example 8: Download a public key as a .pem file
 
 ```powershell
-$path = "D:\public.pem"
-Get-AzKeyVaultKey -VaultName $vaultName -KeyName $keyName -OutFile $path
+PS C:\> $path = "D:\public.pem"
+PS C:\> Get-AzKeyVaultKey -VaultName $vaultName -KeyName $keyName -OutFile $path
 ```
 
 You can download the public key of a RSA key by specifying the `-OutFile` parameter.

@@ -35,14 +35,14 @@ If you do not specify a name, this cmdlet gets information about all the data fl
 
 ### Example 1
 ```powershell
-Get-AzSynapseDataFlow -WorkspaceName ContosoWorkspace
+PS C:\> Get-AzSynapseDataFlow -WorkspaceName ContosoWorkspace
 ```
 
 This command gets information about all data flows in the workspace named ContosoWorkspace.
 
 ### Example 2
 ```powershell
-Get-AzSynapseDataFlow -WorkspaceName ContosoWorkspace -Name ContosoDataFlow
+PS C:\> Get-AzSynapseDataFlow -WorkspaceName ContosoWorkspace -Name ContosoDataFlow
 ```
 
 This command gets information about the data flow named ContosoDataFlow in the workspace named ContosoWorkspace.

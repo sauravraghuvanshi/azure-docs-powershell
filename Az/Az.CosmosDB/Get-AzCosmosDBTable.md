@@ -33,10 +33,8 @@ The **Get-AzCosmosDBTable** cmdlet gets an existing Table.
 
 ### Example 1
 ```powershell
-Get-AzCosmosDBTable -AccountName "account" -Name "tableName" -ResourceGroupName "rgName"
-```
+PS C:\> Get-AzCosmosDBTable -AccountName {account} -Name {tableName} -ResourceGroupName {rgName}
 
-```output
 Name    Id    Resource
 {name}  {id}  Microsoft.Azure.Commands.CosmosDB.Models.PSTableGetPropertiesResource
 ```

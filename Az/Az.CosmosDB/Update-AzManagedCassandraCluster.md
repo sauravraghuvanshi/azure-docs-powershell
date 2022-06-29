@@ -14,31 +14,49 @@ Update an existing Azure Managed Instances for Apache Cassandra cluster.
 
 ## SYNTAX
 
-### ByNameParameterSet (Default)
+### NameParameterSet (Default)
 ```
-Update-AzManagedCassandraCluster -ResourceGroupName <String> -ClusterName <String> [-Tag <Hashtable>]
- [-ExternalGossipCertificate <String[]>] [-ClientCertificate <String[]>] [-RepairEnabled <Boolean>]
- [-TimeBetweenBackupInHours <Int32>] [-AuthenticationMethod <String>] [-CassandraVersion <String>]
- [-ExternalSeedNode <String[]>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
-```
-
-### ByResourceIdParameterSet
-```
-Update-AzManagedCassandraCluster -ResourceId <String> [-Tag <Hashtable>]
- [-ExternalGossipCertificate <String[]>] [-ClientCertificate <String[]>] [-RepairEnabled <Boolean>]
- [-TimeBetweenBackupInHours <Int32>] [-AuthenticationMethod <String>] [-CassandraVersion <String>]
- [-ExternalSeedNode <String[]>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Update-AzManagedCassandraCluster 
+ -ResourceGroupName <String> 
+ -ClusterName <String>
+ [-ExternalGossipCertificate <String[]>]
+ [-ClientCertificate <String[]>]
+ [-RepairEnabled <bool>]
+ [-TimeBetweenBackupInHours <int>]
+ [-AuthenticationMethod <String>]
+ [-CassandraVersion <String>]
+ [-ExternalSeedNode <String[]>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### ByObjectParameterSet
+### ResourceIdParameterSet
 ```
-Update-AzManagedCassandraCluster -InputObject <PSClusterResource> [-Tag <Hashtable>]
- [-ExternalGossipCertificate <String[]>] [-ClientCertificate <String[]>] [-RepairEnabled <Boolean>]
- [-TimeBetweenBackupInHours <Int32>] [-AuthenticationMethod <String>] [-CassandraVersion <String>]
- [-ExternalSeedNode <String[]>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Update-AzManagedCassandraCluster 
+ -ResourceId <String> 
+ [-Tag <Hashtable>]
+ [-ExternalGossipCertificate <String[]>]
+ [-ClientCertificate <String[]>]
+ [-RepairEnabled <bool>]
+ [-TimeBetweenBackupInHours <int>]
+ [-AuthenticationMethod <String>]
+ [-CassandraVersion <String>]
+ [-ExternalSeedNode <String[]>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ObjectParameterSet
+```
+Update-AzManagedCassandraCluster 
+ -InputObject <PSClusterResource> 
+ [-Tag <Hashtable>]
+ [-ExternalGossipCertificate <String[]>]
+ [-ClientCertificate <String[]>]
+ [-RepairEnabled <bool>]
+ [-TimeBetweenBackupInHours <int>]
+ [-AuthenticationMethod <String>]
+ [-CassandraVersion <String>]
+ [-ExternalSeedNode <String[]>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -48,29 +66,29 @@ The **Update-AzManagedCassandraCluster** cmdlet alters an existing managed Cassa
 
 ### Example 1
 ```powershell
-Update-AzManagedCassandraCluster `
- -ResourceGroupName "resourceGroupName" `
- -ClusterName "clusterName" `
- -ExternalGossipCertificate "certificates" `
- -ClientCertificate "certificates" `
- -RepairEnabled $true
+PS C:\> Update-AzManagedCassandraCluster `
+ -ResourceGroupName {resourceGroupName} `
+ -ClusterName {clusterName} `
+ -ExternalGossipCertificate {certificates} `
+ -ClientCertificate {certificates} `
+ -RepairEnabled {boolean}
 ```
 
 ### Example 2
 ```powershell
-Update-AzManagedCassandraCluster `
- -ResourceId "clusterResourceId" `
- -ExternalGossipCertificate "certificates" `
- -ClientCertificate "certificates" `
- -RepairEnabled $true
+PS C:\> Update-AzManagedCassandraCluster `
+ -ResourceId {clusterResourceId} `
+ -ExternalGossipCertificate {certificates} `
+ -ClientCertificate {certificates} `
+ -RepairEnabled {boolean}
 ```
 
 ### Example 3
 ```powershell
-$clusterResource | Update-AzManagedCassandraCluster `
- -ExternalGossipCertificate "certificates" `
- -ClientCertificate "certificates" `
- -RepairEnabled $true
+PS C:\> $clusterResource | Update-AzManagedCassandraCluster `
+ -ExternalGossipCertificate {certificates} `
+ -ClientCertificate {certificates} `
+ -RepairEnabled {boolean}
 ```
 
 ## PARAMETERS
@@ -81,7 +99,6 @@ How to authenticate clients, one of `Cassandra` (for password authentication), `
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases:
 
 Required: False
 Position: Named
@@ -96,7 +113,6 @@ Which version of Cassandra to run. Currently only 3.11 is supported.
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases:
 
 Required: False
 Position: Named
@@ -111,7 +127,6 @@ The list of TLS certificates to use to authenticate clients. If this is omitted,
 ```yaml
 Type: System.String[]
 Parameter Sets: (All)
-Aliases:
 
 Required: False
 Position: Named
@@ -125,7 +140,7 @@ Name of the managed Cassandra cluster.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByNameParameterSet
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -156,7 +171,6 @@ A list of additional TLS certificates the managed Cassandra cluster will use to 
 ```yaml
 Type: System.String[]
 Parameter Sets: (All)
-Aliases:
 
 Required: False
 Position: Named
@@ -171,7 +185,6 @@ List of IP addresses of external seed nodes to bridge this cluster to.
 ```yaml
 Type: System.String[]
 Parameter Sets: (All)
-Aliases:
 
 Required: False
 Position: Named
@@ -180,18 +193,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Managed Cassandra Cluster object
+### -Location
+The location to create the managed Cassandra cluster in.
 
 ```yaml
-Type: Microsoft.Azure.Commands.CosmosDB.Models.PSClusterResource
-Parameter Sets: ByObjectParameterSet
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -199,11 +212,11 @@ Accept wildcard characters: False
 If true, managed Cassandra will run reaper to repair the database regularly. This should only be disabled for hybrid clusters which run their own repair process outside of Azure.
 
 ```yaml
-Type: System.Nullable`1[System.Boolean]
+Type: System.Boolean
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: True
 Accept pipeline input: False
@@ -215,22 +228,7 @@ Name of resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByNameParameterSet
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResourceId
-ResourceId of the resource.
-
-```yaml
-Type: System.String
-Parameter Sets: ByResourceIdParameterSet
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -244,7 +242,7 @@ Accept wildcard characters: False
 Hashtable of tags to set on the data center resource.
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: System.Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -259,39 +257,9 @@ Accept wildcard characters: False
 Hours between taking full backups of the cluster.
 
 ```yaml
-Type: System.Nullable`1[System.Int32]
-Parameter Sets: (All)
+Type: System.Integer
+Parameter Sets: (All))
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
 
 Required: False
 Position: Named

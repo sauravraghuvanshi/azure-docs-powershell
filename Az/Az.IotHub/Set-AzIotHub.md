@@ -65,15 +65,15 @@ Updates the properties of an IotHub.
 ## EXAMPLES
 
 ### Example 1 Update the sku
-```powershell
-Set-AzIotHub -ResourceGroupName "myresourcegroup" -Name "myiothub" -SkuName S1 -Units 5
+```
+PS C:\> Set-AzIotHub -ResourceGroupName "myresourcegroup" -Name "myiothub" -SkuName S1 -Units 5
 ```
 
 Update the sku to S1 and units to 5 for the IotHub named "myiothub"
 
 ### Example 2 Update the eventhub properties
-```powershell
-Set-AzIotHub -ResourceGroupName "myresourcegroup" -Name "myiothub" -EventHubRetentionTimeInDays 4
+```
+PS C:\> Set-AzIotHub -ResourceGroupName "myresourcegroup" -Name "myiothub" -EventHubRetentionTimeInDays 4
 ```
 
 Update the retention time of telemetry in days to 4 for the IotHub named "myiothub"

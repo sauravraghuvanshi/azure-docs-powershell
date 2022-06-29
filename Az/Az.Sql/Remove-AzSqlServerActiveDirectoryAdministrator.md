@@ -26,11 +26,8 @@ The **Remove-AzSqlServerActiveDirectoryAdministrator** cmdlet removes an Azure A
 ## EXAMPLES
 
 ### Example 1: Remove an administrator
-```powershell
-Remove-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -ServerName "Server01"
 ```
-
-```output
+PS C:\>Remove-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -ServerName "Server01"
 Confirm 
 Are you sure you want to remove the Azure Sql Server Active Directory Administrator on server 'Server01'? 
 [Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default is "Y"): Y 

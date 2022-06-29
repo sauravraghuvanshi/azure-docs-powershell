@@ -39,12 +39,10 @@ The Start-AzSqlElasticJob cmdlet starts a job returning a new job execution
 ## EXAMPLES
 
 ### Example 1 - Starts a job returning a new job execution
-```powershell
-$job = Get-AzSqlElasticJob -ResourceGroupName rg -ServerName elasticjobserver -AgentName agent -Name job1
-$job | Start-AzSqlElasticJob
 ```
+PS C:\> $job = Get-AzSqlElasticJob -ResourceGroupName rg -ServerName elasticjobserver -AgentName agent -Name job1
+$job | Start-AzSqlElasticJob
 
-```output
 JobName JobExecutionId                       Lifecycle StartTime EndTime
 ------- --------------                       --------- --------- -------
 job1    b93b3a90-987b-4565-b3d3-5fa1751fa9bc Created

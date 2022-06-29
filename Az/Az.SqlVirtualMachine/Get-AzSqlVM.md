@@ -37,10 +37,8 @@ The Get-AzSqlVM cmdlet gets one or more sql virtual machines.
 
 ### Example 1
 ```powershell
-Get-AzSqlVM
-```
+PS C:\> Get-AzSqlVM
 
-```output
 Name ResourceGroupName  LicenseType Sku       Offer          SqlManagementType
 ---- -----------------  ----------- ---       -----          -----------------
 vm   ResourceGroup01	PAYG        Developer SQL2017-WS2016 Full
@@ -51,10 +49,7 @@ This command gets information about all the Azure SQL virtual machines in the cu
 
 ### Example 2
 ```powershell
-Get-AzSqlVM -ResourceGroupName "ResourceGroup01"
-```
-
-```output
+PS C:\> Get-AzSqlVM -ResourceGroupName "ResourceGroup01"
 Name ResourceGroupName  LicenseType Sku       Offer          SqlManagementType
 ---- -----------------  ----------- ---       -----          -----------------
 vm   ResourceGroup01	PAYG        Developer SQL2017-WS2016 Full
@@ -64,10 +59,7 @@ This command gets information about all the Azure SQL virtual machines in the cu
 
 ### Example 3
 ```powershell
-Get-AzSqlVM -ResourceGroupName "ResourceGroup01" -Name "vm"
-```
-
-```output
+PS C:\> Get-AzSqlVM -ResourceGroupName "ResourceGroup01" -Name "vm"
 Name ResourceGroupName  LicenseType Sku       Offer          SqlManagementType
 ---- -----------------  ----------- ---       -----          -----------------
 vm   ResourceGroup01	PAYG        Developer SQL2017-WS2016 Full

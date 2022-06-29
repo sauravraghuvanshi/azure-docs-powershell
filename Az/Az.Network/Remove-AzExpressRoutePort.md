@@ -39,21 +39,21 @@ The **Remove-AzExpressRoutePort** cmdlet removes an ExpressRoutePort.
 
 ### Example 1
 ```powershell
-Remove-AzExpressRoutePort -Name $PortName -ResourceGroupName $rg
+PS C:\> Remove-AzExpressRoutePort -Name $PortName -ResourceGroupName $rg
 ```
 
 Removes $PortName ExpressRoutePort resource in $rg resource group in your subscription.
 
 ### Example 2
 ```powershell
-Remove-AzExpressRoutePort -InputObject $Port
+PS C:\> Remove-AzExpressRoutePort -InputObject $erPort
 ```
 
 Removes the ExpressRoutePort resource in InputObject.
 
 ### Example 3
 ```powershell
-Remove-AzExpressRoutePort -ResourceId $id
+PS C:\> Remove-AzExpressRoutePort -Name $ResourceId $id
 ```
 
 Removes the ExpressRoutePort resource with ResourceId $id.

@@ -1,5 +1,5 @@
 ---
-external help file: Az.Websites-help.xml
+external help file: 
 Module Name: Az.Websites
 online version: https://docs.microsoft.com/powershell/module/az.websites/get-azstaticwebappcustomdomain
 schema: 2.0.0
@@ -39,10 +39,8 @@ Description for Gets an existing custom domain for a particular static site.
 
 ### Example 1: List all existing custom domains for a particular static site
 ```powershell
-Get-AzStaticWebAppCustomDomain -ResourceGroupName azure-rg-test -Name staticweb00
-```
+PS C:\> Get-AzStaticWebAppCustomDomain -ResourceGroupName azure-rg-test -Name staticweb00
 
-```output
 Kind Name               Type
 ---- ----               ----
      www01.azpstest.net Microsoft.Web/staticSites/customDomains
@@ -52,10 +50,8 @@ This command lists all existing custom domains for a particular static site.
 
 ### Example 2: Get an existing custom domain for a particular static site
 ```powershell
-Get-AzStaticWebAppCustomDomain -ResourceGroupName azure-rg-test -Name staticweb00 -DomainName 'www02.azpstest.net'
-```
+PS C:\>  Get-AzStaticWebAppCustomDomain -ResourceGroupName azure-rg-test -Name staticweb00 -DomainName 'www02.azpstest.net'
 
-```output
 Kind Name               Type
 ---- ----               ----
      www02.azpstest.net Microsoft.Web/staticSites/customDomains
@@ -65,10 +61,8 @@ This command gets an existing custom domain for a particular static site.
 
 ### Example 3: Get an existing custom domain for a particular static site by pipeline
 ```powershell
-New-AzStaticWebAppCustomDomain -ResourceGroupName azure-rg-test -Name staticweb00 -DomainName 'www02.azpstest.net' | Get-AzStaticWebAppCustomDomain
-```
+PS C:\>  New-AzStaticWebAppCustomDomain -ResourceGroupName azure-rg-test -Name staticweb00 -DomainName 'www02.azpstest.net' | Get-AzStaticWebAppCustomDomain
 
-```output
 Kind Name               Type
 ---- ----               ----
      www02.azpstest.net Microsoft.Web/staticSites/customDomains
@@ -129,7 +123,7 @@ Name of the static site resource to search in.
 
 ```yaml
 Type: System.String
-Parameter Sets: List, Get
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -144,7 +138,7 @@ Name of the resource group to which the resource belongs.
 
 ```yaml
 Type: System.String
-Parameter Sets: List, Get
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -161,7 +155,7 @@ This is a GUID-formatted string (e.g.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, Get
+Parameter Sets: Get, List
 Aliases:
 
 Required: False
@@ -197,14 +191,12 @@ INPUTOBJECT <IWebsitesIdentity>: Identity Parameter
   - `[EnvironmentName <String>]`: The stage site identifier.
   - `[FunctionAppName <String>]`: Name of the function app registered with the static site build.
   - `[Id <String>]`: Resource identity path
-  - `[JobHistoryId <String>]`: History ID.
   - `[Location <String>]`: Location where you plan to create the static site.
   - `[Name <String>]`: Name of the static site.
   - `[PrivateEndpointConnectionName <String>]`: Name of the private endpoint connection.
   - `[ResourceGroupName <String>]`: Name of the resource group to which the resource belongs.
-  - `[Slot <String>]`: Name of the deployment slot. If a slot is not specified, the API deletes a deployment for the production slot.
   - `[SubscriptionId <String>]`: Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
   - `[Userid <String>]`: The user id of the user.
-  - `[WebJobName <String>]`: Name of Web Job.
 
 ## RELATED LINKS
+

@@ -48,10 +48,8 @@ The **Set-AzSynapseNotebook** cmdlet creates or updates a notebook in a workspac
 
 ### Example 1
 ```powershell
-Set-AzSynapseNotebook -WorkspaceName ContosoWorkspace -DefinitionFile "C:\\samples\\notebook.ipynb"
-```
+PS C:\> Set-AzSynapseNotebook -WorkspaceName ContosoWorkspace -DefinitionFile "C:\\samples\\notebook.ipynb"
 
-```output
     WorkspaceName : ContosoWorkspace
     Properties    : Microsoft.Azure.Commands.Synapse.Models.PSNotebook
     Name          : notebook
@@ -61,29 +59,29 @@ This command creates or updates a notebook from notebook file notebook.ipynb in 
 
 ### Example 2
 ```powershell
-Set-AzSynapseNotebook -WorkspaceName ContosoWorkspace -DefinitionFile "C:\\samples\\notebook.ipynb" -FolderPath ContosoFolder
+PS C:\> Set-AzSynapseNotebook -WorkspaceName ContosoWorkspace -DefinitionFile "C:\\samples\\notebook.ipynb" -FolderPath ContosoFolder
 ```
 
 This command creates or updates a notebook from notebook file notebook.ipynb and specify a folder path ContosoFolder where the notebook will be placed in the workspace named ContosoWorkspace.
 
 ### Example 3
 ```powershell
-Set-AzSynapseNotebook -WorkspaceName ContosoWorkspace -DefinitionFile "C:\\samples\\notebook.ipynb" -FolderPath ContosoFolder/SubFolder
+PS C:\> Set-AzSynapseNotebook -WorkspaceName ContosoWorkspace -DefinitionFile "C:\\samples\\notebook.ipynb" -FolderPath ContosoFolder/SubFolder
 ```
 
 This command creates or updates a notebook from notebook file notebook.ipynb and specify a multi-level folder path ContosoFolder/SubFolder where the notebook will be placed in the workspace named ContosoWorkspace.
 
 ### Example 4
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Set-AzSynapseNotebook -DefinitionFile "C:\\samples\\notebook.ipynb"
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Set-AzSynapseNotebook -DefinitionFile "C:\\samples\\notebook.ipynb"
 ```
 
 This command creates or updates a notebook from notebook file notebook.ipynb in the workspace named ContosoWorkspace through pipeline.
 
 ### Example 5
 ```powershell
-Set-AzSynapseNotebook -WorkspaceName ContosoWorkspace -DefinitionFile "C:\\samples\\notebook.ipynb" -SparkPoolName ContosoSparkPool -ExecutorCount 2
+PS C:\> Set-AzSynapseNotebook -WorkspaceName ContosoWorkspace -DefinitionFile "C:\\samples\\notebook.ipynb" -SparkPoolName ContosoSparkPool -ExecutorCount 2
 ```
 
 This command creates or updates a notebook from notebook file notebook.ipynb which attaches to ContosoSparkPool and uses 2 executors in the workspace named ContosoWorkspace.

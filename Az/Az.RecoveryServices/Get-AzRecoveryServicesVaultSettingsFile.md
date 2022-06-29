@@ -41,9 +41,9 @@ The **Get-AzRecoveryServicesVaultSettingsFile** cmdlet gets the settings file fo
 
 ### Example 1: Register a Windows Server or DPM machine for Azure Backup
 ```powershell
-$Vault01 = Get-AzRecoveryServicesVault -Name "TestVault"
-$CredsPath = "C:\Downloads"
-$Credsfilename = Get-AzRecoveryServicesVaultSettingsFile -Backup -Vault $Vault01 -Path $CredsPath
+PS C:\> $Vault01 = Get-AzRecoveryServicesVault -Name "TestVault"
+PS C:\> $CredsPath = "C:\Downloads"
+PS C:\> $Credsfilename = Get-AzRecoveryServicesVaultSettingsFile -Backup -Vault $Vault01 -Path $CredsPath
 ```
 
 The first command gets the vault named TestVault, and then stores it in the $Vault01 variable.
@@ -52,14 +52,14 @@ The last command gets the vault credentials file for $Vault01 using the credenti
 
 ### Example 2
 ```powershell
-$Credsfilename = Get-AzRecoveryServicesVaultSettingsFile -SiteIdentifier -Vault $Vault01
+PS C:\> $Credsfilename = Get-AzRecoveryServicesVaultSettingsFile -SiteIdentifier -Vault $Vault01
 ```
 
 The command gets the vault credentials file for $Vault01 of vault type siteRecovery.
 
 ### Example 3: Register a Windows Server or DPM machine for Azure Backup
 ```powershell
-$Credsfilename = Get-AzRecoveryServicesVaultSettingsFile -SiteIdentifier -Vault $Vault01
+PS C:\> $Credsfilename = Get-AzRecoveryServicesVaultSettingsFile -SiteIdentifier -Vault $Vault01
 ```
 
 The command gets the vault credentials file for $Vault01.

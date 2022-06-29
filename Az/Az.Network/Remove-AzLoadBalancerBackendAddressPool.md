@@ -47,19 +47,19 @@ Removes a backend pool from a load balancer
 ### Example 1
 ```powershell
 ##removing by passing lb object via pipeline
-$lb | Remove-AzLoadBalancerBackendAddressPool -Name $backendPool1
+PS C:\> $lb | Remove-AzLoadBalancerBackendAddressPool -Name $backendPool1
 ```
 
 ### Example 2
 ```powershell
 ##removing by passing input object
-Remove-AzLoadBalancerBackendAddressPool -InputObject $backendPoolObject
+PS C:\> Remove-AzLoadBalancerBackendAddressPool -InputObject $backendPoolObject
 ```
 
 ### Example 3
 ```powershell
 ##removing by passing input object
-Remove-AzLoadBalancerBackendAddressPool -ResourceId $backendPoolObject.Id
+PS C:\> Remove-AzLoadBalancerBackendAddressPool -ResourceId $backendPoolObject.Id
 ```
 
 ## PARAMETERS

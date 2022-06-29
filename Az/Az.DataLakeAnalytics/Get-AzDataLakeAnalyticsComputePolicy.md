@@ -25,15 +25,15 @@ The **Get-AzDataLakeAnalyticsComputePolicy** gets a specified Azure Data Lake An
 ## EXAMPLES
 
 ### Example 1: Get a specified compute policy
-```powershell
-Get-AzDataLakeAnalyticsComputePolicy -Account "contosoadla" -Name myPolicy
+```
+PS C:\>Get-AzDataLakeAnalyticsComputePolicy -Account "contosoadla" -Name myPolicy
 ```
 
 This command gets the specified compute policy with name 'myPolicy' in account 'contosoadla'.
 
 ### Example 2: Get a list of all compute policies in the account
-```powershell
-Get-AzDataLakeAnalyticsComputePolicy -AccountName "contosoadla"
+```
+PS C:\>Get-AzDataLakeAnalyticsComputePolicy -AccountName "contosoadla"
 ```
 
 This command gets a list of all compute policies in the account "contosoadla"

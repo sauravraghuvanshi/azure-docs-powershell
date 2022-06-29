@@ -27,7 +27,7 @@ The Invoke-AzSqlElasticPoolFailover cmdlet failovers an elastic pool. Failover w
 
 ### Example 1
 ```powershell
-Invoke-AzSqlElasticPoolFailover -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -ElasticPoolName "ElasticPool01"
+PS C:\> Invoke-AzSqlElasticPoolFailover -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -ElasticPoolName "ElasticPool01"
 ```
 
 This command will failover the elastic pool named "ElasticPool01" on the server named "Server01".  This means failover will occur on all databases in the elastic pool named "ElasticPool01".

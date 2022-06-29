@@ -83,7 +83,7 @@ Content    : {
              }
 ```
 
-Get log analytics workspace by path. It only supports management plane API and Hostname of Azure Resource Manager is added according to Azure environment setting.  
+Get log analytics workspace by path
 
 ### Example 2
 ```powershell
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
-Path of target resource URL. Hostname of Resource Manager should not be added.
+Target Path
 
 ```yaml
 Type: System.String

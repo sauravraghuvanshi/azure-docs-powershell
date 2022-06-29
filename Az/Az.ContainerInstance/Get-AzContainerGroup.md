@@ -46,10 +46,8 @@ The operation returns the properties of each container group including container
 
 ### Example 1: List all container groups in the current subscription
 ```powershell
-Get-AzContainerGroup
-```
+PS C:\> Get-AzContainerGroup
 
-```output
 Location Name    Zone ResourceGroupName
 -------- ----    ---- -----------------
 eastus   test-cg1      test-rg
@@ -60,10 +58,9 @@ This command gets all container groups in the current subscription.
 
 ### Example 2: Get a specific container group
 ```powershell
-Get-AzContainerGroup -Name test-cg1 -ResourceGroupName test-rg | Format-List
-```
+PS C:\> Get-AzContainerGroup -Name test-cg1 -ResourceGroupName test-rg | fl
 
-```output
+
 Container                      : {test-container1}
 DnsConfigNameServer            :
 DnsConfigOption                :
@@ -118,10 +115,8 @@ The command gets the specified container group.
 
 ### Example 3: Get container groups in a resource group
 ```powershell
-Get-AzContainerGroup -ResourceGroupName test-rg
-```
+PS C:\> Get-AzContainerGroup -ResourceGroupName test-rg
 
-```output
 Location Name    Zone ResourceGroupName
 -------- ----    ---- -----------------
 eastus   test-cg1      test-rg
@@ -132,10 +127,8 @@ The command gets the container groups in the resource group `test-rg`.
 
 ### Example 4: Get a container group by piping
 ```powershell
-Update-AzContainerGroup -Name test-cg1 -ResourceGroupName test-rg -Tag @{"test"="value"} | Get-AzContainerGroup
-```
+PS C:\> Update-AzContainerGroup -Name test-cg1 -ResourceGroupName test-rg -Tag @{"test"="value"} | Get-AzContainerGroup
 
-```output
 Location Name    Zone ResourceGroupName
 -------- ----    ---- -----------------
 eastus   test-cg1      test-rg

@@ -28,17 +28,11 @@ Get a cluster by name in a private cloud
 ### [Get-AzVMwareGlobalReachConnection](Get-AzVMwareGlobalReachConnection.md)
 Get a global reach connection by name in a private cloud
 
-### [Get-AzVMwarePlacementPolicy](Get-AzVMwarePlacementPolicy.md)
-Get a placement policy by name in a private cloud cluster
-
 ### [Get-AzVMwarePrivateCloud](Get-AzVMwarePrivateCloud.md)
 Get a private cloud
 
 ### [Get-AzVMwarePrivateCloudAdminCredential](Get-AzVMwarePrivateCloudAdminCredential.md)
 List the admin credentials for the private cloud
-
-### [Get-AzVMwareVirtualMachine](Get-AzVMwareVirtualMachine.md)
-Get a virtual machine by id in a private cloud cluster
 
 ### [New-AzVMwareAddon](New-AzVMwareAddon.md)
 Create or update a addon in a private cloud
@@ -61,9 +55,6 @@ Create or update a cluster in a private cloud
 ### [New-AzVMwareGlobalReachConnection](New-AzVMwareGlobalReachConnection.md)
 Create or update a global reach connection in a private cloud
 
-### [New-AzVMwarePlacementPolicy](New-AzVMwarePlacementPolicy.md)
-Create or update a placement policy in a private cloud cluster
-
 ### [New-AzVMwarePrivateCloud](New-AzVMwarePrivateCloud.md)
 Create or update a private cloud
 
@@ -82,12 +73,6 @@ Create a in-memory object for ScriptSecureStringExecutionParameter
 ### [New-AzVMwareScriptStringExecutionParameterObject](New-AzVMwareScriptStringExecutionParameterObject.md)
 Create a in-memory object for ScriptStringExecutionParameter
 
-### [New-AzVMwareVmHostPlacementPolicyPropertiesObject](New-AzVMwareVmHostPlacementPolicyPropertiesObject.md)
-Create an in-memory object for VmHostPlacementPolicyProperties.
-
-### [New-AzVMwareVMPlacementPolicyPropertiesObject](New-AzVMwareVMPlacementPolicyPropertiesObject.md)
-Create an in-memory object for VMPlacementPolicyProperties.
-
 ### [Remove-AzVMwareAddon](Remove-AzVMwareAddon.md)
 Delete a addon in a private cloud
 
@@ -103,9 +88,6 @@ Delete a cluster in a private cloud
 ### [Remove-AzVMwareGlobalReachConnection](Remove-AzVMwareGlobalReachConnection.md)
 Delete a global reach connection in a private cloud
 
-### [Remove-AzVMwarePlacementPolicy](Remove-AzVMwarePlacementPolicy.md)
-Delete a placement policy in a private cloud cluster
-
 ### [Remove-AzVMwarePrivateCloud](Remove-AzVMwarePrivateCloud.md)
 Delete a private cloud
 
@@ -117,9 +99,6 @@ Return trial status for subscription by region
 
 ### [Update-AzVMwareCluster](Update-AzVMwareCluster.md)
 Update a cluster in a private cloud
-
-### [Update-AzVMwarePlacementPolicy](Update-AzVMwarePlacementPolicy.md)
-Update a placement policy in a private cloud cluster
 
 ### [Update-AzVMwarePrivateCloud](Update-AzVMwarePrivateCloud.md)
 Update a private cloud

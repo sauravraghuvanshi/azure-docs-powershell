@@ -41,21 +41,21 @@ Specify the artifact source by its name and resource group name. Alternately, yo
 
 ### Example 1: Get an artifact source
 ```powershell
-Get-AzDeploymentManagerArtifactSource -ResourceGroupName "ContosoResourceGroup" -Name "ContosoArtifactSource"
+PS C:\> Get-AzDeploymentManagerArtifactSource -ResourceGroupName "ContosoResourceGroup" -Name "ContosoArtifactSource"
 ```
 
 This command gets an artifact source named ContosoArtifactSource in ContosoResourceGroup.
 
 ### Example 2: Get an artifact source using the resource identifier
 ```powershell
-Get-AzDeploymentManagerArtifactSource -ResourceId "/subscriptions/subscriptionId/resourcegroups/ContosoResourceGroup/providers/Microsoft.DeploymentManager/artifactSources/ContosoArtifactSource"
+PS C:\> Get-AzDeploymentManagerArtifactSource -ResourceId "/subscriptions/subscriptionId/resourcegroups/ContosoResourceGroup/providers/Microsoft.DeploymentManager/artifactSources/ContosoArtifactSource"
 ```
 
 This command gets an artifact source named ContosoArtifactSource in ContosoResourceGroup.
 
 ### Example 3: Get an artifact source using an object returned by New-AzDeploymentManagerArtifactSource
 ```powershell
-Get-AzDeploymentManagerArtifactSource -InputObject $artifactSourceObject
+PS C:\> Get-AzDeploymentManagerArtifactSource -InputObject $artifactSourceObject
 ```
 
 This command gets an artifact source whose name and ResourceGroup match the Name and ResourceGroupName properties of the $artifactSourceObject, respectively.

@@ -28,15 +28,15 @@ If no firewall rule is specified, then lists all firewall rules for the account.
 ## EXAMPLES
 
 ### Example 1: Retrieve a specific firewall rule
-```powershell
-Get-AzDataLakeStoreFirewallRule -AccountName "ContosoADL" -Name MyFirewallRule
+```
+PS C:\> Get-AzDataLakeStoreFirewallRule -AccountName "ContosoADL" -Name MyFirewallRule
 ```
 
 Returns the firewall rule named "MyFirewallRule" from account "ContosoADL"
 
 ### Example 2: List all firewall rules in an account
-```powershell
-Get-AzDataLakeStoreFirewallRule -AccountName "ContosoADL"
+```
+PS C:\> Get-AzDataLakeStoreFirewallRule -AccountName "ContosoADL"
 ```
 
 Returns all firewall rules in account "ContosoADL"

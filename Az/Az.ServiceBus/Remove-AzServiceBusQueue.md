@@ -39,35 +39,35 @@ The **Remove-AzServiceBusQueue** cmdlet removes the queue from the specified Ser
 
 ### Example 1
 ```powershell
-Remove-AzServiceBusQueue -ResourceGroup Default-ServiceBus-WestUS -NamespaceName SB-Example1 -QueueName SB-Queue_exampl1
+PS C:\> Remove-AzServiceBusQueue -ResourceGroup Default-ServiceBus-WestUS -NamespaceName SB-Example1 -QueueName SB-Queue_exampl1
 ```
 
 Removes the Service Bus queue `SB-Queue_exampl1` from the namespace `SB-Example1`.
 
 ### Example 2: InputObject - Using variable:
 ```powershell
-$inputobject = Get-AzServiceBusQueue <params>
-Remove-AzServiceBusQueue -InputObject $inputobject
+PS C:\> $inputobject = Get-AzServiceBusQueue <params>
+PS C:\> Remove-AzServiceBusQueue -InputObject $inputobject
 ```
 
 Removes the Service Bus queue provided in the $inputobject for -InputObject parameter
 
 ### Example 3: InputObject - Using Piping:
 ```powershell
-Get-AzServiceBusQueue <params> | Remove-AzServiceBusQueue
+PS C:\>  Get-AzServiceBusQueue <params> | Remove-AzServiceBusQueue
 ```
 
 ### Example 4: ResourceId - Using variable:
 ```powershell
-$resourceid = Get-AzServiceBusQueue <params>
-Remove-AzServiceBusQueue -ResourceId $resourceid.Id
+PS c:\> $resourceid = Get-AzServiceBusQueue <params>
+PS C:\> Remove-AzServiceBusQueue -ResourceId $resourceid.Id
 ```
 
 Removes the Service Bus queue provided in the ARM id in $resourceid/string for -ResourceId parameter
 
 ### Example 5: ResourceId - passing as string:
 ```powershell
-Remove-AzServiceBusQueue -ResourceId "/subscriptions/xxxx-xxxxx-xxxxx-xxxxxx-xxxxxxx/resourceGroups/ResourceGroupName/providers/Microsoft.ServiceBus/namespaces/NamespaceName/queues/QueueName"
+PS C:\> Remove-AzServiceBusQueue -ResourceId "/subscriptions/xxxx-xxxxx-xxxxx-xxxxxx-xxxxxxx/resourceGroups/ResourceGroupName/providers/Microsoft.ServiceBus/namespaces/NamespaceName/queues/QueueName"
 ```
 
 ## PARAMETERS

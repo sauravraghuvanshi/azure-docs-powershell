@@ -34,10 +34,8 @@ The **Get-AzKeyVaultCertificateOperation** cmdlet gets the status of a certifica
 
 ### Example 1: Get the status of a certificate operation
 ```powershell
-Get-AzKeyVaultCertificateOperation -VaultName "contosoKV01" -Name "TestCert01"
-```
+PS C:\> Get-AzKeyVaultCertificateOperation -VaultName "contosoKV01" -Name "TestCert01"
 
-```output
 Id                        : https://contosoKV01.vault.azure.net/certificates/TestCert01/pending
 Status                    : inProgress
 StatusDetails             : Pending certificate created. Certificate request is in progress. This may take some time

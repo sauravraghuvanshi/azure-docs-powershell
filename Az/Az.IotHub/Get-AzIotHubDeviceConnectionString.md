@@ -39,10 +39,8 @@ List connection string of all devices or a target IoT device contained within an
 
 ### Example 1
 ```powershell
-Get-AzIotHubDeviceConnectionString -ResourceGroupName "myresourcegroup" -IotHubName "myiothub"
-```
+PS C:\> Get-AzIotHubDeviceConnectionString -ResourceGroupName "myresourcegroup" -IotHubName "myiothub"
 
-```output
 Device Id Connection String
 --------- -----------------
 device1   HostName=myiothub.azure-devices.net;DeviceId=device1;SharedAccessKey=/X4y******     
@@ -53,10 +51,8 @@ Show all devices connection string in an Iot Hub.
 
 ### Example 2
 ```powershell
-Get-AzIotHubDeviceConnectionString -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "device1" -KeyType secondary
-```
+PS C:\> Get-AzIotHubDCS -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "device1" -KeyType secondary
 
-```output
 Device Id Connection String
 --------- -----------------
 device1   HostName=myiothub.azure-devices.net;DeviceId=device1;SharedAccessKey=/X4y******

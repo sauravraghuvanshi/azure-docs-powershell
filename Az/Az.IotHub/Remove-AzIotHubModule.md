@@ -40,10 +40,8 @@ Delete module(s) on a target IoT device in an IoT Hub.
 
 ### Example 1
 ```powershell
-Remove-AzIotHubModule -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -ModuleId "myModule1" -PassThru
-```
+PS C:\> Remove-AzIotHubModule -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -ModuleId "myModule1" -PassThru
 
-```output
 True
 ```
 
@@ -51,10 +49,8 @@ Delete an Iot device module.
 
 ### Example 2
 ```powershell
-Remove-AzIotHubModule -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -PassThru
-```
+PS C:\> Remove-AzIotHubModule -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -PassThru
 
-```output
 True
 ```
 

@@ -37,16 +37,16 @@ Used in conjunction with Update-AzPeering, this is an in memory operation and wi
 
 ## EXAMPLES
 
-### Example 1: Update Md5 Hash
+### Update Md5 Hash
 ```powershell
-$update = Get-AzPeering -Name "ContosoPeering" -ResourceGroupName rg1 | Set-AzPeeringExchangeConnectionObject -MD5AuthenticationKey $hash
+PS C:> $update = Get-AzPeering -PeerName "ContosoPeering" -ResourceGroupName rg1 | Set-AzPeeringExchangeConnectionObject -MD5AuthenticationKey $hash
 ```
 
 Updates the Md5 Hash for the first connection in the Peering object in memory. 
 
-### Example 2: Update Bgp Session Address
+### Update Bgp Session Address
 ```powershell
-$update = Get-AzPeering -Name "ContosoPeering" -ResourceGroupName rg1 | Set-AzPeeringExchangeConnectionObject -PeerSessionIPv4Address "192.168.0.1" -MaxPrefixesAdvertisedIPv4 20000
+PS C:> $update = Get-AzPeering -PeerName "ContosoPeering" -ResourceGroupName rg1 | Set-AzPeeringExchangeConnectionObject -PeerSessionIPv4Address "192.168.0.1" -MaxPrefixesAdvertisedIPv4 20000
 ```
 
 Updates the Peering Address for the first connection in the Peering object in memory. 

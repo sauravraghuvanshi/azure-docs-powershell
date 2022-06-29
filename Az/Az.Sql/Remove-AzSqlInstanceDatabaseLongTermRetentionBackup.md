@@ -41,7 +41,7 @@ The **Remove-AzSqlInstanceDatabaseLongTermRetentionBackup** cmdlet deletes the b
 
 ### Example 1
 ```powershell
-Remove-AzSqlInstanceDatabaseLongTermRetentionBackup -Location southeastasia -ResourceGroupName testResourceGroup -InstanceName testInstance -DatabaseName test -BackupName 15be823c-7e2c-49d8-819f-a3fdcad92215;132268250550000000
+PS C:\> Remove-AzSqlInstanceDatabaseLongTermRetentionBackup -Location southeastasia -ResourceGroupName testResourceGroup -InstanceName testInstance -DatabaseName test -BackupName 15be823c-7e2c-49d8-819f-a3fdcad92215;132268250550000000
 ```
 
 Deletes the backup with name 15be823c-7e2c-49d8-819f-a3fdcad92215;132268250550000000

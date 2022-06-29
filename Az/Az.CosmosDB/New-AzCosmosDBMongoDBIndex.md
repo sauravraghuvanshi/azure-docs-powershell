@@ -26,10 +26,7 @@ The **New-AzCosmosDBMongoDBIndex** creates a new CosmosDB MongoDB Index.
 
 ### Example 1
 ```powershell
-New-AzCosmosDBMongoDBIndex -TtlInSeconds 604800 -Unique 1 -Key "key1"
-```
-
-```output
+PS C:\> New-AzCosmosDBMongoDBIndex -TtlInSeconds {val} -Unique 1 -Key "key1"
 Key                                                       Options
 ---                                                       -------
 Microsoft.Azure.Commands.CosmosDB.Models.PSMongoIndexKeys Microsoft.Azure.Commands.CosmosDB.Models.PSMongoIndexOptions

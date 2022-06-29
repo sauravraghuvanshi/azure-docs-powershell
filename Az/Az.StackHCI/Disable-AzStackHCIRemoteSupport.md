@@ -24,8 +24,8 @@ Disable Remote Support revokes all access levels previously granted. Any existin
 ## EXAMPLES
 
 ### EXAMPLE 1
-```powershell
-Disable-AzStackHCIRemoteSupport
+```poweshell
+C:\PS\>Disable-AzStackHCIRemoteSupport
 ```
 
 ## PARAMETERS

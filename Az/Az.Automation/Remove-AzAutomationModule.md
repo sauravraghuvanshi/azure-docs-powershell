@@ -27,8 +27,8 @@ The **Remove-AzAutomationModule** cmdlet removes a module from an Automation acc
 ## EXAMPLES
 
 ### Example 1: Remove a module
-```powershell
-Remove-AzAutomationModule -AutomationAccountName "Contoso17" -Name "ContosoModule" -ResourceGroupName "ResourceGroup01"
+```
+PS C:\>Remove-AzAutomationModule -AutomationAccountName "Contoso17" -Name "ContosoModule" -ResourceGroupName "ResourceGroup01"
 ```
 
 This command removes a module named ContosoModule from the Automation account named Contoso17.

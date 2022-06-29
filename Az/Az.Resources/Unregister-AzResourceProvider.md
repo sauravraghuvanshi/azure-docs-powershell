@@ -28,7 +28,7 @@ The **Unregister-AzResourceProvider** cmdlet unregisters an Azure resource provi
 ### Example 1: Unregister resource provider with ProviderNamespace
 
 ```powershell
-Unregister-AzResourceProvider -ProviderNamespace "Microsoft.support"
+PS C:\>Unregister-AzResourceProvider -ProviderNamespace "Microsoft.support"
 ```
 
 This command unregisters the resource provider "Microsoft.support".

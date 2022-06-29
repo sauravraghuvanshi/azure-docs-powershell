@@ -33,10 +33,8 @@ Gets a Key Vault managed Storage SAS Definition if the name of the definition is
 
 ### Example 1: List all Key Vault managed Storage SAS Definitions
 ```powershell
-Get-AzKeyVaultManagedStorageSasDefinition -VaultName 'myvault' -AccountName 'mystorageaccount'
-```
+PS C:\> Get-AzKeyVaultManagedStorageSasDefinition -VaultName 'myvault' -AccountName 'mystorageaccount'
 
-```output
 Id          : https://myvault.vault.azure.net:443/storage/mystorageaccount/sas/accountsas
 Vault Name  : myvault
 AccountName : mystorageaccount
@@ -51,10 +49,8 @@ Lists all the SAS definitions associated with Key Vault managed Storage Account 
 
 ### Example 2: Get a Key Vault managed Storage Account
 ```powershell
-Get-AzKeyVaultManagedStorageSasDefinition -VaultName 'myvault' -AccountName 'mystorageaccount' -Name 'accountsas'
-```
+PS C:\> Get-AzKeyVaultManagedStorageSasDefinition -VaultName 'myvault' -AccountName 'mystorageaccount' -Name 'accountsas'
 
-```output
 Id          : https://myvault.vault.azure.net:443/storage/mystorageaccount/sas/accountsas
 Secret Id   : https://myvault.vault.azure.net/secrets/mystorageaccount-accountsas
 Vault Name  : myvault
@@ -71,10 +67,8 @@ Gets the details of SAS Definition 'accountsas' associated with Key Vault manage
 
 ### Example 3: List all Key Vault managed Storage SAS Definitions using filtering
 ```powershell
-Get-AzKeyVaultManagedStorageSasDefinition -VaultName 'myvault' -AccountName 'mystorageaccount' -Name "account*"
-```
+PS C:\> Get-AzKeyVaultManagedStorageSasDefinition -VaultName 'myvault' -AccountName 'mystorageaccount' -Name "account*"
 
-```output
 Id          : https://myvault.vault.azure.net:443/storage/mystorageaccount/sas/accountsas1
 Vault Name  : myvault
 AccountName : mystorageaccount
@@ -212,8 +206,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Remove-AzKeyVaultManagedStorageSasDefinition](./Remove-AzKeyVaultManagedStorageSasDefinition.md)
+[Azure PowerShell Key Vault cmdlets](/powershell/module/az.keyvault/)
 
-[Set-AzKeyVaultManagedStorageSasDefinition](./Set-AzKeyVaultManagedStorageSasDefinition.md)
-
-[Undo-AzKeyVaultManagedStorageSasDefinitionRemoval](./Undo-AzKeyVaultManagedStorageSasDefinitionRemoval.md)

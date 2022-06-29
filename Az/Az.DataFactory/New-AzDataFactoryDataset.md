@@ -43,11 +43,8 @@ If you confirm to overwrite the existing dataset, the dataset definition is also
 ## EXAMPLES
 
 ### Example 1: Create a dataset
-```powershell
-New-AzDataFactoryDataset -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "DAWikipediaClickEvents" -File "C:\\samples\\WikiSample\\DA_WikipediaClickEvents.json"
 ```
-
-```output
+PS C:\>New-AzDataFactoryDataset -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "DAWikipediaClickEvents" -File "C:\\samples\\WikiSample\\DA_WikipediaClickEvents.json"
 DatasetName         : DAWikipediaClickEvents
 ResourceGroupName : ADF
 DataFactoryName   : WikiADF
@@ -61,12 +58,9 @@ This command creates a dataset named DA_WikipediaClickEvents in the data factory
 The command bases the dataset on information in the DAWikipediaClickEvents.json file.
 
 ### Example 2: View availability for a new dataset
-```powershell
-$Dataset = New-AzDataFactoryDataset -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "DAWikipediaClickEvents" -File "C:\\samples\\WikiSample\\DA_WikipediaClickEvents.json"
-$Dataset.Availability
 ```
-
-```output
+PS C:\>$Dataset = New-AzDataFactoryDataset -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "DAWikipediaClickEvents" -File "C:\\samples\\WikiSample\\DA_WikipediaClickEvents.json"
+PS C:\> $Dataset.Availability
 AnchorDateTime : 
 Frequency      : Hour
 Interval       : 1
@@ -78,12 +72,9 @@ The first command creates a dataset named DA_WikipediaClickEvents, as in a previ
 The second command uses standard dot notation to display details about the Availability property of the dataset.
 
 ### Example 3: View location for a new dataset
-```powershell
-$Dataset = New-AzDataFactoryDataset -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "DAWikipediaClickEvents" -File "C:\\samples\\WikiSample\\DA_WikipediaClickEvents.json"
-$Dataset.Location
 ```
-
-```output
+PS C:\>$Dataset = New-AzDataFactoryDataset -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "DAWikipediaClickEvents" -File "C:\\samples\\WikiSample\\DA_WikipediaClickEvents.json"
+PS C:\> $Dataset.Location
 BlobPath          : wikidatagateway/wikisampledatain/
 FilenamePrefix    : 
 Format            : 
@@ -95,12 +86,9 @@ The first command creates a dataset named DA_WikipediaClickEvents, as in a previ
 The second command displays details about the Location property of the dataset.
 
 ### Example 4: View validation rules for a new dataset
-```powershell
-$Dataset = New-AzDataFactoryDataset -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "DAWikipediaClickEvents" -File "C:\\samples\\WikiSample\\DA_WikipediaClickEvents.json"
-$Dataset.Policy.Validation | Format-List $dataset.Location
 ```
-
-```output
+PS C:\>$Dataset = New-AzDataFactoryDataset -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "DAWikipediaClickEvents" -File "C:\\samples\\WikiSample\\DA_WikipediaClickEvents.json"
+PS C:\> $Dataset.Policy.Validation | Format-List $dataset.Location
 BlobPath          : wikidatagateway/wikisampledatain/
 FilenamePrefix    : 
 Format            : 

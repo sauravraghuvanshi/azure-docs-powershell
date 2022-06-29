@@ -158,7 +158,6 @@ The acceptable values for this parameter are:
 - Block
 - Page
 - Append
-
 The default value is Block.
 
 ```yaml

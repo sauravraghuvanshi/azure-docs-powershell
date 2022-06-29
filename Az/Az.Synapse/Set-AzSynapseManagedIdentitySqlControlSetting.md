@@ -39,29 +39,29 @@ The **Set-AzSynapseManagedIdentitySqlControlSetting** updates managed identity S
 
 ### Example 1
 ```powershell
-Set-AzSynapseManagedIdentitySqlControlSetting -WorkspaceName ContosoWorkspace -Enabled $true
+PS C:\> Set-AzSynapseManagedIdentitySqlControlSetting -WorkspaceName ContosoWorkspace -Enabled $true
 ```
 
 This command enables managed identity SQL control settings to workspace for workspace ContosoWorkspace.
 
 ### Example 2
 ```powershell
-Set-AzSynapseManagedIdentitySqlControlSetting -WorkspaceName ContosoWorkspace -Enabled $false
+PS C:\> Set-AzSynapseManagedIdentitySqlControlSetting -WorkspaceName ContosoWorkspace -Enabled $false
 ```
 
 This command disables managed identity SQL control settings to workspace for workspace ContosoWorkspace.
 
 ### Example 3
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Set-AzSynapseManagedIdentitySqlControlSetting -Enabled $true
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Set-AzSynapseManagedIdentitySqlControlSetting -Enabled $true
 ```
 
 This command enables managed identity SQL control settings to workspace for workspace ContosoWorkspace through pipeline.
 
 ### Example 4
 ```powershell
-Set-AzSynapseManagedIdentitySqlControlSetting -ResourceId /subscriptions/21686af7-58ec-4f4d-9c68-f431f4db4edd3/resourcegroups/ContosoResourceGroup/providers/Microsoft.Synapse/workspaces/ContosoWorkspace -Enabled $true
+PS C:\> Set-AzSynapseManagedIdentitySqlControlSetting -ResourceId /subscriptions/21686af7-58ec-4f4d-9c68-f431f4db4edd3/resourcegroups/ContosoResourceGroup/providers/Microsoft.Synapse/workspaces/ContosoWorkspace -Enabled $true
 ```
 
 This command enables managed identity SQL control settings to workspace for workspace ContosoWorkspace through the workspace's resource ID.

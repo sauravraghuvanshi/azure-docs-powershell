@@ -43,7 +43,7 @@ Rotate the disk encryption key of the specified HDInsight cluster. For this oper
 
 ### Example 1
 ```powershell
-        # Cluster configuration info
+PS C:\> # Cluster configuration info
         $clusterResourceGroupName = "Group"
         $clusterName = "your-cmk-cluster"
 
@@ -57,7 +57,7 @@ Set-AzHDInsightClusterDiskEncryptionKey `
 
 ### Example 2
 ```powershell
-        # Cluster configuration info
+PS C:\> # Cluster configuration info
         $clusterName = "your-cmk-cluster"
 
 $cluster= Get-AzHDInsightCluster -ClusterName $clusterName 

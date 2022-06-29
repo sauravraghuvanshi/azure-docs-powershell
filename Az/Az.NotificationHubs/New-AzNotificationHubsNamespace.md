@@ -34,16 +34,16 @@ Authorization rules are used to manage permissions to the namespace.
 ## EXAMPLES
 
 ### Example 1: Create a notification hub
-```powershell
-New-AzNotificationHubsNamespace -ResourceGroup "ContosoNotificationsGroup" -Location "West US" -Namespace "ContosoPartners"
+```
+PS C:\>New-AzNotificationHubsNamespace -ResourceGroup "ContosoNotificationsGroup" -Location "West US" -Namespace "ContosoPartners"
 ```
 
 This command creates a notification hub named ContosoPartners.
 The namespace will be located in the West US datacenter and be assigned to the ContosoNotificationsGroup resource group.
 
 ### Example 2: Create a notification hub with tags
-```powershell
-New-AzNotificationHubsNamespace -ResourceGroup "ContosoNotificationsGroup" -Location "West US" -Namespace "ContosoPartners" -Tag @{Name="Audience";Value="PartnerOrganizations"}
+```
+PS C:\>New-AzNotificationHubsNamespace -ResourceGroup "ContosoNotificationsGroup" -Location "West US" -Namespace "ContosoPartners" -Tags @{Name="Audience";Value="PartnerOrganizations"}
 ```
 
 This command creates a notification hub named ContosoPartners.

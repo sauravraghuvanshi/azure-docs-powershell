@@ -26,7 +26,7 @@ The **New-AzPrivateEndpointIpConfiguration** cmdlet creates an IpConfiguration o
 
 ### Example 1
 ```powershell
-New-AzPrivateEndpointIpConfiguration -Name "IpConfigurationForPrivateEndpoint" -PrivateIPAddress "10.0.0.10"
+PS C:\> New-AzPrivateEndpointIpConfiguration -Name "IpConfigurationForPrivateEndpoint" -PrivateIPAddress "10.0.0.10"
 ```
 
 This example creates an IpConfiguration object used for private endpoint.

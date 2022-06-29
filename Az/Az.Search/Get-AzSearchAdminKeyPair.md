@@ -39,9 +39,8 @@ The **Get-AzSearchAdminKeyPair** cmdlet gets the admin key pair of the Azure Cog
 
 ### Example 1
 ```powershell
-Get-AzSearchAdminKeyPair -ResourceGroupName felixwa-01 -ServiceName felixwa-basic-search
-```
-```output
+PS C:\> Get-AzSearchAdminKeyPair -ResourceGroupName felixwa-01 -ServiceName felixwa-basic-search
+
 Primary                          Secondary                       
 -------                          ---------                       
 3B06A25BDADFF72EC132736BAA2547A1 E643B75A52E04DF13EB690807C451C55

@@ -71,17 +71,15 @@ The cmdlet may call below Microsoft Graph API according to input parameters:
 
 ### Example 1
 ```powershell
-New-AzKeyVaultRoleAssignment -HsmName bez-hsm -RoleDefinitionName "Managed Hsm Crypto User" -ObjectId xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+PS C:\> New-AzKeyVaultRoleAssignment -HsmName bez-hsm -RoleDefinitionName "Managed Hsm Crypto User" -ObjectId xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
 
 This example assigns role "Managed Hsm Crypto User" to user "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" at top scope. If user wants to perform operations on keys. "Managed Hsm Crypto *" role is required for that user.
 
 ### Example 2
 ```powershell
-New-AzKeyVaultRoleAssignment -HsmName myHsm -RoleDefinitionName "Managed HSM Policy Administrator" -SignInName user1@microsoft.com
-```
+PS C:\> New-AzKeyVaultRoleAssignment -HsmName myHsm -RoleDefinitionName "Managed HSM Policy Administrator" -SignInName user1@microsoft.com
 
-```output
 RoleDefinitionName               DisplayName                    ObjectType Scope
 ------------------               -----------                    ---------- -----
 Managed HSM Policy Administrator User 1 (user1@microsoft.com)   User       /

@@ -40,10 +40,8 @@ To update other properties, see [Set-AzScheduledQueryRule](https://docs.microsof
 
 ### Example 1: Update by rule name
 ```powershell
-Update-AzScheduledQueryRule -ResourceGroupName "MyResourceGroup" -Name "LogAlertRule1" -Enabled $false
-```
+PS C:\> Update-AzScheduledQueryRule -ResourceGroupName "MyResourceGroup" -Name "LogAlertRule1" -Enabled $false
 
-```output
 Description       : description
 Enabled           : false
 LastUpdatedTime   : 19-Apr-19 12:49:15 PM
@@ -60,10 +58,8 @@ Tags              : {[hidden-link:/subscriptions/ad825170-845c-47db-8f00-1197894
 
 ### Example 2: Update by input object
 ```powershell
-Update-AzScheduledQueryRule -InputObject $sqr -Enabled $false
-```
+PS C:\> Update-AzScheduledQueryRule -InputObject $sqr -Enabled $false
 
-```output
 Description       : description
 Enabled           : false
 LastUpdatedTime   : 19-Apr-19 12:50:18 PM
@@ -80,10 +76,8 @@ Tags              : {[hidden-link:/subscriptions/ad825170-845c-47db-8f00-1197894
 
 ### Example 3: Update by resource Id
 ```powershell
-Update-AzScheduledQueryRule -ResourceId /subscriptions/ad825170-845c-47db-8f00-11978947b089/resourceGroups/MyResourceGroup/providers/Microsoft.Insights/scheduledqueryrules/LogAlertRule1 -Enabled $true
-```
+PS C:\> Update-AzScheduledQueryRule -ResourceId /subscriptions/ad825170-845c-47db-8f00-11978947b089/resourceGroups/MyResourceGroup/providers/Microsoft.Insights/scheduledqueryrules/LogAlertRule1 -Enabled $true
 
-```output
 Description       : description
 Enabled           : true
 LastUpdatedTime   : 19-Apr-19 12:51:14 PM

@@ -27,14 +27,14 @@ The Add-AzHDInsightComponentVersion cmdlet adds a version for a service running 
 ## EXAMPLES
 
 ### Example 1: Add a version for Spark to the cluster configuration object.
-```powershell
-        # Primary storage account info
+```
+PS C:\> # Primary storage account info
         $storageAccountResourceGroupName = "Group"
         $storageAccountName = "yourstorageacct001"
         $storageAccountResourceId = "yourstorageaccountresourceid"
         $storageAccountKey = Get-AzStorageAccountKey `
             -ResourceGroupName $storageAccountResourceGroupName `
-            -Name $storageAccountName | ForEach-Object{ $_.Key1 }
+            -Name $storageAccountName | %{ $_.Key1 }
         $storageContainer = "container001"
 
         # Cluster configuration info

@@ -1,56 +1,68 @@
 ---
-external help file: 
+external help file: Microsoft.Azure.PowerShell.Cmdlets.HealthcareApis.dll-Help.xml
 Module Name: Az.HealthcareApis
 online version: https://docs.microsoft.com/powershell/module/az.healthcareapis/remove-azhealthcareapisservice
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HealthcareApis/help/Remove-AzHealthcareApisService.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HealthcareApis/help/Remove-AzHealthcareApisService.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HealthcareApis/HealthcareApis/help/Remove-AzHealthcareApisService.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/HealthcareApis/HealthcareApis/help/Remove-AzHealthcareApisService.md
 ---
 
 # Remove-AzHealthcareApisService
 
 ## SYNOPSIS
-Delete a service instance.
+Deletes a service instance.
 
 ## SYNTAX
 
-### Delete (Default)
+### ServiceNameParameterSet (Default)
 ```
-Remove-AzHealthcareApisService -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-AzHealthcareApisService -Name <String> -ResourceGroupName <String> [-AsJob] [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### InputObjectParameterSet
 ```
-Remove-AzHealthcareApisService -InputObject <IHealthcareApisIdentity> [-DefaultProfile <PSObject>] [-AsJob]
- [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-AzHealthcareApisService -InputObject <PSHealthcareApisService> [-AsJob] [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ResourceIdParameterSet
+```
+Remove-AzHealthcareApisService [-ResourceId] <String> [-AsJob] [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete a service instance.
+Deletes a service instance.
 
 ## EXAMPLES
 
-### Example 1: Delete a service instance.
+### Example 1
 ```powershell
-PS C:\> Remove-AzHealthcareApisService -ResourceGroupName azps_test_group -Name azpsapiservice
-
+PS C:\> Remove-AzHealthcareApisService -Name MyService -ResourceGroupName MyResourceGroup
 ```
 
-Delete a service instance.
+Deletes the existing HealthcareApis service with the provided name within a provided resource group.
 
-### Example 2: Delete a service instance.
+### Example 2
 ```powershell
-PS C:\> Get-AzHealthcareApisService -ResourceGroupName azps_test_group -Name azpsapiservice | Remove-AzHealthcareApisService
-
+PS C:\> $ResourceId = "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/MyResourceGroup/providers/Microsoft.HealthcareApis/services/MyService
+PS C:\> Remove-AzHealthcareApisService -ResourceId $ResourceId
 ```
 
-Delete a service instance.
+Deletes the existing HealthcareApis service with the provided ResourceId.
+
+### Example 3
+```powershell
+PS C:\> Get-AzHealthcareApisService -ResourceGroupName MyResourceGroup -Name MyService | Remove-AzHealthcareApisService
+```
+
+Deletes the provided HealthcareApis service object.
 
 ## PARAMETERS
 
 ### -AsJob
-Run the command as a job
+Run cmdlet as a job in the background.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -68,9 +80,9 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -80,12 +92,11 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+HealthcareApis service object
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.HealthcareApis.Models.IHealthcareApisIdentity
-Parameter Sets: DeleteViaIdentity
+Type: Microsoft.Azure.Commands.HealthcareApis.Models.PSHealthcareApisService
+Parameter Sets: InputObjectParameterSet
 Aliases:
 
 Required: True
@@ -96,12 +107,12 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-The name of the service instance.
+HealthcareApis Service Name.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
-Aliases:
+Parameter Sets: ServiceNameParameterSet
+Aliases: HealthcareApisName, FhirServiceName
 
 Required: True
 Position: Named
@@ -110,23 +121,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -NoWait
-Run the command asynchronously
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -PassThru
-Returns true when the command succeeds
+If provided, returns true if the operation was successful
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -141,11 +137,11 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The name of the resource group that contains the service instance.
+Resource Group Name.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: ServiceNameParameterSet
 Aliases:
 
 Required: True
@@ -155,18 +151,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-The subscription identifier.
+### -ResourceId
+HealthcareApis Service ResourceId.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: ResourceIdParameterSet
 Aliases:
 
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -206,7 +202,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.HealthcareApis.Models.IHealthcareApisIdentity
+### Microsoft.Azure.Commands.HealthcareApis.Models.PSHealthcareApisService
+
+### System.String
 
 ## OUTPUTS
 
@@ -214,27 +212,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-INPUTOBJECT <IHealthcareApisIdentity>: Identity Parameter
-  - `[DicomServiceName <String>]`: The name of DICOM Service resource.
-  - `[FhirDestinationName <String>]`: The name of IoT Connector FHIR destination resource.
-  - `[FhirServiceName <String>]`: The name of FHIR Service resource.
-  - `[GroupName <String>]`: The name of the private link resource group.
-  - `[Id <String>]`: Resource identity path
-  - `[IotConnectorName <String>]`: The name of IoT Connector resource.
-  - `[LocationName <String>]`: The location of the operation.
-  - `[OperationResultId <String>]`: The ID of the operation result to get.
-  - `[PrivateEndpointConnectionName <String>]`: The name of the private endpoint connection associated with the Azure resource
-  - `[ResourceGroupName <String>]`: The name of the resource group that contains the service instance.
-  - `[ResourceName <String>]`: The name of the service instance.
-  - `[SubscriptionId <String>]`: The subscription identifier.
-  - `[WorkspaceName <String>]`: The name of workspace resource.
-
 ## RELATED LINKS
-

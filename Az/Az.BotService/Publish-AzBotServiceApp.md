@@ -26,7 +26,7 @@ Returns a BotService specified by the parameters.
 
 ### Example 1: Publish your BotService to Azure
 ```powershell
-Publish-AzBotServiceApp -ResourceGroupName youriBotTest -CodeDir D:\zips\MyEchoBot -Name youriechobottest
+PS C:\> Publish-AzBotServiceApp -ResourceGroupName youriBotTest -CodeDir D:\zips\MyEchoBot -Name youriechobottest
 
 ```
 

@@ -37,8 +37,8 @@ Updates the properties of an existing order item.
 
 ### Example 1: Update orderItem
 ```powershell
-$contactDetail = New-AzEdgeOrderContactDetailsObject -ContactName "ContactName2" -EmailList @("emailId") -Phone Phone
-$DebugPreference = "Continue"
+PS C:\> $contactDetail = New-AzEdgeOrderContactDetailsObject -ContactName "ContactName2" -EmailList @("emailId") -Phone Phone
+PS C:\> $DebugPreference = "Continue"
 # You can use `$DebugPreference = "Continue"`, with any example/usecase to get exact details of error in below format when update command fails.
 # {
 #   "Error": {
@@ -50,12 +50,10 @@ $DebugPreference = "Continue"
 #     "Target": null
 #   }
 # } 
-$updatedOrderItem = Update-AzEdgeOrderItem -Name "examplePowershell" -ResourceGroupName "resourceGroupName" -SubscriptionId SubscriptionId -ForwardAddressContactDetail $contactDetail
+PS C:\> $updatedOrderItem = Update-AzEdgeOrderItem -Name "examplePowershell" -ResourceGroupName "resourceGroupName" -SubscriptionId SubscriptionId -ForwardAddressContactDetail $contactDetail
 
-$updatedOrderItem.ForwardAddressContactDetail | Format-List
-```
+PS C:\> $updatedOrderItem.ForwardAddressContactDetail | fl
 
-```output
 ContactName    : ContactName2
 EmailList      : {useremailId}
 Mobile         :

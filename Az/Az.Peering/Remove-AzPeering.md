@@ -39,7 +39,7 @@ Perminently delete a peering resource.
 
 ### Example 1
 ```powershell
-Remove-AzPeering -ResourceId $resourceId
+PS C:\> Remove-AzPeering -ResourceId $resourceId
 ```
 
 Remove a peering by resource id.

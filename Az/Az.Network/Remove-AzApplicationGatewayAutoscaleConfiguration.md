@@ -26,9 +26,9 @@ The **Remove-AzApplicationGatewayAutoscaleConfiguration** cmdlet removes Autosca
 
 ### Example 1
 ```powershell
-$gw = Get-AzApplicationGateway -Name $appgwName -ResourceGroupName $resgpName
-$gw = Remove-AzApplicationGatewayAutoscaleConfiguration -ApplicationGateway $gw
-$gw = Set-AzApplicationGateway -ApplicationGateway $gw
+PS C:\> $gw = Get-AzApplicationGateway -Name $appgwName -ResourceGroupName $resgpName
+PS C:\> $gw = Remove-AzApplicationGatewayAutoscaleConfiguration -ApplicationGateway $gw
+PS C:\> $gw = Set-AzApplicationGateway -ApplicationGateway $gw
 ```
 
 The first command gets the application gateway and stores it in $gw variable.

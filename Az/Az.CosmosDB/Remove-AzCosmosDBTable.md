@@ -33,7 +33,7 @@ The **Remove-AzCosmosDBTable** cmdlet deletes the CosmosDB Table.
 
 ### Example 1
 ```powershell
-Remove-AzCosmosDBTable -AccountName "account" -Name "tableName" -ResourceGroupName "rgName"
+PS C:\> Remove-AzCosmosDBTable -AccountName {account} -Name {tableName} -ResourceGroupName {rgName}
 ```
 
 The cmdlet returns an object of type bool(when -PassThru is passed) which is true, if the delete was successful.

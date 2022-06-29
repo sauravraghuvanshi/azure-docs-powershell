@@ -35,7 +35,8 @@ Deleting a lab plan does not delete labs associated with a lab plan, nor does it
 
 ### Example 1: Remove a Lab plan
 ```powershell
-Remove-AzLabServicesLabPlan -ResourceGroupName "Group Name" -Name "Lab Plan Name"
+PS C:\> Remove-AzLabServicesLabPlan -ResourceGroupName "Group Name" -Name "Lab Plan Name"
+
 ```
 
 Removes the lab plan.

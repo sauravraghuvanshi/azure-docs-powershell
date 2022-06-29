@@ -25,11 +25,10 @@ The Get-AzDdosProtectionPlan cmdlet gets a DDoS protection plan.
 ## EXAMPLES
 
 ### Example 1: Get a specific DDoS protection plan
-```powershell
-Get-AzDdosProtectionPlan -ResourceGroupName ResourceGroupName -Name DdosProtectionPlanName
 ```
+D:\> Get-AzDdosProtectionPlan -ResourceGroupName ResourceGroupName -Name DdosProtectionPlanName
 
-```output
+
 Name              : DdosProtectionPlanName
 Id                : /subscriptions/d1dbd366-9871-45ac-84b7-fb318152a9e0/resourceGroups/ResourceGroupName/providers/Microsoft.Network/ddosProtectionPlans/DdosProtectionPlanName
 Etag              : W/"a20e5592-9b51-423b-9758-b00cd322f744"
@@ -44,11 +43,10 @@ VirtualNetworks   : [
 In this case, we need to specify both **ResourceGroupName** and **Name** attributes, which correspond to the resource group and the name of the DDoS protection plan, respectively.
 
 ### Example 2: Get all DDoS protection plans in a resource group
-```powershell
-Get-AzDdosProtectionPlan -ResourceGroupName ResourceGroupName
 ```
+D:\> Get-AzDdosProtectionPlan -ResourceGroupName ResourceGroupName
 
-```output
+
 Name              : DdosProtectionPlanName
 Id                : /subscriptions/d1dbd366-9871-45ac-84b7-fb318152a9e0/resourceGroups/ResourceGroupName/providers/Microsoft.Network/ddosProtectionPlans/DdosProtectionPlanName
 Etag              : W/"a20e5592-9b51-423b-9758-b00cd322f744"
@@ -63,11 +61,10 @@ VirtualNetworks   : [
 In this scenario, we only specify the parameter **ResourceGroupName** to get a list of DDoS protection plans.
 
 ### Example 3: Get all DDoS protection plans in a subscription
-```powershell
-Get-AzDdosProtectionPlan
 ```
+D:\> Get-AzDdosProtectionPlan
 
-```output
+
 Name              : DdosProtectionPlanName
 Id                : /subscriptions/d1dbd366-9871-45ac-84b7-fb318152a9e0/resourceGroups/ResourceGroupName/providers/Microsoft.Network/ddosProtectionPlans/DdosProtectionPlanName
 Etag              : W/"a20e5592-9b51-423b-9758-b00cd322f744"
@@ -82,11 +79,10 @@ VirtualNetworks   : [
 Here, we do not specify any parameters to get a list of all DDoS protection plans in a subscription.
 
 ### Example 4: Get all DDoS protection plans in a subscription
-```powershell
-Get-AzDdosProtectionPlan -Name test*
 ```
+D:\> Get-AzDdosProtectionPlan -Name test*
 
-```output
+
 Name              : test1
 Id                : /subscriptions/d1dbd366-9871-45ac-84b7-fb318152a9e0/resourceGroups/ResourceGroupName/providers/Microsoft.Network/ddosProtectionPlans/test1
 Etag              : W/"a20e5592-9b51-423b-9758-b00cd322f744"

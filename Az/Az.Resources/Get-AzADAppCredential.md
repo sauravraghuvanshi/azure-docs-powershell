@@ -44,7 +44,7 @@ Lists key credentials and password credentials for an application.
 
 ### Example 1: List credentials from application by display name
 ```powershell
-Get-AzADAppCredential -DisplayName $name
+PS C:\> Get-AzADAppCredential -DisplayName $name
 ```
 
 List credentials from application by display name

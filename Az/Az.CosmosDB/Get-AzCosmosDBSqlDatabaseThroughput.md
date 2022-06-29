@@ -33,10 +33,8 @@ The **Get-AzCosmosDBSqlDatabaseThroughput** cmdlet gets the throughput settings 
 
 ### Example 1
 ```powershell
-Get-AzCosmosDBSqlDatabaseThroughput -AccountName "accountName" -ResourceGroupName "resourceGroupName" -Name "databaseName"
-```
+PS C:\> Get-AzCosmosDBSqlDatabaseThroughput -AccountName {accountName} -ResourceGroupName {resourceGroupName} -Name {databaseName}
 
-```output
 Name                : {throughputResourceName}
 Id                  : {throughputId}
 Throughput          : 0

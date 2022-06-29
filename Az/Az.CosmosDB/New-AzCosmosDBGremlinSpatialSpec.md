@@ -26,10 +26,7 @@ Creates Object corresponding to Gremlin API's SpatialSpec.
 
 ### Example 1
 ```powershell
-New-AzCosmosDBGremlinSpatialSpec -Path "/abc" -Type String
-```
-
-```output
+PS C:\> New-AzCosmosDBGremlinSpatialSpec -Path "/abc" -Type String
 Path Types
 ---- -----
 /abc {String}

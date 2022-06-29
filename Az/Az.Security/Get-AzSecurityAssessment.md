@@ -42,7 +42,7 @@ Gets security assessment and their results on subscription. Security assessments
 
 ### Example 1
 ```powershell
-Get-AzSecurityAssessment
+PS C:\> Get-AzSecurityAssessment
 ```
 
 Gets all the security assessment in a subscription
@@ -53,7 +53,7 @@ Gets all the security assessment in a subscription
 Full resource ID of the resource that the assessment is calculated on.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ResourceIdScope
 Aliases:
 
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 Resource name.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: SubscriptionLevelResource
 Aliases:
 
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ResourceIdScope
 Aliases:
 
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ID of the security resource that you want to invoke the command on.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ResourceId
 Aliases:
 

@@ -31,11 +31,8 @@ If you omit a required template parameter, the cmdlet prompts you for the value.
 ## EXAMPLES
 
 ### Example 1: Get an integration account certificate
-```powershell
-Get-AzIntegrationAccountCertificate -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31" -CertificateName "IntegrationAccountCertificate01"
 ```
-
-```output
+PS C:\>Get-AzIntegrationAccountCertificate -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31" -CertificateName "IntegrationAccountCertificate01"
 Id                : /subscriptions/<SubscriptionId>/resourceGroups/ResourceGroup11/providers/Microsoft.Logic/integrationAccounts/IntegrationAccount31/certificates/IntegrationAccountCertificate01
 Name              : IntegrationAccountCertificate01
 Type              : Microsoft.Logic/integrationAccounts/certificates
@@ -53,11 +50,8 @@ MetaData          :
 This command gets the integration account certificate named IntegrationAccountCertificate01.
 
 ### Example 2: Get integration account certificates by integration account name
-```powershell
-Get-AzIntegrationAccountCertificate -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31"
 ```
-
-```output
+PS C:\>Get-AzIntegrationAccountCertificate -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31"
 Id                : /subscriptions/<SubscriptionId>/resourceGroups/ResourceGroup11/providers/Microsoft.Logic/integrationAccounts/IntegrationAccount31/certificates/IntegrationAccountCertificate01
 Name              : IntegrationAccountCertificate01
 Type              : Microsoft.Logic/integrationAccounts/certificates

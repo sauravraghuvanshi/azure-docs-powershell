@@ -40,9 +40,9 @@ Removes an Azure Virtual WAN.
 ### Example 1
 
 ```powershell
-New-AzResourceGroup -Name "TestResourceGroup" -Location "Central US"
-New-AzVirtualWan -Name "MyVirtualWan" -ResourceGroupName "TestResourceGroup" -Location "Central US"
-Remove-AzVirtualWan -Name "MyVirtualWan" -ResourceGroupName "TestResourceGroup" -Passthru
+PS C:\> New-AzResourceGroup -Name "TestResourceGroup" -Location "Central US"
+PS C:\> New-AzVirtualWan -Name "MyVirtualWan" -ResourceGroupName "TestResourceGroup" -Location "Central US"
+PS C:\> Remove-AzVirtualWan -Name "MyVirtualWan" -ResourceGroupName "TestResourceGroup" -Passthru
 ```
 
 This example creates a Virtual WAN in a resource group and then immediately deletes it. 
@@ -51,9 +51,9 @@ To suppress the prompt when deleting the Virtual WAN, use the -Force flag.
 ### Example 2
 
 ```powershell
-New-AzResourceGroup -Name "TestResourceGroup" -Location "Central US"
-$virtualWan = New-AzVirtualWan -Name "MyVirtualWan" -ResourceGroupName "TestResourceGroup" -Location "Central US"
-Remove-AzVirtualWan -InputObject $virtualWan -Passthru
+PS C:\> New-AzResourceGroup -Name "TestResourceGroup" -Location "Central US"
+PS C:\> $virtualWan = New-AzVirtualWan -Name "MyVirtualWan" -ResourceGroupName "TestResourceGroup" -Location "Central US"
+PS C:\> Remove-AzVirtualWan -InputObject $virtualWan -Passthru
 ```
 
 This example creates a Virtual WAN in a resource group and then immediately deletes it. This deletion happens using the virtual wan object returned by New-AzVirtualWan.
@@ -62,9 +62,9 @@ To suppress the prompt when deleting the Virtual WAN, use the -Force flag.
 ### Example 3
 
 ```powershell
-New-AzResourceGroup -Name "TestResourceGroup" -Location "Central US"
-$virtualWan = New-AzVirtualWan -Name "MyVirtualWan" -ResourceGroupName "TestResourceGroup" -Location "Central US"
-Remove-AzVirtualWan -ResourceId $virtualWan.Id -Passthru
+PS C:\> New-AzResourceGroup -Name "TestResourceGroup" -Location "Central US"
+PS C:\> $virtualWan = New-AzVirtualWan -Name "MyVirtualWan" -ResourceGroupName "TestResourceGroup" -Location "Central US"
+PS C:\> Remove-AzVirtualWan -ResourceId $virtualWan.Id -Passthru
 ```
 
 This example creates a Virtual WAN in a resource group and then immediately deletes it. This deletion happens using the virtual wan resource id returned by New-AzVirtualWan.

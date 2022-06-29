@@ -35,13 +35,6 @@ New-AzApiManagementCustomHostnameConfiguration -Hostname <String> -HostnameType 
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### SslCertificateManaged
-```
-New-AzApiManagementCustomHostnameConfiguration -Hostname <String> -HostnameType <PsApiManagementHostnameType>
- [-DefaultSslBinding] [-NegotiateClientCertificate] [-ManagedCertificate]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
-```
-
 ## DESCRIPTION
 The **New-AzApiManagementCustomHostnameConfiguration** cmdlet is a helper command that creates an instance of **PsApiManagementCustomHostNameConfiguration**.
 This command is used with the New-AzApiManagement and Set-AzApiManagement cmdlet.
@@ -168,21 +161,6 @@ KeyVaultId to the secret storing the Custom SSL Certificate.
 ```yaml
 Type: System.String
 Parameter Sets: SslCertificateFromKeyVault
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ManagedCertificate
-Determines whether we want to provision a managed certificate whose rotation is managed by the platform
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: SslCertificateManaged
 Aliases:
 
 Required: True

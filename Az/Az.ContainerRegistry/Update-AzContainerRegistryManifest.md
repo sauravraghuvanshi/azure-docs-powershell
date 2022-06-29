@@ -39,9 +39,7 @@ first.
 ### Example 1
 ```powershell
 Update-AzContainerRegistryManifest -RegistryName registry -RepositoryName alpine -Manifest sha256:185518070891758909c9f839cf4ca393ee977ac378609f700f60a771a2dfe321 -DeleteEnabled $false -WriteEnabled $true -ListEnabled $true -ReadEnabled $true
-```
 
-```output
 Registry                    ImageName Attributes
 --------                    --------- ----------
 registry.azurecr.io alpine    Microsoft.Azure.Commands.ContainerRegistry.Models.PSManifestAttributeBase
@@ -52,9 +50,7 @@ Update attributes for manifest sha256:185518070891758909c9f839cf4ca393ee977ac378
 ### Example 2
 ```powershell
 Update-AzContainerRegistryManifest -RegistryName registry -RepositoryName alpine -Tag latest -DeleteEnabled $false -WriteEnabled $true -ListEnabled $true -ReadEnabled $true
-```
 
-```output
 Registry                    ImageName Attributes
 --------                    --------- ----------
 registry.azurecr.io alpine    Microsoft.Azure.Commands.ContainerRegistry.Models.PSManifestAttributeBase

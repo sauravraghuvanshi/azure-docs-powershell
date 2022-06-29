@@ -26,11 +26,8 @@ The **Get-AzSqlServerAdvisor** cmdlet gets one or more Azure SQL Server Advisors
 ## EXAMPLES
 
 ### Example 1: List all the advisors for the server
-```powershell
-Get-AzSqlServerAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east"
 ```
-
-```output
+PS C:\> Get-AzSqlServerAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east"
 ResourceGroupName              : WIRunnersProd
 ServerName                     : wi-runner-australia-east
 AdvisorName                    : CreateIndex
@@ -74,11 +71,8 @@ RecommendedActions             : {}
 This command gets a list of all the advisors for the server named wi-runner-australia-east that belongs to the resource group named WIRunnersProd.
 
 ### Example 2: Get a single advisor for the server
-```powershell
-Get-AzSqlServerAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east" -AdvisorName "CreateIndex"
 ```
-
-```output
+PS C:\> Get-AzSqlServerAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east" -AdvisorName "CreateIndex"
 ResourceGroupName              : WIRunnersProd
 ServerName                     : wi-runner-australia-east
 AdvisorName                    : CreateIndex
@@ -93,11 +87,8 @@ RecommendedActions             : {}
 This command gets the advisor named CreateIndex for the server named wi-runner-australia-east.
 
 ### Example 3: List all the advisors with their recommended actions included in the response
-```powershell
-Get-AzSqlServerAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east" -ExpandRecommendedActions
 ```
-
-```output
+PS C:\>Get-AzSqlServerAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east" -ExpandRecommendedActions
 ResourceGroupName              : WIRunnersProd
 ServerName                     : wi-runner-australia-east
 AdvisorName                    : CreateIndex
@@ -148,11 +139,8 @@ This command gets all the advisors for the server named wi-runner-australia-east
 Since the command uses the *ExpandRecommendedActions* parameter, the cmdlet gets the advisors recommended actions included in the response.
 
 ### Example 4: Get a single advisor with its recommended actions included in the response
-```powershell
-Get-AzSqlServerAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east" -AdvisorName "CreateIndex" -ExpandRecommendedActions
 ```
-
-```output
+PS C:\> Get-AzSqlServerAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east" -AdvisorName "CreateIndex" -ExpandRecommendedActions
 ResourceGroupName              : WIRunnersProd
 ServerName                     : wi-runner-australia-east
 AdvisorName                    : CreateIndex
@@ -170,11 +158,8 @@ RecommendedActions             : {IR_[test_schema]_[test_table_0.0361551]_6C7AE8
 This command gets advisor named CreateIndex from the server named wi-runner-australia-east with its recommended actions included in the response.
 
 ### Example 5: List all the advisors for the server using filtering
-```powershell
-Get-AzSqlServerAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east" -AdvisorName d*
 ```
-
-```output
+PS C:\> Get-AzSqlServerAdvisor -ResourceGroupName "WIRunnersProd" -ServerName "wi-runner-australia-east" -AdvisorName d*
 ResourceGroupName              : WIRunnersProd
 ServerName                     : wi-runner-australia-east
 AdvisorName                    : DropIndex

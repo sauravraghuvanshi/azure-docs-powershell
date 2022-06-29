@@ -47,11 +47,11 @@ The **Update-AzNetAppFilesPool** cmdlet modifies an ANF pool.
 ## EXAMPLES
 
 ### Example 1: Modify an ANF pool
-```powershell
-Update-AzNetAppFilesPool -ResourceGroupName "MyRG" -Location "westus2" -AccountName "MyAnfAccount" -PoolName "MyAnfPool" -PoolSize 4398046511104 -QosType "Auto"
 ```
+PS C:\>Update-AzNetAppFilesPool -ResourceGroupName "MyRG" -l "westus2" -AccountName "MyAnfAccount" -PoolName "MyAnfPool" -PoolSize 4398046511104 -QosType "Auto"
 
-```output
+Output:
+
 Location          : westus2
 Id                : /subscriptions/subsId/resourceGroups/MyRG/providers/Microsoft.NetApp/netAppAccounts/MyAnfAccount/capacityPools/MyAnfPool
 Name              : MyAnfAccount/MyAnfPool
@@ -282,8 +282,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
-[New-AzNetAppFilesPool](./New-AzNetAppFilesPool.md)
-[Get-AzNetAppFilesPool](./Get-AzNetAppFilesPool.md)
-[Remove-AzNetAppFilesPool](./Remove-AzNetAppFilesPool.md)
-[Set-AzNetAppFilesPool](./Set-AzNetAppFilesPool.md)

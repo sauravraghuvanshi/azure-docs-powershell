@@ -28,7 +28,7 @@ This is the trigger condition for metric query rule, to be used when you need to
 
 ### Example 1
 ```powershell
-$metricTrigger = New-AzScheduledQueryRuleLogMetricTrigger -ThresholdOperator "GreaterThan" -Threshold 5 -MetricTriggerType "Consecutive" -MetricColumn "Computer"
+PS C:\> $metricTrigger = New-AzScheduledQueryRuleLogMetricTrigger -ThresholdOperator "GreaterThan" -Threshold 5 -MetricTriggerType "Consecutive" -MetricColumn "Computer"
 ```
 
 ## PARAMETERS

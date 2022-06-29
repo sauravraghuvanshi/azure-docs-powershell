@@ -39,7 +39,7 @@ Deletes a security contact.
 
 ### Example 1
 ```powershell
-Remove-AzSecurityContact -Name "default1"
+PS C:\> Remove-AzSecurityContact -Name "default1"
 ```
 
 Deletes the "default1" security contact

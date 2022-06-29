@@ -31,17 +31,17 @@ Use Get-AzProviderOperation Microsoft.Compute/* to get all operations of Microso
 
 ### Example 1: Get all actions for all providers
 ```powershell
-Get-AzProviderOperation *
+PS C:\> Get-AzProviderOperation *
 ```
 
 ### Example 2: Get actions for a particular resource provider
 ```powershell
-Get-AzProviderOperation Microsoft.Insights/*
+PS C:\> Get-AzProviderOperation Microsoft.Insights/*
 ```
 
 ### Example 3: Get all actions that can be performed on virtual machines
 ```powershell
-Get-AzProviderOperation */virtualMachines/*
+PS C:\> Get-AzProviderOperation */virtualMachines/*
 ```
 
 ## PARAMETERS

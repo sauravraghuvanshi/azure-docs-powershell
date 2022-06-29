@@ -28,9 +28,6 @@ Exports a Template Spec to the local filesystem
 ### [Get-AzADAppCredential](Get-AzADAppCredential.md)
 Lists key credentials and password credentials for an application.
 
-### [Get-AzADAppFederatedIdentityCredential](Get-AzADAppFederatedIdentityCredential.md)
-Get federatedIdentityCredentials by Id from applications.
-
 ### [Get-AzADApplication](Get-AzADApplication.md)
 Lists entities from applications or get entity from applications by key
 
@@ -98,18 +95,6 @@ Get deployment operation for management group deployment
 ### [Get-AzManagementGroupDeploymentWhatIfResult](Get-AzManagementGroupDeploymentWhatIfResult.md)
 Gets a template What-If result for a deployment at management group scope. 
 
-### [Get-AzManagementGroupEntity](Get-AzManagementGroupEntity.md)
-Lists all Entities under the current Tenant
-
-### [Get-AzManagementGroupHierarchySetting](Get-AzManagementGroupHierarchySetting.md)
-Gets the Hierarchy Settings under the current tenant
-
-### [Get-AzManagementGroupNameAvailability](Get-AzManagementGroupNameAvailability.md)
-Checks if the Management Group name is available in the Tenant and a valid name.
-
-### [Get-AzManagementGroupSubscription](Get-AzManagementGroupSubscription.md)
-Gets the details of Subscription(s) under a Management Group.
-
 ### [Get-AzPolicyAlias](Get-AzPolicyAlias.md)
 Get-AzPolicyAlias retrieves and outputs Azure provider resource types that have aliases defined and match the
 given parameter values. If no parameters are provided, all provider resource types that contain an alias will be output.
@@ -126,9 +111,6 @@ Gets policy exemptions.
 
 ### [Get-AzPolicySetDefinition](Get-AzPolicySetDefinition.md)
 Gets policy set definitions.
-
-### [Get-AzPrivateLinkAssociation](Get-AzPrivateLinkAssociation.md)
-Gets all the Azure Resource Management Private Link Association(s).
 
 ### [Get-AzProviderFeature](Get-AzProviderFeature.md)
 Gets information about Azure provider features.
@@ -157,9 +139,6 @@ Gets a template What-If result for a deployment at resource group scope.
 ### [Get-AzResourceLock](Get-AzResourceLock.md)
 Gets a resource lock.
 
-### [Get-AzResourceManagementPrivateLink](Get-AzResourceManagementPrivateLink.md)
-Gets Azure Resource Management Private Link(s)
-
 ### [Get-AzResourceProvider](Get-AzResourceProvider.md)
 Gets a resource provider.
 
@@ -176,46 +155,14 @@ The cmdlet may call below Microsoft Graph API according to input parameters:
 - GET /directoryObjects/{id}
 - POST /directoryObjects/getByIds
 
-Please notice that this cmdlet will mark `ObjectType` as `Unknown` in output if the object of role assignment is not found or current account has insufficient privileges to get object type.
-
-### [Get-AzRoleAssignmentSchedule](Get-AzRoleAssignmentSchedule.md)
-Get the specified role assignment schedule for a resource scope
-
-### [Get-AzRoleAssignmentScheduleInstance](Get-AzRoleAssignmentScheduleInstance.md)
-Gets the specified role assignment schedule instance.
-
-### [Get-AzRoleAssignmentScheduleRequest](Get-AzRoleAssignmentScheduleRequest.md)
-Get the specified role assignment schedule request.
-
 ### [Get-AzRoleDefinition](Get-AzRoleDefinition.md)
 Lists all Azure RBAC roles that are available for assignment.
-
-### [Get-AzRoleEligibilitySchedule](Get-AzRoleEligibilitySchedule.md)
-Get the specified role eligibility schedule for a resource scope
-
-### [Get-AzRoleEligibilityScheduleInstance](Get-AzRoleEligibilityScheduleInstance.md)
-Gets the specified role eligibility schedule instance.
-
-### [Get-AzRoleEligibilityScheduleRequest](Get-AzRoleEligibilityScheduleRequest.md)
-Get the specified role eligibility schedule request.
-
-### [Get-AzRoleEligibleChildResource](Get-AzRoleEligibleChildResource.md)
-Get the child resources of a resource on which user has eligible access
-
-### [Get-AzRoleManagementPolicy](Get-AzRoleManagementPolicy.md)
-Get the specified role management policy for a resource scope
-
-### [Get-AzRoleManagementPolicyAssignment](Get-AzRoleManagementPolicyAssignment.md)
-Get the specified role management policy assignment for a resource scope
 
 ### [Get-AzTag](Get-AzTag.md)
 Gets predefined Azure tags | Gets the entire set of tags on a resource or subscription.
 
 ### [Get-AzTemplateSpec](Get-AzTemplateSpec.md)
 Gets or lists Template Specs
-
-### [Get-AzTenantBackfillStatus](Get-AzTenantBackfillStatus.md)
-Get the current Tenant Backfill Subscription Status
 
 ### [Get-AzTenantDeployment](Get-AzTenantDeployment.md)
 Get deployment at tenant scope
@@ -234,9 +181,6 @@ Moves a resource to a different resource group or subscription.
 
 ### [New-AzADAppCredential](New-AzADAppCredential.md)
 Creates key credentials or password credentials for an application.
-
-### [New-AzADAppFederatedIdentityCredential](New-AzADAppFederatedIdentityCredential.md)
-Create federatedIdentityCredential for applications.
 
 ### [New-AzADApplication](New-AzADApplication.md)
 Adds new entity to applications
@@ -268,9 +212,6 @@ Creates a Management Group
 ### [New-AzManagementGroupDeployment](New-AzManagementGroupDeployment.md)
 Create a deployment at a management group
 
-### [New-AzManagementGroupHierarchySetting](New-AzManagementGroupHierarchySetting.md)
-Creates Hierarchy Settings under the current tenant
-
 ### [New-AzManagementGroupSubscription](New-AzManagementGroupSubscription.md)
 Adds a Subscription to a Management Group.
 
@@ -286,9 +227,6 @@ Creates a policy exemption.
 ### [New-AzPolicySetDefinition](New-AzPolicySetDefinition.md)
 Creates a policy set definition.
 
-### [New-AzPrivateLinkAssociation](New-AzPrivateLinkAssociation.md)
-Creates the Azure Resource Management Private Link Association.
-
 ### [New-AzResource](New-AzResource.md)
 Creates a resource.
 
@@ -301,9 +239,6 @@ Adds an Azure deployment to a resource group.
 ### [New-AzResourceLock](New-AzResourceLock.md)
 Creates a resource lock.
 
-### [New-AzResourceManagementPrivateLink](New-AzResourceManagementPrivateLink.md)
-Create Azure Resource Management Private Link
-
 ### [New-AzRoleAssignment](New-AzRoleAssignment.md)
 Assigns the specified RBAC role to the specified principal, at the specified scope.
 
@@ -314,23 +249,12 @@ The cmdlet may call below Microsoft Graph API according to input parameters:
 - GET /groups/{id}
 - GET /directoryObjects/{id}
 
-Please notice that this cmdlet will mark `ObjectType` as `Unknown` in output if the object of role assignment is not found or current account has insufficient privileges to get object type.
-
-### [New-AzRoleAssignmentScheduleRequest](New-AzRoleAssignmentScheduleRequest.md)
-Creates a role assignment schedule request.
-
 ### [New-AzRoleDefinition](New-AzRoleDefinition.md)
 Creates a custom role in Azure RBAC.
 Provide either a JSON role definition file or a PSRoleDefinition object as input.
 First, use the Get-AzRoleDefinition command to generate a baseline role definition object.
 Then, modify its properties as required.
 Finally, use this command to create a custom role using role definition.
-
-### [New-AzRoleEligibilityScheduleRequest](New-AzRoleEligibilityScheduleRequest.md)
-Creates a role eligibility schedule request.
-
-### [New-AzRoleManagementPolicyAssignment](New-AzRoleManagementPolicyAssignment.md)
-Create a role management policy assignment
 
 ### [New-AzTag](New-AzTag.md)
 Creates a predefined Azure tag or adds values to an existing tag | Creates or updates the entire set of tags on a resource or subscription.
@@ -355,9 +279,6 @@ Registers a resource provider.
 
 ### [Remove-AzADAppCredential](Remove-AzADAppCredential.md)
 Removes key credentials or password credentials for an application.
-
-### [Remove-AzADAppFederatedIdentityCredential](Remove-AzADAppFederatedIdentityCredential.md)
-Delete federatedIdentityCredentials for applications.
 
 ### [Remove-AzADApplication](Remove-AzADApplication.md)
 Deletes entity from applications
@@ -402,9 +323,6 @@ Removes a Management Group
 ### [Remove-AzManagementGroupDeployment](Remove-AzManagementGroupDeployment.md)
 Removes a deployment at a management group and any associated operations
 
-### [Remove-AzManagementGroupHierarchySetting](Remove-AzManagementGroupHierarchySetting.md)
-Deletes all Hierarchy Settings under the current tenant
-
 ### [Remove-AzManagementGroupSubscription](Remove-AzManagementGroupSubscription.md)
 Removes a Subscription from a Management Group.
 
@@ -420,9 +338,6 @@ Removes a policy exemption.
 ### [Remove-AzPolicySetDefinition](Remove-AzPolicySetDefinition.md)
 Removes a policy set definition.
 
-### [Remove-AzPrivateLinkAssociation](Remove-AzPrivateLinkAssociation.md)
-Delete a specific azure private link association.
-
 ### [Remove-AzResource](Remove-AzResource.md)
 Removes a resource.
 
@@ -435,9 +350,6 @@ Removes a resource group deployment and any associated operations.
 ### [Remove-AzResourceLock](Remove-AzResourceLock.md)
 Removes a resource lock.
 
-### [Remove-AzResourceManagementPrivateLink](Remove-AzResourceManagementPrivateLink.md)
-Deletes the Resource Manangement Private Link.
-
 ### [Remove-AzRoleAssignment](Remove-AzRoleAssignment.md)
 Removes a role assignment to the specified principal who is assigned to a particular role at a particular scope.
 
@@ -449,18 +361,10 @@ The cmdlet may call below Microsoft Graph API according to input parameters:
 - GET /directoryObjects/{id}
 - POST /directoryObjects/getByIds
 
-Please notice that this cmdlet will mark `ObjectType` as `Unknown` in output if the object of role assignment is not found or current account has insufficient privileges to get object type.
-
 ### [Remove-AzRoleDefinition](Remove-AzRoleDefinition.md)
 Deletes a custom role in Azure RBAC.
 The role to be deleted is specified using the Id property of the role.
 Delete will fail if there are existing role assignments made to the custom role.
-
-### [Remove-AzRoleManagementPolicy](Remove-AzRoleManagementPolicy.md)
-Delete a role management policy
-
-### [Remove-AzRoleManagementPolicyAssignment](Remove-AzRoleManagementPolicyAssignment.md)
-Delete a role management policy assignment
 
 ### [Remove-AzTag](Remove-AzTag.md)
 Deletes predefined Azure tags or values | Deletes the entire set of tags on a resource or subscription.
@@ -524,8 +428,6 @@ The cmdlet may call below Microsoft Graph API according to input parameters:
 - GET /directoryObjects/{id}
 - POST /directoryObjects/getByIds
 
-Please notice that this cmdlet will mark `ObjectType` as `Unknown` in output if the object of role assignment is not found or current account has insufficient privileges to get object type.
-
 ### [Set-AzRoleDefinition](Set-AzRoleDefinition.md)
 Modifies a custom role in Azure RBAC.
 Provide the modified role definition either as a JSON file or as a PSRoleDefinition.
@@ -536,9 +438,6 @@ Finally, save the role definition using this command.
 ### [Set-AzTemplateSpec](Set-AzTemplateSpec.md)
 Modifies a Template Spec.
 
-### [Start-AzTenantBackfill](Start-AzTenantBackfill.md)
-Starts backfilling subscriptions for the current Tenant
-
 ### [Stop-AzDeployment](Stop-AzDeployment.md)
 Cancel a running deployment
 
@@ -547,12 +446,6 @@ Cancel a running deployment at a management group
 
 ### [Stop-AzResourceGroupDeployment](Stop-AzResourceGroupDeployment.md)
 Cancels a resource group deployment.
-
-### [Stop-AzRoleAssignmentScheduleRequest](Stop-AzRoleAssignmentScheduleRequest.md)
-Cancels a pending role assignment schedule request.
-
-### [Stop-AzRoleEligibilityScheduleRequest](Stop-AzRoleEligibilityScheduleRequest.md)
-Cancels a pending role eligibility schedule request.
 
 ### [Stop-AzTenantDeployment](Stop-AzTenantDeployment.md)
 Cancel a running deployment at tenant scope
@@ -578,14 +471,8 @@ Removes a feature registration from your account.
 ### [Unregister-AzResourceProvider](Unregister-AzResourceProvider.md)
 Unregisters a resource provider.
 
-### [Update-AzADAppFederatedIdentityCredential](Update-AzADAppFederatedIdentityCredential.md)
-Update the federatedIdentityCredentials in applications.
-
 ### [Update-AzADApplication](Update-AzADApplication.md)
 Updates entity in applications
-
-### [Update-AzADGroup](Update-AzADGroup.md)
-Update entity in groups
 
 ### [Update-AzADServicePrincipal](Update-AzADServicePrincipal.md)
 Updates entity in service principal
@@ -595,12 +482,6 @@ Updates entity in users
 
 ### [Update-AzManagementGroup](Update-AzManagementGroup.md)
 Updates a Management Group
-
-### [Update-AzManagementGroupHierarchySetting](Update-AzManagementGroupHierarchySetting.md)
-Updates Hierarchy Settings under the current tenant
-
-### [Update-AzRoleManagementPolicy](Update-AzRoleManagementPolicy.md)
-Update a role management policy
 
 ### [Update-AzTag](Update-AzTag.md)
 Selectively updates the set of tags on a resource or subscription.

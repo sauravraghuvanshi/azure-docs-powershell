@@ -37,31 +37,31 @@ The **Remove-AzDiskAccess** cmdlet removes a disk access resource.
 ## EXAMPLES
 
 ### Example 1: Remove Disk Access using Default Parameter Set
-```powershell
-Remove-AzDiskAccess -ResourceGroupName "ResourceGroup01" -Name "DiskAccess01"
+```
+PS C:\> Remove-AzDiskAccess -ResourceGroupName "ResourceGroup01" -Name "DiskAccess01"
 ```
 
 This command removes the disk access named "DiskAccess01" in resource group "ResourceGroup01"
 
 ### Example 2: Remove Disk Access using Resource ID
-```powershell
-$myDiskAccess = Get-AzDiskAccess -ResourceGroupName "ResourceGroup01" -Name "DiskAccess01"
-Remove-AzDiskAccess -ResourceId $myDiskAccess.id
+```
+PS C:\> $myDiskAccess = Get-AzDiskAccess -ResourceGroupName "ResourceGroup01" -Name "DiskAccess01"
+PS C:\> Remove-AzDiskAccess -ResourceId $myDiskAccess.id
 ```
 
 This command removes the disk access by Resource ID
 
 ### Example 3: Remove Disk Access using Input Object
-```powershell
-$myDiskAccess = Get-AzDiskAccess -ResourceGroupName "ResourceGroup01" -Name "DiskAccess01"
-Remove-AzDiskAccess -InputObject $myDiskAccess
+```
+PS C:\> $myDiskAccess = Get-AzDiskAccess -ResourceGroupName "ResourceGroup01" -Name "DiskAccess01"
+PS C:\> Remove-AzDiskAccess -InputObject $myDiskAccess
 ```
 
 This command removes the disk access by InputObject
 
 ### Example 4: Remove Disk Access by piping Input Object
-```powershell
-Get-AzDiskAccess -ResourceGroupName "ResourceGroup01" -Name "DiskAccess01" | Remove-AzDiskAccess 
+```
+PS C:\> Get-AzDiskAccess -ResourceGroupName "ResourceGroup01" -Name "DiskAccess01" | Remove-AzDiskAccess 
 ```
 
 This command removes the disk access by piping the InputObject

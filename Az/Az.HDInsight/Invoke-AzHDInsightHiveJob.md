@@ -29,28 +29,28 @@ Use the Use-AzHDInsightCluster cmdlet before calling **Invoke-AzHDInsightHiveJob
 ## EXAMPLES
 
 ### Example 1: Submit a Hive query to an Azure HDInsight cluster
-```powershell
-# Primary storage account info
-$storageAccountResourceGroupName = "Group"
-$storageAccountName = "yourstorageacct001"
-$storageAccountKey = (Get-AzStorageAccountKey -ResourceGroupName $storageAccountResourceGroupName -Name $storageAccountName)[0].value
+```
+PS C:\># Primary storage account info
+PS C:\> $storageAccountResourceGroupName = "Group"
+PS C:\> $storageAccountName = "yourstorageacct001"
+PS C:\> $storageAccountKey = (Get-AzStorageAccountKey -ResourceGroupName $storageAccountResourceGroupName -Name $storageAccountName)[0].value
 
 
-$storageContainer = "container001"
+PS C:\> $storageContainer = "container001"
 
 # Cluster info
-$clusterName = "your-hadoop-001"
-$clusterCreds = Get-Credential
+PS C:\> $clusterName = "your-hadoop-001"
+PS C:\> $clusterCreds = Get-Credential
 
 # Hive job details
-$statusFolder = "tempStatusFolder/"
-$query = "SHOW TABLES"
+PS C:\> $statusFolder = "tempStatusFolder/"
+PS C:\> $query = "SHOW TABLES"
 
-Use-AzHDInsightCluster `
+PS C:\> Use-AzHDInsightCluster `
             -ClusterCredential $clusterCreds `
             -ClusterName $clusterName
 
-Invoke-AzHDInsightHiveJob -StatusFolder $statusFolder `
+PS C:\> Invoke-AzHDInsightHiveJob -StatusFolder $statusFolder `
             -Query $query `
             -DefaultContainer $storageContainer `
             -DefaultStorageAccountName "$storageAccountName.blob.core.windows.net" `

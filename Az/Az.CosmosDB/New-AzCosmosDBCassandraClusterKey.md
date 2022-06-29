@@ -26,10 +26,8 @@ The **New-AzCosmosDBCassandraClusterKey** creates a new CosmosDB Cassandra Clust
 
 ### Example 1
 ```powershell
-New-AzCosmosDBCassandraClusterKey -Name "name" -OrderBy "Asc"
-```
+PS C:\> New-AzCosmosDBCassandraClusterKey -Name <String> -OrderBy <String>
 
-```output
 Name   OrderBy
 ----   -------
 {name}  Asc

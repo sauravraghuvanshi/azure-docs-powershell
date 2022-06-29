@@ -33,10 +33,8 @@ The **Stop-AzSynapseDataFlowDebugSession** cmdlet stops a data flow debug sessio
 
 ### Example 1
 ```powershell
-Stop-AzSynapseDataFlowDebugSession -workspacename ContosoWorkspace -sessionid c744f68d-a101-4115-9cd5-8b11314fe4b8
-```
+PS C:\> Stop-AzSynapseDataFlowDebugSession -workspacename ContosoWorkspace -sessionid c744f68d-a101-4115-9cd5-8b11314fe4b8
 
-```output
 Confirm
 Are you sure you want to stop data flow debug session 'c744f68d-a101-4115-9cd5-8b11314fe4b8' in workspace 'ContosoWorkspace'?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
@@ -46,11 +44,9 @@ This command stops the data flow debug session "c744f68d-a101-4115-9cd5-8b11314f
 
 ### Example 2
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace -ResourceGroupName ContosoGroup
-$ws | Stop-AzSynapseDataFlowDebugSession -sessionid c744f68d-a101-4115-9cd5-8b11314fe4b8
-```
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace -ResourceGroupName ContosoGroup
+PS C:\> $ws | Stop-AzSynapseDataFlowDebugSession -sessionid c744f68d-a101-4115-9cd5-8b11314fe4b8
 
-```output
 Confirm
 Are you sure you want to stop data flow debug session 'c744f68d-a101-4115-9cd5-8b11314fe4b8' in workspace 'ContosoWorkspace'?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y

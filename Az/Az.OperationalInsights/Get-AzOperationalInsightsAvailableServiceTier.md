@@ -26,10 +26,8 @@ This command gets all available service tiers for a given worksapce.
 
 ### Example 1
 ```powershell
-Get-AzOperationalInsightsAvailableServiceTier -ResourceGroupName ContosoResourceGroup -WorkspaceName MyWorkspace
-```
+PS C:\> Get-AzOperationalInsightsAvailableServiceTier -ResourceGroupName ContosoResourceGroup -WorkspaceName MyWorkspace
 
-```output
 ServiceTier              : PerGB2018
 Enabled                  : True
 MinimumRetention         : 30

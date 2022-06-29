@@ -25,15 +25,15 @@ Get a run command document.
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Get-AzVMRunCommandDocument -Location 'westus' -CommandId 'RunPowerShellScript'
+```
+PS C:\> Get-AzVMRunCommandDocument -Location 'westus' -CommandId 'RunPowerShellScript'
 ```
 
 Gets a specific run command document for 'RunPowerShellScript' in 'westus'.
 
 ### Example 2
-```powershell
-Get-AzVMRunCommandDocument -Location 'westus'
+```
+PS C:\> Get-AzVMRunCommandDocument -Location 'westus'
 ```
 
 Lists all available run commands in 'westus'.

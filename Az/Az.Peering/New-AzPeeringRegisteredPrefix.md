@@ -37,17 +37,17 @@ Create registered prefixes for peering objects.
 
 ## EXAMPLES
 
-### Example 1: Get peering and create a registered prefix
+### Get peering and create a registered prefix
 ```powershell
-$peering = Get-AzPeering -ResourceGroupName $resourceGroupName -Name $name
-$peering | New-AzPeeringRegisteredPrefix -Name $asnName -Prefix $prefix
+PS C:\>$peering = Get-AzPeering -ResourceGroupName $resourceGroupName -Name $name
+PS C:\>$peering | New-AzPeeringRegisteredPrefix -Name $asnName -Asn $asn
 ```
 
 Get the peering you want to add a registered prefix. Then pass that to the commandlet.
 
-### Example 2: Use peering resourceId to create a registered prefix
+### Use peering resourceId to create a registered asn
 ```powershell
-New-AzPeeringRegisteredPrefix -ResourceId $resourceId -Name $asnName -Prefix $prefix
+PS C:\>New-AzPeeringRegisteredPrefix -ResourceId $resourceId -Name $asnName -Asn $asn
 ```
 
 ## PARAMETERS

@@ -39,10 +39,8 @@ Gets the move collection.
 
 ### Example 1:  Get details of all the Move collections in the subscription
 ```powershell
-Get-AzResourceMoverMoveCollection  -SubscriptionId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-```
+PS C:\>Get-AzResourceMoverMoveCollection  -SubscriptionId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
-```output
 Etag                                   Location      Name                                Type                             
 ----                                   --------      ----                                ----                             
 "270119e0-0000-0c00-0000-5f5c94940000" centraluseuap PS-centralus-westcentralus-demoRMS  Microsoft.Migrate/moveCollections
@@ -56,10 +54,8 @@ Get details of all the Move collections in the subscription.
 
 ### Example 2: Get details of the Move collection with a specified move collection name in the subscription
 ```powershell
-Get-AzResourceMoverMoveCollection -ResourceGroupName "RG-MoveCollection-demoRMS" -Name "PS-centralus-westcentralus-demoRMS"
-```
+PS C:\>Get-AzResourceMoverMoveCollection -ResourceGroupName "RG-MoveCollection-demoRMS" -Name "PS-centralus-westcentralus-demoRMS"
 
-```output
 Etag                                   Location      Name                               Type                             
 ----                                   --------      ----                               ----                             
 "22006609-0000-3300-0000-602169590000" centraluseuap PS-centralus-westcentralus-demoRMS Microsoft.Migrate/moveCollections
@@ -70,10 +66,8 @@ Get details of the Move collection with a specified move collection name in the 
 
 ### Example 3: Get details of the Move collection with a specified resource group name in the subscription
 ```powershell
-Get-AzResourceMoverMoveCollection -ResourceGroupName "RG-MoveCollection-demoRMS" 
-```
+PS C:\> Get-AzResourceMoverMoveCollection -ResourceGroupName "RG-MoveCollection-demoRMS" 
 
-```output
 Location    Name                               Type
 --------    ----                               ----
 eastus2     PS-centralus-westcentralus-demoRM  Microsoft.Migrate/moveCollections

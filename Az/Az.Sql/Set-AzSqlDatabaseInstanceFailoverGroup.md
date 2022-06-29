@@ -45,11 +45,9 @@ During preview of the Instance Failover Groups feature, only values greater than
 ## EXAMPLES
 
 ### Example 1
-```powershell
-$failoverGroup = Get-AzSqlDatabaseInstanceFailoverGroup -ResourceGroupName rg -Location location -Name fg | Set-AzSqlDatabaseInstanceFailoverGroup -FailoverPolicy Manual
 ```
-
-```output
+PS C:\> $failoverGroup = Get-AzSqlDatabaseInstanceFailoverGroup -ResourceGroupName rg -Location location -Name fg | Set-AzSqlDatabaseInstanceFailoverGroup -FailoverPolicy Manual
+Output:
 ResourceGroupName                     : rg
 Location                              : East US
 Name                                  : fg

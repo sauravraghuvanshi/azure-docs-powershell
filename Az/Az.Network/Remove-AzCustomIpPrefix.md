@@ -39,7 +39,7 @@ The **Remove-AzCustomIpPrefix** cmdlet removes a CustomIpPrefix.
 
 ### Example 1
 ```powershell
-Remove-AzCustomIpPrefix -Name $prefixName -ResourceGroupName $rgName
+PS C:\> Remove-AzCustomIpPrefix -Name $prefixName -ResourceGroupName $rgName
 ```
 
 Removes the CustomIpPrefix with Name $prefixName from resource group $rgName

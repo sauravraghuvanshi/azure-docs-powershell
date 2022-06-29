@@ -26,8 +26,8 @@ The virtual machine must be stop-deallocated before invoking this operation.
 ## EXAMPLES
 
 ### Example 1
-```powershell
-ConvertTo-AzVMManagedDisk -ResourceGroupName 'ResourceGroup01' -VMName 'VM01'
+```
+PS C:\> ConvertTo-AzVMManagedDisk -ResourceGroupName 'ResourceGroup01' -VMName 'VM01'
 ```
 
 This command converts the blob-based disks of the virtual machine named 'VM01' in the resource group 'ResourceGroup01' to managed disks.

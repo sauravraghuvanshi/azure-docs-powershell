@@ -35,21 +35,21 @@ You can use Geo-Restore to restore a geo-redundant backup in the event of a regi
 
 ### Example 1: Get a specified geo-redundant backup
 ```powershell
-Get-AzSynapseSqlPoolGeoBackup -ResourceGroupName ContosoResourceGroup -WorkspaceName "ContosoWorkspace" -Name "ContosoSqlPool"
+PS C:\> Get-AzSynapseSqlPoolGeoBackup -ResourceGroupName ContosoResourceGroup -WorkspaceName "ContosoWorkspace" -Name "ContosoSqlPool"
 ```
 
 The cmdlet retrieves Geo Backup for a sql pool.
 
 ### Example 2: Get all geo-redundant backups on a workspace
-```powershell
-Get-AzSynapseSqlPoolGeoBackup -ResourceGroupName "ContosoResourceGroup" -WorkspaceName "ContosoWorkspace"
+```
+PS C:\>Get-AzSynapseSqlPoolGeoBackup -ResourceGroupName "ContosoResourceGroup" -WorkspaceName "ContosoWorkspace"
 ```
 
 This command gets all available geo-redundant backups on a specified workspace.
 
 ### Example 3: Get all geo-redundant backups on a workspace using filtering
-```powershell
-Get-AzSynapseSqlPoolGeoBackup -ResourceGroupName "ContosoResourceGroup" -WorkspaceName "ContosoWorkspace" -Name "Contoso*"
+```
+PS C:\>Get-AzSynapseSqlPoolGeoBackup -ResourceGroupName "ContosoResourceGroup" -WorkspaceName "ContosoWorkspace" -Name "Contoso*"
 ```
 
 This command gets all available geo-redundant backups on a specified workspace that start with "Contoso".

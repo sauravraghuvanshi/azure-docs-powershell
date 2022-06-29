@@ -39,11 +39,9 @@ The **Get-AzDataFactoryV2IntegrationRuntimeNode** cmdlet gets the detail informa
 ## EXAMPLES
 
 ### Example 1: Gets the detail information of an integration runtime node.
-```powershell
-Get-AzDataFactoryV2IntegrationRuntimeNode -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2'  -IntegrationRuntimeName 'test-selfhost-ir' -Name 'Node_1'
 ```
+PS C:\> Get-AzDataFactoryV2IntegrationRuntimeNode -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2'  -IntegrationRuntimeName 'test-selfhost-ir' -Name 'Node_1'
 
-```output
 ResourceGroupName      : rg-test-dfv2
 DataFactoryName        : test-df-eu2
 IntegrationRuntimeName : test-selfhost-ir
@@ -71,11 +69,9 @@ IpAddress              :
 The cmdlet gets information of node named 'Node_1' in self-hosted integration runtime 'test-selfhost-ir' in data factory 'test-df-eu2'.
 
 ### Example 2: Gets the detail information of an integration runtime node together with IP address.
-```powershell
-Get-AzDataFactoryV2IntegrationRuntimeNode -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2'  -IntegrationRuntimeName 'test-selfhost-ir' -Name 'Node_1' -IpAddress
 ```
+PS C:\> Get-AzDataFactoryV2IntegrationRuntimeNode -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2'  -IntegrationRuntimeName 'test-selfhost-ir' -Name 'Node_1' -IpAddress
 
-```output
 ResourceGroupName      : rg-test-dfv2
 DataFactoryName        : test-df-eu2
 IntegrationRuntimeName : test-selfhost-ir

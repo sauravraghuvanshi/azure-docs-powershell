@@ -38,8 +38,8 @@ Set the vault context by using the Set-AzRecoveryServicesVaultContext cmdlet bef
 
 ### Example 1: Remove a policy
 ```powershell
-$Pol= Get-AzRecoveryServicesBackupProtectionPolicy -Name "NewPolicy"
-Remove-AzRecoveryServicesBackupProtectionPolicy -Policy $Pol
+PS C:\>$Pol= Get-AzRecoveryServicesBackupProtectionPolicy -Name "NewPolicy"
+PS C:\> Remove-AzRecoveryServicesBackupProtectionPolicy -Policy $Pol
 ```
 
 The first command gets the Backup protection policy named NewPolicy, and then stores it in the $Pol variable.

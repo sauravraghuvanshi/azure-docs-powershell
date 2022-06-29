@@ -34,7 +34,8 @@ API to stop the assigned vm for the user.
 
 ### Example 1: Stop user assigned VM in the lab.
 ```powershell
-Stop-AzLabServicesUserVM -ResourceGroupName "Group Name" -LabName "Lab Name" -Email "user@contoso.com"
+PS C:\> Stop-AzLabServicesUserVM -ResourceGroupName "Group Name" -LabName "Lab Name" -Email "user@contoso.com"
+
 ```
 
 This stops the VM assigned to the user with the specific email.

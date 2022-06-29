@@ -34,10 +34,7 @@ Deletes a single database in a Redis Enterprise cache.
 
 ### Example 1: Remove a database in a Redis Enterprise cache and return the result
 ```powershell
-Remove-AzRedisEnterpriseCacheDatabase -Name "MyCache" -ResourceGroupName "MyGroup" -PassThru
-```
-
-```output
+PS C:\> Remove-AzRedisEnterpriseCacheDatabase -Name "MyCache" -ResourceGroupName "MyGroup" -PassThru
 True
 ```
 
@@ -45,7 +42,7 @@ This command removes a database in a Redis Enterprise cache and displays whether
 
 ### Example 2: Remove a database in a Redis Enterprise cache and do not display the result
 ```powershell
-Remove-AzRedisEnterpriseCacheDatabase -Name "MyCache" -ResourceGroupName "MyGroup"
+PS C:\> Remove-AzRedisEnterpriseCacheDatabase -Name "MyCache" -ResourceGroupName "MyGroup"
 ```
 
 This command removes a database in a Redis Enterprise cache.

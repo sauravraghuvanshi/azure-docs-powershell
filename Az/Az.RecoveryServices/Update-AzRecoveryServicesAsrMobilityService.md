@@ -26,8 +26,8 @@ The **Update-AzRecoveryServicesAsrMobilityService** cmdlet attempts to push mobi
 ## EXAMPLES
 
 ### Example 1
-```powershell
-Update-AzRecoveryServicesAsrMobilityService -ReplicationProtectedItem $rpi -Account $fabric.fabricSpecificDetails.RunAsAccounts[0]
+```
+PS C:\> Update-AzRecoveryServicesAsrMobilityService -ReplicationProtectedItem $rpi -Account $fabric.fabricSpecificDetails.RunAsAccounts[0]
 ```
 
 Job to track Update Replication Protected Item's Mobility Service Agent.

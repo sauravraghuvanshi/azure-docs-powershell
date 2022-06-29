@@ -1,5 +1,5 @@
 ---
-external help file: Az.DataMigration-help.xml
+external help file: 
 Module Name: Az.DataMigration
 online version: https://docs.microsoft.com/powershell/module/az.datamigration/stop-azdatamigrationtosqlmanagedinstance
 schema: 2.0.0
@@ -16,8 +16,8 @@ Stop in-progress database migration to SQL Managed Instance.
 
 ```
 Stop-AzDataMigrationToSqlManagedInstance -ManagedInstanceName <String> -ResourceGroupName <String>
- -TargetDbName <String> [-SubscriptionId <String>] -MigrationOperationId <String> [-DefaultProfile <PSObject>]
- [-AsJob] [-NoWait] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+ -TargetDbName <String> [-SubscriptionId <String>] [-MigrationOperationId <String>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -27,12 +27,10 @@ Stop in-progress database migration to SQL Managed Instance.
 
 ### Example 1: Stop in-progress migration to SQL Managed Instance
 ```powershell
-$miMigration = Get-AzDataMigrationToSqlManagedInstance -ResourceGroupName "MyResourceGroup" -ManagedInstanceName "MyManagedInstance" -TargetDbName "MyDatabase"
-Stop-AzDataMigrationToSqlManagedInstance -ResourceGroupName "MyResourceGroup" -ManagedInstanceName "MyManagedInstance" -TargetDbName "MyDatabase" -MigrationOperationId $miMigration.MigrationOperationId
-Get-AzDataMigrationToSqlManagedInstance -InputObject $miMigration
-```
+PS C:\> $miMigration = Get-AzDataMigrationToSqlManagedInstance -ResourceGroupName "MyResourceGroup" -ManagedInstanceName "MyManagedInstance" -TargetDbName "MyDatabase"
+PS C:\> Stop-AzDataMigrationToSqlManagedInstance -ResourceGroupName "MyResourceGroup" -ManagedInstanceName "MyManagedInstance" -TargetDbName "MyDatabase" -MigrationOperationId $miMigration.MigrationOperationId
+PS C:\> Get-AzDataMigrationToSqlManagedInstance -InputObject $miMigration 
 
-```output
 Name               Type                                       Kind  ProvisioningState MigrationStatus
 ----               ----                                       ----  ----------------- ---------------
 MyDatabase         Microsoft.DataMigration/databaseMigrations SqlMi Canceling         Canceling
@@ -95,7 +93,7 @@ Type: System.String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -223,3 +221,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
+

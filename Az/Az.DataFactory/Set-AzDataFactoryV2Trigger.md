@@ -33,11 +33,9 @@ The **Set-AzDataFactoryV2Trigger** cmdlet creates a trigger in a data factory. I
 ## EXAMPLES
 
 ### Example 1: Create a trigger
-```powershell
-Set-AzDataFactoryV2Trigger -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "ScheduledTrigger" -DefinitionFile ".\scheduledTrigger.json"
 ```
+PS C:\> Set-AzDataFactoryV2Trigger -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "ScheduledTrigger" -DefinitionFile ".\scheduledTrigger.json"
 
-```output
     TriggerName       : ScheduledTrigger
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF

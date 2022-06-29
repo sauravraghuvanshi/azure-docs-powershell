@@ -40,30 +40,30 @@ The name of the notebook becomes the name of the exported file. If you specify t
 
 ### Example 1
 ```powershell
-Export-AzSynapseNotebook -WorkspaceName ContosoWorkspace -OutputFolder "C:\Notebook"
+PS C:\> Export-AzSynapseNotebook -WorkspaceName ContosoWorkspace -OutputFolder "C:\Notebook"
 ```
 
 Exports all notebooks in the workspace ContosoWorkspace to the folder "C:\Notebook".
 
 ### Example 2
 ```powershell
-Export-AzSynapseNotebook -WorkspaceName ContosoWorkspace -Name ContosoNotebook -OutputFolder "C:\Notebook"
+PS C:\> Export-AzSynapseNotebook -WorkspaceName ContosoWorkspace -Name ContosoNotebook -OutputFolder "C:\Notebook"
 ```
 
 Exports a single notebook called ContosoNotebook in the workspace ContosoWorkspace to the folder "C:\Notebook".
 
 ### Example 3
 ```powershell
-$ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
-$ws | Export-AzSynapseNotebook -Name ContosoNotebook -OutputFolder "C:\Notebook"
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Export-AzSynapseNotebook -Name ContosoNotebook -OutputFolder "C:\Notebook"
 ```
 
 Exports a single notebook called ContosoNotebook in the workspace ContosoWorkspace to the folder "C:\Notebook" through pipeline.
 
 ### Example 4
 ```powershell
-$notebook = Get-AzSynapseNotebook -WorkspaceName ContosoWorkspace -Name ContosoNotebook
-$notebook | Export-AzSynapseNotebook -OutputFolder "C:\Notebook"
+PS C:\> $notebook = Get-AzSynapseNotebook -WorkspaceName ContosoWorkspace -Name ContosoNotebook
+PS C:\> $notebook | Export-AzSynapseNotebook -OutputFolder "C:\Notebook"
 ```
 
 Exports a single notebook called ContosoNotebook in the workspace ContosoWorkspace to the folder "C:\Notebook" through pipeline.

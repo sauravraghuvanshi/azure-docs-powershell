@@ -32,11 +32,8 @@ Perform these operations in the following order:
 ## EXAMPLES
 
 ### Example 1: Create a data factory
-```powershell
-New-AzDataFactory -ResourceGroupName "ADF" -Name "WikiADF" -Location "WestUS"
 ```
-
-```output
+PS C:\>New-AzDataFactory -ResourceGroupName "ADF" -Name "WikiADF" -Location "WestUS"
 DataFactoryName   : WikiADF
 ResourceGroupName : ADF
 Location          : WestUS

@@ -26,7 +26,7 @@ The **New-AzFirewallThreatIntelWhitelist** cmdlet creates a threat intel whiteli
 
 ### Example 1
 ```powershell
-New-AzFirewallThreatIntelWhitelist -IpAddress @("2.2.2.2", "3.3.3.3") -FQDN @("bing.com", "yammer.com")
+PS C:\> New-AzFirewallThreatIntelWhitelist -IpAddress @("2.2.2.2", "3.3.3.3") -FQDN @("bing.com", "yammer.com")
 ```
 
 This example creates a threat intel whitelist containing a FQDN whitelist of two entries and an Ip address whitelist of two entries

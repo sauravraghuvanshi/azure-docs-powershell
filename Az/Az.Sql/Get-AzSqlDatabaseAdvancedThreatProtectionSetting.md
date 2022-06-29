@@ -28,11 +28,8 @@ To use this cmdlet, specify the *ResourceGroupName*, *ServerName*, and *Database
 ## EXAMPLES
 
 ### Example 1: Get the advanced threat protection settings for a database
-```powershell
-Get-AzSqlDatabaseAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01"
 ```
-
-```output
+PS C:\>Get-AzSqlDatabaseAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01"
 DatabaseName                 : Database01
 ResourceGroupName            : ResourceGroup11
 ServerName                   : Server01

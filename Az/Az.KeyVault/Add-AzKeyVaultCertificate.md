@@ -28,8 +28,8 @@ The **Add-AzKeyVaultCertificate** cmdlet starts the process of enrolling for a c
 
 ### Example 1: Add a certificate
 ```powershell
-$Policy = New-AzKeyVaultCertificatePolicy -SecretContentType "application/x-pkcs12" -SubjectName "CN=contoso.com" -IssuerName "Self" -ValidityInMonths 6 -ReuseKeyOnRenewal
-Add-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01" -CertificatePolicy $Policy
+PS C:\> $Policy = New-AzKeyVaultCertificatePolicy -SecretContentType "application/x-pkcs12" -SubjectName "CN=contoso.com" -IssuerName "Self" -ValidityInMonths 6 -ReuseKeyOnRenewal
+PS C:\> Add-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01" -CertificatePolicy $Policy
 
 Status                    : inProgress
 CancellationRequested     : False
@@ -42,7 +42,7 @@ CertificateSigningRequest : MIICpjCCAY4CAQAwFjEUMBIGA1UEAxMLY29udG9zby5jb20wggEi
 ErrorCode                 :
 ErrorMessage              : 
 
-Get-AzKeyVaultCertificateOperation -VaultName "ContosoKV01" -Name "TestCert01"
+PS C:\> Get-AzKeyVaultCertificateOperation -VaultName "ContosoKV01" -Name "TestCert01"
 Status                    : completed
 CancellationRequested     : False
 CertificateSigningRequest : MIICpjCCAY4CAQAwFjEUMBIGA1UEAxMLY29udG9zby5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC73w3VRBOlgJ5Od1PjDh+2ytngNZp+ZP4fkuX8K1Ti5LA6Ih7eWx1fgAN/iTb6l
@@ -54,7 +54,7 @@ CertificateSigningRequest : MIICpjCCAY4CAQAwFjEUMBIGA1UEAxMLY29udG9zby5jb20wggEi
 ErrorCode                 :
 ErrorMessage              : 
 
-Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01"
+PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01"
 
 Name        : testCert01
 Certificate : [Subject]

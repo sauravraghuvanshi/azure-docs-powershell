@@ -68,14 +68,12 @@ The output of a DCR serialized with the cmdlet ConvertTo-Json is also supported 
 
 ### Example 1: Update data collection rule, JSON from Rest API
 ```powershell
-Set-AzDataCollectionRule -Location 'East US 2 EUAP' `
-                                -ResourceGroupName 'testdcr' `
-                                -RuleName 'newDcr' `
-                                -RuleFile 'C:\samples\dcr1.json' `
+PS C:\>Set-AzDataCollectionRule -Location 'East US 2 EUAP'
+                                -ResourceGroupName 'testdcr' 
+                                -RuleName 'newDcr' 
+                                -RuleFile 'C:\samples\dcr1.json'
                                 -Description 'Updated Description'
-```
 
-```output
 Description       : Updated Description
 DataSources       : Microsoft.Azure.Commands.Insights.OutputClasses.PSDataCollectionRuleDataSources
 Destinations      : Microsoft.Azure.Commands.Insights.OutputClasses.PSDataCollectionRuleDestinations
@@ -129,13 +127,11 @@ This command replaces an existing data collection rules for the current subscrip
 
 ### Example 2: Update data collection rule, JSON from PSDataCollectionRuleResource
 ```powershell
-Set-AzDataCollectionRule -Location 'East US 2 EUAP' `
-                                -RuleId '/subscriptions/{subId}/resourceGroups/testdcr/providers/Microsoft.Insights/dataCollectionRules/newDcr' `
-                                -RuleFile 'C:\samples\dcr2.json' `
+PS C:\>Set-AzDataCollectionRule -Location 'East US 2 EUAP'
+                                -RuleId '/subscriptions/{subId}/resourceGroups/testdcr/providers/Microsoft.Insights/dataCollectionRules/newDcr' 
+                                -RuleFile 'C:\samples\dcr2.json'
                                 -Description 'Updated Description'
-```
 
-```output
 Description       : Updated Description
 DataSources       : Microsoft.Azure.Commands.Insights.OutputClasses.PSDataCollectionRuleDataSources
 Destinations      : Microsoft.Azure.Commands.Insights.OutputClasses.PSDataCollectionRuleDestinations
@@ -187,12 +183,10 @@ This command replaces an existing data collection rules for the current subscrip
 
 ### Example 3: Update data collection rule from object
 ```powershell
-$dcr = Get-AzDataCollectionRule -ResourceGroupName "testdcr" -Name "newDcr"
-$dcr.Description = 'This is a test'
-$dcr | Set-AzDataCollectionRule
-```
+PS C:\>$dcr = Get-AzDataCollectionRule -ResourceGroupName "testdcr" -Name "newDcr"
+PS C:\>$dcr.Description = 'This is a test'
+PS C:\>$dcr | Set-AzDataCollectionRule
 
-```output
 Description       : This is a test
 DataSources       : Microsoft.Azure.Commands.Insights.OutputClasses.PSDataCollectionRuleDataSources
 Destinations      : Microsoft.Azure.Commands.Insights.OutputClasses.PSDataCollectionRuleDestinations

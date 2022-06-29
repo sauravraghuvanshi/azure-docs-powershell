@@ -37,10 +37,7 @@ If you omit a required template parameter, the cmdlet prompts you for the value.
 ### Example 1: Get a trigger history of a logic app
 
 ```powershell
-Get-AzLogicAppTriggerHistory -ResourceGroupName "Resourcegroup11" -Name "LogicApp03" -TriggerName "Trigger01" -HistoryName "08587489107387695768"
-```
-
-```output
+PS C:\>Get-AzLogicAppTriggerHistory -ResourceGroupName "Resourcegroup11" -Name "LogicApp03" -TriggerName "Trigger01" -HistoryName "08587489107387695768"
 Code        : BadRequest
 EndTime     : 1/13/2016 2:42:26 PM
 Error       : {code, message}
@@ -61,10 +58,7 @@ This command gets a specific logic app trigger history for a trigger in the logi
 ### Example 2: Get trigger histories of a logic app
 
 ```powershell
-Get-AzLogicAppTriggerHistory -ResourceGroupName "ResourceGroup11" -Name "LogicApp07" -TriggerName "Trigger01"
-```
-
-```output
+PS C:\>Get-AzLogicAppTriggerHistory -ResourceGroupName "ResourceGroup11" -Name "LogicApp07" -TriggerName "Trigger01"
 Code        : BadRequest
 EndTime     : 1/13/2016 2:43:33 PM
 Error       : {code, message}
@@ -99,7 +93,7 @@ This command gets the workflow trigger histories for a trigger in the logic app 
 ### Example 3: Get entire trigger history of a logic app
 
 ```powershell
-Get-AzLogicAppTriggerHistory -ResourceGroupName "ResourceGroup11" -Name "LogicApp08" -TriggerName "Trigger01" -FollowNextPageLink
+PS C:\>Get-AzLogicAppTriggerHistory -ResourceGroupName "ResourceGroup11" -Name "LogicApp08" -TriggerName "Trigger01" -FollowNextPageLink
 ```
 
 This command gets the entire workflow trigger history for a trigger in the logic app named LogicApp08 by following the NextPageLink.
@@ -107,7 +101,7 @@ This command gets the entire workflow trigger history for a trigger in the logic
 ### Example 4
 
 ```powershell
-Get-AzLogicAppTriggerHistory -ResourceGroupName "ResourceGroup11" -Name "LogicApp08" -TriggerName "Trigger01" -FollowNextPageLink -MaximumFollowNextPageLink 1
+PS C:\>Get-AzLogicAppTriggerHistory -ResourceGroupName "ResourceGroup11" -Name "LogicApp08" -TriggerName "Trigger01" -FollowNextPageLink -MaximumFollowNextPageLink 1
 ```
 
 This command gets the first two pages of workflow trigger history for a trigger in the logic app named LogicApp09 by following the NextPageLink and limiting the result size to two pages.

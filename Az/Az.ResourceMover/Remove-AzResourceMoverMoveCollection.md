@@ -26,10 +26,8 @@ Deletes a move collection.
 
 ### Example 1: Remove the Move Collection.
 ```powershell
-Remove-AzResourceMoverMoveCollection -ResourceGroupName "RG-MoveCollection-demoRMS" -MoveCollectionName "PS-centralus-westcentralus-demoRMS"
-```
+PS C:\> Remove-AzResourceMoverMoveCollection -ResourceGroupName "RG-MoveCollection-demoRMS" -MoveCollectionName "PS-centralus-westcentralus-demoRMS"
 
-```output
 AdditionalInfo : 
 Code           : 
 Detail         : 

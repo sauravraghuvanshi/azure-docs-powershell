@@ -24,11 +24,8 @@ The **Get-AzLogProfile** cmdlet gets a log profile.
 
 ## EXAMPLES
 ### Example 1: Gets a log profile
-```powershell
-Get-AzLogProfile
 ```
-
-```output
+PS C:\>Get-AzLogProfile
 StorageAccountId : /subscriptions/xxxx-xxxx-xxxx-xxxx-xxxx/resourceGroups/testrg/providers/Microsoft.Stor
 age/storageAccounts/storageaccount
 ServiceBusRuleId :

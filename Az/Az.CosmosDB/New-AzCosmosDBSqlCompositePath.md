@@ -26,10 +26,8 @@ Object corresponding to Sql API's CompositePath.
 
 ### Example 1
 ```powershell
-New-AzCosmosDBSqlCompositePath -Path "/abc" -Order Ascending
-```
+PS C:\> New-AzCosmosDBSqlCompositePath -Path "/abc" -Order Ascending
 
-```output
 Path Order
 ---- -----
 /abc Ascending
