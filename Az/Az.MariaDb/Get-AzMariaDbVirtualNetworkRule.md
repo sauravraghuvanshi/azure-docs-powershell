@@ -39,8 +39,10 @@ Gets a virtual network rule.
 
 ### Example 1: List all virtual network rule under a MariaDB
 ```powershell
-PS C:\> Get-AzMariaDbVirtualNetworkRule -ResourceGroupName mariadb-test-qu5ov0 -ServerName mariadb-test-9pebvn
+Get-AzMariaDbVirtualNetworkRule -ResourceGroupName mariadb-test-qu5ov0 -ServerName mariadb-test-9pebvn
+```
 
+```output
 Name            Type
 ----            ----
 vnetrule-QdMJpU Microsoft.DBforMariaDB/servers/virtualNetworkRules
@@ -51,8 +53,10 @@ This command lists all virtual network rule under a MariaDB.
 
 ### Example 2: Get virtual network rule under a MariaDB
 ```powershell
-PS C:\> Get-AzMariaDbVirtualNetworkRule -ResourceGroupName mariadb-test-qu5ov0 -ServerName mariadb-test-9pebvn -Name vnetrule-QdMJpU
+Get-AzMariaDbVirtualNetworkRule -ResourceGroupName mariadb-test-qu5ov0 -ServerName mariadb-test-9pebvn -Name vnetrule-QdMJpU
+```
 
+```output
 Name            Type
 ----            ----
 vnetrule-QdMJpU Microsoft.DBforMariaDB/servers/virtualNetworkRules
@@ -189,7 +193,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IMariaDbIdentity>: Identity Parameter
+INPUTOBJECT `<IMariaDbIdentity>`: Identity Parameter
   - `[ConfigurationName <String>]`: The name of the server configuration.
   - `[DatabaseName <String>]`: The name of the database.
   - `[FirewallRuleName <String>]`: The name of the server firewall rule.

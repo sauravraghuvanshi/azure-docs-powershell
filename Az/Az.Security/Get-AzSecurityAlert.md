@@ -48,9 +48,10 @@ Gets security alerts that were detected by Azure Security Center
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzSecurityAlert
+Get-AzSecurityAlert
+```
 
-
+```output
 Id                 : /subscriptions/487bb485-b5b0-471e-9c0d-10717612f869/resourceGroups/RSG/providers/Microsoft.Securit
                      y/locations/centralus/alerts/2518710774294070750_FFF23C70-80EF-4A8B-9122-507B0EA8DFFF
 Name               : 2518710774294070750_FFF23C70-80EF-4A8B-9122-507B0EA8DFFF
@@ -186,9 +187,10 @@ Gets all the security alerts that were detected on resources inside a subscripti
 
 ### Example 2
 ```powershell
-PS C:\> Get-AzSecurityAlert -ResourceGroupName "myService1"
+Get-AzSecurityAlert -ResourceGroupName "myService1"
+```
 
-
+```output
 Id                 : /subscriptions/487bb485-b5b0-471e-9c0d-10717612f869/resourceGroups/myService1/providers/Microsoft.
                      Security/locations/westeurope/alerts/2518675199999999999_0501972d-06cd-47c7-a276-036f67d89262
 Name               : 2518675199999999999_0501972d-06cd-47c7-a276-036f67d89262
@@ -314,9 +316,10 @@ Gets all the security alerts that were detected on resources inside the "myServi
 
 ### Example 3
 ```powershell
-PS C:\> Get-AzSecurityAlert -ResourceGroupName "myService1" -Location "westeurope" -Name "2518675235999999999_0cd957d9-8101-47f7-88cc-0c5d0ebdbfd0"
+Get-AzSecurityAlert -ResourceGroupName "myService1" -Location "westeurope" -Name "2518675235999999999_0cd957d9-8101-47f7-88cc-0c5d0ebdbfd0"
+```
 
-
+```output
 Id                 : /subscriptions/487bb485-b5b0-471e-9c0d-10717612f869/resourceGroups/myService1/providers/Microsoft.
                      Security/locations/westeurope/alerts/2518675235999999999_0cd957d9-8101-47f7-88cc-0c5d0ebdbfd0
 Name               : 2518675235999999999_0cd957d9-8101-47f7-88cc-0c5d0ebdbfd0

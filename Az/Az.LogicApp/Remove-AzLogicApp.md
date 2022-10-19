@@ -31,8 +31,8 @@ If you omit a required template parameter, the cmdlet prompts you for the value.
 ## EXAMPLES
 
 ### Example 1: Remove a logic app
-```
-PS C:\>Remove-AzLogicApp -ResourceGroupName "ResourceGroup11" -Name "LogicApp03" -Force
+```powershell
+Remove-AzLogicApp -ResourceGroupName "ResourceGroup11" -Name "LogicApp03" -Force
 ```
 
 This command removes a logic app from a resource group.

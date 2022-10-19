@@ -1,92 +1,54 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.Cdn.dll-Help.xml
+external help file: 
 Module Name: Az.Cdn
-ms.assetid: 6477ADC3-0831-493D-8904-F1D787145DD3
 online version: https://docs.microsoft.com/powershell/module/az.cdn/start-azcdnendpoint
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Start-AzCdnEndpoint.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Start-AzCdnEndpoint.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/Start-AzCdnEndpoint.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/Start-AzCdnEndpoint.md
 ---
 
 # Start-AzCdnEndpoint
 
 ## SYNOPSIS
-Starts a CDN endpoint.
+Starts an existing CDN endpoint that is on a stopped state.
 
 ## SYNTAX
 
-### ByFieldsParameterSet (Default)
+### Start (Default)
 ```
-Start-AzCdnEndpoint -EndpointName <String> -ProfileName <String> -ResourceGroupName <String> [-PassThru]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Start-AzCdnEndpoint -Name <String> -ProfileName <String> -ResourceGroupName <String>
+ [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
-### ByObjectParameterSet
+### StartViaIdentity
 ```
-Start-AzCdnEndpoint -CdnEndpoint <PSEndpoint> [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Start-AzCdnEndpoint -InputObject <ICdnIdentity> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Start-AzCdnEndpoint** cmdlet starts an Azure Content Delivery Network (CDN) endpoint.
+Starts an existing CDN endpoint that is on a stopped state.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Start an AzureCDN Endpoint under the AzureCDN profile
 ```powershell
-Start-AzCdnEndpoint -ResourceGroupName myresourcegroup -ProfileName mycdnprofile -EndpointName myendpoint
+Start-AzCdnEndpoint -ResourceGroupName testps-rg-da16jm -ProfileName cdn001 -Name endptest001
 ```
+
+```output
+Location Name        ResourceGroupName
+-------- ----        -----------------
+WestUs   endptest001 testps-rg-da16jm
+```
+
+Start an AzureCDN Endpoint under the AzureCDN profile
 
 ## PARAMETERS
 
-### -CdnEndpoint
-Specifies the endpoint that this cmdlet starts.
-
-```yaml
-Type: Microsoft.Azure.Commands.Cdn.Models.Endpoint.PSEndpoint
-Parameter Sets: ByObjectParameterSet
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -EndpointName
-Specifies the name of the endpoint that this cmdlet starts.
-
-```yaml
-Type: System.String
-Parameter Sets: ByFieldsParameterSet
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PassThru
-Returns an object representing the item with which you are working.
-By default, this cmdlet does not generate any output.
+### -AsJob
+Run the command as a job
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -96,16 +58,77 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with Azure.
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.ICdnIdentity
+Parameter Sets: StartViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Name
+Name of the endpoint under the profile which is unique globally.
+
+```yaml
+Type: System.String
+Parameter Sets: Start
+Aliases: EndpointName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoWait
+Run the command asynchronously
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ProfileName
-Specifies the name of the profile to which the endpoint belongs.
+Name of the CDN profile which is unique within the resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByFieldsParameterSet
+Parameter Sets: Start
 Aliases:
 
 Required: True
@@ -116,16 +139,31 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Specifies the name of the resource group to which the endpoint belongs.
+Name of the Resource group within the Azure subscription.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByFieldsParameterSet
+Parameter Sets: Start
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubscriptionId
+Azure Subscription ID.
+
+```yaml
+Type: System.String
+Parameter Sets: Start
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -140,7 +178,7 @@ Aliases: cf
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -156,7 +194,7 @@ Aliases: wi
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -166,26 +204,35 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.Commands.Cdn.Models.Endpoint.PSEndpoint
-
-### System.Management.Automation.SwitchParameter
+### Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.ICdnIdentity
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.Api20210601.IEndpoint
 
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT `<ICdnIdentity>`: Identity Parameter
+  - `[CustomDomainName <String>]`: Name of the domain under the profile which is unique globally.
+  - `[EndpointName <String>]`: Name of the endpoint under the profile which is unique globally.
+  - `[Id <String>]`: Resource identity path
+  - `[OriginGroupName <String>]`: Name of the origin group which is unique within the endpoint.
+  - `[OriginName <String>]`: Name of the origin which is unique within the profile.
+  - `[ProfileName <String>]`: Name of the Azure Front Door Standard or Azure Front Door Premium or CDN profile which is unique within the resource group.
+  - `[ResourceGroupName <String>]`: Name of the Resource group within the Azure subscription.
+  - `[RouteName <String>]`: Name of the routing rule.
+  - `[RuleName <String>]`: Name of the delivery rule which is unique within the endpoint.
+  - `[RuleSetName <String>]`: Name of the rule set under the profile which is unique globally.
+  - `[SecretName <String>]`: Name of the Secret under the profile.
+  - `[SecurityPolicyName <String>]`: Name of the security policy under the profile.
+  - `[SubscriptionId <String>]`: Azure Subscription ID.
+
 ## RELATED LINKS
-
-[Get-AzCdnEndpoint](./Get-AzCdnEndpoint.md)
-
-[New-AzCdnEndpoint](./New-AzCdnEndpoint.md)
-
-[Remove-AzCdnEndpoint](./Remove-AzCdnEndpoint.md)
-
-[Set-AzCdnEndpoint](./Set-AzCdnEndpoint.md)
-
-[Stop-AzCdnEndpoint](./Stop-AzCdnEndpoint.md)
-
 

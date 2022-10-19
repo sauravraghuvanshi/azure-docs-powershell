@@ -40,8 +40,10 @@ Set the parent device of the specified non-edge device.
 
 ### Example 1
 ```powershell
-PS C:\> Set-AzIotHubDeviceParent -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -ParentDeviceId "myParentDevice1"
+Set-AzIotHubDeviceParent -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -ParentDeviceId "myParentDevice1"
+```
 
+```output
 DeviceId                   : myDevice1
 GenerationId               : 637148941292917073
 ETag                       : "NzIyMDI4MTk3"

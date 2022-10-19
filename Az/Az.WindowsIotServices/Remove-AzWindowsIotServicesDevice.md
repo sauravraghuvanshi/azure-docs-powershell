@@ -33,7 +33,7 @@ Delete a Windows IoT Device Service.
 
 ### Example 1: Remove a Windows IoT services by name
 ```powershell
-PS C:\> Remove-AzWindowsIotServicesDevice -Name wsi-t03 -ResourceGroupName azure-rg-test
+Remove-AzWindowsIotServicesDevice -Name wsi-t03 -ResourceGroupName azure-rg-test
 
 ```
 
@@ -41,7 +41,7 @@ This command removes a Windows IoT services by name.
 
 ### Example 2: Remove a Windows IoT services by pipeline
 ```powershell
-PS C:\> Get-AzWindowsIotServicesDevice -ResourceGroupName azure-rg-test -Name wsi-t01 | Remove-AzWindowsIotServicesDevice
+Get-AzWindowsIotServicesDevice -ResourceGroupName azure-rg-test -Name wsi-t01 | Remove-AzWindowsIotServicesDevice
 
 
 ```
@@ -177,7 +177,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IWindowsIotServicesIdentity>: Identity Parameter
+INPUTOBJECT `<IWindowsIotServicesIdentity>`: Identity Parameter
   - `[DeviceName <String>]`: The name of the Windows IoT Device Service.
   - `[Id <String>]`: Resource identity path
   - `[ResourceGroupName <String>]`: The name of the resource group that contains the Windows IoT Device Service.

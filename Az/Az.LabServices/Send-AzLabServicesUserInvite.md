@@ -40,8 +40,7 @@ Operation to invite a user to a lab.
 
 ### Example 1: Send lab invite to the user.
 ```powershell
-PS C:\> Send-AzLabServicesUserInvite -ResourceGroupName "Group Name" -LabName "Lab Name" -Name "User Name" -Text "Welcome to the lab."
-
+Send-AzLabServicesUserInvite -ResourceGroupName "Group Name" -LabName "Lab Name" -UserName "User Name" -Text "Welcome to the lab."
 ```
 
 This sends an email invitation to the user with the custom text "Welcome to the lab" in the body of the email.
@@ -269,7 +268,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-USER <User>: 
+USER `<User>`: 
   - `Email <String>`: Email address of the user.
   - `[AdditionalUsageQuota <TimeSpan?>]`: The amount of usage quota time the user gets in addition to the lab usage quota.
   - `[SystemDataCreatedAt <DateTime?>]`: The timestamp of resource creation (UTC).

@@ -26,7 +26,7 @@ Get Usage of an azure container registry.
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzContainerRegistryUsage -ResourceGroupName $resourceGroupName -RegistryName $RegistryName
+Get-AzContainerRegistryUsage -ResourceGroupName $resourceGroupName -RegistryName $RegistryName
 ```
 
 Get Usage of an azure container registry.

@@ -1,10 +1,10 @@
 ---
-external help file: 
+external help file: Az.Purview-help.xml
 Module Name: Az.Purview
 online version: https://docs.microsoft.com/powershell/module/az.purview/update-azpurviewaccount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/help/Update-AzPurviewAccount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/help/Update-AzPurviewAccount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/Purview/help/Update-AzPurviewAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/Purview/help/Update-AzPurviewAccount.md
 ---
 
 # Update-AzPurviewAccount
@@ -18,14 +18,14 @@ Updates an account
 ```
 Update-AzPurviewAccount -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
  [-ManagedResourceGroupName <String>] [-PublicNetworkAccess <PublicNetworkAccess>] [-Tag <Hashtable>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-AzPurviewAccount -InputObject <IPurviewIdentity> [-ManagedResourceGroupName <String>]
  [-PublicNetworkAccess <PublicNetworkAccess>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob]
- [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-NoWait] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,8 +35,10 @@ Updates an account
 
 ### Example 1: Update a purview account
 ```powershell
-PS C:\>  Update-AzPurviewAccount -Name test-pa -ResourceGroupName test-rg -Tag @{"k"="v"} | fl 
+Update-AzPurviewAccount -Name test-pa -ResourceGroupName test-rg -Tag @{"k"="v"} | Format-List
+```
 
+```output
 CloudConnectorAwsExternalId      : xxxxxxxxxx-d074-4f8f-9d7f-10811b250738
 CreatedAt                        : 8/17/2021 6:18:57 AM
 CreatedBy                        : xxxxx.Zhou@microsoft.com
@@ -93,9 +95,11 @@ Update the tag of a purview account named 'test-pa'
 
 ### Example 2: Update a purview account by InputObject
 ```powershell
-PS C:\>  $get = Get-AzPurviewAccount -Name test-pa -ResourceGroupName test-rg 
-PS C:\> Update-AzPurviewAccount -InputObject $get -Tag @{"k"="v"}
+$get = Get-AzPurviewAccount -Name test-pa -ResourceGroupName test-rg 
+Update-AzPurviewAccount -InputObject $get -Tag @{"k"="v"}
+```
 
+```output
 CloudConnectorAwsExternalId      : xxxxxxxxxx-d074-4f8f-9d7f-10811b250738
 CreatedAt                        : 8/17/2021 6:18:57 AM
 CreatedBy                        : xxxxx.Zhou@microsoft.com
@@ -354,7 +358,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IPurviewIdentity>: Identity Parameter
+INPUTOBJECT `<IPurviewIdentity>`: Identity Parameter
   - `[AccountName <String>]`: The name of the account.
   - `[GroupId <String>]`: The group identifier.
   - `[Id <String>]`: Resource identity path
@@ -363,4 +367,3 @@ INPUTOBJECT <IPurviewIdentity>: Identity Parameter
   - `[SubscriptionId <String>]`: The subscription identifier
 
 ## RELATED LINKS
-

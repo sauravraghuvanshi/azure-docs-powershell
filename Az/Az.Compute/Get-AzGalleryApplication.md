@@ -1,5 +1,5 @@
 ---
-external help file: 
+external help file: Az.Compute-help.xml
 Module Name: Az.Compute
 online version: https://docs.microsoft.com/powershell/module/az.compute/get-azgalleryapplication
 schema: 2.0.0
@@ -17,18 +17,24 @@ Retrieves information about a gallery Application Definition.
 ### List (Default)
 ```
 Get-AzGalleryApplication -GalleryName <String> -ResourceGroupName <String> [-SubscriptionId <String[]>]
- [-DefaultProfile <PSObject>] [<CommonParameters>]
+ [-DefaultProfile <PSObject>] [-Break] [-HttpPipelineAppend <SendAsyncStep[]>]
+ [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+ [-ProxyUseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-AzGalleryApplication -GalleryName <String> -Name <String> -ResourceGroupName <String>
- [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [-Break] [-HttpPipelineAppend <SendAsyncStep[]>]
+ [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+ [-ProxyUseDefaultCredentials] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-AzGalleryApplication -InputObject <IComputeIdentity> [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzGalleryApplication -InputObject <IComputeIdentity> [-DefaultProfile <PSObject>] [-Break]
+ [-HttpPipelineAppend <SendAsyncStep[]>] [-HttpPipelinePrepend <SendAsyncStep[]>] [-Proxy <Uri>]
+ [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,21 +44,34 @@ Retrieves information about a gallery Application Definition.
 
 ### Example 1: Get a Gallery Application in a Gallery
 ```powershell
-PS C:\> Get-AzGalleryApplication -ResourceGroupName $rgName -GalleryName $galleryName -name $galleryAppName
-
+Get-AzGalleryApplication -ResourceGroupName $rgName -GalleryName $galleryName -name $galleryAppName
 ```
 
 Retrieve a Gallery Application resource with the provided Resource Group, Gallery, and Gallery Application name.
 
 ### Example 2: Get all the Gallery Applications in a Gallery
 ```powershell
-PS C:\> Get-AzGalleryApplication -GalleryName $GalleryName -ResourceGroupName $rgName
-
+Get-AzGalleryApplication -GalleryName $GalleryName -ResourceGroupName $rgName
 ```
 
 Retrieve all the Gallery Application resources in the provided Resource Group and Gallery.
 
 ## PARAMETERS
+
+### -Break
+Wait for .NET debugger to attach
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
@@ -74,10 +93,40 @@ The name of the Shared Application Gallery from which the Application Definition
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: List, Get
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HttpPipelineAppend
+SendAsync Pipeline Steps to be appended to the front of the pipeline
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.Compute.Runtime.SendAsyncStep[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HttpPipelinePrepend
+SendAsync Pipeline Steps to be prepended to the front of the pipeline
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.Compute.Runtime.SendAsyncStep[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -115,12 +164,57 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Proxy
+The URI for the proxy server to use
+
+```yaml
+Type: System.Uri
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProxyCredential
+Credentials for a proxy server to use for the remote call
+
+```yaml
+Type: System.Management.Automation.PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProxyUseDefaultCredentials
+Use the default credentials for the proxy
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ResourceGroupName
 The name of the resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: List, Get
 Aliases:
 
 Required: True
@@ -136,7 +230,7 @@ The subscription ID forms part of the URI for every service call.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get, List
+Parameter Sets: List, Get
 Aliases:
 
 Required: False
@@ -155,7 +249,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Compute.Models.Api20210701.IGalleryApplication
+### Microsoft.Azure.PowerShell.Cmdlets.Compute.Models.Api20220103.IGalleryApplication
 
 ## NOTES
 
@@ -166,12 +260,12 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IComputeIdentity>: Identity Parameter
+`INPUTOBJECT <IComputeIdentity>`: Identity Parameter
   - `[CommandId <String>]`: The command id.
   - `[GalleryApplicationName <String>]`: The name of the gallery Application Definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
-  - `[GalleryApplicationVersionName <String>]`: The name of the gallery Application Version to be created. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: <MajorVersion>.<MinorVersion>.<Patch>
+  - `[GalleryApplicationVersionName <String>]`: The name of the gallery Application Version to be created. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: `<MajorVersion>.<MinorVersion>.<Patch>`
   - `[GalleryImageName <String>]`: The name of the gallery image definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
-  - `[GalleryImageVersionName <String>]`: The name of the gallery image version to be created. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: <MajorVersion>.<MinorVersion>.<Patch>
+  - `[GalleryImageVersionName <String>]`: The name of the gallery image version to be created. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: `<MajorVersion>.<MinorVersion>.<Patch>`
   - `[GalleryName <String>]`: The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
   - `[Id <String>]`: Resource identity path
   - `[InstanceId <String>]`: The instance ID of the virtual machine.
@@ -183,4 +277,3 @@ INPUTOBJECT <IComputeIdentity>: Identity Parameter
   - `[VMScaleSetName <String>]`: The name of the VM scale set.
 
 ## RELATED LINKS
-

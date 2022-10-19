@@ -1,10 +1,10 @@
 ---
-external help file: 
+external help file: Az.Purview-help.xml
 Module Name: Az.Purview
 online version: https://docs.microsoft.com/powershell/module/az.purview/test-azpurviewaccountnameavailability
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/help/Test-AzPurviewAccountNameAvailability.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/help/Test-AzPurviewAccountNameAvailability.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/Purview/help/Test-AzPurviewAccountNameAvailability.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/Purview/help/Test-AzPurviewAccountNameAvailability.md
 ---
 
 # Test-AzPurviewAccountNameAvailability
@@ -15,8 +15,8 @@ Checks if account name is available.
 ## SYNTAX
 
 ```
-Test-AzPurviewAccountNameAvailability -Name <String> -Type <String> [-SubscriptionId <String>]
- [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Test-AzPurviewAccountNameAvailability [-SubscriptionId <String>] -Name <String> -Type <String>
+ [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -26,11 +26,13 @@ Checks if account name is available.
 
 ### Example 1: Check if account name is available
 ```powershell
-PS C:\> Test-AzPurviewAccountNameAvailability -Name test-pa -Type Tenant
+Test-AzPurviewAccountNameAvailability -Name test-pa -Type Tenant
+```
 
+```output
 Message                                                 NameAvailable Reason
 -------                                                 ------------- ------
-The name test-pa is invalid, please use another name. False         Invalid
+The name test-pa is invalid, please use another name.   False         Invalid
 ```
 
 Check if account name 'test-pa' is available.
@@ -142,4 +144,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
-

@@ -1,47 +1,134 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.Reservations.dll-Help.xml
+external help file: 
 Module Name: Az.Reservations
 online version: https://docs.microsoft.com/powershell/module/az.reservations/get-azreservationquote
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Reservations/Reservations/help/Get-AzReservationQuote.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Reservations/Reservations/help/Get-AzReservationQuote.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Reservations/help/Get-AzReservationQuote.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Reservations/help/Get-AzReservationQuote.md
 ---
 
 # Get-AzReservationQuote
 
 ## SYNOPSIS
-Get a quote for the reservation. This is passed to `New-AzReservation` to purchase.
+Calculate price for placing a `ReservationOrder`.
 
 ## SYNTAX
 
+### CalculateExpanded (Default)
 ```
-Get-AzReservationQuote -ReservedResourceType <String> -Sku <String> [-Location <String>]
- -BillingScopeId <String> -Term <String> [-BillingPlan <String>] -Quantity <Int32> -DisplayName <String>
- -AppliedScopeType <String> [-AppliedScope <String>] [-Renew <Boolean>] [-InstanceFlexibility <String>]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzReservationQuote [-AppliedScope <String[]>] [-AppliedScopeType <AppliedScopeType>]
+ [-BillingPlan <ReservationBillingPlan>] [-BillingScopeId <String>] [-DisplayName <String>]
+ [-InstanceFlexibility <InstanceFlexibility>] [-Location <String>] [-Quantity <Int32>] [-Renew]
+ [-ReservedResourceType <ReservedResourceType>] [-Sku <String>] [-Term <ReservationTerm>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Calculate
+```
+Get-AzReservationQuote -Body <IPurchaseRequest> [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Calculate price for placing a reservation order.
+Calculate price for placing a `ReservationOrder`.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Get reservation price with 'Upfront' billing plan
 ```powershell
-PS C:\> Get-AzReservationQuote -ReservedResourceType "VirtualMachines" [-Sku "standard b1"] -Location "centralus"
--BillingScopeId "/subscriptions/79c182d9-9af7-4fd5-b136-b71f0a69a1d0" -Term "P1Y" [-BillingPlan "Monthly"] -Quantity 2 [-DisplayName "demo"] -AppliedScopeType "Shared" [-AppliedScopes ""]
+Get-AzReservationQuote -AppliedScopeType 'Shared' -BillingPlan 'Upfront' -billingScopeId '/subscriptions/b0f278e1-1f18-4378-84d7-b44dfa708665' -DisplayName 'yourRIName' -Location 'westus' -Quantity 1 -ReservedResourceType 'VirtualMachines' -Sku 'Standard_b1ls' -Term 'P1Y'
 ```
 
-After get catalog, customer can get the differe product based on location. By using those infomation, check the price properly
+```output
+BillingCurrencyTotal    : {
+                            "currencyCode": "GBP",
+                            "amount": 24
+                          }
+GrandTotal              : 0
+IsBillingPartnerManaged : 
+IsTaxIncluded           : 
+NetTotal                : 0
+PaymentSchedule         : 
+PricingCurrencyTotal    : {
+                            "currencyCode": "GBP",
+                            "amount": 24
+                          }
+ReservationOrderId      : 846655fa-d9e7-4fb8-9512-3ab7367352f1
+SkuDescription          : Standard_b1ls
+SkuTitle                : Reserved VM Instance, Standard_B1ls, US West, 1 Year
+TaxTotal                : 0
+```
+
+Get reservation price with 'Upfront' billing plan
+
+### Example 2: Get reservation price with 'Monthly' billing plan
+```powershell
+Get-AzReservationQuote -AppliedScopeType 'Shared' -BillingPlan 'Monthly' -billingScopeId '/subscriptions/b0f278e1-1f18-4378-84d7-b44dfa708665' -DisplayName 'yourRIName' -Location 'westus' -Quantity 1 -ReservedResourceType 'VirtualMachines' -Sku 'Standard_b1ls' -Term 'P1Y'
+```
+
+```output
+BillingCurrencyTotal    : {
+                            "currencyCode": "GBP",
+                            "amount": 24
+                          }
+GrandTotal              : 0
+IsBillingPartnerManaged : 
+IsTaxIncluded           : 
+NetTotal                : 0
+PaymentSchedule         : {{
+                            "dueDate": "2022-07-07",
+                            "pricingCurrencyTotal": {
+                              "currencyCode": "GBP",
+                              "amount": 2
+                            },
+                            "billingCurrencyTotal": {
+                              "currencyCode": "GBP",
+                              "amount": 2
+                            },
+                            "status": "Scheduled"
+                          }, {
+                            "dueDate": "2022-08-07",
+                            "pricingCurrencyTotal": {
+                              "currencyCode": "GBP",
+                              "amount": 2
+                            },
+                            "status": "Scheduled"
+                          }, {
+                            "dueDate": "2022-09-07",
+                            "pricingCurrencyTotal": {
+                              "currencyCode": "GBP",
+                              "amount": 2
+                            },
+                            "status": "Scheduled"
+                          }, {
+                            "dueDate": "2022-10-07",
+                            "pricingCurrencyTotal": {
+                              "currencyCode": "GBP",
+                              "amount": 2
+                            },
+                            "status": "Scheduled"
+                          }…}
+PricingCurrencyTotal    : {
+                            "currencyCode": "GBP",
+                            "amount": 24
+                          }
+ReservationOrderId      : 23d4106a-8ec0-4709-839f-0e8073459e83
+SkuDescription          : Standard_b1ls
+SkuTitle                : Reserved VM Instance, Standard_B1ls, US West, 1 Year
+TaxTotal                : 0
+```
+
+Get reservation price with 'Monthly' billing plan
 
 ## PARAMETERS
 
 ### -AppliedScope
-Subscription that the benefit will be applied. Required if --applied-scope-type is Single. Do not specify if --applied-scope-type is Shared.
+List of the subscriptions that the benefit will be applied.
+Do not specify if AppliedScopeType is Shared.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: System.String[]
+Parameter Sets: CalculateExpanded
 Aliases:
 
 Required: False
@@ -52,14 +139,14 @@ Accept wildcard characters: False
 ```
 
 ### -AppliedScopeType
-Type of the Applied Scope to update the reservation with "Single" or "Shared"
+Type of the Applied Scope.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: Microsoft.Azure.PowerShell.Cmdlets.Reservations.Support.AppliedScopeType
+Parameter Sets: CalculateExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -67,11 +154,11 @@ Accept wildcard characters: False
 ```
 
 ### -BillingPlan
-The billing plan options available for this SKU. "Monthly" or "Upfront"
+Represent the billing plans.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: Microsoft.Azure.PowerShell.Cmdlets.Reservations.Support.ReservationBillingPlan
+Parameter Sets: CalculateExpanded
 Aliases:
 
 Required: False
@@ -82,17 +169,33 @@ Accept wildcard characters: False
 ```
 
 ### -BillingScopeId
-Subscription that will be charged for purchasing Reservation.
+Subscription that will be charged for purchasing Reservation
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: CalculateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Body
+.
+To construct, see NOTES section for BODY properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.Reservations.Models.Api20220301.IPurchaseRequest
+Parameter Sets: Calculate
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -100,9 +203,9 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -112,14 +215,14 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Friendly name for user to easily identified the reservation.
+Friendly name of the Reservation
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: CalculateExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -127,11 +230,12 @@ Accept wildcard characters: False
 ```
 
 ### -InstanceFlexibility
-Type of the Instance Flexibility to update the reservation with.
+Turning this on will apply the reservation discount to other VMs in the same VM size group.
+Only specify for VirtualMachines reserved resource type.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: Microsoft.Azure.PowerShell.Cmdlets.Reservations.Support.InstanceFlexibility
+Parameter Sets: CalculateExpanded
 Aliases:
 
 Required: False
@@ -142,11 +246,11 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Location that the SKU is available.
+The Azure Region where the reserved resource lives.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: CalculateExpanded
 Aliases:
 
 Required: False
@@ -157,14 +261,14 @@ Accept wildcard characters: False
 ```
 
 ### -Quantity
-Quantity of product for calculating price or purchasing.
+Quantity of the SKUs that are part of the Reservation.
 
 ```yaml
-Type: System.Nullable`1[System.Int32]
-Parameter Sets: (All)
+Type: System.Int32
+Parameter Sets: CalculateExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -172,11 +276,11 @@ Accept wildcard characters: False
 ```
 
 ### -Renew
-Set this to true will automatically purchase a new reservation on the expiration date time.
+Setting this to true will automatically purchase a new reservation on the expiration date time.
 
 ```yaml
-Type: System.Nullable`1[System.Boolean]
-Parameter Sets: (All)
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CalculateExpanded
 Aliases:
 
 Required: False
@@ -187,14 +291,14 @@ Accept wildcard characters: False
 ```
 
 ### -ReservedResourceType
-Type of the resource for which the skus should be provided.
+The type of the resource that is being reserved.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: Microsoft.Azure.PowerShell.Cmdlets.Reservations.Support.ReservedResourceType
+Parameter Sets: CalculateExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -202,14 +306,14 @@ Accept wildcard characters: False
 ```
 
 ### -Sku
-Sku name, get the sku list by using command az reservations catalog show
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: CalculateExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -217,14 +321,45 @@ Accept wildcard characters: False
 ```
 
 ### -Term
-Available reservation terms for this resource.
+Represent the term of Reservation.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: Microsoft.Azure.PowerShell.Cmdlets.Reservations.Support.ReservationTerm
+Parameter Sets: CalculateExpanded
 Aliases:
 
-Required: True
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -236,12 +371,34 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
+### Microsoft.Azure.PowerShell.Cmdlets.Reservations.Models.Api20220301.IPurchaseRequest
 
 ## OUTPUTS
 
-### Microsoft.Azure.Management.Reservations.Models.CalculatePriceResponse
+### Microsoft.Azure.PowerShell.Cmdlets.Reservations.Models.Api20220301.ICalculatePriceResponseProperties
 
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+`BODY <IPurchaseRequest>`: .
+  - `[AppliedScopeType <AppliedScopeType?>]`: Type of the Applied Scope.
+  - `[AppliedScopes <String[]>]`: List of the subscriptions that the benefit will be applied. Do not specify if AppliedScopeType is Shared.
+  - `[BillingPlan <ReservationBillingPlan?>]`: Represent the billing plans.
+  - `[BillingScopeId <String>]`: Subscription that will be charged for purchasing Reservation
+  - `[DisplayName <String>]`: Friendly name of the Reservation
+  - `[InstanceFlexibility <InstanceFlexibility?>]`: Turning this on will apply the reservation discount to other VMs in the same VM size group. Only specify for VirtualMachines reserved resource type.
+  - `[Location <String>]`: The Azure Region where the reserved resource lives.
+  - `[Quantity <Int32?>]`: Quantity of the SKUs that are part of the Reservation.
+  - `[Renew <Boolean?>]`: Setting this to true will automatically purchase a new reservation on the expiration date time.
+  - `[ReservedResourceType <ReservedResourceType?>]`: The type of the resource that is being reserved.
+  - `[Sku <String>]`: 
+  - `[Term <ReservationTerm?>]`: Represent the term of Reservation.
+
 ## RELATED LINKS
+

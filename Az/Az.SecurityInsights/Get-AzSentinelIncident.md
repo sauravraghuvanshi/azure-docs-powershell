@@ -1,83 +1,76 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.dll-Help.xml
+external help file: 
 Module Name: Az.SecurityInsights
 online version: https://docs.microsoft.com/powershell/module/az.securityinsights/get-azsentinelincident
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Get-AzSentinelIncident.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Get-AzSentinelIncident.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Get-AzSentinelIncident.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Get-AzSentinelIncident.md
 ---
 
 # Get-AzSentinelIncident
 
 ## SYNOPSIS
-Gets one or more Azure Sentinel Incidents.
+Gets an incident.
 
 ## SYNTAX
 
-### WorkspaceScope (Default)
+### List (Default)
 ```
-Get-AzSentinelIncident -ResourceGroupName <String> -WorkspaceName <String> [-Filter <String>]
- [-OrderBy <String>] [-Max <Int32>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
-```
-
-### IncidentId
-```
-Get-AzSentinelIncident -ResourceGroupName <String> -WorkspaceName <String> [-IncidentId <String>]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzSentinelIncident -ResourceGroupName <String> -WorkspaceName <String> [-SubscriptionId <String[]>]
+ [-Filter <String>] [-Orderby <String>] [-SkipToken <String>] [-Top <Int32>] [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
 ```
 
-### ResourceId
+### Get
 ```
-Get-AzSentinelIncident -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzSentinelIncident -Id <String> -ResourceGroupName <String> -WorkspaceName <String>
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-AzSentinelIncident -InputObject <ISecurityInsightsIdentity> [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-AzSentinelIncident** cmdlet gets a specific or multiple Incidents from the specified workspace.
-If you specify the *IncidentId* parameter, a single **Incident** object is returned.
-If you do not specify the *IncidentId* parameter, an array containing Incidents in the specified workspace is returned.
-Default, the module returns 1000 incidents. To fetch more than 1000, use the -Max parameter.
-You can use the **Incident** object to update the Incident. For example you can add comments, change the severity, assign an owner, etc. to the **Incident**.
-
-*Note: An IncidentId is in the following format: c464bcd7-daee-47ff-ac58-1fbb73cf1d6b and is not the same as the Incident ID (number) as in the Azure Sentinel Incident view. The IncidentId can be found in the incident details view, in the "Incident link" field, represented in the last part of the https link.*
+Gets an incident.
 
 ## EXAMPLES
 
-### Example 1
-Get all Azure Sentinel Incidents using a connection object:
-
-
+### Example 1: List all Incidents
 ```powershell
-$SentinelConnection = @{
-    ResourceGroupName = "myResourceGroupName"
-    WorkspaceName = "myWorkspaceName"
-}
-Get-AzSentinelIncident @SentinelConnection
+ Get-AzSentinelIncident -ResourceGroupName "myResourceGroupName" -workspaceName "myWorkspaceName"
 ```
 
-This example gets all the the Incidents using a connection object
-
-### Example 2
-```powershell
-PS C:\> $Incidents = Get-AzSentinelIncident -ResourceGroupName "myResourceGroup" -WorkspaceName "myWorkspaceName"
+```output
+Title        	: (Preview) TI map IP entity to AzureActivity
+Description  	: Identifies a match in AzureActivity from any IP IOC from TI
+Severity     	: Medium
+Number      	: 754
+Label        	: {}
+ProviderName  : Azure Sentinel
+Name         	: f5409f55-7dd8-4c73-9981-4627520b2db
 ```
 
-This example gets all of the Incidents in the specified workspace, and then stores it in the $Incidents variable.
+This command lists all Incidents under a Microsoft Sentinel workspace.
 
-### Example 3
+### Example 2: Get an Incident
 ```powershell
-PS C:\> $Incident = Get-AzSentinelIncident -ResourceGroupName "myResourceGroup" -WorkspaceName "myWorkspaceName" -IncidentId "myIncidentId"
+ Get-AzSentinelIncident -ResourceGroupName "myResourceGroupName" -workspaceName "myWorkspaceName" -Id "f5409f55-7dd8-4c73-9981-4627520b2db"
 ```
 
-This example gets a specific Incident in the specified workspace, and then stores it in the $Incident variable.<br/>
-*Please note that IncidentId is in this format: 168d330b-219b-4191-a5b1-742c211adb05*
-
-### Example 4
-```powershell
-Get-AzSentinelIncident @SentinelConnection | Where-Object {$_.Title -eq "Failed AzureAD logons but success logon to host"}
+```output
+Title        	: (Preview) TI map IP entity to AzureActivity
+Description  	: Identifies a match in AzureActivity from any IP IOC from TI
+Severity     	: Medium
+Number      	: 754
+Label        	: {}
+ProviderName  : Azure Sentinel
+Name         	: f5409f55-7dd8-4c73-9981-4627520b2db
 ```
 
-This example uses a connection object and returns incidents with a specific title. <br/>
-Using a **Where-Object** condition you can retrieve incidents with a specific title, status, severity, owner, etc.
+This command gets an Incident.
 
 ## PARAMETERS
 
@@ -85,9 +78,9 @@ Using a **Where-Object** condition you can retrieve incidents with a specific ti
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -98,10 +91,11 @@ Accept wildcard characters: False
 
 ### -Filter
 Filters the results, based on a Boolean condition.
+Optional.
 
 ```yaml
 Type: System.String
-Parameter Sets: WorkspaceScope
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -111,42 +105,44 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IncidentId
-Incident Id.
+### -Id
+Incident ID
 
 ```yaml
 Type: System.String
-Parameter Sets: IncidentId
-Aliases:
+Parameter Sets: Get
+Aliases: IncidentId
 
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Max
-Maximum number of records to return
-
-```yaml
-Type: System.Int32
-Parameter Sets: WorkspaceScope
-Aliases:
-
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -OrderBy
-Sorts the results
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.ISecurityInsightsIdentity
+Parameter Sets: GetViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Orderby
+Sorts the results.
+Optional.
 
 ```yaml
 Type: System.String
-Parameter Sets: WorkspaceScope
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -157,11 +153,12 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Resource group name.
+The name of the resource group.
+The name is case insensitive.
 
 ```yaml
 Type: System.String
-Parameter Sets: WorkspaceScope, IncidentId
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -171,27 +168,60 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResourceId
-Resource Id.
+### -SkipToken
+Skiptoken is only used if a previous operation returned a partial result.
+If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.
+Optional.
 
 ```yaml
 Type: System.String
-Parameter Sets: ResourceId
+Parameter Sets: List
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubscriptionId
+The ID of the target subscription.
+
+```yaml
+Type: System.String[]
+Parameter Sets: Get, List
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Returns only the first n results.
+Optional.
+
+```yaml
+Type: System.Int32
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -WorkspaceName
-Workspace Name.
+The name of the workspace.
 
 ```yaml
 Type: System.String
-Parameter Sets: WorkspaceScope, IncidentId
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -206,10 +236,44 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String
+### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.ISecurityInsightsIdentity
+
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.SecurityInsights.Models.Incidents.PSSentinelIncident
+### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.IIncident
+
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+`INPUTOBJECT <ISecurityInsightsIdentity>`: Identity Parameter
+  - `[ActionId <String>]`: Action ID
+  - `[AlertRuleTemplateId <String>]`: Alert rule template ID
+  - `[AutomationRuleId <String>]`: Automation rule ID
+  - `[BookmarkId <String>]`: Bookmark ID
+  - `[ConsentId <String>]`: consent ID
+  - `[DataConnectorId <String>]`: Connector ID
+  - `[EntityId <String>]`: entity ID
+  - `[EntityQueryId <String>]`: entity query ID
+  - `[EntityQueryTemplateId <String>]`: entity query template ID
+  - `[Id <String>]`: Resource identity path
+  - `[IncidentCommentId <String>]`: Incident comment ID
+  - `[IncidentId <String>]`: Incident ID
+  - `[MetadataName <String>]`: The Metadata name.
+  - `[Name <String>]`: Threat intelligence indicator name field.
+  - `[RelationName <String>]`: Relation Name
+  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
+  - `[RuleId <String>]`: Alert rule ID
+  - `[SentinelOnboardingStateName <String>]`: The Sentinel onboarding state name. Supports - default
+  - `[SettingsName <String>]`: The setting name. Supports - Anomalies, EyesOn, EntityAnalytics, Ueba
+  - `[SourceControlId <String>]`: Source control Id
+  - `[SubscriptionId <String>]`: The ID of the target subscription.
+  - `[WorkspaceName <String>]`: The name of the workspace.
+
 ## RELATED LINKS
+

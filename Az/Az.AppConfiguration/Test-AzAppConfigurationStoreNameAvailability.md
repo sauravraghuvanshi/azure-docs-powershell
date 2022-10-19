@@ -1,10 +1,10 @@
 ---
-external help file: 
+external help file: Az.AppConfiguration-help.xml
 Module Name: Az.AppConfiguration
 online version: https://docs.microsoft.com/powershell/module/az.appconfiguration/test-azappconfigurationstorenameavailability
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/Test-AzAppConfigurationStoreNameAvailability.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/Test-AzAppConfigurationStoreNameAvailability.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/AppConfiguration/help/Test-AzAppConfigurationStoreNameAvailability.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/AppConfiguration/help/Test-AzAppConfigurationStoreNameAvailability.md
 ---
 
 # Test-AzAppConfigurationStoreNameAvailability
@@ -15,8 +15,8 @@ Checks whether the configuration store name is available for use.
 ## SYNTAX
 
 ```
-Test-AzAppConfigurationStoreNameAvailability -Name <String> [-SubscriptionId <String>]
- [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Test-AzAppConfigurationStoreNameAvailability [-SubscriptionId <String>] -Name <String>
+ [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -25,14 +25,14 @@ Checks whether the configuration store name is available for use.
 ## EXAMPLES
 
 ### Example 1: Test availability of the app configuration store name
-
 ```powershell
 Test-AzAppConfigurationStoreNameAvailability -Name appconfig-test01
 ```
+
 ```output
-Message                               NameAvailable Reason
--------                               ------------- ------
-The specified name is already in use. False         AlreadyExists
+Message                          NameAvailable Reason
+-------                          ------------- ------
+The specified name is available. True
 ```
 
 This command tests availability of the app configuration store name.
@@ -122,11 +122,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Models.Api20200601.INameAvailabilityStatus
+### Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Models.Api20220501.INameAvailabilityStatus
 
 ## NOTES
 
 ALIASES
 
 ## RELATED LINKS
-

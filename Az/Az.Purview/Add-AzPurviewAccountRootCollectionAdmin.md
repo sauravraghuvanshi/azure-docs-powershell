@@ -1,10 +1,10 @@
 ---
-external help file: 
+external help file: Az.Purview-help.xml
 Module Name: Az.Purview
 online version: https://docs.microsoft.com/powershell/module/az.purview/add-azpurviewaccountrootcollectionadmin
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/help/Add-AzPurviewAccountRootCollectionAdmin.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/help/Add-AzPurviewAccountRootCollectionAdmin.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/Purview/help/Add-AzPurviewAccountRootCollectionAdmin.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/Purview/help/Add-AzPurviewAccountRootCollectionAdmin.md
 ---
 
 # Add-AzPurviewAccountRootCollectionAdmin
@@ -16,14 +16,15 @@ Add the administrator for root collection associated with this account.
 
 ### AddExpanded (Default)
 ```
-Add-AzPurviewAccountRootCollectionAdmin -AccountName <String> -ResourceGroupName <String> -ObjectId <String>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Add-AzPurviewAccountRootCollectionAdmin -AccountName <String> -ResourceGroupName <String>
+ [-SubscriptionId <String>] -ObjectId <String> [-DefaultProfile <PSObject>] [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### AddViaIdentityExpanded
 ```
 Add-AzPurviewAccountRootCollectionAdmin -InputObject <IPurviewIdentity> -ObjectId <String>
- [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DefaultProfile <PSObject>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,16 +34,15 @@ Add the administrator for root collection associated with this account.
 
 ### Example 1: Add the administrator for root collection
 ```powershell
-PS C:\> Add-AzPurviewAccountRootCollectionAdmin -AccountName test-pa -ResourceGroupName test-rg -ObjectId xxxxxxxx-5be9-4f43-abd2-04561777c8b0
-
+Add-AzPurviewAccountRootCollectionAdmin -AccountName test-pa -ResourceGroupName test-rg -ObjectId xxxxxxxx-5be9-4f43-abd2-04561777c8b0
 ```
 
 Add the administrator for root collection associated with the account named 'test-pa'.
 
 ### Example 2: Add the administrator for root collection by InputObject
 ```powershell
-PS C:\>  $got = Get-AzPurviewAccount -Name test-pa -ResourceGroupName test-rg
-PS C:\>  Add-AzPurviewAccountRootCollectionAdmin -InputObject $got -ObjectId xxxxxxxx-5be9-4f43-abd2-04561777c8b0
+$got = Get-AzPurviewAccount -Name test-pa -ResourceGroupName test-rg
+Add-AzPurviewAccountRootCollectionAdmin -InputObject $got -ObjectId xxxxxxxx-5be9-4f43-abd2-04561777c8b0
 ```
 
 Add the administrator for root collection associated with the account named 'test-pa' by InputObject.
@@ -206,7 +206,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IPurviewIdentity>: Identity Parameter
+INPUTOBJECT `<IPurviewIdentity>`: Identity Parameter
   - `[AccountName <String>]`: The name of the account.
   - `[GroupId <String>]`: The group identifier.
   - `[Id <String>]`: Resource identity path
@@ -215,4 +215,3 @@ INPUTOBJECT <IPurviewIdentity>: Identity Parameter
   - `[SubscriptionId <String>]`: The subscription identifier
 
 ## RELATED LINKS
-

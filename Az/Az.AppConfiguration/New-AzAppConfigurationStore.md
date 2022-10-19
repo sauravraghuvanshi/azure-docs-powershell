@@ -1,10 +1,10 @@
 ---
-external help file: 
+external help file: Az.AppConfiguration-help.xml
 Module Name: Az.AppConfiguration
 online version: https://docs.microsoft.com/powershell/module/az.appconfiguration/new-azappconfigurationstore
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/New-AzAppConfigurationStore.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/New-AzAppConfigurationStore.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/AppConfiguration/help/New-AzAppConfigurationStore.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/AppConfiguration/help/New-AzAppConfigurationStore.md
 ---
 
 # New-AzAppConfigurationStore
@@ -15,9 +15,11 @@ Creates a configuration store with the specified parameters.
 ## SYNTAX
 
 ```
-New-AzAppConfigurationStore -Name <String> -ResourceGroupName <String> -Location <String> -Sku <String>
- [-SubscriptionId <String>] [-IdentityType <IdentityType>] [-Tag <Hashtable>]
- [-UserAssignedIdentity <String[]>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
+New-AzAppConfigurationStore -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
+ -Location <String> -Sku <String> [-CreateMode <CreateMode>] [-DisableLocalAuth] [-EnablePurgeProtection]
+ [-EncryptionKeyIdentifier <String>] [-IdentityType <IdentityType>] [-KeyVaultIdentityClientId <String>]
+ [-PublicNetworkAccess <PublicNetworkAccess>] [-SoftDeleteRetentionInDay <Int32>] [-Tag <Hashtable>]
+ [-UserAssignedIdentity <String[]>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -26,62 +28,37 @@ Creates a configuration store with the specified parameters.
 
 ## EXAMPLES
 
-### Example 1: Create an app configuration store
+### Example 1: Creates a configuration store with the specified parameters.
 ```powershell
-New-AzAppConfigurationStore -Name appconfig-test03 -ResourceGroupName azpwsh-manual-test -Location eastus -Sku free
+New-AzAppConfigurationStore -Name azpstest-appstore -ResourceGroupName azpstest_gp -Location eastus -Sku Standard
 ```
+
 ```output
-Location Name             Type
--------- ----             ----
-eastus   appconfig-test03 Microsoft.AppConfiguration/configurationStores
+Location Name              ResourceGroupName
+-------- ----              -----------------
+eastus   azpstest-appstore azpstest_gp
 ```
 
-This command creates an app configuration store.
+Creates a configuration store with the specified parameters.
 
-### Example 2: Create an app configuration with the IdentityType set to "UserAssigned"
+### Example 2: Recover one deleted store.
 ```powershell
-$assignedIdentity = New-AzUserAssignedIdentity -ResourceGroupName azpwsh-manual-test -Name assignedIdentity
+$storeName = "azpstest-appstore-recover"
+$resourceGroupName = "azpstest_gp"
+$location = "eastus"
+New-AzAppConfigurationStore -Name $storeName -ResourceGroupName $resourceGroupName -Location $location -Sku Standard
+Remove-AzAppConfigurationStore -Name $storeName -ResourceGroupName $resourceGroupName
+Get-AzAppConfigurationDeletedStore -Location $location -Name $storeName
+New-AzAppConfigurationStore -Name $storeName -ResourceGroupName $resourceGroupName -Location $location -Sku Standard -CreateMode 'Recover'
 ```
-```powershell
-New-AzAppConfigurationStore -Name appconfig-test10 -ResourceGroupName azpwsh-manual-test -Location eastus -Sku standard -IdentityType "UserAssigned" -UserAssignedIdentity $assignedIdentity.Id
-```
+
 ```output
-Location Name             Type
--------- ----             ----
-eastus   appconfig-test03 Microsoft.AppConfiguration/configurationStores
+Location Name                      ResourceGroupName
+-------- ----                      -----------------
+eastus   azpstest-appstore-recover azpstest_gp
 ```
 
-This command creates an app configuration and assign a user-assigned managed identity to it.
-See the example of `Update-AzAppConfigurationStore` for the following steps to enable CMK (cusomer managed key).
-
-### Example 3: Create an app configuration with the IdentityType set to "SystemAssigned" 
-```powershell
-New-AzAppConfigurationStore -Name appconfig-test11 -ResourceGroupName azpwsh-manual-test -Location eastus -Sku standard -IdentityType "SystemAssigned"
-```
-```output
-Location Name             Type
--------- ----             ----
-eastus   appconfig-test11 Microsoft.AppConfiguration/configurationStores
-```
-
-This command creates an app configuration and enables the system-assigned managed identity associated with the resource.
-See the example of `Update-AzAppConfigurationStore` for the following steps to enable CMK (cusomer managed key).
-
-### Example 4: Create an app configuration with the IdentityType set to "SystemAssigned, UserAssigned"
-```powershell
-$assignedIdentity = New-AzUserAssignedIdentity -ResourceGroupName azpwsh-manual-test -Name assignedIdentity
-```
-```powershell
-New-AzAppConfigurationStore -Name appconfig-test10 -ResourceGroupName azpwsh-manual-test -Location eastus -Sku standard -IdentityType "SystemAssigned, UserAssigned" -UserAssignedIdentity $assignedIdentity.Id
-```
-```output
-Location Name             Type
--------- ----             ----
-eastus   appconfig-test10 Microsoft.AppConfiguration/configurationStores
-```
-
-You can enable system-assigned managed identity and give user-assigned identities at the same time.
-See the example of `Update-AzAppConfigurationStore` for the following steps to enable CMK (cusomer managed key).
+Recover one deleted store.
 
 ## PARAMETERS
 
@@ -90,6 +67,21 @@ Run the command as a job
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CreateMode
+Indicates whether the configuration store need to be recovered.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Support.CreateMode
 Parameter Sets: (All)
 Aliases:
 
@@ -115,9 +107,54 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DisableLocalAuth
+Disables all authentication methods other than AAD authentication.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnablePurgeProtection
+Property specifying whether protection against purge is enabled for this configuration store.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EncryptionKeyIdentifier
+The URI of the key vault key used to encrypt data.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -IdentityType
 The type of managed identity used.
-The type 'SystemAssignedAndUserAssigned' includes both an implicitly created identity and a set of user-assigned identities.
+The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user-assigned identities.
 The type 'None' will remove any identities.
 
 ```yaml
@@ -132,9 +169,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -KeyVaultIdentityClientId
+The client id of the identity which will be used to access key vault.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Location
-The location of the resource.
-This cannot be changed after the resource is created.
+The geo-location where the resource lives
 
 ```yaml
 Type: System.String
@@ -178,6 +229,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PublicNetworkAccess
+Control permission for data plane traffic coming from public networks while private endpoint is enabled.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Support.PublicNetworkAccess
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ResourceGroupName
 The name of the resource group to which the container registry belongs.
 
@@ -208,6 +274,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SoftDeleteRetentionInDay
+The amount of time in days that the configuration store will be retained when it is soft deleted.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -SubscriptionId
 The Microsoft Azure subscription ID.
 
@@ -224,7 +305,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tag
-The tags of the resource.
+Resource tags.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -292,15 +373,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Models.Api20200601.IConfigurationStore
+### Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Models.Api20220501.IConfigurationStore
 
 ## NOTES
 
 ALIASES
 
 ## RELATED LINKS
-
-
-
-[New-AzUserAssignedIdentity](https://docs.microsoft.com/powershell/module/az.managedserviceidentity/new-azuserassignedidentity?view=azps-4.4.0)
-

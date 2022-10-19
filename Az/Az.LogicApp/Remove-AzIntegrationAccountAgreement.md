@@ -31,8 +31,8 @@ If you omit a required template parameter, the cmdlet prompts you for the value.
 ## EXAMPLES
 
 ### Example 1: Remove an integration account agreement by name
-```
-PS C:\>Remove-AzIntegrationAccountAgreement -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31" -AgreementName "IntegrationAccountAgreement06" -Force
+```powershell
+Remove-AzIntegrationAccountAgreement -ResourceGroupName "ResourceGroup11" -Name "IntegrationAccount31" -AgreementName "IntegrationAccountAgreement06" -Force
 ```
 
 This command removes the integration account agreement named IntegrationAccountAgreement06.

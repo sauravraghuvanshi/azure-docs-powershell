@@ -76,21 +76,21 @@ Finally, ODataQuery parameter is used to perform filtering for the search result
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzEventGridSubscription -ResourceGroupName MyResourceGroupName -TopicName Topic1 -EventSubscriptionName EventSubscription1
+Get-AzEventGridSubscription -ResourceGroupName MyResourceGroupName -TopicName Topic1 -EventSubscriptionName EventSubscription1
 ```
 
 Gets the details of event subscription \`EventSubscription1\` created for topic \`Topic1\` in resource group \`MyResourceGroupName\`.
 
 ### Example 2
 ```powershell
-PS C:\> Get-AzEventGridSubscription -ResourceGroupName MyResourceGroupName -TopicName Topic1 -EventSubscriptionName EventSubscription1 -IncludeFullEndpointUrl
+Get-AzEventGridSubscription -ResourceGroupName MyResourceGroupName -TopicName Topic1 -EventSubscriptionName EventSubscription1 -IncludeFullEndpointUrl
 ```
 
 Gets the details of event subscription \`EventSubscription1\` created for topic \`Topic1\` in resource group \`MyResourceGroupName\`, including the full endpoint URL if it is a webhook based event subscription.
 
 ### Example 3
 ```powershell
-PS C:\> Get-AzEventGridSubscription -ResourceGroupName MyResourceGroupName -TopicName Topic1
+Get-AzEventGridSubscription -ResourceGroupName MyResourceGroupName -TopicName Topic1
 ```
 
 Get a list of all the event subscriptions created for topic \`Topic1\` in resource group \`MyResourceGroupName\` without pagination.
@@ -98,29 +98,29 @@ Get a list of all the event subscriptions created for topic \`Topic1\` in resour
 ### Example 4
 ```powershell
 $odataFilter = "Name ne 'ABCD'"
-PS C:\> Get-AzEventGridSubscription -ResourceGroupName MyResourceGroupName -TopicName Topic1 -Top 10 -ODataQuery $odataFilter
-PS C:\> Get-AzEventGridSubscription $result.NextLink
+Get-AzEventGridSubscription -ResourceGroupName MyResourceGroupName -TopicName Topic1 -Top 10 -ODataQuery $odataFilter
+Get-AzEventGridSubscription $result.NextLink
 ```
 
 List the first 10 event subscriptions (if any) created for topic \`Topic1\` in resource group \`MyResourceGroupName\` that satisfies the $odataFilter query. If more results are available, the $result.NextLink will not be $null. In order to get next page(s) of event subscriptions, user is expected to re-call Get-AzEventGridSubscription and uses result.NextLink obtained from the previous call. Caller should stop when result.NextLink becomes $null.
 
 ### Example 5
 ```powershell
-PS C:\> Get-AzEventGridSubscription -ResourceGroupName MyResourceGroupName -EventSubscriptionName EventSubscription1
+Get-AzEventGridSubscription -ResourceGroupName MyResourceGroupName -EventSubscriptionName EventSubscription1
 ```
 
 Gets the details of event subscription \`EventSubscription1\` created for resource group \`MyResourceGroupName\`.
 
 ### Example 6
 ```powershell
-PS C:\> Get-AzEventGridSubscription -EventSubscriptionName EventSubscription1
+Get-AzEventGridSubscription -EventSubscriptionName EventSubscription1
 ```
 
 Gets the details of event subscription \`EventSubscription1\` created for the currently selected Azure subscription.
 
 ### Example 7
 ```powershell
-PS C:\> Get-AzEventGridSubscription -ResourceGroupName MyResourceGroupName
+Get-AzEventGridSubscription -ResourceGroupName MyResourceGroupName
 ```
 
 Gets the list of all global event subscriptions created under the resource group \`MyResourceGroupName\` without pagination.
@@ -128,15 +128,15 @@ Gets the list of all global event subscriptions created under the resource group
 ### Example 8
 ```powershell
 $odataFilter = "Name ne 'ABCD'"
-PS C:\> Get-AzEventGridSubscription -ResourceGroupName MyResourceGroupName -Top 5 -ODataQuery $odataFilter
-PS C:\> Get-AzEventGridSubscription $result.NextLink
+Get-AzEventGridSubscription -ResourceGroupName MyResourceGroupName -Top 5 -ODataQuery $odataFilter
+Get-AzEventGridSubscription $result.NextLink
 ```
 
 List the first 5 event subscriptions (if any) created under resource group \`MyResourceGroupName\` that satisfies the $odataFilter query. If more results are available, the $result.NextLink will not be $null. In order to get next page(s) of event subscriptions, user is expected to re-call Get-AzEventGridSubscription and uses result.NextLink obtained from the previous call. Caller should stop when result.NextLink becomes $null.
 
 ### Example 9
 ```powershell
-PS C:\> Get-AzEventGridSubscription
+Get-AzEventGridSubscription
 ```
 
 Gets the list of all global event subscriptions created under the currently selected Azure subscription without pagination.
@@ -144,15 +144,15 @@ Gets the list of all global event subscriptions created under the currently sele
 ### Example 10
 ```powershell
 $odataFilter = "Name ne 'ABCD'"
-PS C:\> Get-AzEventGridSubscription -Top 15 -ODataQuery $odataFilter
-PS C:\> Get-AzEventGridSubscription $result.NextLink
+Get-AzEventGridSubscription -Top 15 -ODataQuery $odataFilter
+Get-AzEventGridSubscription $result.NextLink
 ```
 
 List the first 15 global event subscriptions (if any) created under the currently selected Azure subscription that satisfies the $odataFilter query. If more results are available, the $result.NextLink will not be $null. In order to get next page(s) of event subscriptions, user is expected to re-call Get-AzEventGridSubscription and uses result.NextLink obtained from the previous call. Caller should stop when result.NextLink becomes $null.
 
 ### Example 11
 ```powershell
-PS C:\> Get-AzEventGridSubscription -ResourceGroupName MyResourceGroupName -Location westus2
+Get-AzEventGridSubscription -ResourceGroupName MyResourceGroupName -Location westus2
 ```
 
 Gets the list of all regional event subscriptions created under resource group \`MyResourceGroupName\` in the specified location \`westus2\` without pagination.
@@ -160,15 +160,15 @@ Gets the list of all regional event subscriptions created under resource group \
 ### Example 12
 ```powershell
 $odataFilter = "Name ne 'ABCD'"
-PS C:\> Get-AzEventGridSubscription -ResourceGroupName MyResourceGroupName -Location westus2 -Top 15 -ODataQuery $odataFilter
-PS C:\> Get-AzEventGridSubscription $result.NextLink
+Get-AzEventGridSubscription -ResourceGroupName MyResourceGroupName -Location westus2 -Top 15 -ODataQuery $odataFilter
+Get-AzEventGridSubscription $result.NextLink
 ```
 
 List the first 15 regional event subscriptions (if any) created under resource group \`MyResourceGroupName\` in the specified location \`westus2\` that satisfies the $odataFilter query. If more results are available, the $result.NextLink will not be $null. In order to get next page(s) of event subscriptions, user is expected to re-call Get-AzEventGridSubscription and uses result.NextLink obtained from the previous call. Caller should stop when result.NextLink becomes $null.
 
 ### Example 13
 ```powershell
-PS C:\> Get-AzEventGridSubscription -ResourceId "/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.EventHub/namespaces/$namespaceName"
+Get-AzEventGridSubscription -ResourceId "/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.EventHub/namespaces/$namespaceName"
 ```
 
 Gets the list of all event subscriptions created for the specified EventHub namespace without pagination.
@@ -176,15 +176,15 @@ Gets the list of all event subscriptions created for the specified EventHub name
 ### Example 14
 ```powershell
 $odataFilter = "Name ne 'ABCD'"
-PS C:\> Get-AzEventGridSubscription -ResourceId "/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.EventHub/namespaces/$namespaceName" -Top 25 -ODataQuery $odataFilter
-PS C:\> Get-AzEventGridSubscription $result.NextLink
+Get-AzEventGridSubscription -ResourceId "/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.EventHub/namespaces/$namespaceName" -Top 25 -ODataQuery $odataFilter
+Get-AzEventGridSubscription $result.NextLink
 ```
 
 List the first 25 event subscriptions (if any) created for the specified EventHub namespace that satisfies the $odataFilter query. If more results are available, the $result.NextLink will not be $null. In order to get next page(s) of event subscriptions, user is expected to re-call Get-AzEventGridSubscription and uses result.NextLink obtained from the previous call. Caller should stop when result.NextLink becomes $null.
 
 ### Example 15
 ```powershell
-PS C:\> Get-AzEventGridSubscription -TopicTypeName "Microsoft.EventHub.Namespaces" -Location $location
+Get-AzEventGridSubscription -TopicTypeName "Microsoft.EventHub.Namespaces" -Location $location
 ```
 
 Gets the list of all event subscriptions created for the specified topic type (EventHub namespaces) in the specified location without pagination.
@@ -192,15 +192,15 @@ Gets the list of all event subscriptions created for the specified topic type (E
 ### Example 16
 ```powershell
 $odataFilter = "Name ne 'ABCD'"
-PS C:\> Get-AzEventGridSubscription -TopicTypeName "Microsoft.EventHub.Namespaces" -Location $location -Top 15 -ODataQuery $odataFilter
-PS C:\> Get-AzEventGridSubscription $result.NextLink
+Get-AzEventGridSubscription -TopicTypeName "Microsoft.EventHub.Namespaces" -Location $location -Top 15 -ODataQuery $odataFilter
+Get-AzEventGridSubscription $result.NextLink
 ```
 
 List the first 15 event subscriptions (if any) created for the specified topic type (EventHub namespaces) in the specified location that satisfies the $odataFilter query. If more results are available, the $result.NextLink will not be $null. In order to get next page(s) of event subscriptions, user is expected to re-call Get-AzEventGridSubscription and uses result.NextLink obtained from the previous call. Caller should stop when result.NextLink becomes $null.
 
 ### Example 17
 ```powershell
-PS C:\> Get-AzEventGridSubscription -TopicTypeName "Microsoft.Resources.ResourceGroups" -ResourceGroupName MyResourceGroupName
+Get-AzEventGridSubscription -TopicTypeName "Microsoft.Resources.ResourceGroups" -ResourceGroupName MyResourceGroupName
 ```
 
 Gets the list of all event subscriptions created for the specific resource group without pagination.
@@ -208,8 +208,8 @@ Gets the list of all event subscriptions created for the specific resource group
 ### Example 18
 ```powershell
 $odataFilter = "Name ne 'ABCD'"
-PS C:\> Get-AzEventGridSubscription -TopicTypeName "Microsoft.Resources.ResourceGroups" -ResourceGroupName MyResourceGroupName -Top 100 -ODataQuery $odataFilter
-PS C:\> Get-AzEventGridSubscription $result.NextLink
+Get-AzEventGridSubscription -TopicTypeName "Microsoft.Resources.ResourceGroups" -ResourceGroupName MyResourceGroupName -Top 100 -ODataQuery $odataFilter
+Get-AzEventGridSubscription $result.NextLink
 ```
 
 List the first 100 event subscriptions (if any) created for the specific resource group that satisfies the $odataFilter query. If more results are available, the $result.NextLink will not be $null. In order to get next page(s) of event subscriptions, user is expected to re-call Get-AzEventGridSubscription and uses result.NextLink obtained from the previous call. Caller should stop when result.NextLink becomes $null.

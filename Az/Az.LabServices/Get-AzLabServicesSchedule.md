@@ -45,13 +45,14 @@ Returns the properties of a lab Schedule.
 
 ### Example 1: Get all schedules for a lab.
 ```powershell
-PS C:\> Get-AzLabSchedule -ResourceGroupName "group name" -LabName "lab name"
+Get-AzLabServicesSchedule -ResourceGroupName "group name" -LabName "lab name"
+```
 
+```output
 Name                   Type
 ----                   ----
 schedule               Microsoft.LabServices/labs/schedules
 secondschedule         Microsoft.LabServices/labs/schedules
-
 ```
 
 Returns all lab schedules.
@@ -201,7 +202,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-LAB <Lab>: 
+LAB `<Lab>`: 
   - `Location <String>`: The geo-location where the resource lives
   - `[AdditionalCapabilityInstallGpuDriver <EnableState?>]`: Flag to pre-install dedicated GPU drivers.
   - `[AdminUserPassword <String>]`: The password for the user. This is required for the TemplateVM createOption.

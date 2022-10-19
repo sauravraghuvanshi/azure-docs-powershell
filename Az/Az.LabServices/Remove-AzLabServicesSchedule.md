@@ -40,8 +40,7 @@ Operation to delete a schedule resource.
 
 ### Example 1: Remove a schedule from a lab.
 ```powershell
-PS C:\> Remove-AzLabServicesSchedule -ResourceGroupName "Group Name" -LabName "Lab Name" -Name "Schedule Name"
-
+Remove-AzLabServicesSchedule -ResourceGroupName "Group Name" -LabName "Lab Name" -Name "Schedule Name"
 ```
 
 Removes the schedule from the lab.
@@ -252,7 +251,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-SCHEDULE <Schedule>: 
+SCHEDULE `<Schedule>`: 
   - `[Note <String>]`: Notes for this schedule.
   - `[RecurrencePatternExpirationDate <DateTime?>]`: When the recurrence will expire. This date is inclusive.
   - `[RecurrencePatternFrequency <RecurrenceFrequency?>]`: The frequency of the recurrence.

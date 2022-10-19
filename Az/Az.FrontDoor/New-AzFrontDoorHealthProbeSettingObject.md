@@ -27,9 +27,10 @@ Create a PSHealthProbeSetting object for Front Door creation
 
 ### Example 1
 ```powershell
-PS C:\>  New-AzFrontDoorHealthProbeSettingObject -Name "healthProbeSetting1"
+New-AzFrontDoorHealthProbeSettingObject -Name "healthProbeSetting1"
+```
 
-
+```output
 Path              : /
 Protocol          : Http
 IntervalInSeconds : 30

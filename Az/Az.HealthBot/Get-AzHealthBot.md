@@ -43,8 +43,10 @@ Get a HealthBot.
 
 ### Example 1: Get all HealthBot
 ```powershell
-PS C:\> Get-AzHealthBot
+Get-AzHealthBot
+```
 
+```output
 Location Name                 SystemDataCreatedAt SystemDataCreatedBy   SystemDataCreatedByType SystemDataLastModifiedAt SystemDataLastModifiedBy             SystemDataLastModifiedByType Type
 -------- ----                 ------------------- -------------------   ----------------------- ------------------------ ------------------------             ---------------------------- ----
 eastus   yourihealthbot       2020/12/29 5:54:14  test@microsoft.com User                    2020/12/29 5:54:19       ********-****-****-****-********** Application                  Microsoft.HealthBot/healthBots
@@ -55,8 +57,10 @@ Get all HealthBot
 
 ### Example 2: Get all HealthBot by ResourceGroupName
 ```powershell
-PS C:\> Get-AzHealthBot -ResourceGroupName youriTest
+Get-AzHealthBot -ResourceGroupName youriTest
+```
 
+```output
 Location Name                 SystemDataCreatedAt SystemDataCreatedBy   SystemDataCreatedByType SystemDataLastModifiedAt SystemDataLastModifiedBy             SystemDataLastModifiedByType Type
 -------- ----                 ------------------- -------------------   ----------------------- ------------------------ ------------------------             ---------------------------- ----
 eastus   yourihealthbot       2020/12/29 5:54:14  test@microsoft.com User                    2020/12/29 5:54:19       ********-****-****-****-********** Application                  Microsoft.HealthBot/healthBots
@@ -67,8 +71,10 @@ Get all HealthBot by ResourceGroupName
 
 ### Example 3: Get HealthBot by ResourceGroupName and Name
 ```powershell
-PS C:\> Get-AzHealthBot -ResourceGroupName youriTest -name yourihealthbot
+Get-AzHealthBot -ResourceGroupName youriTest -name yourihealthbot
+```
 
+```output
 Location Name                 SystemDataCreatedAt SystemDataCreatedBy   SystemDataCreatedByType SystemDataLastModifiedAt SystemDataLastModifiedBy             SystemDataLastModifiedByType Type
 -------- ----                 ------------------- -------------------   ----------------------- ------------------------ ------------------------             ---------------------------- ----
 eastus   yourihealthbot       2020/12/29 5:54:14  test@microsoft.com User                    2020/12/29 5:54:19       ********-****-****-****-********** Application                  Microsoft.HealthBot/healthBots
@@ -78,9 +84,11 @@ Get HealthBot by ResourceGroupName and Name
 
 ### Example 4: Get HealthBot by InputObject
 ```powershell
-PS C:\> $getAzHealthBot = Get-AzHealthBot -ResourceGroupName youriTest -name yourihealthbot
+$getAzHealthBot = Get-AzHealthBot -ResourceGroupName youriTest -name yourihealthbot
 Get-AzHealthBot -InputObject $getAzHealthBot
+```
 
+```output
 Location Name                 SystemDataCreatedAt SystemDataCreatedBy   SystemDataCreatedByType SystemDataLastModifiedAt SystemDataLastModifiedBy             SystemDataLastModifiedByType Type
 -------- ----                 ------------------- -------------------   ----------------------- ------------------------ ------------------------             ---------------------------- ----
 eastus   yourihealthbot       2020/12/29 5:54:14  test@microsoft.com User                    2020/12/29 5:54:19       ********-****-****-****-********** Application                  Microsoft.HealthBot/healthBots
@@ -186,7 +194,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IHealthBotIdentity>: Identity Parameter
+INPUTOBJECT `<IHealthBotIdentity>`: Identity Parameter
   - `[BotName <String>]`: The name of the Bot resource.
   - `[Id <String>]`: Resource identity path
   - `[ResourceGroupName <String>]`: The name of the Bot resource group in the user subscription.

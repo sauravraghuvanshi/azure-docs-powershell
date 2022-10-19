@@ -33,8 +33,10 @@ Returns the payload that needs to be passed in the request body for installing L
 
 ### Example 1: Returns the payload that needs to be passed in the request body for installing Logz.io agent on a VM
 ```powershell
-PS C:\> Invoke-AzLogzHostMonitor -ResourceGroupName logz-rg-test -MonitorName pwsh-logz04
+Invoke-AzLogzHostMonitor -ResourceGroupName logz-rg-test -MonitorName pwsh-logz04
+```
 
+```output
 ApiKey                           Region
 ------                           ------
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   westus2
@@ -44,8 +46,10 @@ This command returns the payload that needs to be passed in the request body for
 
 ### Example 2: Returns the payload that needs to be passed in the request body for installing Logz.io agent on a VM by pipeline
 ```powershell
-PS C:\> Get-AzLogzMonitor -ResourceGroupName logz-rg-test -MonitorName pwsh-logz04 | Invoke-AzLogzHostMonitor
+Get-AzLogzMonitor -ResourceGroupName logz-rg-test -MonitorName pwsh-logz04 | Invoke-AzLogzHostMonitor
+```
 
+```output
 ApiKey                           Region
 ------                           ------
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   westus2
@@ -183,7 +187,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <ILogzIdentity>: Identity Parameter
+INPUTOBJECT `<ILogzIdentity>`: Identity Parameter
   - `[ConfigurationName <String>]`: 
   - `[Id <String>]`: Resource identity path
   - `[MonitorName <String>]`: Monitor resource name

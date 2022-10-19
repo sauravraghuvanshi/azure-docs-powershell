@@ -1,10 +1,10 @@
 ---
-external help file: 
+external help file: Az.AppConfiguration-help.xml
 Module Name: Az.AppConfiguration
 online version: https://docs.microsoft.com/powershell/module/az.appconfiguration/remove-azappconfigurationstore
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/Remove-AzAppConfigurationStore.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/Remove-AzAppConfigurationStore.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/AppConfiguration/help/Remove-AzAppConfigurationStore.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/AppConfiguration/help/Remove-AzAppConfigurationStore.md
 ---
 
 # Remove-AzAppConfigurationStore
@@ -17,13 +17,13 @@ Deletes a configuration store.
 ### Delete (Default)
 ```
 Remove-AzAppConfigurationStore -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-AzAppConfigurationStore -InputObject <IAppConfigurationIdentity> [-DefaultProfile <PSObject>] [-AsJob]
- [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-NoWait] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,16 +33,14 @@ Deletes a configuration store.
 
 ### Example 1: Remove an app configuration store
 ```powershell
-Remove-AzAppConfigurationStore -Name appconfig-test03 -ResourceGroupName lucas-manual-test
-
+Remove-AzAppConfigurationStore -Name azpstestappstore -ResourceGroupName azpstest-gp
 ```
 
 This command removes an app configuration store.
 
 ### Example 2: Remove an app configuration store
 ```powershell
-Get-AzAppConfigurationStore -Name appconfig-test02 -ResourceGroupName lucas-manual-test | Remove-AzAppConfigurationStore
-
+Get-AzAppConfigurationStore -Name azpstest-appstore -ResourceGroupName azpstest_gp | Remove-AzAppConfigurationStore
 ```
 
 This command removes an app configuration store.
@@ -221,13 +219,14 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IAppConfigurationIdentity>: Identity Parameter
+`INPUTOBJECT <IAppConfigurationIdentity>`: Identity Parameter
   - `[ConfigStoreName <String>]`: The name of the configuration store.
   - `[GroupName <String>]`: The name of the private link resource group.
   - `[Id <String>]`: Resource identity path
+  - `[KeyValueName <String>]`: Identifier of key and label combination. Key and label are joined by $ character. Label is optional.
+  - `[Location <String>]`: The location in which uniqueness will be verified.
   - `[PrivateEndpointConnectionName <String>]`: Private endpoint connection name
   - `[ResourceGroupName <String>]`: The name of the resource group to which the container registry belongs.
   - `[SubscriptionId <String>]`: The Microsoft Azure subscription ID.
 
 ## RELATED LINKS
-

@@ -40,8 +40,10 @@ Updates an image resource.
 
 ### Example 1: Update a lab plan image.
 ```powershell
-PS C:\> Update-AzLabServicesPlanImage -ResourceGroupName "Group Name" -LabPlanName "LabPlan Name" -Name "Image Name" -EnabledState "Enabled"
+Update-AzLabServicesPlanImage -ResourceGroupName "Group Name" -LabPlanName "LabPlan Name" -Name "Image Name" -EnabledState "Enabled"
+```
 
+```output
 Name
 ----
 Image Name
@@ -254,7 +256,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-LABPLAN <LabPlan>: 
+LABPLAN `<LabPlan>`: 
   - `Location <String>`: The geo-location where the resource lives
   - `[AllowedRegion <String[]>]`: The allowed regions for the lab creator to use when creating labs using this lab plan.
   - `[DefaultAutoShutdownProfileDisconnectDelay <TimeSpan?>]`: The amount of time a VM will stay running after a user disconnects if this behavior is enabled.

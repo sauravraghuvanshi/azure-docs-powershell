@@ -1,84 +1,84 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.dll-Help.xml
+external help file: 
 Module Name: Az.SecurityInsights
 online version: https://docs.microsoft.com/powershell/module/az.securityinsights/get-azsentinelbookmark
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Get-AzSentinelBookmark.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Get-AzSentinelBookmark.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Get-AzSentinelBookmark.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Get-AzSentinelBookmark.md
 ---
 
 # Get-AzSentinelBookmark
 
 ## SYNOPSIS
-Gets a Bookmark. <br/>
-A Bookmark is used to preserve queries, comments and tags for a specific incident.<br/>
-You create the Bookmark first and then add it to an incident.
+Gets a bookmark.
 
 ## SYNTAX
 
-### WorkspaceScope (Default)
+### List (Default)
 ```
-Get-AzSentinelBookmark -ResourceGroupName <String> -WorkspaceName <String>
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
-```
-
-### BookmarkId.
-```
-Get-AzSentinelBookmark -ResourceGroupName <String> -WorkspaceName <String> -BookmarkId <String>
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzSentinelBookmark -ResourceGroupName <String> -WorkspaceName <String> [-SubscriptionId <String[]>]
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
-### ResourceId
+### Get
 ```
-Get-AzSentinelBookmark -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzSentinelBookmark -Id <String> -ResourceGroupName <String> -WorkspaceName <String>
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-AzSentinelBookmark -InputObject <ISecurityInsightsIdentity> [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-AzSentinelBookmark** cmdlet gets a Bookmark from the specified workspace.
-If you specify the *BookmarkId* parameter, a single Bookmark object is returned.
-If you do not specify the *BookmarkId* parameter, an array containing all of the Bookmarks in the specified workspace are returned.
-You can use the Bookmark object to update the Bookmark, for example you can add Tags and Notes the **Bookmark**.
+Gets a bookmark.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: List all Bookmarks
 ```powershell
-PS C:\> $Bookmarks = Get-AzSentinelBookmark -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName"
+ Get-AzSentinelBookmark -ResourceGroupName "myResourceGroupName" -workspaceName "myWorkspaceName"
 ```
 
-This example gets all of the Bookmarks in the specified workspace, and then stores it in the $Bookmarks variable.
+```output
+DisplayName    	: SecurityAlert - 28b401e1e0c9
+CreatedByEmail	: john@contoso.com
+CreatedByName  	: John Contoso
+Label          	: {}
+Note           	: This needs further investigation
+Name           	: 515fc035-2ed8-4fa1-ad7d-28b401e1e0c9
 
-### Example 2
-```powershell
-PS C:\> $Bookmark = Get-AzSentinelBookmark -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName" -BookmarkId "MyBookmarkId"
 ```
 
-This example gets an Bookmark in the specified workspace, and then stores it in the $Bookmark variable.
+This command lists all Bookmarks under a Microsoft Sentinel workspace.
+
+### Example 2: Get a Bookmark
+```powershell
+ Get-AzSentinelBookmark -ResourceGroupName "myResourceGroupName" -workspaceName "myWorkspaceName" -Id "515fc035-2ed8-4fa1-ad7d-28b401e1e0c9"
+```
+
+```output
+DisplayName    	: SecurityAlert - 28b401e1e0c9
+CreatedByEmail	: john@contoso.com
+CreatedByName  	: John Contoso
+Label          	: {}
+Note           	: This needs further investigation
+Name           	: 515fc035-2ed8-4fa1-ad7d-28b401e1e0c9
+```
+
+This command gets a Bookmark.
 
 ## PARAMETERS
-
-### -BookmarkId
-Bookmark Id,
-
-```yaml
-Type: System.String
-Parameter Sets: BookmarkId.
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -87,12 +87,44 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResourceGroupName
-Resource group name.
+### -Id
+Bookmark ID
 
 ```yaml
 Type: System.String
-Parameter Sets: WorkspaceScope, BookmarkId.
+Parameter Sets: Get
+Aliases: BookmarkId
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.ISecurityInsightsIdentity
+Parameter Sets: GetViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+The name of the resource group.
+The name is case insensitive.
+
+```yaml
+Type: System.String
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -102,27 +134,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResourceId
-Resource Id.
+### -SubscriptionId
+The ID of the target subscription.
 
 ```yaml
-Type: System.String
-Parameter Sets: ResourceId
+Type: System.String[]
+Parameter Sets: Get, List
 Aliases:
 
-Required: True
+Required: False
 Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -WorkspaceName
-Workspace Name.
+The name of the workspace.
 
 ```yaml
 Type: System.String
-Parameter Sets: WorkspaceScope, BookmarkId.
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -137,10 +169,44 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String
+### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.ISecurityInsightsIdentity
+
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.SecurityInsights.Models.Bookmarks.PSSentinelBookmark
+### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.IBookmark
+
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+`INPUTOBJECT <ISecurityInsightsIdentity>`: Identity Parameter
+  - `[ActionId <String>]`: Action ID
+  - `[AlertRuleTemplateId <String>]`: Alert rule template ID
+  - `[AutomationRuleId <String>]`: Automation rule ID
+  - `[BookmarkId <String>]`: Bookmark ID
+  - `[ConsentId <String>]`: consent ID
+  - `[DataConnectorId <String>]`: Connector ID
+  - `[EntityId <String>]`: entity ID
+  - `[EntityQueryId <String>]`: entity query ID
+  - `[EntityQueryTemplateId <String>]`: entity query template ID
+  - `[Id <String>]`: Resource identity path
+  - `[IncidentCommentId <String>]`: Incident comment ID
+  - `[IncidentId <String>]`: Incident ID
+  - `[MetadataName <String>]`: The Metadata name.
+  - `[Name <String>]`: Threat intelligence indicator name field.
+  - `[RelationName <String>]`: Relation Name
+  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
+  - `[RuleId <String>]`: Alert rule ID
+  - `[SentinelOnboardingStateName <String>]`: The Sentinel onboarding state name. Supports - default
+  - `[SettingsName <String>]`: The setting name. Supports - Anomalies, EyesOn, EntityAnalytics, Ueba
+  - `[SourceControlId <String>]`: Source control Id
+  - `[SubscriptionId <String>]`: The ID of the target subscription.
+  - `[WorkspaceName <String>]`: The name of the workspace.
+
 ## RELATED LINKS
+

@@ -42,8 +42,10 @@ The virtual machine will be deleted and recreated using the latest published sna
 
 ### Example 1: Reimage an existing VM.
 ```powershell
-PS C:\> Update-AzLabServicesVMReimage -ResourceGroupName "Group Name" -LabName "Lab Name" -Name 0
+Update-AzLabServicesVMReimage -ResourceGroupName "Group Name" -LabName "Lab Name" -Name 0
+```
 
+```output
 Name
 ----
 0
@@ -259,7 +261,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-VM <VirtualMachine>: 
+VM `<VirtualMachine>`: 
   - `[SystemDataCreatedAt <DateTime?>]`: The timestamp of resource creation (UTC).
   - `[SystemDataCreatedBy <String>]`: The identity that created the resource.
   - `[SystemDataCreatedByType <CreatedByType?>]`: The type of identity that created the resource.

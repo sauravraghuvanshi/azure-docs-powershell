@@ -45,7 +45,10 @@ Get-AzSqlInstanceServerTrustCertificate [-ResourceId] <String> [-DefaultProfile 
 
 ### Example 1: Get information about all server trust certificates on Azure SQL Managed Instance
 ```powershell
-PS C:\> Get-AzSqlInstanceServerTrustCertificate -ResourceGroupName "ResourceGroup01" -InstanceName "ManagedInstance01"
+Get-AzSqlInstanceServerTrustCertificate -ResourceGroupName "ResourceGroup01" -InstanceName "ManagedInstance01"
+```
+
+```output
 ResourceGroupName : ResourceGroup01
 InstanceName      : ManagedInstance01
 Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Sql/managedInstances/ManagedInstance01/serverTrustCertificates/Certificate01
@@ -67,7 +70,10 @@ This command gets information about all server trust certificates within the ins
 
 ### Example 2: Get information about a server trust certificate on Azure SQL Managed Instance
 ```powershell
-PS C:\> Get-AzSqlInstanceServerTrustCertificate -ResourceGroupName "ResourceGroup01" -InstanceName "ManagedInstance01" -Name "Certificate01"
+Get-AzSqlInstanceServerTrustCertificate -ResourceGroupName "ResourceGroup01" -InstanceName "ManagedInstance01" -Name "Certificate01"
+```
+
+```output
 ResourceGroupName : ResourceGroup01
 InstanceName      : ManagedInstance01
 Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Sql/managedInstances/ManagedInstance01/serverTrustCertificates/Certificate01
@@ -81,8 +87,11 @@ This command gets information about the server trust certificate "Certificate01"
 
 ### Example 3: Get all server trust certificates on Azure SQL Managed Instance using Instance object
 ```powershell
-PS C:\> $instance = Get-AzSqlInstance -Name "ManagedInstance01" -ResourceGroupName "ResourceGroup01"
-PS C:\> Get-AzSqlInstanceServerTrustCertificate -InstanceObject $instance
+$instance = Get-AzSqlInstance -Name "ManagedInstance01" -ResourceGroupName "ResourceGroup01"
+Get-AzSqlInstanceServerTrustCertificate -InstanceObject $instance
+```
+
+```output
 ResourceGroupName : ResourceGroup01
 InstanceName      : ManagedInstance01
 Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Sql/managedInstances/ManagedInstance01/serverTrustCertificates/Certificate01
@@ -105,7 +114,10 @@ This command gets information about all server trust certificates within the ins
 ### Example 4: Get all server trust certificates on Azure SQL Managed Instance using resource identifier
 
 ```powershell
-PS C:\> Get-AzSqlInstanceServerTrustCertificate -InstanceResourceId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Sql/managedInstances/ManagedInstance01"
+Get-AzSqlInstanceServerTrustCertificate -InstanceResourceId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Sql/managedInstances/ManagedInstance01"
+```
+
+```output
 ResourceGroupName : ResourceGroup01
 InstanceName      : ManagedInstance01
 Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Sql/managedInstances/ManagedInstance01/serverTrustCertificates/Certificate01
@@ -128,7 +140,10 @@ This command gets information about all server trust certificates within the ins
 ### Example 5: Get a server trust certificate using its resource identifier
 
 ```powershell
-PS C:\> Get-AzSqlInstanceServerTrustCertificate -ResourceId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Sql/managedInstances/ManagedInstance01/serverTrustCertificates/Certificate01"
+Get-AzSqlInstanceServerTrustCertificate -ResourceId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Sql/managedInstances/ManagedInstance01/serverTrustCertificates/Certificate01"
+```
+
+```output
 ResourceGroupName : ResourceGroup01
 InstanceName      : ManagedInstance01
 Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Sql/managedInstances/ManagedInstance01/serverTrustCertificates/Certificate01
@@ -143,7 +158,10 @@ This command gets information about the server trust certificate named "Certific
 ### Example 6: Get all server trust certificates for a Managed Instance by piping an instance object
 
 ```powershell
-PS C:\> Get-AzSqlInstance -Name "ManagedInstance01" -ResourceGroupName "ResourceGroup01" | Get-AzSqlInstanceServerTrustCertificate
+Get-AzSqlInstance -Name "ManagedInstance01" -ResourceGroupName "ResourceGroup01" | Get-AzSqlInstanceServerTrustCertificate
+```
+
+```output
 ResourceGroupName : ResourceGroup01
 InstanceName      : ManagedInstance01
 Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Sql/managedInstances/ManagedInstance01/serverTrustCertificates/Certificate01
@@ -165,7 +183,10 @@ This command gets information about all server trust certificates within the ins
 
 ### Example 7: Get a specific server trust certificate for an instance by piping an instance object and specifying the certificate name
 ```powershell
-PS C:\> Get-AzSqlInstance -Name "ManagedInstance01" -ResourceGroupName "ResourceGroup01" | Get-AzSqlInstanceServerTrustCertificate -Name "Certificate01"
+Get-AzSqlInstance -Name "ManagedInstance01" -ResourceGroupName "ResourceGroup01" | Get-AzSqlInstanceServerTrustCertificate -Name "Certificate01"
+```
+
+```output
 ResourceGroupName : ResourceGroup01
 InstanceName      : ManagedInstance01
 Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Sql/managedInstances/ManagedInstance01/serverTrustCertificates/Certificate01
@@ -179,7 +200,10 @@ This command gets information about the server trust certificate named "Certific
 
 ### Example 8: Get information about server trust certificate using positional parameters
 ```powershell
-PS C:\> Get-AzSqlInstanceServerTrustCertificate "ResourceGroup01" "ManagedInstance01" "Certificate01"
+Get-AzSqlInstanceServerTrustCertificate "ResourceGroup01" "ManagedInstance01" "Certificate01"
+```
+
+```output
 ResourceGroupName : ResourceGroup01
 InstanceName      : ManagedInstance01
 Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup01/providers/Microsoft.Sql/managedInstances/ManagedInstance01/serverTrustCertificates/Certificate01

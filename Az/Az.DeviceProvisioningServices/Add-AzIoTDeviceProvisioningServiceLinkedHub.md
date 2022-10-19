@@ -41,11 +41,13 @@ For an introduction to Azure IoT Hub Device Provisioning Service, see https://do
 ## EXAMPLES
 
 ### Example 1
+```powershell
+Add-AzIoTDeviceProvisioningServiceLinkedHub -ResourceGroupName "myresourcegroup" -Name "myiotdps" -IotHubConnectionString $hubConnectionString -IotHubLocation "eastus"
 ```
-PS C:\> Add-AzIoTDeviceProvisioningServiceLinkedHub -ResourceGroupName "myresourcegroup" -Name "myiotdps" -IotHubConnectionString $hubConnectionString -IotHubLocation "eastus"
 
-ResourceGroupName	  : myresourcegroup
-Name				  : myiotdps
+```output
+ResourceGroupName     : myresourcegroup
+Name                  : myiotdps
 LinkedHubName         : myiothub.azure-devices.net
 ConnectionString      : HostName=myiothub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=****
 AllocationWeight      : 
@@ -56,9 +58,11 @@ Location              : eastus
 Linked IoT hub to an Azure IoT Hub device provisioning service.
 
 ### Example 2
+```powershell
+Add-AzIoTDeviceProvisioningServiceLinkedHub -ResourceGroupName "myresourcegroup" -Name "myiotdps" -IotHubConnectionString $hubConnectionString -IotHubLocation "eastus" -AllocationWeight 10 -ApplyAllocationPolicy
 ```
-PS C:\> Add-AzIoTDpsHub -ResourceGroupName "myresourcegroup" -Name "myiotdps" -IotHubConnectionString $hubConnectionString -IotHubLocation "eastus" -AllocationWeight 10 -ApplyAllocationPolicy $false
 
+```output
 LinkedHubName					Location	AllocationWeight	ApplyAllocationPolicy
 -------------					--------	----------------	---------------------
 myiothub1.azure-devices.net		eastus		2					true

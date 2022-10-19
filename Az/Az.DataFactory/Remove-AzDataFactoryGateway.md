@@ -33,8 +33,11 @@ The **Remove-AzDataFactoryGateway** cmdlet removes the specified gateway from Az
 ## EXAMPLES
 
 ### Example 1: Remove a gateway
+```powershell
+Remove-AzDataFactoryGateway -Name "ContosoGateway" -DataFactoryName "WikiADF" -ResourceGroupName "ADF"
 ```
-PS C:\>Remove-AzDataFactoryGateway -Name "ContosoGateway" -DataFactoryName "WikiADF" -ResourceGroupName "ADF"
+
+```output
 Confirm
 Are you sure you want to remove gateway 'ContosoGateway' in data factory 'WikiADF'? 
  [Y] Yes  [N] No  [S] Suspend  [?] Help (default is Y): Y

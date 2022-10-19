@@ -1,45 +1,52 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.Cdn.dll-Help.xml
+external help file: 
 Module Name: Az.Cdn
 online version: https://docs.microsoft.com/powershell/module/az.cdn/new-azfrontdoorcdnsecret
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/New-AzFrontDoorCdnSecret.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/New-AzFrontDoorCdnSecret.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/New-AzFrontDoorCdnSecret.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/New-AzFrontDoorCdnSecret.md
 ---
 
 # New-AzFrontDoorCdnSecret
 
 ## SYNOPSIS
-Creates the secret.
+Creates a new Secret within the specified profile.
 
 ## SYNTAX
 
 ```
-New-AzFrontDoorCdnSecret [-CertificateAuthority <String>] -ProfileName <String> -ResourceGroupName <String>
- -SecretName <String> -SecretSource <String> [-SecretVersion <String>]
- [-SubjectAlternativeName <System.Collections.Generic.List`1[System.String]>] [-UseLatestVersion]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzFrontDoorCdnSecret -Name <String> -ProfileName <String> -ResourceGroupName <String>
+ [-SubscriptionId <String>] [-Parameter <ISecretParameters>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Creates the secret.
+Creates a new Secret within the specified profile.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Create an AzureFrontDoor Secret within the specified AzureFrontDoor profile
 ```powershell
-New-AzFrontDoorCdnSecret -ProfileName $profileName -ResourceGroupName $resourceGroupName -SecretName $secretName -SecretSource $secretSource
+$secretSourceId = "xxxxxxxx"      
+$certificateParameter = New-AzFrontDoorCdnSecretCustomerCertificateParametersObject -UseLatestVersion $true -SubjectAlternativeName @() -Type "CustomerCertificate" -SecretSourceId $secretSourceId  
+New-AzFrontDoorCdnSecret -ResourceGroupName testps-rg-da16jm -ProfileName fdp-v542q6 -Name secret001 -Parameter $certificateParameter           
 ```
 
-Creates the secret.
+```output
+Name      ResourceGroupName
+----      -----------------
+secret001 testps-rg-da16jm
+```
+
+
 
 ## PARAMETERS
 
-### -CertificateAuthority
-The certificate issuing authority.
+### -AsJob
+Run the command as a job
 
 ```yaml
-Type: String
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -54,9 +61,55 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+Name of the Secret under the profile.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: SecretName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoWait
+Run the command asynchronously
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Parameter
+object which contains secret parameters
+To construct, see NOTES section for PARAMETER properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.Api20210601.ISecretParameters
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
@@ -66,10 +119,10 @@ Accept wildcard characters: False
 ```
 
 ### -ProfileName
-The Azure Front Door profile name.
+Name of the Azure Front Door Standard or Azure Front Door Premium profile which is unique within the resource group.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -81,10 +134,10 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The Azure resource group name.
+Name of the Resource group within the Azure subscription.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -95,77 +148,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SecretName
-The Azure Front Door secret name.
+### -SubscriptionId
+Azure Subscription ID.
 
 ```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SecretSource
-The resource reference to the Azure Key Vault secret.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SecretVersion
-The version of the secret to be used
-
-```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubjectAlternativeName
-The list of the subject alternative names.
-
-```yaml
-Type: System.Collections.Generic.List`1[System.String]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UseLatestVersion
-Whether to use the latest version for the certificate.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
+Default value: (Get-AzContext).Subscription.Id
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -174,7 +167,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -190,7 +183,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -206,12 +199,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.Cdn.AfdModels.PSAfdSecret
+### Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.Api20210601.ISecret
 
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+PARAMETER `<ISecretParameters>`: object which contains secret parameters
+  - `Type <SecretType>`: The type of the secret resource.
+
 ## RELATED LINKS
+

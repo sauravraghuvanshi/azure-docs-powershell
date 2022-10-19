@@ -33,8 +33,10 @@ Deletes a Azure Arc PrivateLinkScope.
 
 ### Example 1: Remove a private link scope in a subscription by name
 ```powershell
-PS C:\> Remove-AzConnectedPrivateLinkScope -ResourceGroupName $resourceGroupName -ScopeName $scopeName
+Remove-AzConnectedPrivateLinkScope -ResourceGroupName $resourceGroupName -ScopeName $scopeName
+```
 
+```output
 <None>
 ```
 
@@ -215,7 +217,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IConnectedMachineIdentity>: Identity Parameter
+INPUTOBJECT `<IConnectedMachineIdentity>`: Identity Parameter
   - `[ExtensionName <String>]`: The name of the machine extension.
   - `[GroupName <String>]`: The name of the private link resource.
   - `[Id <String>]`: Resource identity path

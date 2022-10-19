@@ -39,8 +39,8 @@ This can be suppressed using the *Overwrite* parameter, which deletes the zone r
 ## EXAMPLES
 
 ### Example 1: Remove a zone
-```
-PS C:\>Remove-AzDnsZone -Name "myzone.com" -ResourceGroupName "MyResourceGroup"
+```powershell
+Remove-AzDnsZone -Name "myzone.com" -ResourceGroupName "MyResourceGroup"
 ```
 
 This command removes the zone named myzone.com from the resource group named MyResourceGroup.

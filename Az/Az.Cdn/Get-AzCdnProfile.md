@@ -1,57 +1,97 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.Cdn.dll-Help.xml
+external help file: 
 Module Name: Az.Cdn
-ms.assetid: 28DECA86-37A5-48BE-9727-0C1A3B867E9B
 online version: https://docs.microsoft.com/powershell/module/az.cdn/get-azcdnprofile
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzCdnProfile.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzCdnProfile.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/Get-AzCdnProfile.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/Get-AzCdnProfile.md
 ---
 
 # Get-AzCdnProfile
 
 ## SYNOPSIS
-Gets a CDN profile.
+
 
 ## SYNTAX
 
+### List (Default)
 ```
-Get-AzCdnProfile [-ProfileName <String>] [-ResourceGroupName <String>]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzCdnProfile [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### Get
+```
+Get-AzCdnProfile -Name <String> -ResourceGroupName <String> [-SubscriptionId <String[]>]
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-AzCdnProfile -InputObject <ICdnIdentity> [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### List1
+```
+Get-AzCdnProfile -ResourceGroupName <String> [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-AzCdnProfile** cmdlet gets an Azure Content Delivery Network (CDN) profile and its related information.
+
 
 ## EXAMPLES
 
-### Example 1: Get all CDN profiles in the resource group
+### Example 1: List AzureCDN profiles under the subscription
 ```powershell
-Get-AzCdnProfile -ResourceGroupName myresourcegroup
+Get-AzCdnProfile
 ```
 
-```Output
-Sku               : Microsoft.Azure.Commands.Cdn.Models.Profile.PSSku
-ResourceState     : Active
-ResourceGroupName : myresourcegroup
-Location          : WestUs
-Tags              : {}
-Id                : /subscriptions/11111111-1111-1111-1111-111111111111/resourcegroups/myresourcegroup/providers/Microsoft.Cdn
-                    /profiles/mycdnprofile
-Name              : mycdnprofile
-Type              : Microsoft.Cdn/profiles
-ProvisioningState : Succeeded
+```output
+Location Name             Kind ResourceGroupName
+-------- ----             ---- -----------------
+Global   p-oln142         cdn  testps-rg-godj4q
+Global   cdn001           cdn  testps-rg-da16jm
+Global   cdn002           cdn  testps-rg-da16jm
 ```
+
+List AzureCDN profiles under the subscription
+
+### Example 2: List AzureCDN profiles under the resource group
+```powershell
+Get-AzCdnProfile -ResourceGroupName testps-rg-da16jm
+```
+
+```output
+Location Name   Kind ResourceGroupName
+-------- ----   ---- -----------------
+Global   cdn001 cdn  testps-rg-da16jm
+Global   cdn002 cdn  testps-rg-da16jm
+```
+
+List AzureCDN profiles under the resource group
+
+### Example 3: Get an AzureCDN profile under the resource group
+```powershell
+Get-AzCdnProfile -ResourceGroupName testps-rg-da16jm -Name cdn001
+```
+
+```output
+Location Name   Kind ResourceGroupName
+-------- ----   ---- -----------------
+Global   cdn001 cdn  testps-rg-da16jm
+```
+
+Get an AzureCDN profile under the resource group
 
 ## PARAMETERS
 
 ### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
+
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -60,33 +100,63 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ProfileName
-Specifies the name of the profile.
+### -InputObject
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.ICdnIdentity
+Parameter Sets: GetViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Name
+
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
-Aliases:
+Parameter Sets: Get
+Aliases: ProfileName
 
-Required: False
+Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Specifies the name of the resource group to which the profile belongs.
+
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Get, List1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubscriptionId
+
+
+```yaml
+Type: System.String[]
+Parameter Sets: Get, List, List1
 Aliases:
 
 Required: False
 Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -95,20 +165,35 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String
+### Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.ICdnIdentity
 
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.Cdn.Models.Profile.PSProfile
+### Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.Api20210601.IProfile
 
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT `<ICdnIdentity>`: 
+  - `[CustomDomainName <String>]`: Name of the domain under the profile which is unique globally.
+  - `[EndpointName <String>]`: Name of the endpoint under the profile which is unique globally.
+  - `[Id <String>]`: Resource identity path
+  - `[OriginGroupName <String>]`: Name of the origin group which is unique within the endpoint.
+  - `[OriginName <String>]`: Name of the origin which is unique within the profile.
+  - `[ProfileName <String>]`: Name of the Azure Front Door Standard or Azure Front Door Premium or CDN profile which is unique within the resource group.
+  - `[ResourceGroupName <String>]`: Name of the Resource group within the Azure subscription.
+  - `[RouteName <String>]`: Name of the routing rule.
+  - `[RuleName <String>]`: Name of the delivery rule which is unique within the endpoint.
+  - `[RuleSetName <String>]`: Name of the rule set under the profile which is unique globally.
+  - `[SecretName <String>]`: Name of the Secret under the profile.
+  - `[SecurityPolicyName <String>]`: Name of the security policy under the profile.
+  - `[SubscriptionId <String>]`: Azure Subscription ID.
+
 ## RELATED LINKS
-
-[New-AzCdnProfile](./New-AzCdnProfile.md)
-
-[Remove-AzCdnProfile](./Remove-AzCdnProfile.md)
-
-[Set-AzCdnProfile](./Set-AzCdnProfile.md)
-
 

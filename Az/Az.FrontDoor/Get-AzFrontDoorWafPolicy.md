@@ -26,8 +26,10 @@ The **Get-AzFrontDoorWafPolicy** cmdletGet gets WAF policy in a resource group u
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzFrontDoorWafPolicy -Name $policyName -ResourceGroupName $resourceGroupName
+Get-AzFrontDoorWafPolicy -Name $policyName -ResourceGroupName $resourceGroupName
+```
 
+```output
 Name         PolicyMode PolicyEnabledState CustomBlockResponseStatusCode RedirectUrl
 ----         ---------- ------------------ ----------------------------- -----------
 {policyName} Prevention            Enabled                           403 https://www.bing.com/
@@ -37,8 +39,10 @@ Get a WAF policy called $policyName in $resourceGroupName
 
 ### Example 2
 ```powershell
-PS C:\> Get-AzFrontDoorWafPolicy -ResourceGroupName $resourceGroupName
+Get-AzFrontDoorWafPolicy -ResourceGroupName $resourceGroupName
+```
 
+```output
 Name         PolicyMode PolicyEnabledState CustomBlockResponseStatusCode RedirectUrl
 ----         ---------- ------------------ ----------------------------- -----------
 {policyName} Prevention           Disabled

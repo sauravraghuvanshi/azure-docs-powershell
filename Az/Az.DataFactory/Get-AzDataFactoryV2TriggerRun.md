@@ -34,9 +34,11 @@ The **Get-AzDataFactoryV2TriggerRun** command returns detailed information about
 ## EXAMPLES
 
 ### Example 1: Get information about trigger run
+```powershell
+Get-AzDataFactoryV2TriggerRun -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -TriggerName "WikiTrigger" -TriggerRunStartedAfter "2017-09-01" -TriggerRunStartedBefore "2019-09-30"
 ```
-PS C:\> Get-AzDataFactoryV2TriggerRun -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -TriggerName "WikiTrigger" -TriggerRunStartedAfter "2017-09-01" -TriggerRunStartedBefore "2019-09-30"
 
+```output
     ResourceGroupName   : ADF
     DataFactoryName     : WikiADF
     TriggerName         : WikiTrigger

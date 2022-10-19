@@ -35,8 +35,7 @@ Deleting a lab plan does not delete labs associated with a lab plan, nor does it
 
 ### Example 1: Remove a Lab plan
 ```powershell
-PS C:\> Remove-AzLabServicesLabPlan -ResourceGroupName "Group Name" -Name "Lab Plan Name"
-
+Remove-AzLabServicesLabPlan -ResourceGroupName "Group Name" -Name "Lab Plan Name"
 ```
 
 Removes the lab plan.
@@ -216,7 +215,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-LABPLAN <LabPlan>: 
+LABPLAN `<LabPlan>`: 
   - `Location <String>`: The geo-location where the resource lives
   - `[AllowedRegion <String[]>]`: The allowed regions for the lab creator to use when creating labs using this lab plan.
   - `[DefaultAutoShutdownProfileDisconnectDelay <TimeSpan?>]`: The amount of time a VM will stay running after a user disconnects if this behavior is enabled.

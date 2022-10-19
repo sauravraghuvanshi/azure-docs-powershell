@@ -145,7 +145,7 @@ The **Get-AzResourceGroupDeploymentWhatIfResult** cmdlet gets the ARM template W
 
 ### Example 1: Get a What-If result at resource group scope
 ```powershell
-PS C:\> Get-AzResourceGroupDeploymentWhatIfResult `
+Get-AzResourceGroupDeploymentWhatIfResult `
     -DeploymentName "deploy-01" `
     -ResourceGroupName "myRG1" `
     -TemplateFile "D:\Azure\Templates\ServiceTemplate.json" `
@@ -161,7 +161,7 @@ The command uses the *ResultFormat* parameter to set the What-If result to inclu
 
 ### Example 2: Get a What-If result at resource group scope with ResourceIdOnly
 ```powershell
-PS C:\> Get-AzResourceGroupDeploymentWhatIfResult `
+Get-AzResourceGroupDeploymentWhatIfResult `
     -DeploymentName "deploy-01" `
     -ResourceGroupName "myRG1" `
     -TemplateFile "D:\Azure\Templates\ServiceTemplate.json" `

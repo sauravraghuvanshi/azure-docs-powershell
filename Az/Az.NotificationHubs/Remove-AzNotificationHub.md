@@ -31,8 +31,8 @@ After a hub has been removed you can no longer use that hub to send push notific
 ## EXAMPLES
 
 ### Example 1: Remove a notification hub
-```
-PS C:\>Remove-AzNotificationHub -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup" -NotificationHub "ContosoInternalHub"
+```powershell
+Remove-AzNotificationHub -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup" -NotificationHub "ContosoInternalHub"
 ```
 
 This command removes the notification hub named ContosoInternalHub.

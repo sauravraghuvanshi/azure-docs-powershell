@@ -1,47 +1,67 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.Cdn.dll-Help.xml
+external help file: 
 Module Name: Az.Cdn
 online version: https://docs.microsoft.com/powershell/module/az.cdn/get-azfrontdoorcdnorigin
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzFrontDoorCdnOrigin.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzFrontDoorCdnOrigin.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/Get-AzFrontDoorCdnOrigin.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/Get-AzFrontDoorCdnOrigin.md
 ---
 
 # Get-AzFrontDoorCdnOrigin
 
 ## SYNOPSIS
-Gets the origin.
+Gets an existing origin within an origin group.
 
 ## SYNTAX
 
-### ByFieldsParameterSet (Default)
+### List (Default)
 ```
-Get-AzFrontDoorCdnOrigin -OriginGroupName <String> [-OriginName <String>] -ProfileName <String>
- -ResourceGroupName <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
-```
-
-### ByObjectParameterSet
-```
-Get-AzFrontDoorCdnOrigin -OriginGroup <PSAfdOriginGroup> [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+Get-AzFrontDoorCdnOrigin -OriginGroupName <String> -ProfileName <String> -ResourceGroupName <String>
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
-### ByResourceIdParameterSet
+### Get
 ```
-Get-AzFrontDoorCdnOrigin -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzFrontDoorCdnOrigin -OriginGroupName <String> -OriginName <String> -ProfileName <String>
+ -ResourceGroupName <String> [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-AzFrontDoorCdnOrigin -InputObject <ICdnIdentity> [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets the origin.
+Gets an existing origin within an origin group.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: List AzureFrontDoor origins under the origin group 
 ```powershell
-Get-AzFrontDoorCdnOrigin -OriginGroupName $originGroupName -OriginName $originName -ProfileName $profileName -ResourceGroupName $resourceGroupName
+ Get-AzFrontDoorCdnOrigin -ResourceGroupName testps-rg-da16jm -ProfileName fdp-v542q6 -OriginGroupName org001
 ```
 
-Gets the origin.
+```output
+Name   ResourceGroupName
+----   -----------------
+ori001 testps-rg-da16jm
+ori002 testps-rg-da16jm
+```
+
+List AzureFrontDoor origins under the origin group
+
+### Example 2: Get an AzureFrontDoor origin under the origin group
+```powershell
+Get-AzFrontDoorCdnOrigin -ResourceGroupName testps-rg-da16jm -ProfileName fdp-v542q6 -OriginGroupName org001 -OriginName ori001
+```
+
+```output
+Name   ResourceGroupName
+----   -----------------
+ori001 testps-rg-da16jm
+```
+
+Get an AzureFrontDoor origin under the origin group
 
 ## PARAMETERS
 
@@ -49,9 +69,9 @@ Gets the origin.
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -60,12 +80,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -OriginGroup
-The Azure Front Door origin group object.
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: PSAfdOriginGroup
-Parameter Sets: ByObjectParameterSet
+Type: Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.ICdnIdentity
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -76,11 +97,11 @@ Accept wildcard characters: False
 ```
 
 ### -OriginGroupName
-The Azure Front Door origin group name.
+Name of the origin group which is unique within the profile.
 
 ```yaml
-Type: String
-Parameter Sets: ByFieldsParameterSet
+Type: System.String
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -91,14 +112,14 @@ Accept wildcard characters: False
 ```
 
 ### -OriginName
-The Azure Front Door origin name.
+Name of the origin which is unique within the profile.
 
 ```yaml
-Type: String
-Parameter Sets: ByFieldsParameterSet
+Type: System.String
+Parameter Sets: Get
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -106,11 +127,11 @@ Accept wildcard characters: False
 ```
 
 ### -ProfileName
-The Azure Front Door profile name.
+Name of the Azure Front Door Standard or Azure Front Door Premium profile which is unique within the resource group.
 
 ```yaml
-Type: String
-Parameter Sets: ByFieldsParameterSet
+Type: System.String
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -121,11 +142,11 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The Azure resource group name.
+Name of the Resource group within the Azure subscription.
 
 ```yaml
-Type: String
-Parameter Sets: ByFieldsParameterSet
+Type: System.String
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -135,17 +156,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResourceId
-The Azure resource id.
+### -SubscriptionId
+Azure Subscription ID.
 
 ```yaml
-Type: String
-Parameter Sets: ByResourceIdParameterSet
+Type: System.String[]
+Parameter Sets: Get, List
 Aliases:
 
-Required: True
+Required: False
 Position: Named
-Default value: None
+Default value: (Get-AzContext).Subscription.Id
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -155,12 +176,35 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.Commands.Cdn.AfdModels.PSAfdOriginGroup
+### Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.ICdnIdentity
 
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.Cdn.AfdModels.PSAfdOrigin
+### Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.Api20210601.IAfdOrigin
 
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT `<ICdnIdentity>`: Identity Parameter
+  - `[CustomDomainName <String>]`: Name of the domain under the profile which is unique globally.
+  - `[EndpointName <String>]`: Name of the endpoint under the profile which is unique globally.
+  - `[Id <String>]`: Resource identity path
+  - `[OriginGroupName <String>]`: Name of the origin group which is unique within the endpoint.
+  - `[OriginName <String>]`: Name of the origin which is unique within the profile.
+  - `[ProfileName <String>]`: Name of the Azure Front Door Standard or Azure Front Door Premium or CDN profile which is unique within the resource group.
+  - `[ResourceGroupName <String>]`: Name of the Resource group within the Azure subscription.
+  - `[RouteName <String>]`: Name of the routing rule.
+  - `[RuleName <String>]`: Name of the delivery rule which is unique within the endpoint.
+  - `[RuleSetName <String>]`: Name of the rule set under the profile which is unique globally.
+  - `[SecretName <String>]`: Name of the Secret under the profile.
+  - `[SecurityPolicyName <String>]`: Name of the security policy under the profile.
+  - `[SubscriptionId <String>]`: Azure Subscription ID.
+
 ## RELATED LINKS
+

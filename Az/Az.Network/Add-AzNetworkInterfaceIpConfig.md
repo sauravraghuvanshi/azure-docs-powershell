@@ -41,7 +41,7 @@ The **Add-AzNetworkInterfaceIpConfig** cmdlet adds a network interface IP config
 ## EXAMPLES
 
 ### Example 1: Add a new IP configuration with an application security group
-```
+```powershell
 $subnet = New-AzVirtualNetworkSubnetConfig -Name MySubnet -AddressPrefix 10.0.1.0/24
 $vnet = New-AzVirtualNetwork -Name MyVNET -ResourceGroupName MyResourceGroup -Location "West US" -AddressPrefix 10.0.0.0/16 -Subnet $subnet
 

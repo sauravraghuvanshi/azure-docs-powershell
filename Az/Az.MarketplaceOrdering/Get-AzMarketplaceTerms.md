@@ -1,41 +1,61 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.MarketplaceOrdering.dll-Help.xml
+external help file: 
 Module Name: Az.MarketplaceOrdering
 online version: https://docs.microsoft.com/powershell/module/az.marketplaceordering/get-azmarketplaceterms
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MarketplaceOrdering/MarketplaceOrdering/help/Get-AzMarketplaceTerms.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MarketplaceOrdering/MarketplaceOrdering/help/Get-AzMarketplaceTerms.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MarketplaceOrdering/help/Get-AzMarketplaceTerms.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/MarketplaceOrdering/help/Get-AzMarketplaceTerms.md
 ---
 
 # Get-AzMarketplaceTerms
 
 ## SYNOPSIS
-Get the agreement terms for a given publisher id(Publisher), offer id(Product) and plan id(Name). The terms object which is returned by this command should be passed to Set-AzMarketplaceTerms to accept the legal terms.
+Get marketplace terms.
 
 ## SYNTAX
 
+### Get1 (Default)
 ```
-Get-AzMarketplaceTerms -Publisher <String> -Product <String> -Name <String>
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzMarketplaceTerms -Name <String> -Product <String> -Publisher <String> [-SubscriptionId <String[]>]
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### Get
+```
+Get-AzMarketplaceTerms -Name <String> -OfferType <OfferType> -Product <String> -Publisher <String>
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-AzMarketplaceTerms** cmdlet returns terms for given publisher id(Publisher), offer id(Product) and plan id(Name) tuple.
+Get marketplace terms.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Get marketplace terms
+```powershell
+Get-AzMarketplaceTerms  -Publisher "microsoft-ads" -Product "windows-data-science-vm" -Name "windows2016"
 ```
-PS C:\> Get-AzMarketplaceTerms -Publisher "microsoft-ads" -Product "windows-data-science-vm" -Name "windows2016"
-Publisher         : microsoft-ads
-Product           : windows-data-science-vm
-Plan              : windows2016
-LicenseTextLink   : <LicenseTextLink>
-PrivacyPolicyLink : <PrivacyPolicyLink>
-Signature         : <Signature>
-Accepted          : True
-RetrieveDatetime  : <RetrieveDatetime>
+
+```output
+Name        Product Publisher     Accepted Signature PrivacyPolicyLink
+----        ------- ---------     -------- --------- -----------------
+windows2016         microsoft-ads
 ```
+
+This command gets marketplace terms.
+
+### Example 2: Get marketplace terms with offter type
+```powershell
+Get-AzMarketplaceTerms  -Publisher "microsoft-ads" -Product "windows-data-science-vm" -Name "windows2016" -OfferType 'virtualmachine'
+```
+
+```output
+Name        Product                 Publisher     Accepted Signature                                                                                               PrivacyPolicyLink
+----        -------                 ---------     -------- ---------                                                                                               -----------------
+windows2016 windows-data-science-vm microsoft-ads True     523GN576A2S5OTTOGVFEZWYIWCUIQN2VE3I4WW3H2MER3ERJGDXZESHHQF5ZB2II2VUYXLRK6NE2A7EPF7GH6LWMQ6ECSYSPOD2SHFQ https://www.microsoft.com/EN-US/privacystatement/OnlineS
+```
+
+This command gets marketplace terms with offter type.
 
 ## PARAMETERS
 
@@ -43,9 +63,9 @@ RetrieveDatetime  : <RetrieveDatetime>
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -60,6 +80,21 @@ Plan identifier string of image being deployed.
 ```yaml
 Type: System.String
 Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OfferType
+Publisher identifier string of image being deployed.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.MarketplaceOrdering.Support.OfferType
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -99,17 +134,35 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SubscriptionId
+The subscription ID that identifies an Azure subscription.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### None
+### Microsoft.Azure.PowerShell.Cmdlets.MarketplaceOrdering.Models.IMarketplaceOrderingIdentity
 
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.MarketplaceOrdering.Models.PSAgreementTerms
+### Microsoft.Azure.PowerShell.Cmdlets.MarketplaceOrdering.Models.Api202101.IAgreementTerms
 
 ## NOTES
 
+ALIASES
+
 ## RELATED LINKS
+

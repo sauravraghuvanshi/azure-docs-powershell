@@ -41,9 +41,11 @@ To get only the instance view of an extension, specify the Status parameter.
 ## EXAMPLES
 
 ### Example 1: Get properties of an extension
+```powershell
+Get-AzVMExtension -ResourceGroupName "ResourceGroup11" -VMName "VirtualMachine22" -Name "CustomScriptExtension"
 ```
-PS C:\> Get-AzVMExtension -ResourceGroupName "ResourceGroup11" -VMName "VirtualMachine22" -Name "CustomScriptExtension"
 
+```output
 ResourceGroupName       : ResourceGroup11
 VMName                  : VirtualMachine22
 Name                    : CustomScriptExtension
@@ -66,9 +68,11 @@ ForceUpdateTag          :
 This command gets properties for the extension named CustomScriptExtension on the virtual machine named VirtualMachine22 in the resource group ResourceGroup11.
 
 ### Example 2: Get instance view of an extension
+```powershell
+Get-AzVMExtension -ResourceGroupName "ResourceGroup11" -VMName "VirtualMachine22" -Name "CustomScriptExtension" -Status
 ```
-PS C:\> Get-AzVMExtension -ResourceGroupName "ResourceGroup11" -VMName "VirtualMachine22" -Name "CustomScriptExtension" -Status
 
+```output
 ResourceGroupName       : ResourceGroup11
 VMName                  : VirtualMachine22
 Name                    : CustomScriptExtension
@@ -91,9 +95,11 @@ ForceUpdateTag          :
 This command gets the instance view for the extension named CustomScriptExtension on the virtual machine named VirtualMachine22 in the resource group ResourceGroup11.
 
 ### Example 3: Get all extensions installed on a VM
+```powershell
+Get-AzVMExtension -ResourceGroupName "ResourceGroup11" -VMName "VirtualMachine22"
 ```
-PS C:\> Get-AzVMExtension -ResourceGroupName "ResourceGroup11" -VMName "VirtualMachine22"
 
+```output
 ResourceGroupName       : ResourceGroup11
 VMName                  : VirtualMachine22
 Name                    : CustomScriptExtension
@@ -113,11 +119,13 @@ AutoUpgradeMinorVersion : True
 ForceUpdateTag          :
 ```
 
-### Example 4: Get properties of an extension using the VM parameter
+### Example 4: Get properties of an extension using the VMObject parameter
+```powershell
+$vm = Get-AzVM -ResourceGroupName "ResourceGroup11" -Name "VirtualMachine22"
+Get-AzVMExtension -VMObject $vm
 ```
-PS C:\> $vm = Get-AzVMExtension -ResourceGroupName "ResourceGroup11" -Name "VirtualMachine22"
-PS C:\> Get-AzVMExtension -VM $vm
 
+```output
 ResourceGroupName       : ResourceGroup11
 VMName                  : VirtualMachine22
 Name                    : CustomScriptExtension

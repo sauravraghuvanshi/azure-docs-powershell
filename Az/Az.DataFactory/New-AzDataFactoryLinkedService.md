@@ -41,8 +41,11 @@ Perform these operations in the following order:
 ## EXAMPLES
 
 ### Example 1: Create a linked service
+```powershell
+New-AzDataFactoryLinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "LinkedServiceCuratedWikiData" -File "C:\\samples\\WikiSample\\LinkedServiceCuratedWikiData.json" | Format-List
 ```
-PS C:\>New-AzDataFactoryLinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "LinkedServiceCuratedWikiData" -File "C:\\samples\\WikiSample\\LinkedServiceCuratedWikiData.json" | Format-List
+
+```output
 LinkedServiceName : LinkedServiceCuratedWikiData
 ResourceGroupName : ADF
 DataFactoryName   : WikiADF

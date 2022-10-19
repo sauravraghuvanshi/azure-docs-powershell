@@ -35,6 +35,9 @@ List returns repository names only.
 ### Example 1
 ```powershell
 Get-AzContainerRegistryRepository -RegistryName registry
+```
+
+```output
 alpine
 test/busybox0
 test/busybox1
@@ -46,6 +49,9 @@ List all repositories in registry.
 ### Example 2
 ```powershell
 Get-AzContainerRegistryRepository -RegistryName registry -First 3
+```
+
+```output
 alpine
 test/busybox0
 test/busybox1
@@ -56,7 +62,9 @@ List first 3 repositories in registry.
 ### Example 3
 ```powershell
 Get-AzContainerRegistryRepository -RegistryName registry -Name alpine
+```
 
+```output
 Registry             : registry.azurecr.io
 ImageName            : alpine
 CreatedTime          : 2020-10-13T05:45:25.5896115Z

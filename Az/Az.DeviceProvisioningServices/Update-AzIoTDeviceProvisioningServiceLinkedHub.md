@@ -41,11 +41,13 @@ For an introduction to Azure IoT Hub Device Provisioning Service, see https://do
 ## EXAMPLES
 
 ### Example 1
+```powershell
+Update-AzIoTDeviceProvisioningServiceLinkedHub -ResourceGroupName "myresourcegroup" -Name "myiotdps" -LinkedHubName "myiothub" -AllocationWeight 10 -ApplyAllocationPolicy
 ```
-PS C:\> Update-AzIoTDeviceProvisioningServiceLinkedHub -ResourceGroupName "myresourcegroup" -Name "myiotdps" -LinkedHubName "myiothub" -AllocationWeight 10 -ApplyAllocationPolicy $true
 
-ResourceGroupName	  : myresourcegroup
-Name				  : myiotdps
+```output
+ResourceGroupName     : myresourcegroup
+Name                  : myiotdps
 LinkedHubName         : myiothub.azure-devices.net
 ConnectionString      : HostName=myiothub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=****
 AllocationWeight      : 10

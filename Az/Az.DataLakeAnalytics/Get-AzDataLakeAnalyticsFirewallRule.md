@@ -25,15 +25,15 @@ The **Get-AzDataLakeAnalyticsFirewallRule** cmdlet retrieves a firewall rule or 
 ## EXAMPLES
 
 ### Example 1: Get a firewall rule
-```
-PS C:\>Get-AzDataLakeAnalyticsFirewallRule -Account "ContosoAdlAcct" -Name "My firewall rule"
+```powershell
+Get-AzDataLakeAnalyticsFirewallRule -Account "ContosoAdlAcct" -Name "My firewall rule"
 ```
 
 This command gets the firewall rule named "my firewall rule" from account "ContosoAdlAcct"
 
 ### Example 2: List all firewall rules
-```
-PS C:\>Get-AzDataLakeAnalyticsFirewallRule -Account "ContosoAdlAcct"
+```powershell
+Get-AzDataLakeAnalyticsFirewallRule -Account "ContosoAdlAcct"
 ```
 
 This command gets all firewall rules from account "ContosoAdlAcct"

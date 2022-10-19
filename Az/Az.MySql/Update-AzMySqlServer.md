@@ -20,19 +20,20 @@ Use Update-AzMySqlConfiguration instead if you want update server parameters suc
 ```
 Update-AzMySqlServer -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
  [-AdministratorLoginPassword <SecureString>] [-BackupRetentionDay <Int32>]
- [-MinimalTlsVersion <MinimalTlsVersionEnum>] [-ReplicationRole <String>] [-Sku <String>]
- [-SkuCapacity <Int32>] [-SkuFamily <String>] [-SkuTier <SkuTier>] [-SslEnforcement <SslEnforcementEnum>]
- [-StorageAutogrow <StorageAutogrow>] [-StorageInMb <Int32>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>]
- [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MinimalTlsVersion <MinimalTlsVersionEnum>] [-PublicNetworkAccess <PublicNetworkAccessEnum>]
+ [-ReplicationRole <String>] [-Sku <String>] [-SkuCapacity <Int32>] [-SkuFamily <String>] [-SkuTier <SkuTier>]
+ [-SslEnforcement <SslEnforcementEnum>] [-StorageAutogrow <StorageAutogrow>] [-StorageInMb <Int32>]
+ [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-AzMySqlServer -InputObject <IMySqlIdentity> [-AdministratorLoginPassword <SecureString>]
- [-BackupRetentionDay <Int32>] [-MinimalTlsVersion <MinimalTlsVersionEnum>] [-ReplicationRole <String>]
- [-Sku <String>] [-SkuCapacity <Int32>] [-SkuFamily <String>] [-SkuTier <SkuTier>]
- [-SslEnforcement <SslEnforcementEnum>] [-StorageAutogrow <StorageAutogrow>] [-StorageInMb <Int32>]
- [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-BackupRetentionDay <Int32>] [-MinimalTlsVersion <MinimalTlsVersionEnum>]
+ [-PublicNetworkAccess <PublicNetworkAccessEnum>] [-ReplicationRole <String>] [-Sku <String>]
+ [-SkuCapacity <Int32>] [-SkuFamily <String>] [-SkuTier <SkuTier>] [-SslEnforcement <SslEnforcementEnum>]
+ [-StorageAutogrow <StorageAutogrow>] [-StorageInMb <Int32>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>]
+ [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,8 +45,10 @@ Use Update-AzMySqlConfiguration instead if you want update server parameters suc
 
 ### Example 1: Update MySql server by resource group and server name
 ```powershell
-PS C:\> Update-AzMySqlServer -ResourceGroupName PowershellMySqlTest -ServerName mysql-test -SslEnforcement Disabled
+Update-AzMySqlServer -ResourceGroupName PowershellMySqlTest -ServerName mysql-test -SslEnforcement Disabled
+```
 
+```output
 Name          Location AdministratorLogin Version StorageProfileStorageMb SkuName   SkuTier        SslEnforcement
 ----          -------- ------------------ ------- ----------------------- -------   -------        --------------
 mysql-test    eastus   mysql_test         5.7     5120                    GP_Gen5_4 GeneralPurpose Disabled
@@ -55,8 +58,10 @@ This cmdlet updates MySql server by resource group and server name.
 
 ### Example 2: Update MySql server by identity.
 ```powershell
-PS C:\> Get-AzMySqlServer -ResourceGroupName PowershellMySqlTest -ServerName mysql-test | Update-AzMySqlServer -BackupRetentionDay 23 -StorageMb 10240
+Get-AzMySqlServer -ResourceGroupName PowershellMySqlTest -ServerName mysql-test | Update-AzMySqlServer -BackupRetentionDay 23 -StorageInMb 10240
+```
 
+```output
 Name          Location AdministratorLogin Version StorageProfileStorageMb SkuName   SkuTier        SslEnforcement
 ----          -------- ------------------ ------- ----------------------- -------   -------        --------------
 mysql-test    eastus   mysql_test         5.7     10240                   GP_Gen5_4 GeneralPurpose Disabled
@@ -179,6 +184,22 @@ Run the command asynchronously.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PublicNetworkAccess
+Whether or not public network access is allowed for this server.
+Value is optional but if passed in, must be 'Enabled' or 'Disabled'
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.MySql.Support.PublicNetworkAccessEnum
 Parameter Sets: (All)
 Aliases:
 
@@ -408,7 +429,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IMySqlIdentity>: Identity Parameter.
+`INPUTOBJECT <IMySqlIdentity>`: Identity Parameter.
   - `[BackupName <String>]`: The name of the backup.
   - `[ConfigurationName <String>]`: The name of the server configuration.
   - `[DatabaseName <String>]`: The name of the database.

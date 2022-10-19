@@ -1,10 +1,10 @@
 ---
-external help file: 
+external help file: Az.Purview-help.xml
 Module Name: Az.Purview
 online version: https://docs.microsoft.com/powershell/module/az.purview/set-azpurviewdefaultaccount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/help/Set-AzPurviewDefaultAccount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/help/Set-AzPurviewDefaultAccount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/Purview/help/Set-AzPurviewDefaultAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/Purview/help/Set-AzPurviewDefaultAccount.md
 ---
 
 # Set-AzPurviewDefaultAccount
@@ -16,8 +16,8 @@ Sets the default account for the scope.
 
 ```
 Set-AzPurviewDefaultAccount -AccountName <String> -ResourceGroupName <String> -ScopeTenantId <String>
- [-Scope <String>] [-ScopeType <ScopeType>] [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Scope <String>] [-ScopeType <ScopeType>] [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -27,8 +27,10 @@ Sets the default account for the scope.
 
 ### Example 1: Sets the default account for the scope.
 ```powershell
-PS C:\> Set-AzPurviewDefaultAccount -AccountName test-pa -ResourceGroupName test-rg -ScopeTenantId xxxxxxxx-38d6-4fb2-bad9-b7b93a3e9c5a
+Set-AzPurviewDefaultAccount -AccountName test-pa -ResourceGroupName test-rg -ScopeTenantId xxxxxxxx-38d6-4fb2-bad9-b7b93a3e9c5a
+```
 
+```output
 AccountName ResourceGroupName Scope                                ScopeTenantId                        ScopeType SubscriptionId
 ----------- ----------------- -----                                -------------                        --------- --------------
 test-pa      test-rg            xxxxxxxx-38d6-4fb2-bad9-b7b93a3e9c5a xxxxxxxx-38d6-4fb2-bad9-b7b93a3e9c5a Tenant    xxxxxxxx-1bf0-4dda-aec3
@@ -189,4 +191,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
-

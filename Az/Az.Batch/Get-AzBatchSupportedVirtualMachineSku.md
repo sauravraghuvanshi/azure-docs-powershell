@@ -25,8 +25,10 @@ Get-AzBatchSupportedVirtualMachineSku [-Location] <String> [[-MaxResultCount] <I
 
 ### Example 1 Get supported skus for a region
 ```powershell
-PS C:\> Get-AzBatchSupportedVirtualMachineSku eastus
+Get-AzBatchSupportedVirtualMachineSku eastus
+```
 
+```output
 Name               FamilyName            Capabilities
 ----               ----------            ------------
 Basic_A1           basicAFamily          {MaxResourceVolumeMB, OSVhdSizeMB, vCPUs, MemoryPreservingMaintenanceSupporte...

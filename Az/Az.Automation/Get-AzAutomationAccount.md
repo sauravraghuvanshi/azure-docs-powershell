@@ -34,15 +34,15 @@ For more information about Automation accounts, see the New-AzAutomationAccount 
 ## EXAMPLES
 
 ### Example 1: Get all accounts
-```
-PS C:\>Get-AzAutomationAccount -ResourceGroupName "ResourceGroup03"
+```powershell
+Get-AzAutomationAccount -ResourceGroupName "ResourceGroup03"
 ```
 
 This command gets all Automation accounts in the resource group named ResourceGroup03.
 
 ### Example 2: Get an account
-```
-PS C:\>Get-AzAutomationAccount -ResourceGroupName "ResourceGroup03" -Name "ContosoAutomationAccount"
+```powershell
+Get-AzAutomationAccount -ResourceGroupName "ResourceGroup03" -Name "ContosoAutomationAccount"
 ```
 
 This command gets the Automation account named ContosoAutomationAccount in the resource group named ContosoResourceGroup.
@@ -107,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

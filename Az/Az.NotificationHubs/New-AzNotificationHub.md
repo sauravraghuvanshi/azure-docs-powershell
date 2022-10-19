@@ -41,8 +41,8 @@ When used in conjunction with the **New-AzNotificationHub** cmdlet, the precedin
 ## EXAMPLES
 
 ### Example 1: Create a notification hub
-```
-PS C:\>New-AzNotificationHub -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup" -InputFile "C:\Configurations\InternalHub.json"
+```powershell
+New-AzNotificationHub -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup" -InputFile "C:\Configurations\InternalHub.json"
 ```
 
 This command creates a notification hub in the namespace ContosoNamespace.

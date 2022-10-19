@@ -27,8 +27,8 @@ The **Remove-AzDataLakeStoreFirewallRule** cmdlet removes the specified firewall
 ## EXAMPLES
 
 ### Example 1: Remove a firewall rule from an account
-```
-PS C:\> Remove-AzDataLakeStoreFirewallRule -AccountName "ContosoADL" -Name MyFirewallRule
+```powershell
+Remove-AzDataLakeStoreFirewallRule -AccountName "ContosoADL" -Name MyFirewallRule
 ```
 
 Removes firewall rule "MyFirewallRule" from account "ContosoADL"

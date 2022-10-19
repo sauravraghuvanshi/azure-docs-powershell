@@ -1,5 +1,5 @@
 ---
-external help file: Az.StackHCI-help.xml
+external help file: 
 Module Name: Az.StackHCI
 online version: https://docs.microsoft.com/powershell/module/az.stackhci/enable-azstackhciremotesupport
 schema: 2.0.0
@@ -15,8 +15,8 @@ Enables Remote Support.
 ## SYNTAX
 
 ```
-Enable-AzStackHCIRemoteSupport [-AccessLevel] <String> [[-ExpireInMinutes] <Int32>] [[-SasCredential] <String>]
- [-AgreeToRemoteSupportConsent] [-WhatIf] [-Confirm] [<CommonParameters>]
+Enable-AzStackHCIRemoteSupport [-AccessLevel] <String> [[-ExpireInMinutes] <Int32>]
+ [[-SasCredential] <String>] [-AgreeToRemoteSupportConsent] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -24,20 +24,59 @@ Enables Remote Support allows authorized Microsoft Support users to remotely acc
 
 ## EXAMPLES
 
-### EXAMPLE 1
-```poweshell
-C:\PS\>Enable-AzStackHCIRemoteSupport -AccessLevel Diagnostics -ExpireInMinutes 1440 -SasCredential "Sample SAS"
+### Example 1: 
+```powershell
+Enable-AzStackHCIRemoteSupport -AccessLevel Diagnostics -ExpireInMinutes 1440 -SasCredential "Sample SAS"
 ```
 
-### EXAMPLE 2
-```powershell
-C:\PS\>Enable-AzStackHCIRemoteSupport -AccessLevel DiagnosticsRepair -ExpireInMinutes 1440 -SasCredential "Sample SAS" -AgreeToRemoteSupportConsent
+```output
+Proceed with enabling remote support?
+[Y] Yes  [N] No: Y
+
+Enabling Remote Support for 'Diagnostics' expiring in '1440' minutes.
+Using provided SAS credential to make remote support connection.
+Remote Support successfully Enabled.
+
+
+State         : Active
+CreatedAt     : 3/29/2022 10:29:19 AM +00:00
+UpdatedAt     : 3/29/2022 10:29:19 AM +00:00
+TargetService : PowerShell
+AccessLevel   : Diagnostics
+ExpiresAt     : 3/30/2022 10:29:18 AM +00:00
+SasCredential :
 ```
+
+Enable Remote Support on machine
+
+### Example 2:
+```powershell
+Enable-AzStackHCIRemoteSupport -AccessLevel DiagnosticsRepair -ExpireInMinutes 1440 -SasCredential "Sample SAS" -AgreeToRemoteSupportConsent
+```
+
+```output
+Enabling Remote Support for 'Diagnostics' expiring in '1440' minutes.
+Using provided SAS credential to make remote support connection.
+Remote Support successfully Enabled.
+
+
+State         : Active
+CreatedAt     : 3/29/2022 10:29:19 AM +00:00
+UpdatedAt     : 3/29/2022 10:29:53 AM +00:00
+TargetService : PowerShell
+AccessLevel   : Diagnostics
+ExpiresAt     : 3/30/2022 10:29:53 AM +00:00
+SasCredential :
+```
+
+Enable remort support by providing consent.
+In this case, user is not prompted for consent
 
 ## PARAMETERS
 
 ### -AccessLevel
-Controls the remote operations that can be performed. This can be either Diagnostics or DiagnosticsAndRepair.
+Controls the remote operations that can be performed.
+This can be either Diagnostics or DiagnosticsAndRepair.
 
 ```yaml
 Type: System.String
@@ -45,13 +84,14 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
-Default value: [System.String]::Empty
+Position: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -AgreeToRemoteSupportConsent
+Optional.
 If set to true then records user consent as provided and proceeds without prompt.
 
 ```yaml
@@ -61,13 +101,13 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ExpireInMinutes
-Specifies remote support expiry in days. Defaults to 480 minutes (8 hours).
+
 
 ```yaml
 Type: System.Int32
@@ -75,8 +115,8 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
-Default value: 480
+Position: 1
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -90,8 +130,8 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
-Default value: [System.String]::Empty
+Position: 2
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -112,7 +152,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -133,6 +174,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
+### System.Boolean
+
 ## NOTES
 
+ALIASES
+
 ## RELATED LINKS
+

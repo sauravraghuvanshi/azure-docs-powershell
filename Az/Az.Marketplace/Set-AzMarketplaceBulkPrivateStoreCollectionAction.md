@@ -33,8 +33,10 @@ Perform an action on bulk collections
 
 ### Example 1: Preforms bulk action on collections 
 ```powershell
-PS C:\> Set-AzMarketplaceBulkPrivateStoreCollectionAction -PrivateStoreId 3ac32d8c-e888-4dc6-b4ff-be4d755af13a -Payload @{Action = "EnableCollections"; CollectionId = "3ac32d8c-e888-4dc6-b4ff-be4d755af13a", "fdb889a1-cf3e-49f0-95b8-2bb012fa01f1" }
+Set-AzMarketplaceBulkPrivateStoreCollectionAction -PrivateStoreId 3ac32d8c-e888-4dc6-b4ff-be4d755af13a -Payload @{Action = "EnableCollections"; CollectionId = "3ac32d8c-e888-4dc6-b4ff-be4d755af13a", "fdb889a1-cf3e-49f0-95b8-2bb012fa01f1" }
+```
 
+```output
 Failed Succeeded
 ------ ---------
 {}     {DefaultCollection, test}
@@ -171,7 +173,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-PAYLOAD <IBulkCollectionsPayload>: Bulk collections action properties
+PAYLOAD `<IBulkCollectionsPayload>`: Bulk collections action properties
   - `[Action <String>]`: Action to perform (For example: EnableCollections, DisableCollections)
   - `[CollectionId <String[]>]`: collection ids list that the action is performed on
 

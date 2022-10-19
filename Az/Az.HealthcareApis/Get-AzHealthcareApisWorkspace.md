@@ -44,8 +44,10 @@ Gets the properties of the specified workspace.
 
 ### Example 1: List the properties.
 ```powershell
-PS C:\> Get-AzHealthcareApisWorkspace
+Get-AzHealthcareApisWorkspace
+```
 
+```output
 Location Name       ResourceGroupName
 -------- ----       -----------------
 eastus2  azpshcws   azps_test_group
@@ -56,8 +58,10 @@ List the properties.
 
 ### Example 2: Gets the properties of the specified workspace.
 ```powershell
-PS C:\> Get-AzHealthcareApisWorkspace -Name azpshcws -ResourceGroupName azps_test_group
+Get-AzHealthcareApisWorkspace -Name azpshcws -ResourceGroupName azps_test_group
+```
 
+```output
 Location Name     ResourceGroupName
 -------- ----     -----------------
 eastus2  azpshcws azps_test_group
@@ -67,8 +71,10 @@ Gets the properties of the specified workspace.
 
 ### Example 3: List the properties of the resource group.
 ```powershell
-PS C:\> Get-AzHealthcareApisWorkspace -ResourceGroupName azps_test_group
+Get-AzHealthcareApisWorkspace -ResourceGroupName azps_test_group
+```
 
+```output
 Location Name       ResourceGroupName
 -------- ----       -----------------
 eastus2  azpshcws   azps_test_group
@@ -175,7 +181,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IHealthcareApisIdentity>: Identity Parameter
+INPUTOBJECT `<IHealthcareApisIdentity>`: Identity Parameter
   - `[DicomServiceName <String>]`: The name of DICOM Service resource.
   - `[FhirDestinationName <String>]`: The name of IoT Connector FHIR destination resource.
   - `[FhirServiceName <String>]`: The name of FHIR Service resource.

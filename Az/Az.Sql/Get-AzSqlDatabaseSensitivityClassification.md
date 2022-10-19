@@ -48,8 +48,10 @@ The Get-AzSqlDatabaseSensitivityClassification cmdlet returns the current inform
 
 ### Example 1: Get current information types and sensitivity labels of an Azure SQL Database.
 ```powershell
-PS C:\> Get-AzSqlDatabaseSensitivityClassification -ResourceGroupName resourceGroup -ServerName server -DatabaseName database
+Get-AzSqlDatabaseSensitivityClassification -ResourceGroupName resourceGroup -ServerName server -DatabaseName database
+```
 
+```output
 ResourceGroupName : resourceGroup
 ServerName        : server
 DatabaseName      : database
@@ -76,8 +78,10 @@ SensitivityLabels : {{
 
 ### Example 2: Get current information types and sensitivity labels of an Azure SQL Database with Piping.
 ```powershell
-PS C:\> Get-AzSqlDatabase -ResourceGroupName resourceGroup -ServerName server -DatabaseName database | Get-AzSqlDatabaseSensitivityClassification
+Get-AzSqlDatabase -ResourceGroupName resourceGroup -ServerName server -DatabaseName database | Get-AzSqlDatabaseSensitivityClassification
+```
 
+```output
 ResourceGroupName : resourceGroup
 ServerName        : server
 DatabaseName      : database
@@ -104,8 +108,10 @@ SensitivityLabels : {{
 
 ### Example 3: Get current information type and sensitivity label of a specific column of an Azure SQL Database.
 ```powershell
-PS C:\> Get-AzSqlDatabaseSensitivityClassification -ResourceGroupName resourceGroup -ServerName server -DatabaseName database -SchemaName dbo -TableName EMailLog -ColumnName BounceEmailSubject
+Get-AzSqlDatabaseSensitivityClassification -ResourceGroupName resourceGroup -ServerName server -DatabaseName database -SchemaName dbo -TableName EMailLog -ColumnName BounceEmailSubject
+```
 
+```output
 ResourceGroupName : resourceGroup
 ServerName        : server
 DatabaseName      : database
@@ -121,8 +127,10 @@ SensitivityLabels : {{
 
 ### Example 4: Get current information type and sensitivity label of a specific column of an Azure SQL Database using Piping.
 ```powershell
-PS C:\> Get-AzSqlDatabase -ResourceGroupName resourceGroup -ServerName server -DatabaseName database | Get-AzSqlDatabaseSensitivityClassification -SchemaName dbo -TableName EMailLog -ColumnName BounceEmailSubject
+Get-AzSqlDatabase -ResourceGroupName resourceGroup -ServerName server -DatabaseName database | Get-AzSqlDatabaseSensitivityClassification -SchemaName dbo -TableName EMailLog -ColumnName BounceEmailSubject
+```
 
+```output
 ResourceGroupName : resourceGroup
 ServerName        : server
 DatabaseName      : database

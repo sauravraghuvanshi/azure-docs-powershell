@@ -33,16 +33,16 @@ The **Set-AzVmssOsProfile** cmdlet sets the Virtual Machine Scale Set operating 
 ## EXAMPLES
 
 ### Example 1: Set the operating system profile properties for a VMSS
-```
-PS C:\> $vmss = New-AzVmssConfig -Location $Loc -SkuCapacity 2 -SkuName "Standard_A0" -UpgradePolicyMode "Automatic" -NetworkInterfaceConfiguration $NetCfg
-PS C:\> Set-AzVmssOSProfile -VirtualMachineScaleSet $vmss -ComputerNamePrefix "Test" -AdminUsername $AdminUsername -AdminPassword $AdminPassword
+```powershell
+$vmss = New-AzVmssConfig -Location $Loc -SkuCapacity 2 -SkuName "Standard_A0" -UpgradePolicyMode "Automatic" -NetworkInterfaceConfiguration $NetCfg
+Set-AzVmssOsProfile -VirtualMachineScaleSet $vmss -ComputerNamePrefix "Test" -AdminUsername $AdminUsername -AdminPassword $AdminPassword
 ```
 
 This command sets operating system profile properties for the $vmss object.
 The command sets the computer name prefix for all the virtual machine instances in the VMSS to Test and supplies the administrator username and password.
 
 ### Example 2: Set the operating system profile properties for a Vmss in Flexible mode with Hotpatching enabled.
-```
+```powershell
 # Setup variables.
 $loc = "eastus";
 $rgname = "<Resource Group Name>";
@@ -190,6 +190,7 @@ $vmss = New-AzVmss `
     -VirtualMachineScaleSet $vmssConfig;
 ```
 
+Set the operating system profile properties for a Vmss in Flexible mode with Hotpatching enabled
 
 ## PARAMETERS
 
@@ -226,12 +227,13 @@ Accept wildcard characters: False
 
 ### -AdminUsername
 Specifies the administrator account name to use for all the virtual machine instances in the VMSS. <br>
-**Windows-only restriction:** Cannot end in \".\" <br>
+**Restriction:** <br>
+Windows: Cannot contain special characters \/""[]:|<>+=;,?*@& or end in \".\" <br>
+Linux: Username must only contain letters, numbers, hyphens, and underscores and may not start with a hyphen or number. <br>
 **Disallowed values:** \"administrator\", \"admin\", \"user\", \"user1\", \"test\", \"user2\", \"test1\", \"user3\", \"admin1\", \"1\", \"123\", \"a\", \"actuser\", \"adm\", \"admin2\", \"aspnet\", \"backup\", \"console\", \"david\", \"guest\", \"john\", \"owner\", \"root\", \"server\", \"sql\", \"support\", \"support_388945a0\", \"sys\", \"test2\", \"test3\", \"user4\", \"user5\". <br>
-**Minimum-length (Linux):** 1  character <br>
-**Max-length (Linux):** 64 characters <br>
-**Max-length (Windows):** 20 characters  <br>
-<li> For a list of built-in system users on Linux that should not be used in this field, see [Selecting User Names for Linux on Azure](https://docs.microsoft.com/azure/devops/organizations/settings/naming-restrictions).
+**Minimum-length:** 1  character <br>
+**Max-length:** 20 characters for Windows, 64 characters for Linux <br>
+For a list of built-in system users on Linux that should not be used in this field, see [Selecting User Names for Linux on Azure](https://docs.microsoft.com/azure/devops/organizations/settings/naming-restrictions).
 
 ```yaml
 Type: System.String

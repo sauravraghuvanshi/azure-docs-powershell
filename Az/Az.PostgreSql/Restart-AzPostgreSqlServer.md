@@ -33,7 +33,7 @@ Restarts a server.
 
 ### Example 1: Restart PostgreSql server by resource group and server name
 ```powershell
-PS C:\> Restart-AzPostgreSqlServer -ResourceGroupName PostgreSqlTestRG -Name PostgreSqlTestServer
+Restart-AzPostgreSqlServer -ResourceGroupName PostgreSqlTestRG -Name PostgreSqlTestServer
 
 ```
 
@@ -41,9 +41,9 @@ This cmdlet restarts PostgreSql server by resource group and server name.
 
 ### Example 2: Restart PostgreSql server by identity
 ```powershell
-PS C:\> $ID = "/subscriptions/<SubscriptionId>/resourceGroups/PostgreSqlTestRG/providers/Microsoft.DBforPostgreSQL/servers/PostgreSqlTestServer/restart"
-PS C:\> Restart-AzPostgreSqlServer -InputObject $ID
- 
+$ID = "/subscriptions/<SubscriptionId>/resourceGroups/PostgreSqlTestRG/providers/Microsoft.DBforPostgreSQL/servers/PostgreSqlTestServer/restart"
+Restart-AzPostgreSqlServer -InputObject $ID
+
 ```
 
 These cmdlets restart PostgreSql server by identity.
@@ -223,7 +223,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IPostgreSqlIdentity>: Identity Parameter
+INPUTOBJECT `<IPostgreSqlIdentity>`: Identity Parameter
   - `[ConfigurationName <String>]`: The name of the server configuration.
   - `[DatabaseName <String>]`: The name of the database.
   - `[FirewallRuleName <String>]`: The name of the server firewall rule.

@@ -33,8 +33,7 @@ Action used to manually kick off an AAD group sync job.
 
 ### Example 1: Sync the users connected to the lab.
 ```powershell
-PS C:\> Sync-AzLabServicesLabUser -ResourceGroupName "Group Name" -LabName "Lab Name"
-
+Sync-AzLabServicesLabUser -ResourceGroupName "Group Name" -LabName "Lab Name"
 ```
 
 This cmdlet will sync the connected AD Group to update the users.
@@ -216,7 +215,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-LAB <Lab>: 
+LAB `<Lab>`: 
   - `Location <String>`: The geo-location where the resource lives
   - `[AdditionalCapabilityInstallGpuDriver <EnableState?>]`: Flag to pre-install dedicated GPU drivers.
   - `[AdminUserPassword <String>]`: The password for the user. This is required for the TemplateVM createOption.

@@ -1,5 +1,5 @@
 ---
-external help file: 
+external help file: Az.Compute-help.xml
 Module Name: Az.Compute
 online version: https://docs.microsoft.com/powershell/module/az.compute/get-azvmssvmruncommand
 schema: 2.0.0
@@ -16,14 +16,14 @@ The operation to get the VMSS VM run command.
 
 ### List (Default)
 ```
-Get-AzVmssVMRunCommand -InstanceId <String> -ResourceGroupName <String> -VMScaleSetName <String>
- [-SubscriptionId <String[]>] [-Expand <String>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzVmssVMRunCommand -InstanceId <String> -ResourceGroupName <String> [-SubscriptionId <String[]>]
+ -VMScaleSetName <String> [-Expand <String>] [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-AzVmssVMRunCommand -InstanceId <String> -ResourceGroupName <String> -RunCommandName <String>
- -VMScaleSetName <String> [-SubscriptionId <String[]>] [-Expand <String>] [-DefaultProfile <PSObject>]
+ [-SubscriptionId <String[]>] -VMScaleSetName <String> [-Expand <String>] [-DefaultProfile <PSObject>]
  [<CommonParameters>]
 ```
 
@@ -40,8 +40,10 @@ The operation to get the VMSS VM run command.
 
 ### Example 1: Get RunCommand by name
 ```powershell
-PS C:\> Get-AzVmssVMRunCommand -InstanceId 3 -ResourceGroupName $rgname -RunCommandName "first" -VMScaleSetName $vmssname
+Get-AzVmssVMRunCommand -InstanceId 3 -ResourceGroupName $rgname -RunCommandName "first" -VMScaleSetName $vmssname
+```
 
+```output
 Location Name  Type
 -------- ----  ----
 eastus   first Microsoft.Compute/virtualMachineScaleSets/virtualMachines/runCommands
@@ -51,8 +53,10 @@ Get by runcommand name
 
 ### Example 2: Get RunCommand by Instance
 ```powershell
-PS C:\> Get-AzVmssVMRunCommand -InstanceId 3 -ResourceGroupName $rgname  -VMScaleSetName $vmssname
+Get-AzVmssVMRunCommand -InstanceId 3 -ResourceGroupName $rgname  -VMScaleSetName $vmssname
+```
 
+```output
 Location Name  Type
 -------- ----  ----
 eastus   first Microsoft.Compute/virtualMachineScaleSets/virtualMachines/runCommands
@@ -113,7 +117,7 @@ The instance ID of the virtual machine.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: List, Get
 Aliases:
 
 Required: True
@@ -128,7 +132,7 @@ The name of the resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: List, Get
 Aliases:
 
 Required: True
@@ -159,7 +163,7 @@ The subscription ID forms part of the URI for every service call.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get, List
+Parameter Sets: List, Get
 Aliases:
 
 Required: False
@@ -174,7 +178,7 @@ The name of the VM scale set.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: List, Get
 Aliases:
 
 Required: True
@@ -204,12 +208,12 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IComputeIdentity>: Identity Parameter
+`INPUTOBJECT <IComputeIdentity>`: Identity Parameter
   - `[CommandId <String>]`: The command id.
   - `[GalleryApplicationName <String>]`: The name of the gallery Application Definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
-  - `[GalleryApplicationVersionName <String>]`: The name of the gallery Application Version to be created. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: <MajorVersion>.<MinorVersion>.<Patch>
+  - `[GalleryApplicationVersionName <String>]`: The name of the gallery Application Version to be created. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: `<MajorVersion>.<MinorVersion>.<Patch>`
   - `[GalleryImageName <String>]`: The name of the gallery image definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
-  - `[GalleryImageVersionName <String>]`: The name of the gallery image version to be created. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: <MajorVersion>.<MinorVersion>.<Patch>
+  - `[GalleryImageVersionName <String>]`: The name of the gallery image version to be created. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: `<MajorVersion>.<MinorVersion>.<Patch>`
   - `[GalleryName <String>]`: The name of the Shared Image Gallery. The allowed characters are alphabets and numbers with dots and periods allowed in the middle. The maximum length is 80 characters.
   - `[Id <String>]`: Resource identity path
   - `[InstanceId <String>]`: The instance ID of the virtual machine.
@@ -221,4 +225,3 @@ INPUTOBJECT <IComputeIdentity>: Identity Parameter
   - `[VMScaleSetName <String>]`: The name of the VM scale set.
 
 ## RELATED LINKS
-

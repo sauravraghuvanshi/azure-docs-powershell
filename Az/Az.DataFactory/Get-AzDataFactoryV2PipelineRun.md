@@ -46,9 +46,11 @@ The **Get-AzDataFactoryV2PipelineRun** command returns information about runs fo
 ## EXAMPLES
 
 ### Example 1: Get information for a pipeline run
+```powershell
+Get-AzDataFactoryV2PipelineRun -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -PipelineRunId "61eb095a-fe23-4591-8a97-fade6c65ca72"
 ```
-PS C:\> Get-AzDataFactoryV2PipelineRun -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -PipelineRunId "61eb095a-fe23-4591-8a97-fade6c65ca72"
 
+```output
     ResourceGroupName : ADF
     DataFactoryName   : WikiADF
     RunId             : 61eb095a-fe23-4591-8a97-fade6c65ca72

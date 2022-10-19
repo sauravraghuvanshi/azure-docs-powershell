@@ -26,8 +26,10 @@ The New-AzMigrateDiskMapping cmdlet creates a mapping of the source disk attache
 
 ### Example 1: Make disks
 ```powershell
-PS C:\> New-AzMigrateDiskMapping -DiskID a -DiskType Standard -IsOSDisk 'true'
+New-AzMigrateDiskMapping -DiskID a -DiskType Standard -IsOSDisk 'true'
+```
 
+```output
 DiskEncryptionSetId DiskId   DiskType  IsOSDisk LogStorageAccountId LogStorageAccountSasSecretName  
 ------------------- ------   --------  -------- ------------------- ------------------------------   
                       a      Standard  true  
@@ -104,7 +106,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20210210.IVMwareCbtDiskInput
+### Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20220501.IVMwareCbtDiskInput
 
 ## NOTES
 

@@ -26,8 +26,10 @@ Creates PSHeaderAction object for the creation of PSRulesEngineAction object.
 
 ### Example 1
 ```powershell
-PS C:\> New-AzFrontDoorHeaderActionObject -HeaderName headername -HeaderActionType Append
+New-AzFrontDoorHeaderActionObject -HeaderName headername -HeaderActionType Append
+```
 
+```output
 HeaderName HeaderActionType Value
 ---------- ---------------- -----
 headername           Append

@@ -54,7 +54,9 @@ This command lists Inbound Endpoints under a DNS Resolver
 ### Example 2: Get single Inbound Endpoint by name
 ```powershell
 Get-AzDnsResolverInboundEndpoint -DnsResolverName pstestdnsresolvername -Name sampleInboundEndpoint -ResourceGroupName powershell-test-rg
+```
 
+```output
 Name                  Type                                            Etag
 ----                  ----                                            ----
 sampleInboundEndpoint Microsoft.Network/dnsResolvers/inboundEndpoints "0b008451-0000-0800-0000-60402b960000"
@@ -181,7 +183,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DnsResolver.Models.Api20200401Preview.IInboundEndpoint
+### Microsoft.Azure.PowerShell.Cmdlets.DnsResolver.Models.Api20220701.IInboundEndpoint
 
 ## NOTES
 
@@ -192,7 +194,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IDnsResolverIdentity>: Identity Parameter
+`INPUTOBJECT <IDnsResolverIdentity>`: Identity Parameter
   - `[DnsForwardingRulesetName <String>]`: The name of the DNS forwarding ruleset.
   - `[DnsResolverName <String>]`: The name of the DNS resolver.
   - `[ForwardingRuleName <String>]`: The name of the forwarding rule.

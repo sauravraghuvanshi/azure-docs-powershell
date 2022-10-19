@@ -39,7 +39,7 @@ Create a new CosmosDB Account in the given ResourceGroup.
 
 ### Example 1
 ```powershell
-PS C:\> New-AzCosmosDBAccountKey -ResourceGroupName rg -Name dbname
+New-AzCosmosDBAccountKey -ResourceGroupName rg -Name dbname
 ```
 
 New keys are generated for Account with account name dbname in ResourceGroup rg.

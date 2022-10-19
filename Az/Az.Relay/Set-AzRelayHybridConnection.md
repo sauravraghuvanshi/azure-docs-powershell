@@ -33,12 +33,13 @@ The Set-AzRelayHybridConnection cmdlet updates the description for the HybridCon
 ## EXAMPLES
 
 ### Example 1
+```powershell
+$GetHybrid = Get-AzRelayHybridConnection -ResourceGroupName Default-ServiceBus-WestUS -Namespace TestNameSpace-Relay1 -Name TestHybridConnection
+$GetHybrid.UserMetadata = "Test UserMetadata"
+Set-AzRelayHybridConnection -ResourceGroupName Default-ServiceBus-WestUS -Namespace TestNameSpace-Relay1 -Name TestHybridConnection -InputObject $GetHybrid
 ```
-PS C:\>
-PS C:\> $GetHybrid = Get-AzRelayHybridConnection -ResourceGroupName Default-ServiceBus-WestUS -Namespace TestNameSpace-Relay1 -Name TestHybridConnection
-PS C:\> $GetHybrid.UserMetadata = "Test UserMetadata"
-PS C:\> Set-AzRelayHybridConnection -ResourceGroupName Default-ServiceBus-WestUS -Namespace TestNameSpace-Relay1 -Name TestHybridConnection -InputObject $GetHybrid
 
+```output
 CreatedAt                   : 4/26/2017 10:04:15 PM
 UpdatedAt                   : 4/26/2017 10:08:11 PM
 ListenerCount               :
@@ -52,9 +53,11 @@ Type                        : Microsoft.Relay/HybridConnections
 ```
 
 ### Example 2
+```powershell
+Set-AzRelayHybridConnection -ResourceGroupName Default-ServiceBus-WestUS -Namespace TestNameSpace-Relay1 -Name TestHybridConnection -UserMetadata "Test UserMetadata updated"
 ```
-PS C:\> Set-AzRelayHybridConnection -ResourceGroupName Default-ServiceBus-WestUS -Namespace TestNameSpace-Relay1 -Name TestHybridConnection -UserMetadata = "Test UserMetadata updated"
 
+```output
 CreatedAt                   : 4/26/2017 10:04:15 PM
 UpdatedAt                   : 4/26/2017 10:10:25 PM
 ListenerCount               :

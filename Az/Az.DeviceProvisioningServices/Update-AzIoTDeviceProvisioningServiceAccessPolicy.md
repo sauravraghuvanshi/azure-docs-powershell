@@ -40,9 +40,11 @@ For an introduction to Azure IoT Hub Device Provisioning Service, see https://do
 ## EXAMPLES
 
 ### Example 1
+```powershell
+Update-AzIoTDeviceProvisioningServiceAccessPolicy -ResourceGroupName "myresourcegroup" -Name "myiotdps" -KeyName "mypolicy" -Permissions "EnrollmentWrite"
 ```
-PS C:\> Update-AzIoTDeviceProvisioningServiceAccessPolicy -ResourceGroupName "myresourcegroup" -Name "myiotdps" -KeyName "mypolicy" -Permissions "EnrollmentWrite"
 
+```output
 ResourceGroupName	: myresourcegroup
 Name				: myiotdps
 KeyName				: mypolicy
@@ -53,10 +55,12 @@ Rights				: EnrollmentWrite
 
 Update access policy "mypolicy" in an Azure IoT Hub device provisioning service with EnrollmentWrite right.
 
-### Example 1
+### Example 2
+```powershell
+Get-AzIoTDeviceProvisioningServiceAccessPolicy -ResourceGroupName "myresourcegroup" -Name "myiotdps" -KeyName "mypolicy" | Update-AzIoTDeviceProvisioningServiceAccessPolicy -Permissions "EnrollmentWrite"
 ```
-PS C:\> Get-AzIoTDpsAccessPolicy -ResourceGroupName "myresourcegroup" -Name "myiotdps" -KeyName "mypolicy" | Update-AzIoTDpsAccessPolicy -Permissions "EnrollmentWrite"
 
+```output
 ResourceGroupName	: myresourcegroup
 Name				: myiotdps
 KeyName				: mypolicy

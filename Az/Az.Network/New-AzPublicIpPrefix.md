@@ -15,7 +15,7 @@ Creates a Public IP Prefix
 ## SYNTAX
 
 ```
-New-AzPublicIpPrefix -Name <String> -ResourceGroupName <String> [-Location <String>] [-Sku <String>]
+New-AzPublicIpPrefix -Name <String> -ResourceGroupName <String> -Location <String> [-Sku <String>]
  [-Tier <String>] -PrefixLength <UInt16> [-IpAddressVersion <String>] [-IpTag <PSPublicIpPrefixTag[]>]
  [-Zone <String[]>] [-CustomIpPrefix <PSCustomIpPrefix>] [-EdgeZone <String>] [-Tag <Hashtable>] [-Force]
  [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -28,14 +28,14 @@ The **New-AzPublicIpPrefix** cmdlet creates a public IP prefix.
 
 ### Example 1: Create a new public Ip prefix
 ```powershell
-PS C:\> $publicIpPrefix = New-AzPublicIpPrefix -Name $prefixName -ResourceGroupName $rgName -PrefixLength 30
+$publicIpPrefix = New-AzPublicIpPrefix -Name $prefixName -ResourceGroupName $rgName -PrefixLength 30
 ```
 
 This command creates a new public IP prefix resource. 
 
 ### Example 2: Create a new global public Ip prefix
 ```powershell
-PS C:\> $publicIpPrefix = New-AzPublicIpPrefix -ResourceGroupName $rgname -name $rname -location $location -Tier Global -PrefixLength 30
+$publicIpPrefix = New-AzPublicIpPrefix -ResourceGroupName $rgname -name $rname -location $location -Tier Global -PrefixLength 30
 ```
 
 This command creates a new global public IP prefix resource. 

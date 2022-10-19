@@ -1,5 +1,5 @@
 ---
-external help file: Az.StackHCI-help.xml
+external help file: 
 Module Name: Az.StackHCI
 online version: https://docs.microsoft.com/powershell/module/az.stackhci/disable-azstackhciremotesupport
 schema: 2.0.0
@@ -15,18 +15,27 @@ Disables Remote Support.
 ## SYNTAX
 
 ```
-Disable-AzStackHCIRemoteSupport [-WhatIf] [-Confirm] [<CommonParameters>]
+Disable-AzStackHCIRemoteSupport [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Disable Remote Support revokes all access levels previously granted. Any existing support sessions will be terminated, and new sessions can no longer be established.
+Disable Remote Support revokes all access levels previously granted.
+Any existing support sessions will be terminated, and new sessions can no longer be established.
 
 ## EXAMPLES
 
-### EXAMPLE 1
-```poweshell
-C:\PS\>Disable-AzStackHCIRemoteSupport
+### Example 1: 
+```powershell
+Disable-AzStackHCIRemoteSupport
 ```
+
+```output
+Microsoft.AzureStack.Deployment.RemoteSupport is loaded already ...
+Disabling Remote Support.
+Remote Support successfully Disabled.
+```
+
+Disabling Remort support
 
 ## PARAMETERS
 
@@ -46,7 +55,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -67,6 +77,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
+### System.Boolean
+
 ## NOTES
 
+ALIASES
+
 ## RELATED LINKS
+

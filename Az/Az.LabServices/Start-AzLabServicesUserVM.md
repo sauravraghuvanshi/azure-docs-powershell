@@ -34,8 +34,7 @@ API to start the assigned vm for the user.
 
 ### Example 1: Start user assigned VM in the lab.
 ```powershell
-PS C:\> Start-AzLabServicesUserVM -ResourceGroupName "Group Name" -LabName "Lab Name" -Email "user@contoso.com"
-
+Start-AzLabServicesUserVM -ResourceGroupName "Group Name" -LabName "Lab Name" -Email "user@contoso.com"
 ```
 
 This starts the VM assigned to the user with the specific email.
@@ -215,7 +214,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-USER <User>: 
+USER `<User>`: 
   - `Email <String>`: Email address of the user.
   - `[AdditionalUsageQuota <TimeSpan?>]`: The amount of usage quota time the user gets in addition to the lab usage quota.
   - `[SystemDataCreatedAt <DateTime?>]`: The timestamp of resource creation (UTC).

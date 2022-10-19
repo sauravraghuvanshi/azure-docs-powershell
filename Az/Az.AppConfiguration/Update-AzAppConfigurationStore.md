@@ -1,10 +1,10 @@
 ---
-external help file: 
+external help file: Az.AppConfiguration-help.xml
 Module Name: Az.AppConfiguration
 online version: https://docs.microsoft.com/powershell/module/az.appconfiguration/update-azappconfigurationstore
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/Update-AzAppConfigurationStore.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/Update-AzAppConfigurationStore.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/AppConfiguration/help/Update-AzAppConfigurationStore.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/AppConfiguration/help/Update-AzAppConfigurationStore.md
 ---
 
 # Update-AzAppConfigurationStore
@@ -17,17 +17,20 @@ Updates a configuration store with the specified parameters.
 ### UpdateExpanded (Default)
 ```
 Update-AzAppConfigurationStore -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-EncryptionKeyIdentifier <String>] [-IdentityType <IdentityType>] [-KeyVaultIdentityClientId <String>]
- [-Sku <String>] [-Tag <Hashtable>] [-UserAssignedIdentity <String[]>] [-DefaultProfile <PSObject>] [-AsJob]
- [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisableLocalAuth] [-EnablePurgeProtection] [-EncryptionKeyIdentifier <String>]
+ [-IdentityType <IdentityType>] [-KeyVaultIdentityClientId <String>]
+ [-PublicNetworkAccess <PublicNetworkAccess>] [-Sku <String>] [-Tag <Hashtable>]
+ [-UserAssignedIdentity <String[]>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-AzAppConfigurationStore -InputObject <IAppConfigurationIdentity> [-EncryptionKeyIdentifier <String>]
- [-IdentityType <IdentityType>] [-KeyVaultIdentityClientId <String>] [-Sku <String>] [-Tag <Hashtable>]
- [-UserAssignedIdentity <String[]>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Update-AzAppConfigurationStore -InputObject <IAppConfigurationIdentity> [-DisableLocalAuth]
+ [-EnablePurgeProtection] [-EncryptionKeyIdentifier <String>] [-IdentityType <IdentityType>]
+ [-KeyVaultIdentityClientId <String>] [-PublicNetworkAccess <PublicNetworkAccess>] [-Sku <String>]
+ [-Tag <Hashtable>] [-UserAssignedIdentity <String[]>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,77 +38,31 @@ Updates a configuration store with the specified parameters.
 
 ## EXAMPLES
 
-### Example 1: Enable data encryption of the app configuration store by system-assigned managed identity
+### Example 1: Updates a configuration store with the specified parameters.
 ```powershell
-$key = Add-AzKeyVaultKey -VaultName kv-Name -Name key-Name -Destination 'Software'
+Update-AzAppConfigurationStore -Name azpstest-appstore -ResourceGroupName azpstest_gp -DisableLocalAuth -EnablePurgeProtection -PublicNetworkAccess 'Enabled'
 ```
-```powershell
-$systemAssignedAppStore = New-AzAppConfigurationStore -Name appconfig-test11 -ResourceGroupName azpwsh-manual-test -Location $env.location -Sku 'standard' -IdentityType "SystemAssigned"
-```
-```powershell
-Set-AzKeyVaultAccessPolicy -VaultName kv-Name -ObjectId $systemAssignedAppStore.IdentityPrincipalId -PermissionsToKeys get,unwrapKey,wrapKey -PassThru
-```
-```powershell
-Update-AzAppConfigurationStore -Name appconfig-test11 -ResourceGroupName azpwsh-manual-test -EncryptionKeyIdentifier $key.Id
-```
+
 ```output
-Location Name             Type
--------- ----             ----
-eastus   appconfig-test01 Microsoft.AppConfiguration/configurationStores
+Location Name              ResourceGroupName
+-------- ----              -----------------
+eastus   azpstest-appstore azpstest_gp
 ```
 
-This command enables data encryption by a key stored in Azure Key Vault using a system-assigned managed identity.
-The vault must have enabled soft-delete and purge-protection, and the managed identity must have these key permissions: get, wrapKey, unwrapKey.
+Updates a configuration store with the specified parameters.
 
-### Example 2: Enable data encryption of the app configuration store by user-assigned managed identity
+### Example 2: Updates a configuration store with the specified parameters.
 ```powershell
-$key = Add-AzKeyVaultKey -VaultName kv-Name -Name key-Name -Destination 'Software'
+Get-AzAppConfigurationStore -Name azpstest-appstore -ResourceGroupName azpstest_gp | Update-AzAppConfigurationStore -DisableLocalAuth -EnablePurgeProtection -PublicNetworkAccess 'Enabled'
 ```
-```powershell
-$assignedIdentity = New-AzUserAssignedIdentity -ResourceGroupName azpwsh-manual-test -Name assignedIdentity
-```
-```powershell
-New-AzAppConfigurationStore -Name appconfig-test11 -ResourceGroupName azpwsh-manual-test -Location $env.location -Sku 'standard' -IdentityType "UserAssigned" -UserAssignedIdentity $assignedIdentity.Id
-```
-```powershell
-Set-AzKeyVaultAccessPolicy -VaultName kv-Name -ObjectId $assignedIdentity.PrincipalId -PermissionsToKeys get,unwrapKey,wrapKey -PassThru
-```
-```powershell
-Update-AzAppConfigurationStore -ResourceGroupName azpwsh-manual-test -Name appconfig-test11 -EncryptionKeyIdentifier $key.Id -KeyVaultIdentityClientId $assignedIdentity.ClientId
-```
+
 ```output
-Location Name             Type
--------- ----             ----
-eastus   appconfig-test10 Microsoft.AppConfiguration/configurationStores
+Location Name              ResourceGroupName
+-------- ----              -----------------
+eastus   azpstest-appstore azpstest_gp
 ```
 
-This command enables data encryption by a key stored in Azure Key Vault using a user-assigned managed identity.
-The user-assigned identity must have been set with `-UserAssignedIdentity`.
-The vault must have enabled soft-delete and purge-protection, and the managed identity must have these key permissions: get, wrapKey, unwrapKey.
-
-### Example 3: Disable encryption of an app configuration store.
-```powershell
-$appConf = Get-AzAppConfigurationStore -ResourceGroupName azpwsh-manual-test -Name appconfig-test10 | Update-AzAppConfigurationStore -EncryptionKeyIdentifier $null
-```
-```output
-Location Name             Type
--------- ----             ----
-eastus   appconfig-test10 Microsoft.AppConfiguration/configurationStores
-```
-
-This command disables encryption of an app configuration store.
-
-### Example 4: Update sku and tag of an app configuration store by pipeline.
-```powershell
-Get-AzAppConfigurationStore -ResourceGroupName azpwsh-manual-test -Name appconfig-test10 | Update-AzAppConfigurationStore -Sku 'standard' -Tag @{'key'='update'}
-```
-```output
-Location Name             Type
--------- ----             ----
-eastus   appconfig-test10 Microsoft.AppConfiguration/configurationStores
-```
-
-This command updates sku and tag of an app configuration store by pipeline.
+Updates a configuration store with the specified parameters.
 
 ## PARAMETERS
 
@@ -139,6 +96,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DisableLocalAuth
+Disables all authentication methods other than AAD authentication.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnablePurgeProtection
+Property specifying whether protection against purge is enabled for this configuration store.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -EncryptionKeyIdentifier
 The URI of the key vault key used to encrypt data.
 
@@ -156,7 +143,7 @@ Accept wildcard characters: False
 
 ### -IdentityType
 The type of managed identity used.
-The type 'SystemAssignedAndUserAssigned' includes both an implicitly created identity and a set of user-assigned identities.
+The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user-assigned identities.
 The type 'None' will remove any identities.
 
 ```yaml
@@ -222,6 +209,21 @@ Run the command asynchronously
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PublicNetworkAccess
+Control permission for data plane traffic coming from public networks while private endpoint is enabled.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Support.PublicNetworkAccess
 Parameter Sets: (All)
 Aliases:
 
@@ -348,7 +350,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Models.Api20200601.IConfigurationStore
+### Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Models.Api20220501.IConfigurationStore
 
 ## NOTES
 
@@ -359,18 +361,14 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IAppConfigurationIdentity>: Identity Parameter
+`INPUTOBJECT <IAppConfigurationIdentity>`: Identity Parameter
   - `[ConfigStoreName <String>]`: The name of the configuration store.
   - `[GroupName <String>]`: The name of the private link resource group.
   - `[Id <String>]`: Resource identity path
+  - `[KeyValueName <String>]`: Identifier of key and label combination. Key and label are joined by $ character. Label is optional.
+  - `[Location <String>]`: The location in which uniqueness will be verified.
   - `[PrivateEndpointConnectionName <String>]`: Private endpoint connection name
   - `[ResourceGroupName <String>]`: The name of the resource group to which the container registry belongs.
   - `[SubscriptionId <String>]`: The Microsoft Azure subscription ID.
 
 ## RELATED LINKS
-
-
-
-[Set-AzKeyVaultAccessPolicy](https://docs.microsoft.com/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy?view=azps-4.4.0)
-[New-AzUserAssignedIdentity](https://docs.microsoft.com/powershell/module/az.managedserviceidentity/new-azuserassignedidentity?view=azps-4.4.0)
-

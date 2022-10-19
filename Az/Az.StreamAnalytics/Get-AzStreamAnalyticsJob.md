@@ -45,8 +45,9 @@ Gets details about the specified streaming job.
 
 ### Example 1: Get information about all jobs in a subscription
 ```powershell
-PS C:\> Get-AzStreamAnalyticsJob
-
+Get-AzStreamAnalyticsJob
+```
+```output
 Location        Name          Type                                    ETag
 --------        ----          ----                                    ----
 West Central US sajob-02-pwsh Microsoft.StreamAnalytics/streamingjobs
@@ -57,8 +58,9 @@ This command returns information about all the Stream Analytics jobs in the Azur
 
 ### Example 2: Get information about all jobs in a resource group
 ```powershell
-PS C:\> Get-AzStreamAnalyticsJob -ResourceGroupName azure-rg-test
-
+Get-AzStreamAnalyticsJob -ResourceGroupName azure-rg-test
+```
+```output
 Location        Name          Type                                    ETag
 --------        ----          ----                                    ----
 West Central US sajob-02-pwsh Microsoft.StreamAnalytics/streamingjobs
@@ -69,8 +71,9 @@ This command returns information about all the Stream Analytics jobs in the reso
 
 ### Example 3: Get information about a specific job in a resource group
 ```powershell
-PS C:\> Get-AzStreamAnalyticsJob -ResourceGroupName azure-rg-test -Name sajob-02-pwsh
-
+Get-AzStreamAnalyticsJob -ResourceGroupName azure-rg-test -Name sajob-02-pwsh
+```
+```output
 Location        Name          Type                                    ETag
 --------        ----          ----                                    ----
 West Central US sajob-02-pwsh Microsoft.StreamAnalytics/streamingjobs ac26a506-a4cb-4a7d-9ec8-c3149b8589bd
@@ -80,8 +83,9 @@ This command returns information about the Stream Analytics job StreamingJob in 
 
 ### Example 4: Get information about a specific job in a resource group by pipeline
 ```powershell
-PS C:\> New-AzStreamAnalyticsJob -ResourceGroupName lucas-rg-test -Name sajob-02-pwsh -Location westcentralus -SkuName Standard | Get-AzStreamAnalyticsJob 
-
+New-AzStreamAnalyticsJob -ResourceGroupName lucas-rg-test -Name sajob-02-pwsh -Location westcentralus -SkuName Standard | Get-AzStreamAnalyticsJob 
+```
+```output
 Location        Name          Type                                    ETag
 --------        ----          ----                                    ----
 West Central US sajob-02-pwsh Microsoft.StreamAnalytics/streamingjobs ac26a506-a4cb-4a7d-9ec8-c3149b8589bd
@@ -205,7 +209,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IStreamAnalyticsIdentity>: Identity Parameter
+INPUTOBJECT `<IStreamAnalyticsIdentity>`: Identity Parameter
   - `[ClusterName <String>]`: The name of the cluster.
   - `[FunctionName <String>]`: The name of the function.
   - `[Id <String>]`: Resource identity path

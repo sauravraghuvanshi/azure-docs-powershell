@@ -39,8 +39,10 @@ Returns the properties for a lab virtual machine.
 
 ### Example 1: Gets all the Virtual machines in the lab.
 ```powershell
-PS C:\> Get-AzLabServicesVM -LabName "Lab Name" -ResourceGroupName "Group Name"
+Get-AzLabServicesVM -LabName "Lab Name" -ResourceGroupName "Group Name"
+```
 
+```output
 Name
 ----
 0
@@ -52,8 +54,10 @@ Returns all the VMs.
 
 ### Example 2: Gets the specific VM in the lab.
 ```powershell
-PS C:\> Get-AzLabServicesVM -LabName "Lab Name" -ResourceGroupName "Group Name" -Name 2
+Get-AzLabServicesVM -LabName "Lab Name" -ResourceGroupName "Group Name" -Name 2
+```
 
+```output
 Name
 ----
 2
@@ -191,7 +195,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-LAB <Lab>: 
+LAB `<Lab>`: 
   - `Location <String>`: The geo-location where the resource lives
   - `[AdditionalCapabilityInstallGpuDriver <EnableState?>]`: Flag to pre-install dedicated GPU drivers.
   - `[AdminUserPassword <String>]`: The password for the user. This is required for the TemplateVM createOption.

@@ -35,8 +35,8 @@ If you do not specify a name, this cmdlet gets information about all the linked 
 ## EXAMPLES
 
 ### Example 1: Get information about all linked services
-```
-PS C:\>Get-AzDataFactoryLinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" | Format-List
+```powershell
+Get-AzDataFactoryLinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" | Format-List
 ```
 
 This command gets information about all linked services in the data factory named WikiADF, and then passes the linked services to the Format-List cmdlet by using the pipeline operator.
@@ -44,8 +44,11 @@ That cmdlet formats the results.
 For more information, type `Get-Help Format-List`.
 
 ### Example 2: Get information about a specific linked service
+```powershell
+Get-AzDataFactoryLinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "HDILinkedService"
 ```
-PS C:\>Get-AzDataFactoryLinkedService -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "HDILinkedService"
+
+```output
 LinkedServiceName   ResourceGroupName     DataFactoryName              Properties
 -----------------   -----------------     ---------------              ----------
 HDILinkedService    ADF                   WikiADF                      Microsoft.DataFactories.HDInsightBYOCAsset
@@ -54,9 +57,9 @@ HDILinkedService    ADF                   WikiADF                      Microsoft
 This command gets information about the linked service named HDILinkedService in the data factory named WikiADF.
 
 ### Example 3: Get information about a specific linked service by specifying the DataFactory parameter
-```
-PS C:\>$DataFactory = Get-AzDataFactory -ResourceGroupName "ADF" -Name "ContosoFactory"
-PS C:\> Get-AzDataFactoryLinkedService -DataFactory $DataFactory | Format-Table -Property LinkedServiceName, DataFactoryName, ResourceGroupName
+```powershell
+$DataFactory = Get-AzDataFactory -ResourceGroupName "ADF" -Name "ContosoFactory"
+Get-AzDataFactoryLinkedService -DataFactory $DataFactory | Format-Table -Property LinkedServiceName, DataFactoryName, ResourceGroupName
 ```
 
 The first command uses the Get-AzDataFactory cmdlet to get the data factory named ContosoFactory, and then stores it in the $DataFactory variable.

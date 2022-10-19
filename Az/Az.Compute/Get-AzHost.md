@@ -33,9 +33,11 @@ This cmdlet also lists all hosts in a host group if a host name is not given.
 ## EXAMPLES
 
 ### Example 1
+```powershell
+Get-AzHost -ResourceGroupName $resourceGroupName -HostGroupName $hostGroupName -Name $hostName
 ```
-PS C:\> Get-AzHost -ResourceGroupName $resourceGroupName -HostGroupName $hostGroupName -Name $hostName
 
+```output
 ResourceGroupName    : myrg01
 PlatformFaultDomain  : 1
 AutoReplaceOnFailure : True
@@ -57,9 +59,11 @@ Tags                 : {"key1":"val2"}
 This command returns a host.
 
 ### Example 2
+```powershell
+Get-AzHost -ResourceGroupName $resourceGroupName -HostGroupName $hostGroupName -Name $hostName -InstanceView
 ```
-PS C:\> Get-AzHost -ResourceGroupName $resourceGroupName -HostGroupName $hostGroupName -Name $hostName -InstanceView
 
+```output
 ResourceGroupName      : myrg01
 PlatformFaultDomain    : 0
 AutoReplaceOnFailure   : True
@@ -98,9 +102,11 @@ Tags                   : {"key1":"val2"}
 This command returns the instance view of a host.
 
 ### Example 3
+```powershell
+Get-AzHost -ResourceGroupName $resourceGroupName -HostGroupName $hostGroupName
 ```
-PS C:\> Get-AzHost -ResourceGroupName $resourceGroupName -HostGroupName $hostGroupName
 
+```output
 ResourceGroupName       Name Location           Tags        Sku FD
 -----------------       ---- --------           ----        --- --
 myrg01              myhost01   eastus {[key1, val2]} ESv3-Type1  0

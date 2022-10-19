@@ -40,8 +40,10 @@ Remove all or mentioned non-edge devices as children specified edge device.
 
 ### Example 1
 ```powershell
-PS C:\> Remove-AzIotHubDeviceChildren -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -Children device1,device2 -Passthru
+Remove-AzIotHubDeviceChildren -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -Children device1,device2 -Passthru
+```
 
+```output
 True
 ```
 
@@ -49,8 +51,10 @@ Remove mentioned devices as children of specified device.
 
 ### Example 2
 ```powershell
-PS C:\> Remove-AzIotHubDeviceChildren -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -Passthru
+Remove-AzIotHubDeviceChildren -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -Passthru
+```
 
+```output
 True
 ```
 

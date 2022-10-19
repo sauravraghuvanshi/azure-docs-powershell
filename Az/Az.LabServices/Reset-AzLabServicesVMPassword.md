@@ -40,8 +40,7 @@ Resets a lab virtual machine password.
 
 ### Example 1: Reset the password on the VM.
 ```powershell
-PS C:\> Reset-AzLabServicesVMPassword -ResourceGroupName "Group Name" -LabName "Lab Name" -VirtualMachineName 0 -Password "New Password"
-
+Reset-AzLabServicesVMPassword -ResourceGroupName "Group Name" -LabName "Lab Name" -VirtualMachineName 0 -Password "New Password"
 ```
 
 This changes the VM password.
@@ -284,7 +283,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-VM <VirtualMachine>: 
+VM `<VirtualMachine>`: 
   - `[SystemDataCreatedAt <DateTime?>]`: The timestamp of resource creation (UTC).
   - `[SystemDataCreatedBy <String>]`: The identity that created the resource.
   - `[SystemDataCreatedByType <CreatedByType?>]`: The type of identity that created the resource.

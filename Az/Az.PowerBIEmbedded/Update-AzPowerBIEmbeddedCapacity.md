@@ -42,8 +42,11 @@ The Update-AzPowerBIEmbeddedCapacity cmdlet modifies an instance of PowerBI Embe
 ## EXAMPLES
 
 ### Example 1
+```powershell
+Update-AzPowerBIEmbeddedCapacity -Name "testcapacity" -Tag @{"key1" = "value1";"key2" = "value2"} -Administrator "testuser1@contoso.com", "testuser2@contoso.com", "9035a021-a96f-43ea-acbf-864227c2abbb@45119f4f-c71b-4420-b6ec-60e503450098" -PassThru
 ```
-PS C:\> Update-AzPowerBIEmbeddedCapacity -Name "testcapacity" -Tag @{"key1" = "value1";"key2" = "value2"} -Administrator "testuser1@contoso.com", "testuser2@contoso.com", "9035a021-a96f-43ea-acbf-864227c2abbb@45119f4f-c71b-4420-b6ec-60e503450098" -PassThru
+
+```output
 Type                   : Microsoft.PowerBIDedicated/capacities
 Id                     : /subscriptions/78e47976-.../resourceGroups/testRG/providers/Microsoft.PowerBIDedicated/capacities/testcapacity
 ResourceGroup          : testRG
@@ -61,7 +64,7 @@ Modifies the capacity named testcapacity in resourcegroup testgroup to set the t
 ## PARAMETERS
 
 ### -Administrator
-A comma separated names to set as administrators on the capacity. For service principal: <service principal object id>@<tenant id>
+A comma separated names to set as administrators on the capacity. For service principal: `<service principal object id>@<tenant id>`
 
 ```yaml
 Type: System.String[]
@@ -121,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Will return the deleted capacity details if the operation completes successfully
+Returns an object representing the item with which you are working. By default, this cmdlet does not generate any output.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -172,7 +175,7 @@ The name of the Sku for the capacity.
 Type: System.String
 Parameter Sets: (All)
 Aliases:
-Accepted values: A1, A2, A3, A4, A5, A6
+Accepted values: A1, A2, A3, A4, A5, A6, A7, A8
 
 Required: False
 Position: Named
@@ -227,7 +230,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

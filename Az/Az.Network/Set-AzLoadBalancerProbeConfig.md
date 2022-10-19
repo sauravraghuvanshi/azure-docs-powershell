@@ -17,7 +17,7 @@ Updates a probe configuration for a load balancer.
 
 ```
 Set-AzLoadBalancerProbeConfig -LoadBalancer <PSLoadBalancer> -Name <String> [-Protocol <String>] -Port <Int32>
- -IntervalInSeconds <Int32> -ProbeCount <Int32> [-RequestPath <String>]
+ -IntervalInSeconds <Int32> -ProbeCount <Int32> [-ProbeThreshold <Int32>] [-RequestPath <String>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -28,9 +28,9 @@ The **Set-AzLoadBalancerProbeConfig** cmdlet updates a probe configuration for a
 
 ### Example 1: Modify the probe configuration on a load balancer
 ```powershell
-PS C:\>$slb = Get-AzLoadBalancer -Name "MyLoadBalancer" -ResourceGroupName "MyResourceGroup"
-PS C:\> $slb | Add-AzLoadBalancerProbeConfig -Name "NewProbe" -Protocol "http" -Port 80 -IntervalInSeconds 15 -ProbeCount 2 -RequestPath "healthcheck.aspx" 
-PS C:\> $slb | Set-AzLoadBalancerProbeConfig -Name "NewProbe" -Port 80 -IntervalInSeconds 15 -ProbeCount 2
+$slb = Get-AzLoadBalancer -Name "MyLoadBalancer" -ResourceGroupName "MyResourceGroup"
+$slb | Add-AzLoadBalancerProbeConfig -Name "NewProbe" -Protocol "http" -Port 80 -IntervalInSeconds 15 -ProbeCount 2 -ProbeThreshold 2 -RequestPath "healthcheck.aspx" 
+$slb | Set-AzLoadBalancerProbeConfig -Name "NewProbe" -Port 80 -IntervalInSeconds 15 -ProbeCount 2
 ```
 
 The first command gets the loadbalancer named MyLoadBalancer, and then stores it in the $slb variable.
@@ -134,6 +134,21 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ProbeThreshold
+Specifies the number of consecutive successful or failed probes in order to allow or deny traffic from being delivered to this endpoint.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)

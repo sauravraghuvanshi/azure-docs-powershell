@@ -38,7 +38,7 @@ Update a scaling plan.
 
 ### Example 1: Update a Windows Virtual Desktop Scaling Plan by name
 ```powershell
-PS C:\> Update-AzWvdScalingPlan `
+Update-AzWvdScalingPlan `
             -ResourceGroupName ResourceGroupName `
             -Name 'scalingPlan1' `
             -Description 'Description' `
@@ -78,7 +78,9 @@ PS C:\> Update-AzWvdScalingPlan `
                 }
 
             )
+```
 
+```output
 Location      Name         Type
 --------      ----         ----
 westcentralus scalingPlan1 Microsoft.DesktopVirtualization/scalingplans
@@ -338,11 +340,11 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-HOSTPOOLREFERENCE <IScalingHostPoolReference[]>: List of ScalingHostPoolReference definitions.
+`HOSTPOOLREFERENCE <IScalingHostPoolReference[]>`: List of ScalingHostPoolReference definitions.
   - `[HostPoolArmPath <String>]`: Arm path of referenced hostpool.
   - `[ScalingPlanEnabled <Boolean?>]`: Is the scaling plan enabled for this hostpool.
 
-INPUTOBJECT <IDesktopVirtualizationIdentity>: Identity Parameter
+`INPUTOBJECT <IDesktopVirtualizationIdentity>`: Identity Parameter
   - `[ApplicationGroupName <String>]`: The name of the application group
   - `[ApplicationName <String>]`: The name of the application within the specified application group
   - `[DesktopName <String>]`: The name of the desktop within the specified desktop group
@@ -356,7 +358,7 @@ INPUTOBJECT <IDesktopVirtualizationIdentity>: Identity Parameter
   - `[UserSessionId <String>]`: The name of the user session within the specified session host
   - `[WorkspaceName <String>]`: The name of the workspace
 
-SCHEDULE <IScalingSchedule[]>: List of ScalingSchedule definitions.
+`SCHEDULE <IScalingSchedule[]>`: List of ScalingSchedule definitions.
   - `[DaysOfWeek <String[]>]`: Set of days of the week on which this schedule is active.
   - `[Name <String>]`: Name of the scaling schedule.
   - `[OffPeakLoadBalancingAlgorithm <SessionHostLoadBalancingAlgorithm?>]`: Load balancing algorithm for off-peak period.

@@ -33,12 +33,13 @@ API to get the template vm for the lab.
 
 ### Example 1: Get the template for the lab.
 ```powershell
-PS C:\> Get-AzLabTemplateVM  -ResourceGroupName "group name" -LabName "lab name"
+Get-AzLabServicesTemplateVM -ResourceGroupName "group name" -LabName "lab name"
+```
 
+```output
 Name Type
 ---- ----
 0    Microsoft.LabServices/labs/virtualMachines
-
 ```
 
 Returns the template VM for the lab.
@@ -140,7 +141,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-LAB <Lab>: 
+LAB `<Lab>`: 
   - `Location <String>`: The geo-location where the resource lives
   - `[AdditionalCapabilityInstallGpuDriver <EnableState?>]`: Flag to pre-install dedicated GPU drivers.
   - `[AdminUserPassword <String>]`: The password for the user. This is required for the TemplateVM createOption.

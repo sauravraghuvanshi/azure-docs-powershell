@@ -12,7 +12,6 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 ## SYNOPSIS
 Used to display allowed traffic between resources for the subscription
 
-
 ## SYNTAX
 
 ### SubscriptionScope (Default)
@@ -26,10 +25,9 @@ Get-AzAllowedConnection -ResourceGroupName <String> -Name <String> -Location <St
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### -ResourceId
+### ResourceId
 ```
-Get-AzAllowedConnection -ResourceId <String> [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+Get-AzAllowedConnection -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -39,7 +37,10 @@ Gets the list of all possible traffic between resources for the subscription and
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzAllowedConnection
+Get-AzAllowedConnection
+```
+
+```output
 Id:	/subscriptions/3eeab341-f466-499c-a8be-85427e154baf7612f869/resourceGroups/myService1/providers/Microsoft.Security/locations/centralus/allowedConnections/virtualMachines
 Name:	Internal
 Type:	Microsoft.Security/locations/allowedConnections
@@ -49,7 +50,10 @@ ConnectableResources:	/subscriptions/3eeab341-f466-499c-a8be-85427e154baf7612f86
 
 ### Example 2
 ```powershell
-PS C:\> Get-AzAllowedConnection -ResourceGroupName "myService1" -Location "centralus" -Name "Internal"
+Get-AzAllowedConnection -ResourceGroupName "myService1" -Location "centralus" -Name "Internal"
+```
+
+```output
 Id:	/subscriptions/3eeab341-f466-499c-a8be-85427e154baf7612f869/resourceGroups/myService1/providers/Microsoft.Security/locations/centralus/allowedConnections/Internal
 Name:	virtualMachines
 Type:	Microsoft.Security/locations/allowedConnections
@@ -137,7 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -146,7 +150,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ### Microsoft.Azure.Commands.Security.Models.AllowedConnection.PSSecurityAllowedConnection
-
 
 ## NOTES
 

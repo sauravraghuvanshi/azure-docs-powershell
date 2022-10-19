@@ -35,13 +35,13 @@ The Set-AzDataLakeAnalyticsCatalogCredential cmdlet modifies a credential passwo
 ## EXAMPLES
 
 ### Example 1: Modify a credential's password associated with an account
-```
-PS C:\> Set-AzDataLakeAnalyticsCatalogCredential -AccountName "ContosoAdlAccount" `
+```powershell
+Set-AzDataLakeAnalyticsCatalogCredential -AccountName "ContosoAdlAccount" `
                   -DatabaseName "databaseName" `
                   -CredentialName "credName" `
                   -Credential (Get-Credential) `
                   -NewPassword (Get-Credential) `
-                  -Host "example.contoso.com" -Port 8080
+                  -DatabaseHost "example.contoso.com" -Port 8080
 ```
 
 This command sets the credential password to the password specified in NewPassword.

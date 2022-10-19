@@ -3,8 +3,8 @@ external help file:
 Module Name: Az.ApplicationInsights
 online version: https://docs.microsoft.com/powershell/module/az.applicationinsights/update-azapplicationinsightswebtesttag
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/ApplicationInsights/help/Update-AzApplicationInsightsWebTestTag.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/ApplicationInsights/help/Update-AzApplicationInsightsWebTestTag.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/help/Update-AzApplicationInsightsWebTestTag.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/help/Update-AzApplicationInsightsWebTestTag.md
 ---
 
 # Update-AzApplicationInsightsWebTestTag
@@ -35,6 +35,7 @@ Creates or updates an Application Insights web test definition.
 ```powershell
 Update-AzApplicationInsightsWebTestTag -ResourceGroupName azpwsh-rg-test -Name webtest01-lucasappinsights -Tag @{"hidden-link:/subscriptions/xxxxxxxxxx-xxxxx-xxxx-xxxxxxxxxxxx/resourceGroups/azpwsh-rg-test/providers/microsoft.insights/components/lucasappinsights" = "Resource"}
 ```
+
 ```output
 Location Name                       WebTestKind   ResourceGroupName   Enabled
 -------- ----                       -----------   -----------------   -------
@@ -47,6 +48,7 @@ This command updates Application Insights link of the Web test.
 ```powershell
 Get-AzApplicationInsightsWebTest -ResourceGroupName azpwsh-rg-test -WebTestName webtest01-lucasappinsights | Update-AzApplicationInsightsWebTestTag -Tag @{"hidden-link:/subscriptions/xxxxxxxxxx-xxxxx-xxxx-xxxxxxxxxxxx/resourceGroups/azpwsh-rg-test/providers/microsoft.insights/components/appinsightsportal01" = "Resource"}
 ```
+
 ```output
 Location Name                       WebTestKind   ResourceGroupName     Enabled
 -------- ----                       -----------   -----------------     -------
@@ -200,10 +202,16 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IApplicationInsightsIdentity>: Identity Parameter
+INPUTOBJECT `<IApplicationInsightsIdentity>`: Identity Parameter
+  - `[AnnotationId <String>]`: The unique annotation ID. This is unique within a Application Insights component.
   - `[ComponentName <String>]`: The name of the Application Insights component resource.
+  - `[ExportId <String>]`: The Continuous Export configuration ID. This is unique within a Application Insights component.
   - `[Id <String>]`: Resource identity path
+  - `[KeyId <String>]`: The API Key ID. This is unique within a Application Insights component.
+  - `[PurgeId <String>]`: In a purge status request, this is the Id of the operation the status of which is returned.
   - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
+  - `[ResourceName <String>]`: The name of the Application Insights component resource.
+  - `[StorageType <StorageType?>]`: The type of the Application Insights component data source for the linked storage account.
   - `[SubscriptionId <String>]`: The ID of the target subscription.
   - `[WebTestName <String>]`: The name of the Application Insights WebTest resource.
 

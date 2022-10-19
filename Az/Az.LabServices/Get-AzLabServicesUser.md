@@ -45,8 +45,10 @@ Returns the properties of a lab user.
 
 ### Example 1: Get all users for a lab.
 ```powershell
-PS C:\> Get-AzLabServicesUser -LabName "Lab Name" -ResourceGroupName "Group Name"
+Get-AzLabServicesUser -LabName "Lab Name" -ResourceGroupName "Group Name"
+```
 
+```output
 Name
 ----
 testuser
@@ -56,8 +58,10 @@ Gets all the users for a lab.
 
 ### Example 2: Get user using name
 ```powershell
-PS C:\> Get-AzLabServicesUser -LabName "Lab Name" -ResourceGroupName "Group Name" -Name "testuser"
+Get-AzLabServicesUser -LabName "Lab Name" -ResourceGroupName "Group Name" -Name "testuser"
+```
 
+```output
 Name
 ----
 testuser
@@ -210,7 +214,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-LAB <Lab>: 
+LAB `<Lab>`: 
   - `Location <String>`: The geo-location where the resource lives
   - `[AdditionalCapabilityInstallGpuDriver <EnableState?>]`: Flag to pre-install dedicated GPU drivers.
   - `[AdminUserPassword <String>]`: The password for the user. This is required for the TemplateVM createOption.

@@ -56,8 +56,8 @@ When used in conjunction with the New-AzNotificationHubAuthorizationRule cmdlet,
 ## EXAMPLES
 
 ### Example 1: Modify an authorization rule assigned to a notification hub
-```
-PS C:\>Set-AzNotificationHubAuthorizationRule -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationGroup" -NotificationHub "ContosoExternalHub" -InputFile "C:\Configuration\AuthorizationRules.json"
+```powershell
+Set-AzNotificationHubAuthorizationRule -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationGroup" -NotificationHub "ContosoExternalHub" -InputFile "C:\Configuration\AuthorizationRules.json"
 ```
 
 This command modifies an authorization rule assigned to the notification hub named ContosoExternalHub.

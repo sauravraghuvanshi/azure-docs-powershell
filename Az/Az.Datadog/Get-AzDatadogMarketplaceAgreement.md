@@ -26,8 +26,10 @@ List Datadog marketplace agreements in the subscription.
 
 ### Example 1: List Datadog marketplace agreements in the subscription
 ```powershell
-PS C:\> Get-AzDatadogMarketplaceAgreement
+Get-AzDatadogMarketplaceAgreement
+```
 
+```output
 Name        Type
 ----        ----
 marketplace Microsoft.Datadog/agreements

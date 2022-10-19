@@ -27,13 +27,15 @@ The operation to create a replication policy.
 
 ### Example 1: Create a replication policy
 ```powershell
-PS C:\> $providerSpecificPolicy = [Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20180110.VMwareCbtPolicyCreationInput]::new()
-PS C:\> $providerSpecificPolicy.AppConsistentFrequencyInMinute = 240
-PS C:\> $providerSpecificPolicy.InstanceType = "VMwareCbt"
-PS C:\> $providerSpecificPolicy.RecoveryPointHistoryInMinute = 4320
-PS C:\> $providerSpecificPolicy.CrashConsistentFrequencyInMinute = 60
-PS C:\> New-AzMigrateReplicationPolicy -PolicyName TestPolicy -ResourceGroupName ResourceGroup -ResourceName VaultName -SubscriptionId SubscriptionId -ProviderSpecificInput $providerSpecificPolicy
+$providerSpecificPolicy = [Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20180110.VMwareCbtPolicyCreationInput]::new()
+$providerSpecificPolicy.AppConsistentFrequencyInMinute = 240
+$providerSpecificPolicy.InstanceType = "VMwareCbt"
+$providerSpecificPolicy.RecoveryPointHistoryInMinute = 4320
+$providerSpecificPolicy.CrashConsistentFrequencyInMinute = 60
+New-AzMigrateReplicationPolicy -PolicyName TestPolicy -ResourceGroupName ResourceGroup -ResourceName VaultName -SubscriptionId SubscriptionId -ProviderSpecificInput $providerSpecificPolicy
+```
 
+```output
 Location Name       Type
 -------- ----       ----
          TestPolicy Microsoft.RecoveryServices/vaults/replicationPolicies
@@ -109,7 +111,7 @@ The ReplicationProviderSettings.
 To construct, see NOTES section for PROVIDERSPECIFICINPUT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20210210.IPolicyProviderSpecificInput
+Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20220501.IPolicyProviderSpecificInput
 Parameter Sets: (All)
 Aliases:
 
@@ -203,7 +205,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20210210.IPolicy
+### Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20220501.IPolicy
 
 ## NOTES
 
@@ -214,8 +216,8 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-PROVIDERSPECIFICINPUT <IPolicyProviderSpecificInput>: The ReplicationProviderSettings.
-  - `[InstanceType <String>]`: The class type.
+`PROVIDERSPECIFICINPUT <IPolicyProviderSpecificInput>`: The ReplicationProviderSettings.
+  - `InstanceType <String>`: The class type.
 
 ## RELATED LINKS
 

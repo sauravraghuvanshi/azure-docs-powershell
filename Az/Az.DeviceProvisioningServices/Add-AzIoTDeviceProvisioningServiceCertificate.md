@@ -42,9 +42,11 @@ For a detailed explanation of CA certificates in Azure IoT Hub Device Provisioni
 ## EXAMPLES
 
 ### Example 1
+```powershell
+Add-AzIoTDeviceProvisioningServiceCertificate -ResourceGroupName "myresourcegroup" -Name "myiotdps" -CertificateName "mycertificate" -Path "c:\mycertificate.cer"
 ```
-PS C:\> Add-AzIoTDeviceProvisioningServiceCertificate -ResourceGroupName "myresourcegroup" -Name "myiotdps" -CertificateName "mycertificate" -Path "c:\mycertificate.cer"
 
+```output
 Id					: /subscriptions/377cxxxxxxxxxxxx/resourceGroups/myresourcegroup/providers/Microsoft.Devices/provisioningServices/myiotdps/certificates/mycertificate
 ResourceGroupName	: myresourcegroup
 Name				: myiotdps
@@ -60,9 +62,11 @@ Etag				: AAAAAAFpGcA=
 Upload a CA certificate CER file to an Azure IoT Hub device provisioning service.
 
 ### Example 2
+```powershell
+Add-AzIoTDeviceProvisioningServiceCertificate -ResourceGroupName "myresourcegroup" -Name "myiotdps" -CertificateName "mycertificate" -Path "c:\mycertificate.cer" -Etag "AAAAAAFpGcA="
 ```
-PS C:\> Add-AzIoTDpsCertificate -ResourceGroupName "myresourcegroup" -Name "myiotdps" -CertificateName "mycertificate" -Path "c:\mycertificate.cer" -Etag "AAAAAAFpGcA="
 
+```output
 Id					: /subscriptions/377cxxxxxxxxxxxx/resourceGroups/myresourcegroup/providers/Microsoft.Devices/provisioningServices/myiothub/certificates/mycertificate
 ResourceGroupName	: myresourcegroup
 Name				: myiotdps

@@ -27,15 +27,16 @@ Update-AzVmss [-ResourceGroupName] <String> [-VMScaleSetName] <String>
  [-ImageUri <String>] [-LicenseType <String>] [-ManagedDiskStorageAccountType <String>]
  [-MaxBatchInstancePercent <Int32>] [-MaxPrice <Double>] [-MaxUnhealthyInstancePercent <Int32>]
  [-MaxUnhealthyUpgradedInstancePercent <Int32>] [-OsDiskCaching <CachingTypes>]
- [-OsDiskWriteAccelerator <Boolean>] [-Overprovision <Boolean>] [-PauseTimeBetweenBatches <String>]
- [-PlanName <String>] [-PlanProduct <String>] [-PlanPromotionCode <String>] [-PlanPublisher <String>]
- [-ProvisionVMAgent <Boolean>] [-ProximityPlacementGroupId <String>] [-ScaleInPolicy <String[]>]
- [-SinglePlacementGroup <Boolean>] [-SkipExtensionsOnOverprovisionedVMs <Boolean>] [-SkuCapacity <Int32>]
- [-SkuName <String>] [-SkuTier <String>] [-Tag <Hashtable>]
+ [-OsDiskWriteAccelerator <Boolean>] [-Overprovision <Boolean>] [-ScaleInPolicyForceDeletion <Boolean>]
+ [-PauseTimeBetweenBatches <String>] [-PlanName <String>] [-PlanProduct <String>] [-PlanPromotionCode <String>]
+ [-PlanPublisher <String>] [-ProvisionVMAgent <Boolean>] [-ProximityPlacementGroupId <String>]
+ [-ScaleInPolicy <String[]>] [-SinglePlacementGroup <Boolean>] [-SkipExtensionsOnOverprovisionedVMs <Boolean>]
+ [-SkuCapacity <Int32>] [-SkuName <String>] [-SkuTier <String>] [-Tag <Hashtable>]
  [-TerminateScheduledEventNotBeforeTimeoutInMinutes <Int32>] [-TerminateScheduledEvents <Boolean>]
  [-TimeZone <String>] [-UltraSSDEnabled <Boolean>] [-UpgradePolicyMode <UpgradeMode>]
  [-CapacityReservationGroupId <String>] [-VhdContainer <String[]>] [-AsJob] [-EncryptionAtHost <Boolean>]
- [-UserData <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-UserData <String>] [-AutomaticRepairAction <String>] [-DefaultProfile <IAzureContextContainer>] 
+ [-BaseRegularPriorityCount <Int32>] [-RegularPriorityPercentage <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ExplicitIdentityParameterSet
@@ -51,14 +52,16 @@ Update-AzVmss [-ResourceGroupName] <String> [-VMScaleSetName] <String>
  [-ManagedDiskStorageAccountType <String>] [-MaxBatchInstancePercent <Int32>] [-MaxPrice <Double>]
  [-MaxUnhealthyInstancePercent <Int32>] [-MaxUnhealthyUpgradedInstancePercent <Int32>]
  [-OsDiskCaching <CachingTypes>] [-OsDiskWriteAccelerator <Boolean>] [-Overprovision <Boolean>]
- [-PauseTimeBetweenBatches <String>] [-PlanName <String>] [-PlanProduct <String>] [-PlanPromotionCode <String>]
- [-PlanPublisher <String>] [-ProvisionVMAgent <Boolean>] [-ProximityPlacementGroupId <String>]
- [-ScaleInPolicy <String[]>] [-SinglePlacementGroup <Boolean>] [-SkipExtensionsOnOverprovisionedVMs <Boolean>]
- [-SkuCapacity <Int32>] [-SkuName <String>] [-SkuTier <String>] [-Tag <Hashtable>]
- [-TerminateScheduledEventNotBeforeTimeoutInMinutes <Int32>] [-TerminateScheduledEvents <Boolean>]
- [-TimeZone <String>] [-UltraSSDEnabled <Boolean>] [-UpgradePolicyMode <UpgradeMode>]
- [-CapacityReservationGroupId <String>] [-VhdContainer <String[]>] [-AsJob] [-EncryptionAtHost <Boolean>]
- [-UserData <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-ScaleInPolicyForceDeletion <Boolean>] [-PauseTimeBetweenBatches <String>] [-PlanName <String>]
+ [-PlanProduct <String>] [-PlanPromotionCode <String>] [-PlanPublisher <String>] [-ProvisionVMAgent <Boolean>]
+ [-ProximityPlacementGroupId <String>] [-ScaleInPolicy <String[]>] [-SinglePlacementGroup <Boolean>]
+ [-SkipExtensionsOnOverprovisionedVMs <Boolean>] [-SkuCapacity <Int32>] [-SkuName <String>] [-SkuTier <String>]
+ [-Tag <Hashtable>] [-TerminateScheduledEventNotBeforeTimeoutInMinutes <Int32>]
+ [-TerminateScheduledEvents <Boolean>] [-TimeZone <String>] [-UltraSSDEnabled <Boolean>]
+ [-UpgradePolicyMode <UpgradeMode>] [-CapacityReservationGroupId <String>] [-VhdContainer <String[]>] [-AsJob]
+ [-EncryptionAtHost <Boolean>] [-UserData <String>] [-AutomaticRepairAction <String>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-BaseRegularPriorityCount <Int32>] 
+ [-RegularPriorityPercentage <Int32>] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -68,7 +71,7 @@ The **Update-AzVmss** cmdlet updates the state of a Virtual Machine Scale Set (V
 
 ### Example 1: Update the state of a VMSS to the state of a local VMSS object.
 ```powershell
-PS C:\> Update-AzVmss -ResourceGroupName "Group001" -Name "VMSS001" -VirtualMachineScaleSet $LocalVMSS
+Update-AzVmss -ResourceGroupName "Group001" -Name "VMSS001" -VirtualMachineScaleSet $LocalVMSS
 ```
 
 This command updates the state of the VMSS named VMSS001 that belongs to the resource group named Group001 to the state of a local VMSS object, $LocalVMSS.
@@ -116,6 +119,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AutomaticRepairAction
+Type of repair action (replace, restart, reimage) that will be used for repairing unhealthy virtual machines in the scale set. Default value is replace.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -AutomaticRepairGracePeriod
 The amount of time for which automatic repairs are suspended due to a state change on VM. The grace time starts after the state change has completed. This helps avoid premature or accidental repairs. The time duration should be specified in ISO 8601 format. The minimum allowed grace period is 30 minutes (PT30M), which is also the default value. The maximum allowed grace period is 90 minutes (PT90M).
 
@@ -129,6 +147,20 @@ Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
+```
+### -BaseRegularPriorityCount
+Specifies the minimum number of VMs that must be of Regular priority as a VMSS Flex instance scales out. This parameter is only valid for VMSS instances with Flexible OrchestrationMode. 
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default Value: None
+Accept pipeline input: False 
+Accept wildcard characters: False 
 ```
 
 ### -BootDiagnosticsEnabled
@@ -678,6 +710,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RegularPriorityPercentage
+Specifies the desired percentage of VMs, after the BaseRegularCount has been met, that are of Regular priority as the VMSS Flex instance scales out. This property is only valid for VMSS instances with Flexible OrchestrationMode.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default Value: None
+Accept pipeline input: False 
+Accept wildcard characters: False 
+```
+
 ### -ResourceGroupName
 Specifies the name of the resource group the VMSS belongs to.
 
@@ -698,6 +745,21 @@ The rules to be followed when scaling-in a virtual machine scale set.  Possible 
 
 ```yaml
 Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ScaleInPolicyForceDeletion
+Applying Force Deletion when using ScaleIn Policy.
+
+```yaml
+Type: System.Boolean
 Parameter Sets: (All)
 Aliases:
 

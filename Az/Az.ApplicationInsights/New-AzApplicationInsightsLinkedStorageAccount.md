@@ -1,48 +1,33 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.ApplicationInsights.dll-Help.xml
+external help file: 
 Module Name: Az.ApplicationInsights
 online version: https://docs.microsoft.com/powershell/module/az.applicationinsights/new-azapplicationinsightslinkedstorageaccount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/ApplicationInsights/help/New-AzApplicationInsightsLinkedStorageAccount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/ApplicationInsights/help/New-AzApplicationInsightsLinkedStorageAccount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/help/New-AzApplicationInsightsLinkedStorageAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ApplicationInsights/help/New-AzApplicationInsightsLinkedStorageAccount.md
 ---
 
 # New-AzApplicationInsightsLinkedStorageAccount
 
 ## SYNOPSIS
-Create an application insights linked storage account
+Replace current linked storage account for an Application Insights component.
 
 ## SYNTAX
 
-### ByResourceNameParameterSet (Default)
 ```
-New-AzApplicationInsightsLinkedStorageAccount -ResourceGroupName <String> -ComponentName <String>
- -LinkedStorageAccountResourceId <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
-```
-
-### ByInputObjectParameterSet
-```
-New-AzApplicationInsightsLinkedStorageAccount -InputObject <PSApplicationInsightsComponent>
- -LinkedStorageAccountResourceId <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
-```
-
-### ByResourceIdParameterSet
-```
-New-AzApplicationInsightsLinkedStorageAccount -ResourceId <String> -LinkedStorageAccountResourceId <String>
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzApplicationInsightsLinkedStorageAccount -Name <String> -ResourceGroupName <String>
+ [-SubscriptionId <String>] [-LinkedStorageAccountResourceId <String>] [-DefaultProfile <PSObject>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create an application insights linked storage account
+Replace current linked storage account for an Application Insights component.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Create an application insights linked storage account
 ```powershell
 $account = Get-AzStorageAccount -ResourceGroupName "rgName" -Name "accountName"
-
 Get-AzApplicationInsights -ResourceGroupName "rgName" -Name "componentName" | New-AzApplicationInsightsLinkedStorageAccount -LinkedStorageAccountResourceId $account.Id
 ```
 
@@ -50,28 +35,13 @@ Create linked storage account $account under component "componentName"
 
 ## PARAMETERS
 
-### -ComponentName
-Component Name
-
-```yaml
-Type: System.String
-Parameter Sets: ByResourceNameParameterSet
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -80,28 +50,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-PSApplicationInsightsComponent
-
-```yaml
-Type: Microsoft.Azure.Commands.ApplicationInsights.Models.PSApplicationInsightsComponent
-Parameter Sets: ByInputObjectParameterSet
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -LinkedStorageAccountResourceId
-Storage Account ResourceId
+Linked storage account resource ID
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+The name of the Application Insights component resource.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: ApplicationInsightsComponentName, ComponentName
 
 Required: True
 Position: Named
@@ -111,11 +81,12 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Resource Group Name
+The name of the resource group.
+The name is case insensitive.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByResourceNameParameterSet
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -125,17 +96,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResourceId
-Component ResourceId
+### -SubscriptionId
+The ID of the target subscription.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByResourceIdParameterSet
+Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
-Default value: None
+Default value: (Get-AzContext).Subscription.Id
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -176,14 +147,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String
-
-### Microsoft.Azure.Commands.ApplicationInsights.Models.PSApplicationInsightsComponent
-
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.ApplicationInsights.Models.PSComponentLinkedStorageAccounts
+### Microsoft.Azure.PowerShell.Cmdlets.ApplicationInsights.Models.Api20200301Preview.IComponentLinkedStorageAccounts
 
 ## NOTES
 
+ALIASES
+
 ## RELATED LINKS
+

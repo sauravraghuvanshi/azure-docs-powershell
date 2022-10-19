@@ -44,8 +44,10 @@ Get DigitalTwinsInstances resource.
 
 ### Example 1: List (Default)
 ```powershell
-PS C:\> Get-AzDigitalTwinsInstance
+Get-AzDigitalTwinsInstance
+```
 
+```output
 Location Name                    Type
 -------- ----                    ----
 eastus   youriDigitalTwinsTest   Microsoft.DigitalTwins/digitalTwinsInstances
@@ -56,8 +58,10 @@ Get all the DigitalTwinsInstance by default
 
 ### Example 2: Get
 ```powershell
-PS C:\> Get-AzDigitalTwinsInstance -ResourceGroupName youritemp -ResourceName youriDigitalTwin
+Get-AzDigitalTwinsInstance -ResourceGroupName youritemp -ResourceName youriDigitalTwin
+```
 
+```output
 Location Name             Type
 -------- ----             ----
 eastus   youriDigitalTwin Microsoft.DigitalTwins/digitalTwinsInstances
@@ -67,9 +71,11 @@ Get the specified AzDigitalTwinsInstance by ResourceName
 
 ### Example 3: GetViaIdentity
 ```powershell
-PS C:\> $NewAzDigital = New-AzDigitalTwinsInstance -ResourceGroupName youritemp -ResourceName youriDigitalTwin -Location eastus
+$NewAzDigital = New-AzDigitalTwinsInstance -ResourceGroupName youritemp -ResourceName youriDigitalTwin -Location eastus
 Get-AzDigitalTwinsInstance -inputObject $NewAzDigital
+```
 
+```output
 Location Name             Type
 -------- ----             ----
 eastus   youriDigitalTwin Microsoft.DigitalTwins/digitalTwinsInstances
@@ -79,8 +85,10 @@ Get the specified AzDigitalTwinsInstance by Object
 
 ### Example 4: List1
 ```powershell
-PS C:\> Get-AzDigitalTwinsInstance -ResourceGroupName youritemp
+Get-AzDigitalTwinsInstance -ResourceGroupName youritemp
+```
 
+```output
 Location Name                    Type
 -------- ----                    ----
 eastus   youriDigitalTwinsTest   Microsoft.DigitalTwins/digitalTwinsInstances
@@ -187,7 +195,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IDigitalTwinsIdentity>: Identity Parameter
+INPUTOBJECT `<IDigitalTwinsIdentity>`: Identity Parameter
   - `[EndpointName <String>]`: Name of Endpoint Resource.
   - `[Id <String>]`: Resource identity path
   - `[Location <String>]`: Location of DigitalTwinsInstance.

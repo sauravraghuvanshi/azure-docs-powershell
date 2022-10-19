@@ -1,99 +1,83 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.dll-Help.xml
+external help file: 
 Module Name: Az.SecurityInsights
 online version: https://docs.microsoft.com/powershell/module/az.securityinsights/get-azsentineldataconnector
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Get-AzSentinelDataConnector.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Get-AzSentinelDataConnector.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Get-AzSentinelDataConnector.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Get-AzSentinelDataConnector.md
 ---
 
 # Get-AzSentinelDataConnector
 
 ## SYNOPSIS
-Gets a Data Connector. <br/><br/>
-Please note that automation support is only available for the following data connectors:
-* AADDataConnector
-* AATPDataConnector
-* ASCDataConnector
-* AwsCloudTrailDataConnector
-* MCASDataConnector
-* MDATPDataConnector
-* OfficeDataConnector
-* TIDataConnector
+Gets a data connector.
 
 ## SYNTAX
 
-### WorkspaceScope (Default)
+### List (Default)
 ```
-Get-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String>
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
-```
-
-### DataConnectorId
-```
-Get-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> -DataConnectorId <String>
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> [-SubscriptionId <String[]>]
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
-### ResourceId
+### Get
 ```
-Get-AzSentinelDataConnector -ResourceId <String> [-DefaultProfile <IAzureContextContainer>]
+Get-AzSentinelDataConnector -Id <String> -ResourceGroupName <String> -WorkspaceName <String>
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-AzSentinelDataConnector -InputObject <ISecurityInsightsIdentity> [-DefaultProfile <PSObject>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-AzSentinelDataConnector** cmdlet gets a Data Connector from the specified workspace.
-If you specify the *DataConnectorId* parameter, a single **DataConnector** object is returned.
-If you do not specify the *DataConnectorId* parameter, an array containing all of the Data Connectors in the specified workspace are returned.
-You can use the **DataConnector** object to update the Data Connector, for example you can disable the **DataConnector**.
+Gets a data connector.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: List all Data Connectors
 ```powershell
-PS C:\> $DataConnectors = Get-AzSentinelDataConnector -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName"
+ Get-AzSentinelDataConnector -ResourceGroupName "myResourceGroupName" -workspaceName "myWorkspaceName"
 ```
 
-This example gets all of the DataConnectors in the specified workspace, and then stores it in the $DataConnectors variable.
+```output
+Kind : AzureActiveDirectory
+Name : 8207e1f9-a793-4869-afb1-5ad4540d66d1
 
-### Example 2
-```powershell
-PS C:\> $DataConnector = Get-AzSentinelDataConnector -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName" -DataConnectorId "MyDataConnectorId"
+Kind : AzureAdvancedThreatProtection
+Name : 1d75aada-a558-4461-986b-c6822182e81d
+
+Kind : Office365
+Name : 6323c716-83ae-4cfd-bf93-58235c8beb23
+
 ```
 
-This example gets an DataConnector in the specified workspace, and then stores it in the $DataConnector variable.
+This command lists all DataConnectors under a Microsoft Sentinel workspace.
 
-### Example 3
+### Example 2: Get a specific Data Connector
 ```powershell
-Get-AzSentinelDataConnector @SentinelConnection | Where-Object {$_.Kind -eq "Office365"}
+ Get-AzSentinelDataConnector -ResourceGroupName "myResourceGroupName" -workspaceName "myWorkspaceName" | Where-Object {$_.kind -eq "Office365"}
 ```
 
-This example (using a connection object) gets the Office365 data connector.
+```output
+Kind                         : Office365
+Name                         : 6323c716-83ae-4cfd-bf93-58235c8beb23
+SharePointState              : enabled
+```
+
+This command gets a specific DataConnector based on kind
 
 ## PARAMETERS
-
-### -DataConnectorId
-Data Connector Id.
-
-```yaml
-Type: System.String
-Parameter Sets: DataConnectorId
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -102,12 +86,44 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResourceGroupName
-Resource group name.
+### -Id
+Connector ID
 
 ```yaml
 Type: System.String
-Parameter Sets: WorkspaceScope, DataConnectorId
+Parameter Sets: Get
+Aliases: DataConnectorId
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.ISecurityInsightsIdentity
+Parameter Sets: GetViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+The name of the resource group.
+The name is case insensitive.
+
+```yaml
+Type: System.String
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -117,27 +133,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResourceId
-Resource Id.
+### -SubscriptionId
+The ID of the target subscription.
 
 ```yaml
-Type: System.String
-Parameter Sets: ResourceId
+Type: System.String[]
+Parameter Sets: Get, List
 Aliases:
 
-Required: True
+Required: False
 Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -WorkspaceName
-Workspace Name.
+The name of the workspace.
 
 ```yaml
 Type: System.String
-Parameter Sets: WorkspaceScope, DataConnectorId
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -152,10 +168,44 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String
+### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.ISecurityInsightsIdentity
+
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.SecurityInsights.Models.DataConnectors.PSSentinelDataConnector
+### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.IDataConnector
+
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+`INPUTOBJECT <ISecurityInsightsIdentity>`: Identity Parameter
+  - `[ActionId <String>]`: Action ID
+  - `[AlertRuleTemplateId <String>]`: Alert rule template ID
+  - `[AutomationRuleId <String>]`: Automation rule ID
+  - `[BookmarkId <String>]`: Bookmark ID
+  - `[ConsentId <String>]`: consent ID
+  - `[DataConnectorId <String>]`: Connector ID
+  - `[EntityId <String>]`: entity ID
+  - `[EntityQueryId <String>]`: entity query ID
+  - `[EntityQueryTemplateId <String>]`: entity query template ID
+  - `[Id <String>]`: Resource identity path
+  - `[IncidentCommentId <String>]`: Incident comment ID
+  - `[IncidentId <String>]`: Incident ID
+  - `[MetadataName <String>]`: The Metadata name.
+  - `[Name <String>]`: Threat intelligence indicator name field.
+  - `[RelationName <String>]`: Relation Name
+  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
+  - `[RuleId <String>]`: Alert rule ID
+  - `[SentinelOnboardingStateName <String>]`: The Sentinel onboarding state name. Supports - default
+  - `[SettingsName <String>]`: The setting name. Supports - Anomalies, EyesOn, EntityAnalytics, Ueba
+  - `[SourceControlId <String>]`: Source control Id
+  - `[SubscriptionId <String>]`: The ID of the target subscription.
+  - `[WorkspaceName <String>]`: The name of the workspace.
+
 ## RELATED LINKS
+

@@ -1,23 +1,27 @@
 ---
 Module Name: Az.GuestConfiguration
-Module Guid: 91832aaa-dc11-4583-8239-adb7df531604
+Module Guid: f2042330-dd50-496f-aac0-69f27fd54f2a
 Download Help Link: https://docs.microsoft.com/powershell/module/az.guestconfiguration
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/GuestConfiguration/GuestConfiguration/help/Az.GuestConfiguration.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/GuestConfiguration/GuestConfiguration/help/Az.GuestConfiguration.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/GuestConfiguration/help/Az.GuestConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/GuestConfiguration/help/Az.GuestConfiguration.md
 ---
 
 # Az.GuestConfiguration Module
 ## Description
-Module with cmdlets that will enable users to understand the compliance state of their virtual machines in Azure, based on the results of Azure Policy.
+Microsoft Azure PowerShell: GuestConfiguration cmdlets
 
 ## Az.GuestConfiguration Cmdlets
-### [Get-AzVMGuestPolicyStatus](Get-AzVMGuestPolicyStatus.md)
-Gets guest configuration policy statuses (detailed) for an initiative of type "Guest Configuration" that is assigned to a VM.
-An initiative is a policy of definition type "Initiative".
+### [Get-AzGuestConfigurationAssignment](Get-AzGuestConfigurationAssignment.md)
+Get information about a guest configuration assignment
 
-### [Get-AzVMGuestPolicyStatusHistory](Get-AzVMGuestPolicyStatusHistory.md)
-Gets guest configuration policy compliance status history for an initiative of type "Guest Configuration" that is assigned to a VM.
-An initiative is a policy of definition type "Initiative".
+### [Get-AzGuestConfigurationAssignmentReport](Get-AzGuestConfigurationAssignmentReport.md)
+Get a report for the guest configuration assignment, by reportId.
+
+### [New-AzGuestConfigurationAssignment](New-AzGuestConfigurationAssignment.md)
+Creates an association between a VM and guest configuration
+
+### [Remove-AzGuestConfigurationAssignment](Remove-AzGuestConfigurationAssignment.md)
+Delete a guest configuration assignment
 

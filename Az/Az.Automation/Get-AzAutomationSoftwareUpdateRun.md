@@ -52,10 +52,12 @@ The Get-AzAutomationSoftwareUpdateRun cmdlet returns a list of software update r
 This example list all update runs triggered by a specific software update configuration.
 
 ```powershell
-PS C:\> Get-AzAutomationSoftwareUpdateRun -ResourceGroupName "mygroup" `
+Get-AzAutomationSoftwareUpdateRun -ResourceGroupName "mygroup" `
                                                -AutomationAccountName "myaccount" `
                                                -SoftwareUpdateConfigurationName "MyUpdateConfiguration"
+```
 
+```output
 RunId                           : ec9ce57f-da18-44be-b33b-651a0f93cb52
 SoftwareUpdateConfigurationName : MyUpdateConfiguration
 ConfiguredDuration              : 02:00:00
@@ -226,7 +228,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

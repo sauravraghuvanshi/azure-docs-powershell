@@ -15,7 +15,7 @@ Removes an existing ExpressRoutePort authorization.
 ## SYNTAX
 
 ```
-Remove-AzExpressRoutePortAuthorization -Name <String> -ExpressRoutePort <PSExpressRoutePort> [-Force]
+Remove-AzExpressRoutePortAuthorization -Name <String> -ExpressRoutePortObject <PSExpressRoutePort> [-Force]
  [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -28,6 +28,7 @@ The **Remove-AzExpressRoutePortAuthorization** cmdlet removes an authorization a
 ```powershell
 $ERPort = Get-AzExpressRoutePort -Name "ContosoPort" -ResourceGroupName "ContosoResourceGroup"
 ```
+
 ```output
 Name                       : ContosoPort
 ResourceGroupName          : ContosoResourceGroup
@@ -83,9 +84,11 @@ Links                      : [
                              ]
 Circuits                   : []
 ```
+
 ```powershell
-Remove-AzExpressRoutePortAuthorization -Name "ContosoPortAuthorization" -ExpressRoutePort $ERPort
+Remove-AzExpressRoutePortAuthorization -Name "ContosoPortAuthorization" -ExpressRoutePortObject $ERPort
 ```
+
 ```output
 Confirm
 Are you sure you want to remove resource 'ContosoPortAuthorization'
@@ -130,8 +133,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ExpressRoutePort
-Specifies the ExpressRoutePort object that this cmdlet removes the authorization from.
+### -ExpressRoutePortObject
+The ExpressRoutePort Object
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRoutePort

@@ -1,10 +1,10 @@
 ---
-external help file: 
+external help file: Az.AppConfiguration-help.xml
 Module Name: Az.AppConfiguration
 online version: https://docs.microsoft.com/powershell/module/az.appconfiguration/get-azappconfigurationstore
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/Get-AzAppConfigurationStore.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/Get-AzAppConfigurationStore.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/AppConfiguration/help/Get-AzAppConfigurationStore.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/AppConfiguration/help/Get-AzAppConfigurationStore.md
 ---
 
 # Get-AzAppConfigurationStore
@@ -25,16 +25,16 @@ Get-AzAppConfigurationStore -Name <String> -ResourceGroupName <String> [-Subscri
  [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
-```
-Get-AzAppConfigurationStore -InputObject <IAppConfigurationIdentity> [-DefaultProfile <PSObject>]
- [<CommonParameters>]
-```
-
 ### List1
 ```
 Get-AzAppConfigurationStore -ResourceGroupName <String> [-SubscriptionId <String[]>]
  [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-AzAppConfigurationStore -InputObject <IAppConfigurationIdentity> [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,51 +46,41 @@ Get or list app configuration stores.
 ```powershell
 Get-AzAppConfigurationStore
 ```
+
 ```output
-Location Name               Type
--------- ----               ----
-eastus   appconfig-test01   Microsoft.AppConfiguration/configurationStores
-eastus   contoso-app-config Microsoft.AppConfiguration/configurationStores
+Location Name              ResourceGroupName
+-------- ----              -----------------
+eastus   azpstest-appstore azpstest_gp
+eastus   azpstestappstore  azpstest-gp
 ```
 
 This command lists all app configuration stores under a subscription.
 
 ### Example 2: List all app configuration stores under a resource group
 ```powershell
-Get-AzAppConfigurationStore -ResourceGroupName azpwsh-manual-test
+Get-AzAppConfigurationStore -ResourceGroupName azpstest_gp
 ```
+
 ```output
-Location Name             Type
--------- ----             ----
-eastus   appconfig-test01 Microsoft.AppConfiguration/configurationStores
-eastus   appconfig-test02 Microsoft.AppConfiguration/configurationStores
+Location Name              ResourceGroupName
+-------- ----              -----------------
+eastus   azpstest-appstore azpstest_gp
 ```
 
 This command lists all app configuration stores under a resource group.
 
 ### Example 3: Get an app configuration store by name
 ```powershell
-Get-AzAppConfigurationStore -ResourceGroupName azpwsh-manual-test -Name appconfig-test01
+Get-AzAppConfigurationStore -Name azpstest-appstore -ResourceGroupName azpstest_gp
 ```
+
 ```output
-Location Name             Type
--------- ----             ----
-eastus   appconfig-test01 Microsoft.AppConfiguration/configurationStores
+Location Name              ResourceGroupName
+-------- ----              -----------------
+eastus   azpstest-appstore azpstest_gp
 ```
 
 This command gets an app configuration store by name.
-
-### Example 4: Get an app configuration store by pipeline
-```powershell
-Get-AzAppConfigurationStore -ResourceGroupName azpwsh-manual-test -Name appconfig-test01 | Get-AzAppConfigurationStore
-```
-```output
-Location Name             Type
--------- ----             ----
-eastus   appconfig-test01 Microsoft.AppConfiguration/configurationStores
-```
-
-This command gets an app configuration store by pipeline.
 
 ## PARAMETERS
 
@@ -160,7 +150,7 @@ The Microsoft Azure subscription ID.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get, List, List1
+Parameter Sets: List, Get, List1
 Aliases:
 
 Required: False
@@ -179,7 +169,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Models.Api20200601.IConfigurationStore
+### Microsoft.Azure.PowerShell.Cmdlets.AppConfiguration.Models.Api20220501.IConfigurationStore
 
 ## NOTES
 
@@ -190,13 +180,14 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IAppConfigurationIdentity>: Identity Parameter
+`INPUTOBJECT <IAppConfigurationIdentity>`: Identity Parameter
   - `[ConfigStoreName <String>]`: The name of the configuration store.
   - `[GroupName <String>]`: The name of the private link resource group.
   - `[Id <String>]`: Resource identity path
+  - `[KeyValueName <String>]`: Identifier of key and label combination. Key and label are joined by $ character. Label is optional.
+  - `[Location <String>]`: The location in which uniqueness will be verified.
   - `[PrivateEndpointConnectionName <String>]`: Private endpoint connection name
   - `[ResourceGroupName <String>]`: The name of the resource group to which the container registry belongs.
   - `[SubscriptionId <String>]`: The Microsoft Azure subscription ID.
 
 ## RELATED LINKS
-

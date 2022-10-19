@@ -1,94 +1,105 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.Advisor.dll-Help.xml
+external help file: 
 Module Name: Az.Advisor
-online version: https://docs.microsoft.com/powershell/module/az.advisor/get-azadvisorrecommendation
+online version: https://docs.microsoft.com/powershell/module/az.advisor/Get-AzAdvisorRecommendation
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Advisor/Advisor/help/Get-AzAdvisorRecommendation.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Advisor/Advisor/help/Get-AzAdvisorRecommendation.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Advisor/help/Get-AzAdvisorRecommendation.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Advisor/help/Get-AzAdvisorRecommendation.md
 ---
 
 # Get-AzAdvisorRecommendation
 
 ## SYNOPSIS
-Gets a list of Azure Advisor recommendations.
+Obtains details of a cached recommendation.
 
 ## SYNTAX
 
-### NameParameterSet (Default)
+### ListByFilter (Default)
 ```
-Get-AzAdvisorRecommendation [-Category <String>] [-ResourceGroupName <String>]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzAdvisorRecommendation [-SubscriptionId <String[]>] [-Filter <String>] [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
 ```
 
-### IdParameterSet
+### GetById
 ```
-Get-AzAdvisorRecommendation [-ResourceId] <String> [-Category <String>]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzAdvisorRecommendation -Id <String> -ResourceUri <String> [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
+```
+
+### GetViaIdentity1
+```
+Get-AzAdvisorRecommendation -InputObject <IAdvisorIdentity> [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### ListById
+```
+Get-AzAdvisorRecommendation -ResourceId <String> [-Category <String>] [-SubscriptionId <String[]>]
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### ListByName
+```
+Get-AzAdvisorRecommendation -ResourceGroupName <String> [-Category <String>] [-SubscriptionId <String[]>]
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Obtains the list of Azure Advisor recommendations. Can be filtered by Category, resource-ID, name etc.
+Obtains details of a cached recommendation.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: List Recommendation by subscriptionId and resource group name
 ```powershell
-Get-AzAdvisorRecommendation
+ Get-AzAdvisorRecommendation -ResourceGroupName lnxtest -Category HighAvailability
 ```
 
 ```output
-ResourceId                   : /subscriptions/{user_subscription}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/xyz/providers/Microsoft.Advisor/recommen
-                       dations/{recommendation-Id}
-Category             : Performance
-ExtendedProperties   : {}
-Impact               : Medium
-ImpactedField        : Microsoft.Cache/Redis
-ImpactedValue        : azacache
-LastUpdated          : 12/5/2018 4:45:55 PM
-Metadata             : {}
-RecommendationTypeId : 905a0026-8010-45b2-ab46-a92c3e4a5131
-Risk                 : None
-ShortDescription     : Microsoft.Azure.Commands.Advisor.Cmdlets.Models.PsRecommendationBaseShortDescription
-SuppressionIds       : {}
-Name                 : {recommendation-Id}
-Type                 : Microsoft.Advisor/recommendations
+Name                                 Category         Resource Group Impact ImpactedValue ImpactedField
+----                                 --------         -------------- ------ ------------- -------------
+71411b72-e7de-9dc2-308b-5c60252e1456 HighAvailability lnxtest        Medium lnxtest-vnet  MICROSOFT.NETWORK/VIRTUALNETWORKS
+bf8ebdfd-6caa-9f55-53ae-ffafefbf3a7c HighAvailability lnxtest        Medium advisortest   MICROSOFT.NETWORK/VIRTUALNETWORKS
+339071fa-d66a-be4f-9cf8-22b67552b287 HighAvailability lnxtest        Medium advisor-test  MICROSOFT.NETWORK/VIRTUALNETWORKS
 ```
-Gets the list of all recommendations.
 
-### Example 2
+List Recommendation by subscriptionId
+
+### Example 2: List Recommendation by subscriptionId and filter
 ```powershell
-Get-AzAdvisorRecommendation -Category Performance
+Get-AzAdvisorRecommendation -filter "Category eq 'HighAvailability' and ResourceGroup eq 'lnxtest'"
 ```
 
 ```output
-ResourceId                   : /subscriptions/{user_subscription}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/xyz/providers/Microsoft.Advisor/recommen
-                       dations/{recommendation-Id}
-Category             : Performance
-ExtendedProperties   : {}
-Impact               : Medium
-ImpactedField        : Microsoft.Cache/Redis
-ImpactedValue        : azacache
-LastUpdated          : 12/5/2018 4:45:55 PM
-Metadata             : {}
-RecommendationTypeId : 905a0026-8010-45b2-ab46-a92c3e4a5131
-Risk                 : None
-ShortDescription     : Microsoft.Azure.Commands.Advisor.Cmdlets.Models.PsRecommendationBaseShortDescription
-SuppressionIds       : {}
-Name                 : {recommendation-Id}
-Type                 : Microsoft.Advisor/recommendations
+Name                                 Category         Resource Group Impact ImpactedValue ImpactedField
+----                                 --------         -------------- ------ ------------- -------------
+71411b72-e7de-9dc2-308b-5c60252e1456 HighAvailability lnxtest        Medium lnxtest-vnet  MICROSOFT.NETWORK/VIRTUALNETWORKS
+bf8ebdfd-6caa-9f55-53ae-ffafefbf3a7c HighAvailability lnxtest        Medium advisortest   MICROSOFT.NETWORK/VIRTUALNETWORKS
+339071fa-d66a-be4f-9cf8-22b67552b287 HighAvailability lnxtest        Medium advisor-test  MICROSOFT.NETWORK/VIRTUALNETWORKS
 ```
-Gets the list of all recommendations filtered by category Performance.
+
+List Recommendation by subscriptionId and filter
+
+### Example 3: Get Recommendation by Id and resource Id
+```powershell
+Get-AzAdvisorRecommendation -Id 42963553-61de-5334-2d2e-47f3a0099d41 -ResourceUri /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f
+```
+
+```output
+Name                                 Category Resource Group   Impact ImpactedValue    ImpactedField
+----                                 -------- --------------   ------ -------------    -------------
+42963553-61de-5334-2d2e-47f3a0099d41 Security automanagehcrprg High   arcbox-capi-mgmt Microsoft.Compute/virtualMachines
+```
+
+Get Recommendation by Id and resource Id
 
 ## PARAMETERS
 
 ### -Category
-Category of the recommendation
+The category of recommendation.
 
 ```yaml
-Type: String
-Parameter Sets: (All)
+Type: System.String
+Parameter Sets: ListById, ListByName
 Aliases:
-Accepted values: Cost, HighAvailability, Performance, Security, OperationalExcellence
 
 Required: False
 Position: Named
@@ -101,9 +112,9 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -112,15 +123,64 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResourceGroupName
-ResourceGroup name of the recommendation
+### -Filter
+The filter to apply to the recommendations.
+Filter can be applied to properties ['ResourceId', 'ResourceGroup', 'RecommendationTypeGuid', '[Category](#category)'] with operators ['eq', 'and', 'or'].
+Example:
+- $filter=Category eq 'Cost' and ResourceGroup eq 'MyResourceGroup'
 
 ```yaml
-Type: String
-Parameter Sets: NameParameterSet
+Type: System.String
+Parameter Sets: ListByFilter
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+The recommendation ID.
+
+```yaml
+Type: System.String
+Parameter Sets: GetById
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.Advisor.Models.IAdvisorIdentity
+Parameter Sets: GetViaIdentity1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+The resource group name.
+
+```yaml
+Type: System.String
+Parameter Sets: ListByName
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -128,32 +188,79 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-ResourceId of the recommendation
+The resource Id.
 
 ```yaml
-Type: String
-Parameter Sets: IdParameterSet
+Type: System.String
+Parameter Sets: ListById
 Aliases:
 
 Required: True
-Position: 0
+Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceUri
+The fully qualified Azure Resource Manager identifier of the resource to which the recommendation applies.
+
+```yaml
+Type: System.String
+Parameter Sets: GetById
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubscriptionId
+The Azure subscription ID.
+
+```yaml
+Type: System.String[]
+Parameter Sets: ListByFilter, ListById, ListByName
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### System.String
+### Microsoft.Azure.PowerShell.Cmdlets.Advisor.Models.IAdvisorIdentity
 
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.Advisor.Cmdlets.Models.PsAzureAdvisorResourceRecommendationBase
+### Microsoft.Azure.PowerShell.Cmdlets.Advisor.Models.Api202001.IResourceRecommendationBase
 
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+`INPUTOBJECT <IAdvisorIdentity>`: Identity Parameter
+  - `[ConfigurationName <ConfigurationName?>]`: Advisor configuration name. Value must be 'default'
+  - `[Id <String>]`: Resource identity path
+  - `[Name <String>]`: Name of metadata entity.
+  - `[OperationId <String>]`: The operation ID, which can be found from the Location field in the generate recommendation response header.
+  - `[RecommendationId <String>]`: The recommendation ID.
+  - `[ResourceGroup <String>]`: The name of the Azure resource group.
+  - `[ResourceUri <String>]`: The fully qualified Azure Resource Manager identifier of the resource to which the recommendation applies.
+  - `[SubscriptionId <String>]`: The Azure subscription ID.
+
 ## RELATED LINKS
+

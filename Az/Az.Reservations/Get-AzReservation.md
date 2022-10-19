@@ -1,55 +1,80 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.Reservations.dll-Help.xml
+external help file: 
 Module Name: Az.Reservations
 online version: https://docs.microsoft.com/powershell/module/az.reservations/get-azreservation
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Reservations/Reservations/help/Get-AzReservation.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Reservations/Reservations/help/Get-AzReservation.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Reservations/help/Get-AzReservation.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Reservations/help/Get-AzReservation.md
 ---
 
 # Get-AzReservation
 
 ## SYNOPSIS
-Get `Reservation`s in a given reservation Order
+Get specific `Reservation` details.
 
 ## SYNTAX
 
-### CommandLine (Default)
+### List1 (Default)
 ```
-Get-AzReservation -ReservationOrderId <Guid> [-ReservationId <Guid>] [-DefaultProfile <IAzureContextContainer>]
+Get-AzReservation [-Filter <String>] [-Orderby <String>] [-RefreshSummary <String>] [-SelectedState <String>]
+ [-Skiptoken <Single>] [-Take <Single>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### Get
+```
+Get-AzReservation -Id <String> -OrderId <String> [-Expand <String>] [-DefaultProfile <PSObject>]
  [<CommonParameters>]
 ```
 
-### PipeObject
+### GetViaIdentity
 ```
-Get-AzReservation [-ReservationOrder <PSReservationOrder>] [-DefaultProfile <IAzureContextContainer>]
+Get-AzReservation -InputObject <IReservationsIdentity> [-Expand <String>] [-DefaultProfile <PSObject>]
  [<CommonParameters>]
 ```
 
-### PagePipeObject
+### List
 ```
-Get-AzReservation [-ReservationOrderPage <PSReservationOrderPage>] [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+Get-AzReservation -OrderId <String> [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-List `Reservation`s within a single `ReservationOrder`.
+Get specific `Reservation` details.
 
 ## EXAMPLES
 
-### Example 1
-```
-PS C:\> Get-AzReservation -ReservationOrderId "1111aaaa-b1b2-c0c2-d0d2-00000fffff"
-```
-
-List `Reservation`s within the specified `ReservationOrder`.
-
-### Example 2
-```
-PS C:\> Get-AzReservation -ReservationOrderId "1111aaaa-b1b2-c0c2-d0d2-00000fffff" -ReservationId "11111111-1111-1111-1111-1111111111"
+### Example 1: Get the list of reservation orders in the current tenant
+```powershell
+Get-AzReservation
 ```
 
-Get specific `Reservation` details.
+```output
+Location   ReservationOrderId/ReservationId                                          Sku                           State     BenefitStartTime ExpiryDate            LastUpdatedDateTime SkuDescription
+--------   --------------------------------                                          ---                           -----     ---------------- ----------            ------------------- --------------
+centralus  a87c1742-0080-5b4d-b953-8531ad46fdc8/cad6fef7-ae86-4d47-91d0-67c897934bfe Standard_B1s                  Succeeded                  6/1/2024 12:00:00 AM
+westeurope c5cf5c26-1920-4895-bf34-098ed1c69b92/6540137e-5a4f-4a14-bd17-3f2ea72b1ff4 premium_ssd_managed_disks_p30 Succeeded                  6/1/2022 12:00:00 AM
+centralus  bd82bff8-4d29-9375-8194-ce0709fc1691/f2c3a058-b469-4529-88fa-1bae251c4a47 Standard_B1s                  Cancelled                  6/1/2024 12:00:00 AM
+```
+
+Get the list of reservation orders in the current tenant.
+By design, some propeties do not have data due to the api response(e.g.
+LastUpdatedDateTime and SkuDescription).
+In this case please get the single reservation with command in example 2 to get the missing data.
+
+Some data might be trucated due to the width of powershell view, appending this to the end of the command to show the truncated data: | ft -Wrap
+
+### Example 2: Get the reservation details given ReservationOrderId and ReservationId
+```powershell
+Get-AzReservation -ReservationOrderId a87c1742-0080-5b4d-b953-8531ad46fdc8 -ReservationId cad6fef7-ae86-4d47-91d0-67c897934bfe
+```
+
+```output
+Location  ReservationOrderId/ReservationId                                          Sku          State     BenefitStartTime    ExpiryDate           LastUpdatedDateTime SkuDescription
+--------  --------------------------------                                          ---          -----     ----------------    ----------           ------------------- --------------
+centralus a87c1742-0080-5b4d-b953-8531ad46fdc8/cad6fef7-ae86-4d47-91d0-67c897934bfe Standard_B1s Succeeded 6/1/2021 5:01:58 PM 6/1/2024 12:00:00 AM 6/1/2021 5:02:09 PM Reserved VM Instance, Standard_B1s, US Central, 3 Years
+```
+
+Get the details of a single reservation.
+Some data might be trucated due to the width of powershell view, appending this to the end of the command to show the truncated data: | ft -Wrap
 
 ## PARAMETERS
 
@@ -57,9 +82,9 @@ Get specific `Reservation` details.
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -68,12 +93,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ReservationId
-Id of the `Reservation` to look at
+### -Expand
+Supported value of this query is renewProperties
 
 ```yaml
-Type: System.Guid
-Parameter Sets: CommandLine
+Type: System.String
+Parameter Sets: Get, GetViaIdentity
 Aliases:
 
 Required: False
@@ -83,48 +108,142 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ReservationOrder
-Pipe object parameter for `ReservationOrder`
+### -Filter
+May be used to filter by reservation properties.
+The filter supports 'eq', 'or', and 'and'.
+It does not currently support 'ne', 'gt', 'le', 'ge', or 'not'.
+Reservation properties include sku/name, properties/{appliedScopeType, archived, displayName, displayProvisioningState, effectiveDateTime, expiryDate, provisioningState, quantity, renew, reservedResourceType, term, userFriendlyAppliedScopeType, userFriendlyRenewState}
 
 ```yaml
-Type: Microsoft.Azure.Commands.Reservations.Models.PSReservationOrder
-Parameter Sets: PipeObject
+Type: System.String
+Parameter Sets: List1
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ReservationOrderId
-Id of the `ReservationOrder` that contains the `Reservation`. Required.
+### -Id
+Id of the Reservation Item
 
 ```yaml
-Type: System.Guid
-Parameter Sets: CommandLine
+Type: System.String
+Parameter Sets: Get
+Aliases: ReservationId
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.Reservations.Models.IReservationsIdentity
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ReservationOrderPage
-Pipe object parameter for `ReservationOrder`
+### -Orderby
+May be used to sort order by reservation properties.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Reservations.Models.PSReservationOrderPage
-Parameter Sets: PagePipeObject
+Type: System.String
+Parameter Sets: List1
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OrderId
+Order Id of the reservation
+
+```yaml
+Type: System.String
+Parameter Sets: Get, List
+Aliases: ReservationOrderId
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RefreshSummary
+To indicate whether to refresh the roll up counts of the reservations group by provisioning states
+
+```yaml
+Type: System.String
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SelectedState
+The selected provisioning state
+
+```yaml
+Type: System.String
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skiptoken
+The number of reservations to skip from the list before returning results
+
+```yaml
+Type: System.Single
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Take
+To number of reservations to return
+
+```yaml
+Type: System.Single
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -133,18 +252,26 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Guid
-
-### Microsoft.Azure.Commands.Reservations.Models.PSReservationOrder
-
-### Microsoft.Azure.Commands.Reservations.Models.PSReservationOrderPage
+### Microsoft.Azure.PowerShell.Cmdlets.Reservations.Models.IReservationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.Reservations.Models.PSReservationPage
-
-### Microsoft.Azure.Commands.Reservations.Models.PSReservation
+### Microsoft.Azure.PowerShell.Cmdlets.Reservations.Models.Api20220301.IReservationResponse
 
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+`INPUTOBJECT <IReservationsIdentity>`: Identity Parameter
+  - `[Id <String>]`: Resource identity path
+  - `[ReservationId <String>]`: Id of the Reservation Item
+  - `[ReservationOrderId <String>]`: Order Id of the reservation
+  - `[SubscriptionId <String>]`: Id of the subscription
+
 ## RELATED LINKS
+

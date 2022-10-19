@@ -21,6 +21,12 @@ Get-AzADGroup [-Expand <String[]>] [-Select <String[]>] [-Filter <String>] [-Ord
  [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
+### List
+```
+Get-AzADGroup [-Count] [-Expand <String[]>] [-Select <String[]>] [-ConsistencyLevel <String>] [-AppendSelected]
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
 ### DisplayNameParameterSet
 ```
 Get-AzADGroup [-Expand <String[]>] [-Select <String[]>] [-ConsistencyLevel <String>] [-First <UInt64>]
@@ -47,24 +53,31 @@ Lists entities from groups or get entity from groups by key
 
 ### Example 1: Get group by display name
 ```powershell
-PS C:\> Get-AzADGroup -DisplayName $gname
+Get-AzADGroup -DisplayName $gname
 ```
 
 Get group by display name
 
 ### Example 2: List groups
 ```powershell
-PS C:\> Get-AzADGroup -First 10
+Get-AzADGroup -First 10
 ```
 
 List first 10 groups
 
 ### Example 3: Get group by object id
 ```powershell
-PS C:\> Get-AzADGroup -ObjectId $id -Select groupTypes -AppendSelected
+Get-AzADGroup -ObjectId $id -Select groupTypes -AppendSelected
 ```
 
 Get group by object id and append property 'groupTypes' after default properties: 'DisplayName', 'Id', 'DeletedDateTime', 'SecurityEnabled', 'MailEnabled', 'MailNickname', 'Description'
+
+### Example 4: Get group with filter
+```powershell
+Get-AzADGroup -Filter "startsWith(DisplayName,'some-name')"
+```
+
+Get group with filter
 
 ## PARAMETERS
 
@@ -90,6 +103,21 @@ Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-
 ```yaml
 Type: System.String
 Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -160,7 +188,7 @@ Accept wildcard characters: False
 ```
 
 ### -Filter
-Filter items by property values
+Filter items by property values, for more detail about filter query please see: https://learn.microsoft.com/en-us/graph/filter-query-parameter
 
 ```yaml
 Type: System.String

@@ -1,5 +1,5 @@
 ---
-external help file: Az.StackHCI-help.xml
+external help file: 
 Module Name: Az.StackHCI
 online version: https://docs.microsoft.com/powershell/module/az.stackhci/test-azstackhciconnection
 schema: 2.0.0
@@ -24,26 +24,36 @@ Test-AzStackHCIConnection verifies connectivity from on-premises clustered nodes
 
 ## EXAMPLES
 
-### EXAMPLE 1
+### Example 1: 
 ```powershell
-C:\PS\>Test-AzStackHCIConnection
+Test-AzStackHCIConnection
+```
+
+```output
 Test: Connect to Azure Stack HCI Service
 EndpointTested: https://azurestackhci-df.azurefd.net/health
 IsRequired: True
 Result: Succeeded
 ```
-Invoking on one of the cluster node. Success case.
 
-### EXAMPLE 2
+Invoking on one of the cluster node.
+Success case.
+
+### Example 2:
 ```powershell
-C:\PS\>Test-AzStackHCIConnection
+Test-AzStackHCIConnection
+```
+
+```output
 Test: Connect to Azure Stack HCI Service
 EndpointTested: https://azurestackhci-df.azurefd.net/health
 IsRequired: True
 Result: Failed
 FailedNodes: Node1inClus2, Node2inClus3
 ```
-Invoking on one of the cluster node. Failed case.
+
+Invoking on one of the cluster node.
+Failed case.
 
 ## PARAMETERS
 
@@ -56,7 +66,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -72,7 +82,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -81,7 +91,7 @@ Accept wildcard characters: False
 ### -EnvironmentName
 Specifies the Azure Environment.
 Default is AzureCloud.
-Valid values are AzureCloud, AzureChinaCloud, AzureUSGovernment, AzureGermanCloud, AzurePPE
+Valid values are AzureCloud, AzureChinaCloud, AzurePPE, AzureCanary, AzureUSGovernment
 
 ```yaml
 Type: System.String
@@ -89,8 +99,8 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
-Default value: $AzureCloud
+Position: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -105,7 +115,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -119,11 +129,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ### PSCustomObject. Returns following Properties in PSCustomObject
-### Test: Name of the test performed.
-### EndpointTested: Endpoint used in the test.
-### IsRequired: True or False
-### Result: Succeeded or Failed
-### FailedNodes: List of nodes on which the test failed.
+Test: Name of the test performed.
+EndpointTested: Endpoint used in the test.
+IsRequired: True or False
+Result: Succeeded or Failed
+FailedNodes: List of nodes on which the test failed.
+
 ## NOTES
 
+ALIASES
+
 ## RELATED LINKS
+

@@ -38,8 +38,10 @@ maxPacketsPerSecond
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzVirtualNetworkGatewayVpnClientConnectionHealth -ResourceName gatewayName -ResourceGroupName resourceGroup
+Get-AzVirtualNetworkGatewayVpnClientConnectionHealth -ResourceName gatewayName -ResourceGroupName resourceGroup
+```
 
+```output
 VpnConnectionId           : OVPN_0085393D-B345-4846-0426-140616833F4C
 VpnConnectionDuration     : 27878
 VpnConnectionTime         : 05/30/2019 16:03:11

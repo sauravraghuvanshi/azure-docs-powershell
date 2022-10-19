@@ -26,8 +26,10 @@ get one or more private store's offer with private plans only under subscription
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzMarketplacePrivateStoreOffer -PrivateStoreId 7gh67884-1r56-44fb-a93d-030d4ae08b2d
+Get-AzMarketplacePrivateStoreOffer -PrivateStoreId 7gh67884-1r56-44fb-a93d-030d4ae08b2d
+```
 
+```output
 UniqueOfferId             : publisherid.offerid
 OfferDisplayName          :
 PublisherDisplayName      :
@@ -59,8 +61,10 @@ Get private store's offers with private + public plans  that were added under te
 
 ### Example 2
 ```powershell
-PS C:\> Get-AzMarketplacePrivateStoreOffer -PrivateStoreId 7gh67884-1r56-44fb-a93d-030d4ae08b2d -SubscriptionId bc17bb69-1264-4f90-a9f6-0e51e29d5281
+Get-AzMarketplacePrivateStoreOffer -PrivateStoreId 7gh67884-1r56-44fb-a93d-030d4ae08b2d -SubscriptionId bc17bb69-1264-4f90-a9f6-0e51e29d5281
+```
 
+```output
 UniqueOfferId             : publisherid.offerid
 OfferDisplayName          :
 PublisherDisplayName      :
@@ -92,9 +96,10 @@ Get private store's offers with private plans only that were added under subscri
 
 ### Example 3
 ```powershell
-PS C:\> Get-AzMarketplacePrivateStoreOffer -PrivateStoreId 7gh67884-1r56-44fb-a93d-030d4ae08b2d -OfferId publisherid.offerid
+Get-AzMarketplacePrivateStoreOffer -PrivateStoreId 7gh67884-1r56-44fb-a93d-030d4ae08b2d -OfferId publisherid.offerid
+```
 
-
+```output
 UniqueOfferId             : publisherid.offerid
 OfferDisplayName          :
 PublisherDisplayName      :
@@ -113,9 +118,10 @@ Get  private store's offer with private + public plans that was been added under
 
 ### Example 4
 ```powershell
-PS C:\> Get-AzMarketplacePrivateStoreOffer -PrivateStoreId 7gh67884-1r56-44fb-a93d-030d4ae08b2d -OfferId publisherid.offerid -SubscriptionId bc17bb69-1264-4f90-a9f6-0e51e29d5281
+Get-AzMarketplacePrivateStoreOffer -PrivateStoreId 7gh67884-1r56-44fb-a93d-030d4ae08b2d -OfferId publisherid.offerid -SubscriptionId bc17bb69-1264-4f90-a9f6-0e51e29d5281
+```
 
-
+```output
 UniqueOfferId             : publisherid.offerid
 OfferDisplayName          :
 PublisherDisplayName      :

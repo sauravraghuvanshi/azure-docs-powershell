@@ -39,8 +39,10 @@ Gets information about a specific offer.
 
 ### Example 1: Gets collection offers.
 ```powershell
-PS C:\> Get-AzMarketplacePrivateStoreCollectionOffer -PrivateStoreId a260d38c-96cf-492d-a340-404d0c4b3ad6 -CollectionId a260d38c-96cf-492d-a340-404d0c4b3ad6
+Get-AzMarketplacePrivateStoreCollectionOffer -PrivateStoreId a260d38c-96cf-492d-a340-404d0c4b3ad6 -CollectionId a260d38c-96cf-492d-a340-404d0c4b3ad6
+```
 
+```output
 Name                                            SystemDataCreatedAt SystemDataCreatedBy SystemDataCreatedByType SystemDataLastModifiedAt SystemDataLastModifiedBy SystemDataLastModifiedByType
 ----                        			------------------- ------------------- ----------------------- ------------------------ ------------------------ -------------------
 data3-limited-1019419.d3_azure_managed_services
@@ -148,7 +150,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IMarketplaceIdentity>: Identity Parameter
+INPUTOBJECT `<IMarketplaceIdentity>`: Identity Parameter
   - `[AdminRequestApprovalId <String>]`: The admin request approval ID to get create or update
   - `[CollectionId <String>]`: The collection ID
   - `[Id <String>]`: Resource identity path

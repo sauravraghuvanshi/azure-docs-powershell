@@ -49,8 +49,9 @@ You can also retrieve a single support ticket communication by specifying the co
 
 ### Example 1: Retrieve all communications for a support ticket
 ```powershell
-PS C:\> Get-AzSupportTicketCommunication -SupportTicketName "test1"
-
+Get-AzSupportTicketCommunication -SupportTicketName "test1"
+```
+```output
 Name         Sender               Subject        CreatedDate
 ----         ------               -------        -----------
 testmessage3 user@contoso.com     test message3  2/4/2020 9:38:14 PM
@@ -60,8 +61,9 @@ testmessage1 user@contoso.com     test message   2/4/2020 9:35:42 PM
 
 ### Example 2: Retrieve a single communication by it's name for a support ticket
 ```powershell
-PS C:\> Get-AzSupportTicketCommunication -SupportTicketName "test1" -Name "testmessage1"
-
+Get-AzSupportTicketCommunication -SupportTicketName "test1" -Name "testmessage1"
+```
+```output
 Name         Sender               Subject        CreatedDate
 ----         ------               -------        -----------
 testmessage1 user@contoso.com     test message   2/4/2020 9:38:14 PM
@@ -69,8 +71,9 @@ testmessage1 user@contoso.com     test message   2/4/2020 9:38:14 PM
 
 ### Example 3: Retrieve first 2 communications for a support ticket
 ```powershell
-PS C:\> Get-AzSupportTicketCommunication -SupportTicketName "test1" -First 2
-
+Get-AzSupportTicketCommunication -SupportTicketName "test1" -First 2
+```
+```output
 Name         Sender               Subject        CreatedDate
 ----         ------               -------        -----------
 testmessage3 user@contoso.com     test message3  2/4/2020 9:38:14 PM
@@ -79,8 +82,9 @@ testmessage2 user@contoso.com     test message2  2/4/2020 9:36:36 PM
 
 ### Example 4: Retrieve next 2 communications after skipping first 2 communications for a support ticket
 ```powershell
-PS C:\> Get-AzSupportTicketCommunication -SupportTicketName "test1" -Skip 2 -First 2
-
+Get-AzSupportTicketCommunication -SupportTicketName "test1" -Skip 2 -First 2
+```
+```output
 Name         Sender               Subject        CreatedDate
 ----         ------               -------        -----------
 testmessage4 user@contoso.com     test message4  2/4/2020 9:38:14 PM
@@ -89,8 +93,9 @@ testmessage5 user@contoso.com     test message5  2/4/2020 9:36:36 PM
 
 ### Example 5: Retrieve all Web communications for a support ticket
 ```powershell
-PS C:\> Get-AzSupportTicketCommunication -SupportTicketName "test1" -Filter "CommunicationType eq 'Web'"
-
+Get-AzSupportTicketCommunication -SupportTicketName "test1" -Filter "CommunicationType eq 'Web'"
+```
+```output
 Name         Sender               Subject        CreatedDate
 ----         ------               -------        -----------
 testmessage3 user@contoso.com     test message3  2/4/2020 9:38:14 PM
@@ -99,8 +104,9 @@ testmessage2 user@contoso.com     test message2  2/4/2020 9:36:36 PM
 
 ### Example 6: Retrieve all communications created on or after Dec 20th, 2019 for a support ticket
 ```powershell
-PS C:\> Get-AzSupportTicketCommunication -SupportTicketName "test1" -Filter "CreatedDate ge 2019-12-20"
-
+Get-AzSupportTicketCommunication -SupportTicketName "test1" -Filter "CreatedDate ge 2019-12-20"
+```
+```output
 Name         Sender               Subject        CreatedDate
 ----         ------               -------        -----------
 testmessage3 user@contoso.com     test message3  2/4/2020 9:38:14 PM
@@ -109,8 +115,9 @@ testmessage2 user@contoso.com     test message2  2/4/2020 9:36:36 PM
 
 ### Example 7: Retrieve all Web communications created on or after Dec 20th, 2019 for a support ticket
 ```powershell
-PS C:\> Get-AzSupportTicketCommunication -SupportTicketName "test1" -Filter "CommunicationType eq 'Web' and CreatedDate ge 2019-12-20"
-
+Get-AzSupportTicketCommunication -SupportTicketName "test1" -Filter "CommunicationType eq 'Web' and CreatedDate ge 2019-12-20"
+```
+```output
 Name         Sender               Subject        CreatedDate
 ----         ------               -------        -----------
 testmessage3 user@contoso.com     test message3  2/4/2020 9:38:14 PM
@@ -119,8 +126,9 @@ testmessage2 user@contoso.com     test message2  2/4/2020 9:36:36 PM
 
 ### Example 8: Retrieve all communications for a support ticket by piping support ticket object
 ```powershell
-PS C:\> Get-AzSupportTicket -Name "test1" | Get-AzSupportTicketCommunication
-
+Get-AzSupportTicket -Name "test1" | Get-AzSupportTicketCommunication
+```
+```output
 Name         Sender               Subject        CreatedDate
 ----         ------               -------        -----------
 testmessage3 user@contoso.com     test message3  2/4/2020 9:38:14 PM

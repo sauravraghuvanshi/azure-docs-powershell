@@ -26,7 +26,10 @@ Delete the Microsoft Partner Network(MPN) ID of the current authenticated user o
 
 ### Example 1
 ```powershell
-PS C:\>Remove-AzManagementPartner -PartnerId 123457 -PassThru
+Remove-AzManagementPartner -PartnerId 123457 -PassThru
+```
+
+```output
 true
 ```
 

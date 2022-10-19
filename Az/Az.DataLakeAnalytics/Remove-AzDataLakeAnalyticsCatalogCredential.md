@@ -27,8 +27,8 @@ The Remove-AzDataLakeAnalyticsCatalogCredential cmdlet deletes an Azure Data Lak
 ## EXAMPLES
 
 ### Example 1: Remove a credential
-```
-PS C:\> Remove-AzDataLakeAnalyticsCatalogCredential -AccountName "ContosoAdla" `
+```powershell
+Remove-AzDataLakeAnalyticsCatalogCredential -AccountName "ContosoAdla" `
                       -DatabaseName "DatabaseName" `
                       -Name "CredName"
 ```

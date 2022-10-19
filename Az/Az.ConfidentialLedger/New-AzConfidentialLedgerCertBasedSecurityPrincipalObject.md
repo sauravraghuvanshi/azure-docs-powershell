@@ -26,10 +26,12 @@ Create an in-memory object for CertBasedSecurityPrincipal.
 
 ### Example 1: Object creation
 ```powershell
-PS C:\> New-AzConfidentialLedgerCertBasedSecurityPrincipalObject `
+New-AzConfidentialLedgerCertBasedSecurityPrincipalObject `
   -Cert "-----BEGIN CERTIFICATE-----********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************-----END CERTIFICATE-----" `
   -LedgerRoleName "Reader"
+```
 
+```output
 Cert
 ----
 -----BEGIN CERTIFICATE-----MIIBsjCCATigAwIBAgIUZWIbyG79TniQLd2UxJuU74tqrKcwCgYIKoZIzj0EAwMwEDEOMAwGA1UEAwwFdXNlcjAwHhc…
@@ -76,7 +78,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ConfidentialLedger.Models.Api20210513Preview.CertBasedSecurityPrincipal
+### Microsoft.Azure.PowerShell.Cmdlets.ConfidentialLedger.Models.Api20220513.CertBasedSecurityPrincipal
 
 ## NOTES
 

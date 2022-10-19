@@ -35,8 +35,10 @@ If an extension name is provided, a single extension with a matching name is ret
 
 ### Example 1 Get all extensions from a compute node.
 ```powershell
-PS C:\> Get-AzBatchComputeNodeExtension "testPool" "testNode" -BatchContext $context
+Get-AzBatchComputeNodeExtension "testPool" "testNode" -BatchContext $context
+```
 
+```output
 InstanceView                                                    ProvisioningState VmExtension
 ------------                                                    ----------------- -----------
 Microsoft.Azure.Commands.Batch.Models.PSVMExtensionInstanceView Succeeded         Microsoft.Azure.Commands.Batch.Models.PSVMExtension
@@ -46,8 +48,10 @@ Microsoft.Azure.Commands.Batch.Models.PSVMExtensionInstanceView Failed          
 ### Example 2 Get a specific extension from a compute node.
 
 ```powershell
-PS C:\> Get-AzBatchComputeNodeExtension "testPool" "testNode" "secretext" -BatchContext $context
+Get-AzBatchComputeNodeExtension "testPool" "testNode" "secretext" -BatchContext $context
+```
 
+```output
 InstanceView                                                    ProvisioningState VmExtension
 ------------                                                    ----------------- -----------
 Microsoft.Azure.Commands.Batch.Models.PSVMExtensionInstanceView Failed            Microsoft.Azure.Commands.Batch.Models.PSVMExtension

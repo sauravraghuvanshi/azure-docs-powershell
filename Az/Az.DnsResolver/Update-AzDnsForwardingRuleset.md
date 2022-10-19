@@ -17,14 +17,15 @@ Updates a DNS forwarding ruleset.
 ### UpdateExpanded (Default)
 ```
 Update-AzDnsForwardingRuleset -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-IfMatch <String>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-IfMatch <String>] [-DnsResolverOutboundEndpoint <ISubResource[]>] [-Tag <Hashtable>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-AzDnsForwardingRuleset -InputObject <IDnsResolverIdentity> [-IfMatch <String>] [-Tag <Hashtable>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-AzDnsForwardingRuleset -InputObject <IDnsResolverIdentity> [-IfMatch <String>]
+ [-DnsResolverOutboundEndpoint <ISubResource[]>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob]
+ [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,9 +33,9 @@ Updates a DNS forwarding ruleset.
 
 ## EXAMPLES
 
-### Example 1: Update DNS Forwarding ruleset by name (adding metadata)
+### Example 1: Update DNS Forwarding ruleset by name (adding tag)
 ```powershell
-Update-AzDnsForwardingRuleset -Name dnsForwardingRuleset -ResourceGroupName sampleRG -Metadata @{"key0" = "value0"}
+Update-AzDnsForwardingRuleset -Name dnsForwardingRuleset -ResourceGroupName sampleRG -Tag @{"key0" = "value0"}
 ```
 
 ```output
@@ -43,12 +44,12 @@ Location Name                 Type                                    Etag
 westus2  dnsForwardingRuleset Microsoft.Network/dnsForwardingRulesets "04005592-0000-0800-0000-60e7ec170000"
 ```
 
-This command updates DNS Forwarding ruleset by name (adding metadata)
+This command updates DNS Forwarding ruleset by name (adding tag)
 
 ### Example 2: Updates an existing DNS Forwarding ruleset by identity
 ```powershell
 $inputObject = Get-AzDnsForwardingRuleset -ResourceGroupName powershell-test-rg -Name  dnsForwardingRuleset
-Update-AzDnsForwardingRuleset -InputObject $inputObject  -Metadata @{"key0" = "value0"} 
+Update-AzDnsForwardingRuleset -InputObject $inputObject -Tag @{"key0" = "value0"}
 ```
 
 ```output
@@ -57,7 +58,7 @@ Location Name                 Type                                    Etag
 westus2  dnsForwardingRuleset Microsoft.Network/dnsForwardingRulesets "04005592-0000-0800-0000-60e7ec170000"
 ```
 
-This command updates DNS Forwarding ruleset via identity (adding metadata)
+This command updates DNS Forwarding ruleset via identity (adding tag)
 
 ## PARAMETERS
 
@@ -83,6 +84,22 @@ The credentials, account, tenant, and subscription used for communication with A
 Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
 Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DnsResolverOutboundEndpoint
+The reference to the DNS resolver outbound endpoints that are used to route DNS queries matching the forwarding rules in the ruleset to the target DNS servers.
+To construct, see NOTES section for DNSRESOLVEROUTBOUNDENDPOINT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DnsResolver.Models.Api20220701.ISubResource[]
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
@@ -240,7 +257,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DnsResolver.Models.Api20200401Preview.IDnsForwardingRuleset
+### Microsoft.Azure.PowerShell.Cmdlets.DnsResolver.Models.Api20220701.IDnsForwardingRuleset
 
 ## NOTES
 
@@ -251,7 +268,10 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IDnsResolverIdentity>: Identity Parameter
+`DNSRESOLVEROUTBOUNDENDPOINT <ISubResource[]>`: The reference to the DNS resolver outbound endpoints that are used to route DNS queries matching the forwarding rules in the ruleset to the target DNS servers.
+  - `Id <String>`: Resource ID.
+
+`INPUTOBJECT <IDnsResolverIdentity>`: Identity Parameter
   - `[DnsForwardingRulesetName <String>]`: The name of the DNS forwarding ruleset.
   - `[DnsResolverName <String>]`: The name of the DNS resolver.
   - `[ForwardingRuleName <String>]`: The name of the forwarding rule.

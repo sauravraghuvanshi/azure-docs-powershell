@@ -16,36 +16,20 @@ Delete a data collection rule association.
 
 ### ByName (Default)
 ```
-Remove-AzDataCollectionRuleAssociation
-      -TargetResourceId <string> 
-      -AssociationName <string> 
-      [-PassThru]
-      [-DefaultProfile <IAzureContextContainer>]
-      [-WhatIf]
-      [-Confirm]
-      [<CommonParameters>]
+Remove-AzDataCollectionRuleAssociation -TargetResourceId <String> -AssociationName <String> [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByInputObject
 ```
-Remove-AzDataCollectionRuleAssociation
-      -InputObject <PSDataCollectionRuleAssociationProxyOnlyResource>
-      [-PassThru]
-      [-DefaultProfile <IAzureContextContainer>]
-      [-WhatIf]
-      [-Confirm]
-      [<CommonParameters>]
+Remove-AzDataCollectionRuleAssociation -InputObject <PSDataCollectionRuleAssociationProxyOnlyResource>
+ [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByResourceId
 ```
-Remove-AzDataCollectionRuleAssociation
-      -AssociationId <string>
-      [-PassThru]
-      [-DefaultProfile <IAzureContextContainer>]
-      [-WhatIf]
-      [-Confirm]
-      [<CommonParameters>]
+Remove-AzDataCollectionRuleAssociation -AssociationId <String> [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -56,44 +40,35 @@ To apply a DCR to a virtual machine, you create an association for the virtual m
 ## EXAMPLES
 
 ### Example 1: Delete data collection rule association with name and target resource ID (associated virtual machine) parameters
+```powershell
+Remove-AzDataCollectionRuleAssociation -TargetResourceId $vm.Id -AssociationName $assocName
 ```
-PS C:\>Remove-AzDataCollectionRuleAssociation -TargetResourceId $vm.Id -AssociationName $assocName
-```
+
+Delete data collection rule association with name and target resource ID (associated virtual machine) parameters
 
 ### Example 2: Delete data collection rule with Input Object
-```
-PS C:\>$dcrAssoc | Remove-AzDataCollectionRule
+```powershell
+$dcrAssoc | Remove-AzDataCollectionRule
 ```
 
+Delete data collection rule with Input Object
+
 ### Example 3: Delete data collection rule with the association resource ID property
+```powershell
+Remove-AzDataCollectionRuleAssociation -AssociationId $dcrAssoc.Id
 ```
-PS C:\>Remove-AzDataCollectionRule -AssociationId $dcrAssoc.Id
-```
+
+Delete data collection rule with the association resource ID property
 
 ## PARAMETERS
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
-
-```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
-Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TargetResourceId
-The associated resource ID.
+### -AssociationId
+The resource identifier.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByName
-Aliases: ResourceUri
+Parameter Sets: ByResourceId
+Aliases: ResourceId
 
 Required: True
 Position: Named
@@ -107,10 +82,25 @@ The name of the association resource.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByName (Default)
+Parameter Sets: ByName
 Aliases: Name
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with azure
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -128,17 +118,32 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -AssociationId
-The resource identifier.
+### -PassThru
+Return true upon successful removal.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TargetResourceId
+The associated resource ID.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByResourceId
-Aliases: ResourceId
+Parameter Sets: ByName
+Aliases: ResourceUri
 
 Required: True
 Position: Named
@@ -183,7 +188,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.String
-###Microsoft.Azure.Commands.Insights.OutputClasses.PSDataCollectionRuleAssociationProxyOnlyResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSDataCollectionRuleAssociationProxyOnlyResource
 
 ## OUTPUTS
 

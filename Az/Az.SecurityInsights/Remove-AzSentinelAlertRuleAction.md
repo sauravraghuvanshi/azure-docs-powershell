@@ -1,99 +1,53 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.dll-Help.xml
+external help file: 
 Module Name: Az.SecurityInsights
 online version: https://docs.microsoft.com/powershell/module/az.securityinsights/remove-azsentinelalertruleaction
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Remove-AzSentinelAlertRuleAction.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Remove-AzSentinelAlertRuleAction.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Remove-AzSentinelAlertRuleAction.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Remove-AzSentinelAlertRuleAction.md
 ---
 
 # Remove-AzSentinelAlertRuleAction
 
 ## SYNOPSIS
-Removes an Automated Response from an Analytic Rule.
+Delete the action of alert rule.
 
 ## SYNTAX
 
-### ActionId (Default)
+### Delete (Default)
 ```
-Remove-AzSentinelAlertRuleAction -ResourceGroupName <String> -WorkspaceName <String> -AlertRuleId <String>
- -ActionId <String> [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Remove-AzSentinelAlertRuleAction -Id <String> -ResourceGroupName <String> -RuleId <String>
+ -WorkspaceName <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
-### InputObject
+### DeleteViaIdentity
 ```
-Remove-AzSentinelAlertRuleAction -InputObject <PSSentinelActionResponse> [-PassThru]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzSentinelAlertRuleAction -InputObject <ISecurityInsightsIdentity> [-DefaultProfile <PSObject>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Remove-AzSentinelAlertRuleAction** cmdlet permanently deletes an Automated Response from the Alert Rule in a specified workspace.
-You can pass an **AlertRuleAction** object by using the pipeline operator, or alternatively you can specify the required parameters.
-You can use the Confirm parameter and $ConfirmPreference Windows PowerShell variable to control whether the cmdlet prompts you for confirmation.
+Delete the action of alert rule.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Removes an alert rule action
 ```powershell
-PS C:\> Remove-AzSentinelAlertRuleAction -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName" -AlertRuleId "MyAlertRuleId" -ActionId "MyActionId"
+Remove-AzSentinelAlertRuleAction -ResourceGroupName "myResourceGroupName" -WorkspaceName "myWorkspaceName" -RuleId "29d2523f-84ce-42d3-b5f1-9e63c85aaed1" -Id "1a33301b-fb83-416a-8d58-3873c7c2dc86"
 ```
 
-This command removes the Alert Rule from the workspace.
-
-### Example 2
-```powershell
-$SentinelConnection = @{
-    ResourceGroupName = "myResourceGroupName"
-    WorkspaceName = "myWorkspaceName"
-}
-
-$AlertRule = Get-AzSentinelAlertRule @SentinelConnection | Where-Object {$_.DisplayName -eq "My VIP has logged in"}
-$AlertRuleAction = Get-AzSentinelAlertRuleAction @SentinelConnection -AlertRuleId $AlertRule.Name
-Remove-AzSentinelAlertRuleAction @SentinelConnection -AlertRuleId $AlertRule.Name -ActionId $AlertRuleAction.Name
-```
-
-This example uses a connection object to pass the *resourceGroupName* and the *workspaceName*. It first gets the *AlertRule* with a specific *DisplayName*, then gets the *AlertRuleAction* and finally removes it from the AlertRule.
+This command removes an alert rule action.
 
 ## PARAMETERS
-
-### -ActionId
-Action Id.
-
-```yaml
-Type: System.String
-Parameter Sets: ActionId
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AlertRuleId
-Alert Rule Id.
-
-```yaml
-Type: System.String
-Parameter Sets: ActionId
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -102,12 +56,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-InputObject.
+### -Id
+Action ID
 
 ```yaml
-Type: Microsoft.Azure.Commands.SecurityInsights.Models.Actions.PSSentinelActionResponse
-Parameter Sets: InputObject
+Type: System.String
+Parameter Sets: Delete
+Aliases: ActionId
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.ISecurityInsightsIdentity
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -118,7 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-PassThru
+Returns true when the command succeeds
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -133,32 +103,63 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Resource group name.
+The name of the resource group.
+The name is case insensitive.
 
 ```yaml
 Type: System.String
-Parameter Sets: ActionId
+Parameter Sets: Delete
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RuleId
+Alert rule ID
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubscriptionId
+The ID of the target subscription.
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -WorkspaceName
-Workspace Name.
+The name of the workspace.
 
 ```yaml
 Type: System.String
-Parameter Sets: ActionId
+Parameter Sets: Delete
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -198,11 +199,44 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String
-### Microsoft.Azure.Commands.SecurityInsights.Models.Actions.PSSentinelActionResponse
+### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.ISecurityInsightsIdentity
+
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.SecurityInsights.Models.Actions.PSSentinelActionResponse
+### System.Boolean
+
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+`INPUTOBJECT <ISecurityInsightsIdentity>`: Identity Parameter
+  - `[ActionId <String>]`: Action ID
+  - `[AlertRuleTemplateId <String>]`: Alert rule template ID
+  - `[AutomationRuleId <String>]`: Automation rule ID
+  - `[BookmarkId <String>]`: Bookmark ID
+  - `[ConsentId <String>]`: consent ID
+  - `[DataConnectorId <String>]`: Connector ID
+  - `[EntityId <String>]`: entity ID
+  - `[EntityQueryId <String>]`: entity query ID
+  - `[EntityQueryTemplateId <String>]`: entity query template ID
+  - `[Id <String>]`: Resource identity path
+  - `[IncidentCommentId <String>]`: Incident comment ID
+  - `[IncidentId <String>]`: Incident ID
+  - `[MetadataName <String>]`: The Metadata name.
+  - `[Name <String>]`: Threat intelligence indicator name field.
+  - `[RelationName <String>]`: Relation Name
+  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
+  - `[RuleId <String>]`: Alert rule ID
+  - `[SentinelOnboardingStateName <String>]`: The Sentinel onboarding state name. Supports - default
+  - `[SettingsName <String>]`: The setting name. Supports - Anomalies, EyesOn, EntityAnalytics, Ueba
+  - `[SourceControlId <String>]`: Source control Id
+  - `[SubscriptionId <String>]`: The ID of the target subscription.
+  - `[WorkspaceName <String>]`: The name of the workspace.
+
 ## RELATED LINKS
+

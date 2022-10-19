@@ -16,7 +16,8 @@ Gets the configs of Azure PowerShell.
 
 ```
 Get-AzConfig [-AppliesTo <String>] [-Scope <ConfigScope>] [-DefaultProfile <IAzureContextContainer>]
- [-DefaultSubscriptionForLogin] [-DisplayBreakingChangeWarning] [-EnableDataCollection] [<CommonParameters>]
+ [-DefaultSubscriptionForLogin] [-DisplayBreakingChangeWarning] [-DisplaySurveyMessage] [-EnableDataCollection]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -127,6 +128,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DisplaySurveyMessage
+When enabled, you are prompted infrequently to participate in user experience surveys for Azure PowerShell.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -EnableDataCollection
 When enabled, Azure PowerShell cmdlets send telemetry data to Microsoft to improve the customer experience.
 For more information, see our privacy statement: https://aka.ms/privacy
@@ -151,7 +167,7 @@ By default it is CurrentUser.
 Type: Microsoft.Azure.PowerShell.Common.Config.ConfigScope
 Parameter Sets: (All)
 Aliases:
-Accepted values: CurrentUser, Process, Default
+Accepted values: CurrentUser, Process, Default, Environment
 
 Required: False
 Position: Named

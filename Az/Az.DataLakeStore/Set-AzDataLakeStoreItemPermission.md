@@ -26,8 +26,8 @@ The **Set-AzDataLakeStoreItemPermission** cmdlet modifies the permission octal o
 ## EXAMPLES
 
 ### Example 1: Set the permission octal for an item
-```
-PS C:\>Set-AzDataLakeStoreItemPermission -AccountName "ContosoADL" -Path "/file.txt" -Permission 0770
+```powershell
+Set-AzDataLakeStoreItemPermission -AccountName "ContosoADL" -Path "/file.txt" -Permission 0770
 ```
 
 This command sets the permission octal for a file to 0770, which translates to clearing the sticky bit, setting read/write/execute permissions for the owner of the file, setting read/write/execute permissions for the owning group of the file, and clearing read/write/execute permissions for other.

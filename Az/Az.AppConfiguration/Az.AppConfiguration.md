@@ -1,11 +1,11 @@
 ---
 Module Name: Az.AppConfiguration
-Module Guid: 3ff16738-381e-4d5a-9d90-c7ef6816f78e
+Module Guid: d297739c-d9bb-4bdc-8b1c-b3b577d9215a
 Download Help Link: https://docs.microsoft.com/powershell/module/az.appconfiguration
 Help Version: 1.0.0.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/Az.AppConfiguration.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/help/Az.AppConfiguration.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/AppConfiguration/help/Az.AppConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/AppConfiguration/AppConfiguration/help/Az.AppConfiguration.md
 ---
 
 # Az.AppConfiguration Module
@@ -13,6 +13,12 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 Microsoft Azure PowerShell: AppConfiguration cmdlets
 
 ## Az.AppConfiguration Cmdlets
+### [Clear-AzAppConfigurationDeletedStore](Clear-AzAppConfigurationDeletedStore.md)
+Permanently deletes the specified configuration store.
+
+### [Get-AzAppConfigurationDeletedStore](Get-AzAppConfigurationDeletedStore.md)
+Gets a deleted Azure app configuration store.
+
 ### [Get-AzAppConfigurationStore](Get-AzAppConfigurationStore.md)
 Get or list app configuration stores.
 

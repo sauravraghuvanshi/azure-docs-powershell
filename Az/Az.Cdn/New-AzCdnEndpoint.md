@@ -1,110 +1,72 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.Cdn.dll-Help.xml
+external help file: 
 Module Name: Az.Cdn
-ms.assetid: A8C6F3BC-EE93-49A4-BF7B-8420967EEB7B
 online version: https://docs.microsoft.com/powershell/module/az.cdn/new-azcdnendpoint
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/New-AzCdnEndpoint.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/New-AzCdnEndpoint.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/New-AzCdnEndpoint.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/New-AzCdnEndpoint.md
 ---
 
 # New-AzCdnEndpoint
 
 ## SYNOPSIS
-Creates a CDN endpoint.
+Creates a new CDN endpoint with the specified endpoint name under the specified subscription, resource group and profile.
 
 ## SYNTAX
 
-### ByFieldsParameterSet (Default)
 ```
-New-AzCdnEndpoint -EndpointName <String> -ProfileName <String> -ResourceGroupName <String> -Location <String>
- [-OriginHostHeader <String>] [-OriginPath <String>] [-ContentTypesToCompress <String[]>]
- [-IsCompressionEnabled <Boolean>] [-IsHttpAllowed <Boolean>] [-IsHttpsAllowed <Boolean>]
- [-QueryStringCachingBehavior <PSQueryStringCachingBehavior>] -OriginName <String> -OriginHostName <String>
- [-HttpPort <Int32>] [-HttpsPort <Int32>] [-OptimizationType <String>] [-ProbePath <String>]
- [-GeoFilters <PSGeoFilter[]>] [-DeliveryPolicy <PSDeliveryPolicy>] [-Tag <Hashtable>]
- [-DefaultOriginGroup <String>] [-Priority <Int32>] [-Weight <Int32>] [-PrivateLinkApprovalMessage <String>]
- [-PrivateLinkLocation <String>] [-PrivateLinkResourceId <String>]
- [-OriginId <System.Collections.Generic.List`1[System.String]>] [-OriginGroupName <String>]
- [-OriginGroupProbeIntervalInSeconds <Int32>] [-OriginGroupProbePath <String>]
- [-OriginGroupProbeProtocol <String>] [-OriginGroupProbeRequestType <String>]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### ByObjectParameterSet
-```
-New-AzCdnEndpoint -EndpointName <String> -CdnProfile <PSProfile> [-OriginHostHeader <String>]
- [-OriginPath <String>] [-ContentTypesToCompress <String[]>] [-IsCompressionEnabled <Boolean>]
- [-IsHttpAllowed <Boolean>] [-IsHttpsAllowed <Boolean>]
- [-QueryStringCachingBehavior <PSQueryStringCachingBehavior>] -OriginName <String> -OriginHostName <String>
- [-HttpPort <Int32>] [-HttpsPort <Int32>] [-OptimizationType <String>] [-ProbePath <String>]
- [-GeoFilters <PSGeoFilter[]>] [-DeliveryPolicy <PSDeliveryPolicy>] [-Tag <Hashtable>]
- [-DefaultOriginGroup <String>] [-Priority <Int32>] [-Weight <Int32>] [-PrivateLinkApprovalMessage <String>]
- [-PrivateLinkLocation <String>] [-PrivateLinkResourceId <String>]
- [-OriginId <System.Collections.Generic.List`1[System.String]>] [-OriginGroupName <String>]
- [-OriginGroupProbeIntervalInSeconds <Int32>] [-OriginGroupProbePath <String>]
- [-OriginGroupProbeProtocol <String>] [-OriginGroupProbeRequestType <String>]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzCdnEndpoint -Name <String> -ProfileName <String> -ResourceGroupName <String> -Location <String>
+ [-SubscriptionId <String>] [-ContentTypesToCompress <String[]>] [-DefaultOriginGroupId <String>]
+ [-DeliveryPolicyDescription <String>] [-DeliveryPolicyRule <IDeliveryRule[]>] [-GeoFilter <IGeoFilter[]>]
+ [-IsCompressionEnabled] [-IsHttpAllowed] [-IsHttpsAllowed] [-OptimizationType <OptimizationType>]
+ [-Origin <IDeepCreatedOrigin[]>] [-OriginGroup <IDeepCreatedOriginGroup[]>] [-OriginHostHeader <String>]
+ [-OriginPath <String>] [-ProbePath <String>] [-QueryStringCachingBehavior <QueryStringCachingBehavior>]
+ [-Tag <Hashtable>] [-UrlSigningKey <IUrlSigningKey[]>] [-WebApplicationFirewallPolicyLinkId <String>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **New-AzCdnEndpoint** cmdlet creates an Azure Content Delivery Network (CDN) endpoint.
+Creates a new CDN endpoint with the specified endpoint name under the specified subscription, resource group and profile.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Create an AzureCDN Endpoint under the AzureCDN profile
 ```powershell
-New-AzCdnEndpoint -ResourceGroupName myresourcegroup -ProfileName mycdnprofile -Location westus -EndpointName myendpoint `
-                  -OriginName mystorage -OriginHostName mystorage.blob.core.windows.net `
-                  -OriginHostHeader mystorage.blob.core.windows.net -IsHttpAllowed $false
+$origin = @{
+    Name = "origin1"
+    HostName = "host1.hello.com"
+};
+New-AzCdnEndpoint -ResourceGroupName testps-rg-da16jm -ProfileName cdn001 -Name endptest001 -Location westus -Origin $origin             
 ```
 
-```Output
-HostName                   : myendpoint.azureedge.net
-OriginHostHeader           : mystorage.blob.core.windows.net
-OriginPath                 :
-ContentTypesToCompress     : {}
-IsCompressionEnabled       : False
-IsHttpAllowed              : False
-IsHttpsAllowed             : True
-QueryStringCachingBehavior : IgnoreQueryString
-Origins                    : {mystorage}
-OptimizationType           :
-ProbePath                  :
-GeoFilters                 : {}
-DeliveryPolicy             :
-ResourceState              : Running
-DefaultOriginGroup         :
-ResourceGroupName          : myresourcegroup
-ProfileName                : mycdnprofile
-Location                   : WestUs
-Tags                       : {}
-Id                         : /subscriptions/11111111-1111-1111-1111-111111111111/resourcegroups/myresourcegroup/providers/Micr
-                             osoft.Cdn/profiles/mycdnprofile/endpoints/myendpoint
-Name                       : myendpoint
-Type                       : Microsoft.Cdn/profiles/endpoints
-ProvisioningState          : Succeeded
+```output
+Location Name        ResourceGroupName
+-------- ----        -----------------
+WestUs   endptest001 testps-rg-da16jm
 ```
+
+Create an AzureCDN Endpoint under the AzureCDN profile
 
 ## PARAMETERS
 
-### -CdnProfile
-Specifies the CDN profile object to which the endpoint is added.
+### -AsJob
+Run the command as a job
 
 ```yaml
-Type: Microsoft.Azure.Commands.Cdn.Models.Profile.PSProfile
-Parameter Sets: ByObjectParameterSet
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ContentTypesToCompress
-Specifies an array of content types to compress from the edge node to the client.
+List of content types on which compression applies.
+The value should be a valid MIME type.
 
 ```yaml
 Type: System.String[]
@@ -118,8 +80,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DefaultOriginGroup
-The default origin group.
+### -DefaultOriginGroupId
+Resource ID.
 
 ```yaml
 Type: System.String
@@ -134,12 +96,12 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with azure
+The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -148,41 +110,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DeliveryPolicy
-The delivery policy for this endpoint.
-
-```yaml
-Type: Microsoft.Azure.Commands.Cdn.Models.Endpoint.PSDeliveryPolicy
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -EndpointName
-Specifies the name of the endpoint.
+### -DeliveryPolicyDescription
+User-friendly description of the policy.
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -GeoFilters
-The list of geo filters that applies to this endpoint.
+### -DeliveryPolicyRule
+A list of the delivery rules.
+To construct, see NOTES section for DELIVERYPOLICYRULE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Cdn.Models.Endpoint.PSGeoFilter[]
+Type: Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.Api20210601.IDeliveryRule[]
 Parameter Sets: (All)
 Aliases:
 
@@ -193,26 +141,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -HttpPort
-Specifies the HTTP port number on the origin server.
+### -GeoFilter
+List of rules defining the user's geo access within a CDN endpoint.
+Each geo filter defines an access rule to a specified path or content, e.g.
+block APAC for path /pictures/
+To construct, see NOTES section for GEOFILTER properties and create a hash table.
 
 ```yaml
-Type: System.Nullable`1[System.Int32]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -HttpsPort
-Specifies the HTTPS port number on the origin server.
-
-```yaml
-Type: System.Nullable`1[System.Int32]
+Type: Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.Api20210601.IGeoFilter[]
 Parameter Sets: (All)
 Aliases:
 
@@ -224,10 +160,13 @@ Accept wildcard characters: False
 ```
 
 ### -IsCompressionEnabled
-Indicates whether compression is enabled for the endpoint.
+Indicates whether content compression is enabled on CDN.
+Default value is false.
+If compression is enabled, content will be served as compressed if user requests for a compressed version.
+Content won't be compressed on CDN when requested content is smaller than 1 byte or larger than 1 MB.
 
 ```yaml
-Type: System.Nullable`1[System.Boolean]
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -239,10 +178,12 @@ Accept wildcard characters: False
 ```
 
 ### -IsHttpAllowed
-Indicates whether the endpoint enables HTTP traffic.
+Indicates whether HTTP traffic is allowed on the endpoint.
+Default value is true.
+At least one protocol (HTTP or HTTPS) must be allowed.
 
 ```yaml
-Type: System.Nullable`1[System.Boolean]
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -254,10 +195,12 @@ Accept wildcard characters: False
 ```
 
 ### -IsHttpsAllowed
-Indicates whether the endpoint enables HTTPS traffic.
+Indicates whether HTTPS traffic is allowed on the endpoint.
+Default value is true.
+At least one protocol (HTTP or HTTPS) must be allowed.
 
 ```yaml
-Type: System.Nullable`1[System.Boolean]
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -269,11 +212,11 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Specifies the resource location of the endpoint.
+Resource location.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByFieldsParameterSet
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -283,11 +226,43 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Name
+Name of the endpoint under the profile which is unique globally.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: EndpointName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoWait
+Run the command asynchronously
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -OptimizationType
-Specifies any optimization this endpoint has.
+Specifies what scenario the customer wants this CDN endpoint to optimize for, e.g.
+Download, Media services.
+With this information, CDN can apply scenario driven optimization.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Azure.PowerShell.Cmdlets.Cdn.Support.OptimizationType
 Parameter Sets: (All)
 Aliases:
 
@@ -298,11 +273,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -OriginGroupName
-The name of the origin group.
+### -Origin
+The source of the content being delivered via CDN.
+To construct, see NOTES section for ORIGIN properties and create a hash table.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.Api20210601.IDeepCreatedOrigin[]
 Parameter Sets: (All)
 Aliases:
 
@@ -313,56 +289,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -OriginGroupProbeIntervalInSeconds
-The number of seconds between health probes.
+### -OriginGroup
+The origin groups comprising of origins that are used for load balancing the traffic based on availability.
+To construct, see NOTES section for ORIGINGROUP properties and create a hash table.
 
 ```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OriginGroupProbePath
-The path relative to the origin that is used to determine the health of the origin.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OriginGroupProbeProtocol
-Protocol to use for health probe.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OriginGroupProbeRequestType
-The type of health probe request that is made.
-
-```yaml
-Type: System.String
+Type: Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.Api20210601.IDeepCreatedOriginGroup[]
 Parameter Sets: (All)
 Aliases:
 
@@ -374,7 +306,9 @@ Accept wildcard characters: False
 ```
 
 ### -OriginHostHeader
-Specifies the origin host head of the endpoint.
+The host header value sent to the origin with each request.
+This property at Endpoint is only allowed when endpoint uses single origin and can be overridden by the same property specified at origin.If you leave this blank, the request hostname determines this value.
+Azure CDN origins, such as Web Apps, Blob Storage, and Cloud Services require this host header value to match the origin hostname by default.
 
 ```yaml
 Type: System.String
@@ -382,51 +316,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OriginHostName
-Specifies the host name of the origin server.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OriginId
-Azure CDN origin group ids.
-
-```yaml
-Type: System.Collections.Generic.List`1[System.String]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OriginName
-Specifies the resource name of the origin server.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -434,67 +323,8 @@ Accept wildcard characters: False
 ```
 
 ### -OriginPath
-Specifies the path of the origin server.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Priority
-Azure CDN origin priority.
-
-```yaml
-Type: System.Nullable`1[System.Int32]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PrivateLinkApprovalMessage
-A custom message to be included in the approval request to connect to the Private Link.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PrivateLinkLocation
-Azure CDN origin private link location.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PrivateLinkResourceId
-Azure CDN origin private link resource id.
+A directory path on the origin that CDN can use to retrieve content from, e.g.
+contoso.cloudapp.net/originpath.
 
 ```yaml
 Type: System.String
@@ -509,7 +339,9 @@ Accept wildcard characters: False
 ```
 
 ### -ProbePath
-Specifies the probe path for Dynamic Site Acceleration
+Path to a file hosted on the origin which helps accelerate delivery of the dynamic content and calculate the most optimal routes for the CDN.
+This is relative to the origin path.
+This property is only relevant when using a single origin.
 
 ```yaml
 Type: System.String
@@ -524,11 +356,11 @@ Accept wildcard characters: False
 ```
 
 ### -ProfileName
-Specifies the name of the profile.
+Name of the CDN profile which is unique within the resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByFieldsParameterSet
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -539,13 +371,13 @@ Accept wildcard characters: False
 ```
 
 ### -QueryStringCachingBehavior
-Specifies the behavior of CDN endpoint when a query string is in the request URL.
+Defines how CDN caches requests that include query strings.
+You can ignore any query strings when caching, bypass caching to prevent requests that contain query strings from being cached, or cache every request with a unique URL.
 
 ```yaml
-Type: System.Nullable`1[Microsoft.Azure.Commands.Cdn.Models.Endpoint.PSQueryStringCachingBehavior]
+Type: Microsoft.Azure.PowerShell.Cmdlets.Cdn.Support.QueryStringCachingBehavior
 Parameter Sets: (All)
 Aliases:
-Accepted values: IgnoreQueryString, BypassCaching, UseQueryString, NotSet
 
 Required: False
 Position: Named
@@ -555,11 +387,11 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Specifies the name of the resource group to which this endpoint belongs.
+Name of the Resource group within the Azure subscription.
 
 ```yaml
 Type: System.String
-Parameter Sets: ByFieldsParameterSet
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -569,8 +401,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SubscriptionId
+Azure Subscription ID.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Tag
-The tags to associate with the Azure CDN endpoint.
+Resource tags.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -584,11 +431,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Weight
-Azure CDN origin weight.
+### -UrlSigningKey
+List of keys used to validate the signed URL hashes.
+To construct, see NOTES section for URLSIGNINGKEY properties and create a hash table.
 
 ```yaml
-Type: System.Nullable`1[System.Int32]
+Type: Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.Api20210601.IUrlSigningKey[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WebApplicationFirewallPolicyLinkId
+Resource ID.
+
+```yaml
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
@@ -609,7 +472,7 @@ Aliases: cf
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -625,7 +488,7 @@ Aliases: wi
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -635,24 +498,70 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.Commands.Cdn.Models.Profile.PSProfile
-
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.Cdn.Models.Endpoint.PSEndpoint
+### Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.Api20210601.IEndpoint
 
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+DELIVERYPOLICYRULE <IDeliveryRule[]>: A list of the delivery rules.
+  - `Action <IDeliveryRuleAction1[]>`: A list of actions that are executed when all the conditions of a rule are satisfied.
+    - `Name <DeliveryRuleAction>`: The name of the action for the delivery rule.
+  - `Order <Int32>`: The order in which the rules are applied for the endpoint. Possible values {0,1,2,3,………}. A rule with a lesser order will be applied before a rule with a greater order. Rule with order 0 is a special rule. It does not require any condition and actions listed in it will always be applied.
+  - `[Condition <IDeliveryRuleCondition[]>]`: A list of conditions that must be matched for the actions to be executed
+    - `Name <MatchVariable>`: The name of the condition for the delivery rule.
+  - `[Name <String>]`: Name of the rule
+
+GEOFILTER <IGeoFilter[]>: List of rules defining the user's geo access within a CDN endpoint. Each geo filter defines an access rule to a specified path or content, e.g. block APAC for path /pictures/
+  - `Action <GeoFilterActions>`: Action of the geo filter, i.e. allow or block access.
+  - `CountryCode <String[]>`: Two letter country or region codes defining user country or region access in a geo filter, e.g. AU, MX, US.
+  - `RelativePath <String>`: Relative path applicable to geo filter. (e.g. '/mypictures', '/mypicture/kitty.jpg', and etc.)
+
+ORIGIN <IDeepCreatedOrigin[]>: The source of the content being delivered via CDN.
+  - `Name <String>`: Origin name which must be unique within the endpoint. 
+  - `[Enabled <Boolean?>]`: Origin is enabled for load balancing or not. By default, origin is always enabled.
+  - `[HostName <String>]`: The address of the origin. It can be a domain name, IPv4 address, or IPv6 address. This should be unique across all origins in an endpoint.
+  - `[HttpPort <Int32?>]`: The value of the HTTP port. Must be between 1 and 65535.
+  - `[HttpsPort <Int32?>]`: The value of the HTTPS port. Must be between 1 and 65535.
+  - `[OriginHostHeader <String>]`: The host header value sent to the origin with each request. If you leave this blank, the request hostname determines this value. Azure CDN origins, such as Web Apps, Blob Storage, and Cloud Services require this host header value to match the origin hostname by default.
+  - `[Priority <Int32?>]`: Priority of origin in given origin group for load balancing. Higher priorities will not be used for load balancing if any lower priority origin is healthy.Must be between 1 and 5.
+  - `[PrivateLinkAlias <String>]`: The Alias of the Private Link resource. Populating this optional field indicates that this origin is 'Private'
+  - `[PrivateLinkApprovalMessage <String>]`: A custom message to be included in the approval request to connect to the Private Link.
+  - `[PrivateLinkLocation <String>]`: The location of the Private Link resource. Required only if 'privateLinkResourceId' is populated
+  - `[PrivateLinkResourceId <String>]`: The Resource Id of the Private Link resource. Populating this optional field indicates that this backend is 'Private'
+  - `[Weight <Int32?>]`: Weight of the origin in given origin group for load balancing. Must be between 1 and 1000
+
+ORIGINGROUP <IDeepCreatedOriginGroup[]>: The origin groups comprising of origins that are used for load balancing the traffic based on availability.
+  - `Name <String>`: Origin group name which must be unique within the endpoint.
+  - `[HealthProbeSetting <IHealthProbeParameters>]`: Health probe settings to the origin that is used to determine the health of the origin.
+    - `[ProbeIntervalInSecond <Int32?>]`: The number of seconds between health probes.Default is 240sec.
+    - `[ProbePath <String>]`: The path relative to the origin that is used to determine the health of the origin.
+    - `[ProbeProtocol <ProbeProtocol?>]`: Protocol to use for health probe.
+    - `[ProbeRequestType <HealthProbeRequestType?>]`: The type of health probe request that is made.
+  - `[Origin <IResourceReference[]>]`: The source of the content being delivered via CDN within given origin group.
+    - `[Id <String>]`: Resource ID.
+  - `[ResponseBasedOriginErrorDetectionSetting <IResponseBasedOriginErrorDetectionParameters>]`: The JSON object that contains the properties to determine origin health using real requests/responses.This property is currently not supported.
+    - `[HttpErrorRange <IHttpErrorRangeParameters[]>]`: The list of Http status code ranges that are considered as server errors for origin and it is marked as unhealthy.
+      - `[Begin <Int32?>]`: The inclusive start of the http status code range.
+      - `[End <Int32?>]`: The inclusive end of the http status code range.
+    - `[ResponseBasedDetectedErrorType <ResponseBasedDetectedErrorTypes?>]`: Type of response errors for real user requests for which origin will be deemed unhealthy
+    - `[ResponseBasedFailoverThresholdPercentage <Int32?>]`: The percentage of failed requests in the sample where failover should trigger.
+  - `[TrafficRestorationTimeToHealedOrNewEndpointsInMinute <Int32?>]`: Time in minutes to shift the traffic to the endpoint gradually when an unhealthy endpoint comes healthy or a new endpoint is added. Default is 10 mins. This property is currently not supported.
+
+URLSIGNINGKEY <IUrlSigningKey[]>: List of keys used to validate the signed URL hashes.
+  - `KeyId <String>`: Defines the customer defined key Id. This id will exist in the incoming request to indicate the key used to form the hash.
+  - `KeySourceParameterResourceGroupName <String>`: Resource group of the user's Key Vault containing the secret
+  - `KeySourceParameterSecretName <String>`: The name of secret in Key Vault.
+  - `KeySourceParameterSecretVersion <String>`: The version(GUID) of secret in Key Vault.
+  - `KeySourceParameterSubscriptionId <String>`: Subscription Id of the user's Key Vault containing the secret
+  - `KeySourceParameterVaultName <String>`: The name of the user's Key Vault containing the secret
+
 ## RELATED LINKS
-
-[Get-AzCdnEndpoint](./Get-AzCdnEndpoint.md)
-
-[Remove-AzCdnEndpoint](./Remove-AzCdnEndpoint.md)
-
-[Set-AzCdnEndpoint](./Set-AzCdnEndpoint.md)
-
-[Start-AzCdnEndpoint](./Start-AzCdnEndpoint.md)
-
-[Stop-AzCdnEndpoint](./Stop-AzCdnEndpoint.md)
-
 

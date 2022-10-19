@@ -39,7 +39,7 @@ Delete a gallery.
 
 ### Example 1
 ```powershell
-PS C:\> Remove-AzGallery -ResourceGroupName $rgname -GalleryName $galleryName
+Remove-AzGallery -ResourceGroupName $rgname -GalleryName $galleryName
 ```
 
 Delete the given gallery.

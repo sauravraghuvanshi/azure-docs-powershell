@@ -15,9 +15,9 @@ Creates or updates a DNS forwarding ruleset.
 ## SYNTAX
 
 ```
-New-AzDnsForwardingRuleset -Name <String> -ResourceGroupName <String> -Location <String>
- [-SubscriptionId <String>] [-IfMatch <String>] [-IfNoneMatch <String>]
- [-DnsResolverOutboundEndpoint <ISubResource[]>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob]
+New-AzDnsForwardingRuleset -Name <String> -ResourceGroupName <String>
+ -DnsResolverOutboundEndpoint <ISubResource[]> -Location <String> [-SubscriptionId <String>]
+ [-IfMatch <String>] [-IfNoneMatch <String>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob]
  [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -91,11 +91,11 @@ The reference to the DNS resolver outbound endpoints that are used to route DNS 
 To construct, see NOTES section for DNSRESOLVEROUTBOUNDENDPOINT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.DnsResolver.Models.Api20200401Preview.ISubResource[]
+Type: Microsoft.Azure.PowerShell.Cmdlets.DnsResolver.Models.Api20220701.ISubResource[]
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -264,7 +264,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DnsResolver.Models.Api20200401Preview.IDnsForwardingRuleset
+### Microsoft.Azure.PowerShell.Cmdlets.DnsResolver.Models.Api20220701.IDnsForwardingRuleset
 
 ## NOTES
 
@@ -275,8 +275,8 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-DNSRESOLVEROUTBOUNDENDPOINT <ISubResource[]>: The reference to the DNS resolver outbound endpoints that are used to route DNS queries matching the forwarding rules in the ruleset to the target DNS servers.
-  - `[Id <String>]`: Resource ID.
+`DNSRESOLVEROUTBOUNDENDPOINT <ISubResource[]>`: The reference to the DNS resolver outbound endpoints that are used to route DNS queries matching the forwarding rules in the ruleset to the target DNS servers.
+  - `Id <String>`: Resource ID.
 
 ## RELATED LINKS
 

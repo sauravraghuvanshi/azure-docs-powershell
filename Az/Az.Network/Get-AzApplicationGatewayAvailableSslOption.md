@@ -24,8 +24,8 @@ The **Get-AzApplicationGatewayAvailableSslOption** cmdlet gets all available ssl
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\>$sslOptions = Get-AzApplicationGatewayAvailableSslOption
+```powershell
+$sslOptions = Get-AzApplicationGatewayAvailableSslOption
 ```
 
 This commands returns all available ssl options for ssl policy.

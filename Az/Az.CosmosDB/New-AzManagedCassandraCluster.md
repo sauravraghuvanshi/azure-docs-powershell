@@ -14,25 +14,13 @@ Creates a new Azure Managed Instances for Apache Cassandra cluster.
 
 ## SYNTAX
 
-### NameParameterSet (Default)
 ```
-New-AzManagedCassandraCluster 
- -ResourceGroupName <String> 
- -ClusterName <String>
- -DelegatedManagementSubnetId <String>
- -Location <String>
- [-Tag <Hashtable>]
- [-InitialCassandraAdminPassword <String>]
- [-ExternalGossipCertificate <String[]>]
- [-ClientCertificate <String[]>]
- [-RepairEnabled <bool>]
- [-TimeBetweenBackupInHours <int>]
- [-AuthenticationMethod <String>]
- [-CassandraVersion <String>]
- [-ExternalSeedNode <String[]>]
- [-ClusterNameOverride <String>]
- [-RestoreFromBackupId <String>]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+New-AzManagedCassandraCluster -Location <String> -DelegatedManagementSubnetId <String>
+ [-InitialCassandraAdminPassword <String>] [-ClusterNameOverride <String>] [-RestoreFromBackupId <String>]
+ -ResourceGroupName <String> -ClusterName <String> [-Tag <Hashtable>] [-ExternalGossipCertificate <String[]>]
+ [-ClientCertificate <String[]>] [-RepairEnabled <Boolean>] [-TimeBetweenBackupInHours <Int32>]
+ [-AuthenticationMethod <String>] [-CassandraVersion <String>] [-ExternalSeedNode <String[]>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,12 +30,12 @@ The **New-AzManagedCassandraCluster** cmdlet creates a new managed Cassandra clu
 
 ### Example 1
 ```powershell
-PS C:\> New-AzManagedCassandraCluster `
- -ResourceGroupName {resourceGroupName} `
- -ClusterName {clusterName} `
- -DelegatedManagementSubnetId {resourceId} `
- -Location {location} `
- -InitialCassandraAdminPassword {password}
+New-AzManagedCassandraCluster `
+ -ResourceGroupName "resourceGroupName" `
+ -ClusterName "clusterName" `
+ -DelegatedManagementSubnetId "resourceId" `
+ -Location "location" `
+ -InitialCassandraAdminPassword "password"
 ```
 
 ## PARAMETERS
@@ -58,6 +46,7 @@ How to authenticate clients, one of `Cassandra` (for password authentication), `
 ```yaml
 Type: System.String
 Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
@@ -72,6 +61,7 @@ Which version of Cassandra to run. Currently only 3.11 is supported.
 ```yaml
 Type: System.String
 Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
@@ -86,6 +76,7 @@ The list of TLS certificates to use to authenticate clients. If this is omitted,
 ```yaml
 Type: System.String[]
 Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
@@ -145,6 +136,7 @@ The resource id of the virtual network subnet where managed Cassandra should att
 ```yaml
 Type: System.String
 Parameter Sets: (All)
+Aliases:
 
 Required: True
 Position: Named
@@ -159,6 +151,7 @@ A list of additional TLS certificates the managed Cassandra cluster will use to 
 ```yaml
 Type: System.String[]
 Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
@@ -173,6 +166,7 @@ List of IP addresses of external seed nodes to bridge this cluster to.
 ```yaml
 Type: System.String[]
 Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
@@ -215,11 +209,11 @@ Accept wildcard characters: False
 If true, managed Cassandra will run reaper to repair the database regularly. This should only be disabled for hybrid clusters which run their own repair process outside of Azure.
 
 ```yaml
-Type: System.Boolean
+Type: System.Nullable`1[System.Boolean]
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: True
 Accept pipeline input: False
@@ -260,7 +254,7 @@ Accept wildcard characters: False
 Hashtable of tags to set on the cluster resource.
 
 ```yaml
-Type: System.Hashtable
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -275,9 +269,39 @@ Accept wildcard characters: False
 Hours between taking full backups of the cluster.
 
 ```yaml
-Type: System.Integer
-Parameter Sets: (All))
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
 
 Required: False
 Position: Named

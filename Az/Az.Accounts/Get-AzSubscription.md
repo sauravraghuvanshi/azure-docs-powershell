@@ -66,7 +66,7 @@ current account.
 
 ### Example 3: Get all subscriptions in the current tenant
 ```powershell
-Get-AzSubscription
+Get-AzSubscription -TenantId (Get-AzContext).Tenant
 ```
 
 ```Output

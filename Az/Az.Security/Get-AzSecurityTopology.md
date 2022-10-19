@@ -27,8 +27,7 @@ Get-AzSecurityTopology -ResourceGroupName <String> -Name <String> -Location <Str
 
 ### ResourceId
 ```
-Get-AzSecurityTopology -ResourceId <String> [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+Get-AzSecurityTopology -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -38,7 +37,10 @@ Security Topologies are automatically discovered by Azure Security Center, use t
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzSecurityTopology
+Get-AzSecurityTopology
+```
+
+```output
 Id:	/subscriptions/3eeab341-f466-499c-a8be-85427e154baf7612f869/resourceGroups/myService1/providers/Microsoft.Security/locations/centralus/topologies/virtualMachines
 Name:	virtualMachines
 Type:	Microsoft.Security/locations/topologies
@@ -50,7 +52,10 @@ View all security topologies in a subscription
 
 ### Example 2
 ```powershell
-PS C:\> Get-AzSecurityTopology -ResourceGroupName "myService1" -Location "centralus" -Name "virtualMachines"
+Get-AzSecurityTopology -ResourceGroupName "myService1" -Location "centralus" -Name "virtualMachines"
+```
+
+```output
 Id:	/subscriptions/3eeab341-f466-499c-a8be-85427e154baf7612f869/resourceGroups/myService1/providers/Microsoft.Security/locations/centralus/topologies/virtualMachines
 Name:	virtualMachines
 Type:	Microsoft.Security/locations/topologies
@@ -138,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

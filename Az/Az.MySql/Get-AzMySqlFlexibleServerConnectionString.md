@@ -33,8 +33,10 @@ Get the connection string according to client connection provider.
 
 ### Example 1: Get connection string by name
 ```powershell
-PS C:\> Get-AzMySqlFlexibleServerConnectionString -Client Python -ResourceGroupName PowershellMySqlTest -Name mysql-test
+Get-AzMySqlFlexibleServerConnectionString -Client Python -ResourceGroupName PowershellMySqlTest -Name mysql-test
+```
 
+```output
 cnx = mysql.connector.connect(user=mysql_user, password="{your_password}", host="mysql-test.mysql.database.azure.com", port=3306, database="{your_database}", ssl_ca="{ca-cert filename}", ssl_disabled=False)
 ```
 
@@ -42,8 +44,10 @@ This cmdlet shows connection string of a client by server name.
 
 ### Example 2: Get MySql server connection string by identity
 ```powershell
-PS C:\> Get-AzMySqlFlexibleServer -ResourceGroupName PowershellMySqlTest -ServerName mysql-test | Get-AzMySqlFlexibleServerConnectionString -Client PHP
+Get-AzMySqlFlexibleServer -ResourceGroupName PowershellMySqlTest -ServerName mysql-test | Get-AzMySqlFlexibleServerConnectionString -Client PHP
+```
 
+```output
 $con=mysqli_init(); mysqli_real_connect($con, "mysql-test.mysql.database.azure.com", "mysql_test", {your_password}, {your_database}, 3306);
 ```
 
@@ -162,7 +166,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IMySqlIdentity>: The server for the connection string.
+`INPUTOBJECT <IMySqlIdentity>`: The server for the connection string.
   - `[BackupName <String>]`: The name of the backup.
   - `[ConfigurationName <String>]`: The name of the server configuration.
   - `[DatabaseName <String>]`: The name of the database.

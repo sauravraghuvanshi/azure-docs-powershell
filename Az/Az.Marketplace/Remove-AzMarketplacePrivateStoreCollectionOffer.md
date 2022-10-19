@@ -33,7 +33,7 @@ Deletes an offer from the given collection of private store.
 
 ### Example 1: Removes offer from private store collection
 ```powershell
-PS C:\>  Remove-AzMarketplacePrivateStoreCollectionOffer -PrivateStoreId 3ac32d8c-e888-4dc6-b4ff-be4d755af13a -CollectionId fdb889a1-cf3e-49f0-95b8-2bb012fa01f1 -OfferId aumatics.azure_managedservices
+Remove-AzMarketplacePrivateStoreCollectionOffer -PrivateStoreId 3ac32d8c-e888-4dc6-b4ff-be4d755af13a -CollectionId fdb889a1-cf3e-49f0-95b8-2bb012fa01f1 -OfferId aumatics.azure_managedservices
 ```
 
 This command removes offer from private store collection
@@ -182,7 +182,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IMarketplaceIdentity>: Identity Parameter
+INPUTOBJECT `<IMarketplaceIdentity>`: Identity Parameter
   - `[AdminRequestApprovalId <String>]`: The admin request approval ID to get create or update
   - `[CollectionId <String>]`: The collection ID
   - `[Id <String>]`: Resource identity path

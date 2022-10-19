@@ -1,104 +1,52 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.ManagedServiceIdentity.dll-Help.xml
+external help file: 
 Module Name: Az.ManagedServiceIdentity
 online version: https://docs.microsoft.com/powershell/module/az.managedserviceidentity/new-azuserassignedidentity
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ManagedServiceIdentity/ManagedServiceIdentity/help/New-AzUserAssignedIdentity.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ManagedServiceIdentity/ManagedServiceIdentity/help/New-AzUserAssignedIdentity.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ManagedServiceIdentity/help/New-AzUserAssignedIdentity.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/ManagedServiceIdentity/help/New-AzUserAssignedIdentity.md
 ---
 
 # New-AzUserAssignedIdentity
 
 ## SYNOPSIS
-Creates a new User Assigned Identity or updates an existing User Assigned Identity.
+Create or update an identity in the specified subscription and resource group.
 
 ## SYNTAX
 
 ```
-New-AzUserAssignedIdentity [-ResourceGroupName] <String> [-Name] <String> [-Location <String>] [-AsJob]
- [-DefaultProfile <IAzureContextContainer>] [-Tag <Hashtable>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzUserAssignedIdentity -Name <String> -ResourceGroupName <String> -Location <String>
+ [-SubscriptionId <String>] [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **New-AzUserAssignedIdentity** cmdlet creates a new User Assigned Identity. When used with an already existing identity, it updated the identity.
-To add Azure Resource Manager tags to the identity, please use the Set-AzResource cmdlet.
+Create or update an identity in the specified subscription and resource group.
 
 ## EXAMPLES
 
-### Example 1
-This example cmdlet creates a new User Assigned Identity with name **ID1** under resource group **PSRG** in the location of the ResourceGroup.
-
+### Example 1: Creates an user assigned identity in the specified subscription and resource group
 ```powershell
-PS C:\> New-AzUserAssignedIdentity -ResourceGroupName PSRG -Name ID1
-
-Id                : /subscriptions/586d0246-0344-49dc-a790-59c916b0c309/resourcegroups/PSRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1
-
-ResourceGroupName : PSRG
-
-Name              : ID1
-
-Location          : centralus
-
-TenantId          : 493b860d-2741-480b-8b34-7b1d76e33c50
-
-PrincipalId       : e34192f9-7831-4a02-bfe2-4c6d2fb4360d
-
-ClientId          : a5e650a2-fdfe-4652-bb3b-109b64617cfd
-
-ClientSecretUrl   : https://control-westus.identity.azure.net/subscriptions/586d0246-0344-49dc-a790-59c916b0c309/resourcegroups/PSRG1/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1/credentials?tid=493b860d-2741-480b-8b34-7b1d76e33c50&oid=e34192f9-7831-4a02-bfe2-4c6d2fb4360d&aid=a5e650a2-fdfe-4652-bb3b-109b64617cfd
-
-Type              : Microsoft.ManagedIdentity/userAssignedIdentities
+New-AzUserAssignedIdentity -ResourceGroupName azure-rg-test -Name uai-pwsh01 -Location eastus
 ```
 
-### Example 2
-This example cmdlet creates a new User Assigned Identity with name **ID1** under the resource group **PSRG** in the westus region.
-
-```powershell
-PS C:\> New-AzUserAssignedIdentity -ResourceGroupName PSRG -Name ID1 -Location westus
-
-Id                : /subscriptions/586d0246-0344-49dc-a790-59c916b0c309/resourcegroups/PSRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1
-
-ResourceGroupName : PSRG
-
-Name              : ID1
-
-Location          : westus
-
-TenantId          : 493b860d-2741-480b-8b34-7b1d76e33c50
-
-PrincipalId       : e34192f9-7831-4a02-bfe2-4c6d2fb4360d
-
-ClientId          : a5e650a2-fdfe-4652-bb3b-109b64617cfd
-
-ClientSecretUrl   : https://control-westus.identity.azure.net/subscriptions/586d0246-0344-49dc-a790-59c916b0c309/resourcegroups/PSRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1/credentials?tid=493b860d-2741-480b-8b34-7b1d76e33c50&oid=e34192f9-7831-4a02-bfe2-4c6d2fb4360d&aid=a5e650a2-fdfe-4652-bb3b-109b64617cfd
-
-Type              : Microsoft.ManagedIdentity/userAssignedIdentities
+```output
+Location Name       ResourceGroupName
+-------- ----       -----------------
+eastus   uai-pwsh01 azure-rg-test
 ```
+
+This command creates an user assigned identity in the specified subscription and resource group
 
 ## PARAMETERS
-
-### -AsJob
-Run cmdlet in the background
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -108,7 +56,52 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-The Azure region name where the Identity should be created.
+The geo-location where the resource lives
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+The name of the identity resource.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+The name of the Resource Group to which the identity belongs.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubscriptionId
+The Id of the Subscription to which the identity belongs.
 
 ```yaml
 Type: System.String
@@ -117,43 +110,13 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Name
-The Identity name.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 1
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -ResourceGroupName
-The resource group name.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: True (ByPropertyName)
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Tag
-The Azure Resource Manager tags associated with the identity.
+Resource tags.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -163,7 +126,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -199,18 +162,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### System.String
-
-### System.Collections.Hashtable
-
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.ManagedServiceIdentity.Models.PsUserAssignedIdentity
+### Microsoft.Azure.PowerShell.Cmdlets.ManagedServiceIdentity.Models.Api20181130.IIdentity
 
 ## NOTES
 
+ALIASES
+
 ## RELATED LINKS
+

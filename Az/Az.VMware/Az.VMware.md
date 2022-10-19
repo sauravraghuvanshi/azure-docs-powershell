@@ -10,7 +10,7 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 
 # Az.VMware Module
 ## Description
-Microsoft Azure PowerShell: VMware cmdlets
+Microsoft Azure PowerShell: Azure VMware Solution cmdlets
 
 ## Az.VMware Cmdlets
 ### [Get-AzVMwareAddon](Get-AzVMwareAddon.md)
@@ -25,14 +25,23 @@ Get an cloud link by name in a private cloud
 ### [Get-AzVMwareCluster](Get-AzVMwareCluster.md)
 Get a cluster by name in a private cloud
 
+### [Get-AzVMwareDatastore](Get-AzVMwareDatastore.md)
+Get a datastore in a private cloud cluster
+
 ### [Get-AzVMwareGlobalReachConnection](Get-AzVMwareGlobalReachConnection.md)
 Get a global reach connection by name in a private cloud
+
+### [Get-AzVMwarePlacementPolicy](Get-AzVMwarePlacementPolicy.md)
+Get a placement policy by name in a private cloud cluster
 
 ### [Get-AzVMwarePrivateCloud](Get-AzVMwarePrivateCloud.md)
 Get a private cloud
 
 ### [Get-AzVMwarePrivateCloudAdminCredential](Get-AzVMwarePrivateCloudAdminCredential.md)
 List the admin credentials for the private cloud
+
+### [Get-AzVMwareVirtualMachine](Get-AzVMwareVirtualMachine.md)
+Get a virtual machine by id in a private cloud cluster
 
 ### [New-AzVMwareAddon](New-AzVMwareAddon.md)
 Create or update a addon in a private cloud
@@ -52,8 +61,14 @@ Create or update a cloud link in a private cloud
 ### [New-AzVMwareCluster](New-AzVMwareCluster.md)
 Create or update a cluster in a private cloud
 
+### [New-AzVMwareDatastore](New-AzVMwareDatastore.md)
+Create or update a datastore in a private cloud cluster
+
 ### [New-AzVMwareGlobalReachConnection](New-AzVMwareGlobalReachConnection.md)
 Create or update a global reach connection in a private cloud
+
+### [New-AzVMwarePlacementPolicy](New-AzVMwarePlacementPolicy.md)
+Create or update a placement policy in a private cloud cluster
 
 ### [New-AzVMwarePrivateCloud](New-AzVMwarePrivateCloud.md)
 Create or update a private cloud
@@ -73,6 +88,12 @@ Create a in-memory object for ScriptSecureStringExecutionParameter
 ### [New-AzVMwareScriptStringExecutionParameterObject](New-AzVMwareScriptStringExecutionParameterObject.md)
 Create a in-memory object for ScriptStringExecutionParameter
 
+### [New-AzVMwareVmHostPlacementPolicyPropertiesObject](New-AzVMwareVmHostPlacementPolicyPropertiesObject.md)
+Create an in-memory object for VmHostPlacementPolicyProperties.
+
+### [New-AzVMwareVMPlacementPolicyPropertiesObject](New-AzVMwareVMPlacementPolicyPropertiesObject.md)
+Create an in-memory object for VMPlacementPolicyProperties.
+
 ### [Remove-AzVMwareAddon](Remove-AzVMwareAddon.md)
 Delete a addon in a private cloud
 
@@ -85,8 +106,14 @@ Delete a cloud link in a private cloud
 ### [Remove-AzVMwareCluster](Remove-AzVMwareCluster.md)
 Delete a cluster in a private cloud
 
+### [Remove-AzVMwareDatastore](Remove-AzVMwareDatastore.md)
+Delete a datastore in a private cloud cluster
+
 ### [Remove-AzVMwareGlobalReachConnection](Remove-AzVMwareGlobalReachConnection.md)
 Delete a global reach connection in a private cloud
+
+### [Remove-AzVMwarePlacementPolicy](Remove-AzVMwarePlacementPolicy.md)
+Delete a placement policy in a private cloud cluster
 
 ### [Remove-AzVMwarePrivateCloud](Remove-AzVMwarePrivateCloud.md)
 Delete a private cloud
@@ -99,6 +126,9 @@ Return trial status for subscription by region
 
 ### [Update-AzVMwareCluster](Update-AzVMwareCluster.md)
 Update a cluster in a private cloud
+
+### [Update-AzVMwarePlacementPolicy](Update-AzVMwarePlacementPolicy.md)
+Update a placement policy in a private cloud cluster
 
 ### [Update-AzVMwarePrivateCloud](Update-AzVMwarePrivateCloud.md)
 Update a private cloud

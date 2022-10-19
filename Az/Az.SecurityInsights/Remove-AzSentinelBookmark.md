@@ -1,81 +1,52 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.dll-Help.xml
+external help file: 
 Module Name: Az.SecurityInsights
 online version: https://docs.microsoft.com/powershell/module/az.securityinsights/remove-azsentinelbookmark
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Remove-AzSentinelBookmark.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Remove-AzSentinelBookmark.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Remove-AzSentinelBookmark.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Remove-AzSentinelBookmark.md
 ---
 
 # Remove-AzSentinelBookmark
 
 ## SYNOPSIS
-Deletes a Bookmark.
+Delete the bookmark.
 
 ## SYNTAX
 
-### BookmarkId. (Default)
+### Delete (Default)
 ```
-Remove-AzSentinelBookmark -ResourceGroupName <String> -WorkspaceName <String> -BookmarkId <String> [-PassThru]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzSentinelBookmark -Id <String> -ResourceGroupName <String> -WorkspaceName <String>
+ [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### InputObject
+### DeleteViaIdentity
 ```
-Remove-AzSentinelBookmark -InputObject <PSSentinelBookmark> [-PassThru]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzSentinelBookmark -InputObject <ISecurityInsightsIdentity> [-DefaultProfile <PSObject>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Remove-AzSentinelBookmark** cmdlet permanently deletes a Bookmark from a specified workspace.
-You can pass an Bookmark object by using the pipeline operator, or alternatively you can specify the required parameters.
-You can use the Confirm parameter and $ConfirmPreference Windows PowerShell variable to control whether the cmdlet prompts you for confirmation.
+Delete the bookmark.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Remove a Sentinel Bookmark
 ```powershell
-PS C:\> Remove-AzSentinelBookmark -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName" -BookmarkId "MyBookmarkId"
+Remove-AzSentinelBookmark -ResourceGroupName "myResourceGroup" -WorkspaceName "myWorkspaceName" -Id <bookMarkId> 
 ```
 
-This command removes the Bookmark from the workspace.
-
-### Example 2
-```powershell
-$SentinelConnection = @{
-    ResourceGroupName = "myResourceGroupName"
-    WorkspaceName = "myWorkspaceName"
-}
-$Bookmark = Get-AzSentinelBookmark @SentinelConnection | Where-Object {$_.DisplayName -eq "My Bookmark"}
-Remove-AzSentinelBookmark @SentinelConnection -BookmarkId $Bookmark.Name
-```
-
-This example uses a connection object to pass the resourceGroupName and workspaceName to get a Bookmark with a specific name. It then uses the BookmarkId to remove it.
+This command removes a bookmark
 
 ## PARAMETERS
-
-### -BookmarkId
-Bookmark Id,
-
-```yaml
-Type: System.String
-Parameter Sets: BookmarkId.
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -84,12 +55,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-InputObject.
+### -Id
+Bookmark ID
 
 ```yaml
-Type: Microsoft.Azure.Commands.SecurityInsights.Models.Bookmarks.PSSentinelBookmark
-Parameter Sets: InputObject
+Type: System.String
+Parameter Sets: Delete
+Aliases: BookmarkId
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.ISecurityInsightsIdentity
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -100,7 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-PassThru
+Returns true when the command succeeds
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -115,32 +102,48 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Resource group name.
+The name of the resource group.
+The name is case insensitive.
 
 ```yaml
 Type: System.String
-Parameter Sets: BookmarkId.
+Parameter Sets: Delete
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubscriptionId
+The ID of the target subscription.
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -WorkspaceName
-Workspace Name.
+The name of the workspace.
 
 ```yaml
 Type: System.String
-Parameter Sets: BookmarkId.
+Parameter Sets: Delete
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -180,11 +183,44 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String
-### Microsoft.Azure.Commands.SecurityInsights.Models.Bookmarks.PSSentinelBookmark
+### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.ISecurityInsightsIdentity
+
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.SecurityInsights.Models.Bookmarks.PSSentinelBookmark
+### System.Boolean
+
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+`INPUTOBJECT <ISecurityInsightsIdentity>`: Identity Parameter
+  - `[ActionId <String>]`: Action ID
+  - `[AlertRuleTemplateId <String>]`: Alert rule template ID
+  - `[AutomationRuleId <String>]`: Automation rule ID
+  - `[BookmarkId <String>]`: Bookmark ID
+  - `[ConsentId <String>]`: consent ID
+  - `[DataConnectorId <String>]`: Connector ID
+  - `[EntityId <String>]`: entity ID
+  - `[EntityQueryId <String>]`: entity query ID
+  - `[EntityQueryTemplateId <String>]`: entity query template ID
+  - `[Id <String>]`: Resource identity path
+  - `[IncidentCommentId <String>]`: Incident comment ID
+  - `[IncidentId <String>]`: Incident ID
+  - `[MetadataName <String>]`: The Metadata name.
+  - `[Name <String>]`: Threat intelligence indicator name field.
+  - `[RelationName <String>]`: Relation Name
+  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
+  - `[RuleId <String>]`: Alert rule ID
+  - `[SentinelOnboardingStateName <String>]`: The Sentinel onboarding state name. Supports - default
+  - `[SettingsName <String>]`: The setting name. Supports - Anomalies, EyesOn, EntityAnalytics, Ueba
+  - `[SourceControlId <String>]`: Source control Id
+  - `[SubscriptionId <String>]`: The ID of the target subscription.
+  - `[WorkspaceName <String>]`: The name of the workspace.
+
 ## RELATED LINKS
+

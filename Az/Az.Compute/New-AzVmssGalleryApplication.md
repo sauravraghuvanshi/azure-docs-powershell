@@ -16,7 +16,7 @@ Create a local PSVMGalleryApplication object.
 
 ```
 New-AzVmssGalleryApplication -PackageReferenceId <String> [-ConfigReferenceId <String>]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -26,9 +26,9 @@ Creates a local PSVMGalleryApplication object.
 
 ### Example 1
 ```powershell
-PS C:\> $vmss = Get-AzVmss -ResourceGroupName $rgName -Name $vmssName
-PS C:\> $vmGal = New-AzVmssGalleryApplication -PackageReferenceId $packageRefId -ConfigReferenceId $configRefId
-PS C:\> Add-AzVmssGalleryApplication -VM $vmss.VirtualMachineProfile -GalleryApplication $vmGal -Order 1
+$vmss = Get-AzVmss -ResourceGroupName $rgName -Name $vmssName
+$vmGal = New-AzVmssGalleryApplication -PackageReferenceId $packageRefId -ConfigReferenceId $configRefId
+Add-AzVmssGalleryApplication -VirtualMachineScaleSetVM $vmss.VirtualMachineProfile -GalleryApplication $vmGal -Order 1
 ```
 
 This example creates a local VMGalleryApplication object and adds it to a PSVirtualMachineScaleSetVM object.
@@ -74,6 +74,36 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

@@ -1,52 +1,84 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.dll-Help.xml
+external help file: 
 Module Name: Az.SecurityInsights
 online version: https://docs.microsoft.com/powershell/module/az.securityinsights/new-azsentinelincident
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/New-AzSentinelIncident.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/New-AzSentinelIncident.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/New-AzSentinelIncident.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/New-AzSentinelIncident.md
 ---
 
 # New-AzSentinelIncident
 
 ## SYNOPSIS
-Creates an Incident.
+Creates or updates the incident.
 
 ## SYNTAX
 
+### CreateExpanded (Default)
 ```
-New-AzSentinelIncident -ResourceGroupName <String> -WorkspaceName <String> [-IncidentId <String>]
- [-Classificaton <String>] [-ClassificationComment <String>] [-ClassificationReason <String>]
- [-Description <String>]
- [-Label <System.Collections.Generic.IList`1[Microsoft.Azure.Commands.SecurityInsights.Models.Incidents.PSSentinelIncidentLabel]>]
- [-Owner <PSSentinelIncidentOwner>] -Severity <String> -Status <String> -Title <String>
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzSentinelIncident -ResourceGroupName <String> -WorkspaceName <String> [-Id <String>]
+ [-SubscriptionId <String>] [-Classification <IncidentClassification>] [-ClassificationComment <String>]
+ [-ClassificationReason <IncidentClassificationReason>] [-Description <String>]
+ [-FirstActivityTimeUtc <DateTime>] [-Label <IIncidentLabel[]>] [-LastActivityTimeUtc <DateTime>]
+ [-OwnerAssignedTo <String>] [-OwnerEmail <String>] [-OwnerObjectId <String>]
+ [-OwnerUserPrincipalName <String>] [-ProviderIncidentId <String>] [-ProviderName <String>]
+ [-Severity <IncidentSeverity>] [-Status <IncidentStatus>] [-Title <String>] [-DefaultProfile <PSObject>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Create
+```
+New-AzSentinelIncident -ResourceGroupName <String> -WorkspaceName <String> -Incident <IIncident>
+ [-Id <String>] [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **New-AzSentinelIncident** cmdlet creates a Incident in the specified workspace.
-You can use the *Confirm* parameter and $ConfirmPreference Windows PowerShell variable to control whether the cmdlet prompts you for confirmation.
+Creates or updates the incident.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Create an Incident
 ```powershell
-PS C:\> $Incident = New-AzSentinelIncident -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName" -Title "NewIncident" -Description "My Description" -Severity Low -Status New
+ New-AzSentinelIncident -ResourceGroupName "myResourceGroup" -WorkspaceName "myWorkspaceName" -Id ((New-Guid).Guid) -Title "NewIncident" -Description "My Description" -Severity Low -Status New
 ```
 
-This example creates an **Incident** in the specified workspace, and then stores it in the $Incident variable.<br/><br/>
+```output
+Title          : NewIncident
+Description    : My Description
+Severity       : Low
+Status         : New
+Number         : 779
+CreatedTimeUtc : 2/3/2022 7:47:03 PM
+Name           : c831b5a7-5644-403f-9dc3-96d651e04c6d
+Url            : https://portal.azure.com/#asset/Microsoft_Azure_Security_Insights/Incident/subscriptions/274b1a41-c53c-4092-8d4a-7210f6a44a0c/resourceGroups/cyber-soc/providers/Microsoft.OperationalInsights/workspaces/myworkspace/providers/Microsoft.SecurityInsights/Incidents/c831b5a7-5644-403f-9dc3-96d651e04c6d
+```
 
-*Please note that you currently cannot add entities to a new created incident through automation, which means that you cannot use the investigation feature for new created incidents through automation. <br/>
-The feature to add entities to incidents is planned and will be added in the future.*
+This command creates an Incident.
 
 ## PARAMETERS
 
+### -Classification
+The reason the incident was closed
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Support.IncidentClassification
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ClassificationComment
-Incident Classificaiton Comment.
+Describes the reason the incident was closed
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -57,29 +89,12 @@ Accept wildcard characters: False
 ```
 
 ### -ClassificationReason
-Incident Classificaiton Reason.
+The classification reason the incident was closed with
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Support.IncidentClassificationReason
+Parameter Sets: CreateExpanded
 Aliases:
-Accepted values: InaccurateData, IncorrectAlertLogic, SuspiciousActivity, SuspiciousButExpected
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Classificaton
-Incident Classificaiton.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-Accepted values: BenignPositive, FalsePositive, TruePositive, Undetermined
 
 Required: False
 Position: Named
@@ -92,9 +107,9 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -104,11 +119,11 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Description.
+The description of the incident
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -118,53 +133,176 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IncidentId
-Incident Id.
+### -FirstActivityTimeUtc
+The time of the first activity in the incident
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: System.DateTime
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+Incident ID
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: IncidentId
+
+Required: False
+Position: Named
+Default value: (New-Guid).Guid
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Incident
+Represents an incident in Azure Security Insights.
+To construct, see NOTES section for INCIDENT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.IIncident
+Parameter Sets: Create
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Label
-Incident Labels.
+List of labels relevant to this incident
+To construct, see NOTES section for LABEL properties and create a hash table.
 
 ```yaml
-Type: System.Collections.Generic.IList`1[Microsoft.Azure.Commands.SecurityInsights.Models.Incidents.PSSentinelIncidentLabel]
-Parameter Sets: (All)
+Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.IIncidentLabel[]
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Owner
-Incident Owner.
+### -LastActivityTimeUtc
+The time of the last activity in the incident
 
 ```yaml
-Type: Microsoft.Azure.Commands.SecurityInsights.Models.Incidents.PSSentinelIncidentOwner
-Parameter Sets: (All)
+Type: System.DateTime
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OwnerAssignedTo
+The name of the user the incident is assigned to.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OwnerEmail
+The email of the user the incident is assigned to.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OwnerObjectId
+The object id of the user the incident is assigned to.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OwnerUserPrincipalName
+The user principal name of the user the incident is assigned to.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProviderIncidentId
+The incident ID assigned by the incident provider
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProviderName
+The name of the source provider that generated the incident
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Resource group name.
+The name of the resource group.
+The name is case insensitive.
 
 ```yaml
 Type: System.String
@@ -179,15 +317,14 @@ Accept wildcard characters: False
 ```
 
 ### -Severity
-Incident Severity.
+The severity of the incident
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Support.IncidentSeverity
+Parameter Sets: CreateExpanded
 Aliases:
-Accepted values: High, Informational, Low, Medium
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -195,30 +332,44 @@ Accept wildcard characters: False
 ```
 
 ### -Status
-Incident Status.
+The status of the incident
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Support.IncidentStatus
+Parameter Sets: CreateExpanded
 Aliases:
-Accepted values: Active, Closed, New
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Title
-Incident Title.
+### -SubscriptionId
+The ID of the target subscription.
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Title
+The title of the incident
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -226,7 +377,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceName
-Workspace Name.
+The name of the workspace.
 
 ```yaml
 Type: System.String
@@ -256,7 +407,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -275,11 +427,49 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Collections.Generic.IList`1[[Microsoft.Azure.Commands.SecurityInsights.Models.Incidents.PSSentinelIncidentLabel, Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]]
-### Microsoft.Azure.Commands.SecurityInsights.Models.Incidents.PSSentinelIncidentOwner
+### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.IIncident
+
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.SecurityInsights.Models.Incidents.PSSentinelIncident
+### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.IIncident
+
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+`INCIDENT <IIncident>`: Represents an incident in Azure Security Insights.
+  - `[Etag <String>]`: Etag of the azure resource
+  - `[SystemDataCreatedAt <DateTime?>]`: The timestamp of resource creation (UTC).
+  - `[SystemDataCreatedBy <String>]`: The identity that created the resource.
+  - `[SystemDataCreatedByType <CreatedByType?>]`: The type of identity that created the resource.
+  - `[SystemDataLastModifiedAt <DateTime?>]`: The timestamp of resource last modification (UTC)
+  - `[SystemDataLastModifiedBy <String>]`: The identity that last modified the resource.
+  - `[SystemDataLastModifiedByType <CreatedByType?>]`: The type of identity that last modified the resource.
+  - `[Classification <IncidentClassification?>]`: The reason the incident was closed
+  - `[ClassificationComment <String>]`: Describes the reason the incident was closed
+  - `[ClassificationReason <IncidentClassificationReason?>]`: The classification reason the incident was closed with
+  - `[Description <String>]`: The description of the incident
+  - `[FirstActivityTimeUtc <DateTime?>]`: The time of the first activity in the incident
+  - `[Label <IIncidentLabel[]>]`: List of labels relevant to this incident
+    - `LabelName <String>`: The name of the label
+  - `[LastActivityTimeUtc <DateTime?>]`: The time of the last activity in the incident
+  - `[OwnerAssignedTo <String>]`: The name of the user the incident is assigned to.
+  - `[OwnerEmail <String>]`: The email of the user the incident is assigned to.
+  - `[OwnerObjectId <String>]`: The object id of the user the incident is assigned to.
+  - `[OwnerUserPrincipalName <String>]`: The user principal name of the user the incident is assigned to.
+  - `[ProviderIncidentId <String>]`: The incident ID assigned by the incident provider
+  - `[ProviderName <String>]`: The name of the source provider that generated the incident
+  - `[Severity <IncidentSeverity?>]`: The severity of the incident
+  - `[Status <IncidentStatus?>]`: The status of the incident
+  - `[Title <String>]`: The title of the incident
+
+`LABEL <IIncidentLabel[]>`: List of labels relevant to this incident
+  - `LabelName <String>`: The name of the label
+
 ## RELATED LINKS
+

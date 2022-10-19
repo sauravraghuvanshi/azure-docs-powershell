@@ -27,9 +27,10 @@ Create a PSLoadBalancingSetting object for Front Door creation
 
 ### Example 1
 ```powershell
-PS C:\> New-AzFrontDoorLoadBalancingSettingObject -Name "loadbalancingsetting1"
+New-AzFrontDoorLoadBalancingSettingObject -Name "loadbalancingsetting1"
+```
 
-
+```output
 SampleSize                    : 4
 AdditionalLatencyMilliseconds : 0
 SuccessfulSamplesRequired     : 2

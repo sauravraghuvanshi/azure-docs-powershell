@@ -39,8 +39,11 @@ Id can be either fully qualified or just the Guid.
 ## EXAMPLES
 
 ### Example 1
+```powershell
+Remove-AzCosmosDBSqlRoleDefinition -ResourceGroupName resourceGroupName -AccountName accountName -Id id -PassThru
 ```
-PS C:\> Remove-AzCosmosDBSqlRoleDefinition -ResourceGroupName resourceGroupName -AccountName accountName -Id id -PassThru
+
+```output
 true
 ```
 

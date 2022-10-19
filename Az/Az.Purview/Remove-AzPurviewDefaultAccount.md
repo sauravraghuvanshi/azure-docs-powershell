@@ -1,10 +1,10 @@
 ---
-external help file: 
+external help file: Az.Purview-help.xml
 Module Name: Az.Purview
 online version: https://docs.microsoft.com/powershell/module/az.purview/remove-azpurviewdefaultaccount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/help/Remove-AzPurviewDefaultAccount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/help/Remove-AzPurviewDefaultAccount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/Purview/help/Remove-AzPurviewDefaultAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/Purview/help/Remove-AzPurviewDefaultAccount.md
 ---
 
 # Remove-AzPurviewDefaultAccount
@@ -16,7 +16,7 @@ Removes the default account from the scope.
 
 ```
 Remove-AzPurviewDefaultAccount -ScopeTenantId <String> -ScopeType <ScopeType> [-Scope <String>]
- [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DefaultProfile <PSObject>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -26,7 +26,7 @@ Removes the default account from the scope.
 
 ### Example 1: Removes the default account from the scope
 ```powershell
-PS C:\> Remove-AzPurviewDefaultAccount -ScopeTenantId xxxxxxxx-38d6-4fb2-bad9-b7b93a3e9c5a -ScopeType Tenant
+Remove-AzPurviewDefaultAccount -ScopeTenantId xxxxxxxx-38d6-4fb2-bad9-b7b93a3e9c5a -ScopeType Tenant
 ```
 
 Removes the default account from the scope Tenant.
@@ -153,4 +153,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 ## RELATED LINKS
-

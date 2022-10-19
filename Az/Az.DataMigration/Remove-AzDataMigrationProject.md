@@ -39,15 +39,15 @@ The Remove-AzDataMigrationProject cmdlet removes an Azure Database Migration Ser
 ## EXAMPLES
 
 ### Example 1
-```
-PS C:\> Remove-AzDataMigrationProject -ResourceGroupName myResourceGroup -ServiceName myDMService -ProjectName myDMProject
+```powershell
+Remove-AzDataMigrationProject -ResourceGroupName myResourceGroup -ServiceName myDMService -ProjectName myDMProject
 ```
 
 The above example removes the Azure Database Migration Service project called myDMProject from Azure based on name as input parameter
 
 ### Example 2
-```
-PS C:\> Remove-AzDataMigrationProject -InputObject $myDMSProject
+```powershell
+Remove-AzDataMigrationProject -InputObject $myDMSProject
 ```
 
 The above example removes the Azure Database Migration Service project based on PSProject object as input parameter.
@@ -222,7 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

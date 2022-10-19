@@ -26,7 +26,7 @@ Remove-AzFrontDoorContent purges cached contents in a Front Door
 
 ### Example 1
 ```powershell
-PS C:\> Remove-AzFrontDoorContent -ResourceGroupName $ResourceGroupName -Name $FrontDoorName -ContentPath "/*"
+Remove-AzFrontDoorContent -ResourceGroupName $ResourceGroupName -Name $FrontDoorName -ContentPath "/*"
 ```
 
 ## PARAMETERS

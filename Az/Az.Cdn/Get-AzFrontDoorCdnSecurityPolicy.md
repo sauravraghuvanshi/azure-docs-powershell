@@ -1,48 +1,66 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.Cdn.dll-Help.xml
+external help file: 
 Module Name: Az.Cdn
 online version: https://docs.microsoft.com/powershell/module/az.cdn/get-azfrontdoorcdnsecuritypolicy
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzFrontDoorCdnSecurityPolicy.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/Cdn/help/Get-AzFrontDoorCdnSecurityPolicy.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/Get-AzFrontDoorCdnSecurityPolicy.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Cdn/help/Get-AzFrontDoorCdnSecurityPolicy.md
 ---
 
 # Get-AzFrontDoorCdnSecurityPolicy
 
 ## SYNOPSIS
-Gets the security policy.
+Gets an existing security policy within a profile.
 
 ## SYNTAX
 
-### ByFieldsParameterSet (Default)
+### List (Default)
 ```
 Get-AzFrontDoorCdnSecurityPolicy -ProfileName <String> -ResourceGroupName <String>
- [-SecurityPolicyName <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
-### ByObjectParameterSet
+### Get
 ```
-Get-AzFrontDoorCdnSecurityPolicy -Profile <PSAfdProfile> [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+Get-AzFrontDoorCdnSecurityPolicy -Name <String> -ProfileName <String> -ResourceGroupName <String>
+ [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
-### ByResourceIdParameterSet
+### GetViaIdentity
 ```
-Get-AzFrontDoorCdnSecurityPolicy -ResourceId <String> [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+Get-AzFrontDoorCdnSecurityPolicy -InputObject <ICdnIdentity> [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets the security policy.
+Gets an existing security policy within a profile.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: List AzureFrontDoor security policies within the specified AzureFrontDoor profile
 ```powershell
-Get-AzFrontDoorCdnSecurityPolicy -ProfileName $profileName -ResourceGroupName $resourceGroupName -SecurityPolicyName $securityPolicyName
+Get-AzFrontDoorCdnSecurityPolicy -ResourceGroupName testps-rg-da16jm -ProfileName fdp-v542q6
 ```
 
-Gets the security policy.
+```output
+Name      ResourceGroupName
+----      -----------------
+policy001 testps-rg-da16jm
+```
+
+List AzureFrontDoor security policies within the specified AzureFrontDoor profile
+
+### Example 2: Get an AzureFrontDoor security policy within the specified AzureFrontDoor profile
+```powershell
+Get-AzFrontDoorCdnSecurityPolicy -ResourceGroupName testps-rg-da16jm -ProfileName fdp-v542q6 -Name policy001
+```
+
+```output
+Name      ResourceGroupName
+----      -----------------
+policy001 testps-rg-da16jm
+```
+
+Get an AzureFrontDoor security policy within the specified AzureFrontDoor profile
 
 ## PARAMETERS
 
@@ -50,9 +68,9 @@ Gets the security policy.
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -61,12 +79,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Profile
-The Azure Front Door profile object.
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: PSAfdProfile
-Parameter Sets: ByObjectParameterSet
+Type: Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.ICdnIdentity
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -76,12 +95,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ProfileName
-The Azure Front Door profile name.
+### -Name
+Name of the security policy under the profile.
 
 ```yaml
-Type: String
-Parameter Sets: ByFieldsParameterSet
+Type: System.String
+Parameter Sets: Get
+Aliases: SecurityPolicyName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProfileName
+Name of the Azure Front Door Standard or Azure Front Door Premium profile which is unique within the resource group.
+
+```yaml
+Type: System.String
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -92,11 +126,11 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The Azure resource group name.
+Name of the Resource group within the Azure subscription.
 
 ```yaml
-Type: String
-Parameter Sets: ByFieldsParameterSet
+Type: System.String
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -106,32 +140,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResourceId
-The Azure resource id.
+### -SubscriptionId
+Azure Subscription ID.
 
 ```yaml
-Type: String
-Parameter Sets: ByResourceIdParameterSet
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SecurityPolicyName
-The Azure Front Door security policy name.
-
-```yaml
-Type: String
-Parameter Sets: ByFieldsParameterSet
+Type: System.String[]
+Parameter Sets: Get, List
 Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: (Get-AzContext).Subscription.Id
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -141,12 +160,35 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.Commands.Cdn.AfdModels.PSAfdProfile
+### Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.ICdnIdentity
 
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.Cdn.AfdModels.PSAfdSecurityPolicy
+### Microsoft.Azure.PowerShell.Cmdlets.Cdn.Models.Api20210601.ISecurityPolicy
 
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT `<ICdnIdentity>`: Identity Parameter
+  - `[CustomDomainName <String>]`: Name of the domain under the profile which is unique globally.
+  - `[EndpointName <String>]`: Name of the endpoint under the profile which is unique globally.
+  - `[Id <String>]`: Resource identity path
+  - `[OriginGroupName <String>]`: Name of the origin group which is unique within the endpoint.
+  - `[OriginName <String>]`: Name of the origin which is unique within the profile.
+  - `[ProfileName <String>]`: Name of the Azure Front Door Standard or Azure Front Door Premium or CDN profile which is unique within the resource group.
+  - `[ResourceGroupName <String>]`: Name of the Resource group within the Azure subscription.
+  - `[RouteName <String>]`: Name of the routing rule.
+  - `[RuleName <String>]`: Name of the delivery rule which is unique within the endpoint.
+  - `[RuleSetName <String>]`: Name of the rule set under the profile which is unique globally.
+  - `[SecretName <String>]`: Name of the Secret under the profile.
+  - `[SecurityPolicyName <String>]`: Name of the security policy under the profile.
+  - `[SubscriptionId <String>]`: Azure Subscription ID.
+
 ## RELATED LINKS
+

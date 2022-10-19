@@ -25,7 +25,7 @@ The **Remove-AzPrivateLinkService** cmdlet removes a private link service
 ## EXAMPLES
 
 ### Example 1
-```
+```powershell
 Remove-AzPrivateLinkService -ResourceGroupName TestResourceGroup -Name TestPrivateLinkService
 ```
 

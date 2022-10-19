@@ -39,7 +39,7 @@ Removes a disk encryption set.
 
 ### Example 1
 ```powershell
-PS C:\> Remove-AzDiskEncryptionSet -ResourceGroupName 'rg1' -Name 'enc1' -Force;
+Remove-AzDiskEncryptionSet -ResourceGroupName 'rg1' -Name 'enc1' -Force;
 ```
 
 Delete disk encryption set 'enc1' in 'rg1'

@@ -24,9 +24,11 @@ The **Get-AzRelayOperation** cmdlet Lists the Relay supported Operations.
 ## EXAMPLES
 
 ### Example 1
+```powershell
+Get-AzRelayOperation
 ```
-PS C:\> Get-AzRelayOperation
 
+```output
 Name                                                                            Display
 ----                                                                            -------
 Microsoft.Relay/checkNamespaceAvailability/action                               Microsoft.Azure.Commands.Relay.Models.OperationDisplayAttributes

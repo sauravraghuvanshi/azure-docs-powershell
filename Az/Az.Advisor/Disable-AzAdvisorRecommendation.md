@@ -1,10 +1,10 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.Advisor.dll-Help.xml
+external help file: 
 Module Name: Az.Advisor
-online version: https://docs.microsoft.com/powershell/module/az.advisor/disable-azadvisorrecommendation
+online version: https://docs.microsoft.com/powershell/module/az.advisor/Disable-AzAdvisorRecommendation
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Advisor/Advisor/help/Disable-AzAdvisorRecommendation.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Advisor/Advisor/help/Disable-AzAdvisorRecommendation.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Advisor/help/Disable-AzAdvisorRecommendation.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Advisor/help/Disable-AzAdvisorRecommendation.md
 ---
 
 # Disable-AzAdvisorRecommendation
@@ -16,103 +16,65 @@ Disable an Azure Advisor recommendation.
 
 ### IdParameterSet (Default)
 ```
-Disable-AzAdvisorRecommendation [-ResourceId] <String> [[-Days] <Int32>]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### NameParameterSet
-```
-Disable-AzAdvisorRecommendation [[-Days] <Int32>] [-RecommendationName] <String>
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Disable-AzAdvisorRecommendation -ResourceId <String> [-SubscriptionId <String[]>] [-Day <Object>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### InputObjectParameterSet
 ```
-Disable-AzAdvisorRecommendation [[-Days] <Int32>] [-InputObject] <PsAzureAdvisorResourceRecommendationBase>
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Disable-AzAdvisorRecommendation -InputObject <IAdvisorIdentity> [-SubscriptionId <String[]>] [-Day <Object>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### NameParameterSet
+```
+Disable-AzAdvisorRecommendation -RecommendationName <String> [-SubscriptionId <String[]>] [-Day <Object>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Creates a suppression for recommendation(s), this enables a particular recommendation to be postponed for a specific duration or infinitely.
+Disable an Azure Advisor recommendation.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Disable recommendation by recommendation name
 ```powershell
-Disable-AzAdvisorRecommendation -Name "f380a3a8-9d18-cfad-78e0-55762c72a178"
+Disable-AzAdvisorRecommendation -RecommendationName 42963553-61de-5334-2d2e-47f3a0099d41 -Day 1
 ```
 
 ```output
-SuppressionId : d1f70547-0e72-db29-443e-c1164d5d4377
-Ttl           : -1
-Id            : /subscriptions/{user_subscription}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/xyz/providers/Microsoft.Advisor/recommendations
-                /{recommendation_id}/suppressions/HardCodedSupressionName
-Name          : HardCodedSupressionName
-Type          : Microsoft.Advisor/suppressions
+SuppressionId                        Name                     Resource Group   Ttl
+-------------                        ----                     --------------   ---
+5b931ff3-42a3-5f80-797f-8e018a6dfaf5 HardcodedSuppressionName automanagehcrprg 1.00:00:00
 ```
 
-Create a suppression for the given recommendation name with a default-SuppressionName and default days as -1.
+Disable recommendation by recommendation name
 
-### Example 2
+### Example 2: Disable recommendation by recommendation resource id
 ```powershell
-Disable-AzAdvisorRecommendation -ResourceId "/subscriptions/{user_subscription}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/xyz" -Days 12
+Disable-AzAdvisorRecommendation -ResourceId /subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/automanagehcrprg/providers/microsoft.compute/virtualmachines/arcbox-capi-mgmt/providers/Microsoft.Advisor/recommendations/42963553-61de-5334-2d2e-47f3a0099d41 -Day 1
 ```
 
 ```output
-SuppressionId : 7d1f0547-0e72-db29-443e-c1164d5d4377
-Ttl           : 12.00:00:00
-Id            : /subscriptions/{user_subscription}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/xyz/providers/Microsoft.Advisor/recommendations
-                /{recommendation_id}/suppressions/HardCodedSupressionName
-Name          : HardCodedSupressionName
-Type          : Microsoft.Advisor/suppressions
+SuppressionId                        Name                     Resource Group   Ttl
+-------------                        ----                     --------------   ---
+5b931ff3-42a3-5f80-797f-8e018a6dfaf5 HardcodedSuppressionName automanagehcrprg 1.00:00:00
 ```
 
-A suppression is created for the given recommendation-Id.
-
-### Example 3
-```powershell
-Get-AzAdvisorRecommendation -ResourceId "/subscriptions/user_subscription/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/xyz" | Disable-A
-zAdvisorRecommendation
-```
-
-```output
-SuppressionId : daf24e78-af2d-e8d3-9c50-fa970edc2937
-Ttl           : -1
-Id            : /subscriptions/{user_subscription}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/xyz/providers/Microsoft.Advisor/recommendations
-                /{recommendation_id}/suppressions/HardCodedSupressionName
-Name          : HardCodedSupressionName
-Type          : Microsoft.Advisor/suppressions
-```
-
-Creating a suppression, piping from Get-AzAdvisorRecommendation to Disable-AzAdvisorRecommendation.
+Disable recommendation by recommendation resource id
 
 ## PARAMETERS
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Days
+### -Day
 Days to disable.
 
 ```yaml
-Type: Int32
+Type: System.Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -122,9 +84,9 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -135,29 +97,30 @@ Accept wildcard characters: False
 
 ### -InputObject
 The powershell object type PsAzureAdvisorResourceRecommendationBase returned by Get-AzAdvisorRecommendation call.
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: PsAzureAdvisorResourceRecommendationBase
+Type: Microsoft.Azure.PowerShell.Cmdlets.Advisor.Models.IAdvisorIdentity
 Parameter Sets: InputObjectParameterSet
 Aliases:
 
 Required: True
-Position: 0
+Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -RecommendationName
-ResourceName of the recommendation
+ResourceName of the recommendation.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: NameParameterSet
 Aliases:
 
 Required: True
-Position: 0
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -167,12 +130,42 @@ Accept wildcard characters: False
 Id of the recommendation to be suppressed.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: IdParameterSet
 Aliases:
 
 Required: True
-Position: 0
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubscriptionId
+The Azure subscription ID.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -183,7 +176,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -195,19 +188,34 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### System.String
-
-### Microsoft.Azure.Commands.Advisor.Cmdlets.Models.PsAzureAdvisorResourceRecommendationBase
+### Microsoft.Azure.PowerShell.Cmdlets.Advisor.Models.IAdvisorIdentity
 
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.Advisor.Cmdlets.Models.PsAzureAdvisorSuppressionContract
+### Microsoft.Azure.PowerShell.Cmdlets.Advisor.Models.Api202001.IResourceRecommendationBase
 
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+`INPUTOBJECT <IAdvisorIdentity>`: The powershell object type PsAzureAdvisorResourceRecommendationBase returned by Get-AzAdvisorRecommendation call.
+  - `[ConfigurationName <ConfigurationName?>]`: Advisor configuration name. Value must be 'default'
+  - `[Id <String>]`: Resource identity path
+  - `[Name <String>]`: Name of metadata entity.
+  - `[OperationId <String>]`: The operation ID, which can be found from the Location field in the generate recommendation response header.
+  - `[RecommendationId <String>]`: The recommendation ID.
+  - `[ResourceGroup <String>]`: The name of the Azure resource group.
+  - `[ResourceUri <String>]`: The fully qualified Azure Resource Manager identifier of the resource to which the recommendation applies.
+  - `[SubscriptionId <String>]`: The Azure subscription ID.
+
 ## RELATED LINKS
+

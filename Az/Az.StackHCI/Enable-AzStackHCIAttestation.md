@@ -1,5 +1,5 @@
 ---
-external help file: Az.StackHCI-help.xml
+external help file: 
 Module Name: Az.StackHCI
 online version: https://docs.microsoft.com/powershell/module/az.stackhci/enable-azstackhciattestation
 schema: 2.0.0
@@ -15,8 +15,8 @@ Enable-AzStackHCIAttestation configures the host and enables specified guests fo
 ## SYNTAX
 
 ```
-Enable-AzStackHCIAttestation [[-ComputerName] <String>] [-Credential <PSCredential>] [-AddVM] [-Force]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Enable-AzStackHCIAttestation [[-ComputerName] <String>] [-AddVM] [-Credential <PSCredential>] [-Force]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -24,19 +24,18 @@ Enable-AzStackHCIAttestation configures the host and enables specified guests fo
 
 ## EXAMPLES
 
-### EXAMPLE 1
-```poweshell
-C:\PS\>Enable-AzStackHCIAttestation -AddVM
+### Example 1: 
+```powershell
+Enable-AzStackHCIAttestation -AddVM
+```
+
+```output
+ComputerName  Status Expiration
+------------  ------ ----------
+HCINODE2     Expired
 ```
 
 Invoking on one of the cluster node.
-
-### EXAMPLE 2
-```powershell
-C:\PS\>Enable-AzStackHCIAttestation -ComputerName "host1" -AddVM
-```
-
-Invoking from WAC/Management node and adding all existing VMs cluster-wide
 
 ## PARAMETERS
 
@@ -50,7 +49,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -65,7 +64,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -82,13 +81,13 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: [System.Management.Automation.PSCredential]::Empty
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Force
-No confirmation.
+No confirmations.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -97,7 +96,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -140,10 +139,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### PSCustomObject. Returns following Properties in PSCustomObject
-### Cluster:     Name of cluster
-### Node:        Name of the host.
-### Attestation: IMDS Attestation status.
+### System.Management.Automation.PSObject
+
 ## NOTES
 
+ALIASES
+
 ## RELATED LINKS
+

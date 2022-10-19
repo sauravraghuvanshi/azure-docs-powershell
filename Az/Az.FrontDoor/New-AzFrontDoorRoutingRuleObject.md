@@ -40,8 +40,10 @@ Create a PSRoutingRuleObject for Front Door creation
 
 ### Example 1: Create a PSRoutingRuleObject for Front Door creation with a forwarding rule
 ```powershell
-PS C:\> New-AzFrontDoorRoutingRuleObject -Name $routingRuleName -FrontDoorName $frontDoorName -ResourceGroupName $rgname -FrontendEndpointName "frontendEndpoint1" -BackendPoolName "backendPool1" 
+New-AzFrontDoorRoutingRuleObject -Name $routingRuleName -FrontDoorName $frontDoorName -ResourceGroupName $rgname -FrontendEndpointName "frontendEndpoint1" -BackendPoolName "backendPool1"
+```
 
+```output
 FrontendEndpointIds          : {/subscriptions/{subid}/resourceGroups/{rgname}/pro
                                viders/Microsoft.Network/frontDoors/{frontdoorname}/FrontendEndpoints/frontendEndpoint1}
 AcceptedProtocols            : {Http, Https}
@@ -57,12 +59,14 @@ Type                         :
 
 ### Example 2: Create a PSRoutingRuleObject for Front Door creation with a redirect rule
 ```powershell
-PS C:\> $customHost = "www.contoso.com"
-PS C:\> $customPath = "/images/contoso.png"
-PS C:\> $queryString = "field1=value1&field2=value2"
-PS C:\> $destinationFragment = "section-header-2"
-PS C:\> New-AzFrontDoorRoutingRuleObject -Name $routingRuleName -FrontDoorName $frontDoorName -ResourceGroupName $rgname -FrontendEndpointName "frontendEndpoint1" -CustomHost $customHost -CustomPath $customPath -CustomQueryString $queryString -CustomFragment $destinationFragment
+$customHost = "www.contoso.com"
+$customPath = "/images/contoso.png"
+$queryString = "field1=value1&field2=value2"
+$destinationFragment = "section-header-2"
+New-AzFrontDoorRoutingRuleObject -Name $routingRuleName -FrontDoorName $frontDoorName -ResourceGroupName $rgname -FrontendEndpointName "frontendEndpoint1" -CustomHost $customHost -CustomPath $customPath -CustomQueryString $queryString -CustomFragment $destinationFragment
+```
 
+```output
 FrontendEndpointIds          : {/subscriptions/{subid}/resourceGroups/{rgname}/pro
                                viders/Microsoft.Network/frontDoors/{frontdoorname}/FrontendEndpoints/frontendEndpoint1}
 AcceptedProtocols            : {Http, Https}
@@ -174,7 +178,7 @@ Accept wildcard characters: False
 ```
 
 ### -CustomQueryString
-The set of query strings to be placed in the redirect URL. Setting this value would replace any existing query string; leave empty to preserve the incoming query string. Query string must be in <key>=<value> format. The first ? and & will be added automatically so do not include them in the front, but do separate multiple query strings with &.
+The set of query strings to be placed in the redirect URL. Setting this value would replace any existing query string; leave empty to preserve the incoming query string. Query string must be in `<key>=<value>` format. The first ? and & will be added automatically so do not include them in the front, but do separate multiple query strings with &.
 
 ```yaml
 Type: System.String
@@ -221,7 +225,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableCaching
-Whether to enable caching for this route. 
+Whether to enable caching for this route.
 Default value is false
 
 ```yaml
@@ -315,7 +319,7 @@ Accept wildcard characters: False
 ```
 
 ### -PatternToMatch
-The route patterns of the rule,  Must not have any * except possibly after the final / at the end of the path. 
+The route patterns of the rule,  Must not have any * except possibly after the final / at the end of the path.
 Default value is /*
 
 ```yaml

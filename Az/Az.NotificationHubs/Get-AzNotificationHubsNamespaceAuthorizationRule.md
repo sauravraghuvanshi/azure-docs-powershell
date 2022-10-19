@@ -38,15 +38,15 @@ To get information about the namespace itself, use Get-AzNotificationHubsNamespa
 ## EXAMPLES
 
 ### Example 1: Get information about all authorization rules assigned to namespaces
-```
-PS C:\>Get-AzNotificationHubsNamespaceAuthorizationRule -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup"
+```powershell
+Get-AzNotificationHubsNamespaceAuthorizationRule -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup"
 ```
 
 This command gets information about all the authorization rules assigned to both the namespace ContosoNamespace and the ContosoNotificationsGroup resource group.
 
 ### Example 2: Get information about an authorization rule
-```
-PS C:\>Get-AzNotificationHubsNamespaceAuthorizationRule -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup" -AuthorizationRule "ListenRule"
+```powershell
+Get-AzNotificationHubsNamespaceAuthorizationRule -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup" -AuthorizationRule "ListenRule"
 ```
 
 This command gets information about a single namespace authorization rule named ListenRule.

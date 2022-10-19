@@ -1,48 +1,77 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.Reservations.dll-Help.xml
+external help file: 
 Module Name: Az.Reservations
 online version: https://docs.microsoft.com/powershell/module/az.reservations/new-azreservation
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Reservations/Reservations/help/New-AzReservation.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Reservations/Reservations/help/New-AzReservation.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Reservations/help/New-AzReservation.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Reservations/help/New-AzReservation.md
 ---
 
 # New-AzReservation
 
 ## SYNOPSIS
-Purchase a reservation
+Purchase `ReservationOrder` and create resource under the specified URI.
 
 ## SYNTAX
 
+### PurchaseExpanded (Default)
 ```
-New-AzReservation -ReservationOrderId <String> -ReservedResourceType <String> -Sku <String>
- [-Location <String>] -BillingScopeId <String> -Term <String> [-BillingPlan <String>] -Quantity <Int32>
- -DisplayName <String> -AppliedScopeType <String> [-AppliedScope <String>] [-Renew <Boolean>]
- [-InstanceFlexibility <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+New-AzReservation -ReservationOrderId <String> [-AppliedScope <String[]>]
+ [-AppliedScopeType <AppliedScopeType>] [-BillingPlan <ReservationBillingPlan>] [-BillingScopeId <String>]
+ [-DisplayName <String>] [-InstanceFlexibility <InstanceFlexibility>] [-Location <String>] [-Quantity <Int32>]
+ [-Renew] [-ReservedResourceType <ReservedResourceType>] [-Sku <String>] [-Term <ReservationTerm>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Purchase
+```
+New-AzReservation -ReservationOrderId <String> -Body <IPurchaseRequest> [-DefaultProfile <PSObject>] [-AsJob]
+ [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### PurchaseViaIdentity
+```
+New-AzReservation -InputObject <IReservationsIdentity> -Body <IPurchaseRequest> [-DefaultProfile <PSObject>]
+ [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### PurchaseViaIdentityExpanded
+```
+New-AzReservation -InputObject <IReservationsIdentity> [-AppliedScope <String[]>]
+ [-AppliedScopeType <AppliedScopeType>] [-BillingPlan <ReservationBillingPlan>] [-BillingScopeId <String>]
+ [-DisplayName <String>] [-InstanceFlexibility <InstanceFlexibility>] [-Location <String>] [-Quantity <Int32>]
+ [-Renew] [-ReservedResourceType <ReservedResourceType>] [-Sku <String>] [-Term <ReservationTerm>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Purchase a reservation Instance and get benefit
+Purchase `ReservationOrder` and create resource under the specified URI.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Create a new reservation
 ```powershell
-PS C:\> New-AzReservation -ReservationOrderId "112382d9-9af7-4fd5-b136-b71f0a69a1d0" -ReservedResourceType "VirtualMachines" [-Sku "standard b1"] -Location "centralus"
--BillingScopeId "/subscriptions/79c182d9-9af7-4fd5-b136-b71f0a69a1d0" -Term "P1Y" [-BillingPlan "Monthly"] -Quantity 2 [-DisplayName "demo"] -AppliedScopeType "Shared" [-AppliedScopes ""]
+New-AzReservation -AppliedScopeType 'Shared' -BillingPlan 'Upfront' -billingScopeId '/subscriptions/b0f278e1-1f18-4378-84d7-b44dfa708665' -DisplayName 'TestVm2222' -Location 'westus' -Quantity 1 -ReservedResourceType 'VirtualMachines' -Sku 'Standard_b1ls' -Term 'P1Y' -ReservationOrderId '846655fa-d9e7-4fb8-9512-3ab7367352f1'
 ```
 
-After calculate price, customer could purchase that RI provide by calculatePrice
+```output
+ReservationOrderId                   DisplayName Term State     Quantity
+------------------                   ----------- ---- -----     --------
+846655fa-d9e7-4fb8-9512-3ab7367352f1 TestVm2222  P1Y  Succeeded 1
+```
+
+Proceed reservations purchase with reservation order ID obtained from Get-AzReservationQuote.
+This is a long running POST operation which can take around 10ish mins.
 
 ## PARAMETERS
 
 ### -AppliedScope
-Subscription that the benefit will be applied. Required if --applied-scope-type is Single. Do not specify if --applied-scope-type is Shared.
+List of the subscriptions that the benefit will be applied.
+Do not specify if AppliedScopeType is Shared.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: System.String[]
+Parameter Sets: PurchaseExpanded, PurchaseViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -53,14 +82,29 @@ Accept wildcard characters: False
 ```
 
 ### -AppliedScopeType
-Type of the Applied Scope to update the reservation with "Single" or "Shared"
+Type of the Applied Scope.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Azure.PowerShell.Cmdlets.Reservations.Support.AppliedScopeType
+Parameter Sets: PurchaseExpanded, PurchaseViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AsJob
+Run the command as a job
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -68,11 +112,11 @@ Accept wildcard characters: False
 ```
 
 ### -BillingPlan
-The billing plan options available for this SKU. "Monthly" or "Upfront"
+Represent the billing plans.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: Microsoft.Azure.PowerShell.Cmdlets.Reservations.Support.ReservationBillingPlan
+Parameter Sets: PurchaseExpanded, PurchaseViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -83,17 +127,33 @@ Accept wildcard characters: False
 ```
 
 ### -BillingScopeId
-Subscription that will be charged for purchasing Reservation.
+Subscription that will be charged for purchasing Reservation
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: PurchaseExpanded, PurchaseViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Body
+.
+To construct, see NOTES section for BODY properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.Reservations.Models.Api20220301.IPurchaseRequest
+Parameter Sets: Purchase, PurchaseViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -101,9 +161,9 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -113,26 +173,43 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Friendly name for user to easily identified the reservation.
+Friendly name of the Reservation
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: PurchaseExpanded, PurchaseViaIdentityExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InstanceFlexibility
-{{ Fill InstanceFlexibility Description }}
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: Microsoft.Azure.PowerShell.Cmdlets.Reservations.Models.IReservationsIdentity
+Parameter Sets: PurchaseViaIdentity, PurchaseViaIdentityExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -InstanceFlexibility
+Turning this on will apply the reservation discount to other VMs in the same VM size group.
+Only specify for VirtualMachines reserved resource type.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.Reservations.Support.InstanceFlexibility
+Parameter Sets: PurchaseExpanded, PurchaseViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -143,10 +220,25 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Location that the SKU is available.
+The Azure Region where the reserved resource lives.
 
 ```yaml
 Type: System.String
+Parameter Sets: PurchaseExpanded, PurchaseViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoWait
+Run the command asynchronously
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -158,14 +250,14 @@ Accept wildcard characters: False
 ```
 
 ### -Quantity
-Quantity of product for calculating price or purchasing.
+Quantity of the SKUs that are part of the Reservation.
 
 ```yaml
-Type: System.Nullable`1[System.Int32]
-Parameter Sets: (All)
+Type: System.Int32
+Parameter Sets: PurchaseExpanded, PurchaseViaIdentityExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -173,11 +265,11 @@ Accept wildcard characters: False
 ```
 
 ### -Renew
-Set this to true will automatically purchase a new reservation on the expiration date time.
+Setting this to true will automatically purchase a new reservation on the expiration date time.
 
 ```yaml
-Type: System.Nullable`1[System.Boolean]
-Parameter Sets: (All)
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: PurchaseExpanded, PurchaseViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -188,11 +280,11 @@ Accept wildcard characters: False
 ```
 
 ### -ReservationOrderId
-Id of reservation order to purchase, generate by az reservations reservation-order calculate.
+Order Id of the reservation
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Purchase, PurchaseExpanded
 Aliases:
 
 Required: True
@@ -203,14 +295,14 @@ Accept wildcard characters: False
 ```
 
 ### -ReservedResourceType
-Type of the resource for which the skus should be provided.
+The type of the resource that is being reserved.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: Microsoft.Azure.PowerShell.Cmdlets.Reservations.Support.ReservedResourceType
+Parameter Sets: PurchaseExpanded, PurchaseViaIdentityExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -218,14 +310,14 @@ Accept wildcard characters: False
 ```
 
 ### -Sku
-Sku name
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: PurchaseExpanded, PurchaseViaIdentityExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -233,15 +325,14 @@ Accept wildcard characters: False
 ```
 
 ### -Term
-Available reservation terms for this resource.
-
+Represent the term of Reservation.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: Microsoft.Azure.PowerShell.Cmdlets.Reservations.Support.ReservationTerm
+Parameter Sets: PurchaseExpanded, PurchaseViaIdentityExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -264,7 +355,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -283,12 +375,42 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
+### Microsoft.Azure.PowerShell.Cmdlets.Reservations.Models.Api20220301.IPurchaseRequest
+
+### Microsoft.Azure.PowerShell.Cmdlets.Reservations.Models.IReservationsIdentity
 
 ## OUTPUTS
 
-### Microsoft.Azure.Management.Reservations.Models.ReservationOrderResponse
+### Microsoft.Azure.PowerShell.Cmdlets.Reservations.Models.Api20220301.IReservationOrderResponse
 
 ## NOTES
 
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+`BODY <IPurchaseRequest>`: .
+  - `[AppliedScopeType <AppliedScopeType?>]`: Type of the Applied Scope.
+  - `[AppliedScopes <String[]>]`: List of the subscriptions that the benefit will be applied. Do not specify if AppliedScopeType is Shared.
+  - `[BillingPlan <ReservationBillingPlan?>]`: Represent the billing plans.
+  - `[BillingScopeId <String>]`: Subscription that will be charged for purchasing Reservation
+  - `[DisplayName <String>]`: Friendly name of the Reservation
+  - `[InstanceFlexibility <InstanceFlexibility?>]`: Turning this on will apply the reservation discount to other VMs in the same VM size group. Only specify for VirtualMachines reserved resource type.
+  - `[Location <String>]`: The Azure Region where the reserved resource lives.
+  - `[Quantity <Int32?>]`: Quantity of the SKUs that are part of the Reservation.
+  - `[Renew <Boolean?>]`: Setting this to true will automatically purchase a new reservation on the expiration date time.
+  - `[ReservedResourceType <ReservedResourceType?>]`: The type of the resource that is being reserved.
+  - `[Sku <String>]`: 
+  - `[Term <ReservationTerm?>]`: Represent the term of Reservation.
+
+`INPUTOBJECT <IReservationsIdentity>`: Identity Parameter
+  - `[Id <String>]`: Resource identity path
+  - `[ReservationId <String>]`: Id of the Reservation Item
+  - `[ReservationOrderId <String>]`: Order Id of the reservation
+  - `[SubscriptionId <String>]`: Id of the subscription
+
 ## RELATED LINKS
+

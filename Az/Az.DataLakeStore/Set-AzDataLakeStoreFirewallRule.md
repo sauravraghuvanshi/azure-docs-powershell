@@ -27,8 +27,8 @@ The **Set-AzDataLakeStoreFirewallRule** cmdlet modifies the specified firewall r
 ## EXAMPLES
 
 ### Example 1: Update the start and end IP range for a firewall rule
-```
-PS C:\> Set-AzDataLakeStoreFirewallRule -AccountName "ContosoADL" -Name MyFirewallRule -StartIpAddress "127.0.0.1" -EndIpAddress "127.0.0.2"
+```powershell
+Set-AzDataLakeStoreFirewallRule -AccountName "ContosoADL" -Name MyFirewallRule -StartIpAddress "127.0.0.1" -EndIpAddress "127.0.0.2"
 ```
 
 Updates the firewall rule "MyFirewallRule" in account "ContosoADL" to have a range of 127.0.0.1 - 127.0.0.2

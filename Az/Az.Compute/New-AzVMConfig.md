@@ -20,8 +20,10 @@ Creates a configurable virtual machine object.
 New-AzVMConfig [-VMName] <String> [-VMSize] <String> [[-AvailabilitySetId] <String>] [[-LicenseType] <String>]
  [-Zone <String[]>] [-ProximityPlacementGroupId <String>] [-HostId <String>] [-VmssId <String>]
  [-MaxPrice <Double>] [-EvictionPolicy <String>] [-Priority <String>] [-Tags <Hashtable>] [-EnableUltraSSD]
- [-EncryptionAtHost] [-CapacityReservationGroupId <String>] [-UserData <String>] [-PlatformFaultDomain <Int32>]
- [-HibernationEnabled] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [-EncryptionAtHost] [-CapacityReservationGroupId <String>] [-ImageReferenceId <String>]
+ [-DiskControllerType <String>] [-UserData <String>] [-PlatformFaultDomain <Int32>] [-HibernationEnabled]
+ [-vCPUCountAvailable <Int32>] [-vCPUCountPerCore <Int32>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
 ```
 
 ### ExplicitIdentityParameterSet
@@ -30,20 +32,29 @@ New-AzVMConfig [-VMName] <String> [-VMSize] <String> [[-AvailabilitySetId] <Stri
  [-IdentityType] <ResourceIdentityType> [-IdentityId <String[]>] [-Zone <String[]>]
  [-ProximityPlacementGroupId <String>] [-HostId <String>] [-VmssId <String>] [-MaxPrice <Double>]
  [-EvictionPolicy <String>] [-Priority <String>] [-Tags <Hashtable>] [-EnableUltraSSD] [-EncryptionAtHost]
- [-CapacityReservationGroupId <String>] [-UserData <String>] [-PlatformFaultDomain <Int32>]
- [-HibernationEnabled] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+ [-CapacityReservationGroupId <String>] [-ImageReferenceId <String>] [-DiskControllerType <String>]
+ [-UserData <String>] [-PlatformFaultDomain <Int32>] [-HibernationEnabled] [-vCPUCountAvailable <Int32>]
+ [-vCPUCountPerCore <Int32>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **New-AzVMConfig** cmdlet creates a configurable local virtual machine object for Azure.
-Other cmdlets can be used to configure a virtual machine object, such as Set-AzVMOperatingSystem, Set-AzVMSourceImage, Add-AzVMNetworkInterface, and Set-AzVMOSDisk.
+The **New-AzVMConfig** cmdlet creates a configurable local virtual machine object for Azure. <br>
+
+The following cmdlets are used to set different properties of the virtual machine object: <br>
+- **[Add-AzVMNetworkInterface](https://learn.microsoft.com/en-us/powershell/module/az.compute/add-azvmnetworkinterface)** to set the network profile.<br>
+- **[Set-AzVMOperatingSystem](https://learn.microsoft.com/en-us/powershell/module/az.compute/set-azvmoperatingsystem)** to set the OS profile. <br>
+- **[Set-AzVMSourceImage](https://learn.microsoft.com/en-us/powershell/module/az.compute/set-azvmsourceimage)** to set the source image.<br>
+- **[Set-AzVMOSDisk](https://learn.microsoft.com/en-us/powershell/module/az.compute/set-azvmosdisk)** to set the OS disk (storage profile).<br>
+- **[Get-AzComputeResourceSku](https://docs.microsoft.com/en-us/powershell/module/az.compute/get-azcomputeresourcesku)** can also be used to find out available virtual machine sizes for your subscription and region.<br>
+<br>
+See [Quickstart: Create a Windows virtual machine in Azure with PowerShell](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-powershell) for tutorial. <br>
 
 ## EXAMPLES
 
 ### Example 1: Create a virtual machine object
-```
-PS C:\> $AvailabilitySet = Get-AzAvailabilitySet -ResourceGroupName "ResourceGroup11" -Name "AvailabilitySet03"
-PS C:\> $VirtualMachine = New-AzVMConfig -VMName "VirtualMachine07" -VMSize "Standard_A1" -AvailabilitySetID $AvailabilitySet.Id
+```powershell
+$AvailabilitySet = Get-AzAvailabilitySet -ResourceGroupName "ResourceGroup11" -Name "AvailabilitySet03"
+$VirtualMachine = New-AzVMConfig -VMName "VirtualMachine07" -VMSize "Standard_A1" -AvailabilitySetID $AvailabilitySet.Id
 ```
 
 The first command gets the availability set named AvailabilitySet03 in the resource group named ResourceGroup11, and then stores that object in the $AvailabilitySet variable.
@@ -97,6 +108,21 @@ The credentials, account, tenant, and subscription used for communication with a
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DiskControllerType
+Specifies the disk controller type configured for the VM and VirtualMachineScaleSet. This property is only supported for virtual machines whose operating system disk and VM sku supports Generation 2 (https://docs.microsoft.com/en-us/azure/virtual-machines/generation-2), please check the HyperVGenerations capability returned as part of VM sku capabilities in the response of Microsoft.Compute SKUs api for the region contains V2 (https://docs.microsoft.com/rest/api/compute/resourceskus/list) . <br> For more information about Disk Controller Types supported please refer to https://aka.ms/azure-diskcontrollertypes.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
@@ -211,6 +237,21 @@ Accepted values: SystemAssigned, UserAssigned, SystemAssignedUserAssigned, None
 
 Required: True
 Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ImageReferenceId
+Specified the shared gallery image unique id for vm deployment. This can be fetched from shared gallery image GET call.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -331,6 +372,36 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -vCPUCountAvailable
+Specifies the number of vCPUs available for the VM. When this property is not specified in the request body the default behavior is to set it to the value of vCPUs available for that VM size exposed in api response of [List all available virtual machine sizes in a region](https://docs.microsoft.com/en-us/rest/api/compute/resource-skus/list).
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -vCPUCountPerCore
+Specifies the vCPU to physical core ratio. When this property is not specified in the request body the default behavior is set to the value of vCPUsPerCore for the VM Size exposed in api response of [List all available virtual machine sizes in a region](https://docs.microsoft.com/en-us/rest/api/compute/resource-skus/list). Setting this property to 1 also means that hyper-threading is disabled.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### -VMName
 Specifies a name for the virtual machine.
 
@@ -347,7 +418,7 @@ Accept wildcard characters: False
 ```
 
 ### -VMSize
-Specifies the size for the virtual machine.
+Specifies the size for the virtual machine. [Get-AzComputeResourceSku](https://docs.microsoft.com/en-us/powershell/module/az.compute/get-azcomputeresourcesku) can be used to find out available sizes for your subscription and region. 
 
 ```yaml
 Type: System.String

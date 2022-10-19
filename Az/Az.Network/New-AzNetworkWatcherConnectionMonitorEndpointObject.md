@@ -56,6 +56,20 @@ New-AzNetworkWatcherConnectionMonitorEndpointObject -Name <String> [-MMAWorkspac
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
+### AzureVMSS
+```
+New-AzNetworkWatcherConnectionMonitorEndpointObject -Name <String> [-AzureVMSS] -ResourceId <String>
+ -IncludeItem <PSNetworkWatcherConnectionMonitorEndpointScopeItem[]>
+ [-ExcludeItem <PSNetworkWatcherConnectionMonitorEndpointScopeItem[]>] [-CoverageLevel <String>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### AzureArcVM
+```
+New-AzNetworkWatcherConnectionMonitorEndpointObject -Name <String> [-AzureArcVM] -ResourceId <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 New-AzNetworkWatcherConnectionMonitorEndpointObject cmdlet creates connection monitor endpoint.
 
@@ -63,11 +77,12 @@ New-AzNetworkWatcherConnectionMonitorEndpointObject cmdlet creates connection mo
 
 ### Example 1
 ```powershell
-PS C:\>$MySrcResourceId1 = "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/myresourceGroup/providers/Microsoft.OperationalInsights/workspaces/myworkspace"
-PS C:\>$SrcEndpointScopeItem1 = New-AzNetworkWatcherConnectionMonitorEndpointScopeItemObject -Address "WIN-P0HGNDO2S1B"
-PS C:\>$SourceEndpointObject1 = New-AzNetworkWatcherConnectionMonitorEndpointObject -Name "workspaceEndpoint" -MMAWorkspaceMachine -ResourceId $MySrcResourceId1 -IncludeItem $SrcEndpointScopeItem1
+$MySrcResourceId1 = "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/myresourceGroup/providers/Microsoft.OperationalInsights/workspaces/myworkspace"
+$SrcEndpointScopeItem1 = New-AzNetworkWatcherConnectionMonitorEndpointScopeItemObject -Address "WIN-P0HGNDO2S1B"
+$SourceEndpointObject1 = New-AzNetworkWatcherConnectionMonitorEndpointObject -Name "workspaceEndpoint" -MMAWorkspaceMachine -ResourceId $MySrcResourceId1 -IncludeItem $SrcEndpointScopeItem1
 ```
 
+```output
 Name       : workspaceEndpoint
 Type       : MMAWorkspaceMachine
 ResourceId : /subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/myresourceGroup/providers/Microsoft.OperationalInsights/workspaces/myworkspace
@@ -79,7 +94,7 @@ Scope     : {
                  }
                ]
              }
-
+```
 ## PARAMETERS
 
 ### -Address
@@ -160,7 +175,7 @@ Supported values are Default, Low, BelowAverage, Average, AboveAvergae, Full.
 
 ```yaml
 Type: System.String
-Parameter Sets: AzureVNet, AzureSubnet, MMAWorkspaceNetwork
+Parameter Sets: AzureVNet, AzureSubnet, MMAWorkspaceNetwork, AzureVMSS
 Aliases:
 
 Required: False
@@ -190,7 +205,7 @@ List of items which need to be excluded from endpoint scope.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcherConnectionMonitorEndpointScopeItem[]
-Parameter Sets: AzureVNet, AzureSubnet, MMAWorkspaceNetwork
+Parameter Sets: AzureVNet, AzureSubnet, MMAWorkspaceNetwork, AzureVMSS
 Aliases:
 
 Required: False
@@ -220,7 +235,7 @@ List of items which need to be included into endpont scope.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcherConnectionMonitorEndpointScopeItem[]
-Parameter Sets: AzureVNet, MMAWorkspaceMachine
+Parameter Sets: AzureVNet, MMAWorkspaceMachine, AzureVMSS
 Aliases:
 
 Required: False
@@ -263,6 +278,36 @@ MMA Workspace Network endpoint switch.
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: MMAWorkspaceNetwork
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AzureVMSS
+Azure Virtual Machine Scale sets.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: AzureVMSS
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AzureArcVM
+AzureArc VM endpoint switch
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: AzureArcVM
 Aliases:
 
 Required: True

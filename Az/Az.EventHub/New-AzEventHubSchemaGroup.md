@@ -1,7 +1,7 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.EventHub.dll-Help.xml
+external help file: Az.EventHub-help.xml
 Module Name: Az.EventHub
-online version: 
+online version: https://docs.microsoft.com/powershell/module/az.eventhub/new-azeventhubschemagroup
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/EventHub/EventHub/help/New-AzEventHubSchemaGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/EventHub/EventHub/help/New-AzEventHubSchemaGroup.md
@@ -10,36 +10,38 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # New-AzEventHubSchemaGroup
 
 ## SYNOPSIS
-Creates schema group in a namespace.
 
 ## SYNTAX
 
 ```
-New-AzEventHubSchemaGroup [-ResourceGroupName] <String> [-Namespace] <String> [-Name] <String>
- -SchemaCompatibility <String> -SchemaType <String> [-GroupProperty <Hashtable>]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzEventHubSchemaGroup -Name <String> -NamespaceName <String> -ResourceGroupName <String>
+ [-SubscriptionId <String>] [-GroupProperty <Hashtable>] [-SchemaCompatibility <SchemaCompatibility>]
+ [-SchemaType <SchemaType>] [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The New-AzEventHubSchemaGroup cmdlet creates schema group in a namespace.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Create EventHub schema group
 ```powershell
-PS C:\>  New-AzEventHubSchemaGroup -ResourceGroupName myresourcegroup -Namespace mynamespace -Name myschemagroup -SchemaCompatibility Forward -SchemaType Avro -GroupProperty @{'key1'='value1';'key2'='value2'}
-
-
-Id                  : /subscriptions/{subscriptionid}/resourceGroups/myresourcegroup/providers/Microsoft.EventHub/namespaces/mynamespace/schemagroups/myschemagroup
-Name                : myschemagroup
-Location            : East US
-Type                : Microsoft.EventHub/Namespaces/SchemaGroups
-SchemaCompatibility : Forward
-SchemaType          : Avro
-GroupProperties     : {key1:value1, key2:value2}
+$schemaGroup = New-AzEventHubSchemaGroup -ResourceGroupName myResourceGroup -NamespaceName myNamespace -Name mySchemaGroup -SchemaCompatibility Backward -SchemaType Avro
 ```
 
-Create schema group \`myschemagroup\` in the namespace \`mynamespace\` in resource group \`myresourcegroup\`
+```output
+CreatedAtUtc                 : 9/14/2022 6:05:47 AM
+ETag                         : {etag}
+GroupProperty                : {
+                               }
+Id                           : /subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.EventHub/namespaces/myNamespace/schemagroups/mySchemaGroup
+Location                     : Central US
+Name                         : mySchemaGroup
+ResourceGroupName            : myResourceGroup
+SchemaCompatibility          : Backward
+SchemaType                   : Avro
+```
+
+Create a new schema group `mySchemaGroup` for namespace `myNamespace`.
 
 ## PARAMETERS
 
@@ -47,9 +49,9 @@ Create schema group \`myschemagroup\` in the namespace \`mynamespace\` in resour
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: System.Management.Automation.PSObject
 Parameter Sets: (All)
-Aliases: AzContext, AzureRmContext, AzureCredential
+Aliases: AzureRMContext, AzureCredential
 
 Required: False
 Position: Named
@@ -59,7 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -GroupProperty
-Group property of eventhub
+dictionary object for SchemaGroup group properties
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -69,12 +71,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Name
-Name of Schema Group
+The Schema Group name
 
 ```yaml
 Type: System.String
@@ -82,29 +84,29 @@ Parameter Sets: (All)
 Aliases: SchemaGroupName
 
 Required: True
-Position: 2
+Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Namespace
-Namespace Name
+### -NamespaceName
+The Namespace name
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases: NamespaceName
+Aliases:
 
 Required: True
-Position: 1
+Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Resource Group Name
+Name of the resource group within the azure subscription.
 
 ```yaml
 Type: System.String
@@ -112,42 +114,55 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 0
+Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -SchemaCompatibility
-Compatibility of Schema.
-Forward, Backward
+.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Azure.PowerShell.Cmdlets.EventHub.Support.SchemaCompatibility
 Parameter Sets: (All)
 Aliases:
-Accepted values: None, Forward, Backward
 
-Required: True
+Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -SchemaType
-Type of Schema
+.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.EventHub.Support.SchemaType
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubscriptionId
+Subscription credentials that uniquely identify a Microsoft Azure subscription.
+The subscription ID forms part of the URI for every service call.
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
 Aliases:
-Accepted values: Avro
 
-Required: True
+Required: False
 Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -187,14 +202,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String
-
-### System.Collections.Hashtable
-
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.EventHub.Models.PSEventHubsSchemaRegistryAttributes
+### Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.Api202201Preview.ISchemaGroup
 
 ## NOTES
+
+ALIASES
 
 ## RELATED LINKS

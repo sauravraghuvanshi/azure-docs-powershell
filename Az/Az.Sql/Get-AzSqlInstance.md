@@ -52,7 +52,10 @@ Specify the name of an instance to see information for only that instance.
 
 ### Example 1: Get all instances assigned to a resource group
 ```powershell
-PS C:\> Get-AzSqlInstance -ResourceGroupName "ResourceGroup01"
+Get-AzSqlInstance -ResourceGroupName "ResourceGroup01"
+```
+
+```output
 Location                 : westcentralus
 Id                       : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/managedInstances/managedInstance1
 ResourceGroupName        : resourcegroup01
@@ -91,7 +94,10 @@ This command gets information about all instances assigned to the resource group
 
 ### Example 2: Get information about an  instance
 ```powershell
-PS C:\> Get-AzSqlInstance -Name "managedInstance1" -ResourceGroupName "ResourceGroup01"
+Get-AzSqlInstance -Name "managedInstance1" -ResourceGroupName "ResourceGroup01"
+```
+
+```output
 Location                 : westcentralus
 Id                       : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/managedInstances/managedInstance1
 ResourceGroupName        : resourcegroup01
@@ -114,7 +120,10 @@ This command gets information about the instance named managedInstance1.
 
 ### Example 3: Get all instances assigned to a resource group using filtering
 ```powershell
-PS C:\> Get-AzSqlInstance -ResourceGroupName "ResourceGroup01" -Name "managedInstance*"
+Get-AzSqlInstance -ResourceGroupName "ResourceGroup01" -Name "managedInstance*"
+```
+
+```output
 Location                 : westcentralus
 Id                       : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/managedInstances/managedInstance1
 ResourceGroupName        : resourcegroup01
@@ -154,7 +163,10 @@ This command gets information about all instances assigned to the resource group
 
 ### Example 4: Get all instances within an instance pool
 ```powershell
-PS C:\> Get-AzSqlInstance -ResourceGroupName "ResourceGroup01" -InstancePoolName "instancePool0"
+Get-AzSqlInstance -ResourceGroupName "ResourceGroup01" -InstancePoolName "instancePool0"
+```
+
+```output
 Location                 : westcentralus
 Id                       : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/managedInstances/managedInstance1
 ResourceGroupName        : resourcegroup01
@@ -196,8 +208,11 @@ This command gets information about all instances within the instance pool "inst
 
 ### Example 5: Get all instances within an instance pool using instance pool object
 ```powershell
-PS C:\> $instancePool = Get-AzSqlInstancePool -ResourceGroupName "ResourceGroup01" -Name "instancePool0"
-PS C:\> Get-AzSqlInstance -InstancePool $instancePool
+$instancePool = Get-AzSqlInstancePool -ResourceGroupName "ResourceGroup01" -Name "instancePool0"
+Get-AzSqlInstance -InstancePool $instancePool
+```
+
+```output
 Location                 : westcentralus
 Id                       : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/managedInstances/managedInstance1
 ResourceGroupName        : resourcegroup01
@@ -239,7 +254,10 @@ This command gets information about all instances within the instance pool "inst
 
 ### Example 6: Get all instances within an instance pool using instance pool resource identifier
 ```powershell
-PS C:\> Get-AzSqlInstance -InstancePoolResourceIdentifier "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/instancePools/instancePool0"
+Get-AzSqlInstance -InstancePoolResourceId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/instancePools/instancePool0"
+```
+
+```output
 Location                 : westcentralus
 Id                       : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/managedInstances/managedInstance1
 ResourceGroupName        : resourcegroup01
@@ -281,7 +299,10 @@ This command gets information about all instances within the instance pool "inst
 
 ### Example 7: Get a managed instance using its resource identifier
 ```powershell
-PS C:\> Get-AzSqlInstance -ResourceIdentifier "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/managedInstances/managedInstance1"
+Get-AzSqlInstance -ResourceId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/managedInstances/managedInstance1"
+```
+
+```output
 Location                 : westcentralus
 Id                       : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/managedInstances/managedInstance1
 ResourceGroupName        : resourcegroup01
@@ -304,8 +325,10 @@ ZoneRedundant            : false
 This command gets information about the instance named managedInstance1.
 
 ### Example 8: Get all instances assigned to a resource group with external administrator information
+<!-- Skip: Output cannot be splitted from code -->
 ```powershell
-PS C:\> $val = Get-AzSqlInstance -ResourceGroupName "ResourceGroup01" -ExpandActiveDirectoryAdministrator
+$val = Get-AzSqlInstance -ResourceGroupName "ResourceGroup01" -ExpandActiveDirectoryAdministrator
+
 Location                 : westcentralus
 Id                       : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/managedInstances/managedInstance1
 ResourceGroupName        : resourcegroup01
@@ -341,7 +364,7 @@ DnsZone                  : ad35cna0mw
 Administrators           : Microsoft.Azure.Management.Sql.Models.ManagedInstanceExternalAdministrator
 ZoneRedundant            : false
 
-PS C:\> $val.Administrators
+$val.Administrators
 AdministratorType         : ActiveDirectory
 PrincipalType             : Group
 Login                     : Dummy
@@ -360,8 +383,10 @@ AzureADOnlyAuthentication : True
 This command gets information about all instances assigned to the resource group ResourceGroup01. .
 
 ### Example 9: Get information about an instance with external administrator information
+<!-- Skip: Output cannot be splitted from code -->
 ```powershell
-PS C:\> $val = Get-AzSqlInstance -Name "managedInstance1" -ResourceGroupName "ResourceGroup01" -ExpandActiveDirectoryAdministrator
+$val = Get-AzSqlInstance -Name "managedInstance1" -ResourceGroupName "ResourceGroup01" -ExpandActiveDirectoryAdministrator
+
 Location                 : westcentralus
 Id                       : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/resourcegroup01/providers/Microsoft.Sql/managedInstances/managedInstance1
 ResourceGroupName        : resourcegroup01
@@ -380,7 +405,7 @@ DnsZone                  : ad35cna0mw
 Administrators           : Microsoft.Azure.Management.Sql.Models.ManagedInstanceExternalAdministrator
 ZoneRedundant            : false
 
-PS C:\> $val.Administrators
+$val.Administrators
 AdministratorType         : ActiveDirectory
 PrincipalType             : Group
 Login                     : Dummy

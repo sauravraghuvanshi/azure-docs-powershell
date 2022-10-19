@@ -51,7 +51,7 @@ Deletes the specified flow log resource.
 
 ### Example 1
 ```powershell
-PS C:\> Remove-AzNetworkWatcherFlowLog -Location eastus -Name pstest
+Remove-AzNetworkWatcherFlowLog -Location eastus -Name pstest
 ```
 
 ## PARAMETERS

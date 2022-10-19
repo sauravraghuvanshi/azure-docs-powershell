@@ -39,8 +39,10 @@ Update the DevSpaces controller to add tags.
 
 ### Example 1
 ```powershell
-PS C:\> Update-AzDevSpacesController -ResourceGroupName devSpaceResourceGroup -Name devSpaceControllerName -Tag @{ tagKey="tagValue"}
+Update-AzDevSpacesController -ResourceGroupName devSpaceResourceGroup -Name devSpaceControllerName -Tag @{ tagKey="tagValue"}
+```
 
+```output
 Name        Resource Group  Location  Provisioning State
 ----------  --------------  --------  ------------------
 devSpaceControllerName   devSpaceResourceGroup     eastus    Succeeded

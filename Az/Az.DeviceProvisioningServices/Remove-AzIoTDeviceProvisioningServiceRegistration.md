@@ -41,7 +41,7 @@ Delete a device registration in an Azure IoT Hub Device Provisioning Service.
 
 ### Example 1
 ```powershell
-PS C:\> Remove-AzIoTDeviceProvisioningServiceRegistration -ResourceGroupName "myresourcegroup" -DpsName "mydps" -RegistrationId "enroll1" -Passthru
+Remove-AzIoTDeviceProvisioningServiceRegistration -ResourceGroupName "myresourcegroup" -DpsName "mydps" -RegistrationId "enroll1" -Passthru
 ```
 
 Delete a device registration in an Azure IoT Hub Device Provisioning Service.

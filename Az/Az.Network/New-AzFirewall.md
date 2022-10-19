@@ -24,8 +24,8 @@ New-AzFirewall -Name <String> -ResourceGroupName <String> -Location <String>
  [-ThreatIntelWhitelist <PSAzureFirewallThreatIntelWhitelist>] [-PrivateRange <String[]>] [-EnableDnsProxy]
  [-DnsServer <String[]>] [-Tag <Hashtable>] [-Force] [-AsJob] [-Zone <String[]>] [-SkuName <String>]
  [-SkuTier <String>] [-VirtualHubId <String>] [-HubIPAddress <PSAzureFirewallHubIpAddresses>]
- [-FirewallPolicyId <String>] [-AllowActiveFTP] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-FirewallPolicyId <String>] [-AllowActiveFTP] [-EnableFatFlowLogging] [-EnableUDPLogOptimization]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### OldIpConfigurationParameterValues
@@ -37,8 +37,8 @@ New-AzFirewall -Name <String> -ResourceGroupName <String> -Location <String> -Vi
  [-ThreatIntelWhitelist <PSAzureFirewallThreatIntelWhitelist>] [-PrivateRange <String[]>] [-EnableDnsProxy]
  [-DnsServer <String[]>] [-Tag <Hashtable>] [-Force] [-AsJob] [-Zone <String[]>] [-SkuName <String>]
  [-SkuTier <String>] [-VirtualHubId <String>] [-HubIPAddress <PSAzureFirewallHubIpAddresses>]
- [-FirewallPolicyId <String>] [-AllowActiveFTP] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-FirewallPolicyId <String>] [-AllowActiveFTP] [-EnableFatFlowLogging] [-EnableUDPLogOptimization]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### IpConfigurationParameterValues
@@ -51,8 +51,8 @@ New-AzFirewall -Name <String> -ResourceGroupName <String> -Location <String> -Vi
  [-ThreatIntelWhitelist <PSAzureFirewallThreatIntelWhitelist>] [-PrivateRange <String[]>] [-EnableDnsProxy]
  [-DnsServer <String[]>] [-Tag <Hashtable>] [-Force] [-AsJob] [-Zone <String[]>] [-SkuName <String>]
  [-SkuTier <String>] [-VirtualHubId <String>] [-HubIPAddress <PSAzureFirewallHubIpAddresses>]
- [-FirewallPolicyId <String>] [-AllowActiveFTP] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-FirewallPolicyId <String>] [-AllowActiveFTP] [-EnableFatFlowLogging] [-EnableUDPLogOptimization]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -135,8 +135,8 @@ This example creates a Firewall with all available availability zones.
 ```powershell
 $rgName = "resourceGroupName"
 $vnet = Get-AzVirtualNetwork -Name "vnet" -ResourceGroupName $rgName
-$pip1 = New-AzPublicIpAddress -Name "AzFwPublicIp1" -ResourceGroupName "rg" -SkuName "AZFW_VNet" -SkuTier "Standard" -Location "centralus" -AllocationMethod Static
-$pip2 = New-AzPublicIpAddress -Name "AzFwPublicIp2" -ResourceGroupName "rg" -SkuName "AZFW_VNet" -SkuTier "Standard" -Location "centralus" -AllocationMethod Static
+$pip1 = New-AzPublicIpAddress -Name "AzFwPublicIp1" -ResourceGroupName "rg" -Sku "Basic" -Tier "Regional" -Location "centralus" -AllocationMethod Static
+$pip2 = New-AzPublicIpAddress -Name "AzFwPublicIp2" -ResourceGroupName "rg" -Sku "Basic" -Tier "Regional" -Location "centralus" -AllocationMethod Static
 New-AzFirewall -Name "azFw" -ResourceGroupName $rgName -Location centralus -VirtualNetwork $vnet -PublicIpAddress @($pip1, $pip2)
 ```
 
@@ -174,7 +174,7 @@ $rgName = "resourceGroupName"
 $vnet = Get-AzVirtualNetwork -ResourceGroupName $rgName -Name "vnet"
 $pip = Get-AzPublicIpAddress -ResourceGroupName $rgName -Name "publicIpName"
 
-$tiWhitelist = New-AzFirewallThreatIntelWhitelist -FQDN @("www.microsoft.com") -IpAddresses @("8.8.8.8")
+$tiWhitelist = New-AzFirewallThreatIntelWhitelist -FQDN @("www.microsoft.com") -IpAddress @("8.8.8.8")
 New-AzFirewall -Name "azFw" -ResourceGroupName $rgName -Location centralus -VirtualNetwork $vnet -PublicIpAddress $pip -ThreatIntelWhitelist $tiWhitelist
 ```
 
@@ -237,15 +237,15 @@ $rgName = "resourceGroupName"
 $vHub = Get-AzVirtualHub -Name "hub"
 $vHubId = $vHub.Id
 $fwpips = New-AzFirewallHubPublicIpAddress -Count 2
-$hubIpAddresses = New-AzFirewallHubIpAddress -PublicIPs $fwpips
-$fw=New-AzFirewall -Name "azFw" -ResourceGroupName $rgName -Location westus -SkuName AZFW_Hub -HubIPAddresses $hubIpAddresses -VirtualHubId $vHubId
+$hubIpAddresses = New-AzFirewallHubIpAddress -PublicIP $fwpips
+$fw=New-AzFirewall -Name "azFw" -ResourceGroupName $rgName -Location westus -SkuName AZFW_Hub -HubIPAddress $hubIpAddresses -VirtualHubId $vHubId
 ```
 
 This example creates a Firewall attached to virtual hub "hub" in the same resource group as the firewall.
 The Firewall will be assigned 2 public IPs that are created implicitly.
 
 ### Example 16:  Create a Firewall with Allow Active FTP.
-```
+```powershell
 $rgName = "resourceGroupName"
 $vnet = Get-AzVirtualNetwork -ResourceGroupName $rgName -Name "vnet"
 $pip = Get-AzPublicIpAddress -ResourceGroupName $rgName -Name "publicIpName"
@@ -360,6 +360,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -EnableUDPLogOptimization
+Enable UDP Log Optimization. By default it is false.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -FirewallPolicyId
 The firewall policy attached to the firewall
 
@@ -395,6 +410,21 @@ The ip addresses for the firewall attached to a virtual hub
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSAzureFirewallHubIpAddresses
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnableFatFlowLogging
+Enable Fat Flow Logging. By default it is false.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -563,7 +593,7 @@ The sku tier for firewall
 Type: System.String
 Parameter Sets: (All)
 Aliases:
-Accepted values: Standard, Premium
+Accepted values: Standard, Premium, Basic
 
 Required: False
 Position: Named

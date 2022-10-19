@@ -25,8 +25,8 @@ Deletes an IotHub.
 ## EXAMPLES
 
 ### Example 1 Remove an IotHub
-```
-PS C:\> Remove-AzIotHub -ResourceGroupName "myresourcegroup" -Name "myiothub"
+```powershell
+Remove-AzIotHub -ResourceGroupName "myresourcegroup" -Name "myiothub"
 ```
 
 Removes an IotHub named "myiothub"

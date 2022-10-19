@@ -7,48 +7,29 @@ content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CosmosD
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/CosmosDB/CosmosDB/help/New-AzManagedCassandraDataCenter.md
 ---
 
-# New-AzManagedCassandraDataCenter
+# New-AzManagedCassandraDatacenter
 
 ## SYNOPSIS
 Create a new Azure Managed Instances for Apache Cassandra data center.
 
 ## SYNTAX
 
-### NameParameterSet (Default)
+### ByNameParameterSet (Default)
 ```
-New-AzManagedCassandraDataCenter 
- -ResourceGroupName <String> 
- -ClusterName <String>
- -DataCenterName <String>
- -DelegatedSubnetId <String>
- -Location <String>
- -NodeCount <int>
- [-Tag <Hashtable>]
- [-Base64EncodedCassandraYamlFragment <String>]
- [-ManagedDiskCustomerKeyUri <String>]
- [-BackupStorageCustomerKeyUri <String>]
- [-Sku <String>]
- [-DiskCapacity <int>]
- [-UseAvailabilityZone]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+New-AzManagedCassandraDatacenter -Location <String> -DelegatedSubnetId <String> [-Sku <String>]
+ [-DiskCapacity <Int32>] [-ManagedDiskCustomerKeyUri <String>] [-UseAvailabilityZone]
+ -ResourceGroupName <String> -ClusterName <String> -DatacenterName <String> [-NodeCount <Int32>]
+ [-Base64EncodedCassandraYamlFragment <String>] [-BackupStorageCustomerKeyUri <String>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### ParentObjectParameterSet
+### ByParentObjectParameterSet
 ```
-New-AzManagedCassandraDataCenter 
- -ParentObject <PSClusterResource>
- -DataCenterName <String>
- -Location <String>
- -DelegatedSubnetId <String>
- -NodeCount <int>
- [-Tag <Hashtable>]
- [-Base64EncodedCassandraYamlFragment <String>]
- [-ManagedDiskCustomerKeyUri <String>]
- [-BackupStorageCustomerKeyUri <String>]
- [-Sku <String>]
- [-DiskCapacity <int>]
- [-UseAvailabilityZone]
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+New-AzManagedCassandraDatacenter -Location <String> -DelegatedSubnetId <String>
+ -ParentObject <PSClusterResource> [-Sku <String>] [-DiskCapacity <Int32>]
+ [-ManagedDiskCustomerKeyUri <String>] [-UseAvailabilityZone] [-NodeCount <Int32>]
+ [-Base64EncodedCassandraYamlFragment <String>] [-BackupStorageCustomerKeyUri <String>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -58,13 +39,13 @@ The **New-AzManagedCassandraDataCenter** cmdlet creates a new managed Cassandra 
 
 ### Example 1
 ```powershell
-PS C:\> New-AzManagedCassandraDataCenter `
- -ResourceGroupName {resourceGroupName} `
- -ClusterName {clusterName} `
- -DataCenterName {dataCenterName} `
- -DelegatedSubnetId {resourceId} `
- -Location {location} `
- -NodeCount {N}
+New-AzManagedCassandraDataCenter `
+ -ResourceGroupName "resourceGroupName" `
+ -ClusterName "clusterName" `
+ -DataCenterName "dataCenterName" `
+ -DelegatedSubnetId "resourceId" `
+ -Location "location" `
+ -NodeCount 3
 ```
 
 ## PARAMETERS
@@ -104,7 +85,22 @@ Name of the managed Cassandra cluster.
 
 ```yaml
 Type: System.String
-Parameter Sets: NameParameterSet
+Parameter Sets: ByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DatacenterName
+Managed Cassandra Datacenter Name.
+
+```yaml
+Type: System.String
+Parameter Sets: ByNameParameterSet
 Aliases:
 
 Required: True
@@ -135,6 +131,7 @@ The resource id of the virtual network subnet where managed Cassandra should att
 ```yaml
 Type: System.String
 Parameter Sets: (All)
+Aliases:
 
 Required: True
 Position: Named
@@ -147,11 +144,11 @@ Accept wildcard characters: False
 The number of data disks to connect to each node in the cluster.
 
 ```yaml
-Type: System.Int32
+Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: 4
 Accept pipeline input: False
@@ -192,11 +189,11 @@ Accept wildcard characters: False
 The number of nodes to create in this data center.
 
 ```yaml
-Type: System.Int32
+Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: 3
 Accept pipeline input: False
@@ -208,7 +205,7 @@ Cassandra cluster object to create a data center in.
 
 ```yaml
 Type: Microsoft.Azure.Commands.CosmosDB.Models.PSClusterResource
-Parameter Sets: ParentObjectParameterSet
+Parameter Sets: ByParentObjectParameterSet
 Aliases:
 
 Required: True
@@ -223,7 +220,7 @@ Name of resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: NameParameterSet
+Parameter Sets: ByNameParameterSet
 Aliases:
 
 Required: True
@@ -248,13 +245,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Tag
-Hashtable of tags to set on the data center resource.
+### -UseAvailabilityZone
+If set, allocate nodes in this data center using availability zones if they are supported in the region.
 
 ```yaml
-Type: System.Hashtable
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: True
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
 
 Required: False
 Position: Named
@@ -263,17 +275,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UseAvailabilityZone
-If set, allocate nodes in this data center using availability zones if they are supported in the region.
+### -WhatIf
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
-Type: System.Boolean
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: wi
 
 Required: False
 Position: Named
-Default value: True
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

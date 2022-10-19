@@ -40,14 +40,14 @@ See https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language for
 
 ### Example 1
 ```powershell
-PS C:\> Invoke-AzIotHubQuery -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -Query "select * from devices"
+Invoke-AzIotHubQuery -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -Query "select * from devices"
 ```
 
 Query all device twin data in an Azure IoT Hub.
 
 ### Example 2
 ```powershell
-PS C:\> Invoke-AzIotHubQuery -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -Query "select * from devices.modules where devices.deviceId = 'myDevice1'" -Top 2
+Invoke-AzIotHubQuery -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -Query "select * from devices.modules where devices.deviceId = 'myDevice1'" -Top 2
 ```
 
 Query top 2 module twin data on a target device.

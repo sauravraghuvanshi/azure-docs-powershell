@@ -33,7 +33,7 @@ The **Remove-AzAppServiceEnvironment** cmdlet removes an App Service Environment
 
 ### Example 1 : Delete an App Service Environment
 ```powershell
-PS C:\> Remove-AzAppServiceEnvironment -ResourceGroupName MyResourceGroup -Name MyAseName
+Remove-AzAppServiceEnvironment -ResourceGroupName MyResourceGroup -Name MyAseName
 ```
 
 Delete an App Service Environment

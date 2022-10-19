@@ -33,8 +33,10 @@ Get the access keys of the resource.
 
 ### Example 1: Get the access keys of a Web PubSub resource
 ```powershell
-PS C:\> Get-AzWebPubSubKey -ResourceGroupName psdemo -ResourceName psdemo-wps  | Format-List
+Get-AzWebPubSubKey -ResourceGroupName psdemo -ResourceName psdemo-wps  | Format-List
+```
 
+```output
 PrimaryConnectionString   : Endpoint=https://psdemo-wps.webpubsub.azure.com;AccessKey=********;Version=1.0;
 PrimaryKey                : ********
 SecondaryConnectionString : Endpoint=https://psdemo-wps.webpubsub.azure.com;AccessKey=********;Version=1.0;
@@ -45,9 +47,11 @@ The example gets the access keys of the Web PubSub resource and then pipes the r
 
 ### Example 2: Get the access keys of a Web PubSub resource via identity
 ```powershell
-PS C:\> $wps = Get-AzWebPubSub -ResourceGroupName psdemo -ResourceName psdemo-wps
-PS C:\> $wps | Get-AzWebPubSubKey | Format-List
+$wps = Get-AzWebPubSub -ResourceGroupName psdemo -ResourceName psdemo-wps
+$wps | Get-AzWebPubSubKey | Format-List
+```
 
+```output
 PrimaryConnectionString   : Endpoint=https://psdemo-wps.webpubsub.azure.com;AccessKey=********;Version=1.0;
 PrimaryKey                : ********
 SecondaryConnectionString : Endpoint=https://psdemo-wps.webpubsub.azure.com;AccessKey=********;Version=1.0;
@@ -187,7 +191,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IWebPubSubIdentity>: Identity Parameter
+INPUTOBJECT `<IWebPubSubIdentity>`: Identity Parameter
   - `[HubName <String>]`: The hub name.
   - `[Id <String>]`: Resource identity path
   - `[Location <String>]`: the region

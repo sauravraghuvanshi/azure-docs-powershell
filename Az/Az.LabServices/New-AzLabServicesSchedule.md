@@ -38,7 +38,7 @@ Operation to create or update a lab schedule.
 
 ### Example 1: Create a new schedule in a lab.
 ```powershell
-PS C:\>  New-AzLabServicesSchedule `
+New-AzLabServicesSchedule `
             -ResourceGroupName "Group Name" `
             -LabName "Lab Name" `
             -Name "Schedule Name" `
@@ -49,7 +49,9 @@ PS C:\>  New-AzLabServicesSchedule `
             -RecurrencePatternWeekDay @($((Get-Date).DayOfWeek)) `
             -RecurrencePatternExpirationDate $((Get-Date).AddDays(20)) `
             -TimeZoneId 'America/Los_Angeles'
+```
 
+```output
 Name
 ----
 Schedule Name
@@ -329,7 +331,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-LAB <Lab>: 
+LAB `<Lab>`: 
   - `Location <String>`: The geo-location where the resource lives
   - `[AdditionalCapabilityInstallGpuDriver <EnableState?>]`: Flag to pre-install dedicated GPU drivers.
   - `[AdminUserPassword <String>]`: The password for the user. This is required for the TemplateVM createOption.

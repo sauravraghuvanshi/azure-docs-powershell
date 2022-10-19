@@ -34,7 +34,7 @@ Gives SKU recommendations for Azure SQL offerings
 
 ### Example 1: Run SKU Recommendation on given SQL Server using connection string
 ```powershell
-PS C:\> Get-AzDataMigrationSkuRecommendation -DisplayResult
+Get-AzDataMigrationSkuRecommendation -DisplayResult
 ```
 
 ```output
@@ -63,7 +63,7 @@ This command runs Run SKU Recommendation on given SQL Server using the connectio
 
 ### Example 2: Run Run SKU Recommendation on given SQL Server using assessment config file
 ```powershell
-PS C:\> Get-AzDataMigrationSkuRecommendation -ConfigFilePath "C:\Users\user\document\config.json"
+Get-AzDataMigrationSkuRecommendation -ConfigFilePath "C:\Users\user\document\config.json"
 ```
 
 ```output

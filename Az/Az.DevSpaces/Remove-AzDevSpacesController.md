@@ -39,7 +39,7 @@ Delete a DevSpaces controller.
 
 ### Example 1
 ```powershell
-PS C:\> Remove-AzDevSpacesController -ResourceGroupName devSpaceResourceGroup -Name devSpaceControllerName
+Remove-AzDevSpacesController -ResourceGroupName devSpaceResourceGroup -Name devSpaceControllerName
 ```
 
 Delete a DevSpaces controller named devSpaceControllerName.

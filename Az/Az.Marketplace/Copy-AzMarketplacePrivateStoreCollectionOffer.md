@@ -47,9 +47,11 @@ transferring offers (copy or move) from source collection to target collection(s
 
 ### Example 1: Copy offers from source collection to target collections.
 ```powershell
-PS C:\> $payload = @{OfferIdsList = "aumatics.azure_managedservices"; Operation = "Copy"; TargetCollection = "3ac32d8c-e888-4dc6-b4ff-be4d755af13a"}
-PS C:\>  Copy-AzMarketplacePrivateStoreCollectionOffer -PrivateStoreId 3ac32d8c-e888-4dc6-b4ff-be4d755af13a -CollectionId fdb889a1-cf3e-49f0-95b8-2bb012fa01f1 -Payload $payload
+$payload = @{OfferIdsList = "aumatics.azure_managedservices"; Operation = "Copy"; TargetCollection = "3ac32d8c-e888-4dc6-b4ff-be4d755af13a"}
+Copy-AzMarketplacePrivateStoreCollectionOffer -PrivateStoreId 3ac32d8c-e888-4dc6-b4ff-be4d755af13a -CollectionId fdb889a1-cf3e-49f0-95b8-2bb012fa01f1 -Payload $payload
+```
 
+```output
 Failed Succeeded
 ------ ---------
 {}     {DefaultCollection}
@@ -234,7 +236,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IMarketplaceIdentity>: Identity Parameter
+INPUTOBJECT `<IMarketplaceIdentity>`: Identity Parameter
   - `[AdminRequestApprovalId <String>]`: The admin request approval ID to get create or update
   - `[CollectionId <String>]`: The collection ID
   - `[Id <String>]`: Resource identity path
@@ -242,7 +244,7 @@ INPUTOBJECT <IMarketplaceIdentity>: Identity Parameter
   - `[PrivateStoreId <String>]`: The store ID - must use the tenant ID
   - `[RequestApprovalId <String>]`: The request approval ID to get create or update
 
-PAYLOAD <ITransferOffersProperties>: Transfer offers properties
+PAYLOAD `<ITransferOffersProperties>`: Transfer offers properties
   - `[OfferIdsList <String[]>]`: Offers ids list to transfer from source collection to target collection(s)
   - `[Operation <String>]`: Operation to perform (For example: Copy or Move)
   - `[TargetCollection <String[]>]`: Target collections ids

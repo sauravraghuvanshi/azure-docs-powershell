@@ -1,10 +1,10 @@
 ---
-external help file: 
+external help file: Az.Purview-help.xml
 Module Name: Az.Purview
 online version: https://docs.microsoft.com/powershell/module/az.purview/get-azpurviewaccount
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/help/Get-AzPurviewAccount.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/help/Get-AzPurviewAccount.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/Purview/help/Get-AzPurviewAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Purview/Purview/help/Get-AzPurviewAccount.md
 ---
 
 # Get-AzPurviewAccount
@@ -26,15 +26,15 @@ Get-AzPurviewAccount -Name <String> -ResourceGroupName <String> [-SubscriptionId
  [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
-```
-Get-AzPurviewAccount -InputObject <IPurviewIdentity> [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
 ### List
 ```
 Get-AzPurviewAccount -ResourceGroupName <String> [-SubscriptionId <String[]>] [-SkipToken <String>]
  [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-AzPurviewAccount -InputObject <IPurviewIdentity> [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,48 +44,55 @@ Get an account
 
 ### Example 1: List All Purview Accounts
 ```powershell
-PS C:\> Get-AzPurviewAccount
+Get-AzPurviewAccount
+```
 
+```output
 IdentityPrincipalId                  IdentityTenantId                     IdentityType   Location Name          SystemDataCreatedAt  SystemDataCreatedBy      SystemDataCreatedByType 
 -------------------                  ----------------                     ------------   -------- ----          -------------------  -------------------      -------- 
 xxxxxxxx-a087-43aa-8a7f-c17a4bbd4d36 xxxxxxxx-38d6-4fb2-bad9-b7b93a3e9c5a SystemAssigned eastus   pvac          8/4/2021 8:34:28 AM  xxx@microsoft.com        User     
 xxxxxxxx-bbe7-4506-a9c4-4d602d8e4e1c xxxxxxxx-38d6-4fb2-bad9-b7b93a3e9c5a SystemAssigned eastus   purview-test  8/9/2021 9:38:47 AM  xxxxxxxxx@microsoft.com  User     
-xxxxxxxx-7956-4978-87e8-9ddd82cfe2b7 xxxxxxxx-38d6-4fb2-bad9-b7b93a3e9c5a SystemAssigned eastus   test-pa       8/17/2021 6:18:57 AM xxxxxxxxxx@microsoft.com User 
+xxxxxxxx-7956-4978-87e8-9ddd82cfe2b7 xxxxxxxx-38d6-4fb2-bad9-b7b93a3e9c5a SystemAssigned eastus   test-pa       8/17/2021 6:18:57 AM xxxxxxxxxx@microsoft.com User
 ```
 
 List all purview accounts.
 
 ### Example 2: Get Purview Account by Resource Group Name and Name
 ```powershell
-PS C:\> Get-AzPurviewAccount -Name test-pa -ResourceGroupName test-rg
+Get-AzPurviewAccount -Name test-pa -ResourceGroupName test-rg
+```
 
+```output
 IdentityPrincipalId                  IdentityTenantId                     IdentityType   Location Name   SystemDataCreatedAt  SystemDataCreatedBy      SystemDataCreatedByType SystemDataLastModifiedAt
 -------------------                  ----------------                     ------------   -------- ----   -------------------  -------------------      ----------------------- ----------------- 
-xxxxxxxx-7956-4978-87e8-9ddd82cfe2b7 xxxxxxxx-38d6-4fb2-bad9-b7b93a3e9c5a SystemAssigned eastus   test-pa 8/17/2021 6:18:57 AM xxxxxxxxxx@microsoft.com User                    8/17/2021 6:18:5… 
+xxxxxxxx-7956-4978-87e8-9ddd82cfe2b7 xxxxxxxx-38d6-4fb2-bad9-b7b93a3e9c5a SystemAssigned eastus   test-pa 8/17/2021 6:18:57 AM xxxxxxxxxx@microsoft.com User                    8/17/2021 6:18:5…
 ```
 
 Get the purview account name test-rg in resource group test-pa
 
-### Example 3: List Purview Accounts in a Specified Resource Group 
+### Example 3: List Purview Accounts in a Specified Resource Group
 ```powershell
-PS C:\> Get-AzPurviewAccount -ResourceGroupName test-rg
+Get-AzPurviewAccount -ResourceGroupName test-rg
+```
 
+```output
 IdentityPrincipalId                  IdentityTenantId                     IdentityType   Location Name   SystemDataCreatedAt  SystemDataCreatedBy      SystemDataCreatedByType SystemDataLastModifiedAt
 -------------------                  ----------------                     ------------   -------- ----   -------------------  -------------------      ----------------------- ----------------- 
-xxxxxxxx-7956-4978-87e8-9ddd82cfe2b7 xxxxxxxx-38d6-4fb2-bad9-b7b93a3e9c5a SystemAssigned eastus   test-pa 8/17/2021 6:18:57 AM xxxxxxxxxx@microsoft.com User                    8/17/2021 6:18:5… 
+xxxxxxxx-7956-4978-87e8-9ddd82cfe2b7 xxxxxxxx-38d6-4fb2-bad9-b7b93a3e9c5a SystemAssigned eastus   test-pa 8/17/2021 6:18:57 AM xxxxxxxxxx@microsoft.com User                    8/17/2021 6:18:5…
 ```
 
 List the purview accounts in resource group test-pa
 
 ### Example 4: Get Purview Account by InputObject
 ```powershell
-PS C:\>  $got = Get-AzPurviewAccount -Name test-pa -ResourceGroupName test-rg
-PS C:\>  Get-AzADDomainService -InputObject $got
+$got = Get-AzPurviewAccount -Name test-pa -ResourceGroupName test-rg
+Get-AzADDomainService -InputObject $got
+```
 
-
+```output
 IdentityPrincipalId                  IdentityTenantId                     IdentityType   Location Name   SystemDataCreatedAt  SystemDataCreatedBy      SystemDataCreatedByType SystemDataLastModifiedAt
 -------------------                  ----------------                     ------------   -------- ----   -------------------  -------------------      ----------------------- ----------------- 
-xxxxxxxx-7956-4978-87e8-9ddd82cfe2b7 xxxxxxxx-38d6-4fb2-bad9-b7b93a3e9c5a SystemAssigned eastus   test-pa 8/17/2021 6:18:57 AM xxxxxxxxxx@microsoft.com User                    8/17/2021 6:18:5… 
+xxxxxxxx-7956-4978-87e8-9ddd82cfe2b7 xxxxxxxx-38d6-4fb2-bad9-b7b93a3e9c5a SystemAssigned eastus   test-pa 8/17/2021 6:18:57 AM xxxxxxxxxx@microsoft.com User                    8/17/2021 6:18:5…
 ```
 
 Get the purview account by InputObject
@@ -158,7 +165,7 @@ The skip token.
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List1, List
 Aliases:
 
 Required: False
@@ -173,7 +180,7 @@ The subscription identifier
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get, List, List1
+Parameter Sets: List1, Get, List
 Aliases:
 
 Required: False
@@ -203,7 +210,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IPurviewIdentity>: Identity Parameter
+INPUTOBJECT `<IPurviewIdentity>`: Identity Parameter
   - `[AccountName <String>]`: The name of the account.
   - `[GroupId <String>]`: The group identifier.
   - `[Id <String>]`: Resource identity path
@@ -212,4 +219,3 @@ INPUTOBJECT <IPurviewIdentity>: Identity Parameter
   - `[SubscriptionId <String>]`: The subscription identifier
 
 ## RELATED LINKS
-

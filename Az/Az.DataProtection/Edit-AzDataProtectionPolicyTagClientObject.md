@@ -33,9 +33,11 @@ Adds or removes schedule tag in an existing backup policy.
 
 ### Example 1: Add Weekly tag to Backup Policy
 ```powershell
-PS C:\> $criteria = New-AzDataProtectionPolicyTagCriteriaClientObject -AbsoluteCriteria FirstOfWeek
-PS C:\> Edit-AzDataProtectionPolicyTagClientObject -Policy $pol -Name Weekly -Criteria $criteria
+$criteria = New-AzDataProtectionPolicyTagCriteriaClientObject -AbsoluteCriteria FirstOfWeek
+Edit-AzDataProtectionPolicyTagClientObject -Policy $pol -Name Weekly -Criteria $criteria
+```
 
+```output
 DatasourceType            ObjectType
 --------------            ----------
 {Microsoft.Compute/disks} BackupPolicy
@@ -45,8 +47,10 @@ This command adds a weekly tag to given backup policy
 
 ### Example 2: Remove Weeky tag from Backup Policy
 ```powershell
-PS C:\> Edit-AzDataProtectionPolicyTagClientObject -Policy $pol -Name Weekly -RemoveRule
+Edit-AzDataProtectionPolicyTagClientObject -Policy $pol -Name Weekly -RemoveRule
+```
 
+```output
 DatasourceType            ObjectType
 --------------            ----------
 {Microsoft.Compute/disks} BackupPolicy
@@ -61,7 +65,7 @@ Criterias to be associated with the schedule tag.
 To construct, see NOTES section for CRITERIA properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20210701.IScheduleBasedBackupCriteria[]
+Type: Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20220501.IScheduleBasedBackupCriteria[]
 Parameter Sets: updateTag
 Aliases:
 
@@ -92,7 +96,7 @@ Backup Policy Object.
 To construct, see NOTES section for POLICY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20210701.IBackupPolicy
+Type: Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20220501.IBackupPolicy
 Parameter Sets: (All)
 Aliases:
 
@@ -125,7 +129,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20210701.IBackupPolicy
+### Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20220501.IBackupPolicy
 
 ## NOTES
 
@@ -136,7 +140,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-CRITERIA <IScheduleBasedBackupCriteria[]>: Criterias to be associated with the schedule tag.
+`CRITERIA <IScheduleBasedBackupCriteria[]>`: Criterias to be associated with the schedule tag.
   - `ObjectType <String>`: Type of the specific object - used for deserializing
   - `[AbsoluteCriterion <AbsoluteMarker[]>]`: it contains absolute values like "AllBackup" / "FirstOfDay" / "FirstOfWeek" / "FirstOfMonth"         and should be part of AbsoluteMarker enum
   - `[DaysOfMonth <IDay[]>]`: This is day of the month from 1 to 28 other wise last of month
@@ -147,7 +151,7 @@ CRITERIA <IScheduleBasedBackupCriteria[]>: Criterias to be associated with the s
   - `[ScheduleTime <DateTime[]>]`: List of schedule times for backup
   - `[WeeksOfTheMonth <WeekNumber[]>]`: It should be First/Second/Third/Fourth/Last
 
-POLICY <IBackupPolicy>: Backup Policy Object.
+`POLICY <IBackupPolicy>`: Backup Policy Object.
   - `DatasourceType <String[]>`: Type of datasource for the backup management
   - `ObjectType <String>`: 
   - `PolicyRule <IBasePolicyRule[]>`: Policy rule dictionary that contains rules for each backuptype i.e Full/Incremental/Logs etc

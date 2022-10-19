@@ -41,8 +41,10 @@ This will create or update all lab resources, such as virtual machines.
 
 ### Example 1: Publish the lab.
 ```powershell
-PS C:\> Publish-AzLabServicesLab -Name "Lab Name" -ResourceGroupName "Group Name"
+Publish-AzLabServicesLab -Name "Lab Name" -ResourceGroupName "Group Name"
+```
 
+```output
 Location Name
 -------- ----
 eastus2  Lab Name
@@ -257,7 +259,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-LAB <Lab>: 
+LAB `<Lab>`: 
   - `Location <String>`: The geo-location where the resource lives
   - `[AdditionalCapabilityInstallGpuDriver <EnableState?>]`: Flag to pre-install dedicated GPU drivers.
   - `[AdminUserPassword <String>]`: The password for the user. This is required for the TemplateVM createOption.

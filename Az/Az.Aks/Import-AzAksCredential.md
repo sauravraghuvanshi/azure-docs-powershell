@@ -16,21 +16,21 @@ Import and merge Kubectl config for a managed Kubernetes Cluster.
 
 ### GroupNameParameterSet (Default)
 ```
-Import-AzAksCredential [-ResourceGroupName] <String> [-Name] <String> [-Admin] [-ConfigPath <String>] [-Force]
- [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [-SubscriptionId <String>]
- [<CommonParameters>]
+Import-AzAksCredential [-ResourceGroupName] <String> [-Name] <String> [-Admin] [-ConfigPath <String>]
+ [-PublicFqdn] [-Force] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [-SubscriptionId <String>] [<CommonParameters>]
 ```
 
 ### InputObjectParameterSet
 ```
-Import-AzAksCredential -InputObject <PSKubernetesCluster> [-Admin] [-ConfigPath <String>] [-Force] [-PassThru]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [-SubscriptionId <String>]
- [<CommonParameters>]
+Import-AzAksCredential -InputObject <PSKubernetesCluster> [-Admin] [-ConfigPath <String>] [-PublicFqdn]
+ [-Force] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [-SubscriptionId <String>] [<CommonParameters>]
 ```
 
 ### IdParameterSet
 ```
-Import-AzAksCredential [-Id] <String> [-Admin] [-ConfigPath <String>] [-Force] [-PassThru]
+Import-AzAksCredential [-Id] <String> [-Admin] [-ConfigPath <String>] [-PublicFqdn] [-Force] [-PassThru]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [-SubscriptionId <String>]
  [<CommonParameters>]
 ```
@@ -41,8 +41,8 @@ Import and merge Kubectl config for a managed Kubernetes Cluster.
 ## EXAMPLES
 
 ### Import and merge Kubectl config
-```
-PS C:\> Import-AzAksCredential -ResourceGroupName group -Name myCluster
+```powershell
+Import-AzAksCredential -ResourceGroupName group -Name myCluster
 ```
 
 ## PARAMETERS
@@ -156,6 +156,21 @@ Accept wildcard characters: False
 
 ### -PassThru
 Returns true if import is successful
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PublicFqdn
+Get private cluster credential with server address to be public fqdn.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

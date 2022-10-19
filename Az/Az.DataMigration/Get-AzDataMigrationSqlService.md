@@ -1,5 +1,5 @@
 ---
-external help file: 
+external help file: Az.DataMigration-help.xml
 Module Name: Az.DataMigration
 online version: https://docs.microsoft.com/powershell/module/az.datamigration/get-azdatamigrationsqlservice
 schema: 2.0.0
@@ -26,16 +26,16 @@ Get-AzDataMigrationSqlService -Name <String> -ResourceGroupName <String> [-Subsc
  [-DefaultProfile <PSObject>] [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity
-```
-Get-AzDataMigrationSqlService -InputObject <IDataMigrationIdentity> [-DefaultProfile <PSObject>] [-PassThru]
- [<CommonParameters>]
-```
-
 ### List
 ```
 Get-AzDataMigrationSqlService -ResourceGroupName <String> [-SubscriptionId <String[]>]
  [-DefaultProfile <PSObject>] [-PassThru] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-AzDataMigrationSqlService -InputObject <IDataMigrationIdentity> [-DefaultProfile <PSObject>] [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,8 +45,10 @@ Retrieve the Database Migration Service.
 
 ### Example 1: Get the details of a given Sql Migration Service
 ```powershell
-PS C:\> Get-AzDataMigrationSqlService  -ResourceGroupName "MyResourceGroup" -SqlMigrationServiceName "MySqlMigrationService"
+Get-AzDataMigrationSqlService  -ResourceGroupName "MyResourceGroup" -SqlMigrationServiceName "MySqlMigrationService"
+```
 
+```output
 Location  Name                   Type                                         ProvisioningState IntegrationRuntimeState
 --------  ----                   ----                                         ----------------- -----------------------
 eastus2   MySqlMigrationService  Microsoft.DataMigration/sqlMigrationServices Succeeded         Online
@@ -56,25 +58,29 @@ This command gets the details of a given Sql Migration Service.
 
 ### Example 2: Get all Sql Migration Services in a given Resource Group
 ```powershell
-PS C:\> Get-AzDataMigrationSqlService  -ResourceGroupName "MyResourceGroup"
+Get-AzDataMigrationSqlService  -ResourceGroupName "MyResourceGroup"
+```
 
+```output
 Location  Name                   Type                                         ProvisioningState IntegrationRuntimeState
 --------  ----                   ----                                         ----------------- -----------------------
 eastus    MySqlMigrationService1 Microsoft.DataMigration/sqlMigrationServices Succeeded
-eastus2   MySqlMigrationService  Microsoft.DataMigration/sqlMigrationServices Succeeded                  
+eastus2   MySqlMigrationService  Microsoft.DataMigration/sqlMigrationServices Succeeded
 ```
 
 This command gets all Sql Migration Services in a given Resource Group.
 
 ### Example 3: Get all Sql Migration Services in a given Subscription
 ```powershell
-PS C:\> Get-AzDataMigrationSqlService 
+Get-AzDataMigrationSqlService
+```
 
+```output
 Location  Name                      Type                                         ProvisioningState IntegrationRuntimeState
 --------  ----                      ----                                         ----------------- -----------------------
 eastus    MySqlMigrationService1    Microsoft.DataMigration/sqlMigrationServices Succeeded
 eastus2   MySqlMigrationService     Microsoft.DataMigration/sqlMigrationServices Succeeded
-uksouth   MySqlMigrationService-UK  Microsoft.DataMigration/sqlMigrationServices Succeeded                   
+uksouth   MySqlMigrationService-UK  Microsoft.DataMigration/sqlMigrationServices Succeeded
 ```
 
 This command gets all Sql Migration Services in a given Subscription.
@@ -163,7 +169,7 @@ Subscription ID that identifies an Azure subscription.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get, List, List1
+Parameter Sets: List1, Get, List
 Aliases:
 
 Required: False
@@ -182,7 +188,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DataMigration.Models.Api20211030Preview.ISqlMigrationService
+### Microsoft.Azure.PowerShell.Cmdlets.DataMigration.Models.Api20220330Preview.ISqlMigrationService
 
 ## NOTES
 
@@ -193,14 +199,14 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IDataMigrationIdentity>: Identity Parameter
+`INPUTOBJECT <IDataMigrationIdentity>`: Identity Parameter
   - `[Id <String>]`: Resource identity path
   - `[ManagedInstanceName <String>]`: 
   - `[ResourceGroupName <String>]`: Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+  - `[SqlDbInstanceName <String>]`: 
   - `[SqlMigrationServiceName <String>]`: Name of the SQL Migration Service.
   - `[SqlVirtualMachineName <String>]`: 
   - `[SubscriptionId <String>]`: Subscription ID that identifies an Azure subscription.
   - `[TargetDbName <String>]`: The name of the target database.
 
 ## RELATED LINKS
-

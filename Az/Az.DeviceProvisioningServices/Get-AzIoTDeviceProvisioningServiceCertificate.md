@@ -38,9 +38,11 @@ For a detailed explanation of CA certificates in Azure IoT Hub Device Provisioni
 ## EXAMPLES
 
 ### Example 1
+```powershell
+Get-AzIoTDeviceProvisioningServiceCertificate -ResourceGroupName "myresourcegroup" -Name "myiotdps" -CertificateName "mycertificate"
 ```
-PS C:\> Get-AzIoTDeviceProvisioningServiceCertificate -ResourceGroupName "myresourcegroup" -Name "myiotdps" -CertificateName "mycertificate"
 
+```output
 Id					: /subscriptions/377cxxxxxxxxxxxx/resourceGroups/myresourcegroup/providers/Microsoft.Devices/provisioningServices/myiotdps/certificates/mycertificate
 ResourceGroupName	: myresourcegroup
 Name				: myiotdps
@@ -56,9 +58,11 @@ Etag				: AAAAAAFpGcA=
 Show details about "mycertificate" in an Azure IoT Hub device provisioning service.
 
 ### Example 2
+```powershell
+Get-AzIoTDeviceProvisioningService -ResourceGroupName "myresourcegroup" -Name "myiotdps" | Get-AzIoTDeviceProvisioningServiceCertificate
 ```
-PS C:\> Get-AzIoTDps -ResourceGroupName "myresourcegroup" -Name "myiotdps" | Get-AzIoTDpsCertificate
 
+```output
 ResourceGroupName	Name		CertificateName Status     Expiry
 -----------------	----        ---------------	------     ------
 myresourcegroup		myiotdps	mycert1         Unverified 12/04/2027 13:12

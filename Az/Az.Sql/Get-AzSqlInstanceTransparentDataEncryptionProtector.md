@@ -39,8 +39,10 @@ The Get-AzSqlInstanceTransparentDataEncryptionProtector cmdlet gets the TDE prot
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzSqlInstanceTransparentDataEncryptionProtector -ResourceGroupName 'ContosoResourceGroup' -InstanceName 'ContosoManagedInstanceName'
+Get-AzSqlInstanceTransparentDataEncryptionProtector -ResourceGroupName 'ContosoResourceGroup' -InstanceName 'ContosoManagedInstanceName'
+```
 
+```output
 ResourceGroupName              : ContosoResourceGroup
 ManagedInstanceName            : ContosoManagedInstanceName
 Type                           : AzureKeyVault
@@ -52,9 +54,11 @@ This command gets the TDE protector for the managed instance named ContosoManage
 
 ### Example 2: Using managed instance object
 ```powershell
-PS C:\> $managedInstance = Get-AzSqlInstance -Name 'ContosoManagedInstanceName' -ResourceGroupName 'ContosoResourceGroup'
-PS C:\> Get-AzSqlInstanceTransparentDataEncryptionProtector -Instance $managedInstance 'ContosoManagedInstanceName'
+$managedInstance = Get-AzSqlInstance -Name 'ContosoManagedInstanceName' -ResourceGroupName 'ContosoResourceGroup'
+Get-AzSqlInstanceTransparentDataEncryptionProtector -Instance $managedInstance
+```
 
+```output
 ResourceGroupName              : ContosoResourceGroup
 ManagedInstanceName            : ContosoManagedInstanceName
 Type                           : AzureKeyVault
@@ -66,9 +70,11 @@ This command gets the TDE protector for the managed instance named ContosoManage
 
 ### Example 3: Using managed instance resource id
 ```powershell
-PS C:\> $managedInstance = Get-AzSqlInstance -Name 'ContosoManagedInstanceName' -ResourceGroupName 'ContosoResourceGroup'
-PS C:\> Get-AzSqlInstanceTransparentDataEncryptionProtector -InstanceResourceId $managedInstance.ResourceId
+$managedInstance = Get-AzSqlInstance -Name 'ContosoManagedInstanceName' -ResourceGroupName 'ContosoResourceGroup'
+Get-AzSqlInstanceTransparentDataEncryptionProtector -InstanceResourceId $managedInstance.ResourceId
+```
 
+```output
 ResourceGroupName              : ContosoResourceGroup
 ManagedInstanceName            : ContosoManagedInstanceName
 Type                           : AzureKeyVault
@@ -80,9 +86,11 @@ This command gets the TDE protector for the managed instance named ContosoManage
 
 ### Example 4: Using piping
 ```powershell
-PS C:\> $managedInstance = Get-AzSqlInstance -Name 'ContosoManagedInstanceName' -ResourceGroupName 'ContosoResourceGroup'
-PS C:\> $managedInstance | Get-AzSqlInstanceTransparentDataEncryptionProtector
+$managedInstance = Get-AzSqlInstance -Name 'ContosoManagedInstanceName' -ResourceGroupName 'ContosoResourceGroup'
+$managedInstance | Get-AzSqlInstanceTransparentDataEncryptionProtector
+```
 
+```output
 ResourceGroupName              : ContosoResourceGroup
 ManagedInstanceName            : ContosoManagedInstanceName
 Type                           : AzureKeyVault

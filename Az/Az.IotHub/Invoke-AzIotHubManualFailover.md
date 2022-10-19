@@ -40,14 +40,14 @@ This is a long running operation and could take several minutes to finish. Pleas
 
 ### Example 1
 ```powershell
-PS C:\> Invoke-AzIotHubManualFailover -ResourceGroupName "myresourcegroup" -Name "myiothub"
+Invoke-AzIotHubManualFailover -ResourceGroupName "myresourcegroup" -Name "myiothub"
 ```
 
 Initiating failover process of "myiothub" IoT Hub.
 
 ### Example 2
 ```powershell
-PS C:\> Invoke-AzIotHubManualFailover -ResourceGroupName "myresourcegroup" -Name "myiothub" -AsJob
+Invoke-AzIotHubManualFailover -ResourceGroupName "myresourcegroup" -Name "myiothub" -AsJob
 ```
 
 Initiating failover process of "myiothub" IoT Hub in the background.

@@ -26,14 +26,14 @@ The **Set-AzPublicIpAddress** cmdlet updates a public IP address.
 ## EXAMPLES
 
 ### 1: Change allocation method of a public IP address
-```
-PS C:\> $publicIp = Get-AzPublicIpAddress -Name $publicIpName -ResourceGroupName $rgName
+```powershell
+$publicIp = Get-AzPublicIpAddress -Name $publicIpName -ResourceGroupName $rgName
 
-PS C:\> $publicIp.PublicIpAllocationMethod = "Static"
+$publicIp.PublicIpAllocationMethod = "Static"
     
-PS C:\> Set-AzPublicIpAddress -PublicIpAddress $publicIp
+Set-AzPublicIpAddress -PublicIpAddress $publicIp
 
-PS C:\> Get-AzPublicIpAddress -Name $publicIpName -ResourceGroupName $rgName
+Get-AzPublicIpAddress -Name $publicIpName -ResourceGroupName $rgName
 ```
 
  First command gets the public IP address resource with name $publicIPName in the resource 
@@ -44,14 +44,14 @@ PS C:\> Get-AzPublicIpAddress -Name $publicIpName -ResourceGroupName $rgName
     allocated immediately.
 
 ### 2: Add DNS domain label of a public IP address
-```
-PS C:\> $publicIp = Get-AzPublicIpAddress -Name $publicIpName -ResourceGroupName $rgName
+```powershell
+$publicIp = Get-AzPublicIpAddress -Name $publicIpName -ResourceGroupName $rgName
 
-PS C:\> $publicIp.DnsSettings = @{"DomainNameLabel" = "newdnsprefix"}
+$publicIp.DnsSettings = @{"DomainNameLabel" = "newdnsprefix"}
     
-PS C:\> Set-AzPublicIpAddress -PublicIpAddress $publicIp
+Set-AzPublicIpAddress -PublicIpAddress $publicIp
 
-PS C:\> $publicIp = Get-AzPublicIpAddress -Name $publicIpName -ResourceGroupName $rgName
+$publicIp = Get-AzPublicIpAddress -Name $publicIpName -ResourceGroupName $rgName
 ```
 
 First command gets the public IP address resource with name $publicIPName in the resource 
@@ -61,14 +61,14 @@ First command gets the public IP address resource with name $publicIPName in the
     updated object. DomainNameLabel & Fqdn are modified as expected.
     
 ### 3: Change DNS domain label of a public IP address
-```
-PS C:\> $publicIp = Get-AzPublicIpAddress -Name $publicIpName -ResourceGroupName $rgName
+```powershell
+$publicIp = Get-AzPublicIpAddress -Name $publicIpName -ResourceGroupName $rgName
 
-PS C:\> $publicIp.DnsSettings.DomainNameLabel = "newdnsprefix"
+$publicIp.DnsSettings.DomainNameLabel = "newdnsprefix"
     
-PS C:\> Set-AzPublicIpAddress -PublicIpAddress $publicIp
+Set-AzPublicIpAddress -PublicIpAddress $publicIp
 
-PS C:\> $publicIp = Get-AzPublicIpAddress -Name $publicIpName -ResourceGroupName $rgName
+$publicIp = Get-AzPublicIpAddress -Name $publicIpName -ResourceGroupName $rgName
 ```
 
 First command gets the public IP address resource with name $publicIPName in the resource 
