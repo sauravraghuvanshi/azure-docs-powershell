@@ -258,7 +258,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageAccountUrl
-Storage account url of the witness storage account
+Primary key of the witness storage account
 
 ```yaml
 Type: System.String

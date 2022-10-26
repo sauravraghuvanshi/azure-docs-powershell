@@ -13,136 +13,92 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 This topic displays help topics for the Azure Service Bus cmdlets.
 
 ## Az.ServiceBus Cmdlets
-### [Add-AzServiceBusIPRule](Add-AzServiceBusIPRule.md)
-Add a single IP rule to the NetworkRuleSet of the given Namespace
-
-### [Add-AzServiceBusVirtualNetworkRule](Add-AzServiceBusVirtualNetworkRule.md)
-Add a single VirtualNetworkRule to NetworkRuleSet for the given Namespace
-
-### [Approve-AzServiceBusPrivateEndpointConnection](Approve-AzServiceBusPrivateEndpointConnection.md)
-Approves a ServiceBus PrivateEndpointConnection
-
 ### [Complete-AzServiceBusMigration](Complete-AzServiceBusMigration.md)
-This operation Completes Migration of entities by pointing the connection strings to Premium namespace and any entities created after the operation will be under Premium Namespace.
-CompleteMigration operation will fail when entity migration is in-progress.
-
-### [Deny-AzServiceBusPrivateEndpointConnection](Deny-AzServiceBusPrivateEndpointConnection.md)
-Denies a ServiceBus PrivateEndpointConnection
+Cmdlets set the Migration from Standard to premium namespace as complete and connection strings of standard namespace now point to Premium namespace
 
 ### [Get-AzServiceBusAuthorizationRule](Get-AzServiceBusAuthorizationRule.md)
-Gets the Authorization Rule of a ServiceBus namespace, queue or topic.
+Gets a description of the specified authorization rule for a given Namespace or Queue or Topic or Alias (GeoDR Configurations). 
 
 ### [Get-AzServiceBusGeoDRConfiguration](Get-AzServiceBusGeoDRConfiguration.md)
 Retrieves Alias(Disaster Recovery configuration) for primary or secondary namespace
 
 ### [Get-AzServiceBusKey](Get-AzServiceBusKey.md)
-Gets the SASKey of a ServiceBus namespace, queue or topic.
+Gets the primary and secondary connection strings for the given Namespace or Queue or Topic or Alias (GeoDR Configurations).
 
 ### [Get-AzServiceBusMigration](Get-AzServiceBusMigration.md)
-Retrieves Migration Config
+Retrieves MigrationConfiguration for the namespace
 
 ### [Get-AzServiceBusNamespace](Get-AzServiceBusNamespace.md)
 Gets a description for the specified Service Bus namespace within the resource group.
 
-### [Get-AzServiceBusNetworkRuleSet](Get-AzServiceBusNetworkRuleSet.md)
-Gets NetworkRuleSet for a Namespace.
-
 ### [Get-AzServiceBusOperation](Get-AzServiceBusOperation.md)
 List supported ServiceBus Operations
 
-### [Get-AzServiceBusPrivateEndpointConnection](Get-AzServiceBusPrivateEndpointConnection.md)
-Gets a description for the specified Private Endpoint Connection.
-
-### [Get-AzServiceBusPrivateLink](Get-AzServiceBusPrivateLink.md)
-Gets lists of resources that supports Privatelinks.
-
 ### [Get-AzServiceBusQueue](Get-AzServiceBusQueue.md)
-Returns a description for the specified queue.
+Returns a description for the specified Service Bus queue.
 
 ### [Get-AzServiceBusRule](Get-AzServiceBusRule.md)
-Retrieves the description for the specified rule.
+Creates a new rule for a given Subscription of Topic. 
 
 ### [Get-AzServiceBusSubscription](Get-AzServiceBusSubscription.md)
 Returns a subscription description for the specified topic.
 
 ### [Get-AzServiceBusTopic](Get-AzServiceBusTopic.md)
-Returns a description for the specified topic.
+Returns a description for the specified Service Bus topic.
 
 ### [New-AzServiceBusAuthorizationRule](New-AzServiceBusAuthorizationRule.md)
-Creates a ServiceBus Namespace, Queue, Topic Authorization Rule
+Creates a new authorization rule for the specified Service Bus given Namespace or Queue or Topic.
 
 ### [New-AzServiceBusAuthorizationRuleSASToken](New-AzServiceBusAuthorizationRuleSASToken.md)
-Generates a SAS token for Azure servicebus authorization rule of namespace/queue/topic. 
-
-### [New-AzServiceBusEncryptionConfig](New-AzServiceBusEncryptionConfig.md)
-Creates an in memory object instance of PSEncryptionConfigAttributes which can then be given as input to New-AzServiceBusNamespace and Set-AzServiceBusNamespace to enable encryption 
+Generates a SAS tolen for Azure serviucebus authorization rule of namespace/queue/topic. 
 
 ### [New-AzServiceBusGeoDRConfiguration](New-AzServiceBusGeoDRConfiguration.md)
-Creates or updates a new Alias(Disaster Recovery configuration)
-
-### [New-AzServiceBusIPRuleConfig](New-AzServiceBusIPRuleConfig.md)
-Constructs an INwRuleSetIPRules object that can be fed as input to Set-AzServiceBusNetworkRuleSet
+Creates an new Alias(Disaster Recovery configuration)
 
 ### [New-AzServiceBusKey](New-AzServiceBusKey.md)
-Regenerates the SASKey of a ServiceBus namespace, queue or topic.
+Regenerates the primary or secondary connection strings for the Service Bus namespace or queue or topic.
 
 ### [New-AzServiceBusNamespace](New-AzServiceBusNamespace.md)
 Creates a new Service Bus namespace.
 
 ### [New-AzServiceBusQueue](New-AzServiceBusQueue.md)
-Creates or updates a Service Bus queue.
-This operation is idempotent.
+Creates a Service Bus queue in the specified Service Bus namespace.
 
 ### [New-AzServiceBusRule](New-AzServiceBusRule.md)
-Creates a new rule and updates an existing rule
+Creates a new rule for a given Subscription of Topic. 
 
 ### [New-AzServiceBusSubscription](New-AzServiceBusSubscription.md)
-Creates a topic subscription.
+Creates a subscription to the specified Service Bus topic.
 
 ### [New-AzServiceBusTopic](New-AzServiceBusTopic.md)
-Creates a topic in the specified namespace.
-
-### [New-AzServiceBusVirtualNetworkRuleConfig](New-AzServiceBusVirtualNetworkRuleConfig.md)
-Constructs an INwRuleSetIPRules object that can be fed as input to Set-AzServiceBusNetworkRuleSet
+Creates a new Service Bus topic in  the specified Service Bus namespace.
 
 ### [Remove-AzServiceBusAuthorizationRule](Remove-AzServiceBusAuthorizationRule.md)
-Removes the Authorization Rule of a ServiceBus Namespace, Queue or Topic
+Removes the authorization rule of a Service Bus namespace or queue or topic from the specified resource group.
 
 ### [Remove-AzServiceBusGeoDRConfiguration](Remove-AzServiceBusGeoDRConfiguration.md)
 Deletes an Alias(Disaster Recovery configuration)
 
-### [Remove-AzServiceBusIPRule](Remove-AzServiceBusIPRule.md)
-Remove a single IP rule to the NetworkRuleSet of the given Namespace
-
 ### [Remove-AzServiceBusMigration](Remove-AzServiceBusMigration.md)
-Deletes a MigrationConfiguration
+Cmdlet deletes the Migration configuration for Standard to Premium namespaces
 
 ### [Remove-AzServiceBusNamespace](Remove-AzServiceBusNamespace.md)
 Removes the namespace from the specified resource group. 
 
-### [Remove-AzServiceBusNetworkRuleSet](Remove-AzServiceBusNetworkRuleSet.md)
-Removes the NetworkRuleSet for the Given Namespace
-
-### [Remove-AzServiceBusPrivateEndpointConnection](Remove-AzServiceBusPrivateEndpointConnection.md)
-Deletes an existing Private Endpoint Connection.
-
 ### [Remove-AzServiceBusQueue](Remove-AzServiceBusQueue.md)
-Deletes a queue from the specified namespace in a resource group.
+Removes the queue from the specified Service Bus namespace.
 
 ### [Remove-AzServiceBusRule](Remove-AzServiceBusRule.md)
-Deletes an existing rule.
+Removes the specified rule of a given subscription .
 
 ### [Remove-AzServiceBusSubscription](Remove-AzServiceBusSubscription.md)
-Deletes a subscription from the specified topic.
+Removes the subscription to a topic from the specified Service Bus namespace.
 
 ### [Remove-AzServiceBusTopic](Remove-AzServiceBusTopic.md)
-Deletes a topic from the specified namespace and resource group.
-
-### [Remove-AzServiceBusVirtualNetworkRule](Remove-AzServiceBusVirtualNetworkRule.md)
-Removes the single given VirtualNetworkRule for the NetworkRuleSet of the Namespace
+Removes the topic from the specified Service Bus namespace.
 
 ### [Set-AzServiceBusAuthorizationRule](Set-AzServiceBusAuthorizationRule.md)
-Updates the authorization rule of a ServiceBus namespace, queue or topic.
+Updates the specified authorization rule description for the given Service Bus namespace or queue or topic.
 
 ### [Set-AzServiceBusGeoDRConfigurationBreakPair](Set-AzServiceBusGeoDRConfigurationBreakPair.md)
 This operation disables the Disaster Recovery and stops replicating changes from primary to secondary namespaces
@@ -153,30 +109,24 @@ Invokes GEO DR failover and reconfigure the alias to point to the secondary name
 ### [Set-AzServiceBusNamespace](Set-AzServiceBusNamespace.md)
 Updates the description of an existing Service Bus namespace.
 
-### [Set-AzServiceBusNetworkRuleSet](Set-AzServiceBusNetworkRuleSet.md)
-Updates the NetworkRuleSet of a ServiceBus namespace
-
 ### [Set-AzServiceBusQueue](Set-AzServiceBusQueue.md)
-Updates a ServiceBus Queue
+Updates the description of a Service Bus queue in the specified Service Bus namespace.
 
 ### [Set-AzServiceBusRule](Set-AzServiceBusRule.md)
-Updates a ServiceBus Rule
+Updates the specified rule description for the given subscription.
 
 ### [Set-AzServiceBusSubscription](Set-AzServiceBusSubscription.md)
-Updates a ServiceBus Subscription
+Updates a subscription description for a Service Bus topic in the specified Service Bus namespace.
 
 ### [Set-AzServiceBusTopic](Set-AzServiceBusTopic.md)
-Updates a ServiceBus Topic
+Updates the description of a Service Bus topic in the specified Service Bus namespace.
 
 ### [Start-AzServiceBusMigration](Start-AzServiceBusMigration.md)
-Creates Migration configuration and starts migration of entities from Standard to Premium namespace
+Creates a new Migration configuration and starts migrating entities from Standard to Premium namespaces
 
 ### [Stop-AzServiceBusMigration](Stop-AzServiceBusMigration.md)
-This operation reverts Migration
+{{Fill in the Synopsis}}
 
 ### [Test-AzServiceBusName](Test-AzServiceBusName.md)
-Checks availability of a namespace name or disaster recovery alias.
-
-### [Test-AzServiceBusNameAvailability](Test-AzServiceBusNameAvailability.md)
-Checks the Availability of the given Queue or Topic name
+Checks the Availability of the given NameSpace Name or Alias (DR Configuration Name) 
 

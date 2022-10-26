@@ -1,5 +1,5 @@
 ---
-external help file: Az.ServiceBus-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.dll-Help.xml
 Module Name: Az.ServiceBus
 online version: https://docs.microsoft.com/powershell/module/az.servicebus/remove-azservicebusrule
 schema: 2.0.0
@@ -10,44 +10,100 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Remove-AzServiceBusRule
 
 ## SYNOPSIS
-Deletes an existing rule.
+Removes the specified rule of a given subscription .
 
 ## SYNTAX
 
-### Delete (Default)
+### RulePropertiesSet (Default)
 ```
-Remove-AzServiceBusRule -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] -SubscriptionName <String> -TopicName <String> [-DefaultProfile <PSObject>]
- [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzServiceBusRule [-ResourceGroupName] <String> [-Namespace] <String> [-Topic] <String>
+ [-Subscription] <String> [-Name] <String> [-PassThru] [-AsJob] [-Force]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### RuleResourceIdSet
 ```
-Remove-AzServiceBusRule -InputObject <IServiceBusIdentity> [-DefaultProfile <PSObject>] [-PassThru] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Remove-AzServiceBusRule [-InputObject] <PSTopicAttributes> [-ResourceId] <String> [-PassThru] [-AsJob] [-Force]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Deletes an existing rule.
+The **Remove-AzServiceBusRule** cmdlet removes the rule of a subscription of given topic.
 
 ## EXAMPLES
 
-### Example 1: Remove a rule from a ServiceBus subscription
+### Example 1
 ```powershell
-Remove-AzServiceBusRule -ResourceGroupName myResourceGroup -NamespaceName myNamespace -TopicName myTopic -SubscriptionName mySubscription -Name myRule
+Remove-AzServiceBusRule -ResourceGroup Default-ServiceBus-WestUS -Namespace SBExample1 -Topic SBTopic -Subscription SBSubscription -Name SBRule
 ```
 
-Deletes a ServiceBus rule `myRule` from ServiceBus subscription `mySubscription`.
+Removes the rule `SBRule` of subscription `SBSubscription` of specified topic `SBTopic`.
+
+### Example 2: InputObject - Using Variable:
+```powershell
+$inputobject = Get-AzServiceBusRule <params>
+Remove-AzServiceBusRule -InputObject $inputobject
+```
+
+Removes the rule provided through $inputobject for -InputObject parameter
+
+### Example 3: InputObject - Using Piping:
+```powershell
+Get-AzServiceBusRule <params> | Remove-AzServiceBusRule
+```
+
+### Example 4: ResourceId - Using Variable
+```powershell
+$resourceid = Get-AzServiceBusRule <params>
+Remove-AzServiceBusRule -ResourceId $resourceid.Id
+```
+
+### Example 5: ResourceId - Using string value
+```powershell
+Remove-AzServiceBusRule -ResourceId "/subscriptions/xxx-xxxxx-xxxxxx-xxxxxx/resourceGroups/ResourceGroupName/providers/Microsoft.ServiceBus/namespaces/NamespaceName/topics/TopicName/subscriptions/SubscriptionName/rules/RuleName"
+```
+
+Removes the rule provided through ARM Id in $resourceid/string for -ResourceId parameter 
 
 ## PARAMETERS
+
+### -AsJob
+Run cmdlet in the background
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Force
+Do not ask for confirmation.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
@@ -57,53 +113,52 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+Service Bus Rule Object
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.IServiceBusIdentity
-Parameter Sets: DeleteViaIdentity
+Type: Microsoft.Azure.Commands.ServiceBus.Models.PSTopicAttributes
+Parameter Sets: RuleResourceIdSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Name
-The rule name.
+Rule Name
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
-Aliases: RuleName
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NamespaceName
-The namespace name
-
-```yaml
-Type: System.String
-Parameter Sets: Delete
+Parameter Sets: RulePropertiesSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 4
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Namespace
+Namespace Name
+
+```yaml
+Type: System.String
+Parameter Sets: RulePropertiesSet
+Aliases: NamespaceName
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -PassThru
-Returns true when the command succeeds
+Specifying this will return true if the command was successful.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -118,63 +173,62 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Name of the Resource group within the Azure subscription.
+The name of the resource group
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
-Aliases:
+Parameter Sets: RulePropertiesSet
+Aliases: ResourceGroup
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-Subscription credentials that uniquely identify a Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
+### -ResourceId
+Service Bus Rule Resource Id
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubscriptionName
-The subscription name.
-
-```yaml
-Type: System.String
-Parameter Sets: Delete
+Parameter Sets: RuleResourceIdSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -TopicName
-The topic name.
+### -Subscription
+Subscription Name
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
-Aliases:
+Parameter Sets: RulePropertiesSet
+Aliases: SubscriptionName
 
 Required: True
-Position: Named
+Position: 3
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Topic
+Topic Name
+
+```yaml
+Type: System.String
+Parameter Sets: RulePropertiesSet
+Aliases: TopicName
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -210,37 +264,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.IServiceBusIdentity
+### System.String
+
+### Microsoft.Azure.Commands.ServiceBus.Models.PSTopicAttributes
 
 ## OUTPUTS
 
 ### System.Boolean
 
 ## NOTES
-
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IServiceBusIdentity>`: Identity Parameter
-  - `[Alias <String>]`: The Disaster Recovery configuration name
-  - `[AuthorizationRuleName <String>]`: The authorization rule name.
-  - `[ConfigName <MigrationConfigurationName?>]`: The configuration name. Should always be "$default".
-  - `[Id <String>]`: Resource identity path
-  - `[NamespaceName <String>]`: The namespace name
-  - `[PrivateEndpointConnectionName <String>]`: The PrivateEndpointConnection name
-  - `[QueueName <String>]`: The queue name.
-  - `[ResourceGroupName <String>]`: Name of the Resource group within the Azure subscription.
-  - `[RuleName <String>]`: The rule name.
-  - `[SubscriptionId <String>]`: Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
-  - `[SubscriptionName <String>]`: The subscription name.
-  - `[TopicName <String>]`: The topic name.
 
 ## RELATED LINKS

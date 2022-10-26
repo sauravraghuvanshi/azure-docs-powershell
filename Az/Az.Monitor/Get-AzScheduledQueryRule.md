@@ -1,5 +1,5 @@
 ---
-external help file: Az.ScheduledQueryRule.psm1-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Monitor.dll-Help.xml
 Module Name: Az.Monitor
 online version: https://docs.microsoft.com/powershell/module/az.monitor/get-azscheduledqueryrule
 schema: 2.0.0
@@ -10,58 +10,104 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Get-AzScheduledQueryRule
 
 ## SYNOPSIS
-Retrieve an scheduled query rule definition.
+Gets Scheduled Query Resources
 
 ## SYNTAX
 
-### List (Default)
+### BySubscriptionOrResourceGroup (Default)
 ```
-Get-AzScheduledQueryRule [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-AzScheduledQueryRule -Name <String> -ResourceGroupName <String> [-SubscriptionId <String[]>]
- [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### List1
-```
-Get-AzScheduledQueryRule -ResourceGroupName <String> [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>]
+Get-AzScheduledQueryRule [-ResourceGroupName <String>] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### ByRuleName
 ```
-Get-AzScheduledQueryRule -InputObject <IScheduledQueryRuleIdentity> [-DefaultProfile <PSObject>]
+Get-AzScheduledQueryRule -ResourceGroupName <String> -Name <String> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
+```
+
+### ByResourceId
+```
+Get-AzScheduledQueryRule -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Retrieve an scheduled query rule definition.
+Gets Scheduled Query Resources
 
 ## EXAMPLES
 
-### Example 1: List scheduled query rules under current subscription
+### Example 1: List by subscription or resource group
 ```powershell
-Get-AzScheduledQueryRule
+Get-AzScheduledQueryRule -ResourceGroupName "MyResourceGroup"
 ```
 
-List scheduled query rules under current subscription
+```output
+Description       : description 1
+Enabled           : true
+LastUpdatedTime   : 19-Apr-19 12:29:39 PM
+ProvisioningState : Succeeded
+Source            : Microsoft.Azure.Management.Monitor.Models.Source
+Schedule          : Microsoft.Azure.Management.Monitor.Models.Schedule
+Action            : Microsoft.Azure.Management.Monitor.Models.AlertingAction
+Id                : /subscriptions/ad825170-845c-47db-8f00-11978947b089/resourceGroups/MyResourceGroup/providers/Microsoft.Insights/scheduledqueryrules/LogAlertRule1
+Name              : LogAlertRule1
+Type              : Microsoft.Insights/scheduledqueryrules
+Location          : centralindia
+Tags              : {[hidden-link:/subscriptions/ad825170-845c-47db-8f00-11978947b089/resourceGroups/MyResourceGroup/providers/Microsoft.OperationalInsights/workspaces/MyWorkspace, Resource]}
 
-### Example 2: List scheduled query rules for resource group
-```powershell
-Get-AzScheduledQueryRule -ResourceGroupName "test-group"
+Description       : description 2
+Enabled           : true
+LastUpdatedTime   : 15-Apr-19 6:57:00 PM
+ProvisioningState : Succeeded
+Source            : Microsoft.Azure.Management.Monitor.Models.Source
+Schedule          : Microsoft.Azure.Management.Monitor.Models.Schedule
+Action            : Microsoft.Azure.Management.Monitor.Models.Action
+Id                : /subscriptions/ad825170-845c-47db-8f00-11978947b089/resourceGroups/MyResourceGroup/providers/Microsoft.Insights/scheduledqueryrules/LogAlertRule2
+Name              : LogAlertRule2
+Type              : Microsoft.Insights/scheduledqueryrules
+Location          : centralindia
+Tags              : {[hidden-link:/subscriptions/ad825170-845c-47db-8f00-11978947b089/resourceGroups/MyResourceGroup/providers/Microsoft.OperationalInsights/workspaces/MyWorkspace, Resource]}
 ```
 
-List scheduled query rules for resource group: "test-group"
-
-### Example 3: Get scheduled query rule by name
+### Example 2: Get by rule name
 ```powershell
-Get-AzScheduledQueryRule -ResourceGroupName "test-group" -Name "test-rule"
+Get-AzScheduledQueryRule -ResourceGroupName "MyResourceGroup" -Name "LogAlertRule1"
 ```
 
-Get scheduled query rule by name
+```output
+Description       : desc 1
+Enabled           : true
+LastUpdatedTime   : 19-Apr-19 12:29:39 PM
+ProvisioningState : Succeeded
+Source            : Microsoft.Azure.Management.Monitor.Models.Source
+Schedule          : Microsoft.Azure.Management.Monitor.Models.Schedule
+Action            : Microsoft.Azure.Management.Monitor.Models.AlertingAction
+Id                : /subscriptions/ad825170-845c-47db-8f00-11978947b089/resourceGroups/MyResourceGroup/providers/Microsoft.Insights/scheduledqueryrules/LogAlertRule1
+Name              : LogAlertRule1
+Type              : Microsoft.Insights/scheduledqueryrules
+Location          : centralindia
+Tags              : {[hidden-link:/subscriptions/ad825170-845c-47db-8f00-11978947b089/resourceGroups/MyResourceGroup/providers/Microsoft.OperationalInsights/workspaces/MyWorkspace, Resource]}
+```
+
+### Example 3: Get by resource Id
+```powershell
+Get-AzScheduledQueryRule -ResourceId "/subscriptions/ad825170-845c-47db-8f00-11978947b089/resourceGroups/MyResourceGroup/providers/Microsoft.Insights/scheduledqueryrules/LogAlertRule1"
+```
+
+```output
+Description       : desc 1
+Enabled           : true
+LastUpdatedTime   : 19-Apr-19 12:29:39 PM
+ProvisioningState : Succeeded
+Source            : Microsoft.Azure.Management.Monitor.Models.Source
+Schedule          : Microsoft.Azure.Management.Monitor.Models.Schedule
+Action            : Microsoft.Azure.Management.Monitor.Models.AlertingAction
+Id                : /subscriptions/ad825170-845c-47db-8f00-11978947b089/resourceGroups/MyResourceGroup/providers/Microsoft.Insights/scheduledqueryrules/LogAlertRule1
+Name              : LogAlertRule1
+Type              : Microsoft.Insights/scheduledqueryrules
+Location          : centralindia
+Tags              : {[hidden-link:/subscriptions/ad825170-845c-47db-8f00-11978947b089/resourceGroups/MyResourceGroup/providers/Microsoft.OperationalInsights/workspaces/MyWorkspace, Resource]}
+```
 
 ## PARAMETERS
 
@@ -69,9 +115,9 @@ Get scheduled query rule by name
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -80,28 +126,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Monitor.ScheduledQueryRule.Models.IScheduledQueryRuleIdentity
-Parameter Sets: GetViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Name
-The name of the rule.
+The alert rule name
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: ByRuleName
 Aliases:
 
 Required: True
@@ -112,12 +142,23 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The name of the resource group.
-The name is case insensitive.
+The resource group name
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List1
+Parameter Sets: BySubscriptionOrResourceGroup
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: ByRuleName
 Aliases:
 
 Required: True
@@ -127,18 +168,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-The ID of the target subscription.
+### -ResourceId
+The resource Id
 
 ```yaml
-Type: System.String[]
-Parameter Sets: List, Get, List1
+Type: System.String
+Parameter Sets: ByResourceId
 Aliases:
 
-Required: False
+Required: True
 Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -147,25 +188,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Monitor.ScheduledQueryRule.Models.IScheduledQueryRuleIdentity
+### None
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Monitor.ScheduledQueryRule.Models.Api20210801.IScheduledQueryRuleResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSScheduledQueryRuleResource
 
 ## NOTES
-
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IScheduledQueryRuleIdentity>`: Identity Parameter
-  - `[Id <String>]`: Resource identity path
-  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
-  - `[RuleName <String>]`: The name of the rule.
-  - `[SubscriptionId <String>]`: The ID of the target subscription.
 
 ## RELATED LINKS

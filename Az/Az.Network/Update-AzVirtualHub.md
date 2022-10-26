@@ -19,8 +19,7 @@ Updates a virtual hub.
 Update-AzVirtualHub -ResourceGroupName <String> -Name <String> [-AddressPrefix <String>]
  [-HubVnetConnection <PSHubVirtualNetworkConnection[]>] [-RouteTable <PSVirtualHubRouteTable>]
  [-Tag <Hashtable>] [-Sku <String>] [-PreferredRoutingGateway <String>] [-HubRoutingPreference <String>]
- [-VirtualRouterAsn <UInt32>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByVirtualHubResourceId
@@ -28,8 +27,7 @@ Update-AzVirtualHub -ResourceGroupName <String> -Name <String> [-AddressPrefix <
 Update-AzVirtualHub -ResourceId <String> [-AddressPrefix <String>]
  [-HubVnetConnection <PSHubVirtualNetworkConnection[]>] [-RouteTable <PSVirtualHubRouteTable>]
  [-Tag <Hashtable>] [-Sku <String>] [-PreferredRoutingGateway <String>] [-HubRoutingPreference <String>]
- [-VirtualRouterAsn <UInt32>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByVirtualHubObject
@@ -37,8 +35,7 @@ Update-AzVirtualHub -ResourceId <String> [-AddressPrefix <String>]
 Update-AzVirtualHub -InputObject <PSVirtualHub> [-AddressPrefix <String>]
  [-HubVnetConnection <PSHubVirtualNetworkConnection[]>] [-RouteTable <PSVirtualHubRouteTable>]
  [-Tag <Hashtable>] [-Sku <String>] [-PreferredRoutingGateway <String>] [-HubRoutingPreference <String>]
- [-VirtualRouterAsn <UInt32>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -106,7 +103,7 @@ This example is similar to Example 1, but also attaches a route table to the vir
 New-AzResourceGroup -Location "West US" -Name "testRG"
 $virtualWan = New-AzVirtualWan -ResourceGroupName "testRG" -Name "myVirtualWAN" -Location "West US"
 New-AzVirtualHub -VirtualWan $virtualWan -ResourceGroupName "testRG" -Name "westushub" -AddressPrefix "10.0.1.0/24"
-Update-AzVirtualHub -ResourceGroupName "testRG" -Name "westushub" -HubRoutingPreference "VpnGateway"
+Update-AzVirtualHub -ResourceGroupName "testRG" -Name "westushub" -HubRoutingPreference "VpnGateway"    
 ```
 
 ```output
@@ -174,22 +171,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -HubRoutingPreference
-Virtual Hub Routing Preference to route traffic
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-Accepted values: ExpressRoute, VpnGateway, ASPath
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -HubVnetConnection
 The hub virtual network connections associated with this Virtual Hub.
 
@@ -243,6 +224,22 @@ Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: ExpressRoute, VpnGateway
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HubRoutingPreference
+Virtual Hub Routing Preference to route traffic
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: ExpressRoute, VpnGateway, ASPath
 
 Required: False
 Position: Named
@@ -316,21 +313,6 @@ A hashtable which represents resource tags.
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VirtualRouterAsn
-The ASN of this virtual hub
-
-```yaml
-Type: System.UInt32
 Parameter Sets: (All)
 Aliases:
 

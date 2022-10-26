@@ -1,7 +1,7 @@
 ---
-external help file: Az.EventHub-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.EventHub.dll-Help.xml
 Module Name: Az.EventHub
-online version: https://docs.microsoft.com/powershell/module/az.eventhub/set-azeventhubapplicationgroup
+online version: 
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/EventHub/EventHub/help/Set-AzEventHubApplicationGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/EventHub/EventHub/help/Set-AzEventHubApplicationGroup.md
@@ -10,141 +10,60 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Set-AzEventHubApplicationGroup
 
 ## SYNOPSIS
-Sets an EventHub Application Group
+Updates an application group in a namespace.
 
 ## SYNTAX
 
-### SetExpanded (Default)
+### ApplicationGroupPropertiesParameterSet (Default)
 ```
-Set-AzEventHubApplicationGroup -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] [-ClientAppGroupIdentifier <String>] [-IsEnabled]
- [-Policy <IApplicationGroupPolicy[]>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Set-AzEventHubApplicationGroup [-ResourceGroupName] <String> [-NamespaceName] <String> [-Name] <String>
+ [-IsEnabled] [-ThrottlingPolicyConfig <PSEventHubThrottlingPolicyConfigAttributes[]>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### SetViaIdentityExpanded
+### ApplicationGroupResourceIdParameterSet
 ```
-Set-AzEventHubApplicationGroup -InputObject <IEventHubIdentity> [-ClientAppGroupIdentifier <String>]
- [-IsEnabled] [-Policy <IApplicationGroupPolicy[]>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Set-AzEventHubApplicationGroup [-IsEnabled]
+ [-ThrottlingPolicyConfig <PSEventHubThrottlingPolicyConfigAttributes[]>] -ResourceId <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ApplicationGroupInputObjectParameterSet
+```
+Set-AzEventHubApplicationGroup [-InputObject] <PSEventHubApplicationGroupAttributes>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Sets an EventHub Application Group
+Updates an application group in a namespace.
+Cmdlet can be used to enable or disable application group connections and set throttling policies.
 
 ## EXAMPLES
 
-### Example 1: Add throttling policies to an Application Group
+### Example 1: Add throttling policies to an already existing application group.
 ```powershell
-$t3 = New-AzEventHubThrottlingPolicyConfig -Name t3 -MetricId OutgoingMessages -RateLimitThreshold 12000
-$appGroup = Get-AzEventHubApplicationGroup -ResourceGroupName myResourceGroup -NamespaceName myNamespace -Name myAppGroup
-$appGroup.Policy += $t3
-Set-AzEventHubApplicationGroup -ResourceGroupName myResourceGroup -NamespaceName myNamespace -Name myAppGroup -Policy $appGroup.Policy
+$policyToBeAppended = New-AzEventHubThrottlingPolicyConfig -Name policy1 -MetricId IncomingBytes -RateLimitThreshold 12345
+
+$appGroup = Get-AzEventHubApplicationGroup -ResourceGroupName myresourcegroup -NamespaceName mynamespace -Name myappgroup
+
+$appGroup.ThrottlingPolicyConfig += $policyToBeAppended
+
+Set-AzEventHubApplicationGroup -ResourceGroupName myresourcegroup -NamespaceName mynamespace -Name myappgroup -ThrottlingPolicyConfig $appGroup.ThrottlingPolicyConfig
 ```
 
-```output
-ClientAppGroupIdentifier     : SASKeyName=a
-Id                           : /subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.EventHub/namespaces/myNamespace/applicationGroups/
-                               myAppGroup
-IsEnabled                    : True
-Location                     : Central US
-Name                         : myAppGroup
-Policy                       : {{
-                                 "name": "t1",
-                                 "type": "ThrottlingPolicy",
-                                 "rateLimitThreshold": 10000,
-                                 "metricId": "IncomingMessages"
-                               }, {
-                                 "name": "t2",
-                                 "type": "ThrottlingPolicy",
-                                 "rateLimitThreshold": 20000,
-                                 "metricId": "OutgoingBytes"
-                               }, {
-                                 "name": "t3",
-                                 "type": "ThrottlingPolicy",
-                                 "rateLimitThreshold": 12000,
-                                 "metricId": "OutgoingMessages"
-                               }}
-ResourceGroupName            : myResourceGroup
-```
-
-`-Policy` takes an array of Policy objects.
-It represents the entire set of throttling policies defined on the appplication group and not just the one.
-If you want to add or remove throttling policies, the right way to do it is to get the application group and query the Policy data member of the object returned as shown above.
-
-### Example 2: Update application group using InputObject parameter set
-```powershell
-$appGroup = Get-AzEventHubApplicationGroup -ResourceGroupName myResourceGroup -NamespaceName myNamespace -Name myAppGroup
-Set-AzEventHubApplicationGroup -InputObject $appGroup -IsEnabled:$false
-```
-
-```output
-ClientAppGroupIdentifier     : SASKeyName=a
-Id                           : /subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.EventHub/namespaces/myNamespace/applicationGroups/
-                               myAppGroup
-IsEnabled                    : False
-Location                     : Central US
-Name                         : myAppGroup
-Policy                       : {{
-                                 "name": "t1",
-                                 "type": "ThrottlingPolicy",
-                                 "rateLimitThreshold": 10000,
-                                 "metricId": "IncomingMessages"
-                               }, {
-                                 "name": "t2",
-                                 "type": "ThrottlingPolicy",
-                                 "rateLimitThreshold": 20000,
-                                 "metricId": "OutgoingBytes"
-                               }, {
-                                 "name": "t3",
-                                 "type": "ThrottlingPolicy",
-                                 "rateLimitThreshold": 12000,
-                                 "metricId": "OutgoingMessages"
-                               }}
-ResourceGroupName            : myResourceGroup
-```
-
-Disables application group `myAppGroup`.
+`-ThrottlingPolicyConfig` takes an array of PSEventHubThrottlingPolicyConfigAttributes objects. It represents the entire set of throttling policies
+defined on the appplication group and not just the one. If you want to add or remove throttling policies, the right way to do it is to get
+the application group and query the ThrottlingPolicyConfig field of the object returned as shown above.
 
 ## PARAMETERS
-
-### -AsJob
-Run the command as a job
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ClientAppGroupIdentifier
-The Unique identifier for application group.Supports SAS(SASKeyName=KeyName) or AAD(AADAppID=Guid)
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -154,16 +73,15 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Identity parameter.
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+Input Object of type PSEventHubApplicationGroupAttributes
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.IEventHubIdentity
-Parameter Sets: SetViaIdentityExpanded
+Type: Microsoft.Azure.Commands.EventHub.Models.PSEventHubApplicationGroupAttributes
+Parameter Sets: ApplicationGroupInputObjectParameterSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -175,106 +93,89 @@ Once the isEnabled is set to false, all the existing connections of application 
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: ApplicationGroupPropertiesParameterSet, ApplicationGroupResourceIdParameterSet
 Aliases:
 
 Required: False
-Position: Named
+Position: 3
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Name
-The name of the Application Group.
+Application Group Name
 
 ```yaml
 Type: System.String
-Parameter Sets: SetExpanded
-Aliases: ApplicationGroupName
+Parameter Sets: ApplicationGroupPropertiesParameterSet
+Aliases:
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -NamespaceName
-The name of EventHub namespace
+Namespace Name
 
 ```yaml
 Type: System.String
-Parameter Sets: SetExpanded
+Parameter Sets: ApplicationGroupPropertiesParameterSet
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NoWait
-Run the command asynchronously
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Policy
-List of group policies that define the behavior of application group.
-The policies can support resource governance scenarios such as limiting ingress or egress traffic.
-To construct, see NOTES section for POLICY properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.Api202201Preview.IApplicationGroupPolicy[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The name of the resource group.
-The name is case insensitive.
+Resource Group Name
 
 ```yaml
 Type: System.String
-Parameter Sets: SetExpanded
+Parameter Sets: ApplicationGroupPropertiesParameterSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceId
+ResourceId of application group
+
+```yaml
+Type: System.String
+Parameter Sets: ApplicationGroupResourceIdParameterSet
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-The ID of the target subscription.
+### -ThrottlingPolicyConfig
+List of Throttling Policy Objects.
+Please use New-AzEventHubThrottlingPolicyConfig to create in memory object which can be one item in this list.
 
 ```yaml
-Type: System.String
-Parameter Sets: SetExpanded
+Type: Microsoft.Azure.Commands.EventHub.Models.PSEventHubThrottlingPolicyConfigAttributes[]
+Parameter Sets: ApplicationGroupPropertiesParameterSet, ApplicationGroupResourceIdParameterSet
 Aliases:
 
 Required: False
 Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -314,43 +215,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.Api202201Preview.IApplicationGroupPolicy[]
-
-### Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.IEventHubIdentity
+### System.String
 
 ### System.Management.Automation.SwitchParameter
 
-### System.String
+### Microsoft.Azure.Commands.EventHub.Models.PSEventHubThrottlingPolicyConfigAttributes[]
+
+### Microsoft.Azure.Commands.EventHub.Models.PSEventHubApplicationGroupAttributes
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.Api202201Preview.IApplicationGroup
+### Microsoft.Azure.Commands.EventHub.Models.PSEventHubApplicationGroupAttributes
 
 ## NOTES
-
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IEventHubIdentity>`: Identity parameter.
-  - `[Alias <String>]`: The Disaster Recovery configuration name
-  - `[ApplicationGroupName <String>]`: The Application Group name 
-  - `[AuthorizationRuleName <String>]`: The authorization rule name.
-  - `[ClusterName <String>]`: The name of the Event Hubs Cluster.
-  - `[ConsumerGroupName <String>]`: The consumer group name
-  - `[EventHubName <String>]`: The Event Hub name
-  - `[Id <String>]`: Resource identity path
-  - `[NamespaceName <String>]`: The Namespace name
-  - `[PrivateEndpointConnectionName <String>]`: The PrivateEndpointConnection name
-  - `[ResourceAssociationName <String>]`: The ResourceAssociation Name
-  - `[ResourceGroupName <String>]`: Name of the resource group within the azure subscription.
-  - `[SchemaGroupName <String>]`: The Schema Group name 
-  - `[SubscriptionId <String>]`: Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
-
-`POLICY <IApplicationGroupPolicy[]>`: List of group policies that define the behavior of application group. The policies can support resource governance scenarios such as limiting ingress or egress traffic.
-  - `Name <String>`: The Name of this policy
 
 ## RELATED LINKS

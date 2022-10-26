@@ -1,5 +1,5 @@
 ---
-external help file: Az.ServiceBus-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.dll-Help.xml
 Module Name: Az.ServiceBus
 online version: https://docs.microsoft.com/powershell/module/az.servicebus/get-azservicebusrule
 schema: 2.0.0
@@ -10,70 +10,41 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Get-AzServiceBusRule
 
 ## SYNOPSIS
-Retrieves the description for the specified rule.
+Retrieves the definition of an existing rule in a given Subscription of Topic. 
 
 ## SYNTAX
 
-### List (Default)
 ```
-Get-AzServiceBusRule -NamespaceName <String> -ResourceGroupName <String> [-SubscriptionId <String[]>]
- -SubscriptionName <String> -TopicName <String> [-Skip <Int32>] [-Top <Int32>] [-DefaultProfile <PSObject>]
+Get-AzServiceBusRule [-ResourceGroupName] <String> [-Namespace] <String> [-Topic] <String>
+ [-Subscription] <String> [[-Name] <String>] [-MaxCount <Int32>] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
-```
-
-### Get
-```
-Get-AzServiceBusRule -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String[]>] -SubscriptionName <String> -TopicName <String> [-DefaultProfile <PSObject>]
- [<CommonParameters>]
-```
-
-### GetViaIdentity
-```
-Get-AzServiceBusRule -InputObject <IServiceBusIdentity> [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Retrieves the description for the specified rule.
+The **Get-AzServiceBusRule** cmdlet gets the description of the specified rule in the given subscription of topic.
 
 ## EXAMPLES
 
-### Example 1: Get details of a ServiceBus Rule
+### Example 1
 ```powershell
-Get-AzServiceBusRule -ResourceGroupName myResourceGroup -NamespaceName myNamespace -Name '$Default' -TopicName myTopic -SubscriptionName mySubscription
+Get-AzServiceBusRule -ResourceGroup Default-ServiceBus-WestUS -Namespace SBExample1 -Topic SBTopic -Subscription SBSubscription -Name SBRule
 ```
 
-```output
-ActionCompatibilityLevel               :
-ActionRequiresPreprocessing            :
-ActionSqlExpression                    :
-ContentType                            :
-CorrelationFilterProperty              : {
-                                         }
-CorrelationFilterRequiresPreprocessing :
-CorrelationId                          :
-FilterType                             : SqlFilter
-Id                                     : /subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.ServiceBus/namespaces/myNamespace/topics/myTopic/subscriptions/mySubscription/rules/$Default
-Label                                  :
-Location                               : westus
-MessageId                              :
-Name                                   : $Default
-ReplyTo                                :
-ReplyToSessionId                       :
-ResourceGroupName                      : myResourceGroup
-SessionId                              :
-SqlExpression                          : 1=1
-SqlFilterCompatibilityLevel            : 20
-```
+Returns the specified rule description for a specified subscription.
 
-Gets the details of `$Default` rule from subscription `mySubscription` of topic `myTopic`.
-
-### Example 2: List all rules in a ServiceBus subscription
+### Example 2
 ```powershell
-Get-AzServiceBusRule -ResourceGroupName myResourceGroup -NamespaceName myNamespace -TopicName myTopic -SubscriptionName mySubscription
+Get-AzServiceBusRule -ResourceGroup Default-ServiceBus-WestUS -Namespace SBExample1 -Topic SBTopic -Subscription SBSubscription
 ```
 
-Lists all rules in ServiceBus subscription `mySubscription`.
+Returns list of rule descriptions for a specified subscription.  By default 100 rule will be returned, if more than 100 rule to be returned, please use -MaxCount Parameter.
+
+### Example 3
+```powershell
+Get-AzServiceBusRule -ResourceGroup Default-ServiceBus-WestUS -Namespace SBExample1 -Topic SBTopic -Subscription SBSubscription -MaxCount 150
+```
+
+Returns list of first 150 rules descriptions for a specified subscription.
 
 ## PARAMETERS
 
@@ -81,9 +52,9 @@ Lists all rules in ServiceBus subscription `mySubscription`.
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -92,176 +63,107 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+### -MaxCount
+Determine the maximum number of Rules to return.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.IServiceBusIdentity
-Parameter Sets: GetViaIdentity
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Name
-The rule name.
+Rule Name
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
-Aliases: RuleName
+Parameter Sets: (All)
+Aliases:
 
-Required: True
-Position: Named
+Required: False
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -NamespaceName
-The namespace name
+### -Namespace
+Namespace Name
 
 ```yaml
 Type: System.String
-Parameter Sets: List, Get
-Aliases:
+Parameter Sets: (All)
+Aliases: NamespaceName
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Name of the Resource group within the Azure subscription.
+The name of the resource group
 
 ```yaml
 Type: System.String
-Parameter Sets: List, Get
-Aliases:
+Parameter Sets: (All)
+Aliases: ResourceGroup
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-Subscription credentials that uniquely identify a Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
-
-```yaml
-Type: System.String[]
-Parameter Sets: List, Get
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubscriptionName
-The subscription name.
+### -Subscription
+Subscription Name
 
 ```yaml
 Type: System.String
-Parameter Sets: List, Get
-Aliases:
+Parameter Sets: (All)
+Aliases: SubscriptionName
 
 Required: True
-Position: Named
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Top
-May be used to limit the number of results to the most recent N usageDetails.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TopicName
-The topic name.
+### -Topic
+Topic Name
 
 ```yaml
 Type: System.String
-Parameter Sets: List, Get
-Aliases:
+Parameter Sets: (All)
+Aliases: TopicName
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Skip
-Skip is only used if a previous operation returned a partial result.
-If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.IServiceBusIdentity
+### System.String
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.Api202201Preview.IRule
+### Microsoft.Azure.Commands.ServiceBus.Models.PSRulesAttributes
 
 ## NOTES
-
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IServiceBusIdentity>`: Identity Parameter
-  - `[Alias <String>]`: The Disaster Recovery configuration name
-  - `[AuthorizationRuleName <String>]`: The authorization rule name.
-  - `[ConfigName <MigrationConfigurationName?>]`: The configuration name. Should always be "$default".
-  - `[Id <String>]`: Resource identity path
-  - `[NamespaceName <String>]`: The namespace name
-  - `[PrivateEndpointConnectionName <String>]`: The PrivateEndpointConnection name
-  - `[QueueName <String>]`: The queue name.
-  - `[ResourceGroupName <String>]`: Name of the Resource group within the Azure subscription.
-  - `[RuleName <String>]`: The rule name.
-  - `[SubscriptionId <String>]`: Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
-  - `[SubscriptionName <String>]`: The subscription name.
-  - `[TopicName <String>]`: The topic name.
 
 ## RELATED LINKS

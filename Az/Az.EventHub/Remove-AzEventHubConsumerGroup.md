@@ -1,5 +1,5 @@
 ---
-external help file: Az.EventHub-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.EventHub.dll-Help.xml
 Module Name: Az.EventHub
 online version: https://docs.microsoft.com/powershell/module/az.eventhub/remove-azeventhubconsumergroup
 schema: 2.0.0
@@ -10,44 +10,72 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Remove-AzEventHubConsumerGroup
 
 ## SYNOPSIS
-Deletes a consumer group from the specified Event Hub and resource group.
+Deletes the specified Event Hubs consumer group.
 
 ## SYNTAX
 
-### Delete (Default)
+### ConsumergroupPropertiesSet (Default)
 ```
-Remove-AzEventHubConsumerGroup -EventHubName <String> -Name <String> -NamespaceName <String>
- -ResourceGroupName <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Remove-AzEventHubConsumerGroup [-ResourceGroupName] <String> [-Namespace] <String> [-EventHub] <String>
+ [-Name] <String> [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### ConsumergroupInputObjectSet
 ```
-Remove-AzEventHubConsumerGroup -InputObject <IEventHubIdentity> [-DefaultProfile <PSObject>] [-PassThru]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzEventHubConsumerGroup [-InputObject] <PSConsumerGroupAttributes> [-PassThru] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ConsumergroupResourceIdParameterSet
+```
+Remove-AzEventHubConsumerGroup [-ResourceId] <String> [-PassThru] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Deletes a consumer group from the specified Event Hub and resource group.
+The Remove-AzEventHubConsumerGroup cmdlet removes and deletes the specified consumer group from the given Event Hub.
 
 ## EXAMPLES
 
-### Example 1: Remove an EventHub consumer group
+### Example 1
 ```powershell
-Remove-AzEventHubConsumerGroup -ResourceGroupName myResourceGroup -NamespaceName myNamespace -EventHubName myEventHub -Name myConsumerGroup
+Remove-AzEventHubConsumerGroup -ResourceGroupName MyResourceGroupName -Namespace MyNamespaceName -EventHub MyEventHubName -Name MyConsumerGroupName
 ```
 
-Deletes consumer group `myConsumerGroup` from EventHub entity `myEventHub` on namespace `myNamespace`.
+Deletes the consumer group \`MyConsumerGroupName\` from the Event Hub \`MyEventHubName\`, scoped to the \`MyNamespaceName\` namespace.
+
+### Example 2: InputObject - Using Variable
+```powershell
+$inputobject = Get-AzEventHubConsumerGroup <params>
+Remove-AzEventHubConsumerGroup -InputObject $inputobject
+```
+
+### Example 3: InputObject - Using Piping
+```powershell
+Get-AzEventHubConsumerGroup <params> | Remove-AzEventHubConsumerGroup
+```
+
+### Example 4: ResourceId Using Variable
+```powershell
+$resourceid = Get-AzEventHubConsumerGroup <params>
+Remove-AzEventHubConsumerGroup -ResourceId $resourceid.Id
+```
+
+### Example 5: ResourceId Using string
+```powershell
+Remove-AzEventHubConsumerGroup -ResourceId "/subscriptions/xxx-xxxx-xxxxx-xxxxx/resourceGroups/ResourceGroupName/providers/Microsoft.EventHub/namespaces/NamespaceName/eventhubs/EventHubName/consumergroups/ConsumerGroupName"
+```
 
 ## PARAMETERS
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.
+### -AsJob
+Run cmdlet in the background
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases:
 
 Required: False
 Position: Named
@@ -56,69 +84,83 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EventHubName
-The Event Hub name
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.String
-Parameter Sets: Delete
-Aliases:
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+### -EventHub
+EventHub Name
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.IEventHubIdentity
-Parameter Sets: DeleteViaIdentity
+Type: System.String
+Parameter Sets: ConsumergroupPropertiesSet
+Aliases: EventHubName
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -InputObject
+ConsumerGroup Object
+
+```yaml
+Type: Microsoft.Azure.Commands.EventHub.Models.PSConsumerGroupAttributes
+Parameter Sets: ConsumergroupInputObjectSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Name
-The consumer group name
+ConsumerGroup Name
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: ConsumergroupPropertiesSet
 Aliases: ConsumerGroupName
 
 Required: True
-Position: Named
+Position: 3
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NamespaceName
-The Namespace name
+### -Namespace
+Namespace Name
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
-Aliases:
+Parameter Sets: ConsumergroupPropertiesSet
+Aliases: NamespaceName
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -PassThru
-Returns true when the command succeeds
+Specifying this will return true if the command was successful.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -133,33 +175,32 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Name of the resource group within the azure subscription.
+Resource Group Name
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: ConsumergroupPropertiesSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-Subscription credentials that uniquely identify a Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
+### -ResourceId
+ConsumerGroup Resource Id
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: ConsumergroupResourceIdParameterSet
 Aliases:
 
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -195,38 +236,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.IEventHubIdentity
+### System.String
+
+### Microsoft.Azure.Commands.EventHub.Models.PSConsumerGroupAttributes
 
 ## OUTPUTS
 
-### System.Boolean
+### System.Void
 
 ## NOTES
-
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IEventHubIdentity>`: Identity Parameter
-  - `[Alias <String>]`: The Disaster Recovery configuration name
-  - `[ApplicationGroupName <String>]`: The Application Group name 
-  - `[AuthorizationRuleName <String>]`: The authorization rule name.
-  - `[ClusterName <String>]`: The name of the Event Hubs Cluster.
-  - `[ConsumerGroupName <String>]`: The consumer group name
-  - `[EventHubName <String>]`: The Event Hub name
-  - `[Id <String>]`: Resource identity path
-  - `[NamespaceName <String>]`: The Namespace name
-  - `[PrivateEndpointConnectionName <String>]`: The PrivateEndpointConnection name
-  - `[ResourceAssociationName <String>]`: The ResourceAssociation Name
-  - `[ResourceGroupName <String>]`: Name of the resource group within the azure subscription.
-  - `[SchemaGroupName <String>]`: The Schema Group name 
-  - `[SubscriptionId <String>]`: Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 
 ## RELATED LINKS

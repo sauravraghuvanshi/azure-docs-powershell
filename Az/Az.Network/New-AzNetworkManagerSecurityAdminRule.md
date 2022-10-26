@@ -97,13 +97,12 @@ Creates a security admin rule.
 ## PARAMETERS
 
 ### -Access
-Access of Rule.
+Access of Rule. Valid values include 'Allow', 'Deny', and 'AlwaysAllow'.
 
 ```yaml
 Type: String
 Parameter Sets: Custom
 Aliases:
-Accepted values: Allow, Deny, and AlwaysAllow
 
 Required: True
 Position: Named
@@ -188,13 +187,12 @@ Accept wildcard characters: False
 ```
 
 ### -Direction
-Direction of Rule.
+Direction of Rule. Valid values include 'Inbound' and 'Outbound'.
 
 ```yaml
 Type: String
 Parameter Sets: Custom
 Aliases:
-Accepted values: Inbound, Outbound
 
 Required: True
 Position: Named
@@ -279,13 +277,12 @@ Accept wildcard characters: False
 ```
 
 ### -Protocol
-Protocol of Rule.
+Protocol of Rule. Valid values include 'Tcp', 'Udp', 'Icmp', 'Esp', 'Any', and 'Ah'.
 
 ```yaml
 Type: String
 Parameter Sets: Custom
 Aliases:
-Accepted values: Tcp, Udp, Icmp, Esp, Any, Ah
 
 Required: True
 Position: Named

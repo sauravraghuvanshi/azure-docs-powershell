@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
-online version: https://docs.microsoft.com/powershell/module/az.network/get-azapplicationgatewaybackendsetting
+online version: 
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzApplicationGatewayBackendSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzApplicationGatewayBackendSetting.md
@@ -10,7 +10,7 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Get-AzApplicationGatewayBackendSetting
 
 ## SYNOPSIS
-Gets the back-end TCP\TLS settings of an application gateway.
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
@@ -20,17 +20,16 @@ Get-AzApplicationGatewayBackendSetting [-Name <String>] -ApplicationGateway <PSA
 ```
 
 ## DESCRIPTION
-The Get-AzApplicationGatewayBackendSetting cmdlet gets the back-end TCP\TLS settings of an application gateway.
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
-### Example 1: Get back-end TCP\TLS settings by name
+### Example 1
 ```powershell
-$AppGw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
-$Settings  = Get-AzApplicationGatewayBackendSetting -Name "Settings01" -ApplicationGateway $AppGw
+PS C:\> {{ Add example code here }}
 ```
 
-The first command gets the application gateway named ApplicationGateway01 in the resource group named ResourceGroup01, and stores it in the $AppGw variable.The second command gets the backend settings named Settings01 for $AppGw and stores the settings in the $Settings variable.
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -93,11 +92,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
-[Add-AzApplicationGatewayBackendSetting](./Add-AzApplicationGatewayBackendSetting.md)
-
-[New-AzApplicationGatewayBackendSetting](./New-AzApplicationGatewayBackendSetting.md)
-
-[Remove-AzApplicationGatewayBackendSetting](./Remove-AzApplicationGatewayBackendSetting.md)
-
-[Set-AzApplicationGatewayBackendSetting](./Set-AzApplicationGatewayBackendSetting.md)

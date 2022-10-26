@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
-online version: https://docs.microsoft.com/powershell/module/az.network/add-azapplicationgatewayroutingrule
+online version: 
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzApplicationGatewayRoutingRule.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzApplicationGatewayRoutingRule.md
@@ -10,7 +10,7 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Add-AzApplicationGatewayRoutingRule
 
 ## SYNOPSIS
-Adds a routing rule to an application gateway.
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
@@ -30,18 +30,16 @@ Add-AzApplicationGatewayRoutingRule -ApplicationGateway <PSApplicationGateway> -
 ```
 
 ## DESCRIPTION
-The **Add-AzApplicationGatewayRoutingRule** cmdlet adds a routing rule to an application gateway.
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
-### Example 1: Add a routing rule to an application gateway
+### Example 1
 ```powershell
-$AppGw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
-$Appgw = Add-AzApplicationGatewayRoutingRule -ApplicationGateway $AppGw -Name "Rule01" -RuleType Basic -Priority 100 -BackendSettings $Setting -Listener $Listener -BackendAddressPool $Pool
+PS C:\> {{ Add example code here }}
 ```
 
-The first command gets the application gateway and stores it in the $AppGw variable.
-The second command adds the routing rule to the application gateway.
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -225,11 +223,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
-[Get-AzApplicationGatewayRoutingRule](./Get-AzApplicationGatewayRoutingRule.md)
-
-[New-AzApplicationGatewayRoutingRule](./New-AzApplicationGatewayRoutingRule.md)
-
-[Remove-AzApplicationGatewayRoutingRule](./Remove-AzApplicationGatewayRoutingRule.md)
-
-[Set-AzApplicationGatewayRoutingRule](./Set-AzApplicationGatewayRoutingRule.md)

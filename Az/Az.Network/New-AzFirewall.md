@@ -24,7 +24,7 @@ New-AzFirewall -Name <String> -ResourceGroupName <String> -Location <String>
  [-ThreatIntelWhitelist <PSAzureFirewallThreatIntelWhitelist>] [-PrivateRange <String[]>] [-EnableDnsProxy]
  [-DnsServer <String[]>] [-Tag <Hashtable>] [-Force] [-AsJob] [-Zone <String[]>] [-SkuName <String>]
  [-SkuTier <String>] [-VirtualHubId <String>] [-HubIPAddress <PSAzureFirewallHubIpAddresses>]
- [-FirewallPolicyId <String>] [-AllowActiveFTP] [-EnableFatFlowLogging] [-EnableUDPLogOptimization]
+ [-FirewallPolicyId <String>] [-AllowActiveFTP] [-IdentifyTopFatFlow]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -37,7 +37,7 @@ New-AzFirewall -Name <String> -ResourceGroupName <String> -Location <String> -Vi
  [-ThreatIntelWhitelist <PSAzureFirewallThreatIntelWhitelist>] [-PrivateRange <String[]>] [-EnableDnsProxy]
  [-DnsServer <String[]>] [-Tag <Hashtable>] [-Force] [-AsJob] [-Zone <String[]>] [-SkuName <String>]
  [-SkuTier <String>] [-VirtualHubId <String>] [-HubIPAddress <PSAzureFirewallHubIpAddresses>]
- [-FirewallPolicyId <String>] [-AllowActiveFTP] [-EnableFatFlowLogging] [-EnableUDPLogOptimization]
+ [-FirewallPolicyId <String>] [-AllowActiveFTP] [-IdentifyTopFatFlow]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -51,7 +51,7 @@ New-AzFirewall -Name <String> -ResourceGroupName <String> -Location <String> -Vi
  [-ThreatIntelWhitelist <PSAzureFirewallThreatIntelWhitelist>] [-PrivateRange <String[]>] [-EnableDnsProxy]
  [-DnsServer <String[]>] [-Tag <Hashtable>] [-Force] [-AsJob] [-Zone <String[]>] [-SkuName <String>]
  [-SkuTier <String>] [-VirtualHubId <String>] [-HubIPAddress <PSAzureFirewallHubIpAddresses>]
- [-FirewallPolicyId <String>] [-AllowActiveFTP] [-EnableFatFlowLogging] [-EnableUDPLogOptimization]
+ [-FirewallPolicyId <String>] [-AllowActiveFTP] [-IdentifyTopFatFlow]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -360,21 +360,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EnableUDPLogOptimization
-Enable UDP Log Optimization. By default it is false.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -FirewallPolicyId
 The firewall policy attached to the firewall
 
@@ -420,8 +405,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EnableFatFlowLogging
-Enable Fat Flow Logging. By default it is false.
+### -IdentifyTopFatFlow
+Identify Top Fat Flows. By default it is false.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

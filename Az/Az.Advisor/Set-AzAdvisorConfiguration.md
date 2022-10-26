@@ -1,10 +1,10 @@
 ---
-external help file: 
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Advisor.dll-Help.xml
 Module Name: Az.Advisor
-online version: https://docs.microsoft.com/powershell/module/az.advisor/Set-AzAdvisorConfiguration
+online version: https://docs.microsoft.com/powershell/module/az.advisor/set-azadvisorConfiguration
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Advisor/help/Set-AzAdvisorConfiguration.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Advisor/help/Set-AzAdvisorConfiguration.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Advisor/Advisor/help/Set-AzAdvisorConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Advisor/Advisor/help/Set-AzAdvisorConfiguration.md
 ---
 
 # Set-AzAdvisorConfiguration
@@ -14,156 +14,103 @@ Updates or creates the Azure Advisor Configuration.
 
 ## SYNTAX
 
-### CreateByLCT (Default)
+### InputObjectRgExcludeParameterSet (Default)
 ```
-Set-AzAdvisorConfiguration [-SubscriptionId <String>] [-Exclude] [-LowCpuThreshold <CpuThreshold>]
- [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateByInputObject
-```
-Set-AzAdvisorConfiguration -InputObject <IAdvisorIdentity> [-Exclude] [-LowCpuThreshold <CpuThreshold>]
- [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-AzAdvisorConfiguration [-Exclude] [[-ResourceGroupName] <String>]
+ [[-InputObject] <PsAzureAdvisorConfigurationData>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
-### CreateByRG
+### InputObjectLowCpuExcludeParameterSet 
 ```
-Set-AzAdvisorConfiguration -ResourceGroupName <String> [-SubscriptionId <String>] [-Exclude]
- [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-AzAdvisorConfiguration [-Exclude] [-LowCpuThreshold] <Int32>
+ [[-InputObject] <PsAzureAdvisorConfigurationData>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Updates or creates the Azure Advisor Configuration.
+Used to update the configuration of the Azure Advisor. Two types of Configuration are present: Subscription level configuration and ResourceGroup level configuration. 
+
+Subscription level configuration: There can be only one Configuration for this type for a subscription. LowCpuThreshold and Exclude properties can be updated using this cmdlet.
+ResourceGroup level configuration: There can be only one configuration for each ResourceGroup. Only Exclude property can be updated using this cmdlet.
 
 ## EXAMPLES
 
-### Example 1: Set advisor configuration by subscription id
+###  Example 1
 ```powershell
-Set-AzAdvisorConfiguration -Exclude -LowCpuThreshold 20
+Set-AzAdvisorConfiguration -LowCpuThreshold 10
 ```
 
 ```output
-Name    Exclude LowCpuThreshold
-----    ------- ---------------
-default True    20
+Id         : /subscriptions/{user_subscription}/resourceGroups/resourceGroupName1/providers/Microsoft.Advisor/configurations/{user_subscription}
+Name       : {user_subscription}
+Properties : additionalProperties : null
+             exclude :  False
+             lowCpuThreshold : 10
+
+Type       : Microsoft.Advisor/Configurations
 ```
 
-Set advisor configuration by subscription id
+Updates the configuration(lowCpuThreshold) for subscription level Configuration.
 
-### Example 2:  Set advisor configuration by resource group name
+### Example 2
 ```powershell
-Set-AzAdvisorConfiguration -Exclude
+Set-AzAdvisorConfiguration -LowCpuThreshold 15 -Exclude
+```
+ 
+```output
+Id         : /subscriptions/{user_subscription}/resourceGroups/resourceGroupName1/providers/Microsoft.Advisor/configurations/{user_subscription}
+Name       : {user_subscription}
+Properties : additionalProperties : null
+             exclude :  True
+             lowCpuThreshold : 15
+
+Type       : Microsoft.Advisor/Configurations
+```
+
+Updates the configuration(lowCpuThreshold, exclude) for subscription level Configuration and excludes from the recommendation generation.
+
+### Example 3
+```powershell
+Set-AzAdvisorConfiguration -ResourceGroupName resourceGroupName1 -Exclude
 ```
 
 ```output
-Name    Exclude LowCpuThreshold
-----    ------- ---------------
-default True
+Id         : /subscriptions/{user_subscription}/resourceGroups/resourceGroupName1/providers/Microsoft.Advisor/configurations/{user_subscription}-resourceGroupName1
+Name       : {user_subscription}-resourceGroupName1
+Properties : additionalProperties : null
+             exclude :  True
+             lowCpuThreshold : null
+
+Type       : Microsoft.Advisor/Configurations
 ```
 
-Set advisor configuration by resource group name
+Updates the configuration(exclude) for resourceGroupName1 to be excluded in the recommendation generation.
+
+### Example 4
+```powershell
+Get-AzAdvisorConfiguration | Set-AzAdvisorConfiguration -LowCpuThreshold 20
+```
+
+```output
+Id         : /subscriptions/{user_subscription}/resourceGroups/resourceGroupName1/providers/Microsoft.Advisor/configurations/{user_subscription}
+Name       : {user_subscription}
+Properties : additionalProperties : null
+             exclude :  False
+             lowCpuThreshold : 20
+
+Type       : Microsoft.Advisor/Configurations
+```
+
+Updates the configuration for the given recommendation passed on from the pipeline.
 
 ## PARAMETERS
-
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.
-
-```yaml
-Type: System.Management.Automation.PSObject
-Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Exclude
-Exclude the resource from Advisor evaluations.
-Valid values: False (default) or True.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Advisor.Models.IAdvisorIdentity
-Parameter Sets: CreateByInputObject
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -LowCpuThreshold
-Minimum percentage threshold for Advisor low CPU utilization evaluation.
-Valid only for subscriptions.
-Valid values: 5 (default), 10, 15 or 20.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Advisor.Support.CpuThreshold
-Parameter Sets: CreateByInputObject, CreateByLCT
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResourceGroupName
-The name of the Azure resource group.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateByRG
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubscriptionId
-The Azure subscription ID.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateByLCT, CreateByRG
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -174,12 +121,88 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with Azure.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Exclude
+Exclude from the recommendation generation. If not specified exclude property will be set to false.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+The powershell object type PsAzureAdvisorConfigurationData returned by Get-AzAdvisorConfiguration call.
+
+```yaml
+Type: PsAzureAdvisorConfigurationData
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -LowCpuThreshold
+Value for Low Cpu threshold.
+
+```yaml
+Type: Int32
+Parameter Sets: InputObjectLowCpuExcludeParameterSet
+Aliases:
+Accepted values: 0, 5, 10, 15, 20
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Resource Group name for the configuration.
+
+```yaml
+Type: String
+Parameter Sets: InputObjectRgExcludeParameterSet
+Aliases:
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -191,34 +214,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Advisor.Models.IAdvisorIdentity
+### Microsoft.Azure.Commands.Advisor.Cmdlets.Models.PsAzureAdvisorConfigurationData
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Advisor.Models.Api202001.IConfigData
+### Microsoft.Azure.Commands.Advisor.Cmdlets.Models.PsAzureAdvisorConfigurationData
 
 ## NOTES
 
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IAdvisorIdentity>`: Identity Parameter
-  - `[ConfigurationName <ConfigurationName?>]`: Advisor configuration name. Value must be 'default'
-  - `[Id <String>]`: Resource identity path
-  - `[Name <String>]`: Name of metadata entity.
-  - `[OperationId <String>]`: The operation ID, which can be found from the Location field in the generate recommendation response header.
-  - `[RecommendationId <String>]`: The recommendation ID.
-  - `[ResourceGroup <String>]`: The name of the Azure resource group.
-  - `[ResourceUri <String>]`: The fully qualified Azure Resource Manager identifier of the resource to which the recommendation applies.
-  - `[SubscriptionId <String>]`: The Azure subscription ID.
-
 ## RELATED LINKS
-

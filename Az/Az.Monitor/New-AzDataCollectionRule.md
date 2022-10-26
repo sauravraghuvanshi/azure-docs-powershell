@@ -14,10 +14,19 @@ Create a data collection rule.
 
 ## SYNTAX
 
+### ByFile (Default)
 ```
-New-AzDataCollectionRule -Location <String> -ResourceGroupName <String> -RuleName <String> -RuleFile <String>
- [-Description <String>] [-Tag <Hashtable>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+New-AzDataCollectionRule
+   -Location <string>
+   -ResourceGroupName <string>
+   -RuleName <string>
+   -RuleFile <string>
+   [-Description <string>]
+   [-Tag <hashtable>]
+   [-DefaultProfile <IAzureContextContainer>]
+   [-WhatIf]
+   [-Confirm]
+   [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -110,27 +119,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Description
-The resource description
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Location
 The resource location
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: ByFile
 Aliases:
 
 Required: True
@@ -145,22 +139,7 @@ The resource group name
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RuleFile
-The JSON file path
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
+Parameter Sets: ByFile
 Aliases:
 
 Required: True
@@ -175,10 +154,40 @@ The resource name
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: ByFile
 Aliases: Name
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RuleFile
+The JSON file path
+
+```yaml
+Type: System.String
+Parameter Sets: ByFile
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Description
+The resource description
+
+```yaml
+Type: System.String
+Parameter Sets: ByFile
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -190,7 +199,7 @@ The resource tags
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: (All)
+Parameter Sets: ByFile
 Aliases:
 
 Required: False

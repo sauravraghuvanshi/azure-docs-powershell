@@ -1,6 +1,7 @@
 ---
-external help file: Az.DiagnosticSetting.psm1-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Monitor.dll-Help.xml
 Module Name: Az.Monitor
+ms.assetid: 60B497F6-98A2-4C60-B142-FF5CD123362D
 online version: https://docs.microsoft.com/powershell/module/az.monitor/get-azdiagnosticsetting
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/Get-AzDiagnosticSetting.md
@@ -10,56 +11,54 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Get-AzDiagnosticSetting
 
 ## SYNOPSIS
-Gets the active diagnostic settings for the specified resource.
+Gets the logged categories and time grains.
 
 ## SYNTAX
 
-### List (Default)
+### ResourceIdParameterSet (Default)
 ```
-Get-AzDiagnosticSetting -ResourceId <String> [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-AzDiagnosticSetting -Name <String> -ResourceId <String> [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzDiagnosticSetting [-Name <String>] [-ResourceId] <String> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### SubscriptionIdParameterSet
 ```
-Get-AzDiagnosticSetting -InputObject <IDiagnosticSettingIdentity> [-DefaultProfile <PSObject>]
+Get-AzDiagnosticSetting [-Name <String>] [-SubscriptionId] <String> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets the active diagnostic settings for the specified resource.
+The **Get-AzDiagnosticSetting** cmdlet gets the categories and time grains that are logged for a resource.
+A time grain is the aggregation interval of a metric.
 
 ## EXAMPLES
 
-### Example 1: List diagnostic settings
+### Example 1: Get the status of the logging categories and time grains
 ```powershell
-$subscriptionId = (Get-AzContext).SubscriptionId
-Get-AzDiagnosticSetting -ResourceId /subscriptions/$subscriptionId/resourceGroups/test-rg-name/providers/Microsoft.AppPlatform/Spring/springcloud-001
+Get-AzDiagnosticSetting -ResourceId "/subscriptions/1a66ce04-b633-4a0b-b2bc-a912ec8986a6/ResourceGroups/ContosoRG/providers/microsoft.keyvault/KeyVaults/ContosoKeyVault"
 ```
 
-List diagnostic settings for resource
+```output
+StorageAccountId   : /subscriptions/1a66ce04-b633-4a0b-b2bc-a912ec8986a6/ResourceGroups/ContosoRG/providers/microsoft.storage/accounts/ContosoStorageAccount
+StorageAccountName : ContosoStorageAccount001
+Metrics
 
-### Example 2: Get diagnostic setting by name
-```powershell
-$subscriptionId = (Get-AzContext).SubscriptionId
-Get-AzDiagnosticSetting -ResourceId /subscriptions/$subscriptionId/resourceGroups/test-rg-name/providers/Microsoft.AppPlatform/Spring/springcloud-001 -Name test-setting
+Logs
+Enabled  : True
+Category : AuditEvent
 ```
 
-Get diagnostic settings under resource by name
+This command gets the categories and time grains that are logged for an Azure Key Vault with a *ResourceId* of /subscriptions/1a66ce04-b633-4a0b-b2bc-a912ec8986a6/ResourceGroups/ContosoRG/providers/microsoft.keyvault/KeyVaults/ContosoKeyVault.
 
 ## PARAMETERS
 
 ### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.
+The credentials, account, tenant, and subscription used for communication with azure
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -68,49 +67,48 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Monitor.DiagnosticSetting.Models.IDiagnosticSettingIdentity
-Parameter Sets: GetViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Name
-The name of the diagnostic setting.
+The name of the diagnostic setting. If not given the call default to "service" as it was in the previous API.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceId
-The identifier of the resource.
+Specifies the ID of the resource.
 
 ```yaml
 Type: System.String
-Parameter Sets: List, Get
+Parameter Sets: ResourceIdParameterSet
+Aliases: TargetResourceId
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -SubscriptionId
+The subscription id
+
+```yaml
+Type: System.String
+Parameter Sets: SubscriptionIdParameterSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -119,25 +117,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Monitor.DiagnosticSetting.Models.IDiagnosticSettingIdentity
+### System.String
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Monitor.DiagnosticSetting.Models.Api20210501Preview.IDiagnosticSettingsResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings
 
 ## NOTES
 
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IDiagnosticSettingIdentity>`: Identity Parameter
-  - `[Id <String>]`: Resource identity path
-  - `[Name <String>]`: The name of the diagnostic setting.
-  - `[ResourceUri <String>]`: The identifier of the resource.
-  - `[SubscriptionId <String>]`: The ID of the target subscription.
-
 ## RELATED LINKS
+
+[Set-AzDiagnosticSetting](./Set-AzDiagnosticSetting.md)
+[Remove-AzDiagnosticSetting](./Remove-AzDiagnosticSetting.md)

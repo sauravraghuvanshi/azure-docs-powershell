@@ -1,159 +1,126 @@
 ---
-external help file: 
+external help file: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.dll-Help.xml
 Module Name: Az.SecurityInsights
 online version: https://docs.microsoft.com/powershell/module/az.securityinsights/get-azsentinelalertruleaction
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Get-AzSentinelAlertRuleAction.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Get-AzSentinelAlertRuleAction.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Get-AzSentinelAlertRuleAction.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Get-AzSentinelAlertRuleAction.md
 ---
 
 # Get-AzSentinelAlertRuleAction
 
 ## SYNOPSIS
-Gets the action of alert rule.
+Gets an Automated Response (Alert Rule Action) for an Analytics Rule, like an Azure Logic Apps Playbook.<br/>
+Azure Sentinel Automation Rules will be supported in the future.
+
+*Note: This requires a parameter value of "AlertRuleId"*
 
 ## SYNTAX
 
-### List (Default)
+### AlertRuleId (Default)
 ```
-Get-AzSentinelAlertRuleAction -ResourceGroupName <String> -RuleId <String> -WorkspaceName <String>
- [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-AzSentinelAlertRuleAction -Id <String> -ResourceGroupName <String> -RuleId <String>
- -WorkspaceName <String> [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzSentinelAlertRuleAction -ResourceGroupName <String> -WorkspaceName <String> -AlertRuleId <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### ActionId
 ```
-Get-AzSentinelAlertRuleAction -InputObject <ISecurityInsightsIdentity> [-DefaultProfile <PSObject>]
- [<CommonParameters>]
+Get-AzSentinelAlertRuleAction -ResourceGroupName <String> -WorkspaceName <String> -AlertRuleId <String>
+ -ActionId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets the action of alert rule.
+The **Get-AzSentinelAlertRuleAction** cmdlet gets an Automated Response (Alert Rule Action) from the specified workspace.
+If you specify the *ActionId* and *AlertRuleId* parameters, a single **AlertRuleAction** object is returned.<br/>
+If you do not specify the *ActionId* parameter, an array containing all of the Actions for the specificed Alert Rule in the specified workspace are returned.
+You can use the **Action** object to update the Action, for example you can change the the **Action** for an Alert Rule.
 
 ## EXAMPLES
 
-### Example 1: List all Actions for a given Alert Rule
+### Example 1
 ```powershell
- Get-AzSentinelAlertRuleAction -ResourceGroupName "myResourceGroupName" -workspaceName "myWorkspaceName" -RuleId "myRuleId"
+$AlertRuleActions = Get-AzSentinelAlertRuleAction -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName" -AlertRuleId "29d2523f-84ce-42d3-b5f1-9e63c85aaed1"
 ```
 
-```output
-LogicAppResourceId : /subscriptions/174b1a81-c53c-4092-8d4a-7210f6a44a0c/resourceGroups/myResourceGroup/providers/Microsoft.Logic/workflows/A-Demo-1
-Name               : f32239c5-cb9c-48da-a3f6-bd5bd3d924a4
-WorkflowId         : 3c73d72560fa4cb6a72a0f10d3a80940
+This example gets all of the **Actions** for the specified Alert Rule in the specified workspace, and then stores it in the $AlertRuleActions variable.<br/><br/>
 
-LogicAppResourceId : /subscriptions/274b1a41-c53c-4092-8d4a-7210f6a44a0c/resourceGroups/myResourceGroup/providers/Microsoft.Logic/workflows/EmptyPlaybook
-Name               : cf815c77-bc65-4c02-946f-d81e15e9a100
-WorkflowId         : 1ac8ccb8bd134253b4baf0c75fe3ecc6
+*Note: the field **LogicAppResourceID** contains the full Azure Resource Manager (ARM) ID, which contains the name of the Azure Logic Apps Playbook.*
+
+### Example 2
+```powershell
+$AlertRuleAction = Get-AzSentinelAlertRuleAction -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName" -AlertRuleId "MyAlertRuleId" -ActionId "MyActionId"
 ```
 
-This command lists all Actions for a given Alert Rule.
+This example gets an **AlertRuleAction** for the specified Alert Rule in the specified workspace, and then stores it in the $AlertRuleAction variable.
 
 ## PARAMETERS
+
+### -ActionId
+Action Id.
+
+```yaml
+Type: System.String
+Parameter Sets: ActionId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AlertRuleId
+Alert Rule Id.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
-Action ID
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases: ActionId
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.ISecurityInsightsIdentity
-Parameter Sets: GetViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The name of the resource group.
-The name is case insensitive.
+Resource group name.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RuleId
-Alert rule ID
-
-```yaml
-Type: System.String
-Parameter Sets: Get, List
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubscriptionId
-The ID of the target subscription.
-
-```yaml
-Type: System.String[]
-Parameter Sets: Get, List
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -WorkspaceName
-The name of the workspace.
+Workspace Name.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -168,44 +135,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.ISecurityInsightsIdentity
-
+### None
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.IActionResponse
-
+### Microsoft.Azure.Commands.SecurityInsights.Models.Actions.PSSentinelActionResponse
 ## NOTES
 
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <ISecurityInsightsIdentity>`: Identity Parameter
-  - `[ActionId <String>]`: Action ID
-  - `[AlertRuleTemplateId <String>]`: Alert rule template ID
-  - `[AutomationRuleId <String>]`: Automation rule ID
-  - `[BookmarkId <String>]`: Bookmark ID
-  - `[ConsentId <String>]`: consent ID
-  - `[DataConnectorId <String>]`: Connector ID
-  - `[EntityId <String>]`: entity ID
-  - `[EntityQueryId <String>]`: entity query ID
-  - `[EntityQueryTemplateId <String>]`: entity query template ID
-  - `[Id <String>]`: Resource identity path
-  - `[IncidentCommentId <String>]`: Incident comment ID
-  - `[IncidentId <String>]`: Incident ID
-  - `[MetadataName <String>]`: The Metadata name.
-  - `[Name <String>]`: Threat intelligence indicator name field.
-  - `[RelationName <String>]`: Relation Name
-  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
-  - `[RuleId <String>]`: Alert rule ID
-  - `[SentinelOnboardingStateName <String>]`: The Sentinel onboarding state name. Supports - default
-  - `[SettingsName <String>]`: The setting name. Supports - Anomalies, EyesOn, EntityAnalytics, Ueba
-  - `[SourceControlId <String>]`: Source control Id
-  - `[SubscriptionId <String>]`: The ID of the target subscription.
-  - `[WorkspaceName <String>]`: The name of the workspace.
-
 ## RELATED LINKS
-

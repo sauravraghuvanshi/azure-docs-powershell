@@ -16,35 +16,49 @@ Delete a data collection rule.
 
 ### ByName (Default)
 ```
-Remove-AzDataCollectionRule -ResourceGroupName <String> -RuleName <String> [-PassThru]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzDataCollectionRule
+   -ResourceGroupName <string> 
+   -RuleName <string> 
+   [-PassThru]
+   [-DefaultProfile <IAzureContextContainer>]
+   [-WhatIf]
+   [-Confirm]
+   [<CommonParameters>]
 ```
 
 ### ByInputObject
 ```
-Remove-AzDataCollectionRule -InputObject <PSDataCollectionRuleResource> [-PassThru]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzDataCollectionRule
+   -InputObject <PSDataCollectionRuleResource>
+   [-PassThru]
+   [-DefaultProfile <IAzureContextContainer>]
+   [-WhatIf]
+   [-Confirm]
+   [<CommonParameters>]
 ```
 
 ### ByResourceId
 ```
-Remove-AzDataCollectionRule -RuleId <String> [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Remove-AzDataCollectionRule
+   -RuleId <string>
+   [-PassThru]
+   [-DefaultProfile <IAzureContextContainer>]
+   [-WhatIf]
+   [-Confirm]
+   [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 The **Remove-AzDataCollectionRule** cmdlet delete a data collection rule.
 
-Data Collection Rules (DCR) define data coming into Azure Monitor and specify where that data should be sent or stored. Here is the complete [DCR overview article](https://learn.microsoft.com/azure/azure-monitor/essentials/data-collection-rule-overview).
+Data Collection Rules (DCR) define data coming into Azure Monitor and specify where that data should be sent or stored. Here is the complete [DCR overview article](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection-rule-overview).
 
 ## EXAMPLES
 
 ### Example 1: Delete data collection rule with name and resource group parameters
 ```powershell
-Remove-AzDataCollectionRule -ResourceGroupName "testgroup" -RuleName "testDcr"
+Remove-AzDataCollectionRule -ResourceGroupName "testgroup" -RuleName "testDcr"             
 ```
-
-Delete data collection rule with name and resource group parameters
 
 ### Example 2: Delete data collection rule with name and resource group return bool
 ```powershell
@@ -55,21 +69,15 @@ Remove-AzDataCollectionRule -ResourceGroupName "testgroup" -RuleName "testDcr" -
 True
 ```
 
-Delete data collection rule with name and resource group return bool
-
 ### Example 3: Delete data collection rule from InputObject
 ```powershell
 Get-AzDataCollectionRule -ResourceGroupName "testdcr" -RuleName "dcrFromPipe95" | Remove-AzDataCollectionRule
 ```
 
-Delete data collection rule from InputObject
-
 ### Example 4: Delete data collection rule from resource id
 ```powershell
 Remove-AzDataCollectionRule -RuleId "/subscriptions/{subId}/resourceGroups/testdcr/providers/Microsoft.Insights/dataCollectionRules/{dcrName}"
 ```
-
-Delete data collection rule from resource id
 
 ## PARAMETERS
 
@@ -88,42 +96,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-The data collection rule resource from the pipe
-
-```yaml
-Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSDataCollectionRuleResource
-Parameter Sets: ByInputObject
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PassThru
-Return true upon successful removal.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ResourceGroupName
 The resource group name
 
 ```yaml
 Type: System.String
-Parameter Sets: ByName
+Parameter Sets: ByResourceGroup
 Aliases:
 
 Required: True
@@ -133,13 +111,10 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -RuleId
-The resource identifier.
-
 ```yaml
 Type: System.String
-Parameter Sets: ByResourceId
-Aliases: ResourceId
+Parameter Sets: ByName
+Aliases:
 
 Required: True
 Position: Named
@@ -155,6 +130,21 @@ The resource name.
 Type: System.String
 Parameter Sets: ByName
 Aliases: Name
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -RuleId
+The resource identifier.
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceId
+Aliases: ResourceId
 
 Required: True
 Position: Named

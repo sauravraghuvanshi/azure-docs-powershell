@@ -1,60 +1,90 @@
 ---
-external help file: 
+external help file: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.dll-Help.xml
 Module Name: Az.SecurityInsights
 online version: https://docs.microsoft.com/powershell/module/az.securityinsights/update-azsentinelbookmark
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Update-AzSentinelBookmark.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Update-AzSentinelBookmark.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Update-AzSentinelBookmark.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Update-AzSentinelBookmark.md
 ---
 
 # Update-AzSentinelBookmark
 
 ## SYNOPSIS
-Creates or updates the bookmark.
+Updates a Bookmark.
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### BookmarkId. (Default)
 ```
-Update-AzSentinelBookmark -Id <String> -ResourceGroupName <String> -WorkspaceName <String>
- [-SubscriptionId <String>] [-DisplayName <String>] [-EventTime <DateTime>] [-IncidentInfoIncidentId <String>]
- [-IncidentInfoRelationName <String>] [-IncidentInfoSeverity <IncidentSeverity>] [-IncidentInfoTitle <String>]
- [-Label <String[]>] [-Note <String>] [-Query <String>] [-QueryEndTime <DateTime>] [-QueryResult <String>]
- [-QueryStartTime <DateTime>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-AzSentinelBookmark -ResourceGroupName <String> -WorkspaceName <String> -BookmarkId <String>
+ [-DisplayName <String>] [-IncidentInfo <PSSentinelBookmarkIncidentInfo>]
+ [-Label <System.Collections.Generic.IList`1[System.String]>] [-Note <String>] [-Query <String>]
+ [-QueryResult <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### InputObject
 ```
-Update-AzSentinelBookmark -InputObject <ISecurityInsightsIdentity> [-DisplayName <String>]
- [-EventTime <DateTime>] [-IncidentInfoIncidentId <String>] [-IncidentInfoRelationName <String>]
- [-IncidentInfoSeverity <IncidentSeverity>] [-IncidentInfoTitle <String>] [-Label <String[]>] [-Note <String>]
- [-Query <String>] [-QueryEndTime <DateTime>] [-QueryResult <String>] [-QueryStartTime <DateTime>]
- [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-AzSentinelBookmark -InputObject <PSSentinelBookmark> [-DisplayName <String>]
+ [-IncidentInfo <PSSentinelBookmarkIncidentInfo>] [-Label <System.Collections.Generic.IList`1[System.String]>]
+ [-Note <String>] [-Query <String>] [-QueryResult <String>] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ResourceId
+```
+Update-AzSentinelBookmark -ResourceId <String> [-DisplayName <String>]
+ [-IncidentInfo <PSSentinelBookmarkIncidentInfo>] [-Label <System.Collections.Generic.IList`1[System.String]>]
+ [-Note <String>] [-Query <String>] [-QueryResult <String>] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Creates or updates the bookmark.
+The **Update-AzSentinelBookmark** cmdlet updates the bookmark in the specified workspace.
+You can pass an **Bookmark** object as a parameter or by using the pipeline operator, or alternatively you can specify the required *BookmarkId* parameters.
+You can use the *Confirm* parameter and $ConfirmPreference Windows PowerShell variable to control whether the cmdlet prompts you for confirmation.
 
 ## EXAMPLES
 
-### Example 1: Update Sentinel Bookmark
+### Example 1
 ```powershell
- $queryStartTime = (Get-Date).AddDays(-1).ToUniversalTime() | Get-Date -Format "yyyy-MM-ddThh:00:00.000Z"
- $queryEndTime = (Get-Date).ToUniversalTime() | Get-Date -Format "yyyy-MM-ddThh:00:00.000Z"
- Update-AzSentinelBookmark -ResourceGroupName "myResourceGroup" -WorkspaceName "myWorkspaceName" -Id ((New-Guid).Guid) -DisplayName "Incident Evidence" -Query "SecurityEvent | take 1" -QueryStartTime $queryStartTime -QueryEndTime $queryEndTime -EventTime $queryEndTime
+Update-AzSentinelBookmark -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceNAme" -BookmarkId "MyBookmarkId" -Note "Found something interesting"
 ```
 
-This command updates a bookmark
+The command updates the Bookmark by setting the *Notes* property.  All other properties stay the same.
+
+### Example 2
+```powershell
+$Bookmark = Get-AzSentinelBookmark -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceNAme" -BookmarkId "MyBookmarkId"
+$Bookmark | Update-AzSentinelBookmark -Note "Found something interesting"
+```
+
+The first command gets the Bookmark by *BookmarkId* from the specified workspace, and then stores it in the $Bookmark variable.
+The second command updates the Notes property. All other properties stay the same.
 
 ## PARAMETERS
+
+### -BookmarkId
+Bookmark Id,
+
+```yaml
+Type: System.String
+Parameter Sets: BookmarkId.
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -64,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The display name of the bookmark
+Bookmark Rule Display Name.
 
 ```yaml
 Type: System.String
@@ -78,103 +108,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EventTime
-The bookmark event time
+### -IncidentInfo
+Bookmark Incident Info.
 
 ```yaml
-Type: System.DateTime
+Type: Microsoft.Azure.Commands.SecurityInsights.Models.Bookmarks.PSSentinelBookmarkIncidentInfo
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
-Bookmark ID
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded
-Aliases: BookmarkId
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IncidentInfoIncidentId
-Incident Id
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IncidentInfoRelationName
-Relation Name
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IncidentInfoSeverity
-The severity of the incident
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Support.IncidentSeverity
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IncidentInfoTitle
-The title of the incident
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+InputObject.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.ISecurityInsightsIdentity
-Parameter Sets: UpdateViaIdentityExpanded
+Type: Microsoft.Azure.Commands.SecurityInsights.Models.Bookmarks.PSSentinelBookmark
+Parameter Sets: InputObject
 Aliases:
 
 Required: True
@@ -185,10 +139,10 @@ Accept wildcard characters: False
 ```
 
 ### -Label
-List of labels relevant to this bookmark
+Incident Labels.
 
 ```yaml
-Type: System.String[]
+Type: System.Collections.Generic.IList`1[System.String]
 Parameter Sets: (All)
 Aliases:
 
@@ -200,7 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -Note
-The notes of the bookmark
+Bookmark Notes.
 
 ```yaml
 Type: System.String
@@ -215,25 +169,10 @@ Accept wildcard characters: False
 ```
 
 ### -Query
-The query of the bookmark.
+Bookmark Query.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -QueryEndTime
-The end time for the query
-
-```yaml
-Type: System.DateTime
 Parameter Sets: (All)
 Aliases:
 
@@ -245,25 +184,10 @@ Accept wildcard characters: False
 ```
 
 ### -QueryResult
-The query result of the bookmark.
+Bookmark Query Result.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -QueryStartTime
-The start time for the query
-
-```yaml
-Type: System.DateTime
 Parameter Sets: (All)
 Aliases:
 
@@ -275,12 +199,11 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The name of the resource group.
-The name is case insensitive.
+Resource group name.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: BookmarkId.
 Aliases:
 
 Required: True
@@ -290,27 +213,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-The ID of the target subscription.
+### -ResourceId
+Resource Id.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: ResourceId
 Aliases:
 
-Required: False
+Required: True
 Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Default value: None
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -WorkspaceName
-The name of the workspace.
+Workspace Name.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: BookmarkId.
 Aliases:
 
 Required: True
@@ -356,44 +279,16 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.ISecurityInsightsIdentity
+### Microsoft.Azure.Commands.SecurityInsights.Models.Bookmarks.PSSentinelBookmark
+
+### System.String
+
+### Microsoft.Azure.Commands.SecurityInsights.Models.Bookmarks.PSSentinelBookmarkIncidentInfo
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.IBookmark
+### Microsoft.Azure.Commands.SecurityInsights.Models.Bookmarks.PSSentinelBookmark
 
 ## NOTES
 
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <ISecurityInsightsIdentity>`: Identity Parameter
-  - `[ActionId <String>]`: Action ID
-  - `[AlertRuleTemplateId <String>]`: Alert rule template ID
-  - `[AutomationRuleId <String>]`: Automation rule ID
-  - `[BookmarkId <String>]`: Bookmark ID
-  - `[ConsentId <String>]`: consent ID
-  - `[DataConnectorId <String>]`: Connector ID
-  - `[EntityId <String>]`: entity ID
-  - `[EntityQueryId <String>]`: entity query ID
-  - `[EntityQueryTemplateId <String>]`: entity query template ID
-  - `[Id <String>]`: Resource identity path
-  - `[IncidentCommentId <String>]`: Incident comment ID
-  - `[IncidentId <String>]`: Incident ID
-  - `[MetadataName <String>]`: The Metadata name.
-  - `[Name <String>]`: Threat intelligence indicator name field.
-  - `[RelationName <String>]`: Relation Name
-  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
-  - `[RuleId <String>]`: Alert rule ID
-  - `[SentinelOnboardingStateName <String>]`: The Sentinel onboarding state name. Supports - default
-  - `[SettingsName <String>]`: The setting name. Supports - Anomalies, EyesOn, EntityAnalytics, Ueba
-  - `[SourceControlId <String>]`: Source control Id
-  - `[SubscriptionId <String>]`: The ID of the target subscription.
-  - `[WorkspaceName <String>]`: The name of the workspace.
-
 ## RELATED LINKS
-

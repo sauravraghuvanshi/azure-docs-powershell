@@ -1,6 +1,7 @@
 ---
-external help file: Microsoft.Azure.PowerShell.Cmdlets.Monitor.dll-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Monitor.dll-Help.xml
 Module Name: Az.Monitor
+ms.assetid: 989CE245-FD1D-4E1D-90A2-2D7DA3975D0B
 online version: https://docs.microsoft.com/powershell/module/az.monitor/get-azautoscalesetting
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/Get-AzAutoscaleSetting.md
@@ -10,67 +11,212 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Get-AzAutoscaleSetting
 
 ## SYNOPSIS
-Gets an autoscale setting
+Gets Autoscale settings.
 
 ## SYNTAX
 
-### List1 (Default)
 ```
-Get-AzAutoscaleSetting [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-AzAutoscaleSetting -Name <String> -ResourceGroupName <String> [-SubscriptionId <String[]>]
- [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### List
-```
-Get-AzAutoscaleSetting -ResourceGroupName <String> [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>]
- [<CommonParameters>]
-```
-
-### GetViaIdentity
-```
-Get-AzAutoscaleSetting -InputObject <IAutoscaleIdentity> [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzAutoscaleSetting -ResourceGroupName <String> [-Name <String>] [-DetailedOutput]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets an autoscale setting
+The **Get-AzAutoscaleSetting** cmdlet gets all Autoscale settings associated with a resource group or a specified Autoscale setting.
 
 ## EXAMPLES
 
-### Example 1: List autoscale setting under current subscription
+### Example 1: Get Autoscale settings
 ```powershell
-Get-AzAutoscaleSetting
+Get-AzAutoscaleSetting -ResourceGroup "Default-Web-EastUS" -DetailedOutput
 ```
 
-List autoscale setting under current subscription
+```output
+resourceId : /subscriptions/b93fb07a-6f93-30be-bf3e-4f0deca15f4f/resourceGroups/Default-Web-EastUS/providers/microsoft. 
+             insights/autoscalesettings/DefaultServerFarm-Default-Web-EastUS
+Location   : East US
+Name       : DefaultServerFarm-Default-Web-EastUS
+Properties : 
+Enabled    : True
+Profiles   : 
+Capacity   : 
+Default    : 1
+Minimum    : 3
+Maximum    : 1
+FixedDate     : 
+Name          : No scheduled times
+Recurrence    : 
+Rules         : 
+MetricTrigger : 
+MetricName         : CpuPercentage
+MetricResourceId   : /subscriptions/a93fb07c-6c93-40be-bf3b-4f0deba10f4
+             b/resourceGroups/Default-Web-EastUS/providers/microsoft.web/serverFarms/DefaultServerFarm
+Operator           : GreaterThanOrEqual
+Statistic          : Average
+Threshold          : 14
+TimeAggregation    : Average
+TimeGrain          : 00:01:00
+TimeWindow         : 00:45:00
+ScaleAction        : 
+Cooldown   : 00:05:00
+Direction  : Increase
+Type       : ChangeCount
+Value      : 1
+MetricTrigger  : 
+MetricName         : CpuPercentage
+MetricResourceId  : /subscriptions/a93fb07c-6c93-40be-bf3b-4f0deba10f4
+             b/resourceGroups/Default-Web-EastUS/providers/microsoft.web/serverFarms/DefaultServerFarm
+Operator           : LessThanOrEqual
+Statistic          : Average
+Threshold          : 4
+TimeAggregation    : Average
+TimeGrain          : 00:01:00
+TimeWindow         : 00:45:00
+ScaleAction  : 
+Cooldown   : 02:00:00
+Direction  : Decrease
+Type       : ChangeCount
+Value      : 1
 
-### Example 2: List autoscale setting under resource group
-```powershell
-Get-AzAutoscaleSetting -ResourceGroupName test-group
+MetricTrigger  : 
+MetricName         : BytesReceived
+MetricResourceId  : /subscriptions/a93fb07c-6c93-40be-bf3b-4f0deba10f4
+             b/resourceGroups/Default-Web-EastUS/providers/microsoft.web/serverFarms/DefaultServerFarm
+Operator           : LessThanOrEqual
+Statistic          : Average
+Threshold          : 50
+TimeAggregation    : Average
+TimeGrain          : 00:01:00
+TimeWindow         : 00:10:00
+ScaleAction    : 
+Cooldown   : 00:10:00
+Direction  : Decrease
+Type       : ChangeCount
+Value      : 1
+MetricTrigger  : 
+MetricName         : BytesReceived
+MetricResourceId  : /subscriptions/a93fb07c-6c93-40be-bf3b-4f0deba10f4
+             b/resourceGroups/Default-Web-EastUS/providers/microsoft.web/serverFarms/DefaultServerFarm
+Operator           : GreaterThanOrEqual
+Statistic          : Average
+Threshold          : 100
+                                                TimeAggregation    : Average
+TimeGrain          : 00:01:00
+TimeWindow         : 00:05:00
+ScaleAction    : 
+Cooldown   : 00:10:00
+                                                Direction  : Increase
+Type       : ChangeCount
+Value      : 1
+             TargetResourceId : /subscriptions/b93fb07a-6f93-30be-bf3e-4f0deca15f4f/resourceGroups/Default-Web-EastUS/
+             providers/microsoft.web/serverFarms/DefaultServerFarm
+Tags       : {[$type, Microsoft.WindowsAzure.Management.Common.Storage.CasePreservedDictionary, 
+             Microsoft.WindowsAzure.Management.Common.Storage], [hidden-link:/subscriptions/a93fb07c-6c93-40be-bf3b-4f0
+             deba10f4b/resourceGroups/Default-Web-EastUS/providers/microsoft.web/serverFarms/DefaultServerFarm, 
+             Resource]}
 ```
 
-List autoscale setting under resource group
+This command gets the Autoscale settings assigned to the resource group Default-Web-EastUS.
 
-### Example 2: Get autoscale setting by name
+### Example 2: Get an Autoscale setting by name
 ```powershell
-Get-AzAutoscaleSetting -ResourceGroupName test-group -Name test-autoscalesetting
+Get-AzAutoscaleSetting -ResourceGroupName "Default-Web-EastUS" -Name "DefaultServerFarm-Default-Web-EastUS" -DetailedOutput
 ```
 
-Get autoscale setting by name
+```output
+resourceId : /subscriptions/b93fb07a-6f93-30be-bf3e-4f0deca15f4f/resourceGroups/Default-Web-EastUS/providers/microsoft. 
+             insights/autoscalesettings/DefaultServerFarm-Default-Web-EastUS
+Location   : East US
+Name       : DefaultServerFarm-Default-Web-EastUS
+Properties : 
+Enabled    : True
+Profiles   : 
+Capacity   : 
+Default    : 1
+Minimum    : 3
+Maximum    : 1
+FixedDate     : 
+Name          : No scheduled times
+Recurrence    : 
+Rules         : 
+MetricTrigger : 
+MetricName         : CpuPercentage
+MetricResourceId   : /subscriptions/a93fb07c-6c93-40be-bf3b-4f0deba10f4
+             b/resourceGroups/Default-Web-EastUS/providers/microsoft.web/serverFarms/DefaultServerFarm
+Operator           : GreaterThanOrEqual
+Statistic          : Average
+Threshold          : 14
+TimeAggregation    : Average
+TimeGrain          : 00:01:00
+TimeWindow         : 00:45:00
+ScaleAction    : 
+Cooldown   : 00:05:00
+Direction  : Increase
+Type       : ChangeCount
+Value      : 1
+MetricTrigger  : 
+MetricName         : CpuPercentage
+MetricResourceId  : /subscriptions/a93fb07c-6c93-40be-bf3b-4f0deba10f4
+             b/resourceGroups/Default-Web-EastUS/providers/microsoft.web/serverFarms/DefaultServerFarm
+Operator           : LessThanOrEqual
+Statistic          : Average
+Threshold          : 4
+TimeAggregation    : Average
+TimeGrain          : 00:01:00
+TimeWindow         : 00:45:00
+ScaleAction    : 
+Cooldown   : 02:00:00
+Direction  : Decrease
+Type       : ChangeCount
+Value      : 1
+MetricTrigger  : 
+MetricName         : BytesReceived
+MetricResourceId  : /subscriptions/a93fb07c-6c93-40be-bf3b-4f0deba10f4
+             b/resourceGroups/Default-Web-EastUS/providers/microsoft.web/serverFarms/DefaultServerFarm
+Operator           : LessThanOrEqual
+Statistic          : Average
+Threshold          : 50
+TimeAggregation    : Average
+TimeGrain          : 00:01:00
+TimeWindow         : 00:10:00
+ScaleAction    : 
+Cooldown   : 00:10:00
+Direction  : Decrease
+Type       : ChangeCount
+Value      : 1
+MetricTrigger  : 
+MetricName         : BytesReceived
+MetricResourceId  : /subscriptions/a93fb07c-6c93-40be-bf3b-4f0deba10f4
+             b/resourceGroups/Default-Web-EastUS/providers/microsoft.web/serverFarms/DefaultServerFarm
+Operator           : GreaterThanOrEqual
+Statistic          : Average
+Threshold          : 100
+TimeAggregation    : Average
+TimeGrain          : 00:01:00
+TimeWindow         : 00:05:00
+ScaleAction    : 
+Cooldown   : 00:10:00
+Direction  : Increase
+Type       : ChangeCount
+Value      : 1
+TargetResourceId : /subscriptions/b93fb07a-6f93-30be-bf3e-4f0deca15f4f/resourceGroups/Default-Web-EastUS/
+             providers/microsoft.web/serverFarms/DefaultServerFarm
+Tags       : {[$type, Microsoft.WindowsAzure.Management.Common.Storage.CasePreservedDictionary, 
+             Microsoft.WindowsAzure.Management.Common.Storage], [hidden-link:/subscriptions/a93fb07c-6c93-40be-bf3b-4f0
+             deba10f4b/resourceGroups/Default-Web-EastUS/providers/microsoft.web/serverFarms/DefaultServerFarm, 
+             Resource]}
+```
+
+This command gets the Autoscale setting named DefaultServerFarm-Default-Web-EastUS.
 
 ## PARAMETERS
 
 ### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.
+The credentials, account, tenant, and subscription used for communication with azure
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -79,65 +225,48 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+### -DetailedOutput
+Indicates that this operation displays full details in the output.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Monitor.Autoscale.Models.IAutoscaleIdentity
-Parameter Sets: GetViaIdentity
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Name
-The autoscale setting name.
+Specifies the name of the setting to get.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
-Aliases: AutoscaleSettingName
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResourceGroupName
-The name of the resource group.
-The name is case insensitive.
-
-```yaml
-Type: System.String
-Parameter Sets: Get, List
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubscriptionId
-The ID of the target subscription.
-
-```yaml
-Type: System.String[]
-Parameter Sets: List1, Get, List
+Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Specifies the name of the resource group.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: ResourceGroup
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -146,25 +275,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Monitor.Autoscale.Models.IAutoscaleIdentity
+### System.String
+
+### System.Management.Automation.SwitchParameter
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Monitor.Autoscale.Models.Api20221001.IAutoscaleSettingResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSAutoscaleSetting
 
 ## NOTES
 
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IAutoscaleIdentity>`: Identity Parameter
-  - `[AutoscaleSettingName <String>]`: The autoscale setting name.
-  - `[Id <String>]`: Resource identity path
-  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
-  - `[SubscriptionId <String>]`: The ID of the target subscription.
-
 ## RELATED LINKS
+
+[Add-AzAutoscaleSetting](./Add-AzAutoscaleSetting.md)
+
+[Remove-AzAutoscaleSetting](./Remove-AzAutoscaleSetting.md)
+
+

@@ -1,5 +1,5 @@
 ---
-external help file: Az.ServiceBus-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.dll-Help.xml
 Module Name: Az.ServiceBus
 online version: https://docs.microsoft.com/powershell/module/az.servicebus/new-azservicebuskey
 schema: 2.0.0
@@ -10,122 +10,89 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # New-AzServiceBusKey
 
 ## SYNOPSIS
-Regenerates the SASKey of a ServiceBus namespace, queue or topic.
+Regenerates the primary or secondary connection strings for the Service Bus namespace or queue or topic.
 
 ## SYNTAX
 
-### NewExpandedNamespace (Default)
+### NamespaceAuthorizationRuleSet (Default)
 ```
-New-AzServiceBusKey -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] -KeyType <KeyType> [-KeyValue <String>] [-DefaultProfile <PSObject>] [-AsJob]
- [-NoWait] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### NewExpandedTopic
-```
-New-AzServiceBusKey -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] -TopicName <String> -KeyType <KeyType> [-KeyValue <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzServiceBusKey [-ResourceGroupName] <String> [-Namespace] <String> [-Name] <String>
+ -RegenerateKey <String> [-KeyValue <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
-### NewExpandedQueue
+### QueueAuthorizationRuleSet
 ```
-New-AzServiceBusKey -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] -QueueName <String> -KeyType <KeyType> [-KeyValue <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzServiceBusKey [-ResourceGroupName] <String> [-Namespace] <String> [-Queue] <String> [-Name] <String>
+ -RegenerateKey <String> [-KeyValue <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### TopicAuthorizationRuleSet
+```
+New-AzServiceBusKey [-ResourceGroupName] <String> [-Namespace] <String> [-Topic] <String> [-Name] <String>
+ -RegenerateKey <String> [-KeyValue <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Regenerates the SASKey of a ServiceBus namespace, queue or topic.
+The **New-AzServiceBusKey** cmdlet generates new primary or secondary connection strings for the specified namespace or queue or topic and authorization rule.
 
 ## EXAMPLES
 
-### Example 1: Regenerate Primary Key of a ServiceBus Namespace
+### Example 1
 ```powershell
-New-AzServiceBusKey -ResourceGroupName myResourceGroup -NamespaceName myNamespace -Name rootmanagesharedaccesskey -KeyType PrimaryKey
+New-AzServiceBusKey -ResourceGroupName Default-ServiceBus-WestUS -Namespace SB-Example1 -Name AuthoRule1 -RegenerateKey PrimaryKey
 ```
 
-```output
-KeyName                        : RootManageSharedAccessKey
-PrimaryConnectionString        : {primaryConnectionString}
-PrimaryKey                     : {primaryKey}
-SecondaryConnectionString      : {secondaryConnectionString}
-SecondaryKey                   : {secondaryKey}
-```
+Regenerates the primary or secondary connection strings for the namespace.
 
-Regenerate primary key of authorization rule `rootmanagesharedaccesskey` on ServiceBus Namespace `myNamespace`.
-
-### Example 2: Regenerate Secondary Key of a ServiceBus queue
+### Example 2
 ```powershell
-New-AzServiceBusKey -ResourceGroupName myResourceGroup -NamespaceName myNamespace -QueueName myQueue -Name rootmanagesharedaccesskey -KeyType SecondaryKey
+New-AzServiceBusKey -ResourceGroupName Default-ServiceBus-WestUS -Namespace SB-Example1 -Name AuthoRule1 -RegenerateKey PrimaryKey -KeyValue "base64-encoded 256-bit key"
 ```
 
-```output
-KeyName                        : RootManageSharedAccessKey
-PrimaryConnectionString        : {primaryConnectionString}
-PrimaryKey                     : {primaryKey}
-SecondaryConnectionString      : {secondaryConnectionString}
-SecondaryKey                   : {secondaryKey}
-```
+Regenerates the primary or secondary connection strings with provided Key value for the namespace.
 
-Regenerate secondary key of authorization rule `rootmanagesharedaccesskey` on ServiceBus queue `myQueue` from ServiceBus Namespace `myNamespace`.
-
-### Example 3: Regenerate Secondary Key of a ServiceBus topic
+### Example 3
 ```powershell
-New-AzServiceBusKey -ResourceGroupName myResourceGroup -NamespaceName myNamespace -TopicName myTopic -Name rootmanagesharedaccesskey -KeyType SecondaryKey
+New-AzServiceBusKey -ResourceGroupName Default-ServiceBus-WestUS -Namespace SB-Example1 -Queue SBQueue -Name AuthoRule1 -RegenerateKey PrimaryKey
 ```
 
-```output
-KeyName                        : RootManageSharedAccessKey
-PrimaryConnectionString        : {primaryConnectionString}
-PrimaryKey                     : {primaryKey}
-SecondaryConnectionString      : {secondaryConnectionString}
-SecondaryKey                   : {secondaryKey}
+Regenerates the primary or secondary connection strings for the queue.
+
+### Example 4
+```powershell
+New-AzServiceBusKey -ResourceGroupName Default-ServiceBus-WestUS -Namespace SB-Example1 -Queue SBQueue -Name AuthoRule1 -RegenerateKey PrimaryKey -KeyValue "base64-encoded 256-bit key"
 ```
 
-Regenerate secondary key of authorization rule `rootmanagesharedaccesskey` on ServiceBus topic `myTopic` from ServiceBus Namespace `myNamespace`.
+Regenerates the primary or secondary connection strings with provided Key value for the queue.
+
+### Example 5
+```powershell
+New-AzServiceBusKey -ResourceGroupName Default-ServiceBus-WestUS -Namespace SB-Example1 -Topic SBTopic -Name AuthoRule1 -RegenerateKey PrimaryKey
+```
+
+Regenerates the primary or secondary connection strings for the topic.
+
+### Example 6
+```powershell
+New-AzServiceBusKey -ResourceGroupName Default-ServiceBus-WestUS -Namespace SB-Example1 -Topic SBTopic -Name AuthoRule1 -RegenerateKey PrimaryKey -KeyValue "base64-encoded 256-bit key"
+```
+
+Regenerates the primary or secondary connection strings with provided Key value for the topic.
 
 ## PARAMETERS
-
-### -AsJob
-Run the command as a job
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -KeyType
-The access key to regenerate.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Support.KeyType
-Parameter Sets: (All)
-Aliases: RegenerateKey
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -133,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -KeyValue
-Optional, if the key value provided, is set for KeyType or autogenerated Key value set for keyType
+A base64-encoded 256-bit key for signing and validating the SAS token.
 
 ```yaml
 Type: System.String
@@ -148,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-The name of the Authorization Rule
+AuthorizationRule Name.
 
 ```yaml
 Type: System.String
@@ -156,60 +123,60 @@ Parameter Sets: (All)
 Aliases: AuthorizationRuleName
 
 Required: True
-Position: Named
+Position: 3
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NamespaceName
-The name of the ServiceBus namespace
+### -Namespace
+Namespace Name
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: NamespaceName
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Queue
+Queue Name
+
+```yaml
+Type: System.String
+Parameter Sets: QueueAuthorizationRuleSet
+Aliases: QueueName
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -RegenerateKey
+Regenerate Keys - 'PrimaryKey'/'SecondaryKey'.
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
 Aliases:
+Accepted values: PrimaryKey, SecondaryKey
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NoWait
-Run the command asynchronously
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -QueueName
-The name of the ServiceBus queue.
-
-```yaml
-Type: System.String
-Parameter Sets: NewExpandedQueue
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The name of the resource group.
-The name is case insensitive.
+Resource Group Name
 
 ```yaml
 Type: System.String
@@ -217,39 +184,24 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-The ID of the target subscription.
+### -Topic
+Topic Name
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TopicName
-The name of the ServiceBus topic.
-
-```yaml
-Type: System.String
-Parameter Sets: NewExpandedTopic
-Aliases:
+Parameter Sets: TopicAuthorizationRuleSet
+Aliases: TopicName
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -285,16 +237,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
+### System.String
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.Api202201Preview.IAccessKeys
+### Microsoft.Azure.Commands.ServiceBus.Models.PSListKeysAttributes
 
 ## NOTES
-
-ALIASES
 
 ## RELATED LINKS

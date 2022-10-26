@@ -15,7 +15,7 @@ Creates a new client authentication configuration for SSL profile.
 ## SYNTAX
 
 ```
-New-AzApplicationGatewayClientAuthConfiguration [-VerifyClientCertIssuerDN] [-VerifyClientRevocation <String>]
+New-AzApplicationGatewayClientAuthConfiguration [-VerifyClientCertIssuerDN]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -26,7 +26,7 @@ The **New-AzApplicationGatewayClientAuthConfiguration** cmdlet creates a new cli
 
 ### Example 1
 ```powershell
-$clientAuthConfig = New-AzApplicationGatewayClientAuthConfiguration -VerifyClientCertIssuerDN -VerifyClientRevocation OCSP
+$clientAuthConfig = New-AzApplicationGatewayClientAuthConfiguration -VerifyClientCertIssuerDN
 ```
 
 The command create a new client auth configuration and stores it in $clientAuthConfig variable to be used in a SSL profile.
@@ -55,22 +55,6 @@ Verify client certificate issuer name.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -VerifyClientRevocation
-Verify client certificate revocation status.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-Accepted values: None, OCSP
 
 Required: False
 Position: Named

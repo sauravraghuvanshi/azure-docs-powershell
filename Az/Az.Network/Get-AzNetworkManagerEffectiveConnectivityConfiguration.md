@@ -150,4 +150,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Get-AzNetworkManagerEffectiveSecurityAdminRule](./Get-AzNetworkManagerEffectiveSecurityAdminRule.md)
+[Get-AzNetworkManagerEffectiveSecurityAdminRuleList](./Get-AzNetworkManagerEffectiveSecurityAdminRuleList.md)

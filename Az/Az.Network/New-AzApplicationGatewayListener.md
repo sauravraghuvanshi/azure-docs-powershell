@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
-online version: https://docs.microsoft.com/powershell/module/az.network/new-azapplicationgatewaylistener
+online version: 
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/New-AzApplicationGatewayListener.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/New-AzApplicationGatewayListener.md
@@ -10,7 +10,7 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # New-AzApplicationGatewayListener
 
 ## SYNOPSIS
-Creates an TCP\TLS listener for an application gateway.
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
@@ -31,24 +31,16 @@ New-AzApplicationGatewayListener -Name <String> [-FrontendIPConfigurationId <Str
 ```
 
 ## DESCRIPTION
-The **New-AzApplicationGatewayListener** cmdlet creates an TCP\TLS listener for an Azure application gateway.
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
-### Example 1: Create an TCP listener
+### Example 1
 ```powershell
-$Listener = New-AzApplicationGatewayListener -Name "Listener01" -Protocol "Tcp" -FrontendIpConfiguration $FIp01 -FrontendPort $FP01
+PS C:\> {{ Add example code here }}
 ```
 
-This command creates an Tcp listener named Listener01 and stores the result in the variable named $Listener.
-
-### Example 2: Create an TLS listener with SSL
-```powershell
-$Listener = New-AzApplicationGatewayListener -Name "Listener01" -Protocol "Tls" -FrontendIpConfiguration $FIp01 -FrontendPort $FP01 -SslCertificate $SSLCert01
-```
-
-This command creates an Tls listener that uses SSL offload and provides the SSL certificate in the $SSLCert01 variable.
-The command stores the result in the variable named $Listener.
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -232,11 +224,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
-[Add-AzApplicationGatewayListener](./Add-AzApplicationGatewayListener.md)
-
-[Get-AzApplicationGatewayListener](./Get-AzApplicationGatewayListener.md)
-
-[Remove-AzApplicationGatewayListener](./Remove-AzApplicationGatewayListener.md)
-
-[Set-AzApplicationGatewayListener](./Set-AzApplicationGatewayListener.md)

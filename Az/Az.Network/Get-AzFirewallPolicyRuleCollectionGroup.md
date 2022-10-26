@@ -101,7 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-The Firewall Policy Rule Collection Group resource name. For example: "DefaultNetworkRuleCollectionGroup"
+The resource name.
 
 ```yaml
 Type: String

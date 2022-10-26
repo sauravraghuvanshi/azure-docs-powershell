@@ -172,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -ScriptString
-The script to be executed as a string.
+{{ Fill ScriptString Description }}
 
 ```yaml
 Type: System.String

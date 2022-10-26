@@ -10,7 +10,7 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Get-AzDataLakeGen2ChildItem
 
 ## SYNOPSIS
-Lists sub directories and files from a directory or filesystem root.
+Lists sub directorys and files from a directory or filesystem root.
 
 ## SYNTAX
 

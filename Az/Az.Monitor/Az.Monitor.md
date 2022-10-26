@@ -13,8 +13,11 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 This topic displays help topics for the Azure Insights Cmdlets.
 
 ## Az.Monitor Cmdlets
+### [Add-AzAutoscaleSetting](Add-AzAutoscaleSetting.md)
+Creates an Autoscale setting.
+
 ### [Add-AzLogProfile](Add-AzLogProfile.md)
-Creates a new activity log profile. This profile is used to either archive the activity log to an Azure storage account or stream it to an Azure event hub in the same subscription.
+Creates a new activity log profile. This profile is used to either archive the activity log to an Azure storage account or stream it to an Azure event hub in the same subscription. 
 
 ### [Add-AzMetricAlertRule](Add-AzMetricAlertRule.md)
 Adds or updates a metric-based alert rule.
@@ -25,6 +28,12 @@ Adds or updates a V2 (non-classic) metric-based alert rule.
 ### [Add-AzWebtestAlertRule](Add-AzWebtestAlertRule.md)
 Adds or updates a webtest alert rule.
 
+### [Disable-AzActivityLogAlert](Disable-AzActivityLogAlert.md)
+Disables an activity log alert and sets its tags.
+
+### [Enable-AzActivityLogAlert](Enable-AzActivityLogAlert.md)
+Enables an activity log alert and sets its Tags.
+
 ### [Get-AzActionGroup](Get-AzActionGroup.md)
 Gets action group(s).
 
@@ -32,7 +41,7 @@ Gets action group(s).
 Retrieve Activity Log events.
 
 ### [Get-AzActivityLogAlert](Get-AzActivityLogAlert.md)
-Get an Activity Log Alert rule.
+Gets one or more activity log alert resources.
 
 ### [Get-AzAlertHistory](Get-AzAlertHistory.md)
 Gets the history of classic alert rules.
@@ -43,11 +52,8 @@ Gets classic alert rules.
 ### [Get-AzAutoscaleHistory](Get-AzAutoscaleHistory.md)
 Gets the Autoscale history.
 
-### [Get-AzAutoscalePredictiveMetric](Get-AzAutoscalePredictiveMetric.md)
-get predictive autoscale metric future data
-
 ### [Get-AzAutoscaleSetting](Get-AzAutoscaleSetting.md)
-Gets an autoscale setting
+Gets Autoscale settings.
 
 ### [Get-AzDataCollectionRule](Get-AzDataCollectionRule.md)
 Gets data collection rule(s).
@@ -56,14 +62,10 @@ Gets data collection rule(s).
 Gets data collection rule association(s).
 
 ### [Get-AzDiagnosticSetting](Get-AzDiagnosticSetting.md)
-Gets the active diagnostic settings for the specified resource.
+Gets the logged categories and time grains.
 
 ### [Get-AzDiagnosticSettingCategory](Get-AzDiagnosticSettingCategory.md)
-Gets the diagnostic settings category for the specified resource.
-
-### [Get-AzEventCategory](Get-AzEventCategory.md)
-Get the list of available event categories supported in the Activity Logs Service.
-The current list includes the following: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy.
+Get or list supported diagnostic setting category for Azure resource.
 
 ### [Get-AzInsightsPrivateLinkScope](Get-AzInsightsPrivateLinkScope.md)
 Get private link scope
@@ -84,25 +86,19 @@ Gets V2 (non-classic) metric alert rules
 Gets metric definitions.
 
 ### [Get-AzScheduledQueryRule](Get-AzScheduledQueryRule.md)
-Retrieve an scheduled query rule definition.
+Gets Scheduled Query Resources
 
-### [Get-AzSubscriptionDiagnosticSetting](Get-AzSubscriptionDiagnosticSetting.md)
-Gets the active subscription diagnostic settings for the specified resource.
+### [Get-AzSubscriptionDiagnosticSettingCategory](Get-AzSubscriptionDiagnosticSettingCategory.md)
+Get diagnostic setting categories for subscription.
+
+### [New-AzActionGroup](New-AzActionGroup.md)
+Creates an ActionGroup reference object in memory.
 
 ### [New-AzActionGroupReceiver](New-AzActionGroupReceiver.md)
 Creates an new action group receiver.
 
-### [New-AzActivityLogAlert](New-AzActivityLogAlert.md)
-Create a new Activity Log Alert rule or update an existing one.
-
-### [New-AzActivityLogAlertActionGroupObject](New-AzActivityLogAlertActionGroupObject.md)
-Create an in-memory object for ActionGroup.
-
-### [New-AzActivityLogAlertAlertRuleAnyOfOrLeafConditionObject](New-AzActivityLogAlertAlertRuleAnyOfOrLeafConditionObject.md)
-Create an in-memory object for AlertRuleAnyOfOrLeafCondition.
-
-### [New-AzActivityLogAlertAlertRuleLeafConditionObject](New-AzActivityLogAlertAlertRuleLeafConditionObject.md)
-Create an in-memory object for AlertRuleLeafCondition.
+### [New-AzActivityLogAlertCondition](New-AzActivityLogAlertCondition.md)
+Creates an new activity log alert condition object in memory.
 
 ### [New-AzAlertRuleEmail](New-AzAlertRuleEmail.md)
 Creates an email action for an alert rule.
@@ -110,23 +106,17 @@ Creates an email action for an alert rule.
 ### [New-AzAlertRuleWebhook](New-AzAlertRuleWebhook.md)
 Creates an alert rule webhook.
 
-### [New-AzAutoscaleNotificationObject](New-AzAutoscaleNotificationObject.md)
-Create an in-memory object for AutoscaleNotification.
+### [New-AzAutoscaleNotification](New-AzAutoscaleNotification.md)
+Creates an Autoscale email notification.
 
-### [New-AzAutoscaleProfileObject](New-AzAutoscaleProfileObject.md)
-Create an in-memory object for AutoscaleProfile.
+### [New-AzAutoscaleProfile](New-AzAutoscaleProfile.md)
+Creates an Autoscale profile.
 
-### [New-AzAutoscaleScaleRuleMetricDimensionObject](New-AzAutoscaleScaleRuleMetricDimensionObject.md)
-Create an in-memory object for ScaleRuleMetricDimension.
+### [New-AzAutoscaleRule](New-AzAutoscaleRule.md)
+Creates an Autoscale rule.
 
-### [New-AzAutoscaleScaleRuleObject](New-AzAutoscaleScaleRuleObject.md)
-Create an in-memory object for ScaleRule.
-
-### [New-AzAutoscaleSetting](New-AzAutoscaleSetting.md)
-Creates or updates an autoscale setting.
-
-### [New-AzAutoscaleWebhookNotificationObject](New-AzAutoscaleWebhookNotificationObject.md)
-Create an in-memory object for WebhookNotification.
+### [New-AzAutoscaleWebhook](New-AzAutoscaleWebhook.md)
+Creates an Autoscale webhook.
 
 ### [New-AzDataCollectionRule](New-AzDataCollectionRule.md)
 Create a data collection rule.
@@ -134,17 +124,11 @@ Create a data collection rule.
 ### [New-AzDataCollectionRuleAssociation](New-AzDataCollectionRuleAssociation.md)
 Create data collection rule association.
 
+### [New-AzDiagnosticDetailSetting](New-AzDiagnosticDetailSetting.md)
+Create PSDiagnosticDetailSetting Object, type could be metric or log
+
 ### [New-AzDiagnosticSetting](New-AzDiagnosticSetting.md)
-Creates or updates diagnostic settings for the specified resource.
-
-### [New-AzDiagnosticSettingLogSettingsObject](New-AzDiagnosticSettingLogSettingsObject.md)
-Create an in-memory object for LogSettings.
-
-### [New-AzDiagnosticSettingMetricSettingsObject](New-AzDiagnosticSettingMetricSettingsObject.md)
-Create an in-memory object for MetricSettings.
-
-### [New-AzDiagnosticSettingSubscriptionLogSettingsObject](New-AzDiagnosticSettingSubscriptionLogSettingsObject.md)
-Create an in-memory object for SubscriptionLogSettings.
+Create PSServiceDiagnosticSettings object.
 
 ### [New-AzInsightsPrivateLinkScope](New-AzInsightsPrivateLinkScope.md)
 create private link scope
@@ -162,28 +146,37 @@ Creates a local dimension selection object that can be used to construct a metri
 Creates a metric dimension filter that can be used to query metrics.
 
 ### [New-AzScheduledQueryRule](New-AzScheduledQueryRule.md)
-Creates or updates a scheduled query rule.
+Creates a Log Alert Rule (Scheduled Query Rule type)
 
-### [New-AzScheduledQueryRuleConditionObject](New-AzScheduledQueryRuleConditionObject.md)
-Create an in-memory object for Condition.
+### [New-AzScheduledQueryRuleAlertingAction](New-AzScheduledQueryRuleAlertingAction.md)
+Creates an object of type Alerting Action
 
-### [New-AzScheduledQueryRuleDimensionObject](New-AzScheduledQueryRuleDimensionObject.md)
-Create an in-memory object for Dimension.
+### [New-AzScheduledQueryRuleAznsActionGroup](New-AzScheduledQueryRuleAznsActionGroup.md)
+Creates an object of type Azns Action Group
 
-### [New-AzSubscriptionDiagnosticSetting](New-AzSubscriptionDiagnosticSetting.md)
-Creates or updates subscription diagnostic settings for the specified resource.
+### [New-AzScheduledQueryRuleLogMetricTrigger](New-AzScheduledQueryRuleLogMetricTrigger.md)
+Creates an object of type Log Metric Trigger.
+
+### [New-AzScheduledQueryRuleSchedule](New-AzScheduledQueryRuleSchedule.md)
+Creates an object of type Schedule
+
+### [New-AzScheduledQueryRuleSource](New-AzScheduledQueryRuleSource.md)
+Creates an object of type Source
+
+### [New-AzScheduledQueryRuleTriggerCondition](New-AzScheduledQueryRuleTriggerCondition.md)
+Creates an object of type Trigger Condition
 
 ### [Remove-AzActionGroup](Remove-AzActionGroup.md)
 Removes an action group.
 
 ### [Remove-AzActivityLogAlert](Remove-AzActivityLogAlert.md)
-Delete an Activity Log Alert rule.
+Removes an activity log alert.
 
 ### [Remove-AzAlertRule](Remove-AzAlertRule.md)
 Removes an alert rule.
 
 ### [Remove-AzAutoscaleSetting](Remove-AzAutoscaleSetting.md)
-Deletes and autoscale setting
+Removes an Autoscale setting.
 
 ### [Remove-AzDataCollectionRule](Remove-AzDataCollectionRule.md)
 Delete a data collection rule.
@@ -192,7 +185,7 @@ Delete a data collection rule.
 Delete a data collection rule association.
 
 ### [Remove-AzDiagnosticSetting](Remove-AzDiagnosticSetting.md)
-Deletes existing diagnostic settings for the specified resource.
+Remove a diagnostic setting for the a resource.
 
 ### [Remove-AzInsightsPrivateLinkScope](Remove-AzInsightsPrivateLinkScope.md)
 delete private link scope
@@ -207,21 +200,22 @@ Removes a log profile.
 Removes a V2 (non-classic) metric alert rule.
 
 ### [Remove-AzScheduledQueryRule](Remove-AzScheduledQueryRule.md)
-Deletes a scheduled query rule.
-
-### [Remove-AzSubscriptionDiagnosticSetting](Remove-AzSubscriptionDiagnosticSetting.md)
-Deletes existing subscription diagnostic settings for the specified resource.
+Removes a Log Alert Rule
 
 ### [Set-AzActionGroup](Set-AzActionGroup.md)
 Creates a new or updates an existing action group.
 
+### [Set-AzActivityLogAlert](Set-AzActivityLogAlert.md)
+Creates a new or sets an existing activity log alert.
+
 ### [Set-AzDataCollectionRule](Set-AzDataCollectionRule.md)
 Updates (full replacement) a data collection rule.
 
-### [Update-AzActivityLogAlert](Update-AzActivityLogAlert.md)
-Updates 'tags' and 'enabled' fields in an existing Alert rule.
-This method is used to update the Alert rule tags, and to enable or disable the Alert rule.
-To update other fields use CreateOrUpdate operation.
+### [Set-AzDiagnosticSetting](Set-AzDiagnosticSetting.md)
+Sets the logs and metrics settings for the resource.
+
+### [Set-AzScheduledQueryRule](Set-AzScheduledQueryRule.md)
+Updates a Log Alert Rule
 
 ### [Update-AzDataCollectionRule](Update-AzDataCollectionRule.md)
 Updates a data collection rule tags property.
@@ -230,4 +224,5 @@ Updates a data collection rule tags property.
 Update for private link scope
 
 ### [Update-AzScheduledQueryRule](Update-AzScheduledQueryRule.md)
-Update a scheduled query rule.
+Updates a Log Alert rule
+

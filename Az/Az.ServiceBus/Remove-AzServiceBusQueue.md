@@ -1,5 +1,5 @@
 ---
-external help file: Az.ServiceBus-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.dll-Help.xml
 Module Name: Az.ServiceBus
 online version: https://docs.microsoft.com/powershell/module/az.servicebus/remove-azservicebusqueue
 schema: 2.0.0
@@ -10,43 +10,90 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Remove-AzServiceBusQueue
 
 ## SYNOPSIS
-Deletes a queue from the specified namespace in a resource group.
+Removes the queue from the specified Service Bus namespace.
 
 ## SYNTAX
 
-### Delete (Default)
+### QueuePropertiesSet (Default)
 ```
-Remove-AzServiceBusQueue -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzServiceBusQueue [-ResourceGroupName] <String> [-Namespace] <String> [-Name] <String> [-PassThru]
+ [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### QueueInputObjectSet
 ```
-Remove-AzServiceBusQueue -InputObject <IServiceBusIdentity> [-DefaultProfile <PSObject>] [-PassThru] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Remove-AzServiceBusQueue [-InputObject] <PSQueueAttributes> [-PassThru] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### QueueResourceIdSet
+```
+Remove-AzServiceBusQueue [-ResourceId] <String> [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Deletes a queue from the specified namespace in a resource group.
+The **Remove-AzServiceBusQueue** cmdlet removes the queue from the specified Service Bus namespace.
 
 ## EXAMPLES
 
-### Example 1: Remove a queue from a ServiceBus namespace
+### Example 1
 ```powershell
-Remove-AzServiceBusQueue -ResourceGroupName myResourceGroup -NamespaceName myNamespace -Name myQueue
+Remove-AzServiceBusQueue -ResourceGroup Default-ServiceBus-WestUS -NamespaceName SB-Example1 -QueueName SB-Queue_exampl1
 ```
 
-Deletes a ServiceBus queue `myQueue` from ServiceBus namespace `myNamespace`.
+Removes the Service Bus queue `SB-Queue_exampl1` from the namespace `SB-Example1`.
+
+### Example 2: InputObject - Using variable:
+```powershell
+$inputobject = Get-AzServiceBusQueue <params>
+Remove-AzServiceBusQueue -InputObject $inputobject
+```
+
+Removes the Service Bus queue provided in the $inputobject for -InputObject parameter
+
+### Example 3: InputObject - Using Piping:
+```powershell
+Get-AzServiceBusQueue <params> | Remove-AzServiceBusQueue
+```
+
+### Example 4: ResourceId - Using variable:
+```powershell
+$resourceid = Get-AzServiceBusQueue <params>
+Remove-AzServiceBusQueue -ResourceId $resourceid.Id
+```
+
+Removes the Service Bus queue provided in the ARM id in $resourceid/string for -ResourceId parameter
+
+### Example 5: ResourceId - passing as string:
+```powershell
+Remove-AzServiceBusQueue -ResourceId "/subscriptions/xxxx-xxxxx-xxxxx-xxxxxx-xxxxxxx/resourceGroups/ResourceGroupName/providers/Microsoft.ServiceBus/namespaces/NamespaceName/queues/QueueName"
+```
 
 ## PARAMETERS
+
+### -AsJob
+Run cmdlet in the background
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -56,53 +103,52 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+Service Bus Queue Object
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.IServiceBusIdentity
-Parameter Sets: DeleteViaIdentity
+Type: Microsoft.Azure.Commands.ServiceBus.Models.PSQueueAttributes
+Parameter Sets: QueueInputObjectSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Name
-The queue name.
+Queue Name
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: QueuePropertiesSet
 Aliases: QueueName
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NamespaceName
-The namespace name
+### -Namespace
+Namespace Name
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
-Aliases:
+Parameter Sets: QueuePropertiesSet
+Aliases: NamespaceName
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -PassThru
-Returns true when the command succeeds
+Specifying this will return true if the command was successful.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -117,33 +163,32 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Name of the Resource group within the Azure subscription.
+The name of the resource group
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
-Aliases:
+Parameter Sets: QueuePropertiesSet
+Aliases: ResourceGroup
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-Subscription credentials that uniquely identify a Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
+### -ResourceId
+Service Bus Queue Resource Id
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: QueueResourceIdSet
 Aliases:
 
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -179,37 +224,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.IServiceBusIdentity
+### System.String
+
+### Microsoft.Azure.Commands.ServiceBus.Models.PSQueueAttributes
 
 ## OUTPUTS
 
 ### System.Boolean
 
 ## NOTES
-
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IServiceBusIdentity>`: Identity Parameter
-  - `[Alias <String>]`: The Disaster Recovery configuration name
-  - `[AuthorizationRuleName <String>]`: The authorization rule name.
-  - `[ConfigName <MigrationConfigurationName?>]`: The configuration name. Should always be "$default".
-  - `[Id <String>]`: Resource identity path
-  - `[NamespaceName <String>]`: The namespace name
-  - `[PrivateEndpointConnectionName <String>]`: The PrivateEndpointConnection name
-  - `[QueueName <String>]`: The queue name.
-  - `[ResourceGroupName <String>]`: Name of the Resource group within the Azure subscription.
-  - `[RuleName <String>]`: The rule name.
-  - `[SubscriptionId <String>]`: Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
-  - `[SubscriptionName <String>]`: The subscription name.
-  - `[TopicName <String>]`: The topic name.
 
 ## RELATED LINKS

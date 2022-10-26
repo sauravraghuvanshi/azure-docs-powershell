@@ -134,7 +134,7 @@ Updates the disk for the Azure VM to be created.
 To construct, see NOTES section for DISKTOUPDATE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20220501.IVMwareCbtUpdateDiskInput[]
+Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20210210.IVMwareCbtUpdateDiskInput[]
 Parameter Sets: (All)
 Aliases:
 
@@ -151,7 +151,7 @@ The server object can be retrieved using the Get-AzMigrateServerReplication cmdl
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20220501.IMigrationItem
+Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20210210.IMigrationItem
 Parameter Sets: ByInputObjectVMwareCbt
 Aliases:
 
@@ -167,7 +167,7 @@ Updates the NIC for the Azure VM to be created.
 To construct, see NOTES section for NICTOUPDATE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20220501.IVMwareCbtNicInput[]
+Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20210210.IVMwareCbtNicInput[]
 Parameter Sets: (All)
 Aliases:
 
@@ -350,7 +350,7 @@ Specifies the tag to be used for disk creation.
 To construct, see NOTES section for UPDATEDISKTAG properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20220501.IVMwareCbtEnableMigrationInputTargetDiskTags
+Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20210210.IVMwareCbtEnableMigrationInputTargetDiskTags
 Parameter Sets: (All)
 Aliases:
 
@@ -381,7 +381,7 @@ Specifies the tag to be used for NIC creation.
 To construct, see NOTES section for UPDATENICTAG properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20220501.IVMwareCbtEnableMigrationInputTargetNicTags
+Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20210210.IVMwareCbtEnableMigrationInputTargetNicTags
 Parameter Sets: (All)
 Aliases:
 
@@ -442,7 +442,7 @@ Specifies the tag to be used for VM creation.
 To construct, see NOTES section for UPDATEVMTAG properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20220501.IVMwareCbtEnableMigrationInputTargetVmtags
+Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20210210.IVMwareCbtEnableMigrationInputTargetVmtags
 Parameter Sets: (All)
 Aliases:
 
@@ -475,7 +475,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20220501.IJob
+### Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20210210.IJob
 
 ## NOTES
 
@@ -488,13 +488,11 @@ To create the parameters described below, construct a hash table containing the 
 
 `DISKTOUPDATE <IVMwareCbtUpdateDiskInput[]>`: Updates the disk for the Azure VM to be created.
   - `DiskId <String>`: The disk Id.
-  - `[IsOSDisk <String>]`: A value indicating whether the disk is the OS disk.
   - `[TargetDiskName <String>]`: The target disk name.
 
 `INPUTOBJECT <IMigrationItem>`: Specifies the replicating server for which the properties need to be updated. The server object can be retrieved using the Get-AzMigrateServerReplication cmdlet.
   - `[Location <String>]`: Resource Location
   - `[ProviderSpecificDetail <IMigrationProviderSpecificSettings>]`: The migration provider custom settings.
-    - `InstanceType <String>`: Gets the instance type.
 
 `NICTOUPDATE <IVMwareCbtNicInput[]>`: Updates the NIC for the Azure VM to be created.
   - `IsPrimaryNic <String>`: A value indicating whether this is the primary NIC.
@@ -503,8 +501,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[TargetNicName <String>]`: Target NIC name.
   - `[TargetStaticIPAddress <String>]`: The static IP address.
   - `[TargetSubnetName <String>]`: Target subnet name.
-  - `[TestStaticIPAddress <String>]`: The test static IP address.
-  - `[TestSubnetName <String>]`: The test subnet name.
 
 `UPDATEDISKTAG <IVMwareCbtEnableMigrationInputTargetDiskTags>`: Specifies the tag to be used for disk creation.
   - `[(Any) <String>]`: This indicates any property can be added to this object.

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
-online version: https://docs.microsoft.com/powershell/module/az.network/set-azapplicationgatewayroutingrule
+online version: 
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzApplicationGatewayRoutingRule.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Set-AzApplicationGatewayRoutingRule.md
@@ -10,7 +10,7 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Set-AzApplicationGatewayRoutingRule
 
 ## SYNOPSIS
-Modifies a routing rule for an application gateway.
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
@@ -30,19 +30,16 @@ Set-AzApplicationGatewayRoutingRule -ApplicationGateway <PSApplicationGateway> -
 ```
 
 ## DESCRIPTION
-The **Set-AzApplicationGatewayRoutingRule** cmdlet modifies a routing rule.
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
-### Example 1: Update a routing rule
+### Example 1
 ```powershell
-$AppGw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
-$AppGw = Set-AzApplicationGatewayRoutingRule -ApplicationGateway $AppGw -Name "Rule01" -RuleType Basic -Priority 100 -BackendSettings $Setting -Listener $Listener -BackendAddressPool $Pool
+PS C:\> {{ Add example code here }}
 ```
 
-The first command gets the application gateway named ApplicationGateway01 and stores it in the $AppGw variable.
-The second command modifies the routing rule for the application gateway to use back-end settings specified in the $Setting variable, a listener specified in the $Listener variable, and a back-end address pool specified in the $Pool variable.
-
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -226,11 +223,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
-[Add-AzApplicationGatewayRoutingRule](./Add-AzApplicationGatewayRoutingRule.md)
-
-[Get-AzApplicationGatewayRoutingRule](./Get-AzApplicationGatewayRoutingRule.md)
-
-[New-AzApplicationGatewayRoutingRule](./New-AzApplicationGatewayRoutingRule.md)
-
-[Remove-AzApplicationGatewayRoutingRule](./Remove-AzApplicationGatewayRoutingRule.md)

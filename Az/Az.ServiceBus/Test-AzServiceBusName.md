@@ -1,5 +1,5 @@
 ---
-external help file: Az.ServiceBus-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.dll-Help.xml
 Module Name: Az.ServiceBus
 online version: https://docs.microsoft.com/powershell/module/az.servicebus/test-azservicebusname
 schema: 2.0.0
@@ -10,82 +10,59 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Test-AzServiceBusName
 
 ## SYNOPSIS
-Checks availability of a namespace name or disaster recovery alias.
+Checks the Availability of the given NameSpace Name or Alias (DR Configuration Name) 
 
 ## SYNTAX
 
-### NamespaceAvailability (Default)
+### AliasCheckNameAvailabilitySet
 ```
-Test-AzServiceBusName -NamespaceName <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob]
- [-NoWait] [<CommonParameters>]
+Test-AzServiceBusName [-ResourceGroupName] <String> [-Namespace] <String> [-AliasName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### AliasAvailability
+### NamespaceCheckNameAvailabilitySet
 ```
-Test-AzServiceBusName -NamespaceName <String> [-SubscriptionId <String>] -AliasName <String>
- -ResourceGroupName <String> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [<CommonParameters>]
+Test-AzServiceBusName [-Namespace] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Checks availability of a namespace name or disaster recovery alias.
+The **Test-AzServiceBusName** Cmdlet Check Availability of the NameSpace Name or Alias (DR Configuration Name)
 
 ## EXAMPLES
 
-### Example 1: Check the availability of a ServiceBus namespace name
+### Example 1
 ```powershell
-Test-AzServiceBusName -NamespaceName myNamespace
+Test-AzServiceBusName -Namespace MyNameSpaceName
 ```
 
-```output
-Message                                                                                                NameAvailable Reason
--------                                                                                                ------------- ------
-The specified name is not available. For more information visit https://aka.ms/eventhubsarmexceptions.         False NameInUse
-```
+Returns the status on availability of the namespace name 'MyNameSpaceName' as True
 
-Checks the availability of namespace name `myNamespace`.
-
-### Example 2: Check the availability of a ServiceBus Geo Disaster Recovery Alias
+### Example 2
 ```powershell
-Test-AzServiceBusName -NamespaceName myNamespace -ResourceGroupName myResourceGroup -AliasName myAlias
+Test-AzServiceBusName -Namespace MyNameSpaceName
 ```
 
-```output
-Message                                                                                                NameAvailable Reason
--------                                                                                                ------------- ------
-The specified name is not available. For more information visit https://aka.ms/eventhubsarmexceptions.         False NameInUse
-```
+Returns the status on availability of the namespace name 'MyNameSpaceName' as False with Reason
 
-Checks the availability of alias name `myAlias` on namespace `myNamepace`.
+### Example 3
+```powershell
+Test-AzServiceBusName -ResourceGroupName MyResourceGroup -Namespace Test123 -AliasName myAliasName
+```
 
 ## PARAMETERS
 
 ### -AliasName
-The name of Disaster Recovery Config alias.
+DR Configuration Name - Alias Name
 
 ```yaml
 Type: System.String
-Parameter Sets: AliasAvailability
+Parameter Sets: AliasCheckNameAvailabilitySet
 Aliases:
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AsJob
-Run the command as a job
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -93,9 +70,9 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -104,77 +81,47 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -NamespaceName
-The name of ServiceBus namespace
+### -Namespace
+Servicebus Namespace Name
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: NamespaceName
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NoWait
-Run the command asynchronously
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The name of the resource
+Resource Group Name
 
 ```yaml
 Type: System.String
-Parameter Sets: AliasAvailability
-Aliases:
+Parameter Sets: AliasCheckNameAvailabilitySet
+Aliases: ResourceGroup
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubscriptionId
-The ID of the target subscription.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
+### System.String
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.Api202201Preview.ICheckNameAvailabilityResult
+### Microsoft.Azure.Commands.ServiceBus.Models.PSCheckNameAvailabilityResultAttributes
 
 ## NOTES
-
-ALIASES
 
 ## RELATED LINKS

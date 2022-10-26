@@ -19,8 +19,8 @@ Creates a new or updates an existing action group.
 ```
 Set-AzActionGroup -ResourceGroupName <String> -Name <String> -ShortName <String>
  -Receiver <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupReceiverBase]>
- [-DisableGroup] [-Tag <System.Collections.Generic.IDictionary`2[System.String,System.String]>]
- [-Location <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-DisableGroup] [-Tag <System.Collections.Generic.IDictionary`2[System.String,System.String]>] [-Location <String>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByResourceId
@@ -28,14 +28,14 @@ Set-AzActionGroup -ResourceGroupName <String> -Name <String> -ShortName <String>
 Set-AzActionGroup -ShortName <String>
  -Receiver <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupReceiverBase]>
  [-DisableGroup] [-Tag <System.Collections.Generic.IDictionary`2[System.String,System.String]>]
- [-Location <String>] -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-Location <String>]
+ -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByInputObject
 ```
-Set-AzActionGroup [-ShortName <String>] [-DisableGroup]
- [-Tag <System.Collections.Generic.IDictionary`2[System.String,System.String]>] [-Location <String>]
+Set-AzActionGroup [-ShortName <String>] [-DisableGroup] [-Location <String>]
+ [-Tag <System.Collections.Generic.IDictionary`2[System.String,System.String]>]
  -InputObject <PSActionGroupResource> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
@@ -111,33 +111,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Location
-The location of the action group resource
-
-```yaml
-Type: System.String
-Parameter Sets: ByPropertyName, ByResourceId
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-```yaml
-Type: System.String
-Parameter Sets: ByInputObject
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -230,6 +203,9 @@ Accept wildcard characters: False
 
 ### -Tag
 The tags of the action group resource
+
+### -Location
+The location of the action group resource
 
 ```yaml
 Type: System.Collections.Generic.IDictionary`2[System.String,System.String]

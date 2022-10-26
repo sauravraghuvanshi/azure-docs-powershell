@@ -1,5 +1,5 @@
 ---
-external help file: Az.ServiceBus-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.dll-Help.xml
 Module Name: Az.ServiceBus
 online version: https://docs.microsoft.com/powershell/module/az.servicebus/new-azservicebussubscription
 schema: 2.0.0
@@ -10,84 +10,52 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # New-AzServiceBusSubscription
 
 ## SYNOPSIS
-Creates a topic subscription.
+Creates a subscription to the specified Service Bus topic.
 
 ## SYNTAX
 
 ```
-New-AzServiceBusSubscription -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- -TopicName <String> [-SubscriptionId <String>] [-AutoDeleteOnIdle <TimeSpan>] [-ClientId <String>]
- [-DeadLetteringOnFilterEvaluationException] [-DeadLetteringOnMessageExpiration]
- [-DefaultMessageTimeToLive <TimeSpan>] [-DuplicateDetectionHistoryTimeWindow <TimeSpan>]
- [-EnableBatchedOperations] [-ForwardDeadLetteredMessagesTo <String>] [-ForwardTo <String>] [-IsClientAffine]
- [-IsDurable] [-IsShared] [-LockDuration <TimeSpan>] [-MaxDeliveryCount <Int32>] [-RequiresSession]
- [-Status <EntityStatus>] [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzServiceBusSubscription [-ResourceGroupName] <String> [-Namespace] <String> [-Topic] <String>
+ [-Name] <String> [-AutoDeleteOnIdle <String>] [-DefaultMessageTimeToLive <String>]
+ [-DeadLetteringOnMessageExpiration <Boolean>] [-DeadLetteringOnFilterEvaluationExceptions]
+ [-EnableBatchedOperations <Boolean>] [-LockDuration <String>] [-MaxDeliveryCount <Int32>]
+ [-RequiresSession <Boolean>] [-ForwardTo <String>] [-ForwardDeadLetteredMessagesTo <String>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Creates a topic subscription.
+The **New-AzServiceBusSubscription** cmdlet creates a new subscription to the specified Service Bus topic.
 
 ## EXAMPLES
 
-### Example 1: Create a new ServiceBus subscription
+### Example 1
 ```powershell
-New-AzServiceBusSubscription -ResourceGroupName myResourceGroup -NamespaceName myNamespace -TopicName myTopic -Name mySubscription -DefaultMessageTimeToLive (New-TimeSpan -Days 6) -EnableBatchedOperations
+New-AzServiceBusSubscription -ResourceGroup Default-ServiceBus-WestUS -NamespaceName SB-Example1 -TopicName SB-Topic_exampl1 -SubscriptionName SB-TopicSubscription-Example1
 ```
 
 ```output
-AccessedAt                                : 1/1/0001 12:00:00 AM
+Name                                      : SB-TopicSubscription-Example1
+AccessedAt                                : 1/20/2017 3:18:54 AM
 AutoDeleteOnIdle                          : 10675199.02:48:05.4775807
-ClientId                                  :
-CountDetailActiveMessageCount             : 0
-CountDetailDeadLetterMessageCount         : 0
-CountDetailScheduledMessageCount          : 0
-CountDetailTransferDeadLetterMessageCount : 0
-CountDetailTransferMessageCount           : 0
-CreatedAt                                 : 9/23/2022 2:37:46 PM
-DeadLetteringOnFilterEvaluationException  : True
+CountDetails                              : Microsoft.Azure.Management.ServiceBus.Models.MessageCountDetails
+CreatedAt                                 : 1/20/2017 3:18:52 AM
+DefaultMessageTimeToLive                  : 10675199.02:48:05.4775807
 DeadLetteringOnMessageExpiration          : False
-DefaultMessageTimeToLive                  : 6.00:00:00
-DuplicateDetectionHistoryTimeWindow       :
 EnableBatchedOperations                   : True
-ForwardDeadLetteredMessagesTo             :
-ForwardTo                                 :
-Id                                        : /subscriptions/326100e2-f69d-4268-8503-075374f62b6e/resourceGroups/damorg/providers/Microsoft.ServiceBus/namespaces/testlatests
-                                            bmsi/topics/a/subscriptions/testsub
-IsClientAffine                            : False
-IsDurable                                 :
-IsShared                                  :
-Location                                  : westus
 LockDuration                              : 00:01:00
 MaxDeliveryCount                          : 10
 MessageCount                              : 0
-Name                                      : testsub
 RequiresSession                           : False
-ResourceGroupName                         : damorg
 Status                                    : Active
+UpdatedAt                                 : 1/20/2017 3:18:54 AM
 ```
 
-Creates a new ServiceBus subscription `mySubscription` under topic `myTopic`.
+Creates	the subscription `SB-TopicSubscription-Example1` for the specified Service Bus topic `SB-Topic_exampl1`.
 
 ## PARAMETERS
 
 ### -AutoDeleteOnIdle
-Idle interval after which the queue is automatically deleted.
-The minimum duration is 5 minutes.
-
-```yaml
-Type: System.TimeSpan
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ClientId
-Indicates the Client ID of the application that created the client-affine subscription.
+Specifies the [TimeSpan](https://msdn.microsoft.com/library/system.timespan.aspx) idle interval, after which the subscription is automatically deleted. The minimum duration is 5 minutes.
 
 ```yaml
 Type: System.String
@@ -97,11 +65,11 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -DeadLetteringOnFilterEvaluationException
+### -DeadLetteringOnFilterEvaluationExceptions
 Value that indicates whether a subscription has dead letter support on filter evaluation exceptions.
 
 ```yaml
@@ -117,33 +85,36 @@ Accept wildcard characters: False
 ```
 
 ### -DeadLetteringOnMessageExpiration
-Value that indicates whether a subscription has dead letter support when a message expires.
+Dead Lettering On Message Expiration
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.Nullable`1[System.Boolean]
 Parameter Sets: (All)
 Aliases:
+Accepted values: TRUE, FALSE
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -DefaultMessageTimeToLive
+Timespan to live value.
 This is the duration after which the message expires, starting from when the message is sent to Service Bus.
 This is the default value used when TimeToLive is not set on a message itself.
+For Standard = Timespan.Max and Basic = 14 days
 
 ```yaml
-Type: System.TimeSpan
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -151,25 +122,9 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DuplicateDetectionHistoryTimeWindow
-Defines the duration of the duplicate detection history.
-The default value is 10 minutes.
-
-```yaml
-Type: System.TimeSpan
-Parameter Sets: (All)
-Aliases:
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -179,17 +134,18 @@ Accept wildcard characters: False
 ```
 
 ### -EnableBatchedOperations
-Value that indicates whether server-side batched operations are enabled.
+Enable Batched Operations - value that indicates whether server-side batched operations are enabled
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.Nullable`1[System.Boolean]
 Parameter Sets: (All)
 Aliases:
+Accepted values: TRUE, FALSE
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -204,7 +160,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -219,88 +175,43 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IsClientAffine
-Value that indicates whether the subscription has an affinity to the client id.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IsDurable
-For client-affine subscriptions, this value indicates whether the subscription is durable or not.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IsShared
-For client-affine subscriptions, this value indicates whether the subscription is shared or not.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -LockDuration
-Timespan duration of a peek-lock; that is, the amount of time that the message is locked for other receivers.
-The maximum value for LockDuration is 5 minutes; the default value is 1 minute.
+Lock Duration
 
 ```yaml
-Type: System.TimeSpan
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -MaxDeliveryCount
-Number of maximum deliveries.
+MaxDeliveryCount - the maximum delivery count.
+A message is automatically deadlettered after this number of deliveries.
 
 ```yaml
-Type: System.Int32
+Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Name
-The subscription name.
+Subscription Name
 
 ```yaml
 Type: System.String
@@ -308,100 +219,70 @@ Parameter Sets: (All)
 Aliases: SubscriptionName
 
 Required: True
-Position: Named
+Position: 3
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NamespaceName
-The namespace name
+### -Namespace
+Namespace Name
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: NamespaceName
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -RequiresSession
-Value indicating if a subscription supports the concept of sessions.
+RequiresSession - the value indicating if this queue requires duplicate detection.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.Nullable`1[System.Boolean]
 Parameter Sets: (All)
 Aliases:
+Accepted values: TRUE, FALSE
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Name of the Resource group within the Azure subscription.
+The name of the resource group
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: ResourceGroup
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Status
-Enumerates the possible values for the status of a messaging entity.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Support.EntityStatus
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubscriptionId
-Subscription credentials that uniquely identify a Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
+### -Topic
+Topic Name
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TopicName
-The topic name.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
+Aliases: TopicName
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -437,16 +318,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
+### System.String
+
+### System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
+
+### System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.Api202201Preview.ISbSubscription
+### Microsoft.Azure.Commands.ServiceBus.Models.PSSubscriptionAttributes
 
 ## NOTES
-
-ALIASES
 
 ## RELATED LINKS

@@ -1,7 +1,7 @@
 ---
-external help file: Az.EventHub-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.EventHub.dll-Help.xml
 Module Name: Az.EventHub
-online version: https://docs.microsoft.com/powershell/module/az.eventhub/remove-azeventhubgeodrconfiguration
+online version: https://docs.microsoft.com/powershell/module/az.eventhub/remove-azeventhubGeodrconfiguration
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/EventHub/EventHub/help/Remove-AzEventHubGeoDRConfiguration.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/EventHub/EventHub/help/Remove-AzEventHubGeoDRConfiguration.md
@@ -14,39 +14,60 @@ Deletes an Alias(Disaster Recovery configuration)
 
 ## SYNTAX
 
-### Delete (Default)
+### GeoDRParameterSet (Default)
 ```
-Remove-AzEventHubGeoDRConfiguration -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzEventHubGeoDRConfiguration [-ResourceGroupName] <String> [-Namespace] <String> [-Name] <String>
+ [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### GeoDRConfigurationInputObjectSet
 ```
-Remove-AzEventHubGeoDRConfiguration -InputObject <IEventHubIdentity> [-DefaultProfile <PSObject>] [-PassThru]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzEventHubGeoDRConfiguration [-InputObject] <PSEventHubDRConfigurationAttributes> [-PassThru] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### GeoDRConfigResourceIdParameterSet
+```
+Remove-AzEventHubGeoDRConfiguration [-ResourceId] <String> [-PassThru] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Deletes an Alias(Disaster Recovery configuration)
+The **Remove-AzEventHubGeoDRConfiguration** cmdlet deletes an Alias(Disaster Recovery configuration)
 
 ## EXAMPLES
 
-### Example 1: Remove Disaster Recovery Config from an EventHub namespace
+### Example 1
 ```powershell
-Remove-AzEventHubGeoDRConfiguration -Name myAlias -ResourceGroupName myResourceGroup -NamespaceName myPrimaryNamespace
+Remove-AzEventHubGeoDRConfiguration -ResourceGroupName "SampleResourceGroup" -Namespace "SampleNamespace_Secondary" -Name "SampleDRConfigName"
 ```
 
-Deletes alias `myAlias` from EventHub namespace `myPrimaryNamespace`.
+Deletes an Alias (Disaster Recovery configuration)
 
 ## PARAMETERS
+
+### -AsJob
+Run cmdlet in the background
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -56,53 +77,53 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+Eventhub GeoDR Configuration Object
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.IEventHubIdentity
-Parameter Sets: DeleteViaIdentity
+Type: Microsoft.Azure.Commands.EventHub.Models.PSEventHubDRConfigurationAttributes
+Parameter Sets: GeoDRConfigurationInputObjectSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Name
-The Disaster Recovery configuration name
+Alias (GeoDR)
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: GeoDRParameterSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NamespaceName
-The Namespace name
+### -Namespace
+Namespace Name
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: GeoDRParameterSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -PassThru
-Returns true when the command succeeds
+Returns an object representing the item with which you are working.
+By default, this cmdlet does not generate any output.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -117,33 +138,32 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Name of the resource group within the azure subscription.
+Resource Group Name
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: GeoDRParameterSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-Subscription credentials that uniquely identify a Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
+### -ResourceId
+GeoDRConfiguration Resource Id
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: GeoDRConfigResourceIdParameterSet
 Aliases:
 
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -179,38 +199,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.IEventHubIdentity
+### System.String
+
+### Microsoft.Azure.Commands.EventHub.Models.PSEventHubDRConfigurationAttributes
 
 ## OUTPUTS
 
 ### System.Boolean
 
 ## NOTES
-
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IEventHubIdentity>`: Identity Parameter
-  - `[Alias <String>]`: The Disaster Recovery configuration name
-  - `[ApplicationGroupName <String>]`: The Application Group name 
-  - `[AuthorizationRuleName <String>]`: The authorization rule name.
-  - `[ClusterName <String>]`: The name of the Event Hubs Cluster.
-  - `[ConsumerGroupName <String>]`: The consumer group name
-  - `[EventHubName <String>]`: The Event Hub name
-  - `[Id <String>]`: Resource identity path
-  - `[NamespaceName <String>]`: The Namespace name
-  - `[PrivateEndpointConnectionName <String>]`: The PrivateEndpointConnection name
-  - `[ResourceAssociationName <String>]`: The ResourceAssociation Name
-  - `[ResourceGroupName <String>]`: Name of the resource group within the azure subscription.
-  - `[SchemaGroupName <String>]`: The Schema Group name 
-  - `[SubscriptionId <String>]`: Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 
 ## RELATED LINKS

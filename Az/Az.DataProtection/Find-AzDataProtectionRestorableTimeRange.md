@@ -10,7 +10,7 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Find-AzDataProtectionRestorableTimeRange
 
 ## SYNOPSIS
-Finds the valid recovery point in time ranges for the restore.
+
 
 ## SYNTAX
 
@@ -22,7 +22,7 @@ Find-AzDataProtectionRestorableTimeRange -BackupInstanceName <String> -ResourceG
 ```
 
 ## DESCRIPTION
-Finds the valid recovery point in time ranges for the restore.
+
 
 ## EXAMPLES
 
@@ -208,7 +208,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20220501.IAzureBackupFindRestorableTimeRangesResponseResource
+### Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20220401.IAzureBackupFindRestorableTimeRangesResponseResource
 
 ## NOTES
 

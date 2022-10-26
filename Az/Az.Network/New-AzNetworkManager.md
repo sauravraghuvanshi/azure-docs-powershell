@@ -219,13 +219,12 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkManagerScopeAccess
-Network Manager Scope Access.
+Network Manager Scope Access, valid values include 'SecurityAdmin' and 'Connectivity'.
 
 ```yaml
 Type: System.String[]
 Parameter Sets: (All)
 Aliases:
-Accepted values: SecurityAdmin, Connectivity
 
 Required: True
 Position: Named

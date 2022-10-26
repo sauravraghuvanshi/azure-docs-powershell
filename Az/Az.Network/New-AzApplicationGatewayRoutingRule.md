@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
-online version: https://docs.microsoft.com/powershell/module/az.network/new-azapplicationgatewayroutingrule
+online version: 
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/New-AzApplicationGatewayRoutingRule.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/New-AzApplicationGatewayRoutingRule.md
@@ -10,7 +10,7 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # New-AzApplicationGatewayRoutingRule
 
 ## SYNOPSIS
-Creates a routing rule for an application gateway.
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
@@ -30,16 +30,16 @@ New-AzApplicationGatewayRoutingRule -Name <String> -RuleType <String> -Priority 
 ```
 
 ## DESCRIPTION
-**The Add-AzApplicationGatewayRoutingRule** cmdlet creates a routing rule for an Azure application gateway.
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
-### Example 1: Create a routing rule for an application gateway
+### Example 1
 ```powershell
-$Rule = New-AzApplicationGatewayRoutingRule -Name "Rule01" -RuleType Basic -Priority 100 -BackendSettings $Setting -Listener $Listener -BackendAddressPool $Pool
+PS C:\> {{ Add example code here }}
 ```
 
-This command creates a basic routing rule named Rule01 and stores the result in the variable named $Rule.
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -208,11 +208,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
-[Add-AzApplicationGatewayRoutingRule](./Add-AzApplicationGatewayRoutingRule.md)
-
-[Get-AzApplicationGatewayRoutingRule](./Get-AzApplicationGatewayRoutingRule.md)
-
-[Remove-AzApplicationGatewayRoutingRule](./Remove-AzApplicationGatewayRoutingRule.md)
-
-[Set-AzApplicationGatewayRoutingRule](./Set-AzApplicationGatewayRoutingRule.md)

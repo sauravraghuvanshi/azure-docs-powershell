@@ -1,52 +1,82 @@
 ---
-external help file: 
+external help file: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.dll-Help.xml
 Module Name: Az.SecurityInsights
 online version: https://docs.microsoft.com/powershell/module/az.securityinsights/remove-azsentineldataconnector
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Remove-AzSentinelDataConnector.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Remove-AzSentinelDataConnector.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Remove-AzSentinelDataConnector.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Remove-AzSentinelDataConnector.md
 ---
 
 # Remove-AzSentinelDataConnector
 
 ## SYNOPSIS
-Delete the data connector.
+Removes a Data Connector.
 
 ## SYNTAX
 
-### Delete (Default)
+### DataConnectorId (Default)
 ```
-Remove-AzSentinelDataConnector -Id <String> -ResourceGroupName <String> -WorkspaceName <String>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> -DataConnectorId <String>
+ [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### InputObject
 ```
-Remove-AzSentinelDataConnector -InputObject <ISecurityInsightsIdentity> [-DefaultProfile <PSObject>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-AzSentinelDataConnector -InputObject <PSSentinelDataConnector> [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete the data connector.
+The **Remove-AzSentinelDataConnector** cmdlet permanently deletes a Data Connector from a specified workspace.
+You can pass an **DataConnector** object by using the pipeline operator, or alternatively you can specify the required parameters.
+You can use the Confirm parameter and $ConfirmPreference Windows PowerShell variable to control whether the cmdlet prompts you for confirmation.
 
 ## EXAMPLES
 
-### Example 1: Removes Sentinel Data Connector
+### Example 1
 ```powershell
-Remove-AzSentinelDataConnector -ResourceGroupName "myResourceGroupName" -workspaceName "myWorkspaceName" -Id 661b961f-53d8-4bd1-be97-24e808fd04f5
+Remove-AzSentinelDataConnector -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName" -DataConnectorId "MyDataConnectorId"
 ```
 
-This command removes a data connector.
+This command removes the DataConnector from the workspace.
+
+### Example 2
+```powershell
+$SentinelConnection = @{
+    ResourceGroupName = "myResourceGroupName"
+    WorkspaceName = "myWorkspaceName"
+}
+$DataConnector = Get-AzSentinelDataConnector @SentinelConnection | Where-Object {$_.Kind -eq "Office365"} 
+Remove-AzSentinelDataConnector @SentinelConnection -DataConnectorId $DataConnector.Name
+```
+
+This example uses a connection object to pass the resourceGroupName and the workspaceName. Then it gets a specific connector, filtered by *Kind* which is being passed to remove the data connector.<br/><br/>
+*Note: the $DataConnector.Name is the DataConnectorId.*
 
 ## PARAMETERS
+
+### -DataConnectorId
+Data Connector Id.
+
+```yaml
+Type: System.String
+Parameter Sets: DataConnectorId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -55,28 +85,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Id
-Connector ID
-
-```yaml
-Type: System.String
-Parameter Sets: Delete
-Aliases: DataConnectorId
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+InputObject.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.ISecurityInsightsIdentity
-Parameter Sets: DeleteViaIdentity
+Type: Microsoft.Azure.Commands.SecurityInsights.Models.DataConnectors.PSSentinelDataConnector
+Parameter Sets: InputObject
 Aliases:
 
 Required: True
@@ -87,7 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Returns true when the command succeeds
+PassThru
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -102,48 +116,32 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The name of the resource group.
-The name is case insensitive.
+Resource group name.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: DataConnectorId
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubscriptionId
-The ID of the target subscription.
-
-```yaml
-Type: System.String
-Parameter Sets: Delete
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -WorkspaceName
-The name of the workspace.
+Workspace Name.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: DataConnectorId
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -183,44 +181,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.ISecurityInsightsIdentity
-
+### System.String
+### Microsoft.Azure.Commands.SecurityInsights.Models.DataConnectors.PSSentinelDataConnector
 ## OUTPUTS
 
-### System.Boolean
-
+### Microsoft.Azure.Commands.SecurityInsights.Models.DataConnectors.PSSentinelDataConnector
 ## NOTES
 
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <ISecurityInsightsIdentity>`: Identity Parameter
-  - `[ActionId <String>]`: Action ID
-  - `[AlertRuleTemplateId <String>]`: Alert rule template ID
-  - `[AutomationRuleId <String>]`: Automation rule ID
-  - `[BookmarkId <String>]`: Bookmark ID
-  - `[ConsentId <String>]`: consent ID
-  - `[DataConnectorId <String>]`: Connector ID
-  - `[EntityId <String>]`: entity ID
-  - `[EntityQueryId <String>]`: entity query ID
-  - `[EntityQueryTemplateId <String>]`: entity query template ID
-  - `[Id <String>]`: Resource identity path
-  - `[IncidentCommentId <String>]`: Incident comment ID
-  - `[IncidentId <String>]`: Incident ID
-  - `[MetadataName <String>]`: The Metadata name.
-  - `[Name <String>]`: Threat intelligence indicator name field.
-  - `[RelationName <String>]`: Relation Name
-  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
-  - `[RuleId <String>]`: Alert rule ID
-  - `[SentinelOnboardingStateName <String>]`: The Sentinel onboarding state name. Supports - default
-  - `[SettingsName <String>]`: The setting name. Supports - Anomalies, EyesOn, EntityAnalytics, Ueba
-  - `[SourceControlId <String>]`: Source control Id
-  - `[SubscriptionId <String>]`: The ID of the target subscription.
-  - `[WorkspaceName <String>]`: The name of the workspace.
-
 ## RELATED LINKS
-

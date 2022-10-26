@@ -1,5 +1,5 @@
 ---
-external help file: Az.ServiceBus-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.dll-Help.xml
 Module Name: Az.ServiceBus
 online version: https://docs.microsoft.com/powershell/module/az.servicebus/remove-azservicebusauthorizationrule
 schema: 2.0.0
@@ -10,65 +10,66 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Remove-AzServiceBusAuthorizationRule
 
 ## SYNOPSIS
-Removes the Authorization Rule of a ServiceBus Namespace, Queue or Topic
+Removes the authorization rule of a Service Bus namespace or queue or topic from the specified resource group.
 
 ## SYNTAX
 
-### RemoveExpandedNamespace (Default)
+### NamespaceAuthorizationRuleSet (Default)
 ```
-Remove-AzServiceBusAuthorizationRule -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-WhatIf] [-Confirm]
- [<CommonParameters>]
-```
-
-### RemoveExpandedQueue
-```
-Remove-AzServiceBusAuthorizationRule -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] -QueueName <String> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Remove-AzServiceBusAuthorizationRule [-ResourceGroupName] <String> [-Namespace] <String> [-Name] <String>
+ [[-InputObject] <PSSharedAccessAuthorizationRuleAttributes>] [-Force] [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### RemoveExpandedTopic
+### QueueAuthorizationRuleSet
 ```
-Remove-AzServiceBusAuthorizationRule -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] -TopicName <String> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Remove-AzServiceBusAuthorizationRule [-ResourceGroupName] <String> [-Namespace] <String> [-Queue] <String>
+ [-Name] <String> [[-InputObject] <PSSharedAccessAuthorizationRuleAttributes>] [-Force] [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### RemoveViaIdentityExpanded
+### TopicAuthorizationRuleSet
 ```
-Remove-AzServiceBusAuthorizationRule -InputObject <IServiceBusIdentity> [-DefaultProfile <PSObject>] [-AsJob]
- [-NoWait] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzServiceBusAuthorizationRule [-ResourceGroupName] <String> [-Namespace] <String> [-Topic] <String>
+ [-Name] <String> [[-InputObject] <PSSharedAccessAuthorizationRuleAttributes>] [-Force] [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Removes the Authorization Rule of a ServiceBus Namespace, Queue or Topic
+The **Remove-AzServiceBusAuthorizationRule** cmdlet removes the authorization rule of a Service Bus namespace or queue or topic for the specified resource group.
 
 ## EXAMPLES
 
-### Example 1: Remove an authorization rule from a ServiceBus namespace
+### Example 1
 ```powershell
-Remove-AzServiceBusAuthorizationRule -ResourceGroupName myResourceGroup -NamespaceName myNamespace -Name myAuthRule
+Remove-AzServiceBusAuthorizationRule -ResourceGroupName Default-ServiceBus-WestUS -Namespace SB-Example1 -Name AuthoRule1
 ```
 
-Deletes authorization rule `myAuthRule` from ServiceBus namespace `myNamespace`.
+Removes the authorization rule `SBAuthoRule1` of namespace `SB-Example1` from the specified resource group.
 
-### Example 2: Remove an authorization rule from a ServiceBus queue
+### Example 2
 ```powershell
-Remove-AzServiceBusAuthorizationRule -ResourceGroupName myResourceGroup -NamespaceName myNamespace -QueueName myQueue -Name myAuthRule
+Remove-AzServiceBusAuthorizationRule -ResourceGroupName Default-ServiceBus-WestUS -Namespace SB-Example1 -Queue SBQueue -Name AuthoRule1
 ```
 
-Deletes authorization rule `myAuthRule` from ServiceBus `myQueue` on namespace `myNamespace`.
+Removes the authorization rule `SBAuthoRule1` of queue `SBQueue` from the specified resource group.
+
+### Example 3
+```powershell
+Remove-AzServiceBusAuthorizationRule -ResourceGroupName Default-ServiceBus-WestUS -Namespace SB-Example1 -Topic SBTopic -Name AuthoRule1
+```
+
+Removes the authorization rule `SBAuthoRule1` of topic `SBTopic` from the specified resource group.
 
 ## PARAMETERS
 
-### -AsJob
-Run the command as a job
+### -DefaultProfile
+The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases:
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -77,13 +78,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.
+### -Force
+Do not ask for confirmation.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases:
 
 Required: False
 Position: Named
@@ -93,53 +94,53 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Identity parameter.
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+ServiceBus AuthorizationRule Object
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.IServiceBusIdentity
-Parameter Sets: RemoveViaIdentityExpanded
-Aliases:
+Type: Microsoft.Azure.Commands.ServiceBus.Models.PSSharedAccessAuthorizationRuleAttributes
+Parameter Sets: (All)
+Aliases: AuthRuleObj
 
-Required: True
-Position: Named
+Required: False
+Position: 4
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Name
-The name of the Authorization Rule
+AuthorizationRule Name
 
 ```yaml
 Type: System.String
-Parameter Sets: RemoveExpandedNamespace, RemoveExpandedQueue, RemoveExpandedTopic
+Parameter Sets: (All)
 Aliases: AuthorizationRuleName
 
 Required: True
-Position: Named
+Position: 3
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NamespaceName
-The name of Service Bus namespace
+### -Namespace
+Namespace Name
 
 ```yaml
 Type: System.String
-Parameter Sets: RemoveExpandedNamespace, RemoveExpandedQueue, RemoveExpandedTopic
-Aliases:
+Parameter Sets: (All)
+Aliases: NamespaceName
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NoWait
-Run the command asynchronously
+### -PassThru
+Returns an object representing the item with which you are working.
+By default, this cmdlet does not generate any output.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -153,64 +154,48 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -QueueName
-The name of the ServiceBus Queue entity.
+### -Queue
+Queue Name
 
 ```yaml
 Type: System.String
-Parameter Sets: RemoveExpandedQueue
-Aliases:
+Parameter Sets: QueueAuthorizationRuleSet
+Aliases: QueueName
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The name of the resource group.
-The name is case insensitive.
+Resource Group Name
 
 ```yaml
 Type: System.String
-Parameter Sets: RemoveExpandedNamespace, RemoveExpandedQueue, RemoveExpandedTopic
+Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-The ID of the target subscription.
+### -Topic
+Topic Name
 
 ```yaml
 Type: System.String
-Parameter Sets: RemoveExpandedNamespace, RemoveExpandedQueue, RemoveExpandedTopic
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TopicName
-The name of the ServiceBus Topic entity.
-
-```yaml
-Type: System.String
-Parameter Sets: RemoveExpandedTopic
-Aliases:
+Parameter Sets: TopicAuthorizationRuleSet
+Aliases: TopicName
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -246,37 +231,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.IServiceBusIdentity
+### System.String
+
+### Microsoft.Azure.Commands.ServiceBus.Models.PSSharedAccessAuthorizationRuleAttributes
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.Api202201Preview.ISbAuthorizationRule
+### System.Boolean
 
 ## NOTES
-
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IServiceBusIdentity>`: Identity parameter.
-  - `[Alias <String>]`: The Disaster Recovery configuration name
-  - `[AuthorizationRuleName <String>]`: The authorization rule name.
-  - `[ConfigName <MigrationConfigurationName?>]`: The configuration name. Should always be "$default".
-  - `[Id <String>]`: Resource identity path
-  - `[NamespaceName <String>]`: The namespace name
-  - `[PrivateEndpointConnectionName <String>]`: The PrivateEndpointConnection name
-  - `[QueueName <String>]`: The queue name.
-  - `[ResourceGroupName <String>]`: Name of the Resource group within the Azure subscription.
-  - `[RuleName <String>]`: The rule name.
-  - `[SubscriptionId <String>]`: Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
-  - `[SubscriptionName <String>]`: The subscription name.
-  - `[TopicName <String>]`: The topic name.
 
 ## RELATED LINKS

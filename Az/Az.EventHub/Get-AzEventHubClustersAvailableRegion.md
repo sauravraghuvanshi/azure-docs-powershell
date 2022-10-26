@@ -1,5 +1,5 @@
 ---
-external help file: Az.EventHub-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.EventHub.dll-Help.xml
 Module Name: Az.EventHub
 online version: https://docs.microsoft.com/powershell/module/az.eventhub/get-azeventhubclustersavailableregion
 schema: 2.0.0
@@ -10,26 +10,48 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Get-AzEventHubClustersAvailableRegion
 
 ## SYNOPSIS
-List the quantity of available pre-provisioned Event Hubs Clusters, indexed by Azure region.
+Gets the details of single Eventhub cluster or the list of clusters in the given Resource Group
 
 ## SYNTAX
 
 ```
-Get-AzEventHubClustersAvailableRegion [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>]
- [<CommonParameters>]
+Get-AzEventHubClustersAvailableRegion [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-List the quantity of available pre-provisioned Event Hubs Clusters, indexed by Azure region.
+The Get-AzEventHubClustersAvailableRegion cmdlet list of regions where dedicated are available to create.
 
 ## EXAMPLES
 
-### Example 1: Get all available regions for cluster creation
+### Example 1
 ```powershell
 Get-AzEventHubClustersAvailableRegion
 ```
 
-Lists all regions that are available for cluster creation.
+```output
+Location
+--------
+northcentralus
+westeurope
+uksouth
+westcentralus
+australiasoutheast
+ukwest
+brazilsouth
+centralus
+australiaeast
+eastus
+southcentralus
+japaneast
+northeurope
+eastus2
+southeastasia
+eastasia
+westus
+westus2
+```
+
+List of regions is returned where
 
 ## PARAMETERS
 
@@ -37,29 +59,13 @@ Lists all regions that are available for cluster creation.
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubscriptionId
-Subscription credentials that uniquely identify a Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -69,12 +75,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### None
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.Api202201Preview.IAvailableCluster
+### System.Collections.Generic.IEnumerable`1[[Microsoft.Azure.Commands.EventHub.Models.PSEventHubsAvailableCluster, Microsoft.Azure.PowerShell.Cmdlets.EventHub, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null]]
 
 ## NOTES
-
-ALIASES
 
 ## RELATED LINKS

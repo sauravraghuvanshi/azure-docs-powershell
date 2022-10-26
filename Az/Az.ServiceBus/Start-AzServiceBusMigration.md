@@ -1,5 +1,5 @@
 ---
-external help file: Az.ServiceBus-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.dll-Help.xml
 Module Name: Az.ServiceBus
 online version: https://docs.microsoft.com/powershell/module/az.servicebus/start-azservicebusmigration
 schema: 2.0.0
@@ -10,52 +10,41 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Start-AzServiceBusMigration
 
 ## SYNOPSIS
-Creates Migration configuration and starts migration of entities from Standard to Premium namespace
+Creates a new Migration configuration and starts migrating entities from Standard to Premium namespaces
 
 ## SYNTAX
 
 ```
-Start-AzServiceBusMigration -NamespaceName <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-PostMigrationName <String>] [-TargetNamespace <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Start-AzServiceBusMigration [-ResourceGroupName] <String> [-Name] <String> [-TargetNameSpace] <String>
+ [-PostMigrationName] <String> [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Creates Migration configuration and starts migration of entities from Standard to Premium namespace
+The **Start-AzServiceBusMigration** cmdlet creates an new Migration configuration and starts migrating entities from Standard to Premium namespaces
 
 ## EXAMPLES
 
-### Example 1: Start a Service Bus migration configuration
+### Example 1
 ```powershell
-Start-AzServiceBusMigration -ResourceGroupName myResourceGroup -NamespaceName myNamespace -PostMigrationName myStandardNamespace2 -TargetNamespace /subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.ServiceBus/namespaces/myPremiumNamespace
+Start-AzServiceBusMigration -ResourceGroupName ResourceGroup -Name TestingNamespaceStandardMigration -TargetNameSpace /subscriptions/SubscriptionId/resourceGroups/ResourceGroup/providers/Microsoft.ServiceBus/namespaces/TestingNamespacePremiumMigration -PostMigrationName TestingNamespaceStandardMigrationPostMigration
 ```
 
 ```output
-Id                                : /subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.ServiceBus/namespaces
-                                    /myNamespace/migrationConfigurations/$default
-Location                          :
-MigrationState                    : Active
-Name                              : myNamespace
-PendingReplicationOperationsCount :
-PostMigrationName                 : myStandardNamespace2
-ProvisioningState                 : Succeeded
-ResourceGroupName                 : myResourceGroup
-SystemDataCreatedAt               :
-SystemDataCreatedBy               :
-SystemDataCreatedByType           :
-SystemDataLastModifiedAt          :
-SystemDataLastModifiedBy          :
-SystemDataLastModifiedByType      :
-TargetNamespace                   : /subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.ServiceBus/namespaces
-                                    /myPremiumNamespace
+Name              : TestingNamespaceStandardMigration
+Id                : /subscriptions/SubscriptionId/resourceGroups/ResourceGroup/providers/Microsoft.ServiceBus/namespaces/TestingNamespaceStandardMigration/migrationConfigurations/$default
+Type              : Microsoft.ServiceBus/Namespaces/migrationconfigurations
+ProvisioningState : Accepted
+TargetNamespace   : /subscriptions/SubscriptionId/resourceGroups/ResourceGroup/providers/Microsoft.ServiceBus/namespaces/TestingNamespacePremiumMigration
+PostMigrationName : TestingNamespaceStandardMigrationPostMigration
 ```
 
-Starts a Service Bus migration configuration that links standard namespace `myNamespace` to premium `mySecondaryNamespace`.
+Creates a new migration configuration for 'TestingNamespaceStandardMigration' to 'TestingNamespacePremiumMigration' namespaces
 
 ## PARAMETERS
 
 ### -AsJob
-Run the command as a job
+Run cmdlet in the background
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -73,9 +62,9 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -84,8 +73,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -NamespaceName
-The namespace name
+### -Name
+Standard Namespace Name
 
 ```yaml
 Type: System.String
@@ -93,44 +82,14 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NoWait
-Run the command asynchronously
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -PostMigrationName
-Name to access Standard Namespace after migration
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ResourceGroupName
-Name of the Resource group within the Azure subscription.
+Post Migration Name for Standard Namespace in Migration
 
 ```yaml
 Type: System.String
@@ -138,38 +97,37 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-Subscription credentials that uniquely identify a Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
+### -ResourceGroupName
+Resource Group Name
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
 Aliases:
 
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
+Required: True
+Position: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TargetNamespace
-Existing premium Namespace ARM Id name which has no entities, will be used for migration
+### -TargetNameSpace
+Premium Namespace ARM Id
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
 Aliases:
 
-Required: False
-Position: Named
+Required: True
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -207,16 +165,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
+### None
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.Api202201Preview.IMigrationConfigProperties
+### Microsoft.Azure.Commands.ServiceBus.Models.PSServiceBusDRConfigurationAttributes
 
 ## NOTES
-
-ALIASES
 
 ## RELATED LINKS

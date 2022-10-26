@@ -16,26 +16,36 @@ Gets data collection rule association(s).
 
 ### ByAssociatedResource (Default)
 ```
-Get-AzDataCollectionRuleAssociation -TargetResourceId <String> [-DefaultProfile <IAzureContextContainer>]
- [<CommonParameters>]
+Get-AzDataCollectionRuleAssociation 
+   -TargetResourceId <string> 
+   [-DefaultProfile <IAzureContextContainer>]
+   [<CommonParameters>]
 ```
 
 ### ByName
 ```
-Get-AzDataCollectionRuleAssociation -TargetResourceId <String> -AssociationName <String>
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzDataCollectionRuleAssociation 
+   -TargetResourceId <string> 
+   -AssociationName <string> 
+   [-DefaultProfile <IAzureContextContainer>] 
+   [<CommonParameters>]
 ```
 
 ### ByRule
 ```
-Get-AzDataCollectionRuleAssociation -ResourceGroupName <String> -RuleName <String>
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzDataCollectionRuleAssociation 
+   -ResourceGroupName <string> 
+   -RuleName <string> 
+   [-DefaultProfile <IAzureContextContainer>]
+   [<CommonParameters>]
 ```
 
 ### ByInputObject
 ```
-Get-AzDataCollectionRuleAssociation -InputObject <PSDataCollectionRuleResource>
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzDataCollectionRuleAssociation 
+   -InputObject <PSDataCollectionRuleResource> 
+   [-DefaultProfile <IAzureContextContainer>]
+   [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -125,21 +135,6 @@ This command lists one (a list with a single element) data collection rule assoc
 
 ## PARAMETERS
 
-### -AssociationName
-The name of the association.
-
-```yaml
-Type: System.String
-Parameter Sets: ByName
-Aliases: Name
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with azure
 
@@ -155,18 +150,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-PSDataCollectionRuleResource Object
+### -TargetResourceId
+The associated resource ID
 
 ```yaml
-Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSDataCollectionRuleResource
-Parameter Sets: ByInputObject
-Aliases:
+Type: System.String
+Parameter Sets: ByAssociatedResource (Default)
+Aliases: ResourceUri
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: ByName
+Aliases: ResourceUri
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -200,18 +207,33 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TargetResourceId
-The associated resource ID
+### -InputObject
+PSDataCollectionRuleResource Object
 
 ```yaml
-Type: System.String
-Parameter Sets: ByAssociatedResource, ByName
-Aliases: ResourceUri
+Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSDataCollectionRuleResource
+Parameter Sets: ByInputObject
+Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True
+Accept wildcard characters: False
+```
+
+### -AssociationName
+The name of the association.
+
+```yaml
+Type: System.String
+Parameter Sets: ByName
+Aliases: Name
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

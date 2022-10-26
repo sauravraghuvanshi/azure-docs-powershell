@@ -1,5 +1,5 @@
 ---
-external help file: Az.ServiceBus-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.dll-Help.xml
 Module Name: Az.ServiceBus
 online version: https://docs.microsoft.com/powershell/module/az.servicebus/get-azservicebusauthorizationrule
 schema: 2.0.0
@@ -10,98 +10,81 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Get-AzServiceBusAuthorizationRule
 
 ## SYNOPSIS
-Gets the Authorization Rule of a ServiceBus namespace, queue or topic.
+Gets a description of the specified authorization rule for a given Namespace or Queue or Topic or Alias (GeoDR Configurations). 
 
 ## SYNTAX
 
-### GetExpandedNamespace (Default)
+### NamespaceAuthorizationRuleSet (Default)
 ```
-Get-AzServiceBusAuthorizationRule -NamespaceName <String> -ResourceGroupName <String> [-Name <String>]
- [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### GetExpandedQueue
-```
-Get-AzServiceBusAuthorizationRule -NamespaceName <String> -ResourceGroupName <String> [-Name <String>]
- [-SubscriptionId <String[]>] -QueueName <String> [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzServiceBusAuthorizationRule [-ResourceGroupName] <String> [-Namespace] <String> [[-Name] <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### GetExpandedTopic
+### QueueAuthorizationRuleSet
 ```
-Get-AzServiceBusAuthorizationRule -NamespaceName <String> -ResourceGroupName <String> [-Name <String>]
- [-SubscriptionId <String[]>] -TopicName <String> [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### GetExpandedAlias
-```
-Get-AzServiceBusAuthorizationRule -NamespaceName <String> -ResourceGroupName <String> [-Name <String>]
- [-SubscriptionId <String[]>] -AliasName <String> [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzServiceBusAuthorizationRule [-ResourceGroupName] <String> [-Namespace] <String> [-Queue] <String>
+ [[-Name] <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### GetViaIdentityExpanded
+### TopicAuthorizationRuleSet
 ```
-Get-AzServiceBusAuthorizationRule -InputObject <IServiceBusIdentity> [-DefaultProfile <PSObject>]
- [<CommonParameters>]
+Get-AzServiceBusAuthorizationRule [-ResourceGroupName] <String> [-Namespace] <String> [-Topic] <String>
+ [[-Name] <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### AliasAuthoRuleSet
+```
+Get-AzServiceBusAuthorizationRule [-ResourceGroupName] <String> [-Namespace] <String> [-AliasName] <String>
+ [[-Name] <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets the Authorization Rule of a ServiceBus namespace, queue or topic.
+The **Get-AzServiceBusAuthorizationRule** cmdlet gets the description of the specified authorization rule in the given Namespace or Queue or Topic or Alias (GeoDR Configurations).
 
 ## EXAMPLES
 
-### Example 1: Get a ServiceBus Namespace Authorization Rule
+### Example 1
 ```powershell
-Get-AzServiceBusAuthorizationRule -ResourceGroupName myResourceGroup -NamespaceName myNamespace -Name myAuthRule
+Get-AzServiceBusAuthorizationRule -ResourceGroupName Default-ServiceBus-WestUS -Namespace SB-Example1 -Name AuthoRule1
 ```
 
-```output
-Id                           : /subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.ServiceBus/namespaces/myNamespace/authorizationRules
-                               /myAuthRule
-Location                     : Central US
-Name                         : myAuthRule
-ResourceGroupName            : myResourceGroup
-Rights                       : {Listen, Manage, Send}
-```
+Returns the specified authorization rule description for a specified namespace.
 
-Gets details of authorization rule `myAuthRule` of ServiceBus namespace `myNamespace`.
-
-### Example 2: Get a ServiceBus queue authorization rule
+### Example 2
 ```powershell
-Get-AzServiceBusAuthorizationRule -ResourceGroupName myResourceGroup -NamespaceName myNamespace -QueueName queue1 -Name myAuthRule
+Get-AzServiceBusAuthorizationRule -ResourceGroupName Default-ServiceBus-WestUS -Namespace SB-Example1 -Queue SBQueue -Name AuthoRule1
 ```
 
-```output
-Id                           : /subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.ServiceBus/namespaces/myNamespace/queues/queue1/authorizationRules
-                               /myAuthRule
-Location                     : Central US
-Name                         : myAuthRule
-ResourceGroupName            : myResourceGroup
-Rights                       : {Listen, Manage, Send}
-```
+Returns the specified authorization rule description for a specified queue.
 
-Gets details of authorization rule `myAuthRule` of ServiceBus queue `queue1` from namespace `myNamespace`.
-
-### Example 3: List all authorization rules in a ServiceBus namespace
+### Example 3
 ```powershell
-Get-AzServiceBusAuthorizationRule -ResourceGroupName myResourceGroup -NamespaceName myNamespace
+Get-AzServiceBusAuthorizationRule -ResourceGroupName Default-ServiceBus-WestUS -Namespace SB-Example1 -Topic SBTopic -Name AuthoRule1
 ```
 
-Lists all authorization rules in ServiceBus namespace `myNamespace`.
+Returns the specified authorization rule description for a specified topic.
+
+### Example 4
+```powershell
+Get-AzServiceBusAuthorizationRule -ResourceGroupName Default-ServiceBus-WestUS -Namespace SB-Example1 -AliasName SBAlias -Name AuthoRule1
+```
+
+Returns the specified authorization rule description for a specified namespace and alias.
 
 ## PARAMETERS
 
 ### -AliasName
-The name of the disaster recovery config
+GeoDR Configuration Name
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpandedAlias
+Parameter Sets: AliasAuthoRuleSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -109,156 +92,103 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InputObject
-Identity parameter.
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.IServiceBusIdentity
-Parameter Sets: GetViaIdentityExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Name
-The name of the Authorization Rule
+AuthorizationRule Name
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpandedNamespace, GetExpandedQueue, GetExpandedTopic, GetExpandedAlias
+Parameter Sets: (All)
 Aliases: AuthorizationRuleName
 
 Required: False
-Position: Named
+Position: 3
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NamespaceName
-The name of ServiceBus namespace
+### -Namespace
+Namespace Name
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpandedNamespace, GetExpandedQueue, GetExpandedTopic, GetExpandedAlias
-Aliases:
+Parameter Sets: (All)
+Aliases: NamespaceName
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -QueueName
-The name of the Service Bus queue.
+### -Queue
+Queue Name
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpandedQueue
-Aliases:
+Parameter Sets: QueueAuthorizationRuleSet
+Aliases: QueueName
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The name of the resource group.
-The name is case insensitive.
+Resource Group Name
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpandedNamespace, GetExpandedQueue, GetExpandedTopic, GetExpandedAlias
+Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-The ID of the target subscription.
-
-```yaml
-Type: System.String[]
-Parameter Sets: GetExpandedNamespace, GetExpandedQueue, GetExpandedTopic, GetExpandedAlias
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TopicName
-The name of the Service Bus topic.
+### -Topic
+Topic Name
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpandedTopic
-Aliases:
+Parameter Sets: TopicAuthorizationRuleSet
+Aliases: TopicName
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.IServiceBusIdentity
+### System.String
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.Api202201Preview.ISbAuthorizationRule
+### Microsoft.Azure.Commands.ServiceBus.Models.PSSharedAccessAuthorizationRuleAttributes
 
 ## NOTES
-
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IServiceBusIdentity>`: Identity parameter.
-  - `[Alias <String>]`: The Disaster Recovery configuration name
-  - `[AuthorizationRuleName <String>]`: The authorization rule name.
-  - `[ConfigName <MigrationConfigurationName?>]`: The configuration name. Should always be "$default".
-  - `[Id <String>]`: Resource identity path
-  - `[NamespaceName <String>]`: The namespace name
-  - `[PrivateEndpointConnectionName <String>]`: The PrivateEndpointConnection name
-  - `[QueueName <String>]`: The queue name.
-  - `[ResourceGroupName <String>]`: Name of the Resource group within the Azure subscription.
-  - `[RuleName <String>]`: The rule name.
-  - `[SubscriptionId <String>]`: Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
-  - `[SubscriptionName <String>]`: The subscription name.
-  - `[TopicName <String>]`: The topic name.
 
 ## RELATED LINKS

@@ -1,6 +1,7 @@
 ---
-external help file: Az.ActivityLogAlert.psm1-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Monitor.dll-Help.xml
 Module Name: Az.Monitor
+ms.assetid: C7EC21C7-1C7E-49B2-9B33-486532FCDAEC
 online version: https://docs.microsoft.com/powershell/module/az.monitor/remove-azactivitylogalert
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/Remove-AzActivityLogAlert.md
@@ -10,51 +11,77 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Remove-AzActivityLogAlert
 
 ## SYNOPSIS
-Delete an Activity Log Alert rule.
+Removes an activity log alert.
 
 ## SYNTAX
 
-### Delete (Default)
+### RemoveByNameAndResourceGroup
 ```
-Remove-AzActivityLogAlert -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-DefaultProfile <PSObject>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### DeleteViaIdentity
-```
-Remove-AzActivityLogAlert -InputObject <IActivityLogAlertIdentity> [-DefaultProfile <PSObject>] [-PassThru]
+Remove-AzActivityLogAlert -ResourceGroupName <String> -Name <String> [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
+### RemoveByInputObject
+```
+Remove-AzActivityLogAlert -InputObject <PSActivityLogAlertResource> [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### RemoveByResourceId
+```
+Remove-AzActivityLogAlert -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
 ## DESCRIPTION
-Delete an Activity Log Alert rule.
+The **Remove-AzActivityLogAlert** cmdlet removes an activity log alert.
+This cmdlet implements the ShouldProcess pattern, i.e. it might request confirmation from the user before actually patching the resource.
+This cmdlet implements the ShouldProcess pattern, i.e. it might request confirmation from the user before actually creating, modifying, or removing the resource.
 
 ## EXAMPLES
 
-### Example 1: Remove activity log alert by name
+### Example 1: Remove an activity log alert
 ```powershell
-Remove-AzActivityLogAlert -ResourceGroupName $ResourceGroupName -Name $AlertName
+Remove-AzActivityLogAlert -ResourceGroupName "Default-Web-CentralUS" -Name "myalert"
 ```
 
-Remove activity log alert by name
-
-### Example 2: Remove activity log alert by pipeline input object
-```powershell
-$alert = Get-AzActivityLogAlert -ResourceGroupName $ResourceGroupName -Name $AlertName
-$alert | Remove-AzActivityLogAlert
+```output
+RequestId                                                                                                    StatusCode
+---------                                                                                                    ----------
+2c6c159b-0e73-4a01-a67b-c32c1a0008a3                                                                                 OK
 ```
 
-Remove activity log alert by pipeline input object
+Removes an activity log alert using name and resource group name as inputs.
+
+### Example 2: Remove an activity log alert using a PSActivityLogAlertResource as input
+```powershell
+Get-AzActivityLogAlert -ResourceGroupName "Default-activityLogAlerts" -Name "alert1" | Remove-AzActivityLogAlert 
+```
+
+```output
+RequestId                                                                                                    StatusCode
+---------                                                                                                    ----------
+5c371547-80b0-4185-9b95-700b129de9d4                                                                                 OK
+```
+
+Removes an activity log alert using a PSActivityLogAlertResource as input.
+
+### Example 3: Remove the ActivityLogAlert using the ResourceId parameter
+```powershell
+Get-AzResource -ResourceGroupName "myResourceGroup" -Name "myLogAlert" | Remove-AzActivityLogAlert
+```
+
+This command removes the ActivityLogAlert using the ResourceId parameter from the pipe.
 
 ## PARAMETERS
 
 ### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.
+The credentials, account, tenant, and subscription used for communication with azure
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -64,12 +91,11 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+Sets the InputObject tags property of the call to extract the required name, and resource group name properties.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Monitor.ActivityLogAlert.Models.IActivityLogAlertIdentity
-Parameter Sets: DeleteViaIdentity
+Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
+Parameter Sets: RemoveByInputObject
 Aliases:
 
 Required: True
@@ -80,63 +106,47 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-The name of the Activity Log Alert rule.
+The name of the activity log alert.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
-Aliases: ActivityLogAlertName
+Parameter Sets: RemoveByNameAndResourceGroup
+Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The name of the resource group.
-The name is case insensitive.
+The name of the resource group where the alert resource exists.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: RemoveByNameAndResourceGroup
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-The ID of the target subscription.
+### -ResourceId
+Sets the ResourceId tags property of the call to extract the required name, resource group name properties.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: RemoveByResourceId
 Aliases:
 
-Required: False
+Required: True
 Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -156,8 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -176,25 +185,27 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Monitor.ActivityLogAlert.Models.IActivityLogAlertIdentity
+### System.String
+
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Azure.AzureOperationResponse
 
 ## NOTES
 
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IActivityLogAlertIdentity>`: Identity Parameter
-  - `[ActivityLogAlertName <String>]`: The name of the Activity Log Alert rule.
-  - `[Id <String>]`: Resource identity path
-  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
-  - `[SubscriptionId <String>]`: The ID of the target subscription.
-
 ## RELATED LINKS
+
+[Enable-AzActivityLogAlert](./Enable-AzActivityLogAlert.md)
+
+[Disable-AzActivityLogAlert](./Disable-AzActivityLogAlert.md)
+
+[Set-AzActivityLogAlert](./Set-AzActivityLogAlert.md)
+
+[Get-AzActivityLogAlert](./Get-AzActivityLogAlert.md)
+
+[New-AzActionGroup](./New-AzActionGroup.md)
+
+[New-AzActivityLogAlertCondition](./New-AzActivityLogAlertCondition.md)
+

@@ -1,201 +1,108 @@
 ---
 Module Name: Az.SecurityInsights
-Module Guid: 3a0e09d6-7b89-4078-a565-5db26e7455b8
+Module Guid: 453d4fb9-65ec-4cf1-8358-6a0fbd995d19
 Download Help Link: https://docs.microsoft.com/powershell/module/az.securityinsights
-Help Version: 1.0.0.0
+Help Version: 1.1.0
 Locale: en-US
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Az.SecurityInsights.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Az.SecurityInsights.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Az.SecurityInsights.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Az.SecurityInsights.md
 ---
 
 # Az.SecurityInsights Module
 ## Description
-Microsoft Azure PowerShell: SecurityInsights cmdlets
+Microsoft Azure Sentinel is a scalable, cloud-native, security information event management (SIEM) and security orchestration automated response (SOAR) solution. Azure Sentinel delivers intelligent security analytics and threat intelligence across the enterprise, providing a single solution for alert detection, threat visibility, proactive hunting, and threat response.<br/> The Azure Sentinel PowerShell module (Az.SecurityInsights) allows you to interact with the following  components: * Incidents * Analytics Rules (Alert Rules)
+* Analytics Rules Templates
+* Analytics Rules Actions (like attaching an Azure Logic Apps Playbooks to your rule)
+* Bookmarks
+* Data Connectors
+* Comments
+
+All cmdlets are able to work with a connection object to provide your resourceGroupName and workspaceName like in the following example:
 
 ## Az.SecurityInsights Cmdlets
 ### [Get-AzSentinelAlertRule](Get-AzSentinelAlertRule.md)
-Gets the alert rule.
+Gets a specific or all Analytic Rules (Alert Rule).
 
 ### [Get-AzSentinelAlertRuleAction](Get-AzSentinelAlertRuleAction.md)
-Gets the action of alert rule.
+Gets an Automated Response (Alert Rule Action) for an Analytics Rule, like an Azure Logic Apps Playbook.<br/>
+Azure Sentinel Automation Rules will be supported in the future.
+
+*Note: This requires a parameter value of "AlertRuleId"*
 
 ### [Get-AzSentinelAlertRuleTemplate](Get-AzSentinelAlertRuleTemplate.md)
-Gets the alert rule template.
-
-### [Get-AzSentinelAutomationRule](Get-AzSentinelAutomationRule.md)
-Gets the automation rule.
+Gets an Analytic Rule Template.
 
 ### [Get-AzSentinelBookmark](Get-AzSentinelBookmark.md)
-Gets a bookmark.
-
-### [Get-AzSentinelBookmarkRelation](Get-AzSentinelBookmarkRelation.md)
-Gets a bookmark relation.
+Gets a Bookmark. <br/>
+A Bookmark is used to preserve queries, comments and tags for a specific incident.<br/>
+You create the Bookmark first and then add it to an incident.
 
 ### [Get-AzSentinelDataConnector](Get-AzSentinelDataConnector.md)
-Gets a data connector.
-
-### [Get-AzSentinelEnrichment](Get-AzSentinelEnrichment.md)
-Get geodata for a single IP address
-
-### [Get-AzSentinelEntity](Get-AzSentinelEntity.md)
-Gets an entity.
-
-### [Get-AzSentinelEntityActivity](Get-AzSentinelEntityActivity.md)
-Get Insights and Activities for an entity.
-
-### [Get-AzSentinelEntityInsight](Get-AzSentinelEntityInsight.md)
-Execute Insights for an entity.
-
-### [Get-AzSentinelEntityQuery](Get-AzSentinelEntityQuery.md)
-Gets an entity query.
-
-### [Get-AzSentinelEntityQueryTemplate](Get-AzSentinelEntityQueryTemplate.md)
-Gets an entity query.
-
-### [Get-AzSentinelEntityRelation](Get-AzSentinelEntityRelation.md)
-Gets an entity relation.
-
-### [Get-AzSentinelEntityTimeline](Get-AzSentinelEntityTimeline.md)
-Timeline for an entity.
+Gets a Data Connector. <br/><br/>
+Please note that automation support is only available for the following data connectors:
+* AADDataConnector
+* AATPDataConnector
+* ASCDataConnector
+* AwsCloudTrailDataConnector
+* MCASDataConnector
+* MDATPDataConnector
+* OfficeDataConnector
+* TIDataConnector
 
 ### [Get-AzSentinelIncident](Get-AzSentinelIncident.md)
-Gets an incident.
-
-### [Get-AzSentinelIncidentAlert](Get-AzSentinelIncidentAlert.md)
-Gets all incident alerts.
-
-### [Get-AzSentinelIncidentBookmark](Get-AzSentinelIncidentBookmark.md)
-Gets all incident bookmarks.
+Get one or more Azure Sentinel Incidents.
 
 ### [Get-AzSentinelIncidentComment](Get-AzSentinelIncidentComment.md)
-Gets an incident comment.
-
-### [Get-AzSentinelIncidentEntity](Get-AzSentinelIncidentEntity.md)
-Gets all incident related entities.
-
-### [Get-AzSentinelIncidentRelation](Get-AzSentinelIncidentRelation.md)
-Gets an incident relation.
-
-### [Get-AzSentinelMetadata](Get-AzSentinelMetadata.md)
-Get a Metadata.
-
-### [Get-AzSentinelOnboardingState](Get-AzSentinelOnboardingState.md)
-Get Sentinel onboarding state
-
-### [Get-AzSentinelSetting](Get-AzSentinelSetting.md)
-Gets a setting.
-
-### [Get-AzSentinelThreatIntelligenceIndicator](Get-AzSentinelThreatIntelligenceIndicator.md)
-View a threat intelligence indicator by name.
-
-### [Get-AzSentinelThreatIntelligenceIndicatorMetric](Get-AzSentinelThreatIntelligenceIndicatorMetric.md)
-Get threat intelligence indicators metrics (Indicators counts by Type, Threat Type, Source).
-
-### [Invoke-AzSentinelThreatIntelligenceIndicatorQuery](Invoke-AzSentinelThreatIntelligenceIndicatorQuery.md)
-Query threat intelligence indicators as per filtering criteria.
+Gets an Incident Comment.
 
 ### [New-AzSentinelAlertRule](New-AzSentinelAlertRule.md)
-Creates or updates the alert rule.
+Create an Analytics Rule (Alert Rule).
 
 ### [New-AzSentinelAlertRuleAction](New-AzSentinelAlertRuleAction.md)
-Creates or updates the action of alert rule.
-
-### [New-AzSentinelAutomationRule](New-AzSentinelAutomationRule.md)
-Creates or updates the automation rule.
+Add an Automated Response to an Analytic Rule.
 
 ### [New-AzSentinelBookmark](New-AzSentinelBookmark.md)
-Creates or updates the bookmark.
-
-### [New-AzSentinelBookmarkRelation](New-AzSentinelBookmarkRelation.md)
-Creates the bookmark relation.
+Creates a Bookmark for a specific incident.<br/>
 
 ### [New-AzSentinelDataConnector](New-AzSentinelDataConnector.md)
-Creates or updates the data connector.
-
-### [New-AzSentinelEntityQuery](New-AzSentinelEntityQuery.md)
-Creates or updates the entity query.
+Creates a Data Connector.
 
 ### [New-AzSentinelIncident](New-AzSentinelIncident.md)
-Creates or updates the incident.
+Creates an Incident.
 
 ### [New-AzSentinelIncidentComment](New-AzSentinelIncidentComment.md)
-Creates or updates the incident comment.
+Adds a Comment to an Incident.
 
-### [New-AzSentinelIncidentRelation](New-AzSentinelIncidentRelation.md)
-Creates or updates the incident relation.
-
-### [New-AzSentinelIncidentTeam](New-AzSentinelIncidentTeam.md)
-Creates a Microsoft team to investigate the incident by sharing information and insights between participants.
-
-### [New-AzSentinelOnboardingState](New-AzSentinelOnboardingState.md)
-Create Sentinel onboarding state
+### [New-AzSentinelIncidentOwner](New-AzSentinelIncidentOwner.md)
+Create Incident Owner object to update an incident owner.
 
 ### [Remove-AzSentinelAlertRule](Remove-AzSentinelAlertRule.md)
-Delete the alert rule.
+Deletes an Analytics Rule (AlertRule)
 
 ### [Remove-AzSentinelAlertRuleAction](Remove-AzSentinelAlertRuleAction.md)
-Delete the action of alert rule.
-
-### [Remove-AzSentinelAutomationRule](Remove-AzSentinelAutomationRule.md)
-Delete the automation rule.
+Removes an Automated Response from an Analytic Rule.
 
 ### [Remove-AzSentinelBookmark](Remove-AzSentinelBookmark.md)
-Delete the bookmark.
-
-### [Remove-AzSentinelBookmarkRelation](Remove-AzSentinelBookmarkRelation.md)
-Delete the bookmark relation.
+Deletes a Bookmark.
 
 ### [Remove-AzSentinelDataConnector](Remove-AzSentinelDataConnector.md)
-Delete the data connector.
-
-### [Remove-AzSentinelEntityQuery](Remove-AzSentinelEntityQuery.md)
-Delete the entity query.
+Removes a Data Connector.
 
 ### [Remove-AzSentinelIncident](Remove-AzSentinelIncident.md)
-Delete the incident.
-
-### [Remove-AzSentinelIncidentComment](Remove-AzSentinelIncidentComment.md)
-Delete the incident comment.
-
-### [Remove-AzSentinelIncidentRelation](Remove-AzSentinelIncidentRelation.md)
-Delete the incident relation.
-
-### [Remove-AzSentinelOnboardingState](Remove-AzSentinelOnboardingState.md)
-Delete Sentinel onboarding state
-
-### [Test-AzSentinelDataConnectorCheckRequirement](Test-AzSentinelDataConnectorCheckRequirement.md)
-Get requirements state for a data connector type.
+Deletes an Incident.
 
 ### [Update-AzSentinelAlertRule](Update-AzSentinelAlertRule.md)
-Updates the alert rule.
+Updates an Analytic Rule (Alert Rule).
 
 ### [Update-AzSentinelAlertRuleAction](Update-AzSentinelAlertRuleAction.md)
-Creates or updates the action of alert rule.
-
-### [Update-AzSentinelAutomationRule](Update-AzSentinelAutomationRule.md)
-Creates or updates the automation rule.
+Updates an Automated Response (Alert Rule Action).
 
 ### [Update-AzSentinelBookmark](Update-AzSentinelBookmark.md)
-Creates or updates the bookmark.
-
-### [Update-AzSentinelBookmarkRelation](Update-AzSentinelBookmarkRelation.md)
-Creates the bookmark relation.
+Updates a Bookmark.
 
 ### [Update-AzSentinelDataConnector](Update-AzSentinelDataConnector.md)
-Updates the data connector.
-
-### [Update-AzSentinelEntityQuery](Update-AzSentinelEntityQuery.md)
-Updates the entity query.
+Updates a Data Connector.
 
 ### [Update-AzSentinelIncident](Update-AzSentinelIncident.md)
-Creates or updates the incident.
-
-### [Update-AzSentinelIncidentComment](Update-AzSentinelIncidentComment.md)
-Creates or updates the incident comment.
-
-### [Update-AzSentinelIncidentRelation](Update-AzSentinelIncidentRelation.md)
-Creates or updates the incident relation.
-
-### [Update-AzSentinelSetting](Update-AzSentinelSetting.md)
-Updates setting.
+Updates an Incident
 

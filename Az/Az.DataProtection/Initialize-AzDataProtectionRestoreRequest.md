@@ -85,6 +85,7 @@ Initialize-AzDataProtectionRestoreRequest -DatasourceType AzureBlob -SourceDataS
 ObjectType                                 RestoreTargetInfoObjectType RestoreTargetInfoRecoveryOption RestoreTargetInfoRestoreLocation SourceDataStoreType RecoveryPointTime
 ----------                                 --------------------------- ------------------------------- -------------------------------- ------------------- -----------------
 AzureBackupRecoveryTimeBasedRestoreRequest restoreTargetInfo           FailIfExists                    eastus2euap                      OperationalStore    2021-04-24T13:32:41.7018481Z
+
 ```
 
 This command initialized a restore request object which can be used to trigger restore for Blobs.
@@ -102,6 +103,7 @@ Initialize-AzDataProtectionRestoreRequest -DatasourceType AzureBlob -SourceDataS
 ObjectType                                 RestoreTargetInfoObjectType RestoreTargetInfoRecoveryOption RestoreTargetInfoRestoreLocation SourceDataStoreType RecoveryPointTime
 ----------                                 --------------------------- ------------------------------- -------------------------------- ------------------- -----------------
 AzureBackupRecoveryTimeBasedRestoreRequest itemLevelRestoreTargetInfo  FailIfExists                    eastus2euap                      OperationalStore    2021-04-23T02:47:02.9500000Z
+
 ```
 
 This command initialized a restore request object which can be used to trigger Item Level Recovery at container level for Blobs.
@@ -119,6 +121,7 @@ Initialize-AzDataProtectionRestoreRequest -DatasourceType AzureBlob -SourceDataS
 ObjectType                                 RestoreTargetInfoObjectType RestoreTargetInfoRecoveryOption RestoreTargetInfoRestoreLocation SourceDataStoreType RecoveryPointTime
 ----------                                 --------------------------- ------------------------------- -------------------------------- ------------------- -----------------
 AzureBackupRecoveryTimeBasedRestoreRequest itemLevelRestoreTargetInfo  FailIfExists                    eastus2euap                      OperationalStore    2021-04-23T02:47:02.9500000Z
+
 ```
 
 This command initialized a restore request object which can be used to trigger Item Level Recovery at blobs level based on name prefixes under Blob containers.
@@ -141,7 +144,7 @@ Backup Instance object to trigger original localtion restore.
 To construct, see NOTES section for BACKUPINSTANCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20220501.BackupInstanceResource
+Type: Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20220401.BackupInstanceResource
 Parameter Sets: OriginalLocationFullRecovery, OriginalLocationILR
 Aliases:
 
@@ -417,7 +420,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20220501.IAzureBackupRestoreRequest
+### Microsoft.Azure.PowerShell.Cmdlets.DataProtection.Models.Api20220401.IAzureBackupRestoreRequest
 
 ## NOTES
 
@@ -428,7 +431,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`BACKUPINSTANCE <BackupInstanceResource>`: Backup Instance object to trigger original localtion restore.
+BACKUPINSTANCE `<BackupInstanceResource>`: Backup Instance object to trigger original localtion restore.
   - `[Property <IBackupInstance>]`: BackupInstanceResource properties
     - `DataSourceInfo <IDatasource>`: Gets or sets the data source information.
       - `ResourceId <String>`: Full ARM ID of the resource. For azure resources, this is ARM ID. For non azure resources, this will be the ID created by backup service via Fabric/Vault.
@@ -457,8 +460,6 @@ To create the parameters described below, construct a hash table containing the 
       - `ObjectType <String>`: Type of the specific object - used for deserializing
     - `[FriendlyName <String>]`: Gets or sets the Backup Instance friendly name.
     - `[ValidationType <ValidationType?>]`: Specifies the type of validation. In case of DeepValidation, all validations from /validateForBackup API will run again.
-  - `[Tag <IDppProxyResourceTags>]`: Proxy Resource tags.
-    - `[(Any) <String>]`: This indicates any property can be added to this object.
 
 ## RELATED LINKS
 

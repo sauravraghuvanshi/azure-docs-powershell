@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
-online version: https://docs.microsoft.com/powershell/module/az.network/get-azapplicationgatewaylistener
+online version: 
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzApplicationGatewayListener.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzApplicationGatewayListener.md
@@ -10,7 +10,7 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Get-AzApplicationGatewayListener
 
 ## SYNOPSIS
-Gets the TCP\TLS listener of an application gateway.
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
@@ -20,25 +20,16 @@ Get-AzApplicationGatewayListener [-Name <String>] -ApplicationGateway <PSApplica
 ```
 
 ## DESCRIPTION
-The **Get-AzApplicationGatewayListener** cmdlet gets the TCP\TLS listener of an application gateway.
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
-### Example 1: Get a specific TCP\TLS listener
+### Example 1
 ```powershell
-$Appgw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
-$Listener = Get-AzApplicationGatewayListener -Name "Listener01" -ApplicationGateway $Appgw
+PS C:\> {{ Add example code here }}
 ```
 
-This command gets a TCP\TLS listener named Listener01.
-
-### Example 2: Get a list of TCP\TLS listeners
-```powershell
-$Appgw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
-$Listeners = Get-AzApplicationGatewayListener -ApplicationGateway $Appgw
-```
-
-This command gets a list of TCP\TLS listeners.
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -101,11 +92,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
-[Add-AzApplicationGatewayListener](./Add-AzApplicationGatewayListener.md)
-
-[New-AzApplicationGatewayListener](./New-AzApplicationGatewayListener.md)
-
-[Remove-AzApplicationGatewayListener](./Remove-AzApplicationGatewayListener.md)
-
-[Set-AzApplicationGatewayListener](./Set-AzApplicationGatewayListener.md)

@@ -19,7 +19,6 @@ Creates a key in a key vault or imports a key into a key vault.
 ```
 Add-AzKeyVaultKey [-VaultName] <String> [-Name] <String> -Destination <String> [-Disable] [-KeyOps <String[]>]
  [-Expires <DateTime>] [-NotBefore <DateTime>] [-Tag <Hashtable>] [-Size <Int32>] [-KeyType <String>]
- [-Exportable] [-Immutable] [-ReleasePolicyPath <String>] [-UseDefaultCVMPolicy]
  [-CurveName <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -50,7 +49,6 @@ Add-AzKeyVaultKey -HsmName <String> [-Name] <String> -KeyFilePath <String> [-Key
 ```
 Add-AzKeyVaultKey [-InputObject] <PSKeyVault> [-Name] <String> -Destination <String> [-Disable]
  [-KeyOps <String[]>] [-Expires <DateTime>] [-NotBefore <DateTime>] [-Tag <Hashtable>] [-Size <Int32>]
- [-Exportable] [-Immutable] [-ReleasePolicyPath <String>] [-UseDefaultCVMPolicy]
  [-KeyType <String>] [-CurveName <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
@@ -83,7 +81,6 @@ Add-AzKeyVaultKey [-HsmObject] <PSManagedHsm> [-Name] <String> -KeyFilePath <Str
 ```
 Add-AzKeyVaultKey [-ResourceId] <String> [-Name] <String> -Destination <String> [-Disable] [-KeyOps <String[]>]
  [-Expires <DateTime>] [-NotBefore <DateTime>] [-Tag <Hashtable>] [-Size <Int32>] [-KeyType <String>]
- [-Exportable] [-Immutable] [-ReleasePolicyPath <String>] [-UseDefaultCVMPolicy]
  [-CurveName <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -385,39 +382,6 @@ Tags           :
 
 Create a secure key in managed hsm named testmhsm. Its name is test-key and type is RSA. 
 
-### Example 10: Add a key for a Confidential VM to a key vault. 
-```powershell
-New-AzKeyVault -Name $keyVaultName -Location $location -ResourceGroupName $resourceGroupName -Sku Premium -EnablePurgeProtection -EnabledForDiskEncryption;
-$cvmAgent = Get-AzADServicePrincipal -ApplicationId 'bf7b6499-ff71-4aa2-97a4-f372087be7f0';
-Set-AzKeyVaultAccessPolicy -VaultName $keyVaultName -ResourceGroupName $resourceGroupName -ObjectId $cvmAgent.id -PermissionsToKeys get,release;
-
-$keySize = 3072;
-Add-AzKeyVaultKey -VaultName $keyVaultName -Name $keyName -Size $keySize -KeyOps wrapKey,unwrapKey -KeyType RSA -Destination HSM -Exportable -UseDefaultCVMPolicy;
-        
-```
-
-```output
-Vault/HSM Name : <Vault Name>
-Name           : <Key Name>
-Key Type       : RSA
-Key Size       : 3072
-Curve Name     :
-Version        : <Version>
-Id             : <Id>
-Enabled        : True
-Expires        :
-Not Before     :
-Created        : 9/9/2022 8:36:00 PM
-Updated        : 9/9/2022 8:36:00 PM
-Recovery Level : Recoverable
-Release Policy :
-                 Content Type   : application/json; charset=utf-8
-                 Policy Content : <Policy Content>
-                 Immutable      : False
-Tags           :
-
-```
-
 ## PARAMETERS
 
 ### -CurveName
@@ -529,7 +493,7 @@ Indicates if the private key can be exported.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: InteractiveCreate, InputObjectCreate, ResourceIdCreate, HsmInteractiveCreate, HsmInputObjectCreate, HsmResourceIdCreate
+Parameter Sets: HsmInteractiveCreate, HsmInputObjectCreate, HsmResourceIdCreate
 Aliases:
 
 Required: False
@@ -589,7 +553,7 @@ Sets the release policy as immutable state. Once marked immutable, this flag can
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: InteractiveCreate, InputObjectCreate, ResourceIdCreate, HsmInteractiveCreate, HsmInputObjectCreate, HsmResourceIdCreate
+Parameter Sets: HsmInteractiveCreate, HsmInputObjectCreate, HsmResourceIdCreate
 Aliases:
 
 Required: False
@@ -745,7 +709,7 @@ A path to a file containing JSON policy definition. The policy rules under which
 
 ```yaml
 Type: System.String
-Parameter Sets: InteractiveCreate, InputObjectCreate, ResourceIdCreate, HsmInteractiveCreate, HsmInputObjectCreate, HsmResourceIdCreate
+Parameter Sets: HsmInteractiveCreate, HsmInputObjectCreate, HsmResourceIdCreate
 Aliases:
 
 Required: False
@@ -806,7 +770,7 @@ Specifies to use default policy under which the key can be exported for CVM disk
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: InteractiveCreate, InputObjectCreate, ResourceIdCreate, HsmInteractiveCreate, HsmInputObjectCreate, HsmResourceIdCreate
+Parameter Sets: HsmInteractiveCreate, HsmInputObjectCreate, HsmResourceIdCreate
 Aliases:
 
 Required: False

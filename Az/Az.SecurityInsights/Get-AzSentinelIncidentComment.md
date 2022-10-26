@@ -1,75 +1,57 @@
 ---
-external help file: 
+external help file: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.dll-Help.xml
 Module Name: Az.SecurityInsights
 online version: https://docs.microsoft.com/powershell/module/az.securityinsights/get-azsentinelincidentcomment
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Get-AzSentinelIncidentComment.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/Get-AzSentinelIncidentComment.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Get-AzSentinelIncidentComment.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/Get-AzSentinelIncidentComment.md
 ---
 
 # Get-AzSentinelIncidentComment
 
 ## SYNOPSIS
-Gets an incident comment.
+Gets an Incident Comment.
 
 ## SYNTAX
 
-### List (Default)
+### IncidentId (Default)
 ```
-Get-AzSentinelIncidentComment -IncidentId <String> -ResourceGroupName <String> -WorkspaceName <String>
- [-SubscriptionId <String[]>] [-Filter <String>] [-Orderby <String>] [-SkipToken <String>] [-Top <Int32>]
- [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-AzSentinelIncidentComment -Id <String> -IncidentId <String> -ResourceGroupName <String>
- -WorkspaceName <String> [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzSentinelIncidentComment -ResourceGroupName <String> -WorkspaceName <String> -IncidentId <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### IncidentCommentId
 ```
-Get-AzSentinelIncidentComment -InputObject <ISecurityInsightsIdentity> [-DefaultProfile <PSObject>]
+Get-AzSentinelIncidentComment -ResourceGroupName <String> -WorkspaceName <String> -IncidentId <String>
+ -IncidentCommentId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ResourceId
+```
+Get-AzSentinelIncidentComment -ResourceId <String> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets an incident comment.
+The **Get-AzSentinelIncidentComment** cmdlet gets a Incident Comment from the specified workspace.
+If you specify the *IncidentCommentId* and *IncidentId* parameters, a single **IncidentComment** object is returned.
+If you do not specify the *IncidentCommentId* parameter, an array containing all of the Incident Comments for the specified Incident in the specified workspace are returned.
 
 ## EXAMPLES
 
-### Example 1: List all Incident Comments for a given Incident 
+### Example 1
 ```powershell
- Get-AzSentinelIncidentComment -ResourceGroupName "myResourceGroupName" -workspaceName "myWorkspaceName" -IncidentId "7a4c27ea-d61a-496b-b5c3-246770c857c1"
+$IncidentComments = Get-AzSentinelIncidentComment -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName" -IncidentId "MyIncidentId"
 ```
 
-```output
-AuthorEmail             : john@contoso.com
-AuthorName              : John Contoso
-AuthorUserPrincipalName : john@contoso.com
-CreatedTimeUtc          : 1/6/2022 2:15:44 PM
-Message                 : This is my comment
-Name                    : da0957c9-2f1a-44a2-bc83-a2c0696b2bf1
+This example gets all of the IncidentComments for the specified Incident in the specified workspace, and then stores it in the $IncidentComments variable.
 
-```
-
-This command lists all Incident Comments for a given Incident.
-
-### Example 2: Get an Incident Comment
+### Example 2
 ```powershell
- Get-AzSentinelIncidentComment -ResourceGroupName "myResourceGroupName" -workspaceName "myWorkspaceName" -IncidentId "7a4c27ea-d61a-496b-b5c3-246770c857c1" -Id "da0957c9-2f1a-44a2-bc83-a2c0696b2bf1"
+$IncidentComment = Get-AzSentinelIncidentComment -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName" -IncidentId "MyIncidentId" -IncidentCommentId "MyIncidentCommentId"
 ```
 
-```output
-AuthorEmail             : john@contoso.com
-AuthorName              : John Contoso
-AuthorUserPrincipalName : john@contoso.com
-CreatedTimeUtc          : 1/6/2022 2:15:44 PM
-Message                 : This is my comment
-Name                    : da0957c9-2f1a-44a2-bc83-a2c0696b2bf1
-```
-
-This command gets an Incident Comment.
+This example gets an IncidentComment for the specified Incident in the specified workspace, and then stores it in the $IncidentComment variable.
 
 ## PARAMETERS
 
@@ -77,9 +59,9 @@ This command gets an Incident Comment.
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -88,29 +70,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Filter
-Filters the results, based on a Boolean condition.
-Optional.
+### -IncidentCommentId
+Incident Comment Id.
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: IncidentCommentId
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
-Incident comment ID
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases: IncidentCommentId
 
 Required: True
 Position: Named
@@ -120,46 +86,14 @@ Accept wildcard characters: False
 ```
 
 ### -IncidentId
-Incident ID
+Incident Id.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: IncidentId, IncidentCommentId
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.ISecurityInsightsIdentity
-Parameter Sets: GetViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Orderby
-Sorts the results.
-Optional.
-
-```yaml
-Type: System.String
-Parameter Sets: List
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -167,12 +101,11 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The name of the resource group.
-The name is case insensitive.
+Resource group name.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: IncidentId, IncidentCommentId
 Aliases:
 
 Required: True
@@ -182,60 +115,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SkipToken
-Skiptoken is only used if a previous operation returned a partial result.
-If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.
-Optional.
+### -ResourceId
+Resource Id.
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: ResourceId
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubscriptionId
-The ID of the target subscription.
-
-```yaml
-Type: System.String[]
-Parameter Sets: Get, List
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Top
-Returns only the first n results.
-Optional.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -WorkspaceName
-The name of the workspace.
+Workspace Name.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: IncidentId, IncidentCommentId
 Aliases:
 
 Required: True
@@ -250,44 +150,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.ISecurityInsightsIdentity
-
+### System.String
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.IIncidentComment
-
+### Microsoft.Azure.Commands.SecurityInsights.Models.IncidentComments.PSSentinelIncidentComment
 ## NOTES
 
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <ISecurityInsightsIdentity>`: Identity Parameter
-  - `[ActionId <String>]`: Action ID
-  - `[AlertRuleTemplateId <String>]`: Alert rule template ID
-  - `[AutomationRuleId <String>]`: Automation rule ID
-  - `[BookmarkId <String>]`: Bookmark ID
-  - `[ConsentId <String>]`: consent ID
-  - `[DataConnectorId <String>]`: Connector ID
-  - `[EntityId <String>]`: entity ID
-  - `[EntityQueryId <String>]`: entity query ID
-  - `[EntityQueryTemplateId <String>]`: entity query template ID
-  - `[Id <String>]`: Resource identity path
-  - `[IncidentCommentId <String>]`: Incident comment ID
-  - `[IncidentId <String>]`: Incident ID
-  - `[MetadataName <String>]`: The Metadata name.
-  - `[Name <String>]`: Threat intelligence indicator name field.
-  - `[RelationName <String>]`: Relation Name
-  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
-  - `[RuleId <String>]`: Alert rule ID
-  - `[SentinelOnboardingStateName <String>]`: The Sentinel onboarding state name. Supports - default
-  - `[SettingsName <String>]`: The setting name. Supports - Anomalies, EyesOn, EntityAnalytics, Ueba
-  - `[SourceControlId <String>]`: Source control Id
-  - `[SubscriptionId <String>]`: The ID of the target subscription.
-  - `[WorkspaceName <String>]`: The name of the workspace.
-
 ## RELATED LINKS
-

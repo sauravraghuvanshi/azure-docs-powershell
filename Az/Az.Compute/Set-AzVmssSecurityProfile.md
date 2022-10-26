@@ -52,7 +52,7 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityType
-Parameter to set the SecurityType on the VMs of the scale set. Possible value is TrustedLaunch
+Enum that represents the security type (ex: Trusted Launch)
 
 ```yaml
 Type: System.String

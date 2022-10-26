@@ -40,7 +40,6 @@ Get an addon by name in a private cloud
 ```powershell
 Get-AzVMwareAddon -PrivateCloudName azps_test_cloud -ResourceGroupName azps_test_group
 ```
-
 ```output
 Name Type                               ResourceGroupName
 ---- ----                               -----------------
@@ -54,7 +53,6 @@ List addon under resource group
 ```powershell
 Get-AzVMwareAddon -AddonType vr -PrivateCloudName azps_test_cloud -ResourceGroupName azps_test_group
 ```
-
 ```output
 Name Type                               ResourceGroupName
 ---- ----                               -----------------
@@ -177,7 +175,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`INPUTOBJECT <IVMwareIdentity>`: Identity Parameter
+INPUTOBJECT `<IVMwareIdentity>`: Identity Parameter
   - `[AddonName <String>]`: Name of the addon for the private cloud
   - `[AuthorizationName <String>]`: Name of the ExpressRoute Circuit Authorization in the private cloud
   - `[CloudLinkName <String>]`: Name of the cloud link resource

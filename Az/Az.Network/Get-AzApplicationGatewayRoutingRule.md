@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
-online version: https://docs.microsoft.com/powershell/module/az.network/get-azapplicationgatewayroutingrule
+online version: 
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzApplicationGatewayRoutingRule.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Get-AzApplicationGatewayRoutingRule.md
@@ -10,7 +10,7 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Get-AzApplicationGatewayRoutingRule
 
 ## SYNOPSIS
-Gets the routing rule of an application gateway.
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
@@ -20,27 +20,16 @@ Get-AzApplicationGatewayRoutingRule [-Name <String>] -ApplicationGateway <PSAppl
 ```
 
 ## DESCRIPTION
-The **Get-AzApplicationGatewayRoutingRule** cmdlet gets the routing rule of an application gateway.
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
-### Example 1: Get a specific routing rule
+### Example 1
 ```powershell
-$AppGW = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
-$Rule = Get-AzApplicationGatewayRoutingRule -Name "Rule01" -ApplicationGateway $AppGW
+PS C:\> {{ Add example code here }}
 ```
 
-The first command gets the Application Gateway named ApplicationGateway01 and stores the result in the variable named $AppGW.
-The second command gets the routing rule named Rule01 from the Application Gateway stored in the variable named $AppGW.
-
-### Example 2: Get a list of routing rules
-```powershell
-$AppGW = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
-$Rules = Get-AzApplicationGatewayRoutingRule -ApplicationGateway $AppGW
-```
-
-The first command gets the Application Gateway named ApplicationGateway01 and stores the result in the variable named $AppGW.
-The second command gets a list of routing rules from the Application Gateway stored in the variable named $AppGW.
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -103,11 +92,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
-[Add-AzApplicationGatewayRoutingRule](./Add-AzApplicationGatewayRoutingRule.md)
-
-[New-AzApplicationGatewayRoutingRule](./New-AzApplicationGatewayRoutingRule.md)
-
-[Remove-AzApplicationGatewayRoutingRule](./Remove-AzApplicationGatewayRoutingRule.md)
-
-[Set-AzApplicationGatewayRoutingRule](./Set-AzApplicationGatewayRoutingRule.md)

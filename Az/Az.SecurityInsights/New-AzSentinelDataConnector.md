@@ -1,171 +1,139 @@
 ---
-external help file: 
+external help file: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.dll-Help.xml
 Module Name: Az.SecurityInsights
 online version: https://docs.microsoft.com/powershell/module/az.securityinsights/new-azsentineldataconnector
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/New-AzSentinelDataConnector.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/New-AzSentinelDataConnector.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/New-AzSentinelDataConnector.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/New-AzSentinelDataConnector.md
 ---
 
 # New-AzSentinelDataConnector
 
 ## SYNOPSIS
-Creates or updates the data connector.
+Creates a Data Connector.
 
 ## SYNTAX
 
-### AADAATP (Default)
+### AzureActiveDirectory (Default)
 ```
-New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> -Kind <DataConnectorKind>
- [-Id <String>] [-SubscriptionId <String>] [-Alerts <String>] [-TenantId <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### AmazonWebServicesCloudTrail
-```
-New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> -AWSRoleArn <String>
- -Kind <DataConnectorKind> [-Id <String>] [-SubscriptionId <String>] [-Log <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### AmazonWebServicesS3
-```
-New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> -AWSRoleArn <String>
- -DetinationTable <String> -Kind <DataConnectorKind> -Log <String> -SQSURL <String[]> [-Id <String>]
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
+New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> [-DataConnectorId <String>]
+ [-AzureActiveDirectory] -Alerts <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
+```
+
+### AzureAdvancedThreatProtection
+```
+New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> [-DataConnectorId <String>]
+ [-AzureAdvancedThreatProtection] -Alerts <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### AzureSecurityCenter
 ```
-New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> -ASCSubscriptionId <String>
- -Kind <DataConnectorKind> [-Id <String>] [-SubscriptionId <String>] [-Alerts <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> [-DataConnectorId <String>]
+ [-AzureSecurityCenter] -Alerts <String> -SubscriptionId <String> [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Dynamics365
+### AmazonWebServicesCloudTrail
 ```
-New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> -Kind <DataConnectorKind>
- [-Id <String>] [-SubscriptionId <String>] [-CommonDataServiceActivity <String>] [-TenantId <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### GenericUI
-```
-New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String>
- -AvailabilityIsPreview <Boolean> -Kind <DataConnectorKind>
- -UiConfigConnectivityCriterion <ConnectivityCriteria[]> -UiConfigDataType <LastDataReceivedDataType[]>
- -UiConfigDescriptionMarkdown <String> -UiConfigGraphQueriesTableName <String>
- -UiConfigGraphQuery <GraphQueries[]> -UiConfigInstructionStep <InstructionSteps[]>
- -UiConfigPublisher <String> -UiConfigSampleQuery <SampleQueries[]> -UiConfigTitle <String> [-Id <String>]
- [-SubscriptionId <String>] [-AvailabilityStatus <Int32>] [-PermissionCustom <PermissionsCustomsItem[]>]
- [-PermissionResourceProvider <PermissionsResourceProviderItem[]>] [-UiConfigCustomImage <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> [-DataConnectorId <String>]
+ [-AmazonWebServicesCloudTrail] -AwsRoleArn <String> -Logs <String> [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### MicrosoftCloudAppSecurity
 ```
-New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> -Kind <DataConnectorKind>
- [-Id <String>] [-SubscriptionId <String>] [-Alerts <String>] [-DiscoveryLog <String>] [-TenantId <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> [-DataConnectorId <String>]
+ [-MicrosoftCloudAppSecurity] -Alerts <String> -DiscoveryLogs <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### MicrosoftDefenderAdvancedThreatProtection
 ```
-New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> -Kind <DataConnectorKind>
- [-Id <String>] [-SubscriptionId <String>] [-Alerts <String>] [-TenantId <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### MicrosoftThreatIntelligence
-```
-New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> -Kind <DataConnectorKind>
- [-Id <String>] [-SubscriptionId <String>] [-BingSafetyPhishingURL <String>]
- [-BingSafetyPhishingUrlLookbackPeriod <String>] [-MicrosoftEmergingThreatFeed <String>]
- [-MicrosoftEmergingThreatFeedLookbackPeriod <String>] [-TenantId <String>] [-DefaultProfile <PSObject>]
- [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### MicrosoftThreatProtection
-```
-New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> -Kind <DataConnectorKind>
- [-Id <String>] [-SubscriptionId <String>] [-Incident <String>] [-TenantId <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> [-DataConnectorId <String>]
+ [-MicrosoftDefenderAdvancedThreatProtection] -Alerts <String> [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Office365
 ```
-New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> -Kind <DataConnectorKind>
- [-Id <String>] [-SubscriptionId <String>] [-Exchange <String>] [-SharePoint <String>] [-Teams <String>]
- [-TenantId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### OfficeATP
-```
-New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> -Kind <DataConnectorKind>
- [-Id <String>] [-SubscriptionId <String>] [-Alerts <String>] [-TenantId <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### OfficeIRM
-```
-New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> -Kind <DataConnectorKind>
- [-Id <String>] [-SubscriptionId <String>] [-Alerts <String>] [-TenantId <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> [-DataConnectorId <String>]
+ [-Office365] -Exchange <String> -SharePoint <String> -Teams <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ThreatIntelligence
 ```
-New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> -Kind <DataConnectorKind>
- [-Id <String>] [-SubscriptionId <String>] [-Indicator <String>] [-TenantId <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### ThreatIntelligenceTaxii
-```
-New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> -APIRootURL <String>
- -CollectionId <String> -FriendlyName <String> -Kind <DataConnectorKind> -PollingFrequency <PollingFrequency>
- -WorkspaceId <String> [-Id <String>] [-SubscriptionId <String>] [-Password <String>]
- [-TaxiiLookbackPeriod <String>] [-TenantId <String>] [-UserName <String>] [-DefaultProfile <PSObject>]
- [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-AzSentinelDataConnector -ResourceGroupName <String> -WorkspaceName <String> [-DataConnectorId <String>]
+ [-ThreatIntelligence] -Indicators <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Creates or updates the data connector.
+The **New-AzSentinelDataConnector** cmdlet configures and enables a data connector in the specified workspace.
+You must specify one of the parameters, for example -AzureActiveDirectory, to specify the kind of Alert rule to create.  Each Kind has different required parameters.<br/><br/>
+Please note that only the following data connectors have automation support through PowerShell or the *Security.Insights* API:
+* **AADDataConnector** - Represents AAD (Azure Active Directory Identity Protection) data connector
+* **AATPDataConnector**	- Represents AATP (Azure Advanced Threat Protection) data connector
+* **ASCDataConnector** - Represents ASC (Azure Security Center) data connector
+* **AwsCloudTrailDataConnector** - Represents Amazon Web Services CloudTrail data connector
+* **MCASDataConnector**	- Represents Microsoft Defender for Cloud Apps data connector
+* **MDATPDataConnector** - Represents MDATP (Microsoft Defender Advanced Threat Protection) data connector
+* **OfficeDataConnector** - Represents office data connector
+* **TIDataConnector** - Represents threat intelligence data connector
 
 ## EXAMPLES
 
-### Example 1: Enable a data connector.
+### Example 1
 ```powershell
-New-AzSentinelDataConnector -ResourceGroupName "myResourceGroupName" -workspaceName "myWorkspaceName" -Kind 'MicrosoftThreatIntelligence' -BingSafetyPhishingURL Enabled -BingSafetyPhishingUrlLookbackPeriod All  -MicrosoftEmergingThreatFeed Enabled -MicrosoftEmergingThreatFeedLookbackPeriod All
+$DataConnector = New-AzSentinelDataConnector -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName" -AzureSecurityCenter -Alerts Enabled -SubscriptionId ((Get-AzContext).Subscription.Id)
 ```
 
-This command enables the Threat Intelligence data connector
-s
+This example creates a **DataConnector** for *Azure Security Center* in the specified workspace, and then stores it in the $DataConnector variable.
+
+### Example 2
+```powershell
+$DataConnector = New-AzSentinelDataConnector -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName" -MicrosoftCloudAppSecurity -Alerts Enabled -DiscoveryLogs Disabled
+```
+
+This example creates a **DataConnector** for *Microsoft Defender for Cloud Apps* in the specified workspace, and then stores it in the $DataConnector variable.
+
+### Examples 3
+```powershell
+$SentinelConnection = @{
+    ResourceGroupName = "myResourceGroupName"
+    WorkspaceName = "myWorkspaceName"
+}
+New-AzSentinelDataConnector @SentinelConnection -Office365 -Exchange Enabled -SharePoint Enabled -Teams Enabled
+```
+
+This example uses a connection object to pass the resourceGroupName and workspaceName. It then configures the *Office 365* data connector to collect Exchange, SharePoint and Teams logs.
+
 ## PARAMETERS
 
 ### -Alerts
-
+Data Connector Alerts
 
 ```yaml
 Type: System.String
-Parameter Sets: AADAATP, AzureSecurityCenter, MicrosoftCloudAppSecurity, MicrosoftDefenderAdvancedThreatProtection, OfficeATP, OfficeIRM
+Parameter Sets: AzureActiveDirectory, AzureAdvancedThreatProtection, AzureSecurityCenter, MicrosoftCloudAppSecurity, MicrosoftDefenderAdvancedThreatProtection
 Aliases:
+Accepted values: Enabled, Disabled
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -APIRootURL
-
+### -AmazonWebServicesCloudTrail
+Data Connector Amazon Web Services Cloud Trail
 
 ```yaml
-Type: System.String
-Parameter Sets: ThreatIntelligenceTaxii
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: AmazonWebServicesCloudTrail
 Aliases:
 
 Required: True
@@ -175,11 +143,56 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ASCSubscriptionId
-ASC Subscription Id.
+### -AwsRoleArn
+Data Connector AWS Role Arn
 
 ```yaml
 Type: System.String
+Parameter Sets: AmazonWebServicesCloudTrail
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AzureActiveDirectory
+Data Connector Azure Active Directory
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: AzureActiveDirectory
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AzureAdvancedThreatProtection
+Data Connector Azure Advanced Threat Protection
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: AzureAdvancedThreatProtection
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AzureSecurityCenter
+Data Connector Azure Security Center
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: AzureSecurityCenter
 Aliases:
 
@@ -190,117 +203,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AsJob
-Run the command as a job
+### -DataConnectorId
+Data Connector Azure Active Directory
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AvailabilityIsPreview
-[Parameter(ParameterSetName = 'APIPolling', Mandatory)]
-
-```yaml
-Type: System.Boolean
-Parameter Sets: GenericUI
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AvailabilityStatus
-[Parameter(ParameterSetName = 'APIPolling')]
-
-```yaml
-Type: System.Int32
-Parameter Sets: GenericUI
-Aliases:
-
-Required: False
-Position: Named
-Default value: 1
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AWSRoleArn
-
-
-```yaml
-Type: System.String
-Parameter Sets: AmazonWebServicesCloudTrail, AmazonWebServicesS3
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BingSafetyPhishingURL
-
-
-```yaml
-Type: System.String
-Parameter Sets: MicrosoftThreatIntelligence
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BingSafetyPhishingUrlLookbackPeriod
-
-
-```yaml
-Type: System.String
-Parameter Sets: MicrosoftThreatIntelligence
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CollectionId
-
-
-```yaml
-Type: System.String
-Parameter Sets: ThreatIntelligenceTaxii
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CommonDataServiceActivity
-
-
-```yaml
-Type: System.String
-Parameter Sets: Dynamics365
 Aliases:
 
 Required: False
@@ -314,9 +222,9 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -325,30 +233,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DetinationTable
-
-
-```yaml
-Type: System.String
-Parameter Sets: AmazonWebServicesS3
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DiscoveryLog
-
+### -DiscoveryLogs
+Data Connector Discovery Logs
 
 ```yaml
 Type: System.String
 Parameter Sets: MicrosoftCloudAppSecurity
 Aliases:
+Accepted values: Enabled, Disabled
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -356,27 +250,13 @@ Accept wildcard characters: False
 ```
 
 ### -Exchange
-
+Data Connector Exchange
 
 ```yaml
 Type: System.String
 Parameter Sets: Office365
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -FriendlyName
-
-
-```yaml
-Type: System.String
-Parameter Sets: ThreatIntelligenceTaxii
-Aliases:
+Accepted values: Enabled, Disabled
 
 Required: True
 Position: Named
@@ -385,58 +265,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Id
-The Id of the Data Connector.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: (New-Guid).Guid
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Incident
-
-
-```yaml
-Type: System.String
-Parameter Sets: MicrosoftThreatProtection
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Indicator
-
+### -Indicators
+Data Connector Indicators
 
 ```yaml
 Type: System.String
 Parameter Sets: ThreatIntelligence
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Kind
-Kind of the the data connection
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Support.DataConnectorKind
-Parameter Sets: (All)
-Aliases:
+Accepted values: Enabled, Disabled
 
 Required: True
 Position: Named
@@ -445,13 +281,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Log
-
+### -Logs
+Data Connector Logs
 
 ```yaml
 Type: System.String
-Parameter Sets: AmazonWebServicesCloudTrail, AmazonWebServicesS3
+Parameter Sets: AmazonWebServicesCloudTrail
 Aliases:
+Accepted values: Enabled, Disabled
 
 Required: True
 Position: Named
@@ -460,104 +297,42 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -MicrosoftEmergingThreatFeed
-
-
-```yaml
-Type: System.String
-Parameter Sets: MicrosoftThreatIntelligence
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MicrosoftEmergingThreatFeedLookbackPeriod
-
-
-```yaml
-Type: System.String
-Parameter Sets: MicrosoftThreatIntelligence
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NoWait
-Run the command asynchronously
+### -MicrosoftCloudAppSecurity
+Data Connector Microsoft Cloud App Security
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: MicrosoftCloudAppSecurity
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Password
-
+### -MicrosoftDefenderAdvancedThreatProtection
+Data Connector Microsoft Defender Advanced Threat Protection
 
 ```yaml
-Type: System.String
-Parameter Sets: ThreatIntelligenceTaxii
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: MicrosoftDefenderAdvancedThreatProtection
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PermissionCustom
-[Parameter(ParameterSetName = 'APIPolling')]
-To construct, see NOTES section for PERMISSIONCUSTOM properties and create a hash table.
+### -Office365
+Data Connector Office 365
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.PermissionsCustomsItem[]
-Parameter Sets: GenericUI
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PermissionResourceProvider
-[Parameter(ParameterSetName = 'APIPolling')]
-To construct, see NOTES section for PERMISSIONRESOURCEPROVIDER properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.PermissionsResourceProviderItem[]
-Parameter Sets: GenericUI
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PollingFrequency
-
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Support.PollingFrequency
-Parameter Sets: ThreatIntelligenceTaxii
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Office365
 Aliases:
 
 Required: True
@@ -568,7 +343,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The Resource Group Name.
+Data Connector Azure Active Directory
 
 ```yaml
 Type: System.String
@@ -583,27 +358,13 @@ Accept wildcard characters: False
 ```
 
 ### -SharePoint
-
+Data Connector SharePoint
 
 ```yaml
 Type: System.String
 Parameter Sets: Office365
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SQSURL
-
-
-```yaml
-Type: System.String[]
-Parameter Sets: AmazonWebServicesS3
-Aliases:
+Accepted values: Enabled, Disabled
 
 Required: True
 Position: Named
@@ -613,30 +374,14 @@ Accept wildcard characters: False
 ```
 
 ### -SubscriptionId
-Gets subscription credentials which uniquely identify Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
+Data connector Subscription Id
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: AzureSecurityCenter
 Aliases:
 
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TaxiiLookbackPeriod
-
-
-```yaml
-Type: System.String
-Parameter Sets: ThreatIntelligenceTaxii
-Aliases:
-
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -644,43 +389,13 @@ Accept wildcard characters: False
 ```
 
 ### -Teams
-
+Data Connector Teams
 
 ```yaml
 Type: System.String
 Parameter Sets: Office365
 Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TenantId
-The TenantId.
-
-```yaml
-Type: System.String
-Parameter Sets: AADAATP, Dynamics365, MicrosoftCloudAppSecurity, MicrosoftDefenderAdvancedThreatProtection, MicrosoftThreatIntelligence, MicrosoftThreatProtection, Office365, OfficeATP, OfficeIRM, ThreatIntelligence, ThreatIntelligenceTaxii
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Tenant.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UiConfigConnectivityCriterion
-[Parameter(ParameterSetName = 'APIPolling', Mandatory)]
-To construct, see NOTES section for UICONFIGCONNECTIVITYCRITERION properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.ConnectivityCriteria[]
-Parameter Sets: GenericUI
-Aliases:
+Accepted values: Enabled, Disabled
 
 Required: True
 Position: Named
@@ -689,166 +404,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UiConfigCustomImage
-[Parameter(ParameterSetName = 'APIPolling')]
+### -ThreatIntelligence
+Data Connector Threat Intelligence
 
 ```yaml
-Type: System.String
-Parameter Sets: GenericUI
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UiConfigDataType
-[Parameter(ParameterSetName = 'APIPolling', Mandatory)]
-To construct, see NOTES section for UICONFIGDATATYPE properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.LastDataReceivedDataType[]
-Parameter Sets: GenericUI
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UiConfigDescriptionMarkdown
-[Parameter(ParameterSetName = 'APIPolling', Mandatory)]
-
-```yaml
-Type: System.String
-Parameter Sets: GenericUI
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UiConfigGraphQueriesTableName
-[Parameter(ParameterSetName = 'APIPolling', Mandatory)]
-
-```yaml
-Type: System.String
-Parameter Sets: GenericUI
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UiConfigGraphQuery
-[Parameter(ParameterSetName = 'APIPolling', Mandatory)]
-To construct, see NOTES section for UICONFIGGRAPHQUERY properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.GraphQueries[]
-Parameter Sets: GenericUI
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UiConfigInstructionStep
-[Parameter(ParameterSetName = 'APIPolling', Mandatory)]
-To construct, see NOTES section for UICONFIGINSTRUCTIONSTEP properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.InstructionSteps[]
-Parameter Sets: GenericUI
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UiConfigPublisher
-[Parameter(ParameterSetName = 'APIPolling', Mandatory)]
-
-```yaml
-Type: System.String
-Parameter Sets: GenericUI
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UiConfigSampleQuery
-[Parameter(ParameterSetName = 'APIPolling', Mandatory)]
-To construct, see NOTES section for UICONFIGSAMPLEQUERY properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.SampleQueries[]
-Parameter Sets: GenericUI
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UiConfigTitle
-[Parameter(ParameterSetName = 'APIPolling', Mandatory)]
-
-```yaml
-Type: System.String
-Parameter Sets: GenericUI
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UserName
-
-
-```yaml
-Type: System.String
-Parameter Sets: ThreatIntelligenceTaxii
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WorkspaceId
-
-
-```yaml
-Type: System.String
-Parameter Sets: ThreatIntelligenceTaxii
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ThreatIntelligence
 Aliases:
 
 Required: True
@@ -859,7 +420,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceName
-The name of the workspace.
+Data Connector Azure Active Directory
 
 ```yaml
 Type: System.String
@@ -889,8 +450,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -909,56 +469,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### None
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.DataConnector
-
+### Microsoft.Azure.Commands.SecurityInsights.Models.DataConnectors.PSSentinelDataConnector
 ## NOTES
 
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`PERMISSIONCUSTOM <PermissionsCustomsItem[]>`: [Parameter(ParameterSetName = 'APIPolling')]
-  - `[Description <String>]`: Customs permissions description
-  - `[Name <String>]`: Customs permissions name
-
-`PERMISSIONRESOURCEPROVIDER <PermissionsResourceProviderItem[]>`: [Parameter(ParameterSetName = 'APIPolling')]
-  - `[PermissionsDisplayText <String>]`: Permission description text
-  - `[Provider <ProviderName?>]`: Provider name
-  - `[ProviderDisplayName <String>]`: Permission provider display name
-  - `[RequiredPermissionAction <Boolean?>]`: action permission
-  - `[RequiredPermissionDelete <Boolean?>]`: delete permission
-  - `[RequiredPermissionRead <Boolean?>]`: read permission
-  - `[RequiredPermissionWrite <Boolean?>]`: write permission
-  - `[Scope <PermissionProviderScope?>]`: Permission provider scope
-
-`UICONFIGCONNECTIVITYCRITERION <ConnectivityCriteria[]>`: [Parameter(ParameterSetName = 'APIPolling', Mandatory)]
-  - `[Type <ConnectivityType?>]`: type of connectivity
-  - `[Value <String[]>]`: Queries for checking connectivity
-
-`UICONFIGDATATYPE <LastDataReceivedDataType[]>`: [Parameter(ParameterSetName = 'APIPolling', Mandatory)]
-  - `[LastDataReceivedQuery <String>]`: Query for indicate last data received
-  - `[Name <String>]`: Name of the data type to show in the graph. can be use with {{graphQueriesTableName}} placeholder
-
-`UICONFIGGRAPHQUERY <GraphQueries[]>`: [Parameter(ParameterSetName = 'APIPolling', Mandatory)]
-  - `[BaseQuery <String>]`: The base query for the graph
-  - `[Legend <String>]`: The legend for the graph
-  - `[MetricName <String>]`: the metric that the query is checking
-
-`UICONFIGINSTRUCTIONSTEP <InstructionSteps[]>`: [Parameter(ParameterSetName = 'APIPolling', Mandatory)]
-  - `[Description <String>]`: Instruction step description
-  - `[Instruction <IConnectorInstructionModelBase[]>]`: Instruction step details
-    - `Type <SettingType>`: The kind of the setting
-    - `[Parameter <IAny>]`: The parameters for the setting
-  - `[Title <String>]`: Instruction step title
-
-`UICONFIGSAMPLEQUERY <SampleQueries[]>`: [Parameter(ParameterSetName = 'APIPolling', Mandatory)]
-  - `[Description <String>]`: The sample query description
-  - `[Query <String>]`: the sample query
-
 ## RELATED LINKS
-

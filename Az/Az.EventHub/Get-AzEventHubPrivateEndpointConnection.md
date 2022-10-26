@@ -1,7 +1,7 @@
 ---
-external help file: Az.EventHub-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.EventHub.dll-Help.xml
 Module Name: Az.EventHub
-online version: https://docs.microsoft.com/powershell/module/az.eventhub/get-azeventhubprivateendpointconnection
+online version: 
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/EventHub/EventHub/help/Get-AzEventHubPrivateEndpointConnection.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/EventHub/EventHub/help/Get-AzEventHubPrivateEndpointConnection.md
@@ -10,58 +10,41 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Get-AzEventHubPrivateEndpointConnection
 
 ## SYNOPSIS
-Gets a description for the specified Private Endpoint Connection name.
+Gets or lists private endpoint connections in an EventHub namespace
 
 ## SYNTAX
 
-### List (Default)
+### PrivateEndpointPropertiesSet (Default)
 ```
-Get-AzEventHubPrivateEndpointConnection -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-AzEventHubPrivateEndpointConnection -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzEventHubPrivateEndpointConnection [-ResourceGroupName] <String> [-NamespaceName] <String>
+ [[-Name] <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### PrivateEndpointResourceIdParameterSet
 ```
-Get-AzEventHubPrivateEndpointConnection -InputObject <IEventHubIdentity> [-DefaultProfile <PSObject>]
- [<CommonParameters>]
+Get-AzEventHubPrivateEndpointConnection [-ResourceId] <String> [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets a description for the specified Private Endpoint Connection name.
+Gets or lists private endpoint connections in an EventHub namespace
 
 ## EXAMPLES
 
-### Example 1: Get an Event Hub Namespace Private Endpoint Connection
+### Example 1
 ```powershell
-Get-AzEventHubPrivateEndpointConnection -ResourceGroupName myResourceGroup -NamespaceName myNamespace -Name 00000000000
+Get-AzEventHubPrivateEndpointConnection -ResourceGroupName myresourcegroup -NamespaceName mynamespace -Name 00000000000
 ```
 
-```output
-ConnectionState              : Approved
-Description                  :
-Id                           : /subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.EventHub/namespaces/myNamespace/privateEndpointC
-                               onnections/00000000000
-Location                     : Australia East
-Name                         : 00000000000
-PrivateEndpointId            : /subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.Network/privateEndpoints/privateEndpointName
-ProvisioningState            : Succeeded
-ResourceGroupName            : myResourceGroup
-```
+Gets private endpoint connection `00000000000` on EventHub namespace `mynamespace`. 
+Note that connection name is NOT the same as Private Endpoint Name.
 
-Gets details of private endpoint connection `00000000000` created under EventHub namespace `myNamespace`.
-
-### Example 2: List all private endpoint connections on an EventHub namespace
+### Example 2
 ```powershell
-Get-AzEventHubPrivateEndpointConnection -ResourceGroupName myResourceGroup -NamespaceName myNamespace
+Get-AzEventHubPrivateEndpointConnection -ResourceGroupName myresourcegroup -NamespaceName mynamespace
 ```
 
-Lists all private endpoint connections of EventHub namespace `myNamespace`.
+Lists all private endpoints in namespace `mynamespace`.
 
 ## PARAMETERS
 
@@ -69,90 +52,104 @@ Lists all private endpoint connections of EventHub namespace `myNamespace`.
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.IEventHubIdentity
-Parameter Sets: GetViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Name
-The PrivateEndpointConnection name
+Private Endpoint Connection Name.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
-Aliases: PrivateEndpointConnectionName
+Parameter Sets: PrivateEndpointPropertiesSet
+Aliases:
 
-Required: True
-Position: Named
+Required: False
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -NamespaceName
-The Namespace name
+EventHub Namespace Name.
 
 ```yaml
 Type: System.String
-Parameter Sets: List, Get
+Parameter Sets: PrivateEndpointPropertiesSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Name of the resource group within the azure subscription.
+Resource Group Name
 
 ```yaml
 Type: System.String
-Parameter Sets: List, Get
+Parameter Sets: PrivateEndpointPropertiesSet
 Aliases:
 
 Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceId
+Private Endpoint Connection ARM ID.
+
+```yaml
+Type: System.String
+Parameter Sets: PrivateEndpointResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-Subscription credentials that uniquely identify a Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
-Type: System.String[]
-Parameter Sets: List, Get
-Aliases:
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
 
 Required: False
 Position: Named
-Default value: (Get-AzContext).Subscription.Id
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -162,34 +159,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.IEventHubIdentity
+### System.String
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.Api202201Preview.IPrivateEndpointConnection
+### Microsoft.Azure.Commands.EventHub.Models.PSEventHubPrivateEndpointConnectionAttributes
 
 ## NOTES
-
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IEventHubIdentity>`: Identity Parameter
-  - `[Alias <String>]`: The Disaster Recovery configuration name
-  - `[ApplicationGroupName <String>]`: The Application Group name 
-  - `[AuthorizationRuleName <String>]`: The authorization rule name.
-  - `[ClusterName <String>]`: The name of the Event Hubs Cluster.
-  - `[ConsumerGroupName <String>]`: The consumer group name
-  - `[EventHubName <String>]`: The Event Hub name
-  - `[Id <String>]`: Resource identity path
-  - `[NamespaceName <String>]`: The Namespace name
-  - `[PrivateEndpointConnectionName <String>]`: The PrivateEndpointConnection name
-  - `[ResourceAssociationName <String>]`: The ResourceAssociation Name
-  - `[ResourceGroupName <String>]`: Name of the resource group within the azure subscription.
-  - `[SchemaGroupName <String>]`: The Schema Group name 
-  - `[SubscriptionId <String>]`: Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 
 ## RELATED LINKS

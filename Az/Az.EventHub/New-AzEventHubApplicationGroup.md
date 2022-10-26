@@ -1,7 +1,7 @@
 ---
-external help file: Az.EventHub-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.EventHub.dll-Help.xml
 Module Name: Az.EventHub
-online version: https://docs.microsoft.com/powershell/module/az.eventhub/new-azeventhubapplicationgroup
+online version: 
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/EventHub/EventHub/help/New-AzEventHubApplicationGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/EventHub/EventHub/help/New-AzEventHubApplicationGroup.md
@@ -10,50 +10,33 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # New-AzEventHubApplicationGroup
 
 ## SYNOPSIS
-Creates or updates an ApplicationGroup for a Namespace.
+Creates a new application group within an eventhub namespace
 
 ## SYNTAX
 
 ```
-New-AzEventHubApplicationGroup -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] [-ClientAppGroupIdentifier <String>] [-IsEnabled]
- [-Policy <IApplicationGroupPolicy[]>] [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzEventHubApplicationGroup [-ResourceGroupName] <String> [-NamespaceName] <String> [-Name] <String>
+ [-ClientAppGroupIdentifier] <String> [-IsEnabled]
+ -ThrottlingPolicyConfig <PSEventHubThrottlingPolicyConfigAttributes[]>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Creates or updates an ApplicationGroup for a Namespace.
+Creates a new application group within an eventhub namespace with throttling policies enabled.
 
 ## EXAMPLES
 
-### Example 1: Create an application group with 2 Throttling policies
+### Example 1
 ```powershell
-$t1 = New-AzEventHubThrottlingPolicyConfig -Name t1 -MetricId IncomingMessages -RateLimitThreshold 10000
-$t2 = New-AzEventHubThrottlingPolicyConfig -Name t2 -MetricId OutgoingBytes -RateLimitThreshold 20000
-New-AzEventHubApplicationGroup -NamespaceName myNamespace -ResourceGroupName myResourceGroup -Name myAppGroup -ClientAppGroupIdentifier SASKeyName=a -Policy $t1,$t2
+$policy1 = New-AzEventHubThrottlingPolicyConfig -Name policy1 -MetricId IncomingBytes -RateLimitThreshold 12345
+
+$policy2 = New-AzEventHubThrottlingPolicyConfig -Name policy2 -MetricId IncomingMessages -RateLimitThreshold 23416
+
+New-AzEventHubApplicationGroup -ResourceGroupName myresourcegroup -NamespaceName mynamespace -Name myappgroup `
+-ClientAppGroupIdentifier SASKeyName=myauthkey -ThrottlingPolicyConfig $policy1, $policy2
 ```
 
-```output
-ClientAppGroupIdentifier     : SASKeyName=a
-Id                           : /subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.EventHub/namespaces/myNamespace/applicationGroups/
-                               myAppGroup
-IsEnabled                    : True
-Location                     : Central US
-Name                         : myAppGroup
-Policy                       : {{
-                                 "name": "t1",
-                                 "type": "ThrottlingPolicy",
-                                 "rateLimitThreshold": 10000,
-                                 "metricId": "IncomingMessages"
-                               }, {
-                                 "name": "t2",
-                                 "type": "ThrottlingPolicy",
-                                 "rateLimitThreshold": 20000,
-                                 "metricId": "OutgoingBytes"
-                               }}
-ResourceGroupName            : myResourceGroup
-```
-
-Creates a new application group `myAppGroup` on namespace `myNamespace` with 2 throttling policies.
+Creates an application group with two throttling policies.
 
 ## PARAMETERS
 
@@ -65,10 +48,10 @@ Type: System.String
 Parameter Sets: (All)
 Aliases:
 
-Required: False
-Position: Named
+Required: True
+Position: 3
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -76,9 +59,9 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -99,27 +82,27 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Name
-The Application Group name
+Application Group Name
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases: ApplicationGroupName
+Aliases:
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -NamespaceName
-The Namespace name
+Namespace Name
 
 ```yaml
 Type: System.String
@@ -127,31 +110,14 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Policy
-List of group policies that define the behavior of application group.
-The policies can support resource governance scenarios such as limiting ingress or egress traffic.
-To construct, see NOTES section for POLICY properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.Api202201Preview.IApplicationGroupPolicy[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Name of the resource group within the azure subscription.
+Resource Group Name
 
 ```yaml
 Type: System.String
@@ -159,25 +125,24 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-Subscription credentials that uniquely identify a Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
+### -ThrottlingPolicyConfig
+List of Throttling Policy Objects
 
 ```yaml
-Type: System.String
+Type: Microsoft.Azure.Commands.EventHub.Models.PSEventHubThrottlingPolicyConfigAttributes[]
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -217,20 +182,16 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### System.String
+
+### System.Management.Automation.SwitchParameter
+
+### Microsoft.Azure.Commands.EventHub.Models.PSEventHubThrottlingPolicyConfigAttributes[]
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.Api202201Preview.IApplicationGroup
+### Microsoft.Azure.Commands.EventHub.Models.PSEventHubApplicationGroupAttributes
 
 ## NOTES
-
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`POLICY <IApplicationGroupPolicy[]>`: List of group policies that define the behavior of application group. The policies can support resource governance scenarios such as limiting ingress or egress traffic.
-  - `Name <String>`: The Name of this policy
 
 ## RELATED LINKS

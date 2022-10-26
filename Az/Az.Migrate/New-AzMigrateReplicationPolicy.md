@@ -111,7 +111,7 @@ The ReplicationProviderSettings.
 To construct, see NOTES section for PROVIDERSPECIFICINPUT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20220501.IPolicyProviderSpecificInput
+Type: Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20210210.IPolicyProviderSpecificInput
 Parameter Sets: (All)
 Aliases:
 
@@ -205,7 +205,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20220501.IPolicy
+### Microsoft.Azure.PowerShell.Cmdlets.Migrate.Models.Api20210210.IPolicy
 
 ## NOTES
 
@@ -217,7 +217,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `PROVIDERSPECIFICINPUT <IPolicyProviderSpecificInput>`: The ReplicationProviderSettings.
-  - `InstanceType <String>`: The class type.
+  - `[InstanceType <String>]`: The class type.
 
 ## RELATED LINKS
 

@@ -1,213 +1,110 @@
 ---
-external help file: 
+external help file: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.dll-Help.xml
 Module Name: Az.SecurityInsights
 online version: https://docs.microsoft.com/powershell/module/az.securityinsights/new-azsentinelalertrule
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/New-AzSentinelAlertRule.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/help/New-AzSentinelAlertRule.md
+content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/New-AzSentinelAlertRule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/SecurityInsights/SecurityInsights/help/New-AzSentinelAlertRule.md
 ---
 
 # New-AzSentinelAlertRule
 
 ## SYNOPSIS
-Creates or updates the alert rule.
+Create an Analytics Rule (Alert Rule).
 
 ## SYNTAX
 
-### FusionMLTI (Default)
+### ScheduledAlertRule (Default)
 ```
-New-AzSentinelAlertRule -ResourceGroupName <String> -WorkspaceName <String> -AlertRuleTemplate <String>
- -Kind <AlertRuleKind> [-RuleId <String>] [-SubscriptionId <String>] [-Enabled] [-DefaultProfile <PSObject>]
- [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### MicrosoftSecurityIncidentCreation
-```
-New-AzSentinelAlertRule -ResourceGroupName <String> -WorkspaceName <String> -Kind <AlertRuleKind>
- -ProductFilter <MicrosoftSecurityProductName> [-RuleId <String>] [-SubscriptionId <String>]
- [-AlertRuleTemplateName <String>] [-Description <String>] [-DisplayNamesExcludeFilter <String>]
- [-DisplayNamesFilter <String>] [-Enabled] [-SeveritiesFilter <AlertSeverity[]>] [-DefaultProfile <PSObject>]
- [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-AzSentinelAlertRule -ResourceGroupName <String> -WorkspaceName <String> [-Scheduled]
+ [-AlertRuleId <String>] [-AlertRuleTemplateName <String>] [-Enabled] -DisplayName <String>
+ [-Description <String>] [-SuppressionDuration <TimeSpan>] [-SuppressionEnabled] -Query <String>
+ -QueryFrequency <TimeSpan> -QueryPeriod <TimeSpan> -Severity <String>
+ [-Tactic <System.Collections.Generic.IList`1[System.String]>] [-TriggerOperator <TriggerOperator>]
+ -TriggerThreshold <Int32> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### NRT
+### FusionAlertRule
 ```
-New-AzSentinelAlertRule -ResourceGroupName <String> -WorkspaceName <String> -DisplayName <String>
- -Kind <AlertRuleKind> -Query <String> -Severity <AlertSeverity> [-RuleId <String>] [-SubscriptionId <String>]
- [-AlertDescriptionFormat <String>] [-AlertDisplayNameFormat <String>] [-AlertRuleTemplateName <String>]
- [-AlertSeverityColumnName <String>] [-AlertTacticsColumnName <String>] [-CreateIncident]
- [-Description <String>] [-Enabled] [-EntityMapping <EntityMapping>] [-GroupByAlertDetail <AlertDetail>]
- [-GroupByCustomDetail <String[]>] [-GroupByEntity <EntityMappingType>] [-GroupingConfigurationEnabled]
- [-LookbackDuration <TimeSpan>] [-MatchingMethod <String>] [-ReOpenClosedIncident]
- [-SuppressionDuration <TimeSpan>] [-SuppressionEnabled] [-Tactic <String>] [-DefaultProfile <PSObject>]
- [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-AzSentinelAlertRule -ResourceGroupName <String> -WorkspaceName <String> [-Fusion] [-AlertRuleId <String>]
+ -AlertRuleTemplateName <String> [-Enabled] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
-### Scheduled
+### MicrosoftSecurityIncidentCreationRule
 ```
-New-AzSentinelAlertRule -ResourceGroupName <String> -WorkspaceName <String> -DisplayName <String>
- -Kind <AlertRuleKind> -Query <String> -QueryFrequency <TimeSpan> -QueryPeriod <TimeSpan>
- -Severity <AlertSeverity> -TriggerOperator <TriggerOperator> -TriggerThreshold <Int32> [-RuleId <String>]
- [-SubscriptionId <String>] [-AlertDescriptionFormat <String>] [-AlertDisplayNameFormat <String>]
- [-AlertRuleTemplateName <String>] [-AlertSeverityColumnName <String>] [-AlertTacticsColumnName <String>]
- [-CreateIncident] [-Description <String>] [-Enabled] [-EntityMapping <EntityMapping>]
- [-EventGroupingSettingAggregationKind <EventGroupingAggregationKind>] [-GroupByAlertDetail <AlertDetail>]
- [-GroupByCustomDetail <String[]>] [-GroupByEntity <EntityMappingType>] [-GroupingConfigurationEnabled]
- [-LookbackDuration <TimeSpan>] [-MatchingMethod <String>] [-ReOpenClosedIncident]
- [-SuppressionDuration <TimeSpan>] [-SuppressionEnabled] [-Tactic <String>] [-DefaultProfile <PSObject>]
- [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-AzSentinelAlertRule -ResourceGroupName <String> -WorkspaceName <String>
+ [-MicrosoftSecurityIncidentCreation] [-AlertRuleId <String>] [-AlertRuleTemplateName <String>] [-Enabled]
+ -DisplayName <String> -ProductFilter <String> [-Description <String>]
+ [-DisplayNamesExcludeFilter <System.Collections.Generic.IList`1[System.String]>]
+ [-DisplayNamesFilter <System.Collections.Generic.IList`1[System.String]>]
+ [-SeveritiesFilter <System.Collections.Generic.IList`1[System.String]>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Creates or updates the alert rule.
+The **New-AzSentinelAlertRule** cmdlet creates an Analytic (Alert Rule) in the specified workspace.
+You must specify one of the three parameters, *Fusion*, *Scheduled* or *MicrosoftSecurityIncidentCreation*, to specify the kind of Alert rule to create.  Each Kind has different required paramaters.
+You can use the *Confirm* parameter and $ConfirmPreference Windows PowerShell variable to control whether the cmdlet prompts you for confirmation.
 
 ## EXAMPLES
 
-### Example 1: Create the Fusion Alert rule
+### Example 1
 ```powershell
- $AlertRuleTemplateName = "f71aba3d-28fb-450b-b192-4e76a83015c8"
- New-AzSentinelAlertRule -ResourceGroupName "myResourceGroupName" -WorkspaceName "myWorkspaceName" -Kind Fusion -Enabled -AlertRuleTemplateName $AlertRuleTemplateName
+$AlertRuleTemplateName = "f71aba3d-28fb-450b-b192-4e76a83015c8"
+$AlertRule = New-AzSentinelAlertRule -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName" -Fusion -Enabled -AlertRuleTemplateName $AlertRuleTemplateName
 ```
 
-This command creates an Alert Rule of the Fusion kind based on the template "Advanced Multistage Attack Detection"
+This example creates an **AlertRule** of the *Fusion* kind based on the Template for *Advanced Multistage Attack Detection*, and then stores it in the $AlertRule variable.<br/>
+Since you are using an AlertRuleTemplate, you only have to pass the parameter *-Enabled* to enable and activate this rule.
 
-### Example 2: Create the ML Behavior Analytics Alert Rule
+### Example 2
 ```powershell
- $AlertRuleTemplateName = "fa118b98-de46-4e94-87f9-8e6d5060b60b"
- New-AzSentinelAlertRule -ResourceGroupName "myResourceGroupName" -WorkspaceName "myWorkspaceName" -Kind MLBehaviorAnalytics -Enabled -AlertRuleTemplateName $AlertRuleTemplateName
+$AlertRuleTemplateName = "a2e0eb51-1f11-461a-999b-cd0ebe5c7a72"
+$AlertRule = New-AzSentinelAlertRule -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName" -MicrosoftSecurityIncidentCreation -Enabled -AlertRuleTemplateName $AlertRuleTemplateName -DisplayName "Create incidents based on Azure Security Center for IoT" -ProductFilter "Azure Security Center for IoT"
 ```
 
-This command creates an Alert Rule of the MLBehaviorAnalytics kind based on the template "Anomalous SSH Login Detection"
+This example creates a **AlertRule** of the *MicrosoftSecurityIncidentCreation* kind based on the template for *Create incidents based on Azure Security Center for IoT alerts*, and then stores it in the $AlertRule varaible.
 
-### Example 3: Create the Threat Intelligence Alert Rule
+### Example 3
 ```powershell
- $AlertRuleTemplateName = "0dd422ee-e6af-4204-b219-f59ac172e4c6"
- New-AzSentinelAlertRule -ResourceGroupName "myResourceGroupName" -WorkspaceName "myWorkspaceName" -Kind ThreatIntelligence -Enabled -AlertRuleTemplateName $AlertRuleTemplateName
+$AlertRule = New-AzSentinelAlertRule -ResourceGroupName "MyResourceGroup" -WorkspaceName "MyWorkspaceName" -Scheduled -Enabled -DisplayName "Powershell Exection Alert (Several Times per Hour)" -Severity Low -Query "SecurityEvent | where EventId == 4688" -QueryFrequency (New-TimeSpan -Hours 1) -QueryPeriod (New-TimeSpan -Hours 1) -TriggerThreshold 10
 ```
 
-This command creates an Alert Rule of the ThreatIntelligence kind based on the template "Microsoft Threat Intelligence Analytics"
+This example creates a **DataConnector** of the *Scheduled* kind, and then stores it in the $AlertRule variable.<br/>
+*Please note that that query (parameter -Query) needs to be on a single line as as string.*
 
-### Example 4: Create a Microsoft Security Incident Creation Alert Rule
+### Example 4
 ```powershell
- $AlertRuleTemplateName = "a2e0eb51-1f11-461a-999b-cd0ebe5c7a72"
- New-AzSentinelAlertRule -ResourceGroupName "myResourceGroupName" -WorkspaceName "myWorkspaceName" -Kind MicrosoftSecurityIncidentCreation -Enabled -AlertRuleTemplateName $AlertRuleTemplateName -ProductFilter "Azure Security Center for IoT"
+$NewRuleObject = @{
+    Scheduled = $true
+    Enabled = $true
+    Query = "SecurityEvent
+    | where EventID == 4624 and AccountType == ""User""
+    | where Account == ""user1@contoso.com""
+    | distinct Account"
+
+    DisplayName = "A VIP has logged on"
+    Description = "my description"
+    QueryPeriod = (New-TimeSpan -Hours 1)
+    QueryFrequency = (New-TimeSpan -Hours 1)
+    TriggerThreshold = 0
+    TriggerOperator = "GreaterThan" #Equal, GreaterThan, LessThan, NotEqual
+    Severity = "Medium" # Low, Medium, High
+}
+$NewRule= New-AzSentinelAlertRule @SentinelConnection @NewRuleObject
 ```
 
-This command creates an Alert Rule of the MicrosoftSecurityIncidentCreation kind based on the template for Create incidents based on Azure Security Center for IoT alerts.
-
-### Example 5: Create a Scheduled Alert Rule
-```powershell
-New-AzSentinelAlertRule -ResourceGroupName "myResourceGroup" -WorkspaceName "myWorkspaceName" -Kind Scheduled -Enabled -DisplayName "Powershell Exection Alert (Several Times per Hour)" -Severity Low -Query "SecurityEvent | where EventId == 4688" -QueryFrequency (New-TimeSpan -Hours 1) -QueryPeriod (New-TimeSpan -Hours 1) -TriggerThreshold 10
-```
-
-This command creates an Alert Rule of the Scheduled kind.
-Please note that that query (parameter -Query) needs to be on a single line as as string.
-
-### Example 6: Create a Near Realtime Alert Rule
-```powershell
-New-AzSentinelAlertRule -ResourceGroupName "myResourceGroup" -WorkspaceName "myWorkspaceName" -Kind NRT -Enabled -DisplayName "Break glass account accessed" -Severity High -Query "let Break_Glass_Account = _GetWatchlist('break_glass_account')\n|project UPN;\nSigninLogs\n| where UserPrincipalName in (Break_Glass_Account)"
-```
-
-This command creates an Alert Rule of the NRT kind.
-Please note that that query (parameter -Query) needs to be on a single line as as string.
+This example use a connection object and an object to configure the alert rule logic, including the query.<br/>
+*Note: Notice the double quotes in the example. If you need to use a string in the query, you need to use double quotes as escape characters.*
 
 ## PARAMETERS
 
-### -AlertDescriptionFormat
-
-
-```yaml
-Type: System.String
-Parameter Sets: NRT, Scheduled
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AlertDisplayNameFormat
-
+### -AlertRuleId
+Alert Rule Id.
 
 ```yaml
 Type: System.String
-Parameter Sets: NRT, Scheduled
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AlertRuleTemplate
-
-
-```yaml
-Type: System.String
-Parameter Sets: FusionMLTI
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AlertRuleTemplateName
-
-
-```yaml
-Type: System.String
-Parameter Sets: MicrosoftSecurityIncidentCreation, NRT, Scheduled
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AlertSeverityColumnName
-
-
-```yaml
-Type: System.String
-Parameter Sets: NRT, Scheduled
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AlertTacticsColumnName
-
-
-```yaml
-Type: System.String
-Parameter Sets: NRT, Scheduled
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AsJob
-Run the command as a job
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -218,15 +115,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CreateIncident
-
+### -AlertRuleTemplateName
+Alert Rule Template.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: NRT, Scheduled
+Type: System.String
+Parameter Sets: ScheduledAlertRule, MicrosoftSecurityIncidentCreationRule
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: FusionAlertRule
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -237,9 +146,9 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -249,11 +158,11 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-
+Description.
 
 ```yaml
 Type: System.String
-Parameter Sets: MicrosoftSecurityIncidentCreation, NRT, Scheduled
+Parameter Sets: ScheduledAlertRule, MicrosoftSecurityIncidentCreationRule
 Aliases:
 
 Required: False
@@ -264,11 +173,11 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-
+Alert Rule Display Name.
 
 ```yaml
 Type: System.String
-Parameter Sets: NRT, Scheduled
+Parameter Sets: ScheduledAlertRule, MicrosoftSecurityIncidentCreationRule
 Aliases:
 
 Required: True
@@ -279,11 +188,11 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayNamesExcludeFilter
-
+Alert Rule Display Names Exclude Filter.
 
 ```yaml
-Type: System.String
-Parameter Sets: MicrosoftSecurityIncidentCreation
+Type: System.Collections.Generic.IList`1[System.String]
+Parameter Sets: MicrosoftSecurityIncidentCreationRule
 Aliases:
 
 Required: False
@@ -294,11 +203,11 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayNamesFilter
-
+Alert Rule Display Names Filter.
 
 ```yaml
-Type: System.String
-Parameter Sets: MicrosoftSecurityIncidentCreation
+Type: System.Collections.Generic.IList`1[System.String]
+Parameter Sets: MicrosoftSecurityIncidentCreationRule
 Aliases:
 
 Required: False
@@ -309,7 +218,7 @@ Accept wildcard characters: False
 ```
 
 ### -Enabled
-
+Alert Rule Enabled.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -323,103 +232,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EntityMapping
-'Account', 'Host', 'IP', 'Malware', 'File', 'Process', 'CloudApplication', 'DNS', 'AzureResource', 'FileHash', 'RegistryKey', 'RegistryValue', 'SecurityGroup', 'URL', 'Mailbox', 'MailCluster', 'MailMessage', 'SubmissionMail'
-To construct, see NOTES section for ENTITYMAPPING properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.EntityMapping
-Parameter Sets: NRT, Scheduled
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -EventGroupingSettingAggregationKind
-
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Support.EventGroupingAggregationKind
-Parameter Sets: Scheduled
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -GroupByAlertDetail
-
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Support.AlertDetail
-Parameter Sets: NRT, Scheduled
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -GroupByCustomDetail
-
-
-```yaml
-Type: System.String[]
-Parameter Sets: NRT, Scheduled
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -GroupByEntity
-
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Support.EntityMappingType
-Parameter Sets: NRT, Scheduled
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -GroupingConfigurationEnabled
-
+### -Fusion
+Alert Rule Kind.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: NRT, Scheduled
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Kind
-Kind of the the data connection
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Support.AlertRuleKind
-Parameter Sets: (All)
+Parameter Sets: FusionAlertRule
 Aliases:
 
 Required: True
@@ -429,45 +247,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -LookbackDuration
-
-
-```yaml
-Type: System.TimeSpan
-Parameter Sets: NRT, Scheduled
-Aliases:
-
-Required: False
-Position: Named
-Default value: New-TimeSpan -Hours 5
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MatchingMethod
-
-
-```yaml
-Type: System.String
-Parameter Sets: NRT, Scheduled
-Aliases:
-
-Required: False
-Position: Named
-Default value: "AllEntities"
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NoWait
-Run the command asynchronously
+### -MicrosoftSecurityIncidentCreation
+Alert Rule Kind.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: MicrosoftSecurityIncidentCreationRule
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -475,12 +263,13 @@ Accept wildcard characters: False
 ```
 
 ### -ProductFilter
-
+Alert Rule Product Filter.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Support.MicrosoftSecurityProductName
-Parameter Sets: MicrosoftSecurityIncidentCreation
+Type: System.String
+Parameter Sets: MicrosoftSecurityIncidentCreationRule
 Aliases:
+Accepted values: Azure Active Directory Identity Protection, Azure Advanced Threat Protection, Azure Security Center, Azure Security Center for IoT, Microsoft Cloud App Security, Microsoft Defender Advanced Threat Protection, Office 365 Advanced Threat Protection
 
 Required: True
 Position: Named
@@ -490,11 +279,11 @@ Accept wildcard characters: False
 ```
 
 ### -Query
-
+Alert Rule Query.
 
 ```yaml
 Type: System.String
-Parameter Sets: NRT, Scheduled
+Parameter Sets: ScheduledAlertRule
 Aliases:
 
 Required: True
@@ -505,11 +294,11 @@ Accept wildcard characters: False
 ```
 
 ### -QueryFrequency
-
+Alert Rule Query Frequency.
 
 ```yaml
-Type: System.TimeSpan
-Parameter Sets: Scheduled
+Type: System.Nullable`1[System.TimeSpan]
+Parameter Sets: ScheduledAlertRule
 Aliases:
 
 Required: True
@@ -520,29 +309,14 @@ Accept wildcard characters: False
 ```
 
 ### -QueryPeriod
-
+Alert Rule Query Period.
 
 ```yaml
-Type: System.TimeSpan
-Parameter Sets: Scheduled
+Type: System.Nullable`1[System.TimeSpan]
+Parameter Sets: ScheduledAlertRule
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ReOpenClosedIncident
-
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: NRT, Scheduled
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -550,7 +324,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The Resource Group Name.
+Resource group name.
 
 ```yaml
 Type: System.String
@@ -564,28 +338,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RuleId
-[Alias('RuleId')]
- The Id of the Rule.
+### -Scheduled
+Alert Rule Kind.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ScheduledAlertRule
 Aliases:
 
-Required: False
+Required: True
 Position: Named
-Default value: (New-Guid).Guid
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -SeveritiesFilter
-High, Medium, Low, Informational
+Alert Rule Severities Filter.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Support.AlertSeverity[]
-Parameter Sets: MicrosoftSecurityIncidentCreation
+Type: System.Collections.Generic.IList`1[System.String]
+Parameter Sets: MicrosoftSecurityIncidentCreationRule
 Aliases:
 
 Required: False
@@ -596,12 +369,13 @@ Accept wildcard characters: False
 ```
 
 ### -Severity
-
+Incident Severity.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Support.AlertSeverity
-Parameter Sets: NRT, Scheduled
+Type: System.String
+Parameter Sets: ScheduledAlertRule
 Aliases:
+Accepted values: High, Informational, Low, Medium
 
 Required: True
 Position: Named
@@ -610,43 +384,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-Gets subscription credentials which uniquely identify Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SuppressionDuration
-
+Alert Rule Suppression Duration.
 
 ```yaml
 Type: System.TimeSpan
-Parameter Sets: NRT, Scheduled
+Parameter Sets: ScheduledAlertRule
 Aliases:
 
 Required: False
 Position: Named
-Default value: New-TimeSpan -Hours 5
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -SuppressionEnabled
-
+Alert Rule Suppression Enabled.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: NRT, Scheduled
+Parameter Sets: ScheduledAlertRule
 Aliases:
 
 Required: False
@@ -657,12 +415,11 @@ Accept wildcard characters: False
 ```
 
 ### -Tactic
-[Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Support.AttackTactic]
-InitialAccess, Execution, Persistence, PrivilegeEscalation, DefenseEvasion, CredentialAccess, Discovery, LateralMovement, Collection, Exfiltration, CommandAndControl, Impact, PreAttack
+Alert Rule Tactics.
 
 ```yaml
-Type: System.String
-Parameter Sets: NRT, Scheduled
+Type: System.Collections.Generic.IList`1[System.String]
+Parameter Sets: ScheduledAlertRule
 Aliases:
 
 Required: False
@@ -673,14 +430,15 @@ Accept wildcard characters: False
 ```
 
 ### -TriggerOperator
-
+Alert Rule Trigger Operator.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Support.TriggerOperator
-Parameter Sets: Scheduled
+Type: Microsoft.Azure.Management.SecurityInsights.Models.TriggerOperator
+Parameter Sets: ScheduledAlertRule
 Aliases:
+Accepted values: Equal, GreaterThan, LessThan, NotEqual
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -688,11 +446,11 @@ Accept wildcard characters: False
 ```
 
 ### -TriggerThreshold
-
+Alert Rule Trigger Threshold.
 
 ```yaml
-Type: System.Int32
-Parameter Sets: Scheduled
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: ScheduledAlertRule
 Aliases:
 
 Required: True
@@ -703,7 +461,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceName
-The name of the workspace.
+Workspace Name.
 
 ```yaml
 Type: System.String
@@ -733,8 +491,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -753,24 +510,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### None
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.SecurityInsights.Models.Api20210901Preview.AlertRule
-
+### Microsoft.Azure.Commands.SecurityInsights.Models.AlertRules.PSSentinelAlertRule
 ## NOTES
 
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`ENTITYMAPPING <EntityMapping>`: 'Account', 'Host', 'IP', 'Malware', 'File', 'Process', 'CloudApplication', 'DNS', 'AzureResource', 'FileHash', 'RegistryKey', 'RegistryValue', 'SecurityGroup', 'URL', 'Mailbox', 'MailCluster', 'MailMessage', 'SubmissionMail'
-  - `[EntityType <EntityMappingType?>]`: The V3 type of the mapped entity
-  - `[FieldMapping <IFieldMapping[]>]`: array of field mappings for the given entity mapping
-    - `[ColumnName <String>]`: the column name to be mapped to the identifier
-    - `[Identifier <String>]`: the V3 identifier of the entity
-
 ## RELATED LINKS
-

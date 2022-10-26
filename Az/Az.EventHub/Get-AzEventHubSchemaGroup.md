@@ -1,7 +1,7 @@
 ---
-external help file: Az.EventHub-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.EventHub.dll-Help.xml
 Module Name: Az.EventHub
-online version: https://docs.microsoft.com/powershell/module/az.eventhub/get-azeventhubschemagroup
+online version: 
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/EventHub/EventHub/help/Get-AzEventHubSchemaGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/EventHub/EventHub/help/Get-AzEventHubSchemaGroup.md
@@ -10,56 +10,68 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Get-AzEventHubSchemaGroup
 
 ## SYNOPSIS
+Gets a specific schema group from a namespace or lists all schema groups in a namespace.
 
 ## SYNTAX
 
-### List (Default)
+### NamespaceSchemaGroupParameterSet (Default)
 ```
-Get-AzEventHubSchemaGroup -NamespaceName <String> -ResourceGroupName <String> [-SubscriptionId <String[]>]
- [-Skip <Int32>] [-Top <Int32>] [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-AzEventHubSchemaGroup -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzEventHubSchemaGroup [-ResourceGroupName] <String> [-Namespace] <String> [[-Name] <String>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### SchemaGroupResourceIdParameterSet
 ```
-Get-AzEventHubSchemaGroup -InputObject <IEventHubIdentity> [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzEventHubSchemaGroup [-ResourceId] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+The Get-AzEventHubSchemaGroup gets a specific schema group from a namespace or lists all schema groups in a namespace.
 
 ## EXAMPLES
 
-### Example 1: Get details of a schema group from an EventHub namespace
+### Example 1
 ```powershell
-Get-AzEventHubSchemaGroup -ResourceGroupName myResourceGroup -NamespaceName myNamespace -Name mySchemaGroup
+Get-AzEventHubSchemaGroup -ResourceGroupName myresourcegroup -Namespace mynamespace -Name myschemagroup
 ```
 
 ```output
-CreatedAtUtc                 : 9/14/2022 6:05:47 AM
-ETag                         : {etag}
-GroupProperty                : {
-                               }
-Id                           : /subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.EventHub/namespaces/myNamespace/schemagroups/mySchemaGroup
-Location                     : Central US
-Name                         : mySchemaGroup
-ResourceGroupName            : myResourceGroup
-SchemaCompatibility          : None
-SchemaType                   : Avro
+Id                  : /subscriptions/{subscriptionid}/resourceGroups/myresourcegroup/providers/Microsoft.EventHub/namespaces/mynamespace/schemagroups/myschemagroup
+Name                : myschemagroup
+Location            : East US
+Type                : Microsoft.EventHub/Namespaces/SchemaGroups
+SchemaCompatibility : Backward
+SchemaType          : Avro
+GroupProperties     : {key1:value1, name:name}
 ```
 
-Gets details of schema group `mySchemaGroup` from EventHub namespace `myNamespace`.
+Gets the details of schema group \`myschemagroup\` in \`mynamespace\` in the resource group \`myresourcegroup\`.
 
-### Example 2: List all schema groups in an EventHub namespace
+### Example 1
 ```powershell
-Get-AzEventHubSchemaGroup -ResourceGroupName myResourceGroup -NamespaceName myNamespace
+Get-AzEventHubSchemaGroup -ResourceGroupName myresourcegroup -Namespace mynamespace
 ```
 
-Lists all schema groups created within EventHub namespace `myNamespace`.
+```output
+Id                  : /subscriptions/{subscriptionid}/resourceGroups/myresourcegroup/providers/Microsoft.EventHub/namespaces/mynamespace/schemagroups/myschemagroup
+Name                : myschemagroup
+Location            : East US
+Type                : Microsoft.EventHub/Namespaces/SchemaGroups
+SchemaCompatibility : Backward
+SchemaType          : Avro
+GroupProperties     : {key1:value1, name:name}
+
+Id                  : /subscriptions/{subscriptionid}/resourceGroups/myresourcegroup/providers/Microsoft.EventHub/namespaces/mynamespace/schemagroups/myschemagroup1
+Name                : myschemagroup1
+Location            : East US
+Type                : Microsoft.EventHub/Namespaces/SchemaGroups
+SchemaCompatibility : Backward
+SchemaType          : Avro
+GroupProperties     : {key1:value1, name:name}
+```
+
+Gets the list of all schema groups in \`mynamespace\` in the resource group \`myresourcegroup\`.
 
 ## PARAMETERS
 
@@ -67,117 +79,100 @@ Lists all schema groups created within EventHub namespace `myNamespace`.
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.IEventHubIdentity
-Parameter Sets: GetViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Name
-The Schema Group name
+Name of Schema Group
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: NamespaceSchemaGroupParameterSet
 Aliases: SchemaGroupName
 
-Required: True
-Position: Named
+Required: False
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NamespaceName
-The Namespace name
+### -Namespace
+Namespace Name
 
 ```yaml
 Type: System.String
-Parameter Sets: List, Get
-Aliases:
+Parameter Sets: NamespaceSchemaGroupParameterSet
+Aliases: NamespaceName
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Name of the resource group within the azure subscription.
+Resource Group Name
 
 ```yaml
 Type: System.String
-Parameter Sets: List, Get
+Parameter Sets: NamespaceSchemaGroupParameterSet
 Aliases:
 
 Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceId
+Namespace Resource Id
+
+```yaml
+Type: System.String
+Parameter Sets: SchemaGroupResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-Subscription credentials that uniquely identify a Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
-Type: System.String[]
-Parameter Sets: List, Get
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Top
-May be used to limit the number of results to the most recent N usageDetails.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Skip
-Skip is only used if a previous operation returned a partial result.
-If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.
-
-```yaml
-Type: System.Int32
-Parameter Sets: List
-Aliases:
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
 
 Required: False
 Position: Named
@@ -191,34 +186,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.IEventHubIdentity
+### System.String
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.Api202201Preview.ISchemaGroup
+### Microsoft.Azure.Commands.EventHub.Models.PSEventHubsSchemaRegistryAttributes
 
 ## NOTES
-
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IEventHubIdentity>`: Identity Parameter
-  - `[Alias <String>]`: The Disaster Recovery configuration name
-  - `[ApplicationGroupName <String>]`: The Application Group name 
-  - `[AuthorizationRuleName <String>]`: The authorization rule name.
-  - `[ClusterName <String>]`: The name of the Event Hubs Cluster.
-  - `[ConsumerGroupName <String>]`: The consumer group name
-  - `[EventHubName <String>]`: The Event Hub name
-  - `[Id <String>]`: Resource identity path
-  - `[NamespaceName <String>]`: The Namespace name
-  - `[PrivateEndpointConnectionName <String>]`: The PrivateEndpointConnection name
-  - `[ResourceAssociationName <String>]`: The ResourceAssociation Name
-  - `[ResourceGroupName <String>]`: Name of the resource group within the azure subscription.
-  - `[SchemaGroupName <String>]`: The Schema Group name 
-  - `[SubscriptionId <String>]`: Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 
 ## RELATED LINKS

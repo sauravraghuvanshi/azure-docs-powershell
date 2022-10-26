@@ -1,5 +1,5 @@
 ---
-external help file: Az.EventHub-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.EventHub.dll-Help.xml
 Module Name: Az.EventHub
 online version: https://docs.microsoft.com/powershell/module/az.eventhub/new-azeventhubconsumergroup
 schema: 2.0.0
@@ -10,38 +10,27 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # New-AzEventHubConsumerGroup
 
 ## SYNOPSIS
-Creates or updates an Event Hubs consumer group as a nested resource within a Namespace.
+Creates a new consumer group for the specified Event Hub.
 
 ## SYNTAX
 
 ```
-New-AzEventHubConsumerGroup -EventHubName <String> -Name <String> -NamespaceName <String>
- -ResourceGroupName <String> [-SubscriptionId <String>] [-UserMetadata <String>] [-DefaultProfile <PSObject>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzEventHubConsumerGroup [-ResourceGroupName] <String> [-Namespace] <String> [-EventHub] <String>
+ [-Name] <String> [[-UserMetadata] <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Creates or updates an Event Hubs consumer group as a nested resource within a Namespace.
+Creates a new consumer group for the specified Event Hub.
 
 ## EXAMPLES
 
-### Example 1: Create an EventHub ConsumerGroup
+### Example 1
 ```powershell
-New-AzEventHubConsumerGroup -Name myConsumerGroup -NamespaceName myNamespace -ResourceGroupName myResourceGroup -EventHubName myEventHub -UserMetadata "Test ConsumerGroup"
+New-AzEventHubConsumerGroup -ResourceGroupName MyResourceGroupName -NamespaceName MyNamespaceName -EventHubName MyEventHubName -ConsumerGroupName MyConsumerGroupName
 ```
 
-```output
-CreatedAt                    : 9/13/2022 9:20:47 AM
-Id                           : /subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.EventHub/namespaces/myNamespace
-                               /eventhubs/eh1/consumergroups/myConsumerGroup
-Location                     : australiaeast
-Name                         : myConsumerGroup
-ResourceGroupName            : myResourceGroup
-UpdatedAt                    : 9/13/2022 9:20:47 AM
-UserMetadata                 : Test ConsumerGroup
-```
-
-Creates a new consumer group `myConsumerGroup` for EventHubs entity `myEventHub`.
+Creates the consumer group \`MyConsumerGroupName\` in the Event Hub \`MyEventHubName\`, scoped to the namespace \`MyNamespaceName\`, with resource group \`MyResourceGroupName\`.
 
 ## PARAMETERS
 
@@ -49,9 +38,9 @@ Creates a new consumer group `myConsumerGroup` for EventHubs entity `myEventHub`
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -60,23 +49,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EventHubName
-The Event Hub name
+### -EventHub
+EventHub Name
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: EventHubName
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Name
-The consumer group name
+ConsumerGroup Name
 
 ```yaml
 Type: System.String
@@ -84,29 +73,29 @@ Parameter Sets: (All)
 Aliases: ConsumerGroupName
 
 Required: True
-Position: Named
+Position: 3
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NamespaceName
-The Namespace name
+### -Namespace
+Namespace Name
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: NamespaceName
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Name of the resource group within the azure subscription.
+Resource Group Name
 
 ```yaml
 Type: System.String
@@ -114,32 +103,14 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubscriptionId
-Subscription credentials that uniquely identify a Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -UserMetadata
-User Metadata is a placeholder to store user-defined string data with maximum length 1024.
-e.g.
-it can be used to store descriptive data, such as list of teams and their contact information also user-defined configuration settings can be stored.
+User Metadata for ConsumerGroup
 
 ```yaml
 Type: System.String
@@ -147,9 +118,9 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
+Position: 4
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -185,16 +156,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
+### System.String
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.Api202201Preview.IConsumerGroup
+### Microsoft.Azure.Commands.EventHub.Models.PSConsumerGroupAttributes
 
 ## NOTES
-
-ALIASES
 
 ## RELATED LINKS

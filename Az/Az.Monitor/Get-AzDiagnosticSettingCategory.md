@@ -1,5 +1,5 @@
 ---
-external help file: Az.DiagnosticSetting.psm1-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Monitor.dll-Help.xml
 Module Name: Az.Monitor
 online version: https://docs.microsoft.com/powershell/module/az.monitor/get-azdiagnosticsettingcategory
 schema: 2.0.0
@@ -10,39 +10,38 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Get-AzDiagnosticSettingCategory
 
 ## SYNOPSIS
-Gets the diagnostic settings category for the specified resource.
+Get or list supported diagnostic setting category for Azure resource.
 
 ## SYNTAX
 
-### List (Default)
 ```
-Get-AzDiagnosticSettingCategory -ResourceId <String> [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-AzDiagnosticSettingCategory -Name <String> -ResourceId <String> [-DefaultProfile <PSObject>]
- [<CommonParameters>]
-```
-
-### GetViaIdentity
-```
-Get-AzDiagnosticSettingCategory -InputObject <IDiagnosticSettingIdentity> [-DefaultProfile <PSObject>]
- [<CommonParameters>]
+Get-AzDiagnosticSettingCategory -TargetResourceId <String> [-Name <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets the diagnostic settings category for the specified resource.
+Get or list supported diagnostic setting category for Azure resource.
 
 ## EXAMPLES
 
-### Example 1: List supported diagnostic setting categories
+### Example 1
 ```powershell
-$subscriptionId = (Get-AzContext).SubscriptionId
-Get-AzDiagnosticSettingCategory -ResourceId /subscriptions/$subscriptionId/resourceGroups/test-rg-name/providers/Microsoft.AppPlatform/Spring/springcloud-001
+Get-AzDiagnosticSettingCategory -TargetResourceId /subscriptions/XXXXXXXXXXXX/resourceGroups/XXXXXXXX/providers/Microsoft.Network/virtualNetworks/XXXXXXXX
 ```
 
-List supported diagnostic setting categories for resource
+```output
+Id           : /subscriptions/XXXXXXXXXXXX/resourceGroups/XXXXXXXX/providers/Microsoft.Network/virtualNetworks/XXXXXXXX/providers/Microsoft.Insights/diagnosticSettingsCategories/VMProtectionAlerts
+Name         : VMProtectionAlerts
+Type         : Microsoft.Insights/diagnosticSettingsCategories
+CategoryType : Logs
+
+Id           : /subscriptions/XXXXXXXXXXXX/resourceGroups/XXXXXXXX/providers/Microsoft.Network/virtualNetworks/XXXXXXXX/providers/Microsoft.Insights/diagnosticSettingsCategories/AllMetrics
+Name         : AllMetrics
+Type         : Microsoft.Insights/diagnosticSettingsCategories
+CategoryType : Metrics
+```
+
+Get supported diagnostic setting categories for virtual network.
 
 ## PARAMETERS
 
@@ -50,9 +49,9 @@ List supported diagnostic setting categories for resource
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -61,43 +60,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Monitor.DiagnosticSetting.Models.IDiagnosticSettingIdentity
-Parameter Sets: GetViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Name
-The name of the diagnostic setting.
+Name of diagnostic setting category
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ResourceId
-The identifier of the resource.
+### -TargetResourceId
+Target resource Id
 
 ```yaml
 Type: System.String
-Parameter Sets: List, Get
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -112,25 +95,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Monitor.DiagnosticSetting.Models.IDiagnosticSettingIdentity
+### System.String
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Monitor.DiagnosticSetting.Models.Api20210501Preview.IDiagnosticSettingsCategoryResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSDiagnosticSettingCategory
 
 ## NOTES
-
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IDiagnosticSettingIdentity>`: Identity Parameter
-  - `[Id <String>]`: Resource identity path
-  - `[Name <String>]`: The name of the diagnostic setting.
-  - `[ResourceUri <String>]`: The identifier of the resource.
-  - `[SubscriptionId <String>]`: The ID of the target subscription.
 
 ## RELATED LINKS

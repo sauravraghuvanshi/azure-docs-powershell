@@ -1,5 +1,5 @@
 ---
-external help file: Az.EventHub-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.EventHub.dll-Help.xml
 Module Name: Az.EventHub
 online version: https://docs.microsoft.com/powershell/module/az.eventhub/get-azeventhubauthorizationrule
 schema: 2.0.0
@@ -10,85 +10,92 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Get-AzEventHubAuthorizationRule
 
 ## SYNOPSIS
-Gets an EventHub Authorization Rule
+Gets the details of an authorization rule, or gets a list of authorization rules.
 
 ## SYNTAX
 
-### GetExpandedNamespace (Default)
+### NamespaceAuthorizationRuleSet (Default)
 ```
-Get-AzEventHubAuthorizationRule -NamespaceName <String> -ResourceGroupName <String> [-Name <String>]
- [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### GetExpandedEntity
-```
-Get-AzEventHubAuthorizationRule -NamespaceName <String> -ResourceGroupName <String> [-Name <String>]
- [-SubscriptionId <String[]>] -EventHubName <String> [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzEventHubAuthorizationRule [-ResourceGroupName] <String> [-Namespace] <String> [[-Name] <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### GetExpandedAlias
+### EventhubAuthorizationRuleSet
 ```
-Get-AzEventHubAuthorizationRule -NamespaceName <String> -ResourceGroupName <String> [-Name <String>]
- [-SubscriptionId <String[]>] -AliasName <String> [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzEventHubAuthorizationRule [-ResourceGroupName] <String> [-Namespace] <String> [-Eventhub] <String>
+ [[-Name] <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### GetViaIdentityExpanded
+### AliasAuthoRuleSet
 ```
-Get-AzEventHubAuthorizationRule -InputObject <IEventHubIdentity> [-DefaultProfile <PSObject>]
- [<CommonParameters>]
+Get-AzEventHubAuthorizationRule [-ResourceGroupName] <String> [-Namespace] <String> [-AliasName] <String>
+ [[-Name] <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets an EventHub Authorization Rule
+The Get-AzEventHubAuthorizationRule cmdlet gets either the details of an authorization rule, or a list of all authorization rules for a specified Event Hub.
+If the name of an authorization rule is provided, the details of that single authorization rule are returned.
+If the name of an authorization rule is not provided, a list of all authorization rules for the specified Event Hub is returned.
+If (Disaster Recovery) Alias name provided, the details of authorization rule of the Namespace for Alias configured is returned.
 
 ## EXAMPLES
 
-### Example 1: Get an EventHub Namespace Authorization Rule
+### Example 1: AuthorizationRule for namespace
 ```powershell
-Get-AzEventHubAuthorizationRule -ResourceGroupName myResourceGroup -NamespaceName myNamespace -Name myAuthRule
+Get-AzEventHubAuthorizationRule -ResourceGroupName MyResourceGroupName -NamespaceName MyNamespaceName -Name MyAuthRuleName
 ```
 
-```output
-Id                           : /subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.EventHub/namespaces/myNamespace/authorizationRules
-                               /myAuthRule
-Location                     : Central US
-Name                         : myAuthRule
-ResourceGroupName            : myResourceGroup
-Rights                       : {Listen, Manage, Send}
-```
+Gets the authorization rule \`MyAuthRuleName\` in the namespace \`MyNamespaceName\`.
 
-Gets details of authorization rule `myAuthRule` of EventHub namespace `myNamespace`.
-
-### Example 2: Get an EventHub entity authorization rule
+### Example 2: AuthorizationRules for namespace
 ```powershell
-Get-AzEventHubAuthorizationRule -ResourceGroupName myResourceGroup -NamespaceName myNamespace -EventHubName myEventHub -Name myAuthRule
+Get-AzEventHubAuthorizationRule -ResourceGroupName MyResourceGroupName -NamespaceName MyNamespaceName -EventHubName MyEventHubName
 ```
 
-```output
-Id                           : /subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.EventHub/namespaces/myNamespace/eventhubs/myEventHub/authorizationRules
-                               /myAuthRule
-Location                     : Central US
-Name                         : myAuthRule
-ResourceGroupName            : myResourceGroup
-Rights                       : {Listen, Manage, Send}
+Gets a list of all authorization rules in the namespace \`MyNamespaceName\`.
+
+### Example 3: AuthorizationRule for EventHub
+```powershell
+Get-AzEventHubAuthorizationRule -ResourceGroupName MyResourceGroupName -NamespaceName MyNamespaceName -EventHubName MyEventHubName -Name MyAuthRuleName
 ```
 
-Gets details of authorization rule `myAuthRule` of EventHub entity `myEventHub` from namespace `myNamespace`.
+Gets the authorization rule \`MyAuthRuleName\` in the Event Hub \`MyEventHubName\`, which is scoped by the namespace \`MyNamespaceName\`.
+
+### Example 4: AuthorizationRules for EventHub
+```powershell
+Get-AzEventHubAuthorizationRule -ResourceGroupName MyResourceGroupName -NamespaceName MyNamespaceName -EventHubName MyEventHubName
+```
+
+Gets list authorization rules in the Event Hub \`MyEventHubName\`, which is scoped by the namespace \`MyNamespaceName\`.
+
+### Example 5: AuthorizationRule for Alias (GeoRecovery Configuration)
+```powershell
+Get-AzEventHubAuthorizationRule -ResourceGroupName MyResourceGroupName -NamespaceName MyNamespaceName -AliasName MyAliasNameName -Name MyAuthRuleName
+```
+
+Gets the authorization rule \`MyAuthRuleName\` in the namespace \`MyNamespaceName\`.
+
+### Example 6: AuthorizationRules for Alias (GeoRecovery Configuration)
+```powershell
+Get-AzEventHubAuthorizationRule -ResourceGroupName MyResourceGroupName -NamespaceName MyNamespaceName -AliasName MyAliasNameName
+```
+
+Gets a list of all authorization rule \`MyAuthRuleName\` in the namespace \`MyNamespaceName\`.
 
 ## PARAMETERS
 
 ### -AliasName
-The name of the Disaster Recovery alias
+Alias Name
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpandedAlias
+Parameter Sets: AliasAuthoRuleSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -96,9 +103,9 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -107,131 +114,77 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EventHubName
-The name of the EventHub entity.
+### -Eventhub
+Eventhub Name
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpandedEntity
-Aliases:
+Parameter Sets: EventhubAuthorizationRuleSet
+Aliases: EventHubName
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InputObject
-Identity parameter.
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.IEventHubIdentity
-Parameter Sets: GetViaIdentityExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Name
-The name of the Authorization Rule
+AuthorizationRule Name
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpandedNamespace, GetExpandedEntity, GetExpandedAlias
+Parameter Sets: (All)
 Aliases: AuthorizationRuleName
 
 Required: False
-Position: Named
+Position: 3
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NamespaceName
-The name of EventHub namespace
+### -Namespace
+Namespace Name
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpandedNamespace, GetExpandedEntity, GetExpandedAlias
-Aliases:
+Parameter Sets: (All)
+Aliases: NamespaceName
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The name of the resource group.
-The name is case insensitive.
+Resource Group Name
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpandedNamespace, GetExpandedEntity, GetExpandedAlias
+Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubscriptionId
-The ID of the target subscription.
-
-```yaml
-Type: System.String[]
-Parameter Sets: GetExpandedNamespace, GetExpandedEntity, GetExpandedAlias
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.IEventHubIdentity
+### System.String
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.Api202201Preview.IAuthorizationRule
+### Microsoft.Azure.Commands.EventHub.Models.PSSharedAccessAuthorizationRuleAttributes
 
 ## NOTES
-
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IEventHubIdentity>`: Identity parameter.
-  - `[Alias <String>]`: The Disaster Recovery configuration name
-  - `[ApplicationGroupName <String>]`: The Application Group name 
-  - `[AuthorizationRuleName <String>]`: The authorization rule name.
-  - `[ClusterName <String>]`: The name of the Event Hubs Cluster.
-  - `[ConsumerGroupName <String>]`: The consumer group name
-  - `[EventHubName <String>]`: The Event Hub name
-  - `[Id <String>]`: Resource identity path
-  - `[NamespaceName <String>]`: The Namespace name
-  - `[PrivateEndpointConnectionName <String>]`: The PrivateEndpointConnection name
-  - `[ResourceAssociationName <String>]`: The ResourceAssociation Name
-  - `[ResourceGroupName <String>]`: Name of the resource group within the azure subscription.
-  - `[SchemaGroupName <String>]`: The Schema Group name 
-  - `[SubscriptionId <String>]`: Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 
 ## RELATED LINKS

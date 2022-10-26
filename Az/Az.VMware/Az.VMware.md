@@ -10,7 +10,7 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 
 # Az.VMware Module
 ## Description
-Microsoft Azure PowerShell: Azure VMware Solution cmdlets
+Microsoft Azure PowerShell: VMware cmdlets
 
 ## Az.VMware Cmdlets
 ### [Get-AzVMwareAddon](Get-AzVMwareAddon.md)
@@ -24,9 +24,6 @@ Get an cloud link by name in a private cloud
 
 ### [Get-AzVMwareCluster](Get-AzVMwareCluster.md)
 Get a cluster by name in a private cloud
-
-### [Get-AzVMwareDatastore](Get-AzVMwareDatastore.md)
-Get a datastore in a private cloud cluster
 
 ### [Get-AzVMwareGlobalReachConnection](Get-AzVMwareGlobalReachConnection.md)
 Get a global reach connection by name in a private cloud
@@ -60,9 +57,6 @@ Create or update a cloud link in a private cloud
 
 ### [New-AzVMwareCluster](New-AzVMwareCluster.md)
 Create or update a cluster in a private cloud
-
-### [New-AzVMwareDatastore](New-AzVMwareDatastore.md)
-Create or update a datastore in a private cloud cluster
 
 ### [New-AzVMwareGlobalReachConnection](New-AzVMwareGlobalReachConnection.md)
 Create or update a global reach connection in a private cloud
@@ -105,9 +99,6 @@ Delete a cloud link in a private cloud
 
 ### [Remove-AzVMwareCluster](Remove-AzVMwareCluster.md)
 Delete a cluster in a private cloud
-
-### [Remove-AzVMwareDatastore](Remove-AzVMwareDatastore.md)
-Delete a datastore in a private cloud cluster
 
 ### [Remove-AzVMwareGlobalReachConnection](Remove-AzVMwareGlobalReachConnection.md)
 Delete a global reach connection in a private cloud

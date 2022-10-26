@@ -1,6 +1,7 @@
 ---
-external help file: Az.ActivityLogAlert.psm1-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Monitor.dll-Help.xml
 Module Name: Az.Monitor
+ms.assetid: 85492E00-3776-4F20-A444-9C28CC6154B7
 online version: https://docs.microsoft.com/powershell/module/az.monitor/get-azactivitylogalert
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Monitor/Monitor/help/Get-AzActivityLogAlert.md
@@ -10,135 +11,105 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Get-AzActivityLogAlert
 
 ## SYNOPSIS
-Get an Activity Log Alert rule.
+Gets one or more activity log alert resources.
 
 ## SYNTAX
 
-### List (Default)
+### GetByNameAndResourceGroup
 ```
-Get-AzActivityLogAlert [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-AzActivityLogAlert -Name <String> -ResourceGroupName <String> [-SubscriptionId <String[]>]
- [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzActivityLogAlert [-ResourceGroupName] <String> [-Name] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### List1
+### GetByResourceGroup
 ```
-Get-AzActivityLogAlert -ResourceGroupName <String> [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>]
- [<CommonParameters>]
-```
-
-### GetViaIdentity
-```
-Get-AzActivityLogAlert -InputObject <IActivityLogAlertIdentity> [-DefaultProfile <PSObject>]
+Get-AzActivityLogAlert [[-ResourceGroupName] <String>] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get an Activity Log Alert rule.
+The **Get-AzActivityLogAlert** cmdlet gets one or more activity log alert resources.
 
 ## EXAMPLES
 
-### Example 1: List activity log alerts under current subscription
+### Example 1: Get a activity log alerts by subscription ID
 ```powershell
 Get-AzActivityLogAlert
 ```
 
-List activity log alerts under current subscription
+This command lists all the activity log alerts for the current subscription.
 
-### Example 2: List activity log alerts under resource group
+### Example 2: Get activity log alerts for the given resource group
 ```powershell
-Get-AzActivityLogAlert -ResourceGroupName $rg-name
+Get-AzActivityLogAlert -ResourceGroupName "Default-activityLogAlerts"
 ```
 
-List activity log alerts under resource group
+This command lists activity log alerts for the given resource group.
 
-### Example 3: Get activity log alert by name
+### Example 3: Get an activity log alert.
 ```powershell
-Get-AzActivityLogAlert -ResourceGroupName $rg-name -Name $alert-name
+Get-AzActivityLogAlert -ResourceGroupName "Default-activityLogAlerts" -Name "alert1"
 ```
 
-Get activity log alert by name
+This command lists one (a list with a single element) activity log alert.
 
 ## PARAMETERS
 
 ### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.
+The credentials, account, tenant, and subscription used for communication with azure
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Monitor.ActivityLogAlert.Models.IActivityLogAlertIdentity
-Parameter Sets: GetViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -Name
-The name of the Activity Log Alert rule.
+The name of the activity log alert.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
-Aliases: ActivityLogAlertName
+Parameter Sets: GetByNameAndResourceGroup
+Aliases:
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The name of the resource group.
-The name is case insensitive.
+The name of the resource group where the alert resource exists.
+If Name is not null or empty, this parameter must contain and non empty string.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List1
+Parameter Sets: GetByNameAndResourceGroup
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-The ID of the target subscription.
-
 ```yaml
-Type: System.String[]
-Parameter Sets: List, Get, List1
+Type: System.String
+Parameter Sets: GetByResourceGroup
 Aliases:
 
 Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -147,25 +118,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Monitor.ActivityLogAlert.Models.IActivityLogAlertIdentity
+### System.String
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Monitor.ActivityLogAlert.Models.Api20201001.IActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
 ## NOTES
 
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IActivityLogAlertIdentity>`: Identity Parameter
-  - `[ActivityLogAlertName <String>]`: The name of the Activity Log Alert rule.
-  - `[Id <String>]`: Resource identity path
-  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
-  - `[SubscriptionId <String>]`: The ID of the target subscription.
-
 ## RELATED LINKS
+
+[Set-AzActivityLogAlert](./Set-AzActivityLogAlert.md)
+
+[Remove-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
+
+[New-AzActionGroup](./New-AzActionGroup.md)
+
+[New-AzActivityLogAlertCondition](./New-AzActivityLogAlertCondition.md)

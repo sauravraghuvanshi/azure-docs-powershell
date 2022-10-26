@@ -174,7 +174,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Databricks.Models.Api20220401Preview.IWorkspace
+### Microsoft.Azure.PowerShell.Cmdlets.Databricks.Models.Api20210401Preview.IWorkspace
 
 ## NOTES
 
@@ -185,8 +185,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`INPUTOBJECT <IDatabricksIdentity>`: Identity Parameter
-  - `[ConnectorName <String>]`: The name of the azure databricks accessConnector.
+INPUTOBJECT `<IDatabricksIdentity>`: Identity Parameter
   - `[GroupId <String>]`: The name of the private link resource
   - `[Id <String>]`: Resource identity path
   - `[PeeringName <String>]`: The name of the workspace vNet peering.

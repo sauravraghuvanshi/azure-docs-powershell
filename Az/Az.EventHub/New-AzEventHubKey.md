@@ -1,5 +1,5 @@
 ---
-external help file: Az.EventHub-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.EventHub.dll-Help.xml
 Module Name: Az.EventHub
 online version: https://docs.microsoft.com/powershell/module/az.eventhub/new-azeventhubkey
 schema: 2.0.0
@@ -10,83 +10,64 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # New-AzEventHubKey
 
 ## SYNOPSIS
-Regenerates an EventHub SAS key
+Creates a new primary or secondary key for the specified Event Hubs authorization rule.
 
 ## SYNTAX
 
-### NewExpandedNamespace (Default)
+### NamespaceAuthorizationRuleSet (Default)
 ```
-New-AzEventHubKey -Name <String> -NamespaceName <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- [-KeyType <KeyType>] [-KeyValue <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+New-AzEventHubKey [-ResourceGroupName] <String> [-Namespace] <String> [-Name] <String>
+ [-RegenerateKey] <String> [[-KeyValue] <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
-### NewExpandedEntity
+### EventhubAuthorizationRuleSet
 ```
-New-AzEventHubKey -Name <String> -NamespaceName <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- -EventHubName <String> [-KeyType <KeyType>] [-KeyValue <String>] [-DefaultProfile <PSObject>] [-AsJob]
- [-NoWait] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzEventHubKey [-ResourceGroupName] <String> [-Namespace] <String> [-EventHub] <String> [-Name] <String>
+ [-RegenerateKey] <String> [[-KeyValue] <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Regenerates an EventHub SAS key
+The New-AzEventHubKey cmdlet regenerates the primary or secondary SAS key for the specified Event Hubs authorization rule.
 
 ## EXAMPLES
 
-### Example 1: Regenerate Primary Key of an EventHub Namespace
+### Example 1: Namespace - AuthorizationRule PrimaryKey
 ```powershell
-New-AzEventHubKey -ResourceGroupName myResourceGroup -NamespaceName myNamespace -Name rootmanagesharedaccesskey -KeyType PrimaryKey
+New-AzEventHubKey -ResourceGroup MyResourceGroupName -Namespace MyNamespaceName -Name MyAuthRuleName -RegenerateKey PrimaryKey
 ```
 
-```output
-KeyName                        : RootManageSharedAccessKey
-PrimaryConnectionString        : {primaryConnectionString}
-PrimaryKey                     : {primaryKey}
-SecondaryConnectionString      : {secondaryConnectionString}
-SecondaryKey                   : {secondaryKey}
-```
+Regenerates the primary key for the authorization rule \`MyAuthRuleName\`.
 
-Regenerate primary key of authorization rule `rootmanagesharedaccesskey` on EventHub Namespace `myNamespace`.
-
-### Example 2: Regenerate Secondary Key of an EventHub Entity
+### Example 2: EventHub - AuthorizationRule PrimaryKey
 ```powershell
-New-AzEventHubKey -ResourceGroupName myResourceGroup -NamespaceName myNamespace -EventHubName myEventHub -Name rootmanagesharedaccesskey -KeyType SecondaryKey
+New-AzEventHubKey -ResourceGroup MyResourceGroupName -Namespace MyNamespaceName -EventHub MyEventHubName -Name MyAuthRuleName -RegenerateKey PrimaryKey
 ```
 
-```output
-KeyName                        : RootManageSharedAccessKey
-PrimaryConnectionString        : {primaryConnectionString}
-PrimaryKey                     : {primaryKey}
-SecondaryConnectionString      : {secondaryConnectionString}
-SecondaryKey                   : {secondaryKey}
+Regenerates the primary key for the authorization rule \`MyAuthRuleName\`.
+
+### Example 3: - Namespace - AuthorizationRule SecondaryKey
+```powershell
+New-AzEventHubKey -ResourceGroup MyResourceGroupName -Namespace MyNamespaceName -Name MyAuthRuleName -RegenerateKey SecondaryKey
 ```
 
-Regenerate secondary key of authorization rule `rootmanagesharedaccesskey` on EventHub entity `myEventHub` on EventHub Namespace `myNamespace`.
+### Example 4: EventHub - AuthorizationRule SecondaryKey
+```powershell
+New-AzEventHubKey -ResourceGroup MyResourceGroupName -Namespace MyNamespaceName -EventHub MyEventHubName -Name MyAuthRuleName -RegenerateKey SecondaryKey
+```
+
+Regenerates the secondary key for the authorization rule \`MyAuthRuleName\`.
 
 ## PARAMETERS
-
-### -AsJob
-Run the command as a job
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -95,38 +76,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EventHubName
-The name of the EventHub entity.
+### -EventHub
+EventHub Name
 
 ```yaml
 Type: System.String
-Parameter Sets: NewExpandedEntity
-Aliases:
+Parameter Sets: EventhubAuthorizationRuleSet
+Aliases: EventHubName
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -KeyType
-The access key to regenerate.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.EventHub.Support.KeyType
-Parameter Sets: (All)
-Aliases: RegenerateKey
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -KeyValue
-Optional, if the key value provided, is set for KeyType or autogenerated Key value set for keyType
+A base64-encoded 256-bit key for signing and validating the SAS token.
 
 ```yaml
 Type: System.String
@@ -134,14 +100,14 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Name
-The name of the Authorization Rule
+AuthorizationRule Name
 
 ```yaml
 Type: System.String
@@ -149,70 +115,55 @@ Parameter Sets: (All)
 Aliases: AuthorizationRuleName
 
 Required: True
-Position: Named
+Position: 3
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NamespaceName
-The name of EventHub namespace
+### -Namespace
+Namespace Name
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: NamespaceName
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -RegenerateKey
+Regenerate Keys - 'PrimaryKey'/'SecondaryKey'
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
 Aliases:
+Accepted values: PrimaryKey, SecondaryKey
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NoWait
-Run the command asynchronously
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The name of the resource group.
-The name is case insensitive.
+Resource Group Name
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: ResourceGroup
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubscriptionId
-The ID of the target subscription.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -248,16 +199,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
+### System.String
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.Api202201Preview.IAccessKeys
+### Microsoft.Azure.Commands.EventHub.Models.PSListKeysAttributes
 
 ## NOTES
-
-ALIASES
 
 ## RELATED LINKS

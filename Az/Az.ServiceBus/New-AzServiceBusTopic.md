@@ -1,5 +1,5 @@
 ---
-external help file: Az.ServiceBus-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.dll-Help.xml
 Module Name: Az.ServiceBus
 online version: https://docs.microsoft.com/powershell/module/az.servicebus/new-azservicebustopic
 schema: 2.0.0
@@ -10,99 +10,101 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # New-AzServiceBusTopic
 
 ## SYNOPSIS
-Creates a topic in the specified namespace.
+Creates a new Service Bus topic in  the specified Service Bus namespace.
 
 ## SYNTAX
 
 ```
-New-AzServiceBusTopic -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] [-AutoDeleteOnIdle <TimeSpan>] [-DefaultMessageTimeToLive <TimeSpan>]
- [-DuplicateDetectionHistoryTimeWindow <TimeSpan>] [-EnableBatchedOperations] [-EnableExpress]
- [-EnablePartitioning] [-MaxMessageSizeInKilobytes <Int64>] [-MaxSizeInMegabytes <Int32>]
- [-RequiresDuplicateDetection] [-Status <EntityStatus>] [-SupportOrdering] [-DefaultProfile <PSObject>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+New-AzServiceBusTopic [-ResourceGroupName] <String> [-Namespace] <String> [-Name] <String>
+ -EnablePartitioning <Boolean> [-AutoDeleteOnIdle <String>] [-DefaultMessageTimeToLive <String>]
+ [-DuplicateDetectionHistoryTimeWindow <String>] [-EnableBatchedOperations <Boolean>]
+ [-EnableExpress <Boolean>] [-MaxSizeInMegabytes <Int64>] [-RequiresDuplicateDetection <Boolean>]
+ [-SupportOrdering <Boolean>] [-SizeInBytes <Int64>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Creates a topic in the specified namespace.
+The **New-AzServiceBusTopic** cmdlet creates a new Service Bus topic in the specified Service Bus namespace.
 
 ## EXAMPLES
 
-### Example 1: Creates a new ServiceBus topic
+### Example 1
 ```powershell
-New-AzServiceBusTopic -ResourceGroupName myResourceGroup -NamespaceName myNamespace -Name myTopic -DefaultMessageTimeToLive (New-TimeSpan -Days 18) -EnableBatchedOperations
+New-AzServiceBusTopic -ResourceGroup Default-ServiceBus-WestUS -NamespaceName SB-Example1 -TopicName SB-Topic_exampl1 -EnablePartitioning $True
 ```
 
 ```output
-AccessedAt                                : 1/1/0001 12:00:00 AM
-AutoDeleteOnIdle                          : 10675199.02:48:05.4775807
-CountDetailActiveMessageCount             : 0
-CountDetailDeadLetterMessageCount         : 0
-CountDetailScheduledMessageCount          : 0
-CountDetailTransferDeadLetterMessageCount : 0
-CountDetailTransferMessageCount           : 0
-CreatedAt                                 : 1/1/0001 12:00:00 AM
-DefaultMessageTimeToLive                  : 18.00:00:00
-DuplicateDetectionHistoryTimeWindow       : 00:10:00
-EnableBatchedOperations                   : True
-EnableExpress                             : False
-EnablePartitioning                        : False
-Id                                        : /subscriptions/000000000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ServiceBus/namespaces/myNamespace/topics/myTopic
-Location                                  : westus
-MaxMessageSizeInKilobytes                 : 1024
-MaxSizeInMegabytes                        : 1024
-Name                                      : myTopic
-RequiresDuplicateDetection                : False
-ResourceGroupName                         : myResourceGroup
-SizeInByte                                : 0
-Status                                    : Active
-SubscriptionCount                         : 0
-SupportOrdering                           : True
+Name                                : SB-Topic_example1
+Id                                  : /subscriptions/{subscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.ServiceBus/namespaces/SB-Example1/topics/SB-Topic_example1
+Type                                : Microsoft.ServiceBus/Namespaces/Topics
+AccessedAt                          : 1/1/0001 12:00:00 AM
+AutoDeleteOnIdle                    : P10675199DT2H48M5.4775807S
+CreatedAt                           : 10/11/2018 11:51:24 PM
+CountDetails                        : Microsoft.Azure.Management.ServiceBus.Models.MessageCountDetails
+DefaultMessageTimeToLive            : P10675199DT2H48M5.4775807S
+DuplicateDetectionHistoryTimeWindow : PT10M
+EnableBatchedOperations             : True
+EnableExpress                       : False
+EnablePartitioning                  : False
+MaxSizeInMegabytes                  : 81920
+RequiresDuplicateDetection          : False
+SizeInBytes                         : 0
+Status                              : Active
+SubscriptionCount                   : 0
+SupportOrdering                     : True
+UpdatedAt                           : 10/11/2018 11:51:24 PM
 ```
 
-Creates a new ServiceBus topic `myTopic` within namespace `myNamespace`.
+Creates a new Service Bus topic `SB-Topic_exampl1` in the specified Service Bus namespace `SB-Example1`.
+
+### Example 2
+
+Creates a new Service Bus topic in  the specified Service Bus namespace. (autogenerated)
+
+<!-- Aladdin Generated Example -->
+```powershell
+New-AzServiceBusTopic -EnablePartitioning $true -MaxSizeInMegabytes <Int64> -Name SB-Topic_exampl1 -Namespace SB-Example1 -ResourceGroupName Default-ServiceBus-WestUS
+```
 
 ## PARAMETERS
 
 ### -AutoDeleteOnIdle
-Idle interval after which the queue is automatically deleted.
-The minimum duration is 5 minutes.
+Specifies the [TimeSpan](https://msdn.microsoft.com/library/system.timespan.aspx) idle interval after which the topic is automatically deleted. The minimum duration is 5 minutes.
 
 ```yaml
-Type: System.TimeSpan
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -DefaultMessageTimeToLive
-This is the duration after which the message expires, starting from when the message is sent to Service Bus.
-This is the default value used when TimeToLive is not set on a message itself.
+Specifies the duration after which the message expires, starting from when the message is sent to Service Bus.
 
 ```yaml
-Type: System.TimeSpan
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-The credentials, account, tenant, and subscription used for communication with Azure.
+The credentials, account, tenant, and subscription used for communication with azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -112,101 +114,85 @@ Accept wildcard characters: False
 ```
 
 ### -DuplicateDetectionHistoryTimeWindow
-Defines the duration of the duplicate detection history.
-The default value is 10 minutes.
+Specifies the [TimeSpan](https://msdn.microsoft.com/library/system.timespan.aspx) structure that defines the duration of the duplicate detection history. The default value is 10 minutes.
 
 ```yaml
-Type: System.TimeSpan
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -EnableBatchedOperations
-Value that indicates whether server-side batched operations are enabled.
+Indicates whether server-side batched operations are enabled.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.Nullable`1[System.Boolean]
 Parameter Sets: (All)
 Aliases:
+Accepted values: TRUE, FALSE
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -EnableExpress
-Value that indicates whether Express Entities are enabled.
-An express topic holds a message in memory temporarily before writing it to persistent storage.
+Indicates whether Express Entities are enabled. An express queue holds a message in memory temporarily before writing it to persistent storage.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.Nullable`1[System.Boolean]
 Parameter Sets: (All)
 Aliases:
+Accepted values: TRUE, FALSE
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -EnablePartitioning
-Value that indicates whether the topic to be partitioned across multiple message brokers is enabled.
+Specifies whether to enable the topic to be partitioned across multiple message brokers.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.Nullable`1[System.Boolean]
 Parameter Sets: (All)
 Aliases:
+Accepted values: TRUE, FALSE
 
-Required: False
+Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MaxMessageSizeInKilobytes
-Maximum size (in KB) of the message payload that can be accepted by the topic.
-This property is only used in Premium today and default is 1024.
-
-```yaml
-Type: System.Int64
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -MaxSizeInMegabytes
-Maximum size of the topic in megabytes, which is the size of the memory allocated for the topic.
-Default is 1024.
+The maximum size of the topic in megabytes, which is the size of memory allocated for the topic.
 
 ```yaml
-Type: System.Int32
+Type: System.Nullable`1[System.Int64]
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Name
-The topic name.
+Topic Name.
 
 ```yaml
 Type: System.String
@@ -214,100 +200,86 @@ Parameter Sets: (All)
 Aliases: TopicName
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NamespaceName
-The namespace name
+### -Namespace
+Namespace Name.
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: NamespaceName
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -RequiresDuplicateDetection
-Value indicating if this topic requires duplicate detection.
+Indicates whether the topic requires duplication detection.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.Nullable`1[System.Boolean]
 Parameter Sets: (All)
 Aliases:
+Accepted values: TRUE, FALSE
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Name of the Resource group within the Azure subscription.
+The name of the resource group
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: ResourceGroup
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Status
-Enumerates the possible values for the status of a messaging entity.
+### -SizeInBytes
+Specifies the size of the topic in bytes.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Support.EntityStatus
+Type: System.Nullable`1[System.Int64]
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubscriptionId
-Subscription credentials that uniquely identify a Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -SupportOrdering
-Value that indicates whether the topic supports ordering.
+Indicates whether the topic supports ordering.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.Nullable`1[System.Boolean]
 Parameter Sets: (All)
 Aliases:
+Accepted values: TRUE, FALSE
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -343,16 +315,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
+### System.String
+
+### System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
+
+### System.Nullable`1[[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.Api202201Preview.ISbTopic
+### Microsoft.Azure.Commands.ServiceBus.Models.PSTopicAttributes
 
 ## NOTES
-
-ALIASES
 
 ## RELATED LINKS

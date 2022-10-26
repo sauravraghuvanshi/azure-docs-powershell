@@ -38,7 +38,6 @@ Get-AzAutomationDscNodeConfigurationDeploymentSchedule `
             -AutomationAccountName "Contoso01"  `
             -ResourceGroupName "ResourceGroup01"
 ```
-
 ```output
 ResourceGroupName     : ResourceGroup01
 AutomationAccountName : Contoso01
@@ -55,8 +54,6 @@ RunbookName           : Deploy-NodeConfigurationToAutomationDscNodesV1
 
 ### Example 2: Get a deployment schedule
 <!-- Skip: Output cannot be splitted from code -->
-
-
 ```powershell
 $js = Get-AzAutomationDscNodeConfigurationDeploymentSchedule `
                  -AutomationAccountName "Contoso01" `
@@ -147,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -1,5 +1,5 @@
 ---
-external help file: Az.DiagnosticSetting.psm1-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Monitor.dll-Help.xml
 Module Name: Az.Monitor
 online version: https://docs.microsoft.com/powershell/module/az.monitor/new-azdiagnosticsetting
 schema: 2.0.0
@@ -10,56 +10,98 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # New-AzDiagnosticSetting
 
 ## SYNOPSIS
-Creates or updates diagnostic settings for the specified resource.
+Create PSServiceDiagnosticSettings object.
 
 ## SYNTAX
 
+### ResourceIdParameterSet (Default)
 ```
-New-AzDiagnosticSetting -Name <String> -ResourceId <String> [-EventHubAuthorizationRuleId <String>]
- [-EventHubName <String>] [-Log <ILogSettings[]>] [-LogAnalyticsDestinationType <String>]
- [-MarketplacePartnerId <String>] [-Metric <IMetricSettings[]>] [-ServiceBusRuleId <String>]
- [-StorageAccountId <String>] [-WorkspaceId <String>] [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+New-AzDiagnosticSetting -Name <String> [-StorageAccountId <String>] [-ServiceBusRuleId <String>]
+ [-EventHubName <String>] [-EventHubAuthorizationRuleId <String>] [-WorkspaceId <String>]
+ [-DedicatedLogAnalyticsDestinationType] [-Setting <PSDiagnosticDetailSettings[]>] [-ResourceId] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### SubscriptionIdParameterSet
+```
+New-AzDiagnosticSetting -Name <String> [-StorageAccountId <String>] [-ServiceBusRuleId <String>]
+ [-EventHubName <String>] [-EventHubAuthorizationRuleId <String>] [-WorkspaceId <String>]
+ [-Setting <PSDiagnosticDetailSettings[]>] [-SubscriptionId] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Creates or updates diagnostic settings for the specified resource.
+Create PSServiceDiagnosticSettings object.
+This can be used as parameter `-InputObject`
+for
+`Set-AzDiagnosticSetting`
 
 ## EXAMPLES
 
-### Example 1: Create diagnostic setting
+### Example 1
+<!-- Skip: Output cannot be splitted from code -->
 ```powershell
-$subscriptionId = (Get-AzContext).SubscriptionId
-$metric = @()
-$log = @()
-$metric += New-AzDiagnosticSettingMetricSettingsObject -Enabled $true -Category AllMetrics -RetentionPolicyDay 7 -RetentionPolicyEnabled $true
-$log += New-AzDiagnosticSettingLogSettingsObject -Enabled $true -Category ContainerEventLogs -RetentionPolicyDay 7 -RetentionPolicyEnabled $true
-New-AzDiagnosticSetting -Name test-setting -ResourceId /subscriptions/$subscriptionId/resourceGroups/test-rg-name/providers/Microsoft.AppPlatform/Spring/springcloud-001 -WorkspaceId /subscriptions/$subscriptionId/resourcegroups/test-rg-name/providers/microsoft.operationalinsights/workspaces/test-workspace -Log $log -Metric $metric
+$metric = New-AzDiagnosticDetailSetting -Metric -RetentionInDays 1 -RetentionEnabled -Category AllMetrics
+$log = New-AzDiagnosticDetailSetting -Log -RetentionInDays 1 -RetentionEnabled -Category Audit -Enabled
+$setting = New-AzDiagnosticSetting -TargetResourceId /subscriptions/XXXXXXXXXXXX/resourceGroups/XXXXXXXX/providers/Microsoft.Network/virtualNetworks/XXXXXXXX -Name diagnostic-test -WorkspaceId /subscriptions/XXXXXXXXXXXX/resourceGroups/XXXXXXXX/providers/Microsoft.OperationalInsights/workspaces/XXXXXXXXX -DedicatedLogAnalyticsDestinationType -Setting $log,$metric
+Location                    :
+Tags                        :
+Id                          : /subscriptions/XXXXXXXXXXXX/resourceGroups/XXXXXXXX/providers/Microsoft.Network/virtualNetworks/XXXXXXXX/diagnosticSettings/diagnostic-test
+Name                        : diagnostic-test
+StorageAccountId            :
+ServiceBusRuleId            :
+EventHubAuthorizationRuleId :
+EventHubName                :
+Metrics
+    TimeGrain       :
+    Category        : AllMetrics
+    Enabled         : False
+    RetentionPolicy
+    Enabled : True
+    Days    : 1
+
+
+Logs
+    Category        : Audit
+    Enabled         : True
+    RetentionPolicy
+    Enabled : True
+    Days    : 1
+
+
+WorkspaceId                 : /subscriptions/XXXXXXXXXXXX/resourceGroups/XXXXXXXX/providers/Microsoft.OperationalInsights/workspaces/XXXXXXXXX
+LogAnalyticsDestinationType : Dedicated
+Type                        :
+
+Set-AzDiagnosticSetting -InputObject $setting
 ```
 
-Create diagnostic setting for resource with log analytics workspace as destination
-
-### Example 2: Create diagnostic setting for all supported categories
-```powershell
-$subscriptionId = (Get-AzContext).SubscriptionId
-$metric = @()
-$log = @()
-$categories = Get-AzDiagnosticSettingCategory -ResourceId /subscriptions/$subscriptionId/resourceGroups/test-rg-name/providers/Microsoft.AppPlatform/Spring/springcloud-001
-$categories | ForEach-Object {if($_.CategoryType -eq "Metrics"){$metrics+=New-AzDiagnosticSettingMetricSettingsObject -Enabled $true -Category $_.Name -RetentionPolicyDay 7 -RetentionPolicyEnabled $true} else{$logs+=New-AzDiagnosticSettingLogSettingsObject -Enabled $true -Category $_.Name -RetentionPolicyDay 7 -RetentionPolicyEnabled $true}}
-New-AzDiagnosticSetting -Name test-setting -ResourceId /subscriptions/$subscriptionId/resourceGroups/test-rg-name/providers/Microsoft.AppPlatform/Spring/springcloud-001 -WorkspaceId /subscriptions/$subscriptionId/resourcegroups/test-rg-name/providers/microsoft.operationalinsights/workspaces/test-workspace -Log $log -Metric $metric
-```
-
-Create diagnostic setting for all supported categories
+Create PSServiceDiagnosticSettings object. And create diagnostic setting for target resource.
 
 ## PARAMETERS
+
+### -DedicatedLogAnalyticsDestinationType
+The value indicating whether to export (to ODS) to resource-specific (if present) or to AzureDiagnostics (default, not present)
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ResourceIdParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
 
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -69,7 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -EventHubAuthorizationRuleId
-The resource Id for the event hub authorization rule.
+The event hub rule id
 
 ```yaml
 Type: System.String
@@ -79,13 +121,12 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -EventHubName
-The name of the event hub.
-If none is specified, the default event hub will be selected.
+The service bus rule id
 
 ```yaml
 Type: System.String
@@ -95,76 +136,13 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Log
-The list of logs settings.
-To construct, see NOTES section for LOG properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Monitor.DiagnosticSetting.Models.Api20210501Preview.ILogSettings[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LogAnalyticsDestinationType
-A string indicating whether the export to Log Analytics should use the default destination type, i.e.
-AzureDiagnostics, or use a destination type constructed as follows: \<normalized service identity\>_\<normalized category name\>.
-Possible values are: Dedicated and null (null is default.)
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MarketplacePartnerId
-The full ARM resource ID of the Marketplace resource to which you would like to send Diagnostic Logs.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Metric
-The list of metric settings.
-To construct, see NOTES section for METRIC properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Monitor.DiagnosticSetting.Models.Api20210501Preview.IMetricSettings[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Name
 The name of the diagnostic setting.
+Defaults to 'service'
 
 ```yaml
 Type: System.String
@@ -174,28 +152,27 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceId
-The identifier of the resource.
+The resource id
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
-Aliases:
+Parameter Sets: ResourceIdParameterSet
+Aliases: TargetResourceId
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ServiceBusRuleId
-The service bus rule Id of the diagnostic setting.
-This is here to maintain backwards compatibility.
+The service bus rule id
 
 ```yaml
 Type: System.String
@@ -205,12 +182,27 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Setting
+Metric settings or Log settings
+
+```yaml
+Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSDiagnosticDetailSettings[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -StorageAccountId
-The resource ID of the storage account to which you would like to send Diagnostic Logs.
+The storage account id
 
 ```yaml
 Type: System.String
@@ -220,13 +212,27 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -SubscriptionId
+The subscription id
+
+```yaml
+Type: System.String
+Parameter Sets: SubscriptionIdParameterSet
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -WorkspaceId
-The full ARM resource ID of the Log Analytics workspace to which you would like to send Diagnostic Logs.
-Example: /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2
+The resource Id of the Log Analytics workspace to send logs/metrics to
 
 ```yaml
 Type: System.String
@@ -236,38 +242,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -276,31 +251,16 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### System.String
+
+### System.Management.Automation.SwitchParameter
+
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSDiagnosticDetailSettings[]
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Monitor.DiagnosticSetting.Models.Api20210501Preview.IDiagnosticSettingsResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings
 
 ## NOTES
-
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`LOG <ILogSettings[]>`: The list of logs settings.
-  - `Enabled <Boolean>`: a value indicating whether this log is enabled.
-  - `[Category <String>]`: Name of a Diagnostic Log category for a resource type this setting is applied to. To obtain the list of Diagnostic Log categories for a resource, first perform a GET diagnostic settings operation.
-  - `[CategoryGroup <String>]`: Name of a Diagnostic Log category group for a resource type this setting is applied to. To obtain the list of Diagnostic Log categories for a resource, first perform a GET diagnostic settings operation.
-  - `[RetentionPolicyDay <Int32?>]`: the number of days for the retention in days. A value of 0 will retain the events indefinitely.
-  - `[RetentionPolicyEnabled <Boolean?>]`: a value indicating whether the retention policy is enabled.
-
-`METRIC <IMetricSettings[]>`: The list of metric settings.
-  - `Enabled <Boolean>`: a value indicating whether this category is enabled.
-  - `[Category <String>]`: Name of a Diagnostic Metric category for a resource type this setting is applied to. To obtain the list of Diagnostic metric categories for a resource, first perform a GET diagnostic settings operation.
-  - `[RetentionPolicyDay <Int32?>]`: the number of days for the retention in days. A value of 0 will retain the events indefinitely.
-  - `[RetentionPolicyEnabled <Boolean?>]`: a value indicating whether the retention policy is enabled.
-  - `[TimeGrain <TimeSpan?>]`: the timegrain of the metric in ISO8601 format.
 
 ## RELATED LINKS

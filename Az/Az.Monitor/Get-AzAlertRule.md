@@ -15,7 +15,7 @@ Gets classic alert rules.
 
 ## SYNTAX
 
-### GetByResourceGroup (Default)
+### GetByResourceGroup
 ```
 Get-AzAlertRule -ResourceGroupName <String> [-DetailedOutput] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]

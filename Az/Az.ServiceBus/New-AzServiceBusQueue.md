@@ -1,5 +1,5 @@
 ---
-external help file: Az.ServiceBus-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.dll-Help.xml
 Module Name: Az.ServiceBus
 online version: https://docs.microsoft.com/powershell/module/az.servicebus/new-azservicebusqueue
 schema: 2.0.0
@@ -10,113 +10,116 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # New-AzServiceBusQueue
 
 ## SYNOPSIS
-Creates or updates a Service Bus queue.
-This operation is idempotent.
+Creates a Service Bus queue in the specified Service Bus namespace.
 
 ## SYNTAX
 
 ```
-New-AzServiceBusQueue -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String>] [-AutoDeleteOnIdle <TimeSpan>] [-DeadLetteringOnMessageExpiration]
- [-DefaultMessageTimeToLive <TimeSpan>] [-DuplicateDetectionHistoryTimeWindow <TimeSpan>]
- [-EnableBatchedOperations] [-EnableExpress] [-EnablePartitioning] [-ForwardDeadLetteredMessagesTo <String>]
- [-ForwardTo <String>] [-LockDuration <TimeSpan>] [-MaxDeliveryCount <Int32>]
- [-MaxMessageSizeInKilobytes <Int64>] [-MaxSizeInMegabytes <Int32>] [-RequiresDuplicateDetection]
- [-RequiresSession] [-Status <EntityStatus>] [-DefaultProfile <PSObject>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+New-AzServiceBusQueue [-ResourceGroupName] <String> [-Namespace] <String> [-Name] <String>
+ [-EnablePartitioning <Boolean>] [-LockDuration <String>] [-AutoDeleteOnIdle <String>]
+ [-DefaultMessageTimeToLive <String>] [-DuplicateDetectionHistoryTimeWindow <String>]
+ [-DeadLetteringOnMessageExpiration <Boolean>] [-EnableBatchedOperations] [-EnableExpress <Boolean>]
+ [-MaxDeliveryCount <Int32>] [-MaxSizeInMegabytes <Int64>] [-MessageCount <Int64>]
+ [-RequiresDuplicateDetection <Boolean>] [-RequiresSession <Boolean>] [-SizeInBytes <Int64>]
+ [-ForwardTo <String>] [-ForwardDeadLetteredMessagesTo <String>] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Creates or updates a Service Bus queue.
-This operation is idempotent.
+The **New-AzServiceBusQueue** cmdlet creates a Service Bus queue in the specified Service Bus namespace.
 
 ## EXAMPLES
 
-### Example 1: Create a new ServiceBus queue
+### Example 1
 ```powershell
-New-AzServiceBusQueue -ResourceGroupName myResourceGroup -NamespaceName myNamespace -Name myQueue -AutoDeleteOnIdle (New-TimeSpan -Days 1 -Minutes 3 -Seconds 4) -DefaultMessageTimeToLive (New-TimeSpan -Days 5) -EnablePartitioning
+New-AzServiceBusQueue -ResourceGroup Default-ServiceBus-WestUS -NamespaceName SB-Example1 -QueueName SB-Queue_example1 -EnablePartitioning $True
 ```
 
 ```output
-AccessedAt                                : 1/1/0001 12:00:00 AM
-AutoDeleteOnIdle                          : 1.00:03:04
-CountDetailActiveMessageCount             : 0
-CountDetailDeadLetterMessageCount         : 0
-CountDetailScheduledMessageCount          : 0
-CountDetailTransferDeadLetterMessageCount : 0
-CountDetailTransferMessageCount           : 0
-CreatedAt                                 : 9/22/2022 12:30:45 PM
-DeadLetteringOnMessageExpiration          : False
-DefaultMessageTimeToLive                  : 5.00:00:00
-DuplicateDetectionHistoryTimeWindow       : 00:10:00
-EnableBatchedOperations                   : True
-EnableExpress                             : False
-EnablePartitioning                        : True
-ForwardDeadLetteredMessagesTo             :
-ForwardTo                                 :
-Id                                        : /subscriptions/326100e2-f69d-4268-8503-075374f62b6e/resourceGroups/myResourceGroup/providers/Microsoft.ServiceBus/namespaces/myNamespace/queues/myQueue
-Location                                  : westus
-LockDuration                              : 00:01:00
-MaxDeliveryCount                          : 10
-MaxMessageSizeInKilobytes                 : 1024
-MaxSizeInMegabytes                        : 1024
-MessageCount                              : 0
-Name                                      : myQueue
-RequiresDuplicateDetection                : False
-RequiresSession                           : False
-ResourceGroupName                         : myResourceGroup
-SizeInByte                                : 0
-Status                                    : Active
+Id                                  : /subscriptions/{subscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.ServiceBus/namespaces/SB-Example1/queues/SB-Queue_example1
+Name                                : SB-Queue_example1
+LockDuration                        : PT1M
+AccessedAt                          : 1/1/0001 12:00:00 AM
+AutoDeleteOnIdle                    : P10675199DT2H48M5.4775807S
+CreatedAt                           : 10/11/2018 12:37:11 AM
+DefaultMessageTimeToLive            : P10675199DT2H48M5.4775807S
+DuplicateDetectionHistoryTimeWindow : PT10M
+DeadLetteringOnMessageExpiration    : False
+EnableExpress                       : False
+EnablePartitioning                  : False
+MaxDeliveryCount                    : 10
+MaxSizeInMegabytes                  : 81920
+MessageCount                        : 0
+CountDetails                        : Microsoft.Azure.Management.ServiceBus.Models.MessageCountDetails
+RequiresDuplicateDetection          : False
+RequiresSession                     : False
+SizeInBytes                         : 0
+Status                              : Active
+UpdatedAt                           : 10/11/2018 12:37:12 AM
+ForwardTo                           :
+ForwardDeadLetteredMessagesTo       :
+EnableBatchedOperations             : False
 ```
 
-Creates a ServiceBus queue `myQueue` in namespace `myNamespace`.
+Creates a new Service Bus queue `SB-Queue_example1` in the specified Service Bus namespace `SB-Example1`.
+
+### Example 2
+
+Creates a Service Bus queue in the specified Service Bus namespace. (autogenerated)
+
+<!-- Aladdin Generated Example -->
+```powershell
+New-AzServiceBusQueue -EnablePartitioning $true -MaxSizeInMegabytes <Int64> -Name SB-Queue_example1 -Namespace SB-Example1 -ResourceGroupName Default-ServiceBus-WestUS
+```
 
 ## PARAMETERS
 
 ### -AutoDeleteOnIdle
-Idle interval after which the queue is automatically deleted.
-The minimum duration is 5 minutes.
+Specifies the [TimeSpan](https://msdn.microsoft.com/library/system.timespan.aspx) idle interval, after which the queue is automatically deleted. The minimum duration is 5 minutes.
 
 ```yaml
-Type: System.TimeSpan
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -DeadLetteringOnMessageExpiration
-A value that indicates whether this queue has dead letter support when a message expires.
+Dead Lettering On Message Expiration
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.Nullable`1[System.Boolean]
 Parameter Sets: (All)
 Aliases:
+Accepted values: TRUE, FALSE
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -DefaultMessageTimeToLive
+Timespan to live value.
 This is the duration after which the message expires, starting from when the message is sent to Service Bus.
 This is the default value used when TimeToLive is not set on a message itself.
+For Standard = Timespan.Max and Basic = 14 days
 
 ```yaml
-Type: System.TimeSpan
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -124,9 +127,9 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -136,23 +139,22 @@ Accept wildcard characters: False
 ```
 
 ### -DuplicateDetectionHistoryTimeWindow
-Defines the duration of the duplicate detection history.
-The default value is 10 minutes.
+Specifies the duplicate detection history time window, a [TimeSpan](https://msdn.microsoft.com/library/system.timespan.aspx) value that defines the duration of the duplicate detection history. The default value is 10 minutes.
 
 ```yaml
-Type: System.TimeSpan
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -EnableBatchedOperations
-Value that indicates whether server-side batched operations are enabled.
+Enable Batched Operations - value that indicates whether server-side batched operations are enabled
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -167,33 +169,35 @@ Accept wildcard characters: False
 ```
 
 ### -EnableExpress
-A value that indicates whether Express Entities are enabled.
+EnableExpress - a value that indicates whether Express Entities are enabled.
 An express queue holds a message in memory temporarily before writing it to persistent storage.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.Nullable`1[System.Boolean]
 Parameter Sets: (All)
 Aliases:
+Accepted values: TRUE, FALSE
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -EnablePartitioning
-A value that indicates whether the queue is to be partitioned across multiple message brokers.
+EnablePartitioning
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.Nullable`1[System.Boolean]
 Parameter Sets: (All)
 Aliases:
+Accepted values: TRUE, FALSE
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -208,7 +212,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -223,77 +227,73 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -LockDuration
-Timespan duration of a peek-lock; that is, the amount of time that the message is locked for other receivers.
-The maximum value for LockDuration is 5 minutes; the default value is 1 minute.
+Lock Duration
 
 ```yaml
-Type: System.TimeSpan
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -MaxDeliveryCount
-The maximum delivery count.
+MaxDeliveryCount - the maximum delivery count.
 A message is automatically deadlettered after this number of deliveries.
-default value is 10.
 
 ```yaml
-Type: System.Int32
+Type: System.Nullable`1[System.Int32]
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MaxMessageSizeInKilobytes
-Maximum size (in KB) of the message payload that can be accepted by the queue.
-This property is only used in Premium today and default is 1024.
-
-```yaml
-Type: System.Int64
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -MaxSizeInMegabytes
-The maximum size of the queue in megabytes, which is the size of memory allocated for the queue.
-Default is 1024.
+MaxSizeInMegabytes - the maximum size of the queue in megabytes, which is the size of memory allocated for the queue.Default is 1024. Max for Standard SKU is 5120 and for Premium SKU is 81920, Allowed values : 1024, 2048, 3072, 4096, 5120, 10240, 20480, 40960, 81920
 
 ```yaml
-Type: System.Int32
+Type: System.Nullable`1[System.Int64]
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -MessageCount
+MessageCount - the number of messages in the queue
+
+```yaml
+Type: System.Nullable`1[System.Int64]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Name
-The queue name.
+Queue Name
 
 ```yaml
 Type: System.String
@@ -301,100 +301,86 @@ Parameter Sets: (All)
 Aliases: QueueName
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NamespaceName
-The namespace name
+### -Namespace
+Namespace Name
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: NamespaceName
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -RequiresDuplicateDetection
-A value indicating if this queue requires duplicate detection.
+RequiresDuplicateDetection - a value that indicates whether the queue supports the concept of session
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.Nullable`1[System.Boolean]
 Parameter Sets: (All)
 Aliases:
+Accepted values: TRUE, FALSE
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -RequiresSession
-A value that indicates whether the queue supports the concept of sessions.
+RequiresSession - the value indicating if this queue uses sessions
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.Nullable`1[System.Boolean]
 Parameter Sets: (All)
 Aliases:
+Accepted values: TRUE, FALSE
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Name of the Resource group within the Azure subscription.
+The name of the resource group
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: ResourceGroup
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Status
-Enumerates the possible values for the status of a messaging entity.
+### -SizeInBytes
+SizeInBytes - the size of the queue in bytes
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Support.EntityStatus
+Type: System.Nullable`1[System.Int64]
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubscriptionId
-Subscription credentials that uniquely identify a Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -430,16 +416,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
+### System.String
+
+### System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
+
+### System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
+
+### System.Nullable`1[[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.Api202201Preview.ISbQueue
+### Microsoft.Azure.Commands.ServiceBus.Models.PSQueueAttributes
 
 ## NOTES
-
-ALIASES
 
 ## RELATED LINKS

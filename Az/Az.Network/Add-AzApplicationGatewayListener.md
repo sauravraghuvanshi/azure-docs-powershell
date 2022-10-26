@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
-online version: https://docs.microsoft.com/powershell/module/az.network/add-azapplicationgatewaylistener
+online version: 
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzApplicationGatewayListener.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzApplicationGatewayListener.md
@@ -10,7 +10,7 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Add-AzApplicationGatewayListener
 
 ## SYNOPSIS
-Adds an listener to an application gateway.
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
@@ -31,17 +31,16 @@ Add-AzApplicationGatewayListener -ApplicationGateway <PSApplicationGateway> -Nam
 ```
 
 ## DESCRIPTION
-The **Add-AzApplicationGatewayListener** cmdlet adds a TCP\TLS listener to an application gateway.
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
-### Example 1: Add a listener
+### Example 1
 ```powershell
-$AppGw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
-$AppGw = Add-AzApplicationGatewayListener -ApplicationGateway $Appgw -Name "Listener01" -Protocol "TCP" -FrontendIpConfiguration $FIp01 -FrontendPort $FP01
+PS C:\> {{ Add example code here }}
 ```
 
-The first command gets the application gateway and stores it in the $AppGw variable.The second command adds the listener to the application gateway.
+{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -240,11 +239,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
-[Get-AzApplicationGatewayListener](./Get-AzApplicationGatewayListener.md)
-
-[New-AzApplicationGatewayListener](./New-AzApplicationGatewayListener.md)
-
-[Remove-AzApplicationGatewayListener](./Remove-AzApplicationGatewayListener.md)
-
-[Set-AzApplicationGatewayListener](./Set-AzApplicationGatewayListener.md)

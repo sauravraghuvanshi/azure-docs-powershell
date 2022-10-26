@@ -1,5 +1,5 @@
 ---
-external help file: Az.ServiceBus-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.dll-Help.xml
 Module Name: Az.ServiceBus
 online version: https://docs.microsoft.com/powershell/module/az.servicebus/get-azservicebusnetworkruleset
 schema: 2.0.0
@@ -10,50 +10,77 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Get-AzServiceBusNetworkRuleSet
 
 ## SYNOPSIS
-Gets NetworkRuleSet for a Namespace.
+Gets the details of an Event Hubs NetworkruleSet of namespace in the current Azure subscription.
 
 ## SYNTAX
 
-### Get (Default)
+### NetworkRuleSetPropertiesSet (Default)
 ```
-Get-AzServiceBusNetworkRuleSet -NamespaceName <String> -ResourceGroupName <String> [-SubscriptionId <String[]>]
- [-DefaultProfile <PSObject>] [<CommonParameters>]
-```
-
-### List
-```
-Get-AzServiceBusNetworkRuleSet -NamespaceName <String> -ResourceGroupName <String> [-SubscriptionId <String[]>]
- [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzServiceBusNetworkRuleSet [-ResourceGroupName] <String> [-Namespace] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### NetworkRuleSetNamespacePropertiesSet
 ```
-Get-AzServiceBusNetworkRuleSet -InputObject <IServiceBusIdentity> [-DefaultProfile <PSObject>]
+Get-AzServiceBusNetworkRuleSet [[-ResourceGroupName] <String>] [-Namespace] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### NetworkRuleSetResourceIdParameterSet
+```
+Get-AzServiceBusNetworkRuleSet [-ResourceId] <String> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets NetworkRuleSet for a Namespace.
+Gets the details of an Event Hubs NetworkruleSet of namespace in the current Azure subscription.
 
 ## EXAMPLES
 
-### Example 1: Gets the network rule set of a ServiceBus namespace
+### Example 1
 ```powershell
-Get-AzServiceBusNetworkRuleSet -ResourceGroupName myResourceGroup -NamespaceName myNamespace
+Get-AzServiceBusNetworkRuleSet -ResourceGroupName  v-ajnavtest -Namespace ServiceBus-Namespace-1122
 ```
 
 ```output
-DefaultAction                : Allow
-IPRule                       : {}
-Id                           : /subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.ServiceBus/namespaces/myNamespace/networkRuleSets/default
-Location                     : Central US
-Name                         : default
-PublicNetworkAccess          : Enabled
-ResourceGroupName            : myResourceGroup
-VirtualNetworkRule           :
+Name                : default
+DefaultAction       : Allow
+Id                  : /subscriptions/subscriptionId/resourceGroups/RSG-TestAzEventhub/providers/Microsoft.ServiceBus/namespaces/ServiceBus-Namespace-1122/networkRuleSets/default
+Type                : Microsoft.ServiceBus/Namespaces/NetworkRuleSet
+IpRules             : {1.1.1.1, Allow}
+VirtualNetworkRules : {/subscriptions/subscriptionId/resourcegroups/v-ajnavtest/providers/Microsoft.Network/virtualNetworks/sbehvnettest1/subnets/default, False}
+```
+Get the details of Event Hubs NetworkruleSet of namespace using ResourceGroup and Namespace parameters. 
+
+### Example 2
+```powershell
+Get-AzServiceBusNetworkRuleSet -Namespace ServiceBus-Namespace-1122
 ```
 
-Gets the network rule set of ServiceBus namespace `myNamespace`.
+```output
+Name                : default
+DefaultAction       : Allow
+Id                  : /subscriptions/subscriptionId/resourceGroups/RSG-TestAzEventhub/providers/Microsoft.ServiceBus/namespaces/ServiceBus-Namespace-1122/networkRuleSets/default
+Type                : Microsoft.ServiceBus/Namespaces/NetworkRuleSet
+IpRules             : {1.1.1.1, Allow}
+VirtualNetworkRules : {/subscriptions/subscriptionId/resourcegroups/v-ajnavtest/providers/Microsoft.Network/virtualNetworks/sbehvnettest1/subnets/default, False}
+```
+Get the details of Event Hubs NetworkruleSet of namespace using  Namespace which is in the current subscription.
+
+### Example 3
+```powershell
+Get-AzServiceBusNetworkRuleSet -ResourceId /SubscriptionId/resourcegroups/ResourceGroup/providers/Microsoft.ServiceBus/namespaces/ServiceBus-Namespace-2389
+```
+
+```output
+Name                : default
+DefaultAction       : Allow
+Id                  : /subscriptions/subscriptionId/resourceGroups/RSG-TestAzEventhub/providers/Microsoft.ServiceBus/namespaces/ServiceBus-Namespace-2389/networkRuleSets/default
+Type                : Microsoft.ServiceBus/Namespaces/NetworkRuleSet
+IpRules             : {1.1.1.1, Allow}
+VirtualNetworkRules : {/subscriptions/subscriptionId/resourcegroups/v-ajnavtest/providers/Microsoft.Network/virtualNetworks/sbehvnettest1/subnets/default, False}
+```
+Get the details of Event Hubs NetworkruleSet of namespace using Resource Id of other Namespace 
 
 ## PARAMETERS
 
@@ -61,9 +88,9 @@ Gets the network rule set of ServiceBus namespace `myNamespace`.
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -72,100 +99,75 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.IServiceBusIdentity
-Parameter Sets: GetViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -NamespaceName
-The namespace name
+### -Namespace
+Namespace Name
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
-Aliases:
+Parameter Sets: NetworkRuleSetPropertiesSet, NetworkRuleSetNamespacePropertiesSet
+Aliases: NamespaceName
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Name of the Resource group within the Azure subscription.
+Resource Group Name
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: NetworkRuleSetPropertiesSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-Subscription credentials that uniquely identify a Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
-
 ```yaml
-Type: System.String[]
-Parameter Sets: Get, List
+Type: System.String
+Parameter Sets: NetworkRuleSetNamespacePropertiesSet
 Aliases:
 
 Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
+Position: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ResourceId
+Namespace Resource Id
+
+```yaml
+Type: System.String
+Parameter Sets: NetworkRuleSetResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
+For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.IServiceBusIdentity
+### System.String
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.ServiceBus.Models.Api202201Preview.INetworkRuleSet
+### Microsoft.Azure.Commands.ServiceBus.Models.PSNetworkRuleSetAttributes
 
 ## NOTES
-
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IServiceBusIdentity>`: Identity Parameter
-  - `[Alias <String>]`: The Disaster Recovery configuration name
-  - `[AuthorizationRuleName <String>]`: The authorization rule name.
-  - `[ConfigName <MigrationConfigurationName?>]`: The configuration name. Should always be "$default".
-  - `[Id <String>]`: Resource identity path
-  - `[NamespaceName <String>]`: The namespace name
-  - `[PrivateEndpointConnectionName <String>]`: The PrivateEndpointConnection name
-  - `[QueueName <String>]`: The queue name.
-  - `[ResourceGroupName <String>]`: Name of the Resource group within the Azure subscription.
-  - `[RuleName <String>]`: The rule name.
-  - `[SubscriptionId <String>]`: Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
-  - `[SubscriptionName <String>]`: The subscription name.
-  - `[TopicName <String>]`: The topic name.
 
 ## RELATED LINKS

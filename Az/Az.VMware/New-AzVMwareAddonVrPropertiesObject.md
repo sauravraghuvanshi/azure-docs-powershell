@@ -27,7 +27,6 @@ Create a in-memory object for AddonVrProperties
 ```powershell
 New-AzVMwareAddonVrPropertiesObject -VrsCount 2
 ```
-
 ```output
 AddonType ProvisioningState VrsCount
 --------- ----------------- --------

@@ -1,7 +1,7 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
-online version: https://docs.microsoft.com/powershell/module/az.network/add-azapplicationgatewaybackendsetting
+online version: 
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzApplicationGatewayBackendSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/Network/Network/help/Add-AzApplicationGatewayBackendSetting.md
@@ -10,7 +10,7 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Add-AzApplicationGatewayBackendSetting
 
 ## SYNOPSIS
-Adds back-end TCP\TLS settings to an application gateway.
+{{ Fill in the Synopsis }}
 
 ## SYNTAX
 
@@ -22,23 +22,21 @@ Add-AzApplicationGatewayBackendSetting -ApplicationGateway <PSApplicationGateway
 ```
 
 ## DESCRIPTION
-The Add-AzApplicationGatewayBackendSetting cmdlet adds back-end TCP\TLS settings to an application gateway.
-Back-end settings are applied to all back-end servers in the pool.
+{{ Fill in the Description }}
 
 ## EXAMPLES
 
-### Example 1: Add back-end TCP\TLS settings to an application gateway
+### Example 1
 ```powershell
-$AppGw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
-$AppGw = Add-AzApplicationGatewayBackendSetting -ApplicationGateway $Appgw -Name "Setting01" -Port 88 -Protocol TCP
+PS C:\> {{ Add example code here }}
 ```
 
-The first command gets the application gateway named ApplicationGateway01 that belongs to the resource group named ResourceGroup01 and stores it in the $AppGw variable.The second command adds back-end settings to the application gateway, setting the port to 88 and the protocol to TCP and names the settings Setting01.
+{{ Add example description here }}
 
 ## PARAMETERS
 
 ### -ApplicationGateway
-Specifies the name of application gateway for which this cmdlet adds settings.
+The applicationGateway
 
 ```yaml
 Type: PSApplicationGateway
@@ -218,11 +216,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
-[Get-AzApplicationGatewayBackendSetting](./Get-AzApplicationGatewayBackendSetting.md)
-
-[New-AzApplicationGatewayBackendSetting](./New-AzApplicationGatewayBackendSetting.md)
-
-[Remove-AzApplicationGatewayBackendSetting](./Remove-AzApplicationGatewayBackendSetting.md)
-
-[Set-AzApplicationGatewayBackendSetting](./Set-AzApplicationGatewayBackendSetting.md)

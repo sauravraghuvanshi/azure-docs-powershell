@@ -1,5 +1,5 @@
 ---
-external help file: Az.EventHub-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.EventHub.dll-Help.xml
 Module Name: Az.EventHub
 online version: https://docs.microsoft.com/powershell/module/az.eventhub/get-azeventhubkey
 schema: 2.0.0
@@ -10,98 +10,66 @@ original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/sr
 # Get-AzEventHubKey
 
 ## SYNOPSIS
-Gets an EventHub SAS key
+Gets the primary key details of the specified Event Hubs authorization rule.
 
 ## SYNTAX
 
-### GetExpandedNamespace (Default)
+### NamespaceAuthorizationRuleSet (Default)
 ```
-Get-AzEventHubKey -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [<CommonParameters>]
-```
-
-### GetExpandedAlias
-```
-Get-AzEventHubKey -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String[]>] -AliasName <String> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
- [<CommonParameters>]
+Get-AzEventHubKey [-ResourceGroupName] <String> [-Namespace] <String> [-Name] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### GetExpandedEntity
+### EventhubAuthorizationRuleSet
 ```
-Get-AzEventHubKey -Name <String> -NamespaceName <String> -ResourceGroupName <String>
- [-SubscriptionId <String[]>] -EventHubName <String> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
- [<CommonParameters>]
+Get-AzEventHubKey [-ResourceGroupName] <String> [-Namespace] <String> [-EventHub] <String> [-Name] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### AliasAuthoRuleSet
+```
+Get-AzEventHubKey [-ResourceGroupName] <String> [-Namespace] <String> [-AliasName] <String> [-Name] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets an EventHub SAS key
+The Get-AzEventHubKey cmdlet returns Primary and Secondary connectionstrings and keys details of the specified NameSpace/Event Hubs/Alias authorization rule.
 
 ## EXAMPLES
 
-### Example 1: Get keys of an EventHub Namespace authorization rule
+### Example 1: Namespace
 ```powershell
-Get-AzEventHubKey -ResourceGroupName myResourceGroup -NamespaceName myNamespace -Name RootManageSharedAccessKey
+Get-AzEventHubKey -ResourceGroupName MyResourceGroupName -NamespaceName MyNamespaceName -AuthorizationRuleName MyAuthRuleName
 ```
 
-```output
-AliasPrimaryConnectionString   :
-AliasSecondaryConnectionString :
-KeyName                        : RootManageSharedAccessKey
-PrimaryConnectionString        : 000000000000
-PrimaryKey                     : 000000000000
-SecondaryConnectionString      : {ConnectionString}
-SecondaryKey                   : {ConnectionString}
-```
-
-Gets keys of authorization rule `RootManageSharedAccessKey` of EventHub namespace `myNamespace`.
-
-### Example 2: Get keys of an EventHub Entity authorization rule
+### Example 2: EventHub
 ```powershell
-Get-AzEventHubKey -ResourceGroupName myResourceGroup -NamespaceName myNamespace -EventHubName myEventHub -Name RootManageSharedAccessKey
+Get-AzEventHubKey -ResourceGroupName MyResourceGroupName -NamespaceName MyNamespaceName -EventHubName MyEventHubName -AuthorizationRuleName MyAuthRuleName
 ```
 
-```output
-AliasPrimaryConnectionString   :
-AliasSecondaryConnectionString :
-KeyName                        : RootManageSharedAccessKey
-PrimaryConnectionString        : 000000000000
-PrimaryKey                     : 000000000000
-SecondaryConnectionString      : {ConnectionString}
-SecondaryKey                   : {ConnectionString}
+Gets details of Primary and Secondary connectionstrings and keys for the authorization rule \`MyAuthRuleName\`.
+
+### Example 3: Alias (GeoRecovery Configuration)
+```powershell
+Get-AzEventHubKey -ResourceGroupName MyResourceGroupName -NamespaceName MyNamespaceName -AliasName MyAliasName -Name MyAuthRuleName
 ```
 
-Gets keys of authorization rule `RootManageSharedAccessKey` of EventHub entity `myEventHub` from namespace `myNamespace`.
+Gets details of Primary, Secondary, AliasPrimary and AliasSecondary connectionstrings and keys for the authorization rule \`MyAuthRuleName\`.
 
 ## PARAMETERS
 
 ### -AliasName
-The name of the Disaster Recovery alias
+Alias Name
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpandedAlias
+Parameter Sets: AliasAuthoRuleSet
 Aliases:
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AsJob
-Run the command as a job
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -109,9 +77,9 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -120,23 +88,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EventHubName
-The name of the EventHub entity.
+### -EventHub
+EventHub Name
 
 ```yaml
 Type: System.String
-Parameter Sets: GetExpandedEntity
-Aliases:
+Parameter Sets: EventhubAuthorizationRuleSet
+Aliases: EventHubName
 
 Required: True
-Position: Named
+Position: 2
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -Name
-The name of the Authorization Rule
+AuthorizationRule Name
 
 ```yaml
 Type: System.String
@@ -144,45 +112,29 @@ Parameter Sets: (All)
 Aliases: AuthorizationRuleName
 
 Required: True
-Position: Named
+Position: 3
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NamespaceName
-The name of EventHub namespace
+### -Namespace
+Namespace Name
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: NamespaceName
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NoWait
-Run the command asynchronously
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-The name of the resource group.
-The name is case insensitive.
+Resource Group Name
 
 ```yaml
 Type: System.String
@@ -190,38 +142,23 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SubscriptionId
-The ID of the target subscription.
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
+### System.String
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.Api202201Preview.IAccessKeys
+### Microsoft.Azure.Commands.EventHub.Models.PSListKeysAttributes
 
 ## NOTES
-
-ALIASES
 
 ## RELATED LINKS

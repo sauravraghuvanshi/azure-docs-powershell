@@ -64,13 +64,12 @@ Accept wildcard characters: False
 ```
 
 ### -AddressPrefixType
-AddressPrefix Type.
+AddressPrefix Type. Valid values include 'IPPrefix' and 'ServiceTag'.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: IPPrefix, ServiceTag
 
 Required: True
 Position: Named

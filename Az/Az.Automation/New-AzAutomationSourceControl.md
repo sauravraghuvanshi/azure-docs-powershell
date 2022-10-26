@@ -41,7 +41,6 @@ New-AzAutomationSourceControl -ResourceGroupName "rg1" `
                                            -FolderPath "/Runbooks" `
                                            -AccessToken $accessToken
 ```
-
 ```output
 Name        SourceType Branch FolderPath AutoSync PublishRunbook RepoUrl
 ----        ---------- ------ ---------- -------- -------------- -------
@@ -65,7 +64,6 @@ New-AzAutomationSourceControl -ResourceGroupName "rg1" `
                                            -FolderPath "/" `
                                            -AccessToken $accessToken
 ```
-
 ```output
 Name    SourceType Branch      FolderPath AutoSync PublishRunbook RepoUrl
 ----    ---------- ------      ---------- -------- -------------- -------
@@ -89,7 +87,6 @@ $accessToken = ConvertTo-SecureString -String $token -AsPlainText -Force
                                            -FolderPath "/Runbooks" `
                                            -AccessToken $accessToken
 ```
-
 ```output
 Name    SourceType Branch FolderPath AutoSync PublishRunbook RepoUrl
 ----    ---------- ------ ---------- -------- -------------- -------
@@ -312,7 +309,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

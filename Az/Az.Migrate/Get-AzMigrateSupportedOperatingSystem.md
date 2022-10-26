@@ -33,8 +33,10 @@ Gets the data of supported operating systems by SRS.
 
 ### Example 1: {{ Add title here }}
 ```powershell
-PS C:\> {{ Add code here }}
+{{ Add code here }}
+```
 
+```output
 {{ Add output here }}
 ```
 
@@ -42,8 +44,10 @@ PS C:\> {{ Add code here }}
 
 ### Example 2: {{ Add title here }}
 ```powershell
-PS C:\> {{ Add code here }}
+{{ Add code here }}
+```
 
+```output
 {{ Add output here }}
 ```
 
@@ -162,7 +166,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-INPUTOBJECT <IMigrateIdentity>: Identity Parameter
+`INPUTOBJECT <IMigrateIdentity>`: Identity Parameter
   - `[AccountName <String>]`: Run as account ARM name.
   - `[AlertSettingName <String>]`: The name of the email notification configuration.
   - `[ClusterName <String>]`: Cluster ARM name.

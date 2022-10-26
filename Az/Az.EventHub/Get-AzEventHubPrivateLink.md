@@ -1,7 +1,7 @@
 ---
-external help file: Az.EventHub-help.xml
+external help file: Microsoft.Azure.PowerShell.Cmdlets.EventHub.dll-Help.xml
 Module Name: Az.EventHub
-online version: https://docs.microsoft.com/powershell/module/az.eventhub/get-azeventhubprivatelink
+online version: 
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/EventHub/EventHub/help/Get-AzEventHubPrivateLink.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/main/src/EventHub/EventHub/help/Get-AzEventHubPrivateLink.md
@@ -15,8 +15,8 @@ Gets lists of resources that supports Privatelinks.
 ## SYNTAX
 
 ```
-Get-AzEventHubPrivateLink -NamespaceName <String> -ResourceGroupName <String> [-SubscriptionId <String[]>]
- [-DefaultProfile <PSObject>] [<CommonParameters>]
+Get-AzEventHubPrivateLink [-ResourceGroupName] <String> [-NamespaceName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -24,21 +24,12 @@ Gets lists of resources that supports Privatelinks.
 
 ## EXAMPLES
 
-### Example 1: Get private links associated with an EventHub namespace
+### Example 1
 ```powershell
-Get-AzEventHubPrivateLink -ResourceGroupName myResourceGroup -NamespaceName myNamespace
+Get-AzEventHubPrivateLink -ResourceGroupName myresourcegroup -NamespaceName mynamespace
 ```
 
-```output
-GroupId          : namespace
-Id               : subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.EventHub/namespaces/myNamespace/privateLinkResources/namespace
-Name             : namespace
-RequiredMember   : {namespace}
-RequiredZoneName : {privatelink.servicebus.windows.net}
-Type             : Microsoft.EventHub/namespaces/privateLinkResources
-```
-
-Gets private link resources available on EventHubs namespace `myNamespace`.
+Gets lists of resources that supports Privatelinks on `mynamespace`.
 
 ## PARAMETERS
 
@@ -46,9 +37,9 @@ Gets private link resources available on EventHubs namespace `myNamespace`.
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: System.Management.Automation.PSObject
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRMContext, AzureCredential
+Aliases: AzContext, AzureRmContext, AzureCredential
 
 Required: False
 Position: Named
@@ -58,7 +49,7 @@ Accept wildcard characters: False
 ```
 
 ### -NamespaceName
-The Namespace name
+EventHub Namespace Name.
 
 ```yaml
 Type: System.String
@@ -66,14 +57,14 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Name of the resource group within the azure subscription.
+Resource Group Name
 
 ```yaml
 Type: System.String
@@ -81,24 +72,39 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SubscriptionId
-Subscription credentials that uniquely identify a Microsoft Azure subscription.
-The subscription ID forms part of the URI for every service call.
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
-Type: System.String[]
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: wi
 
 Required: False
 Position: Named
-Default value: (Get-AzContext).Subscription.Id
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -108,12 +114,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### System.String
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.EventHub.Models.Api202201Preview.IPrivateLinkResourcesListResult
+### Microsoft.Azure.Commands.EventHub.Models.PSEventHubPrivateLinkResourceAttributes
 
 ## NOTES
-
-ALIASES
 
 ## RELATED LINKS

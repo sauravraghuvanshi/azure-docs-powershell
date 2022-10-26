@@ -34,6 +34,9 @@ Adds a Key Vault key to a SQL server.
 ### [Add-AzSqlServerTransparentDataEncryptionCertificate](Add-AzSqlServerTransparentDataEncryptionCertificate.md)
 Adds a Transparent Data Encryption Certificate for the given SQL Server instance
 
+### [Clear-AzSqlDatabaseAdvancedThreatProtectionSetting](Clear-AzSqlDatabaseAdvancedThreatProtectionSetting.md)
+Removes the advanced threat protection settings from a database.
+
 ### [Clear-AzSqlDatabaseVulnerabilityAssessmentRuleBaseline](Clear-AzSqlDatabaseVulnerabilityAssessmentRuleBaseline.md)
 Clears the vulnerability assessment rule baseline.
 
@@ -48,6 +51,9 @@ Clears the vulnerability assessment settings of a managed database.
 
 ### [Clear-AzSqlInstanceVulnerabilityAssessmentSetting](Clear-AzSqlInstanceVulnerabilityAssessmentSetting.md)
 Clears the vulnerability assessment settings of a managed instance.
+
+### [Clear-AzSqlServerAdvancedThreatProtectionSetting](Clear-AzSqlServerAdvancedThreatProtectionSetting.md)
+Removes the advanced threat protection settings from a server.
 
 ### [Clear-AzSqlServerVulnerabilityAssessmentSetting](Clear-AzSqlServerVulnerabilityAssessmentSetting.md)
 Clears the vulnerability assessment settings of a server.
@@ -116,7 +122,7 @@ Gets one or more databases.
 Gets the status of database operations.
 
 ### [Get-AzSqlDatabaseAdvancedThreatProtectionSetting](Get-AzSqlDatabaseAdvancedThreatProtectionSetting.md)
-Gets the Advanced Threat Protection settings for a database.
+Gets the advanced threat protection settings for a database.
 
 ### [Get-AzSqlDatabaseAdvisor](Get-AzSqlDatabaseAdvisor.md)
 Gets one or more Advisors for an Azure SQL Database.
@@ -253,14 +259,8 @@ Gets Azure AD only authentication for a specific SQL Managed Instance.
 ### [Get-AzSqlInstanceAdvancedDataSecurityPolicy](Get-AzSqlInstanceAdvancedDataSecurityPolicy.md)
 Gets Advanced Data Security policy of a managed instance.
 
-### [Get-AzSqlInstanceAdvancedThreatProtectionSetting](Get-AzSqlInstanceAdvancedThreatProtectionSetting.md)
-Gets the Advanced Threat Protection settings for a managed instance.
-
 ### [Get-AzSqlInstanceDatabase](Get-AzSqlInstanceDatabase.md)
 Returns information about Azure SQL Managed Instance database.
-
-### [Get-AzSqlInstanceDatabaseAdvancedThreatProtectionSetting](Get-AzSqlInstanceDatabaseAdvancedThreatProtectionSetting.md)
-Gets the Advanced Threat Protection settings for a managed database.
 
 ### [Get-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy](Get-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy.md)
 Gets a managed database's long term retention policy
@@ -332,7 +332,7 @@ Gets Azure AD only authentication for a specific SQL Server.
 Gets Advanced Data Security policy of a server.
 
 ### [Get-AzSqlServerAdvancedThreatProtectionSetting](Get-AzSqlServerAdvancedThreatProtectionSetting.md)
-Gets the Advanced Threat Protection settings for a server.
+Gets the advanced threat protection settings for a server.
 
 ### [Get-AzSqlServerAdvisor](Get-AzSqlServerAdvisor.md)
 Gets one or more Advisors for an Azure SQL Server.
@@ -716,7 +716,7 @@ Sets properties for an Azure SQL Managed Instance.
 Provisions an Azure AD administrator for SQL Managed Instance.
 
 ### [Set-AzSqlInstanceDatabase](Set-AzSqlInstanceDatabase.md)
-Updated an Azure SQL Managed Instance database.
+Sets properties of an Azure SQL Managed Instance database.
 
 ### [Set-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy](Set-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy.md)
 The **Set-AzSqlInstanceDatabaseLongTermRetentionBackup** cmdlet sets a managed database's long term retention policy.
@@ -818,19 +818,13 @@ Executes a failover of an Azure SQL Database Failover Group.
 Executes a failover of an Instance Failover Group.
 
 ### [Update-AzSqlDatabaseAdvancedThreatProtectionSetting](Update-AzSqlDatabaseAdvancedThreatProtectionSetting.md)
-Sets the Advanced Threat Protection settings on a database.
+Sets a advanced threat protection settings on a database.
 
 ### [Update-AzSqlDatabaseLongTermRetentionBackup](Update-AzSqlDatabaseLongTermRetentionBackup.md)
 Updates a long term retention backup.
 
 ### [Update-AzSqlDatabaseVulnerabilityAssessmentSetting](Update-AzSqlDatabaseVulnerabilityAssessmentSetting.md)
 Updates the vulnerability assessment settings of a database.
-
-### [Update-AzSqlInstanceAdvancedThreatProtectionSetting](Update-AzSqlInstanceAdvancedThreatProtectionSetting.md)
-Sets the Advanced Threat Protection settings on a managed instance.
-
-### [Update-AzSqlInstanceDatabaseAdvancedThreatProtectionSetting](Update-AzSqlInstanceDatabaseAdvancedThreatProtectionSetting.md)
-Sets the Advanced Threat Protection settings on a managed database.
 
 ### [Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting](Update-AzSqlInstanceDatabaseVulnerabilityAssessmentSetting.md)
 Updates the vulnerability assessment settings of a managed database.
@@ -842,7 +836,7 @@ Updates the properties of an instance link.
 Updates the vulnerability assessment settings of a managed instance.
 
 ### [Update-AzSqlServerAdvancedThreatProtectionSetting](Update-AzSqlServerAdvancedThreatProtectionSetting.md)
-Sets the Advanced Threat Protection settings on a server.
+Sets a advanced threat protection settings on a server.
 
 ### [Update-AzSqlServerVulnerabilityAssessmentSetting](Update-AzSqlServerVulnerabilityAssessmentSetting.md)
 Updates the vulnerability assessment settings of a server.

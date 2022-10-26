@@ -66,13 +66,12 @@ Accept wildcard characters: False
 ```
 
 ### -GroupConnectivity
-Group Connectivity.
+Group Connectivity. Valid values include 'None' and 'DirectlyConnected'.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: None, DirectlyConnected
 
 Required: False
 Position: Named

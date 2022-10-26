@@ -16,20 +16,20 @@ Updates a CustomIpPrefix
 
 ### UpdateByNameParameterSet
 ```
-Update-AzCustomIpPrefix -Name <String> -ResourceGroupName <String> [-Commission] [-Decomission] [-Provision] [-Deprovision] [-NoInternetAdvertise] [-Cidr <String>]
+Update-AzCustomIpPrefix -Name <String> -ResourceGroupName <String> [-Commission] [-Decomission] [-Provision] [-Deprovision] [-Cidr <String>]
  [-Tag <Hashtable>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### UpdateByInputObjectParameterSet
 ```
-Update-AzCustomIpPrefix -InputObject <PSCustomIpPrefix> [-Commission] [-Decomission] [-Provision] [-Deprovision] [-NoInternetAdvertise] [-Cidr <String>] [-Tag <Hashtable>]
+Update-AzCustomIpPrefix -InputObject <PSCustomIpPrefix> [-Commission] [-Decomission] [-Provision] [-Deprovision] [-Cidr <String>] [-Tag <Hashtable>]
  [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateByResourceIdParameterSet
 ```
-Update-AzCustomIpPrefix -ResourceId <String> [-Commission] [-Decomission] [-Provision] [-Deprovision] [-NoInternetAdvertise] [-Cidr <String>] [-Tag <Hashtable>] [-AsJob]
+Update-AzCustomIpPrefix -ResourceId <String> [-Commission] [-Decomission] [-Provision] [-Deprovision] [-Cidr <String>] [-Tag <Hashtable>] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -Commission
-Commission the CustomIpPrefix resource
+Run cmdlet in the background
 
 ```yaml
 Type: SwitchParameter
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -Decomission
-Decommission the CustomIpPrefix resource
+Run cmdlet in the background
 
 ```yaml
 Type: SwitchParameter
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -Provision
-Provision the CustomIpPrefix resource
+Run cmdlet in the background
 
 ```yaml
 Type: SwitchParameter
@@ -143,22 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -Deprovision
-Deprovision the CustomIpPrefix resource
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NoInternetAdvertise
-Commission the CustomIpPrefix resource with no internet advertise
+Run cmdlet in the background
 
 ```yaml
 Type: SwitchParameter

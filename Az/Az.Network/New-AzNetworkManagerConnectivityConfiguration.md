@@ -151,13 +151,12 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectivityTopology
-Connectivity Topology.
+Connectivity Topology. Valid values include 'HubAndSpoke' and 'Mesh'.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
-Accepted values: HubAndSpoke, Mesh
 
 Required: True
 Position: Named

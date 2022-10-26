@@ -217,6 +217,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+[New-AzNetworkManagerGroupMembersItem](./New-AzNetworkManagerGroupMembersItem.md)
+
 [Get-AzNetworkManagerGroup](./Get-AzNetworkManagerGroup.md)
 
 [Remove-AzNetworkManagerGroup](./Remove-AzNetworkManagerGroup.md)

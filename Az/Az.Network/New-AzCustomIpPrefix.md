@@ -16,9 +16,8 @@ Creates a CustomIpPrefix resource
 
 ```
 New-AzCustomIpPrefix -Name <String> -ResourceGroupName <String> -Location <String> -Cidr <String>
- [-Asn <String>] [-Geo <String>] [-SignedMessage <String>] [-AuthorizationMessage <String>]
- [-ExpressRouteAdvertise] [-CustomIpPrefixParent <PSCustomIpPrefix>] [-IsParent] [-Zone <String[]>]
- [-Tag <Hashtable>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [-Zone <String[]>] [-Tag <Hashtable>] [-SignedMessage <String>] [-AuthorizationMessage <String>]
+ [-CustomIpPrefixParent <CustomIpPrefix>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -34,27 +33,13 @@ $myCustomIpPrefix = New-AzCustomIpPrefix -Name $prefixName -ResourceGroupName $r
 
 This command kicks off the provisioning process for a new zone-redundant IPv4 Custom IP Prefix resource with name $prefixName in resource group $rgName with a CIDR of 40.40.40.0/24 in West US 2 region.  Note the AuthorizationMessage is a contactenated string (containing the subscription ID, CIDR, and Route Origin Authorization expiration date) and the SignedMessage is the same string signed by X509 certificate offline. 
 
-### Example 2
-```powershell
-$myV4ParentPrefix = New-AzCustomIpPrefix -Name $prefixName -ResourceGroupName $rgName -Cidr "40.40.40.0/24" -Location westus2 -IsParent -AuthorizationMessage $authorizationMessage -SignedMessage $signedMessage
-```
-
-This command kicks off the provisioning process for a new Parent IPv4 Custom IP Prefix resource with name $prefixName in resource group $rgName with a CIDR of 40.40.40.0/24.
-
-### Example 3
-```powershell
-$myV4ChildIpPrefix = New-AzCustomIpPrefix -Name $prefixName -ResourceGroupName $rgName -Cidr "40.40.40.0/25" -Location westus2 -CustomIpPrefixParent $myV4ParentPrefix
-```
-
-This command kicks off the provisioning process for a new Child IPv4 Custom IP Prefix resource with name $prefixName in resource group $rgName with a CIDR of 40.40.40.0/25. Its parent prefix is $myV4ParentPrefix.
-
 ## PARAMETERS
 
 ### -AsJob
 Run cmdlet in the background
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -65,41 +50,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Asn
-The customIpPrefix ASN code.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -AuthorizationMessage
-Authorization message for WAN validation.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### -Cidr
 The CustomIpPrefix CIDR.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -110,74 +65,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -CustomIpPrefixParent
-Parent CustomIpPrefix of resource.
-
-```yaml
-Type: Microsoft.Azure.Commands.Network.Models.PSCustomIpPrefix
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ExpressRouteAdvertise
-Using expressRoute advertise.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -Geo
-The customIpPrefix GEO code.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-Accepted values: AFRI, APAC, AQ, EURO, LATAM, ME, NAM, OCEANIA
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -IsParent
-Denotes that resource is being created as a Parent CustomIpPrefix
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
 
 Required: False
 Position: Named
@@ -190,7 +84,7 @@ Accept wildcard characters: False
 The CustomIpPrefix location.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -205,7 +99,7 @@ Accept wildcard characters: False
 The resource name.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases: ResourceName
 
@@ -220,7 +114,7 @@ Accept wildcard characters: False
 The resource group name.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -231,11 +125,11 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SignedMessage
-Signed message for WAN validation.
+### -Tag
+A hashtable which represents resource tags.
 
 ```yaml
-Type: System.String
+Type: Hashtable
 Parameter Sets: (All)
 Aliases:
 
@@ -246,11 +140,41 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Tag
-A hashtable which represents resource tags.
+### -SignedMessage
+Signed message for WAN validation.
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -AuthorizationMessage
+Authorization message for WAN validation.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -CustomIpPrefixParent
+Parent CustomIpPrefix of resource.
+
+```yaml
+Type: CustomIpPrefix
 Parameter Sets: (All)
 Aliases:
 
@@ -265,7 +189,7 @@ Accept wildcard characters: False
 A list of availability zones denoting the IP allocated for the resource needs to come from.
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -280,7 +204,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -296,7 +220,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
